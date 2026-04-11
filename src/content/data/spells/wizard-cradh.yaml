@@ -1,0 +1,10 @@
+name: "Cradh"
+class: "wizard"
+levelRequirement: "30"
+statRequirements: "3/32/15/5/6"
+goldRequired: "8,000"
+itemRequirements: "Giant Bat's Wing (2)"
+prerequisites: "Beag Cradh (100)"
+learningLocation: "Mileth Special Spells Master"
+description: >-
+  Curses the enemy, increasing their armor class by 20 and reducing their magic resistance by 10%.

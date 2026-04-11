@@ -1,0 +1,10 @@
+name: "Resurrect"
+class: "priest"
+levelRequirement: "Master (Pure)"
+statRequirements: "3/3/3/3/3"
+goldRequired: "-"
+itemRequirements: "-"
+prerequisites: "-"
+learningLocation: "Master"
+description: >-
+  Resurrects the targeted ghost, granting them a second chance. 10 minute cooldown. Pure only.

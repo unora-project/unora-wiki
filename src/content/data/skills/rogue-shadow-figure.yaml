@@ -1,0 +1,10 @@
+name: "Shadow Figure"
+class: "rogue"
+levelRequirement: "Master (Pure)"
+statRequirements: "3/3/3/3/3"
+goldRequired: "-"
+itemRequirements: "-"
+prerequisites: "-"
+learningLocation: "Master"
+description: >-
+  Allows the Rogue to obtain and keep a tactical advantage on an enemy. Pure only. Replaces Backstab.

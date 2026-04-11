@@ -1,0 +1,10 @@
+name: "Prevent Affliction"
+class: "priest"
+levelRequirement: "80"
+statRequirements: "7/56/68/7/7"
+goldRequired: "100,000"
+itemRequirements: "Ialtag's Eye (1), Leech's Tail (2)"
+prerequisites: "-"
+learningLocation: "Suomi Black Magic Master"
+description: >-
+  Imposes a restrictive effect on the target, preventing them from casting any form of cradh.

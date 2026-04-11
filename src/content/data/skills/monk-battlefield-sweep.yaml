@@ -1,0 +1,10 @@
+name: "Battlefield Sweep"
+class: "monk"
+levelRequirement: "Master (Pure)"
+statRequirements: "150/40/40/215/100"
+goldRequired: "750,000"
+itemRequirements: "Ruidhtear Toe (3)"
+prerequisites: "Relentless Draw (100)"
+learningLocation: "Sapphire Stream"
+description: >-
+  Pulls targets to the user in 6x6 range. Upgrade to Relentless Draw. Pure only. [Black Dugon]

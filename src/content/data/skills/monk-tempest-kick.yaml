@@ -1,0 +1,10 @@
+name: "Tempest Kick"
+class: "monk"
+levelRequirement: "71"
+statRequirements: "27/9/9/53/39"
+goldRequired: "25,000"
+itemRequirements: "Gremlin's Ear (3)"
+prerequisites: "-"
+learningLocation: "Sapphire Stream"
+description: >-
+  [Air] Deals massive damage to the target in front of you with wind and a chance to apply crit.

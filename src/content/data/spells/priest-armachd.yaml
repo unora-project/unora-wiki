@@ -1,0 +1,10 @@
+name: "armachd"
+class: "priest"
+levelRequirement: "5"
+statRequirements: "3/5/7/4/3"
+goldRequired: "1,000"
+itemRequirements: "Apple (3)"
+prerequisites: "-"
+learningLocation: "Mileth Special Spells"
+description: >-
+  Significantly reduces the target's armor class by 10, making them less vulnerable to incoming attacks.

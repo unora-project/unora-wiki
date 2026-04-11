@@ -1,0 +1,10 @@
+name: "Thunder Stance"
+class: "monk"
+levelRequirement: "60"
+statRequirements: "24/5/5/51/15"
+goldRequired: "25,000"
+itemRequirements: "Wisp's Core (3)"
+prerequisites: "-"
+learningLocation: "Sapphire Stream"
+description: >-
+  [Wind] Procs 10% wind damage and a 30% chance to apply crit on the next non-assail hits.

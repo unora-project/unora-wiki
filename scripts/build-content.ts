@@ -17,7 +17,9 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
 const CONTENT_ROOT = join(__dirname, '..', 'src', 'content', 'metadata')
+const DATA_CONTENT_ROOT = join(__dirname, '..', 'src', 'content', 'data')
 const OUT_ROOT = join(__dirname, '..', 'src', 'data', 'metadata')
+const DATA_OUT_ROOT = join(__dirname, '..', 'src', 'data')
 
 function ensureDir(dir: string) {
   if (!existsSync(dir)) mkdirSync(dir, { recursive: true })
@@ -42,6 +44,18 @@ function buildFolderCollection(subfolder: string): Record<string, unknown> {
     if (!file.endsWith('.yaml') && !file.endsWith('.yml')) continue
     const slug = basename(file, file.endsWith('.yaml') ? '.yaml' : '.yml')
     result[slug] = readYaml(join(dir, file))
+  }
+  return result
+}
+
+function buildFolderArray(subfolder: string): unknown[] {
+  const dir = join(DATA_CONTENT_ROOT, subfolder)
+  if (!existsSync(dir)) return []
+
+  const result: unknown[] = []
+  for (const file of readdirSync(dir)) {
+    if (!file.endsWith('.yaml') && !file.endsWith('.yml')) continue
+    result.push(readYaml(join(dir, file)))
   }
   return result
 }
@@ -101,5 +115,35 @@ if (existsSync(areasDir)) {
   const areas = buildFolderCollection('hunting/areas')
   writeJson(join(OUT_ROOT, 'hunting-areas.json'), areas)
 }
+
+// ── Game Data (per-item YAML → JSON arrays) ──
+
+console.log('  Bosses...')
+const bosses = buildFolderArray('bosses')
+if (bosses.length) writeJson(join(DATA_OUT_ROOT, 'hunting', 'bosses.json'), bosses)
+
+console.log('  Blessings...')
+const blessings = buildFolderArray('blessings')
+if (blessings.length) writeJson(join(DATA_OUT_ROOT, 'religion', 'blessings.json'), blessings)
+
+console.log('  NPCs...')
+const npcs = buildFolderArray('npcs')
+if (npcs.length) writeJson(join(DATA_OUT_ROOT, 'towns', 'npcs.json'), npcs)
+
+console.log('  Mounts...')
+const mounts = buildFolderArray('mounts')
+if (mounts.length) writeJson(join(DATA_OUT_ROOT, 'mounts', 'mounts.json'), mounts)
+
+console.log('  Cloaks...')
+const cloaks = buildFolderArray('cloaks')
+if (cloaks.length) writeJson(join(DATA_OUT_ROOT, 'mounts', 'cloaks.json'), cloaks)
+
+console.log('  Skills...')
+const skills = buildFolderArray('skills')
+if (skills.length) writeJson(join(DATA_OUT_ROOT, 'classes', 'skills.json'), skills)
+
+console.log('  Spells...')
+const spells = buildFolderArray('spells')
+if (spells.length) writeJson(join(DATA_OUT_ROOT, 'classes', 'spells.json'), spells)
 
 console.log('\nContent build complete!')

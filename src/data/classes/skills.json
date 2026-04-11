@@ -1,80 +1,14 @@
 [
   {
-    "name": "Assail",
+    "name": "Air Punch",
     "class": "monk",
-    "levelRequirement": "1",
-    "statRequirements": "3/3/3/3/3",
-    "goldRequired": "-",
-    "itemRequirements": "-",
+    "levelRequirement": "11",
+    "statRequirements": "8/3/3/13/9",
+    "goldRequired": "5,000",
+    "itemRequirements": "Wolf's Fur (2)",
     "prerequisites": "-",
-    "learningLocation": "Tutorial",
-    "description": "A basic attack that deals a small amount of damage to an enemy immediately in front of you."
-  },
-  {
-    "name": "Punch",
-    "class": "monk",
-    "levelRequirement": "1",
-    "statRequirements": "3/3/3/3/3",
-    "goldRequired": "-",
-    "itemRequirements": "-",
-    "prerequisites": "-",
-    "learningLocation": "Becoming Monk",
-    "description": "A Monk's basic attack that deals a small amount of damage to an enemy immediately in front of you."
-  },
-  {
-    "name": "Kick",
-    "class": "monk",
-    "levelRequirement": "3",
-    "statRequirements": "3/3/3/3/3",
-    "goldRequired": "-",
-    "itemRequirements": "-",
-    "prerequisites": "-",
-    "learningLocation": "Becoming Monk",
-    "description": "Kicks the creature in front of you for minor damage."
-  },
-  {
-    "name": "Inspect",
-    "class": "monk",
-    "levelRequirement": "3",
-    "statRequirements": "3/5/5/3/3",
-    "goldRequired": "2,000",
-    "itemRequirements": "-",
-    "prerequisites": "-",
-    "learningLocation": "Mileth Special Skills Master",
-    "description": "Allows an aisling to study an item's attributes."
-  },
-  {
-    "name": "Look",
-    "class": "monk",
-    "levelRequirement": "3",
-    "statRequirements": "3/5/5/3/3",
-    "goldRequired": "2,000",
-    "itemRequirements": "-",
-    "prerequisites": "-",
-    "learningLocation": "Mileth Special Skills Master",
-    "description": "Allows an aisling to study a map."
-  },
-  {
-    "name": "nis",
-    "class": "monk",
-    "levelRequirement": "3",
-    "statRequirements": "3/5/5/3/3",
-    "goldRequired": "2,000",
-    "itemRequirements": "-",
-    "prerequisites": "-",
-    "learningLocation": "Rucesion Special Skills Master",
-    "description": "Allows an aisling to check on Unora's current time."
-  },
-  {
-    "name": "High Kick",
-    "class": "monk",
-    "levelRequirement": "9",
-    "statRequirements": "7/3/3/9/4",
-    "goldRequired": "1,500",
-    "itemRequirements": "Spider's Silk (1)",
-    "prerequisites": "-",
-    "learningLocation": "Abel Combat Skills Master",
-    "description": "Kicks the creature in front of you for minor damage."
+    "learningLocation": "Sapphire Stream",
+    "description": "[Air] Hits the target in front of you with wind and applies crit."
   },
   {
     "name": "Ambush",
@@ -88,15 +22,114 @@
     "description": "Teleports you to the other side of the enemy."
   },
   {
-    "name": "Air Punch",
+    "name": "Assail",
     "class": "monk",
-    "levelRequirement": "11",
-    "statRequirements": "8/3/3/13/9",
-    "goldRequired": "5,000",
-    "itemRequirements": "Wolf's Fur (2)",
+    "levelRequirement": "1",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Tutorial",
+    "description": "A basic attack that deals a small amount of damage to an enemy immediately in front of you."
+  },
+  {
+    "name": "Battlefield Sweep",
+    "class": "monk",
+    "levelRequirement": "Master (Pure)",
+    "statRequirements": "150/40/40/215/100",
+    "goldRequired": "750,000",
+    "itemRequirements": "Ruidhtear Toe (3)",
+    "prerequisites": "Relentless Draw (100)",
+    "learningLocation": "Sapphire Stream",
+    "description": "Pulls targets to the user in 6x6 range. Upgrade to Relentless Draw. Pure only. [Black Dugon]"
+  },
+  {
+    "name": "Chaos Fist",
+    "class": "monk",
+    "levelRequirement": "Master (Pure)",
+    "statRequirements": "95/25/3/120/35",
+    "goldRequired": "750,000",
+    "itemRequirements": "-",
+    "prerequisites": "Claw Fist (100)",
+    "learningLocation": "Sapphire Stream",
+    "description": "Amplifies the damage of your skills. Pure only. [Black Dugon]"
+  },
+  {
+    "name": "Claw Fist",
+    "class": "monk",
+    "levelRequirement": "50",
+    "statRequirements": "24/14/3/32/18",
+    "goldRequired": "25,000",
+    "itemRequirements": "Mimic's Teeth (2)",
     "prerequisites": "-",
     "learningLocation": "Sapphire Stream",
-    "description": "[Air] Hits the target in front of you with wind and applies crit."
+    "description": "Amplifies the damage of your skills. [Yellow Dugon]"
+  },
+  {
+    "name": "Cloudfist",
+    "class": "monk",
+    "levelRequirement": "Master",
+    "statRequirements": "75/25/20/125/40",
+    "goldRequired": "500,000",
+    "itemRequirements": "Gold Beetalic Head (2)",
+    "prerequisites": "-",
+    "learningLocation": "Sapphire Stream",
+    "description": "[Air] Cleaves an area in front of you with wind and a chance to apply crit."
+  },
+  {
+    "name": "Crimson Moon",
+    "class": "monk",
+    "levelRequirement": "Master",
+    "statRequirements": "120/25/20/150/100",
+    "goldRequired": "500,000",
+    "itemRequirements": "Blue Shocker Piece (3)",
+    "prerequisites": "-",
+    "learningLocation": "Sapphire Stream",
+    "description": "Deals massive damage to a single target. [Black Dugon]"
+  },
+  {
+    "name": "Double Punch",
+    "class": "monk",
+    "levelRequirement": "20",
+    "statRequirements": "13/3/3/19/9",
+    "goldRequired": "5,000",
+    "itemRequirements": "Bat's Wing (3)",
+    "prerequisites": "Punch (100)",
+    "learningLocation": "Abel Combat Skills Master",
+    "description": "A Monk's second basic attack that deals damage to an enemy immediately in front of you."
+  },
+  {
+    "name": "Dragon Breath",
+    "class": "monk",
+    "levelRequirement": "71",
+    "statRequirements": "46/9/9/50/20",
+    "goldRequired": "50,000",
+    "itemRequirements": "Faerie's Wing (2), Eagle Talon (1)",
+    "prerequisites": "-",
+    "learningLocation": "Sapphire Stream",
+    "description": "[Fire] Hits three tiles near your front with fire and a chance to apply burn."
+  },
+  {
+    "name": "Dragon Strike",
+    "class": "monk",
+    "levelRequirement": "Master (Pure)",
+    "statRequirements": "80/25/20/120/60",
+    "goldRequired": "500,000",
+    "itemRequirements": "Gold Shocker Piece (3)",
+    "prerequisites": "Phoenix Strike (100)",
+    "learningLocation": "Sapphire Stream",
+    "description": "Deals damage to three spaces out infront of you. Pure only. [Black Dugon]"
+  },
+  {
+    "name": "Eagle Strike",
+    "class": "monk",
+    "levelRequirement": "44",
+    "statRequirements": "20/13/5/33/9",
+    "goldRequired": "25,000",
+    "itemRequirements": "Wolf Teeth (1), Frog's Leg (1)",
+    "prerequisites": "-",
+    "learningLocation": "Sapphire Stream",
+    "description": "Deals damage to two spaces out infront of you. [Yellow Dugon]"
   },
   {
     "name": "Earth Punch",
@@ -121,169 +154,48 @@
     "description": "[Fire] Hits the target in front of you with fire and applies burn."
   },
   {
-    "name": "Water Punch",
+    "name": "Flurry of Blows",
     "class": "monk",
-    "levelRequirement": "11",
-    "statRequirements": "9/7/5/12/7",
-    "goldRequired": "5,000",
-    "itemRequirements": "Bat's Wing (2)",
-    "prerequisites": "-",
-    "learningLocation": "Sapphire Stream",
-    "description": "[Water] Hits three tiles near your front with water and applies splash."
+    "levelRequirement": "Master",
+    "statRequirements": "80/10/10/100/40",
+    "goldRequired": "250,000",
+    "itemRequirements": "Nunchaku (1)",
+    "prerequisites": "Rapid Punch (100)",
+    "learningLocation": "Master",
+    "description": "Unleash swift strikes to the front and sides, hitting multiple foes in a single motion."
   },
   {
-    "name": "Poison Punch",
+    "name": "High Kick",
     "class": "monk",
-    "levelRequirement": "11",
-    "statRequirements": "6/9/5/11/10",
-    "goldRequired": "5,000",
-    "itemRequirements": "Scorpion's Sting (2)",
+    "levelRequirement": "9",
+    "statRequirements": "7/3/3/9/4",
+    "goldRequired": "1,500",
+    "itemRequirements": "Spider's Silk (1)",
     "prerequisites": "-",
-    "learningLocation": "Bodil at Abel Combat",
-    "description": "Deals minor damage and poisons the enemy in front of you."
-  },
-  {
-    "name": "Double Punch",
-    "class": "monk",
-    "levelRequirement": "20",
-    "statRequirements": "13/3/3/19/9",
-    "goldRequired": "5,000",
-    "itemRequirements": "Bat's Wing (3)",
-    "prerequisites": "Punch (100)",
     "learningLocation": "Abel Combat Skills Master",
-    "description": "A Monk's second basic attack that deals damage to an enemy immediately in front of you."
+    "description": "Kicks the creature in front of you for minor damage."
   },
   {
-    "name": "Roundhouse Kick",
+    "name": "Inspect",
     "class": "monk",
-    "levelRequirement": "33",
-    "statRequirements": "14/6/4/31/15",
-    "goldRequired": "20,000",
-    "itemRequirements": "Hobgoblin's Skull (1), Royal Gold Ring (1)",
-    "prerequisites": "Kick (100)",
-    "learningLocation": "Sapphire Stream",
-    "description": "A strong kick that strikes your front and sides. [Blue Dugon]"
-  },
-  {
-    "name": "Mantis Kick",
-    "class": "monk",
-    "levelRequirement": "41",
-    "statRequirements": "27/7/7/35/11",
-    "goldRequired": "25,000",
-    "itemRequirements": "Hy-Brasyl Earrings (1)",
-    "prerequisites": "High Kick (100)",
-    "learningLocation": "Sapphire Stream",
-    "description": "Kicks the creature in front for massive damage. [Blue Dugon]"
-  },
-  {
-    "name": "Eagle Strike",
-    "class": "monk",
-    "levelRequirement": "44",
-    "statRequirements": "20/13/5/33/9",
-    "goldRequired": "25,000",
-    "itemRequirements": "Wolf Teeth (1), Frog's Leg (1)",
-    "prerequisites": "-",
-    "learningLocation": "Sapphire Stream",
-    "description": "Deals damage to two spaces out infront of you. [Yellow Dugon]"
-  },
-  {
-    "name": "Throw",
-    "class": "monk",
-    "levelRequirement": "50",
-    "statRequirements": "5/9/5/3/3",
-    "goldRequired": "25,000",
+    "levelRequirement": "3",
+    "statRequirements": "3/5/5/3/3",
+    "goldRequired": "2,000",
     "itemRequirements": "-",
     "prerequisites": "-",
-    "learningLocation": "Abel Combat Skills Master",
-    "description": "Allows an aisling to throw an entity away from them."
+    "learningLocation": "Mileth Special Skills Master",
+    "description": "Allows an aisling to study an item's attributes."
   },
   {
-    "name": "Claw Fist",
+    "name": "Kick",
     "class": "monk",
-    "levelRequirement": "50",
-    "statRequirements": "24/14/3/32/18",
-    "goldRequired": "25,000",
-    "itemRequirements": "Mimic's Teeth (2)",
+    "levelRequirement": "3",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
     "prerequisites": "-",
-    "learningLocation": "Sapphire Stream",
-    "description": "Amplifies the damage of your skills. [Yellow Dugon]"
-  },
-  {
-    "name": "Seismic Kick",
-    "class": "monk",
-    "levelRequirement": "71",
-    "statRequirements": "40/7/7/59/20",
-    "goldRequired": "25,000",
-    "itemRequirements": "Succubus's Hair (3)",
-    "prerequisites": "-",
-    "learningLocation": "Sapphire Stream",
-    "description": "[Earth] Kicks the creature in front of you for massive damage and leaves target stunned."
-  },
-  {
-    "name": "Dragon Breath",
-    "class": "monk",
-    "levelRequirement": "71",
-    "statRequirements": "46/9/9/50/20",
-    "goldRequired": "50,000",
-    "itemRequirements": "Faerie's Wing (2), Eagle Talon (1)",
-    "prerequisites": "-",
-    "learningLocation": "Sapphire Stream",
-    "description": "[Fire] Hits three tiles near your front with fire and a chance to apply burn."
-  },
-  {
-    "name": "Tempest Kick",
-    "class": "monk",
-    "levelRequirement": "71",
-    "statRequirements": "27/9/9/53/39",
-    "goldRequired": "25,000",
-    "itemRequirements": "Gremlin's Ear (3)",
-    "prerequisites": "-",
-    "learningLocation": "Sapphire Stream",
-    "description": "[Air] Deals massive damage to the target in front of you with wind and a chance to apply crit."
-  },
-  {
-    "name": "Tsunami Kick",
-    "class": "monk",
-    "levelRequirement": "71",
-    "statRequirements": "29/21/12/49/26",
-    "goldRequired": "25,000",
-    "itemRequirements": "Gremlin's Ear (3)",
-    "prerequisites": "-",
-    "learningLocation": "Sapphire Stream",
-    "description": "[Water] Hits all around you with water and a chance to apply splash."
-  },
-  {
-    "name": "Rapid Punch",
-    "class": "monk",
-    "levelRequirement": "71",
-    "statRequirements": "49/11/11/56/27",
-    "goldRequired": "50,000",
-    "itemRequirements": "Faerie's Wing (3), Eagle Talon (1)",
-    "prerequisites": "Double Punch (100)",
-    "learningLocation": "Abel Combat Skills Master",
-    "description": "A Monk's third basic attack that deals damage to an enemy immediately in front of you."
-  },
-  {
-    "name": "Wolf Fang Fist",
-    "class": "monk",
-    "levelRequirement": "77",
-    "statRequirements": "58/24/11/33/25",
-    "goldRequired": "75,000",
-    "itemRequirements": "Phoenix Claws (2)",
-    "prerequisites": "-",
-    "learningLocation": "Sapphire Stream",
-    "description": "Temporarily paralyzes the enemy in front of you. [Red Dugon]"
-  },
-  {
-    "name": "Phoenix Strike",
-    "class": "monk",
-    "levelRequirement": "88",
-    "statRequirements": "45/14/8/59/29",
-    "goldRequired": "75,000",
-    "itemRequirements": "Gargoyle's Skull (2), Phoenix Claw (1)",
-    "prerequisites": "Eagle Strike (100)",
-    "learningLocation": "Sapphire Stream",
-    "description": "Deals damage to two spaces out in front of you. [Red Dugon]"
+    "learningLocation": "Becoming Monk",
+    "description": "Kicks the creature in front of you for minor damage."
   },
   {
     "name": "Leverage Kick",
@@ -297,15 +209,26 @@
     "description": "Hits all around you at a range of two, increasing damage based on number of targets."
   },
   {
-    "name": "Flurry of Blows",
+    "name": "Look",
     "class": "monk",
-    "levelRequirement": "Master",
-    "statRequirements": "80/10/10/100/40",
-    "goldRequired": "250,000",
-    "itemRequirements": "Nunchaku (1)",
-    "prerequisites": "Rapid Punch (100)",
-    "learningLocation": "Master",
-    "description": "Unleash swift strikes to the front and sides, hitting multiple foes in a single motion."
+    "levelRequirement": "3",
+    "statRequirements": "3/5/5/3/3",
+    "goldRequired": "2,000",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Mileth Special Skills Master",
+    "description": "Allows an aisling to study a map."
+  },
+  {
+    "name": "Mantis Kick",
+    "class": "monk",
+    "levelRequirement": "41",
+    "statRequirements": "27/7/7/35/11",
+    "goldRequired": "25,000",
+    "itemRequirements": "Hy-Brasyl Earrings (1)",
+    "prerequisites": "High Kick (100)",
+    "learningLocation": "Sapphire Stream",
+    "description": "Kicks the creature in front for massive damage. [Blue Dugon]"
   },
   {
     "name": "Molten Strike",
@@ -319,48 +242,59 @@
     "description": "[Fire] Cleaves an area in front of you with fire and a chance to apply burn."
   },
   {
-    "name": "Chaos Fist",
+    "name": "nis",
     "class": "monk",
-    "levelRequirement": "Master (Pure)",
-    "statRequirements": "95/25/3/120/35",
-    "goldRequired": "750,000",
+    "levelRequirement": "3",
+    "statRequirements": "3/5/5/3/3",
+    "goldRequired": "2,000",
     "itemRequirements": "-",
-    "prerequisites": "Claw Fist (100)",
-    "learningLocation": "Sapphire Stream",
-    "description": "Amplifies the damage of your skills. Pure only. [Black Dugon]"
-  },
-  {
-    "name": "Cloudfist",
-    "class": "monk",
-    "levelRequirement": "Master",
-    "statRequirements": "75/25/20/125/40",
-    "goldRequired": "500,000",
-    "itemRequirements": "Gold Beetalic Head (2)",
     "prerequisites": "-",
-    "learningLocation": "Sapphire Stream",
-    "description": "[Air] Cleaves an area in front of you with wind and a chance to apply crit."
+    "learningLocation": "Rucesion Special Skills Master",
+    "description": "Allows an aisling to check on Unora's current time."
   },
   {
-    "name": "Seismic Slam",
+    "name": "Phoenix Strike",
     "class": "monk",
-    "levelRequirement": "Master",
-    "statRequirements": "80/15/10/135/60",
-    "goldRequired": "500,000",
-    "itemRequirements": "Direwolf Lock (5)",
+    "levelRequirement": "88",
+    "statRequirements": "45/14/8/59/29",
+    "goldRequired": "75,000",
+    "itemRequirements": "Gargoyle's Skull (2), Phoenix Claw (1)",
+    "prerequisites": "Eagle Strike (100)",
+    "learningLocation": "Sapphire Stream",
+    "description": "Deals damage to two spaces out in front of you. [Red Dugon]"
+  },
+  {
+    "name": "Poison Punch",
+    "class": "monk",
+    "levelRequirement": "11",
+    "statRequirements": "6/9/5/11/10",
+    "goldRequired": "5,000",
+    "itemRequirements": "Scorpion's Sting (2)",
     "prerequisites": "-",
-    "learningLocation": "Sapphire Stream",
-    "description": "[Earth] Pulls targets from up to 3 in front of you and roots them."
+    "learningLocation": "Bodil at Abel Combat",
+    "description": "Deals minor damage and poisons the enemy in front of you."
   },
   {
-    "name": "Dragon Strike",
+    "name": "Punch",
     "class": "monk",
-    "levelRequirement": "Master (Pure)",
-    "statRequirements": "80/25/20/120/60",
-    "goldRequired": "500,000",
-    "itemRequirements": "Gold Shocker Piece (3)",
-    "prerequisites": "Phoenix Strike (100)",
-    "learningLocation": "Sapphire Stream",
-    "description": "Deals damage to three spaces out infront of you. Pure only. [Black Dugon]"
+    "levelRequirement": "1",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Becoming Monk",
+    "description": "A Monk's basic attack that deals a small amount of damage to an enemy immediately in front of you."
+  },
+  {
+    "name": "Rapid Punch",
+    "class": "monk",
+    "levelRequirement": "71",
+    "statRequirements": "49/11/11/56/27",
+    "goldRequired": "50,000",
+    "itemRequirements": "Faerie's Wing (3), Eagle Talon (1)",
+    "prerequisites": "Double Punch (100)",
+    "learningLocation": "Abel Combat Skills Master",
+    "description": "A Monk's third basic attack that deals damage to an enemy immediately in front of you."
   },
   {
     "name": "Relentless Draw",
@@ -374,37 +308,37 @@
     "description": "Pulls targets to the user from all directions, four spaces. [Black Dugon]"
   },
   {
-    "name": "Wavebreaker",
+    "name": "Roundhouse Kick",
     "class": "monk",
-    "levelRequirement": "Master",
-    "statRequirements": "80/50/50/150/80",
-    "goldRequired": "500,000",
-    "itemRequirements": "Ice Spore Sace (2)",
-    "prerequisites": "-",
+    "levelRequirement": "33",
+    "statRequirements": "14/6/4/31/15",
+    "goldRequired": "20,000",
+    "itemRequirements": "Hobgoblin's Skull (1), Royal Gold Ring (1)",
+    "prerequisites": "Kick (100)",
     "learningLocation": "Sapphire Stream",
-    "description": "[Water] Strike 2 spaces around you with water and a chance to apply splash."
+    "description": "A strong kick that strikes your front and sides. [Blue Dugon]"
   },
   {
-    "name": "Crimson Moon",
+    "name": "Seismic Kick",
     "class": "monk",
-    "levelRequirement": "Master",
-    "statRequirements": "120/25/20/150/100",
-    "goldRequired": "500,000",
-    "itemRequirements": "Blue Shocker Piece (3)",
+    "levelRequirement": "71",
+    "statRequirements": "40/7/7/59/20",
+    "goldRequired": "25,000",
+    "itemRequirements": "Succubus's Hair (3)",
     "prerequisites": "-",
     "learningLocation": "Sapphire Stream",
-    "description": "Deals massive damage to a single target. [Black Dugon]"
+    "description": "[Earth] Kicks the creature in front of you for massive damage and leaves target stunned."
   },
   {
-    "name": "Battlefield Sweep",
+    "name": "Seismic Slam",
     "class": "monk",
-    "levelRequirement": "Master (Pure)",
-    "statRequirements": "150/40/40/215/100",
-    "goldRequired": "750,000",
-    "itemRequirements": "Ruidhtear Toe (3)",
-    "prerequisites": "Relentless Draw (100)",
+    "levelRequirement": "Master",
+    "statRequirements": "80/15/10/135/60",
+    "goldRequired": "500,000",
+    "itemRequirements": "Direwolf Lock (5)",
+    "prerequisites": "-",
     "learningLocation": "Sapphire Stream",
-    "description": "Pulls targets to the user in 6x6 range. Upgrade to Relentless Draw. Pure only. [Black Dugon]"
+    "description": "[Earth] Pulls targets from up to 3 in front of you and roots them."
   },
   {
     "name": "Soulful Touch",
@@ -416,6 +350,72 @@
     "prerequisites": "-",
     "learningLocation": "Tauren",
     "description": "Deals damage all around and siphons health and mana from targets hit."
+  },
+  {
+    "name": "Tempest Kick",
+    "class": "monk",
+    "levelRequirement": "71",
+    "statRequirements": "27/9/9/53/39",
+    "goldRequired": "25,000",
+    "itemRequirements": "Gremlin's Ear (3)",
+    "prerequisites": "-",
+    "learningLocation": "Sapphire Stream",
+    "description": "[Air] Deals massive damage to the target in front of you with wind and a chance to apply crit."
+  },
+  {
+    "name": "Throw",
+    "class": "monk",
+    "levelRequirement": "50",
+    "statRequirements": "5/9/5/3/3",
+    "goldRequired": "25,000",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Abel Combat Skills Master",
+    "description": "Allows an aisling to throw an entity away from them."
+  },
+  {
+    "name": "Tsunami Kick",
+    "class": "monk",
+    "levelRequirement": "71",
+    "statRequirements": "29/21/12/49/26",
+    "goldRequired": "25,000",
+    "itemRequirements": "Gremlin's Ear (3)",
+    "prerequisites": "-",
+    "learningLocation": "Sapphire Stream",
+    "description": "[Water] Hits all around you with water and a chance to apply splash."
+  },
+  {
+    "name": "Water Punch",
+    "class": "monk",
+    "levelRequirement": "11",
+    "statRequirements": "9/7/5/12/7",
+    "goldRequired": "5,000",
+    "itemRequirements": "Bat's Wing (2)",
+    "prerequisites": "-",
+    "learningLocation": "Sapphire Stream",
+    "description": "[Water] Hits three tiles near your front with water and applies splash."
+  },
+  {
+    "name": "Wavebreaker",
+    "class": "monk",
+    "levelRequirement": "Master",
+    "statRequirements": "80/50/50/150/80",
+    "goldRequired": "500,000",
+    "itemRequirements": "Ice Spore Sace (2)",
+    "prerequisites": "-",
+    "learningLocation": "Sapphire Stream",
+    "description": "[Water] Strike 2 spaces around you with water and a chance to apply splash."
+  },
+  {
+    "name": "Wolf Fang Fist",
+    "class": "monk",
+    "levelRequirement": "77",
+    "statRequirements": "58/24/11/33/25",
+    "goldRequired": "75,000",
+    "itemRequirements": "Phoenix Claws (2)",
+    "prerequisites": "-",
+    "learningLocation": "Sapphire Stream",
+    "description": "Temporarily paralyzes the enemy in front of you. [Red Dugon]"
   },
   {
     "name": "Assail",
@@ -484,17 +484,6 @@
     "description": "Allows the priest to summon a pet."
   },
   {
-    "name": "Transfer Blood",
-    "class": "priest",
-    "levelRequirement": "11",
-    "statRequirements": "3/7/12/4/3",
-    "goldRequired": "5,000",
-    "itemRequirements": "Raw Honey (1)",
-    "prerequisites": "-",
-    "learningLocation": "Rucesion Special Skills Master",
-    "description": "Transfers blood from the caster to the target."
-  },
-  {
     "name": "Throw",
     "class": "priest",
     "levelRequirement": "50",
@@ -506,136 +495,15 @@
     "description": "Allows an aisling to throw an entity away from them."
   },
   {
-    "name": "Assail",
-    "class": "rogue",
-    "levelRequirement": "1",
-    "statRequirements": "3/3/3/3/3",
-    "goldRequired": "-",
-    "itemRequirements": "-",
-    "prerequisites": "-",
-    "learningLocation": "Tutorial",
-    "description": "A basic attack that deals a small amount of damage to an enemy immediately in front of you."
-  },
-  {
-    "name": "Assault",
-    "class": "rogue",
-    "levelRequirement": "3",
-    "statRequirements": "3/3/3/3/3",
-    "goldRequired": "1,000",
-    "itemRequirements": "Centipede's Gland (1)",
-    "prerequisites": "-",
-    "learningLocation": "Mileth Special Skills Master",
-    "description": "An assail dealing small amount of damage to an enemy in front of you."
-  },
-  {
-    "name": "Stab",
-    "class": "rogue",
-    "levelRequirement": "3",
-    "statRequirements": "3/3/3/3/3",
-    "goldRequired": "1,000",
-    "itemRequirements": "Viper's Gland (1)",
-    "prerequisites": "-",
-    "learningLocation": "Mileth Special Skills Master",
-    "description": "Deals minor damage to an enemy in front of you."
-  },
-  {
-    "name": "Inspect",
-    "class": "rogue",
-    "levelRequirement": "3",
-    "statRequirements": "3/5/5/3/3",
-    "goldRequired": "2,000",
-    "itemRequirements": "-",
-    "prerequisites": "-",
-    "learningLocation": "Mileth Special Skills Master",
-    "description": "Allows an aisling to study an item's attributes."
-  },
-  {
-    "name": "Look",
-    "class": "rogue",
-    "levelRequirement": "3",
-    "statRequirements": "3/5/5/3/3",
-    "goldRequired": "2,000",
-    "itemRequirements": "-",
-    "prerequisites": "-",
-    "learningLocation": "Mileth Special Skills Master",
-    "description": "Allows an aisling to study a map."
-  },
-  {
-    "name": "nis",
-    "class": "rogue",
-    "levelRequirement": "3",
-    "statRequirements": "3/5/5/3/3",
-    "goldRequired": "2,000",
-    "itemRequirements": "-",
+    "name": "Transfer Blood",
+    "class": "priest",
+    "levelRequirement": "11",
+    "statRequirements": "3/7/12/4/3",
+    "goldRequired": "5,000",
+    "itemRequirements": "Raw Honey (1)",
     "prerequisites": "-",
     "learningLocation": "Rucesion Special Skills Master",
-    "description": "Allows an aisling to check on Unora's current time."
-  },
-  {
-    "name": "Study Creature",
-    "class": "rogue",
-    "levelRequirement": "6",
-    "statRequirements": "3/5/4/3/5",
-    "goldRequired": "1,000",
-    "itemRequirements": "Mantis Eye (1)",
-    "prerequisites": "-",
-    "learningLocation": "Suomi Special Skills Master",
-    "description": "Allows the Rogue to study a creature's attributes."
-  },
-  {
-    "name": "Peek",
-    "class": "rogue",
-    "levelRequirement": "8",
-    "statRequirements": "3/8/5/3/3",
-    "goldRequired": "5,000",
-    "itemRequirements": "-",
-    "prerequisites": "-",
-    "learningLocation": "Rucesion Special Skills Master",
-    "description": "Allows an aisling to look at another's inventory."
-  },
-  {
-    "name": "Throw Smokebomb",
-    "class": "rogue",
-    "levelRequirement": "9",
-    "statRequirements": "5/4/3/3/11",
-    "goldRequired": "2,000",
-    "itemRequirements": "Spider's Silk (1)",
-    "prerequisites": "-",
-    "learningLocation": "Mileth Special Skills Master",
-    "description": "Dalls all enemies within 3 spaces."
-  },
-  {
-    "name": "Throw Surigum",
-    "class": "rogue",
-    "levelRequirement": "16",
-    "statRequirements": "7/3/4/4/15",
-    "goldRequired": "5,000",
-    "itemRequirements": "Centipede's Gland (3)",
-    "prerequisites": "Assault (100)",
-    "learningLocation": "Mileth Special Skills Master",
-    "description": "Deals minor damage to enemies up to four spaces in front of you."
-  },
-  {
-    "name": "Pierce",
-    "class": "rogue",
-    "levelRequirement": "16",
-    "statRequirements": "8/4/4/9/20",
-    "goldRequired": "20,000",
-    "itemRequirements": "Goblin's Skull (2), Royal Gold Ring (1)",
-    "prerequisites": "-",
-    "learningLocation": "Mileth Special Skills Master",
-    "description": "Deals damage two tiles in front of you and adds AC to the target."
-  },
-  {
-    "name": "Sap Needle",
-    "class": "rogue",
-    "levelRequirement": "20",
-    "statRequirements": "6/7/11/5/19",
-    "goldRequired": "10,000",
-    "itemRequirements": "Raw Sapphire (3), Padded Gauntlet (1)",
-    "prerequisites": "-",
-    "learningLocation": "Mileth Special Skills Master",
-    "description": "Steals 10% mana from target. Restore up to 20% mana to group members."
+    "description": "Transfers blood from the caster to the target."
   },
   {
     "name": "Amnesia",
@@ -649,6 +517,39 @@
     "description": "Removes the creature's focus."
   },
   {
+    "name": "Assail",
+    "class": "rogue",
+    "levelRequirement": "1",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Tutorial",
+    "description": "A basic attack that deals a small amount of damage to an enemy immediately in front of you."
+  },
+  {
+    "name": "Assassin Strike",
+    "class": "rogue",
+    "levelRequirement": "Master",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Master",
+    "description": "Deals massive damage to a target based on your vitality. Chance to instantly kill normal monsters."
+  },
+  {
+    "name": "Assault",
+    "class": "rogue",
+    "levelRequirement": "3",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "1,000",
+    "itemRequirements": "Centipede's Gland (1)",
+    "prerequisites": "-",
+    "learningLocation": "Mileth Special Skills Master",
+    "description": "An assail dealing small amount of damage to an enemy in front of you."
+  },
+  {
     "name": "Backstab",
     "class": "rogue",
     "levelRequirement": "35",
@@ -658,61 +559,6 @@
     "prerequisites": "-",
     "learningLocation": "Suomi Special Skills Master",
     "description": "Maneuvers behind a target directly in front of you and stabs them in the back. Replaces Stab."
-  },
-  {
-    "name": "Blitz",
-    "class": "rogue",
-    "levelRequirement": "41",
-    "statRequirements": "28/5/5/8/38",
-    "goldRequired": "10,000",
-    "itemRequirements": "Blossom Dagger (1)",
-    "prerequisites": "Throw Surigum (100)",
-    "learningLocation": "Mileth Special Skills Master",
-    "description": "Second assail that deals damage to enemies four spaces in front of you. Replaces Throw Surigum."
-  },
-  {
-    "name": "Poison Bomb",
-    "class": "rogue",
-    "levelRequirement": "41",
-    "statRequirements": "20/10/10/12/38",
-    "goldRequired": "25,000",
-    "itemRequirements": "Hobgoblin's Skull (2), Moon Dagger (1)",
-    "prerequisites": "-",
-    "learningLocation": "Suomi Special Skills Master",
-    "description": "Allows the rogue to throw a poison bomb that poisons enemies nearby."
-  },
-  {
-    "name": "Throw",
-    "class": "rogue",
-    "levelRequirement": "50",
-    "statRequirements": "5/9/5/3/3",
-    "goldRequired": "25,000",
-    "itemRequirements": "-",
-    "prerequisites": "-",
-    "learningLocation": "Abel Combat Skills Master",
-    "description": "Allows an aisling to throw an entity away from them."
-  },
-  {
-    "name": "Smoke Screen",
-    "class": "rogue",
-    "levelRequirement": "60",
-    "statRequirements": "10/5/5/5/16",
-    "goldRequired": "25,000",
-    "itemRequirements": "Light Shield (1)",
-    "prerequisites": "Throw Smokebomb (100)",
-    "learningLocation": "Rucesion Special Skills Master",
-    "description": "Dalls all enemies within 4 spaces."
-  },
-  {
-    "name": "Stab and Twist",
-    "class": "rogue",
-    "levelRequirement": "60",
-    "statRequirements": "34/11/6/17/51",
-    "goldRequired": "50,000",
-    "itemRequirements": "Chainmail Gauntlet (1), Succubus's Hair (1)",
-    "prerequisites": "-",
-    "learningLocation": "Suomi Special Skills Master",
-    "description": "Deals damage to the target in front of you."
   },
   {
     "name": "Barrage",
@@ -726,48 +572,70 @@
     "description": "Third assail that deals damage to enemies four spaces in front of you."
   },
   {
-    "name": "Trip",
+    "name": "Blitz",
     "class": "rogue",
-    "levelRequirement": "80",
-    "statRequirements": "50/20/15/25/70",
-    "goldRequired": "75,000",
-    "itemRequirements": "Qualgeist Head (2)",
-    "prerequisites": "-",
-    "learningLocation": "Suomi Special Skills Master",
-    "description": "Pushes a monster away from you."
-  },
-  {
-    "name": "Sense",
-    "class": "rogue",
-    "levelRequirement": "90",
-    "statRequirements": "36/11/11/24/76",
-    "goldRequired": "50,000",
-    "itemRequirements": "Gruesomefly's Wing (2)",
-    "prerequisites": "Peek (100)",
-    "learningLocation": "Rucesion Special Skills Master",
-    "description": "Allows the rogue to see another's stats."
-  },
-  {
-    "name": "Skewer",
-    "class": "rogue",
-    "levelRequirement": "90",
-    "statRequirements": "36/11/11/24/76",
-    "goldRequired": "150,000",
-    "itemRequirements": "Gruesomefly's Wing (2), Blood Dagger (1)",
-    "prerequisites": "Pierce (100)",
+    "levelRequirement": "41",
+    "statRequirements": "28/5/5/8/38",
+    "goldRequired": "10,000",
+    "itemRequirements": "Blossom Dagger (1)",
+    "prerequisites": "Throw Surigum (100)",
     "learningLocation": "Mileth Special Skills Master",
-    "description": "Deals great damage three tiles in front of you and increases target AC. Replaces Pierce."
+    "description": "Second assail that deals damage to enemies four spaces in front of you. Replaces Throw Surigum."
   },
   {
-    "name": "Assassin Strike",
+    "name": "Essence Siphon",
     "class": "rogue",
     "levelRequirement": "Master",
-    "statRequirements": "3/3/3/3/3",
-    "goldRequired": "-",
+    "statRequirements": "130/65/75/60/215",
+    "goldRequired": "1,000,000",
+    "itemRequirements": "Porboss Claw (3)",
+    "prerequisites": "Sap Needle (100)",
+    "learningLocation": "Suomi Special Skills Master",
+    "description": "Steals 10% mana from target. Restores up to 20% mana to group members. Deals damage equal to self restored mana."
+  },
+  {
+    "name": "Frost Bomb",
+    "class": "rogue",
+    "levelRequirement": "Master",
+    "statRequirements": "90/35/25/30/135",
+    "goldRequired": "750,000",
+    "itemRequirements": "Ice Elemental Flame (5)",
+    "prerequisites": "-",
+    "learningLocation": "Rucesion Special Skills Master",
+    "description": "Suains all monsters within 4 spaces."
+  },
+  {
+    "name": "Inspect",
+    "class": "rogue",
+    "levelRequirement": "3",
+    "statRequirements": "3/5/5/3/3",
+    "goldRequired": "2,000",
     "itemRequirements": "-",
     "prerequisites": "-",
-    "learningLocation": "Master",
-    "description": "Deals massive damage to a target based on your vitality. Chance to instantly kill normal monsters."
+    "learningLocation": "Mileth Special Skills Master",
+    "description": "Allows an aisling to study an item's attributes."
+  },
+  {
+    "name": "Killer Instinct",
+    "class": "rogue",
+    "levelRequirement": "Master",
+    "statRequirements": "75/60/40/40/120",
+    "goldRequired": "100,000",
+    "itemRequirements": "Grim Succubus's Hair (3)",
+    "prerequisites": "-",
+    "learningLocation": "Suomi Special Skills Master",
+    "description": "Allows the Rogue to study multiple creature's defense."
+  },
+  {
+    "name": "Look",
+    "class": "rogue",
+    "levelRequirement": "3",
+    "statRequirements": "3/5/5/3/3",
+    "goldRequired": "2,000",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Mileth Special Skills Master",
+    "description": "Allows an aisling to study a map."
   },
   {
     "name": "Midnight Slash",
@@ -792,28 +660,6 @@
     "description": "Intimidates an enemy directly in front of you."
   },
   {
-    "name": "Shadow Figure",
-    "class": "rogue",
-    "levelRequirement": "Master (Pure)",
-    "statRequirements": "3/3/3/3/3",
-    "goldRequired": "-",
-    "itemRequirements": "-",
-    "prerequisites": "-",
-    "learningLocation": "Master",
-    "description": "Allows the Rogue to obtain and keep a tactical advantage on an enemy. Pure only. Replaces Backstab."
-  },
-  {
-    "name": "Stab Twice",
-    "class": "rogue",
-    "levelRequirement": "Master",
-    "statRequirements": "50/18/11/28/88",
-    "goldRequired": "100,000",
-    "itemRequirements": "Strap Gauntlet (2)",
-    "prerequisites": "-",
-    "learningLocation": "Suomi Special Skills Master",
-    "description": "Deals moderate damage to the enemy in front of you."
-  },
-  {
     "name": "Nightfall Strike",
     "class": "rogue",
     "levelRequirement": "Master",
@@ -825,37 +671,48 @@
     "description": "Executes an enemy below 20% health. Does not work on bosses."
   },
   {
-    "name": "Frost Bomb",
+    "name": "nis",
     "class": "rogue",
-    "levelRequirement": "Master",
-    "statRequirements": "90/35/25/30/135",
-    "goldRequired": "750,000",
-    "itemRequirements": "Ice Elemental Flame (5)",
+    "levelRequirement": "3",
+    "statRequirements": "3/5/5/3/3",
+    "goldRequired": "2,000",
+    "itemRequirements": "-",
     "prerequisites": "-",
     "learningLocation": "Rucesion Special Skills Master",
-    "description": "Suains all monsters within 4 spaces."
+    "description": "Allows an aisling to check on Unora's current time."
   },
   {
-    "name": "Killer Instinct",
+    "name": "Peek",
     "class": "rogue",
-    "levelRequirement": "Master",
-    "statRequirements": "75/60/40/40/120",
-    "goldRequired": "100,000",
-    "itemRequirements": "Grim Succubus's Hair (3)",
+    "levelRequirement": "8",
+    "statRequirements": "3/8/5/3/3",
+    "goldRequired": "5,000",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Rucesion Special Skills Master",
+    "description": "Allows an aisling to look at another's inventory."
+  },
+  {
+    "name": "Pierce",
+    "class": "rogue",
+    "levelRequirement": "16",
+    "statRequirements": "8/4/4/9/20",
+    "goldRequired": "20,000",
+    "itemRequirements": "Goblin's Skull (2), Royal Gold Ring (1)",
+    "prerequisites": "-",
+    "learningLocation": "Mileth Special Skills Master",
+    "description": "Deals damage two tiles in front of you and adds AC to the target."
+  },
+  {
+    "name": "Poison Bomb",
+    "class": "rogue",
+    "levelRequirement": "41",
+    "statRequirements": "20/10/10/12/38",
+    "goldRequired": "25,000",
+    "itemRequirements": "Hobgoblin's Skull (2), Moon Dagger (1)",
     "prerequisites": "-",
     "learningLocation": "Suomi Special Skills Master",
-    "description": "Allows the Rogue to study multiple creature's defense."
-  },
-  {
-    "name": "Essence Siphon",
-    "class": "rogue",
-    "levelRequirement": "Master",
-    "statRequirements": "130/65/75/60/215",
-    "goldRequired": "1,000,000",
-    "itemRequirements": "Porboss Claw (3)",
-    "prerequisites": "Sap Needle (100)",
-    "learningLocation": "Suomi Special Skills Master",
-    "description": "Steals 10% mana from target. Restores up to 20% mana to group members. Deals damage equal to self restored mana."
+    "description": "Allows the rogue to throw a poison bomb that poisons enemies nearby."
   },
   {
     "name": "Rupture",
@@ -869,6 +726,171 @@
     "description": "Causes the target to bleed. Pure only."
   },
   {
+    "name": "Sap Needle",
+    "class": "rogue",
+    "levelRequirement": "20",
+    "statRequirements": "6/7/11/5/19",
+    "goldRequired": "10,000",
+    "itemRequirements": "Raw Sapphire (3), Padded Gauntlet (1)",
+    "prerequisites": "-",
+    "learningLocation": "Mileth Special Skills Master",
+    "description": "Steals 10% mana from target. Restore up to 20% mana to group members."
+  },
+  {
+    "name": "Sense",
+    "class": "rogue",
+    "levelRequirement": "90",
+    "statRequirements": "36/11/11/24/76",
+    "goldRequired": "50,000",
+    "itemRequirements": "Gruesomefly's Wing (2)",
+    "prerequisites": "Peek (100)",
+    "learningLocation": "Rucesion Special Skills Master",
+    "description": "Allows the rogue to see another's stats."
+  },
+  {
+    "name": "Shadow Figure",
+    "class": "rogue",
+    "levelRequirement": "Master (Pure)",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Master",
+    "description": "Allows the Rogue to obtain and keep a tactical advantage on an enemy. Pure only. Replaces Backstab."
+  },
+  {
+    "name": "Skewer",
+    "class": "rogue",
+    "levelRequirement": "90",
+    "statRequirements": "36/11/11/24/76",
+    "goldRequired": "150,000",
+    "itemRequirements": "Gruesomefly's Wing (2), Blood Dagger (1)",
+    "prerequisites": "Pierce (100)",
+    "learningLocation": "Mileth Special Skills Master",
+    "description": "Deals great damage three tiles in front of you and increases target AC. Replaces Pierce."
+  },
+  {
+    "name": "Smoke Screen",
+    "class": "rogue",
+    "levelRequirement": "60",
+    "statRequirements": "10/5/5/5/16",
+    "goldRequired": "25,000",
+    "itemRequirements": "Light Shield (1)",
+    "prerequisites": "Throw Smokebomb (100)",
+    "learningLocation": "Rucesion Special Skills Master",
+    "description": "Dalls all enemies within 4 spaces."
+  },
+  {
+    "name": "Stab and Twist",
+    "class": "rogue",
+    "levelRequirement": "60",
+    "statRequirements": "34/11/6/17/51",
+    "goldRequired": "50,000",
+    "itemRequirements": "Chainmail Gauntlet (1), Succubus's Hair (1)",
+    "prerequisites": "-",
+    "learningLocation": "Suomi Special Skills Master",
+    "description": "Deals damage to the target in front of you."
+  },
+  {
+    "name": "Stab Twice",
+    "class": "rogue",
+    "levelRequirement": "Master",
+    "statRequirements": "50/18/11/28/88",
+    "goldRequired": "100,000",
+    "itemRequirements": "Strap Gauntlet (2)",
+    "prerequisites": "-",
+    "learningLocation": "Suomi Special Skills Master",
+    "description": "Deals moderate damage to the enemy in front of you."
+  },
+  {
+    "name": "Stab",
+    "class": "rogue",
+    "levelRequirement": "3",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "1,000",
+    "itemRequirements": "Viper's Gland (1)",
+    "prerequisites": "-",
+    "learningLocation": "Mileth Special Skills Master",
+    "description": "Deals minor damage to an enemy in front of you."
+  },
+  {
+    "name": "Study Creature",
+    "class": "rogue",
+    "levelRequirement": "6",
+    "statRequirements": "3/5/4/3/5",
+    "goldRequired": "1,000",
+    "itemRequirements": "Mantis Eye (1)",
+    "prerequisites": "-",
+    "learningLocation": "Suomi Special Skills Master",
+    "description": "Allows the Rogue to study a creature's attributes."
+  },
+  {
+    "name": "Throw Smokebomb",
+    "class": "rogue",
+    "levelRequirement": "9",
+    "statRequirements": "5/4/3/3/11",
+    "goldRequired": "2,000",
+    "itemRequirements": "Spider's Silk (1)",
+    "prerequisites": "-",
+    "learningLocation": "Mileth Special Skills Master",
+    "description": "Dalls all enemies within 3 spaces."
+  },
+  {
+    "name": "Throw Surigum",
+    "class": "rogue",
+    "levelRequirement": "16",
+    "statRequirements": "7/3/4/4/15",
+    "goldRequired": "5,000",
+    "itemRequirements": "Centipede's Gland (3)",
+    "prerequisites": "Assault (100)",
+    "learningLocation": "Mileth Special Skills Master",
+    "description": "Deals minor damage to enemies up to four spaces in front of you."
+  },
+  {
+    "name": "Throw",
+    "class": "rogue",
+    "levelRequirement": "50",
+    "statRequirements": "5/9/5/3/3",
+    "goldRequired": "25,000",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Abel Combat Skills Master",
+    "description": "Allows an aisling to throw an entity away from them."
+  },
+  {
+    "name": "Trip",
+    "class": "rogue",
+    "levelRequirement": "80",
+    "statRequirements": "50/20/15/25/70",
+    "goldRequired": "75,000",
+    "itemRequirements": "Qualgeist Head (2)",
+    "prerequisites": "-",
+    "learningLocation": "Suomi Special Skills Master",
+    "description": "Pushes a monster away from you."
+  },
+  {
+    "name": "Annihilate",
+    "class": "warrior",
+    "levelRequirement": "Master (Pure)",
+    "statRequirements": "150/10/10/80/100",
+    "goldRequired": "-",
+    "itemRequirements": "Black Shocker Piece (5)",
+    "prerequisites": "Execute (100)",
+    "learningLocation": "Nobis House (28,27)",
+    "description": "Can kill weak enemies. Restores health and reduces cooldown on success. Pure only."
+  },
+  {
+    "name": "Ao Beag Suain",
+    "class": "warrior",
+    "levelRequirement": "34",
+    "statRequirements": "31/9/9/25/13",
+    "goldRequired": "10,000",
+    "itemRequirements": "Goblin's Skull (3)",
+    "prerequisites": "-",
+    "learningLocation": "Mileth Special Skills Master",
+    "description": "Removes beag suain, allowing you to move."
+  },
+  {
     "name": "Assail",
     "class": "warrior",
     "levelRequirement": "1",
@@ -880,26 +902,136 @@
     "description": "A basic attack that deals a small amount of damage to an enemy immediately in front of you."
   },
   {
-    "name": "Strike",
+    "name": "Beag Suain",
     "class": "warrior",
-    "levelRequirement": "1",
-    "statRequirements": "3/3/3/3/3",
-    "goldRequired": "-",
-    "itemRequirements": "-",
+    "levelRequirement": "33",
+    "statRequirements": "30/7/7/13/24",
+    "goldRequired": "15,000",
+    "itemRequirements": "Hobgoblin's Skull (3), Reinforced Leather Greaves (1)",
     "prerequisites": "-",
-    "learningLocation": "Becoming Warrior",
-    "description": "Warrior's basic attack."
+    "learningLocation": "Suomi Special Skills Master",
+    "description": "Paralyze an enemy in front of you for a short time."
   },
   {
-    "name": "Slash",
+    "name": "Bull Rush",
     "class": "warrior",
-    "levelRequirement": "3",
+    "levelRequirement": "56",
+    "statRequirements": "55/3/3/23/25",
+    "goldRequired": "50,000",
+    "itemRequirements": "Scimitar (2), Hobgoblin's Skull (5)",
+    "prerequisites": "Sunder (100)",
+    "learningLocation": "Mileth Special Skills Master",
+    "description": "Charges you forward 2 tiles and breaks the armor of the target. Upgrades Sunder."
+  },
+  {
+    "name": "Charge",
+    "class": "warrior",
+    "levelRequirement": "Master",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "250,000",
+    "itemRequirements": "Ruidhtear Toe (1)",
+    "prerequisites": "Bull Rush (100)",
+    "learningLocation": "Master",
+    "description": "Charges you forward 4 tiles and breaks the armor of the target. Replaces Bull Rush."
+  },
+  {
+    "name": "Cleave",
+    "class": "warrior",
+    "levelRequirement": "48",
+    "statRequirements": "50/3/3/20/16",
+    "goldRequired": "50,000",
+    "itemRequirements": "Liver (2), Chainmail Gauntlet (1)",
+    "prerequisites": "Scathe (100)",
+    "learningLocation": "Mileth Special Skills Master",
+    "description": "A strong attack that strikes your front and sides. Replaces Scathe."
+  },
+  {
+    "name": "Clobber",
+    "class": "warrior",
+    "levelRequirement": "11",
+    "statRequirements": "16/3/3/8/4",
+    "goldRequired": "5,000",
+    "itemRequirements": "Wolf Teeth (2), Raw Bronze (5)",
+    "prerequisites": "Strike (100)",
+    "learningLocation": "Mileth Special Skills Master",
+    "description": "Warrior's second basic attack. Replaces Strike."
+  },
+  {
+    "name": "Crasher",
+    "class": "warrior",
+    "levelRequirement": "50",
+    "statRequirements": "50/9/9/28/20",
+    "goldRequired": "150,000",
+    "itemRequirements": "Scimitar (1), Gravel Shield (1)",
+    "prerequisites": "-",
+    "learningLocation": "Suomi Combat Skills Master",
+    "description": "A massive damage attack. Deploy your current health as a frontal strike."
+  },
+  {
+    "name": "Devour",
+    "class": "warrior",
+    "levelRequirement": "Master",
     "statRequirements": "3/3/3/3/3",
     "goldRequired": "-",
     "itemRequirements": "-",
+    "prerequisites": "Cleave (100)",
+    "learningLocation": "Shamensyth",
+    "description": "Cleave shape attack dealing damage and heals you based on your missing health. Replaces Cleave."
+  },
+  {
+    "name": "Execute",
+    "class": "warrior",
+    "levelRequirement": "60",
+    "statRequirements": "44/8/6/25/30",
+    "goldRequired": "150,000",
+    "itemRequirements": "Chainmail Gauntlet (1), Sonor Ring (2)",
     "prerequisites": "-",
-    "learningLocation": "Becoming Warrior",
-    "description": "An attack that strikes your front and increases target AC."
+    "learningLocation": "Suomi Combat Skills Master",
+    "description": "Can kill weak enemies. Restores health and reduces cooldown on success."
+  },
+  {
+    "name": "Flank",
+    "class": "warrior",
+    "levelRequirement": "30",
+    "statRequirements": "30/4/4/15/17",
+    "goldRequired": "25,000",
+    "itemRequirements": "Giant Bat's Wing (2), Hatchet (1)",
+    "prerequisites": "Clobber (100)",
+    "learningLocation": "Suomi Combat Skills Master",
+    "description": "Assail that hits in front and sides. Replaces Clobber."
+  },
+  {
+    "name": "Flurry",
+    "class": "warrior",
+    "levelRequirement": "20",
+    "statRequirements": "25/3/5/8/18",
+    "goldRequired": "5,000",
+    "itemRequirements": "Wolf's Teeth (3), Scorpion's Sting (3)",
+    "prerequisites": "-",
+    "learningLocation": "Mileth Special Skills Master",
+    "description": "The warrior explodes, releasing slashes around them."
+  },
+  {
+    "name": "Ground Shattering",
+    "class": "warrior",
+    "levelRequirement": "Master",
+    "statRequirements": "180/15/15/80/80",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "Ground Stomp (100)",
+    "learningLocation": "Shamensyth",
+    "description": "Paralyze all enemies within 3 spaces."
+  },
+  {
+    "name": "Ground Stomp",
+    "class": "warrior",
+    "levelRequirement": "80",
+    "statRequirements": "77/8/8/27/39",
+    "goldRequired": "150,000",
+    "itemRequirements": "Hobgoblin's Skull (3), Chainmaul Gauntlet (1)",
+    "prerequisites": "-",
+    "learningLocation": "Suomi Special Skills Master",
+    "description": "Paralyze enemies in your front and sides for a short time."
   },
   {
     "name": "Inspect",
@@ -924,6 +1056,17 @@
     "description": "Allows an aisling to study a map."
   },
   {
+    "name": "Mad Soul",
+    "class": "warrior",
+    "levelRequirement": "Master (Pure)",
+    "statRequirements": "145/5/5/85/65",
+    "goldRequired": "500,000",
+    "itemRequirements": "Black Shocker Piece (5)",
+    "prerequisites": "Flurry (100)",
+    "learningLocation": "Nobis House (28,27)",
+    "description": "Surge of raging energy, striking all nearby enemies within a range of 3 with devastating force. Pure only."
+  },
+  {
     "name": "nis",
     "class": "warrior",
     "levelRequirement": "3",
@@ -935,26 +1078,37 @@
     "description": "Allows an aisling to check on Unora's current time."
   },
   {
-    "name": "Wind Blade",
+    "name": "Onslaught",
     "class": "warrior",
-    "levelRequirement": "11",
-    "statRequirements": "10/3/3/5/10",
-    "goldRequired": "3,000",
-    "itemRequirements": "Bat's Wing (1)",
+    "levelRequirement": "Master (Pure)",
+    "statRequirements": "180/40/40/120/140",
+    "goldRequired": "500,000",
+    "itemRequirements": "Losgann Tail (3), Black Shocker Piece (5)",
     "prerequisites": "-",
-    "learningLocation": "Mileth Special Skills Master",
-    "description": "Deals minor damage to 3 tiles in front of you."
+    "learningLocation": "Nobis House (28,27)",
+    "description": "Assail that hits in front and sides. Pure only."
   },
   {
-    "name": "Clobber",
+    "name": "Paralyze Force",
     "class": "warrior",
-    "levelRequirement": "11",
-    "statRequirements": "16/3/3/8/4",
-    "goldRequired": "5,000",
-    "itemRequirements": "Wolf Teeth (2), Raw Bronze (5)",
-    "prerequisites": "Strike (100)",
-    "learningLocation": "Mileth Special Skills Master",
-    "description": "Warrior's second basic attack. Replaces Strike."
+    "levelRequirement": "Master (Pure)",
+    "statRequirements": "180/15/15/80/80",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "Ground Stomp (100)",
+    "learningLocation": "Shamensyth",
+    "description": "Paralyzes all enemies within four spaces. Pure Only."
+  },
+  {
+    "name": "Pulverize",
+    "class": "warrior",
+    "levelRequirement": "71",
+    "statRequirements": "72/3/3/30/23",
+    "goldRequired": "50,000",
+    "itemRequirements": "Succubus's Hair (2), Spiked Greaves (1)",
+    "prerequisites": "Wallop (100)",
+    "learningLocation": "Suomi Combat Skills Master",
+    "description": "Warrior's fourth basic attack. Replaces Wallop."
   },
   {
     "name": "Scathe",
@@ -968,48 +1122,70 @@
     "description": "Hits the front and sides of the user."
   },
   {
-    "name": "Flurry",
+    "name": "Sever",
     "class": "warrior",
-    "levelRequirement": "20",
-    "statRequirements": "25/3/5/8/18",
-    "goldRequired": "5,000",
-    "itemRequirements": "Wolf's Teeth (3), Scorpion's Sting (3)",
-    "prerequisites": "-",
-    "learningLocation": "Mileth Special Skills Master",
-    "description": "The warrior explodes, releasing slashes around them."
+    "levelRequirement": "Master",
+    "statRequirements": "140/8/8/60/50",
+    "goldRequired": "500,000",
+    "itemRequirements": "Losgann Tail (1)",
+    "prerequisites": "Tempest Blade (100)",
+    "learningLocation": "Nobis House (28,27)",
+    "description": "Deals major damage to enemies 4 spaces in front of you. Replaces Tempest Blade."
   },
   {
-    "name": "Flank",
+    "name": "Shockwave",
     "class": "warrior",
-    "levelRequirement": "30",
-    "statRequirements": "30/4/4/15/17",
-    "goldRequired": "25,000",
-    "itemRequirements": "Giant Bat's Wing (2), Hatchet (1)",
-    "prerequisites": "Clobber (100)",
-    "learningLocation": "Suomi Combat Skills Master",
-    "description": "Assail that hits in front and sides. Replaces Clobber."
+    "levelRequirement": "Master",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Master Dungeon",
+    "description": "Deals major damage to enemies in front of you."
   },
   {
-    "name": "Beag Suain",
+    "name": "Slash",
     "class": "warrior",
-    "levelRequirement": "33",
-    "statRequirements": "30/7/7/13/24",
-    "goldRequired": "15,000",
-    "itemRequirements": "Hobgoblin's Skull (3), Reinforced Leather Greaves (1)",
+    "levelRequirement": "3",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
     "prerequisites": "-",
-    "learningLocation": "Suomi Special Skills Master",
-    "description": "Paralyze an enemy in front of you for a short time."
+    "learningLocation": "Becoming Warrior",
+    "description": "An attack that strikes your front and increases target AC."
   },
   {
-    "name": "Ao Beag Suain",
+    "name": "Slaughter",
     "class": "warrior",
-    "levelRequirement": "34",
-    "statRequirements": "31/9/9/25/13",
-    "goldRequired": "10,000",
-    "itemRequirements": "Goblin's Skull (3)",
+    "levelRequirement": "Master",
+    "statRequirements": "215/50/50/150/180",
+    "goldRequired": "500,000",
+    "itemRequirements": "Ice Skeleton Skull (3), Red Shocker Piece (5)",
     "prerequisites": "-",
-    "learningLocation": "Mileth Special Skills Master",
-    "description": "Removes beag suain, allowing you to move."
+    "learningLocation": "Nobis House (28,27)",
+    "description": "Grand Master Basic attack that hits your all around. Replaces Thrash."
+  },
+  {
+    "name": "Sneak Attack",
+    "class": "warrior",
+    "levelRequirement": "Master (Pure)",
+    "statRequirements": "150/25/25/95/100",
+    "goldRequired": "250,000",
+    "itemRequirements": "Blue Shocker Piece (2)",
+    "prerequisites": "-",
+    "learningLocation": "Nobis House (28,27)",
+    "description": "Gives the warrior a surprise attack. Pure only."
+  },
+  {
+    "name": "Strike",
+    "class": "warrior",
+    "levelRequirement": "1",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Becoming Warrior",
+    "description": "Warrior's basic attack."
   },
   {
     "name": "Sunder",
@@ -1023,26 +1199,26 @@
     "description": "A strong attack that strikes your front and increases target AC. Replaces Slash."
   },
   {
-    "name": "Wallop",
+    "name": "Tempest Blade",
     "class": "warrior",
-    "levelRequirement": "41",
-    "statRequirements": "40/3/3/22/16",
-    "goldRequired": "25,000",
-    "itemRequirements": "Hobgoblin's Skull (2), Hy-Brasyl Earrings (1)",
-    "prerequisites": "Flank (100)",
-    "learningLocation": "Suomi Combat Skills Master",
-    "description": "Warrior's third basic attack. Replaces Flank."
+    "levelRequirement": "60",
+    "statRequirements": "58/3/3/22/35",
+    "goldRequired": "150,000",
+    "itemRequirements": "Rock Cobbler's Scale (2), Sonor Ring (1)",
+    "prerequisites": "Wind Blade (100)",
+    "learningLocation": "Mileth Special Skills Master",
+    "description": "Deals damage 3 tiles in front of you. Replaces Windblade."
   },
   {
-    "name": "Cleave",
+    "name": "Thrash",
     "class": "warrior",
-    "levelRequirement": "48",
-    "statRequirements": "50/3/3/20/16",
-    "goldRequired": "50,000",
-    "itemRequirements": "Liver (2), Chainmail Gauntlet (1)",
-    "prerequisites": "Scathe (100)",
-    "learningLocation": "Mileth Special Skills Master",
-    "description": "A strong attack that strikes your front and sides. Replaces Scathe."
+    "levelRequirement": "Master",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "Pulverize (100)",
+    "learningLocation": "Master",
+    "description": "Master Warrior's basic attack. Replaces Pulverize."
   },
   {
     "name": "Throw",
@@ -1067,202 +1243,26 @@
     "description": "Warrior's Two Handed Attack."
   },
   {
-    "name": "Crasher",
+    "name": "Wallop",
     "class": "warrior",
-    "levelRequirement": "50",
-    "statRequirements": "50/9/9/28/20",
-    "goldRequired": "150,000",
-    "itemRequirements": "Scimitar (1), Gravel Shield (1)",
-    "prerequisites": "-",
+    "levelRequirement": "41",
+    "statRequirements": "40/3/3/22/16",
+    "goldRequired": "25,000",
+    "itemRequirements": "Hobgoblin's Skull (2), Hy-Brasyl Earrings (1)",
+    "prerequisites": "Flank (100)",
     "learningLocation": "Suomi Combat Skills Master",
-    "description": "A massive damage attack. Deploy your current health as a frontal strike."
+    "description": "Warrior's third basic attack. Replaces Flank."
   },
   {
-    "name": "Bull Rush",
+    "name": "Wind Blade",
     "class": "warrior",
-    "levelRequirement": "56",
-    "statRequirements": "55/3/3/23/25",
-    "goldRequired": "50,000",
-    "itemRequirements": "Scimitar (2), Hobgoblin's Skull (5)",
-    "prerequisites": "Sunder (100)",
+    "levelRequirement": "11",
+    "statRequirements": "10/3/3/5/10",
+    "goldRequired": "3,000",
+    "itemRequirements": "Bat's Wing (1)",
+    "prerequisites": "-",
     "learningLocation": "Mileth Special Skills Master",
-    "description": "Charges you forward 2 tiles and breaks the armor of the target. Upgrades Sunder."
-  },
-  {
-    "name": "Execute",
-    "class": "warrior",
-    "levelRequirement": "60",
-    "statRequirements": "44/8/6/25/30",
-    "goldRequired": "150,000",
-    "itemRequirements": "Chainmail Gauntlet (1), Sonor Ring (2)",
-    "prerequisites": "-",
-    "learningLocation": "Suomi Combat Skills Master",
-    "description": "Can kill weak enemies. Restores health and reduces cooldown on success."
-  },
-  {
-    "name": "Tempest Blade",
-    "class": "warrior",
-    "levelRequirement": "60",
-    "statRequirements": "58/3/3/22/35",
-    "goldRequired": "150,000",
-    "itemRequirements": "Rock Cobbler's Scale (2), Sonor Ring (1)",
-    "prerequisites": "Wind Blade (100)",
-    "learningLocation": "Mileth Special Skills Master",
-    "description": "Deals damage 3 tiles in front of you. Replaces Windblade."
-  },
-  {
-    "name": "Pulverize",
-    "class": "warrior",
-    "levelRequirement": "71",
-    "statRequirements": "72/3/3/30/23",
-    "goldRequired": "50,000",
-    "itemRequirements": "Succubus's Hair (2), Spiked Greaves (1)",
-    "prerequisites": "Wallop (100)",
-    "learningLocation": "Suomi Combat Skills Master",
-    "description": "Warrior's fourth basic attack. Replaces Wallop."
-  },
-  {
-    "name": "Ground Stomp",
-    "class": "warrior",
-    "levelRequirement": "80",
-    "statRequirements": "77/8/8/27/39",
-    "goldRequired": "150,000",
-    "itemRequirements": "Hobgoblin's Skull (3), Chainmaul Gauntlet (1)",
-    "prerequisites": "-",
-    "learningLocation": "Suomi Special Skills Master",
-    "description": "Paralyze enemies in your front and sides for a short time."
-  },
-  {
-    "name": "Charge",
-    "class": "warrior",
-    "levelRequirement": "Master",
-    "statRequirements": "3/3/3/3/3",
-    "goldRequired": "250,000",
-    "itemRequirements": "Ruidhtear Toe (1)",
-    "prerequisites": "Bull Rush (100)",
-    "learningLocation": "Master",
-    "description": "Charges you forward 4 tiles and breaks the armor of the target. Replaces Bull Rush."
-  },
-  {
-    "name": "Shockwave",
-    "class": "warrior",
-    "levelRequirement": "Master",
-    "statRequirements": "3/3/3/3/3",
-    "goldRequired": "-",
-    "itemRequirements": "-",
-    "prerequisites": "-",
-    "learningLocation": "Master Dungeon",
-    "description": "Deals major damage to enemies in front of you."
-  },
-  {
-    "name": "Thrash",
-    "class": "warrior",
-    "levelRequirement": "Master",
-    "statRequirements": "3/3/3/3/3",
-    "goldRequired": "-",
-    "itemRequirements": "-",
-    "prerequisites": "Pulverize (100)",
-    "learningLocation": "Master",
-    "description": "Master Warrior's basic attack. Replaces Pulverize."
-  },
-  {
-    "name": "Sever",
-    "class": "warrior",
-    "levelRequirement": "Master",
-    "statRequirements": "140/8/8/60/50",
-    "goldRequired": "500,000",
-    "itemRequirements": "Losgann Tail (1)",
-    "prerequisites": "Tempest Blade (100)",
-    "learningLocation": "Nobis House (28,27)",
-    "description": "Deals major damage to enemies 4 spaces in front of you. Replaces Tempest Blade."
-  },
-  {
-    "name": "Mad Soul",
-    "class": "warrior",
-    "levelRequirement": "Master (Pure)",
-    "statRequirements": "145/5/5/85/65",
-    "goldRequired": "500,000",
-    "itemRequirements": "Black Shocker Piece (5)",
-    "prerequisites": "Flurry (100)",
-    "learningLocation": "Nobis House (28,27)",
-    "description": "Surge of raging energy, striking all nearby enemies within a range of 3 with devastating force. Pure only."
-  },
-  {
-    "name": "Annihilate",
-    "class": "warrior",
-    "levelRequirement": "Master (Pure)",
-    "statRequirements": "150/10/10/80/100",
-    "goldRequired": "-",
-    "itemRequirements": "Black Shocker Piece (5)",
-    "prerequisites": "Execute (100)",
-    "learningLocation": "Nobis House (28,27)",
-    "description": "Can kill weak enemies. Restores health and reduces cooldown on success. Pure only."
-  },
-  {
-    "name": "Sneak Attack",
-    "class": "warrior",
-    "levelRequirement": "Master (Pure)",
-    "statRequirements": "150/25/25/95/100",
-    "goldRequired": "250,000",
-    "itemRequirements": "Blue Shocker Piece (2)",
-    "prerequisites": "-",
-    "learningLocation": "Nobis House (28,27)",
-    "description": "Gives the warrior a surprise attack. Pure only."
-  },
-  {
-    "name": "Onslaught",
-    "class": "warrior",
-    "levelRequirement": "Master (Pure)",
-    "statRequirements": "180/40/40/120/140",
-    "goldRequired": "500,000",
-    "itemRequirements": "Losgann Tail (3), Black Shocker Piece (5)",
-    "prerequisites": "-",
-    "learningLocation": "Nobis House (28,27)",
-    "description": "Assail that hits in front and sides. Pure only."
-  },
-  {
-    "name": "Slaughter",
-    "class": "warrior",
-    "levelRequirement": "Master",
-    "statRequirements": "215/50/50/150/180",
-    "goldRequired": "500,000",
-    "itemRequirements": "Ice Skeleton Skull (3), Red Shocker Piece (5)",
-    "prerequisites": "-",
-    "learningLocation": "Nobis House (28,27)",
-    "description": "Grand Master Basic attack that hits your all around. Replaces Thrash."
-  },
-  {
-    "name": "Devour",
-    "class": "warrior",
-    "levelRequirement": "Master",
-    "statRequirements": "3/3/3/3/3",
-    "goldRequired": "-",
-    "itemRequirements": "-",
-    "prerequisites": "Cleave (100)",
-    "learningLocation": "Shamensyth",
-    "description": "Cleave shape attack dealing damage and heals you based on your missing health. Replaces Cleave."
-  },
-  {
-    "name": "Ground Shattering",
-    "class": "warrior",
-    "levelRequirement": "Master",
-    "statRequirements": "180/15/15/80/80",
-    "goldRequired": "-",
-    "itemRequirements": "-",
-    "prerequisites": "Ground Stomp (100)",
-    "learningLocation": "Shamensyth",
-    "description": "Paralyze all enemies within 3 spaces."
-  },
-  {
-    "name": "Paralyze Force",
-    "class": "warrior",
-    "levelRequirement": "Master (Pure)",
-    "statRequirements": "180/15/15/80/80",
-    "goldRequired": "-",
-    "itemRequirements": "-",
-    "prerequisites": "Ground Stomp (100)",
-    "learningLocation": "Shamensyth",
-    "description": "Paralyzes all enemies within four spaces. Pure Only."
+    "description": "Deals minor damage to 3 tiles in front of you."
   },
   {
     "name": "Assail",

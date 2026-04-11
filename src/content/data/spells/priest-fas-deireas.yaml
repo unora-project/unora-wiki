@@ -1,0 +1,10 @@
+name: "fas deireas"
+class: "priest"
+levelRequirement: "8"
+statRequirements: "3/6/10/3/3"
+goldRequired: "1,000"
+itemRequirements: "Bee's Sting (1)"
+prerequisites: "-"
+learningLocation: "Suomi Priestess"
+description: >-
+  Enhances the target's attack damage by 6, boosting their offensive prowess and increasing the amount of damage they deal.

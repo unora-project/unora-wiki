@@ -1,0 +1,10 @@
+name: "Self Revive"
+class: "priest"
+levelRequirement: "41"
+statRequirements: "3/22/40/18/3"
+goldRequired: "25,000"
+itemRequirements: "Holy Kronos (1)"
+prerequisites: "Revive (100)"
+learningLocation: "Piet Priestess"
+description: >-
+  Empowers the Priest with the ability to resurrect themselves, granting them the means to overcome death.

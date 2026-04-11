@@ -1,0 +1,10 @@
+name: "Flurry of Blows"
+class: "monk"
+levelRequirement: "Master"
+statRequirements: "80/10/10/100/40"
+goldRequired: "250,000"
+itemRequirements: "Nunchaku (1)"
+prerequisites: "Rapid Punch (100)"
+learningLocation: "Master"
+description: >-
+  Unleash swift strikes to the front and sides, hitting multiple foes in a single motion.

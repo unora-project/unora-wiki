@@ -1,0 +1,10 @@
+name: "Wrath"
+class: "warrior"
+levelRequirement: "11"
+statRequirements: "5/3/5/5/5"
+goldRequired: "5,000"
+itemRequirements: "Spider Silk (3)"
+prerequisites: "-"
+learningLocation: "Mileth Special Skills Master"
+description: >-
+  You enter a violent frenzy, flailing in all directions to repeatedly strike nearby foes.

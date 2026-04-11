@@ -1,0 +1,10 @@
+name: "Double Punch"
+class: "monk"
+levelRequirement: "20"
+statRequirements: "13/3/3/19/9"
+goldRequired: "5,000"
+itemRequirements: "Bat's Wing (3)"
+prerequisites: "Punch (100)"
+learningLocation: "Abel Combat Skills Master"
+description: >-
+  A Monk's second basic attack that deals damage to an enemy immediately in front of you.

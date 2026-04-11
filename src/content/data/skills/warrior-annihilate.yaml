@@ -1,0 +1,10 @@
+name: "Annihilate"
+class: "warrior"
+levelRequirement: "Master (Pure)"
+statRequirements: "150/10/10/80/100"
+goldRequired: "-"
+itemRequirements: "Black Shocker Piece (5)"
+prerequisites: "Execute (100)"
+learningLocation: "Nobis House (28,27)"
+description: >-
+  Can kill weak enemies. Restores health and reduces cooldown on success. Pure only.

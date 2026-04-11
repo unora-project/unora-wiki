@@ -1,0 +1,10 @@
+name: "Flame Stance"
+class: "monk"
+levelRequirement: "Master"
+statRequirements: "180/25/30/110/50"
+goldRequired: "500,000"
+itemRequirements: "Ice Elemental Flame (3)"
+prerequisites: "Smoke Stance (100)"
+learningLocation: "Sapphire Stream"
+description: >-
+  [Fire] You reserve 20% health to gain damage based on the amount reserved. Upgrades Smoke Stance.

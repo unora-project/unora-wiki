@@ -1,0 +1,10 @@
+name: "Assassin Strike"
+class: "rogue"
+levelRequirement: "Master"
+statRequirements: "3/3/3/3/3"
+goldRequired: "-"
+itemRequirements: "-"
+prerequisites: "-"
+learningLocation: "Master"
+description: >-
+  Deals massive damage to a target based on your vitality. Chance to instantly kill normal monsters.

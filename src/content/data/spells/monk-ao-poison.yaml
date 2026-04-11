@@ -1,0 +1,10 @@
+name: "ao poison"
+class: "monk"
+levelRequirement: "21"
+statRequirements: "3/8/9/15/3"
+goldRequired: "3,000"
+itemRequirements: "Apple (3), Spider's Eye (2)"
+prerequisites: "-"
+learningLocation: "Mileth Special Spells"
+description: >-
+  Neutralize the poison afflicting the target, cleansing their body and restoring them to a healthy state.

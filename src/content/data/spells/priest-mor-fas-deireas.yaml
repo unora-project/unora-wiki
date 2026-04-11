@@ -1,0 +1,10 @@
+name: "mor fas deireas"
+class: "priest"
+levelRequirement: "50"
+statRequirements: "10/26/40/8/8"
+goldRequired: "25,000"
+itemRequirements: "Anemone Antenna (1)"
+prerequisites: "fas deireas (100)"
+learningLocation: "Suomi Priestess"
+description: >-
+  Enhances the target's attack damage by 12, boosting their offensive prowess and increasing the amount of damage they deal.

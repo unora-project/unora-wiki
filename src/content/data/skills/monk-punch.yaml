@@ -1,0 +1,10 @@
+name: "Punch"
+class: "monk"
+levelRequirement: "1"
+statRequirements: "3/3/3/3/3"
+goldRequired: "-"
+itemRequirements: "-"
+prerequisites: "-"
+learningLocation: "Becoming Monk"
+description: >-
+  A Monk's basic attack that deals a small amount of damage to an enemy immediately in front of you.

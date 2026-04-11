@@ -1,0 +1,10 @@
+name: "ao ard cradh"
+class: "priest"
+levelRequirement: "81"
+statRequirements: "3/48/78/6/3"
+goldRequired: "100,000"
+itemRequirements: "Enchanted Earrings (1), Ialtag's Eye (2)"
+prerequisites: "ao mor cradh (100)"
+learningLocation: "Piet Priestess"
+description: >-
+  Banishes the relentless ard cradh curse from the target, freeing them from its relentless grip.

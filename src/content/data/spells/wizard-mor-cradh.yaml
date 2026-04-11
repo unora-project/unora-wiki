@@ -1,0 +1,10 @@
+name: "Mor Cradh"
+class: "wizard"
+levelRequirement: "60"
+statRequirements: "5/75/38/5/5"
+goldRequired: "50,000"
+itemRequirements: "Marauder's Spine (2), Ialtag's Eye (1)"
+prerequisites: "Cradh (100)"
+learningLocation: "Suomi Dark Magic Master"
+description: >-
+  Curses the enemy, increasing their armor class by 35 and reducing their magic resistance by 20%.

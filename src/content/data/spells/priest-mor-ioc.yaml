@@ -1,0 +1,10 @@
+name: "mor ioc"
+class: "priest"
+levelRequirement: "41"
+statRequirements: "3/16/38/3/3"
+goldRequired: "15,000"
+itemRequirements: "Mythril Earrings (1)"
+prerequisites: "ioc (100)"
+learningLocation: "Piet Priestess"
+description: >-
+  Restores a generous amount of health to the target, greatly bolstering their well-being.

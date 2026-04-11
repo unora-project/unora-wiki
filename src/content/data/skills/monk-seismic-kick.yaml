@@ -1,0 +1,10 @@
+name: "Seismic Kick"
+class: "monk"
+levelRequirement: "71"
+statRequirements: "40/7/7/59/20"
+goldRequired: "25,000"
+itemRequirements: "Succubus's Hair (3)"
+prerequisites: "-"
+learningLocation: "Sapphire Stream"
+description: >-
+  [Earth] Kicks the creature in front of you for massive damage and leaves target stunned.

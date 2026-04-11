@@ -1,0 +1,10 @@
+name: "Rapid Punch"
+class: "monk"
+levelRequirement: "71"
+statRequirements: "49/11/11/56/27"
+goldRequired: "50,000"
+itemRequirements: "Faerie's Wing (3), Eagle Talon (1)"
+prerequisites: "Double Punch (100)"
+learningLocation: "Abel Combat Skills Master"
+description: >-
+  A Monk's third basic attack that deals damage to an enemy immediately in front of you.

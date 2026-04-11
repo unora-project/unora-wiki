@@ -1,0 +1,10 @@
+name: "Motivate"
+class: "priest"
+levelRequirement: "30"
+statRequirements: "5/20/30/8/6"
+goldRequired: "15,000"
+itemRequirements: "Raw Heartstone (2)"
+prerequisites: "-"
+learningLocation: "Suomi Priestess"
+description: >-
+  Accelerates the target's attack speed, allowing them to assail more rapidly. Lasts for 2 minutes.

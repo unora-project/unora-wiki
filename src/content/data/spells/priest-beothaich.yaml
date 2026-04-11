@@ -1,0 +1,10 @@
+name: "beothaich"
+class: "priest"
+levelRequirement: "3"
+statRequirements: "3/3/5/3/3"
+goldRequired: "1,000"
+itemRequirements: "-"
+prerequisites: "-"
+learningLocation: "Mileth Special Spells"
+description: >-
+  Revives the targeted ghost, granting them a second chance, although the spell has a lengthy cooldown period before it can be used again.

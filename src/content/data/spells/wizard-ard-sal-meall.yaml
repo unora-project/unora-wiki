@@ -1,0 +1,10 @@
+name: "Ard Sal Meall"
+class: "wizard"
+levelRequirement: "Master"
+statRequirements: "15/145/95/10/20"
+goldRequired: "500,000"
+itemRequirements: "Ice Elemental Flame (3)"
+prerequisites: "Ard Sal (100), Mor Sal Meall (100)"
+learningLocation: "Suomi Dark Magic Master"
+description: >-
+  Attacks the enemy and surrounding enemies with strong water and splashse. Ard Sal and Mor Sal Meall upgrade.

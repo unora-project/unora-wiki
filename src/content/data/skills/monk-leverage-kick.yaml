@@ -1,0 +1,10 @@
+name: "Leverage Kick"
+class: "monk"
+levelRequirement: "Master"
+statRequirements: "3/3/3/3/3"
+goldRequired: "-"
+itemRequirements: "-"
+prerequisites: "-"
+learningLocation: "Master Dungeon"
+description: >-
+  Hits all around you at a range of two, increasing damage based on number of targets.

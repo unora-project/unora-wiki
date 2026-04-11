@@ -1,0 +1,10 @@
+name: "Blitz"
+class: "rogue"
+levelRequirement: "41"
+statRequirements: "28/5/5/8/38"
+goldRequired: "10,000"
+itemRequirements: "Blossom Dagger (1)"
+prerequisites: "Throw Surigum (100)"
+learningLocation: "Mileth Special Skills Master"
+description: >-
+  Second assail that deals damage to enemies four spaces in front of you. Replaces Throw Surigum.

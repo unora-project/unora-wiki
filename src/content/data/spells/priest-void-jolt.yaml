@@ -1,0 +1,10 @@
+name: "Void Jolt"
+class: "priest"
+levelRequirement: "Master (Dark)"
+statRequirements: "3/3/3/3/3"
+goldRequired: "-"
+itemRequirements: "-"
+prerequisites: "Zap (100)"
+learningLocation: "Becoming Dark Priest"
+description: >-
+  Unleashes a non-elemental attack. The effectiveness of the attack is directly tied to the amount of mana available. (Dark Priest only)

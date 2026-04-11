@@ -254,174 +254,112 @@ collections:
         fields:
           - { name: body, label: Town Names (YAML key-value pairs), widget: code, default_language: yaml }
 
-  # ─── Game Data (JSON) ────────────────────────────────────────────────────
-
-  - name: equipment
-    label: Equipment
-    files:
-      - name: all
-        label: All Equipment
-        file: src/data/equipment/all.json
-        fields:
-          - name: items
-            label: Equipment
-            widget: list
-            fields:
-              - { name: name, label: Name, widget: string }
-              - { name: location, label: Location, widget: string }
-              - { name: level, label: Level, widget: number }
-              - { name: weight, label: Weight, widget: number }
-              - name: category
-                label: Category
-                widget: select
-                options: [weapon, armor, helmet, accessory, shield, belt, gauntlet, greaves, boots, overcoat, overhelmet]
-              - { name: class, label: Class, widget: string }
-              - { name: gender, label: Gender, widget: string, required: false }
-              - name: stats
-                label: Stats
-                widget: object
-                fields:
-                  - { name: hp, label: HP, widget: number, required: false }
-                  - { name: mp, label: MP, widget: number, required: false }
-                  - { name: ac, label: AC, widget: number, required: false }
-                  - { name: mr, label: MR, widget: number, required: false }
-                  - { name: str, label: STR, widget: number, required: false }
-                  - { name: int, label: INT, widget: number, required: false }
-                  - { name: wis, label: WIS, widget: number, required: false }
-                  - { name: con, label: CON, widget: number, required: false }
-                  - { name: dex, label: DEX, widget: number, required: false }
-                  - { name: dmg, label: DMG, widget: number, required: false }
-                  - { name: hit, label: HIT, widget: number, required: false }
-              - name: percentages
-                label: Percentages
-                widget: object
-                fields:
-                  - { name: attackSpeed, label: Attack Speed %, widget: number, required: false }
-                  - { name: skillDamage, label: Skill Damage, widget: number, required: false }
-                  - { name: skillDamagePercent, label: Skill Damage %, widget: number, required: false }
-                  - { name: spellDamage, label: Spell Damage, widget: number, required: false }
-                  - { name: spellDamagePercent, label: Spell Damage %, widget: number, required: false }
-                  - { name: flatHealBonus, label: Flat Heal Bonus, widget: number, required: false }
-                  - { name: healBonusPercent, label: Heal Bonus %, widget: number, required: false }
-                  - { name: cooldownReduction, label: Cooldown Reduction %, widget: number, required: false }
-
-  - name: skills
-    label: Skills
-    files:
-      - name: all-skills
-        label: All Skills
-        file: src/data/classes/skills.json
-        fields:
-          - name: items
-            label: Skills
-            widget: list
-            fields:
-              - { name: name, label: Name, widget: string }
-              - { name: class, label: Class, widget: string }
-              - { name: levelRequirement, label: Level Requirement, widget: string }
-              - { name: statRequirements, label: Stat Requirements, widget: string }
-              - { name: goldRequired, label: Gold Required, widget: string }
-              - { name: itemRequirements, label: Item Requirements, widget: string }
-              - { name: prerequisites, label: Prerequisites, widget: string }
-              - { name: learningLocation, label: Learning Location, widget: string }
-              - { name: description, label: Description, widget: text }
-
-  - name: spells
-    label: Spells
-    files:
-      - name: all-spells
-        label: All Spells
-        file: src/data/classes/spells.json
-        fields:
-          - name: items
-            label: Spells
-            widget: list
-            fields:
-              - { name: name, label: Name, widget: string }
-              - { name: class, label: Class, widget: string }
-              - { name: levelRequirement, label: Level Requirement, widget: string }
-              - { name: statRequirements, label: Stat Requirements, widget: string }
-              - { name: goldRequired, label: Gold Required, widget: string }
-              - { name: itemRequirements, label: Item Requirements, widget: string }
-              - { name: prerequisites, label: Prerequisites, widget: string }
-              - { name: learningLocation, label: Learning Location, widget: string }
-              - { name: description, label: Description, widget: text }
+  # ─── Game Data (YAML folder collections) ─────────────────────────────────
+  # Each entry is its own YAML file, editable via the CMS.
+  # The build script merges them into JSON for the React app.
 
   - name: bosses
     label: Bosses
-    files:
-      - name: all-bosses
-        label: All Bosses
-        file: src/data/hunting/bosses.json
-        fields:
-          - name: items
-            label: Bosses
-            widget: list
-            fields:
-              - { name: boss, label: Boss Name, widget: string }
-              - { name: level, label: Level, widget: string }
-              - { name: location, label: Location, widget: string }
-              - { name: locationSlug, label: Location Slug, widget: string }
-              - { name: drops, label: Drops, widget: text }
+    label_singular: Boss
+    folder: src/content/data/bosses
+    create: true
+    extension: yaml
+    format: yaml
+    slug: "{{boss}}"
+    fields:
+      - { name: boss, label: Boss Name, widget: string }
+      - { name: level, label: Level, widget: string }
+      - { name: location, label: Location, widget: string }
+      - { name: locationSlug, label: Location Slug, widget: string }
+      - { name: drops, label: Drops, widget: text }
 
   - name: blessings
     label: Blessings
-    files:
-      - name: all-blessings
-        label: All Blessings
-        file: src/data/religion/blessings.json
-        fields:
-          - name: items
-            label: Blessings
-            widget: list
-            fields:
-              - { name: goddess, label: Goddess, widget: string }
-              - { name: blessing, label: Blessing, widget: string }
-              - { name: cost, label: Cost, widget: string }
-              - { name: description, label: Description, widget: text }
+    label_singular: Blessing
+    folder: src/content/data/blessings
+    create: true
+    extension: yaml
+    format: yaml
+    slug: "{{goddess}}-{{blessing}}"
+    fields:
+      - { name: goddess, label: Goddess, widget: string }
+      - { name: blessing, label: Blessing, widget: string }
+      - { name: cost, label: Cost, widget: string }
+      - { name: description, label: Description, widget: text }
 
   - name: npcs
     label: NPCs
-    files:
-      - name: all-npcs
-        label: All NPCs
-        file: src/data/towns/npcs.json
-        fields:
-          - name: items
-            label: NPCs
-            widget: list
-            fields:
-              - { name: town, label: Town, widget: string }
-              - { name: name, label: Name, widget: string }
-              - { name: type, label: Type/Role, widget: string }
-              - { name: coordinates, label: Coordinates, widget: string }
+    label_singular: NPC
+    folder: src/content/data/npcs
+    create: true
+    extension: yaml
+    format: yaml
+    slug: "{{town}}-{{name}}"
+    fields:
+      - { name: town, label: Town, widget: string }
+      - { name: name, label: Name, widget: string }
+      - { name: type, label: Type/Role, widget: string }
+      - { name: coordinates, label: Coordinates, widget: string }
 
   - name: mounts
     label: Mounts
-    files:
-      - name: all-mounts
-        label: All Mounts
-        file: src/data/mounts/mounts.json
-        fields:
-          - name: items
-            label: Mounts
-            widget: list
-            fields:
-              - { name: name, label: Name, widget: string }
-              - { name: speed, label: Speed, widget: string }
-              - { name: obtained, label: How to Obtain, widget: text }
+    label_singular: Mount
+    folder: src/content/data/mounts
+    create: true
+    extension: yaml
+    format: yaml
+    slug: "{{name}}"
+    fields:
+      - { name: name, label: Name, widget: string }
+      - { name: speed, label: Speed, widget: string }
+      - { name: obtained, label: How to Obtain, widget: text }
 
   - name: cloaks
     label: Cloaks
-    files:
-      - name: all-cloaks
-        label: All Cloaks
-        file: src/data/mounts/cloaks.json
-        fields:
-          - name: items
-            label: Cloaks
-            widget: list
-            fields:
-              - { name: name, label: Name, widget: string }
-              - { name: speed, label: Speed, widget: string }
-              - { name: obtained, label: How to Obtain, widget: text }
+    label_singular: Cloak
+    folder: src/content/data/cloaks
+    create: true
+    extension: yaml
+    format: yaml
+    slug: "{{color}}"
+    fields:
+      - { name: color, label: Color, widget: string }
+      - { name: obtained, label: How to Obtain, widget: text }
+
+  - name: skills
+    label: Skills
+    label_singular: Skill
+    folder: src/content/data/skills
+    create: true
+    extension: yaml
+    format: yaml
+    slug: "{{class}}-{{name}}"
+    fields:
+      - { name: name, label: Name, widget: string }
+      - { name: class, label: Class, widget: string }
+      - { name: levelRequirement, label: Level Requirement, widget: string }
+      - { name: statRequirements, label: Stat Requirements, widget: string }
+      - { name: goldRequired, label: Gold Required, widget: string }
+      - { name: itemRequirements, label: Item Requirements, widget: string }
+      - { name: prerequisites, label: Prerequisites, widget: string }
+      - { name: learningLocation, label: Learning Location, widget: string }
+      - { name: description, label: Description, widget: text }
+
+  - name: spells
+    label: Spells
+    label_singular: Spell
+    folder: src/content/data/spells
+    create: true
+    extension: yaml
+    format: yaml
+    slug: "{{class}}-{{name}}"
+    fields:
+      - { name: name, label: Name, widget: string }
+      - { name: class, label: Class, widget: string }
+      - { name: levelRequirement, label: Level Requirement, widget: string }
+      - { name: statRequirements, label: Stat Requirements, widget: string }
+      - { name: goldRequired, label: Gold Required, widget: string }
+      - { name: itemRequirements, label: Item Requirements, widget: string }
+      - { name: prerequisites, label: Prerequisites, widget: string }
+      - { name: learningLocation, label: Learning Location, widget: string }
+      - { name: description, label: Description, widget: text }

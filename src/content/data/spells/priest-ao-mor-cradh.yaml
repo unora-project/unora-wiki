@@ -1,0 +1,10 @@
+name: "ao mor cradh"
+class: "priest"
+levelRequirement: "60"
+statRequirements: "3/20/60/3/3"
+goldRequired: "50,000"
+itemRequirements: "Gog's Maw (1), Red Tentacle (3)"
+prerequisites: "ao cradh (100)"
+learningLocation: "Piet Priestess"
+description: >-
+  Dispels the oppressive Mor Cradh curse from the target, liberating them from its tormenting influence.

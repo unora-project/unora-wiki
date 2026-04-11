@@ -1,0 +1,10 @@
+name: "Dia Cradh"
+class: "wizard"
+levelRequirement: "Master (Pure)"
+statRequirements: "3/3/3/3/3"
+goldRequired: "-"
+itemRequirements: "-"
+prerequisites: "Ard Cradh (100)"
+learningLocation: "Lady Phoenix"
+description: >-
+  Curses the enemy, increasing their AC by 65 and reducing their magic resistance by 40%. Pure only.

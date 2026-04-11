@@ -1,0 +1,10 @@
+name: "Vortex"
+class: "priest"
+levelRequirement: "Master"
+statRequirements: "3/3/3/3/3"
+goldRequired: "-"
+itemRequirements: "-"
+prerequisites: "Quake (100)"
+learningLocation: "Master"
+description: >-
+  Inflicts a lot of damage in the vicinity of an ally over a duration of 10 seconds. Upgrades Quake.

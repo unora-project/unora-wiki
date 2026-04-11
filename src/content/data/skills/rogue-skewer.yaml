@@ -1,0 +1,10 @@
+name: "Skewer"
+class: "rogue"
+levelRequirement: "90"
+statRequirements: "36/11/11/24/76"
+goldRequired: "150,000"
+itemRequirements: "Gruesomefly's Wing (2), Blood Dagger (1)"
+prerequisites: "Pierce (100)"
+learningLocation: "Mileth Special Skills Master"
+description: >-
+  Deals great damage three tiles in front of you and increases target AC. Replaces Pierce.

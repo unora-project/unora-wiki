@@ -1,0 +1,10 @@
+name: "Regeneration"
+class: "priest"
+levelRequirement: "Master (Light)"
+statRequirements: "3/3/3/3/3"
+goldRequired: "-"
+itemRequirements: "-"
+prerequisites: "-"
+learningLocation: "Master Dungeon"
+description: >-
+  Heals the target based on your wisdom and 1% of their maximum health. (Light Priest only)

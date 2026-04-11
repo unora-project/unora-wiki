@@ -1,0 +1,10 @@
+name: "Devour"
+class: "warrior"
+levelRequirement: "Master"
+statRequirements: "3/3/3/3/3"
+goldRequired: "-"
+itemRequirements: "-"
+prerequisites: "Cleave (100)"
+learningLocation: "Shamensyth"
+description: >-
+  Cleave shape attack dealing damage and heals you based on your missing health. Replaces Cleave.

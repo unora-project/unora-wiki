@@ -1,0 +1,10 @@
+name: "Lightning Stance"
+class: "monk"
+levelRequirement: "Master"
+statRequirements: "95/40/31/160/55"
+goldRequired: "500,000"
+itemRequirements: "Ruidhtear Toe (3)"
+prerequisites: "Thunder Stance (100)"
+learningLocation: "Sapphire Stream"
+description: >-
+  [Wind] Procs 20% wind damage and a 50% chance to apply crit on the next 5 non-assail hits. Upgrades Thunder Stance.

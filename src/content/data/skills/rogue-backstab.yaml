@@ -1,0 +1,10 @@
+name: "Backstab"
+class: "rogue"
+levelRequirement: "35"
+statRequirements: "16/7/7/10/35"
+goldRequired: "15,000"
+itemRequirements: "Goblin's Skull (3)"
+prerequisites: "-"
+learningLocation: "Suomi Special Skills Master"
+description: >-
+  Maneuvers behind a target directly in front of you and stabs them in the back. Replaces Stab.

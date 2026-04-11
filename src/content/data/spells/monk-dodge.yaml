@@ -1,0 +1,10 @@
+name: "Dodge"
+class: "monk"
+levelRequirement: "5"
+statRequirements: "5/3/3/8/3"
+goldRequired: "1,000"
+itemRequirements: "Spider's Eye (2)"
+prerequisites: "-"
+learningLocation: "Mileth Special Skills Master"
+description: >-
+  Reduces positional damage mod by 25%. Decreases AC, increases MR. 20% chance to avoid durability dmg.

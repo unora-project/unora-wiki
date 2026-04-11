@@ -1,0 +1,10 @@
+name: "Mad Soul"
+class: "warrior"
+levelRequirement: "Master (Pure)"
+statRequirements: "145/5/5/85/65"
+goldRequired: "500,000"
+itemRequirements: "Black Shocker Piece (5)"
+prerequisites: "Flurry (100)"
+learningLocation: "Nobis House (28,27)"
+description: >-
+  Surge of raging energy, striking all nearby enemies within a range of 3 with devastating force. Pure only.

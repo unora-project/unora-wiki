@@ -1,0 +1,10 @@
+name: "Cunning"
+class: "rogue"
+levelRequirement: "Master"
+statRequirements: "3/3/3/3/3"
+goldRequired: "-"
+itemRequirements: "-"
+prerequisites: "-"
+learningLocation: "Tauren"
+description: >-
+  Rogue channels their inner cunning, increasing attack damage while sacrificing mana.

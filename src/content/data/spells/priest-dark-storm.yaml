@@ -1,0 +1,10 @@
+name: "Dark Storm"
+class: "priest"
+levelRequirement: "Master (Pure Dark)"
+statRequirements: "5/90/132/10/15"
+goldRequired: "500,000"
+itemRequirements: "Black Shocker Piece (3)"
+prerequisites: "-"
+learningLocation: "Dark Priest Master"
+description: >-
+  A storm of dark energy damages creatures near the target. Deals % of current HP, effective on high HP targets. (Pure Dark Priest Only)

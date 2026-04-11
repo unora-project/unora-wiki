@@ -1,0 +1,10 @@
+name: "Ard Srad Meall"
+class: "wizard"
+levelRequirement: "Master"
+statRequirements: "22/125/80/15/15"
+goldRequired: "500,000"
+itemRequirements: "Gold Beetalic Head (5)"
+prerequisites: "Ard Srad (100), Mor Srad Meall (100)"
+learningLocation: "Suomi Dark Magic Master"
+description: >-
+  Attacks the enemy and surrounding enemies with strong fire and burns. Ard Srad and Mor Srad Meall upgrade.

@@ -1,0 +1,10 @@
+name: "Rock Stance"
+class: "monk"
+levelRequirement: "Master"
+statRequirements: "115/25/30/180/65"
+goldRequired: "500,000"
+itemRequirements: "Gold Shocker Piece (5)"
+prerequisites: "Earthen Stance (100)"
+learningLocation: "Sapphire Stream"
+description: >-
+  [Earth] Has a 70% chance of reflecting damage and some status effects. Upgrades Earthen Stance.

@@ -1,0 +1,10 @@
+name: "Ard Creag Meall"
+class: "wizard"
+levelRequirement: "Master"
+statRequirements: "9/130/95/15/18"
+goldRequired: "500,000"
+itemRequirements: "Ruidhtear Toe (2)"
+prerequisites: "Ard Creag (100), Mor Creag Meall (100)"
+learningLocation: "Suomi Dark Magic Master"
+description: >-
+  Attacks the enemy and surrounding enemies with strong earth and stuns. Ard Creag and Mor Creag Meall upgrade.

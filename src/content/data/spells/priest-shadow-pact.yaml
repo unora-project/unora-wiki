@@ -1,0 +1,10 @@
+name: "Shadow Pact"
+class: "priest"
+levelRequirement: "Master (Dark)"
+statRequirements: "3/3/3/3/3"
+goldRequired: "-"
+itemRequirements: "-"
+prerequisites: "-"
+learningLocation: "Medusa"
+description: >-
+  A temporary buff placed on an ally causing them to be healed when you cast a strioch spell. (Dark Priest Only)

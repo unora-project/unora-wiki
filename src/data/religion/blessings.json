@@ -7,21 +7,15 @@
   },
   {
     "goddess": "miraelis",
-    "blessing": "Let your wisdom guide me.",
-    "cost": "50 faith",
-    "description": "Buff lasts 10 minutes."
-  },
-  {
-    "goddess": "miraelis",
-    "blessing": "Your light is my refuge.",
-    "cost": "75 faith",
-    "description": "Buff lasts 15 minutes."
-  },
-  {
-    "goddess": "miraelis",
     "blessing": "I surrender to your grace.",
     "cost": "100 faith",
     "description": "Buff lasts 25 minutes."
+  },
+  {
+    "goddess": "miraelis",
+    "blessing": "Let your wisdom guide me.",
+    "cost": "50 faith",
+    "description": "Buff lasts 10 minutes."
   },
   {
     "goddess": "miraelis",
@@ -30,10 +24,10 @@
     "description": "Buff lasts 60 minutes and is casted on all Aislings globally."
   },
   {
-    "goddess": "serendael",
-    "blessing": "Let luck smile upon me.",
-    "cost": "25 faith",
-    "description": "Buff lasts 5 minutes."
+    "goddess": "miraelis",
+    "blessing": "Your light is my refuge.",
+    "cost": "75 faith",
+    "description": "Buff lasts 15 minutes."
   },
   {
     "goddess": "serendael",
@@ -43,21 +37,39 @@
   },
   {
     "goddess": "serendael",
-    "blessing": "May chaos dance in my favor.",
-    "cost": "75 faith",
-    "description": "Buff lasts 15 minutes."
-  },
-  {
-    "goddess": "serendael",
     "blessing": "I surrender to fortune's whim.",
     "cost": "100 faith",
     "description": "Buff lasts 25 minutes."
   },
   {
     "goddess": "serendael",
+    "blessing": "Let luck smile upon me.",
+    "cost": "25 faith",
+    "description": "Buff lasts 5 minutes."
+  },
+  {
+    "goddess": "serendael",
+    "blessing": "May chaos dance in my favor.",
+    "cost": "75 faith",
+    "description": "Buff lasts 15 minutes."
+  },
+  {
+    "goddess": "serendael",
     "blessing": "May Unora have good fortunes.",
     "cost": "300 faith",
     "description": "Buff lasts 60 minutes and is casted on all Aislings globally."
+  },
+  {
+    "goddess": "skandara",
+    "blessing": "I am your blade.",
+    "cost": "100 faith",
+    "description": "Buff lasts 25 minutes."
+  },
+  {
+    "goddess": "skandara",
+    "blessing": "Let blood and fury guide me.",
+    "cost": "75 faith",
+    "description": "Buff lasts 15 minutes."
   },
   {
     "goddess": "skandara",
@@ -73,27 +85,15 @@
   },
   {
     "goddess": "skandara",
-    "blessing": "Let blood and fury guide me.",
-    "cost": "75 faith",
-    "description": "Buff lasts 15 minutes."
-  },
-  {
-    "goddess": "skandara",
-    "blessing": "I am your blade.",
-    "cost": "100 faith",
-    "description": "Buff lasts 25 minutes."
-  },
-  {
-    "goddess": "skandara",
     "blessing": "Swords rain over Unora.",
     "cost": "300 faith",
     "description": "Buff lasts 60 minutes and is casted on all Aislings globally."
   },
   {
     "goddess": "theselene",
-    "blessing": "Reveal but a whisper.",
-    "cost": "25 faith",
-    "description": "Buff lasts 10 minutes."
+    "blessing": "I surrender to the unseen.",
+    "cost": "100 faith",
+    "description": "Buff lasts 30 minutes."
   },
   {
     "goddess": "theselene",
@@ -109,14 +109,14 @@
   },
   {
     "goddess": "theselene",
-    "blessing": "I surrender to the unseen.",
-    "cost": "100 faith",
-    "description": "Buff lasts 30 minutes."
-  },
-  {
-    "goddess": "theselene",
     "blessing": "Let Unora find the shadows.",
     "cost": "300 faith",
     "description": "Buff lasts 60 minutes and is casted on all Aislings globally."
+  },
+  {
+    "goddess": "theselene",
+    "blessing": "Reveal but a whisper.",
+    "cost": "25 faith",
+    "description": "Buff lasts 10 minutes."
   }
 ]

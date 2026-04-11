@@ -1,0 +1,10 @@
+name: "Fury"
+class: "warrior"
+levelRequirement: "Master"
+statRequirements: "3/3/3/3/3"
+goldRequired: "-"
+itemRequirements: "-"
+prerequisites: "-"
+learningLocation: "Master Dungeon"
+description: >-
+  Warrior channels their inner fury, increasing attack damage while sacrificing health.

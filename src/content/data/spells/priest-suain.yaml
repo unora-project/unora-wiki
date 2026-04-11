@@ -1,0 +1,10 @@
+name: "suain"
+class: "priest"
+levelRequirement: "71"
+statRequirements: "12/46/60/5/9"
+goldRequired: "75,000"
+itemRequirements: "Enchanted Earrings (1), Ialtag's Eye (1)"
+prerequisites: "-"
+learningLocation: "Suomi Black Magic Master"
+description: >-
+  Imposes a state of absolute immobilization upon the enemy, rendering them frozen.

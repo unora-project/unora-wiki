@@ -1,0 +1,10 @@
+name: "Inferno"
+class: "warrior"
+levelRequirement: "Master (Pure)"
+statRequirements: "3/3/3/3/3"
+goldRequired: "-"
+itemRequirements: "-"
+prerequisites: "Whirlwind (100)"
+learningLocation: "Shamensyth"
+description: >-
+  Your temperature rises and burns enemies around you. Replaces Whirlwind. Pure Only.

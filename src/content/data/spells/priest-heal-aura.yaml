@@ -1,0 +1,10 @@
+name: "Heal Aura"
+class: "priest"
+levelRequirement: "Master (Pure Light)"
+statRequirements: "7/85/135/30/18"
+goldRequired: "500,000"
+itemRequirements: "Gold Shocker Piece (5)"
+prerequisites: "-"
+learningLocation: "Light Priest Master"
+description: >-
+  Places a zone around the target that heals yourself and allies. (Pure Light Priest Only)

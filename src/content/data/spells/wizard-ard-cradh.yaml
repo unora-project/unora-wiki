@@ -1,0 +1,10 @@
+name: "Ard Cradh"
+class: "wizard"
+levelRequirement: "90"
+statRequirements: "10/105/55/10/15"
+goldRequired: "175,000"
+itemRequirements: "Flesh (3)"
+prerequisites: "Mor Cradh (100)"
+learningLocation: "Suomi Dark Magic Master"
+description: >-
+  Curses the enemy, increasing their AC by 50 and reducing their magic resistance by 30%.

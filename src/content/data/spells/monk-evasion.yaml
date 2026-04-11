@@ -1,0 +1,10 @@
+name: "Evasion"
+class: "monk"
+levelRequirement: "Master (Pure)"
+statRequirements: "3/3/3/3/3"
+goldRequired: "-"
+itemRequirements: "-"
+prerequisites: "-"
+learningLocation: "Tauren"
+description: >-
+  Reduces positional damage mod by 50%. Decreases AC, increases MR. 30% chance to avoid durability damage. Upgrade to Dodge. Pure Only.
