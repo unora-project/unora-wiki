@@ -1,0 +1,534 @@
+[
+  {
+    "Monster Part": "Viper's Gland",
+    "Area": "East Woodlands - Viper",
+    "Level": "2",
+    "Extract": "Lesser",
+    "Amount": "1"
+  },
+  {
+    "Monster Part": "Spider's Eye",
+    "Area": "Mileth Crypt - Spider",
+    "Level": "3",
+    "Extract": "Lesser",
+    "Amount": "1"
+  },
+  {
+    "Monster Part": "Spider's Silk",
+    "Area": "Mileth Crypt - Spider",
+    "Level": "3",
+    "Extract": "Lesser",
+    "Amount": "1"
+  },
+  {
+    "Monster Part": "Bee's Sting",
+    "Area": "East Woodlands - Bee",
+    "Level": "3",
+    "Extract": "Lesser",
+    "Amount": "1"
+  },
+  {
+    "Monster Part": "Raw Wax",
+    "Area": "East Woodlands - Bee",
+    "Level": "3",
+    "Extract": "Lesser",
+    "Amount": "1"
+  },
+  {
+    "Monster Part": "Royal Wax",
+    "Area": "East Woodlands - Bee",
+    "Level": "3",
+    "Extract": "Lesser",
+    "Amount": "1"
+  },
+  {
+    "Monster Part": "Raw Honey",
+    "Area": "East Woodlands - Bee",
+    "Level": "3",
+    "Extract": "Lesser",
+    "Amount": "1"
+  },
+  {
+    "Monster Part": "Mantis Eye",
+    "Area": "East Woodlands - Mantis",
+    "Level": "4",
+    "Extract": "Lesser",
+    "Amount": "1"
+  },
+  {
+    "Monster Part": "Centipede's Gland",
+    "Area": "Mileth Crypt - Centipede",
+    "Level": "6",
+    "Extract": "Lesser",
+    "Amount": "1"
+  },
+  {
+    "Monster Part": "Bat's Wing",
+    "Area": "Mileth Crypt - Bat",
+    "Level": "10",
+    "Extract": "Lesser",
+    "Amount": "1"
+  },
+  {
+    "Monster Part": "Trent Wood",
+    "Area": "Porte Forest - Trent",
+    "Level": "10",
+    "Extract": "Lesser",
+    "Amount": "1"
+  },
+  {
+    "Monster Part": "Trout",
+    "Area": "Fishing",
+    "Level": "11",
+    "Extract": "Lesser",
+    "Amount": "1"
+  },
+  {
+    "Monster Part": "Bass",
+    "Area": "Fishing",
+    "Level": "11",
+    "Extract": "Lesser",
+    "Amount": "1"
+  },
+  {
+    "Monster Part": "Lion Fish",
+    "Area": "Fishing",
+    "Level": "11",
+    "Extract": "Lesser",
+    "Amount": "2"
+  },
+  {
+    "Monster Part": "Rock Fish",
+    "Area": "Fishing",
+    "Level": "11",
+    "Extract": "Lesser",
+    "Amount": "2"
+  },
+  {
+    "Monster Part": "Pike",
+    "Area": "Fishing",
+    "Level": "11",
+    "Extract": "Lesser",
+    "Amount": "3"
+  },
+  {
+    "Monster Part": "Perch",
+    "Area": "Fishing",
+    "Level": "11",
+    "Extract": "Lesser",
+    "Amount": "3"
+  },
+  {
+    "Monster Part": "Purple Whopper",
+    "Area": "Fishing",
+    "Level": "11",
+    "Extract": "Lesser",
+    "Amount": "8"
+  },
+  {
+    "Monster Part": "Wolf's Fur",
+    "Area": "East Woodlands - Wolf",
+    "Level": "11",
+    "Extract": "Lesser",
+    "Amount": "1"
+  },
+  {
+    "Monster Part": "Scorpion's Sting",
+    "Area": "Mileth Crypt - Scorpion",
+    "Level": "16",
+    "Extract": "Lesser",
+    "Amount": "1"
+  },
+  {
+    "Monster Part": "Scorpion's Tail",
+    "Area": "Mileth Crypt - Scorpion",
+    "Level": "16",
+    "Extract": "Lesser",
+    "Amount": "1"
+  },
+  {
+    "Monster Part": "Wolf's Lock",
+    "Area": "East Woodlands - Wolf",
+    "Level": "18",
+    "Extract": "Lesser",
+    "Amount": "1"
+  },
+  {
+    "Monster Part": "Wolf's Teeth",
+    "Area": "East Woodlands - Wolf",
+    "Level": "18",
+    "Extract": "Lesser",
+    "Amount": "1"
+  },
+  {
+    "Monster Part": "Kobold's Skull",
+    "Area": "East Woodlands/Wilderness - Kobold",
+    "Level": "18",
+    "Extract": "Lesser",
+    "Amount": "1"
+  },
+  {
+    "Monster Part": "Ghast's Skull",
+    "Area": "Dubhaim Castle - Ghast",
+    "Level": "18",
+    "Extract": "Lesser",
+    "Amount": "1"
+  },
+  {
+    "Monster Part": "Giant Bat's Wing",
+    "Area": "Mileth Crypt - Giant Bat",
+    "Level": "27",
+    "Extract": "Lesser",
+    "Amount": "2"
+  },
+  {
+    "Monster Part": "Gargoyle's Skull",
+    "Area": "Dubhaim Castle - Gargoyle",
+    "Level": "30",
+    "Extract": "Lesser",
+    "Amount": "3"
+  },
+  {
+    "Monster Part": "Goblin's Skull",
+    "Area": "East Woodlands - Goblin",
+    "Level": "34",
+    "Extract": "Lesser",
+    "Amount": "3"
+  },
+  {
+    "Monster Part": "Giant Ant Wing",
+    "Area": "Porte Forest - Giant Ant",
+    "Level": "35",
+    "Extract": "Lesser",
+    "Amount": "3"
+  },
+  {
+    "Monster Part": "Mimic Teeth",
+    "Area": "Mileth Crypt - Mimic",
+    "Level": "36",
+    "Extract": "Lesser",
+    "Amount": "4"
+  },
+  {
+    "Monster Part": "Hobgoblin's Skull",
+    "Area": "East Woodlands - Hobgoblin",
+    "Level": "37",
+    "Extract": "Lesser",
+    "Amount": "4"
+  },
+  {
+    "Monster Part": "Silver Wolf Mane",
+    "Area": "Porte Forest - Silver Wolf",
+    "Level": "37",
+    "Extract": "Lesser",
+    "Amount": "3"
+  },
+  {
+    "Monster Part": "Rockcobbler's Scale",
+    "Area": "Piet Crypt - Rockcobbler",
+    "Level": "41",
+    "Extract": "Basic",
+    "Amount": "1"
+  },
+  {
+    "Monster Part": "Zombie Flesh",
+    "Area": "House Macabre/Wilderness - Zombie",
+    "Level": "42",
+    "Extract": "Basic",
+    "Amount": "1"
+  },
+  {
+    "Monster Part": "Crab's Claw",
+    "Area": "Piet Crypt - Crab",
+    "Level": "42",
+    "Extract": "Basic",
+    "Amount": "1"
+  },
+  {
+    "Monster Part": "Flesh",
+    "Area": "Cthonic Remains - Flesh Golem",
+    "Level": "42",
+    "Extract": "Basic",
+    "Amount": "1"
+  },
+  {
+    "Monster Part": "Crab's Shell",
+    "Area": "Piet - Crab",
+    "Level": "42",
+    "Extract": "Basic",
+    "Amount": "1"
+  },
+  {
+    "Monster Part": "Frog's Leg",
+    "Area": "Piet Crypt - Frog",
+    "Level": "44",
+    "Extract": "Basic",
+    "Amount": "1"
+  },
+  {
+    "Monster Part": "Wisp's Core",
+    "Area": "East Woodlands - Wisp",
+    "Level": "45",
+    "Extract": "Basic",
+    "Amount": "1"
+  },
+  {
+    "Monster Part": "Turtle's Shell",
+    "Area": "Piet Crypt/Wilderness - Turtle",
+    "Level": "45",
+    "Extract": "Basic",
+    "Amount": "1"
+  },
+  {
+    "Monster Part": "Brawlfish's Scale",
+    "Area": "Piet Crypt - Brawlfish",
+    "Level": "46",
+    "Extract": "Basic",
+    "Amount": "1"
+  },
+  {
+    "Monster Part": "Anemone's Antenna",
+    "Area": "Piet Crypt - Anemone",
+    "Level": "46",
+    "Extract": "Basic",
+    "Amount": "1"
+  },
+  {
+    "Monster Part": "Wisp's Flame",
+    "Area": "House Macabre - Dark Flame",
+    "Level": "47",
+    "Extract": "Basic",
+    "Amount": "1"
+  },
+  {
+    "Monster Part": "White Bat's Wing",
+    "Area": "Mileth Crypt - White Bat",
+    "Level": "48",
+    "Extract": "Basic",
+    "Amount": "1"
+  },
+  {
+    "Monster Part": "Black Cat's Tail",
+    "Area": "House Macabre - Black Cat",
+    "Level": "48",
+    "Extract": "Basic",
+    "Amount": "1"
+  },
+  {
+    "Monster Part": "Kardi Fur",
+    "Area": "Mileth Crypt - Kardi",
+    "Level": "50",
+    "Extract": "Basic",
+    "Amount": "1"
+  },
+  {
+    "Monster Part": "Mushroom",
+    "Area": "East Woodlands - Shrieker",
+    "Level": "50",
+    "Extract": "Basic",
+    "Amount": "2"
+  },
+  {
+    "Monster Part": "Gog's Maw",
+    "Area": "Piet Crypt - Gog",
+    "Level": "50",
+    "Extract": "Basic",
+    "Amount": "2"
+  },
+  {
+    "Monster Part": "Spore Sac",
+    "Area": "Abel Crypt - Spore",
+    "Level": "51",
+    "Extract": "Basic",
+    "Amount": "2"
+  },
+  {
+    "Monster Part": "Black Widow's Silk",
+    "Area": "House Macabre - Black Widow",
+    "Level": "53",
+    "Extract": "Basic",
+    "Amount": "2"
+  },
+  {
+    "Monster Part": "Marauder's Spine",
+    "Area": "Mileth Crypt - Marauder",
+    "Level": "55",
+    "Extract": "Basic",
+    "Amount": "2"
+  },
+  {
+    "Monster Part": "Gremlin's Ear",
+    "Area": "Piet Crypt - Gremlin",
+    "Level": "61",
+    "Extract": "Basic",
+    "Amount": "2"
+  },
+  {
+    "Monster Part": "Red Tentacle",
+    "Area": "Piet Crypt - Kraken?",
+    "Level": "63",
+    "Extract": "Basic",
+    "Amount": "3"
+  },
+  {
+    "Monster Part": "Scarlet Beetle's Antennae - Scarlet Beetle",
+    "Area": "Cthonic Remains",
+    "Level": "63",
+    "Extract": "Basic",
+    "Amount": "3"
+  },
+  {
+    "Monster Part": "Succubus's Hair",
+    "Area": "Mileth Crypt - Succubus",
+    "Level": "65",
+    "Extract": "Basic",
+    "Amount": "3"
+  },
+  {
+    "Monster Part": "Faerie's Wing",
+    "Area": "East Woodlands - Faerie",
+    "Level": "65",
+    "Extract": "Basic",
+    "Amount": "3"
+  },
+  {
+    "Monster Part": "Nagetier's Talon",
+    "Area": "Cthonic Remains - Nagetier",
+    "Level": "65",
+    "Extract": "Basic",
+    "Amount": "3"
+  },
+  {
+    "Monster Part": "Ancient Bone",
+    "Area": "Cthonic Remains - Bone Collector",
+    "Level": "68",
+    "Extract": "Basic",
+    "Amount": "3"
+  },
+  {
+    "Monster Part": "Gargoyle Fiend's Skull",
+    "Area": "Dubhaim Castle - Gargoyle Fiend",
+    "Level": "72",
+    "Extract": "Greater",
+    "Amount": "1"
+  },
+  {
+    "Monster Part": "Polyp Sac",
+    "Area": "Abel Crypt - Polyp",
+    "Level": "72",
+    "Extract": "Greater",
+    "Amount": "1"
+  },
+  {
+    "Monster Part": "Leech's Tail",
+    "Area": "Abel Crypt/Mehadi - Leech",
+    "Level": "72",
+    "Extract": "Greater",
+    "Amount": "1"
+  },
+  {
+    "Monster Part": "Viper's Venom",
+    "Area": "Mehadi - Viper",
+    "Level": "72",
+    "Extract": "Greater",
+    "Amount": "1"
+  },
+  {
+    "Monster Part": "Viper's Fang",
+    "Area": "Mehadi - Viper",
+    "Level": "72",
+    "Extract": "Greater",
+    "Amount": "1"
+  },
+  {
+    "Monster Part": "Viper's Eggs",
+    "Area": "Mehadi - Viper",
+    "Level": "72",
+    "Extract": "Greater",
+    "Amount": "1"
+  },
+  {
+    "Monster Part": "Qualgeist's Head",
+    "Area": "Cthonic Remains - Qualgeist",
+    "Level": "72",
+    "Extract": "Greater",
+    "Amount": "1"
+  },
+  {
+    "Monster Part": "Goo",
+    "Area": "Abel Crypt - Blob",
+    "Level": "74",
+    "Extract": "Greater",
+    "Amount": "1"
+  },
+  {
+    "Monster Part": "Mummy Bandage",
+    "Area": "Cthonic Remains - Mummy",
+    "Level": "84",
+    "Extract": "Greater",
+    "Amount": "2"
+  },
+  {
+    "Monster Part": "Frog's Tongue",
+    "Area": "Mehadi - Frog",
+    "Level": "90",
+    "Extract": "Greater",
+    "Amount": "3"
+  },
+  {
+    "Monster Part": "Gruesomefly's Antenna",
+    "Area": "Mehadi - Gruesomefly",
+    "Level": "95",
+    "Extract": "Greater",
+    "Amount": "4"
+  },
+  {
+    "Monster Part": "Gruesomefly's Wing",
+    "Area": "Mehadi - Gruesomefly",
+    "Level": "95",
+    "Extract": "Greater",
+    "Amount": "4"
+  },
+  {
+    "Monster Part": "Direwolf Lock",
+    "Area": "Mount Giragan - Direwolf",
+    "Level": "99",
+    "Extract": "Superior",
+    "Amount": "1"
+  },
+  {
+    "Monster Part": "Ice Spore Sac",
+    "Area": "Mount Giragan - Ice Sport",
+    "Level": "99",
+    "Extract": "Superior",
+    "Amount": "1"
+  },
+  {
+    "Monster Part": "Losgann Tail",
+    "Area": "Nobis - Losgann",
+    "Level": "99",
+    "Extract": "Superior",
+    "Amount": "1"
+  },
+  {
+    "Monster Part": "Ruidhtear Toe",
+    "Area": "Nobis - Ruidhtear",
+    "Level": "99",
+    "Extract": "Superior",
+    "Amount": "1"
+  },
+  {
+    "Monster Part": "Gold Beetalic Head",
+    "Area": "Shinewood - Gold Beetalic",
+    "Level": "99",
+    "Extract": "Superior",
+    "Amount": "1"
+  },
+  {
+    "Monster Part": "Skeleton Bones",
+    "Area": "Chaos - ??",
+    "Level": "100",
+    "Extract": "Superior",
+    "Amount": "2"
+  }
+]

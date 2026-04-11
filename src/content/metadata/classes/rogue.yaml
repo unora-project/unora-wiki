@@ -1,0 +1,36 @@
+description: >-
+  Using daggers to submit your foes, the power flows through your hands. Shadows will
+  confuse and disorient your enemies. Bleed into them as your enemies bleed from your blades.
+mastering:
+  - "11,000 base HP"
+  - "7,000 base MP"
+  - "250,000,000 experience (which will be sacrificed)"
+  - "Copper File (item drop from CR20)"
+  - "Smith's Hammer (item drop from CR20)"
+  - "Skill learned: Skewer"
+  - "Spell learned: Maiden Trap"
+dedication:
+  - "6,600 base HP"
+  - "3,300 base MP"
+  - "60,000,000 experience (which will be sacrificed)"
+  - "10 Strong Health Potions"
+dedicationCarryOver: "19 stat points will carry over into the class you dedicate into."
+statCaps:
+  - progression: Pre-Master
+    str: 100
+    int: 50
+    wis: 50
+    con: 80
+    dex: 120
+  - progression: Master
+    str: 150
+    int: 80
+    wis: 80
+    con: 120
+    dex: 180
+  - progression: Grandmaster
+    str: 180
+    int: 100
+    wis: 100
+    con: 150
+    dex: 215

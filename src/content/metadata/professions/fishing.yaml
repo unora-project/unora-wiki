@@ -1,0 +1,21 @@
+name: Fishing
+description: A secondary profession for catching fish. Provides gold, quest items, and passive experience.
+cards:
+  - icon: MapPin
+    title: Where to Learn
+    body: Head to the Fishing Market in Abel (27,46) and speak to Kamel.
+  - icon: Hammer
+    title: How to Fish
+    body: >-
+      Purchase a Basic Fishing Pole (1,000g) and Fishing Bait (100g each).
+      With your pole equipped, stand next to water until you see a blinking question mark.
+      The chance to catch a fish happens every 10 seconds (2-6% depending on pole tier).
+      Fishing is idle — set it up and step away.
+tip: >-
+  Popular fishing spots: Abel boat area (33,62), Mileth bridge (54,9), Rucesion docks.
+  All fish can be caught at any fishing spot.
+  Fish can be sold for gold, traded for monster extracts, or used for quests.
+tables:
+  - title: Fish
+    dataFile: fishing-fish
+    searchPlaceholder: Search fish...

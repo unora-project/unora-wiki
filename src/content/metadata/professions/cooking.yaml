@@ -1,0 +1,20 @@
+name: Cooking
+description: A secondary profession that allows you to prepare dishes providing strong buffs.
+cards:
+  - icon: MapPin
+    title: Where to Learn
+    body: Head to the Kitchen in Mileth (54,33) and speak to Gendusa.
+  - icon: Hammer
+    title: How to Craft
+    body: >-
+      Walk to the stove against the wall (2,9) and a shop window will open.
+      Cooking does not ensure 100% success; it has a chance to fail.
+      The ingredients are not actually rotten, just a notice the craft has failed.
+tip: Used for various quests and provides strong buffs to the player.
+tables:
+  - title: Recipes
+    dataFile: cooking-recipes
+    searchPlaceholder: Search recipes...
+  - title: Ingredients
+    dataFile: cooking-ingredients
+    searchPlaceholder: Search ingredients...

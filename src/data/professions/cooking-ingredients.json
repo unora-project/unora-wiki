@@ -1,0 +1,87 @@
+[
+  {
+    "Name": "Apple",
+    "Type": "Fruit",
+    "Where to obtain": "Mileth Crypt (Spiders, Rats); Rucesion Black Market (Wureen) for 500 gold each"
+  },
+  {
+    "Name": "Acorn",
+    "Type": "Fruit",
+    "Where to obtain": "Scattered throughout different towns; East Woodlands; West Woodlands"
+  },
+  {
+    "Name": "Cherry",
+    "Type": "Fruit",
+    "Where to obtain": "Suomi Cherry fields, Wilderness Cherry fields, Various town restaurants (Mileth)"
+  },
+  {
+    "Name": "Grapes",
+    "Type": "Fruit",
+    "Where to obtain": "Suomi Grape fields, Various town restaurants (Mileth)"
+  },
+  {
+    "Name": "Strawberry",
+    "Type": "Fruit",
+    "Where to obtain": "Randomly obtained through foraging"
+  },
+  {
+    "Name": "Tangerines",
+    "Type": "Fruit",
+    "Where to obtain": "Randomly obtained through foraging"
+  },
+  {
+    "Name": "Rambutan",
+    "Type": "Fruit",
+    "Where to obtain": "Randomly obtained through foraging"
+  },
+  {
+    "Name": "Carrot",
+    "Type": "Vegetable",
+    "Where to obtain": "Mythic: Bunny 1, Bunny 2, Bunny 3"
+  },
+  {
+    "Name": "Green Grapes",
+    "Type": "Vegetable",
+    "Where to obtain": "Randomly obtained through foraging"
+  },
+  {
+    "Name": "Tomato",
+    "Type": "Vegetable",
+    "Where to obtain": "Randomly obtained through foraging"
+  },
+  {
+    "Name": "Vegetable",
+    "Type": "Vegetable",
+    "Where to obtain": "Mileth Crypt (Spiders, Rats); Various town restaurants (Mileth)"
+  },
+  {
+    "Name": "Beef Slices",
+    "Type": "Meat",
+    "Where to obtain": "Wolves; Other various beasts (need clarity)"
+  },
+  {
+    "Name": "Liver",
+    "Type": "Meat",
+    "Where to obtain": "Karlopos octopuses"
+  },
+  {
+    "Name": "Raw Meat",
+    "Type": "Meat",
+    "Where to obtain": "Various beasts (need clarity)"
+  },
+  {
+    "Name": "Flour",
+    "Type": "Special",
+    "Where to obtain": "Boss drop (Funny Bones, Serious Bones, Lost Orc, Banshee, King Octopus, Mythic bosses)"
+  },
+  {
+    "Name": "Marinade",
+    "Type": "Special",
+    "Where to obtain": "Secret Cow Level, High level Mythic bosses (need clarity)"
+  },
+  {
+    "Name": "Salt",
+    "Type": "Special",
+    "Where to obtain": "TBD."
+  }
+]

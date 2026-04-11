@@ -1,0 +1,35 @@
+description: >-
+  Summon strong spells to damage enemies. The elements will flow through your fingers
+  and into the enemies cold, dead eyes as your power grips their life.
+mastering:
+  - "7,000 base HP"
+  - "9,000 base MP"
+  - "250,000,000 experience (which will be sacrificed)"
+  - "Magic Ink (item drop from CR20)"
+  - "Magic Scroll (item drop from CR20)"
+  - "Spells learned: Ard Cradh, Arcane Blast"
+dedication:
+  - "6,000 base HP"
+  - "6,000 base MP"
+  - "60,000,000 experience (which will be sacrificed)"
+  - "10 Strong Health Potions"
+dedicationCarryOver: "19 stat points will carry over into the class you dedicate into."
+statCaps:
+  - progression: Pre-Master
+    str: 50
+    int: 120
+    wis: 100
+    con: 80
+    dex: 50
+  - progression: Master
+    str: 80
+    int: 180
+    wis: 150
+    con: 120
+    dex: 80
+  - progression: Grandmaster
+    str: 100
+    int: 215
+    wis: 180
+    con: 150
+    dex: 100

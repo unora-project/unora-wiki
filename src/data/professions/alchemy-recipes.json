@@ -1,0 +1,236 @@
+[
+  {
+    "Potion": "Small Health Potion",
+    "Ingredients": "1 Lesser Extract",
+    "Learned From": "Default Alchemy Recipe",
+    "Effects": "+800 HP"
+  },
+  {
+    "Potion": "Small Mana Potion",
+    "Ingredients": "1 Lesser Extract",
+    "Learned From": "Default Alchemy Recipe",
+    "Effects": "+500 MP"
+  },
+  {
+    "Potion": "Small Haste Brew",
+    "Ingredients": "1 Sparkflower",
+    "Learned From": "Default Alchemy Recipe",
+    "Effects": "+6% Attack Speed for 5 minutes"
+  },
+  {
+    "Potion": "Small Power Brew",
+    "Ingredients": "1 Cactus Flower",
+    "Learned From": "Default Alchemy Recipe",
+    "Effects": "+3 DMG for 5 minutes"
+  },
+  {
+    "Potion": "Small Accuracy Potion",
+    "Ingredients": "1 Kabine Blossom",
+    "Learned From": "Default Alchemy Recipe",
+    "Effects": "+5 Hit for 5 minutes"
+  },
+  {
+    "Potion": "Juggernaut Brew",
+    "Ingredients": "2 Lesser Extract, 1 Kobold Tail",
+    "Learned From": "Basic Alchemy Book",
+    "Effects": "+1000 Max HP for 10 minutes"
+  },
+  {
+    "Potion": "Astral Brew",
+    "Ingredients": "2 Lesser Extract, 1 Kobold Tail",
+    "Learned From": "Basic Alchemy Book",
+    "Effects": "+800 Max MP for 5 minutes"
+  },
+  {
+    "Potion": "Antidote Potion",
+    "Ingredients": "2 Lesser Extract",
+    "Learned From": "Loures Library",
+    "Effects": "Removes Poison"
+  },
+  {
+    "Potion": "Small Firestorm Tonic",
+    "Ingredients": "2 Lesser Extract, 1 Cactus Flower",
+    "Learned From": "Basic Alchemy Book",
+    "Effects": "Applies burn to target monster for 8 seconds"
+  },
+  {
+    "Potion": "Small Stun Tonic",
+    "Ingredients": "2 Lesser Extract, 1 Dochas Bloom",
+    "Learned From": "Basic Alchemy Book",
+    "Effects": "Stuns target monster for 3 seconds"
+  },
+  {
+    "Potion": "Health Potion",
+    "Ingredients": "3 Lesser Extract",
+    "Learned From": "Initiate Alchemy Book",
+    "Effects": "+2000 HP + 10% Max HP"
+  },
+  {
+    "Potion": "Mana Potion",
+    "Ingredients": "3 Lesser Extract",
+    "Learned From": "Initiate Alchemy Book",
+    "Effects": "+1000 MP + 10% Max MP"
+  },
+  {
+    "Potion": "Rejuvenation Potion",
+    "Ingredients": "3 Lesser Extract",
+    "Learned From": "Initiate Alchemy Book",
+    "Effects": "+1500 HP + 750 MP"
+  },
+  {
+    "Potion": "Haste Brew",
+    "Ingredients": "1 Basic Extract, 1 Spark Flower",
+    "Learned From": "Initiate Alchemy Book",
+    "Effects": "+12% Attack Speed for 10 minutes"
+  },
+  {
+    "Potion": "Power Brew",
+    "Ingredients": "1 Basic Extract, 1 Cactus Flower",
+    "Learned From": "Initiate Alchemy Book",
+    "Effects": "+6 DMG for 10 minutes"
+  },
+  {
+    "Potion": "Accuracy Potion",
+    "Ingredients": "1 Basic Extract, 2 Kabine Blossom",
+    "Learned From": "Initiate Alchemy Book",
+    "Effects": "+10 Hit for 10 minutes"
+  },
+  {
+    "Potion": "Revive Potion",
+    "Ingredients": "1 Greater Extract, 1 Blossom of Betrayal",
+    "Learned From": "Revive Potion Recipe",
+    "Effects": "Revives user with 15 minute cooldown"
+  },
+  {
+    "Potion": "Strong Juggernaut Brew",
+    "Ingredients": "1 Greater Extract, 1 Kobold Tail",
+    "Learned From": "Strong Vitality Book",
+    "Effects": "+5000 Max HP for 15 minutes"
+  },
+  {
+    "Potion": "Strong Astral Brew",
+    "Ingredients": "1 Greater Extract, 1 Kobold Tail",
+    "Learned From": "Strong Vitality Book",
+    "Effects": "+3000 Max MP for 15 minutes"
+  },
+  {
+    "Potion": "Cleansing Brew",
+    "Ingredients": "1 Greater Extract, 1 Water Lily",
+    "Learned From": "Cleansing Brew Recipe",
+    "Effects": "Removes poison/blind/burn"
+  },
+  {
+    "Potion": "Warmth Potion",
+    "Ingredients": "1 Greater Extract, 1 Bocan Bough",
+    "Learned From": "Warmth Potion Recipe",
+    "Effects": "Removes suain"
+  },
+  {
+    "Potion": "Amnesia Brew",
+    "Ingredients": "1 Greater Extract, 1 Blossom of Betrayal",
+    "Learned From": "Amnesia Brew Recipe",
+    "Effects": "Makes target monster non-hostile for 15 seconds or until attacked"
+  },
+  {
+    "Potion": "Strong Health Potion",
+    "Ingredients": "5 Lesser Extract",
+    "Learned From": "Strong Health Potion Recipe",
+    "Effects": "+5000 HP + 20% Max HP"
+  },
+  {
+    "Potion": "Strong Mana Potion",
+    "Ingredients": "5 Lesser Extract",
+    "Learned From": "Strong Mana Potion Recipe",
+    "Effects": "+3000 MP + 20% Max MP"
+  },
+  {
+    "Potion": "Strong Haste Brew",
+    "Ingredients": "1 Superior Extract, 1 Spark Flower",
+    "Learned From": "Attack Tonics Recipe?",
+    "Effects": "+18% Attack Speed for 15 minutes"
+  },
+  {
+    "Potion": "Strong Power Brew",
+    "Ingredients": "1 Superior Extract, 1 Cactus Flower",
+    "Learned From": "Attack Tonics Recipe?",
+    "Effects": "+10 DMG for 15 minutes?"
+  },
+  {
+    "Potion": "Strong Accuracy Potion",
+    "Ingredients": "1 Superior Extract, 1 Kabine Blossom",
+    "Learned From": "Attack Tonics Recipe?",
+    "Effects": "+15 Hit for 15 minutes"
+  },
+  {
+    "Potion": "Stat Boost Elixir",
+    "Ingredients": "1 Superior Extract, 1 Marauder's Spine, 1 Satyr's Hoof, 1 Polyp Sac",
+    "Learned From": "??",
+    "Effects": "Increase all stats by 1 for ?? minutes"
+  },
+  {
+    "Potion": "Knowledge Elixir",
+    "Ingredients": "2 Greater Extract, 1 Gruesomefly Wing, 1 Lion Fish",
+    "Learned From": "Knowledge Elixir Recipe",
+    "Effects": "+5% Kill EXP for 15 minutes"
+  },
+  {
+    "Potion": "Potent Health Potion",
+    "Ingredients": "8 Lesser Extract",
+    "Learned From": "Potent Health Potion Recipe",
+    "Effects": "+8000 HP + 25% Max HP"
+  },
+  {
+    "Potion": "Potent Mana Potion",
+    "Ingredients": "8 Lesser Extract",
+    "Learned From": "Potent Mana Potion Recipe",
+    "Effects": "+5000 MP + 25% Max MP"
+  },
+  {
+    "Potion": "Potent Rejuvenation Potion",
+    "Ingredients": "8 Lesser Extract",
+    "Learned From": "??",
+    "Effects": "+6000 HP + 25% Max HP + 3000 MP + 15% Max MP"
+  },
+  {
+    "Potion": "Potent Haste Brew",
+    "Ingredients": "2 Superior Extract, 1 Spark Flower",
+    "Learned From": "Potent Haste Brew Recipe",
+    "Effects": "+24% Attack Speed for 20 minutes"
+  },
+  {
+    "Potion": "Potent Power Brew",
+    "Ingredients": "2 Superior Extract, 1 Cactus Flower",
+    "Learned From": "Potent Power Brew Recipe",
+    "Effects": "+15 DMG for 20 minutes"
+  },
+  {
+    "Potion": "Potent Accuracty Potion",
+    "Ingredients": "2 Superior Extract, 1 Kabine Blossom",
+    "Learned From": "Potent Accuracy Brew Recipe",
+    "Effects": "+20 Hit for 20 minutes"
+  },
+  {
+    "Potion": "Potent Juggernaut Brew",
+    "Ingredients": "2 Superior Extract, 1 Blossom of Betrayal",
+    "Learned From": "Potent Vitality Book?",
+    "Effects": "+ 10000 Max HP for 15 minutes"
+  },
+  {
+    "Potion": "Potent Astral Brew",
+    "Ingredients": "2 Superior Extract, 1 Passion Flower",
+    "Learned From": "Potent Vitality Book?",
+    "Effects": "+ 6000 Max MP for 15 minutes"
+  },
+  {
+    "Potion": "Strong Knowledge Elixir",
+    "Ingredients": "2 Superior Extract, 1 Skeleton Bones, 1 Lion Fish",
+    "Learned From": "Strong Knowledge Elixir Recipe",
+    "Effects": "+10% Kill EXP for 20 minutes"
+  },
+  {
+    "Potion": "Invisibility Potion",
+    "Ingredients": "2 Superior Extract, 1 Kobold Tail",
+    "Learned From": "Invisibility Potion Recipe",
+    "Effects": "Grants invisibility for 5 minutes"
+  }
+]

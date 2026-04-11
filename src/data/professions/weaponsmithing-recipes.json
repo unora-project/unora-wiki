@@ -1,0 +1,562 @@
+[
+  {
+    "Name": "Eppe",
+    "Level": "2",
+    "Type": "1H",
+    "Materials": "2 Raw Bronze, 1 Coal",
+    "Materials to upgrade": "1 Eppe, 2 Raw Bronze, 1 Coal"
+  },
+  {
+    "Name": "Saber",
+    "Level": "7",
+    "Type": "1H",
+    "Materials": "2 Raw Bronze, 1 Coal",
+    "Materials to upgrade": "1 Saber, 1 Raw Bronze, 1 Coal"
+  },
+  {
+    "Name": "Claidheamh",
+    "Level": "11",
+    "Type": "1H",
+    "Materials": "2 Polished Bronze Bar, 1 Coal",
+    "Materials to upgrade": "1 Claidheamh, 1 Polished Bronze Bar, 1 Coal"
+  },
+  {
+    "Name": "Hatchet",
+    "Level": "11",
+    "Type": "1H",
+    "Materials": "3 Polished Bronze Bar, 1 Coal",
+    "Materials to upgrade": "1 Hatchet, 1 Polished Bronze Bar, 1 Coal"
+  },
+  {
+    "Name": "Broad Sword",
+    "Level": "17",
+    "Type": "1H",
+    "Materials": "2 Polished Bronze Bar, 2 Coal",
+    "Materials to upgrade": "1 Broad Sword, 1 Polished Bronze Bar, 2 Coal"
+  },
+  {
+    "Name": "Harpoon",
+    "Level": "21",
+    "Type": "1H",
+    "Materials": "Cannot be crafted",
+    "Materials to upgrade": "1 Harpoon, 1 Polished Bronze Bar, 1 Coal"
+  },
+  {
+    "Name": "Battle Sword",
+    "Level": "26",
+    "Type": "1H",
+    "Materials": "3 Polished Bronze Bar, 2 Coal",
+    "Materials to upgrade": "1 Battle Sword, 2 Polished Bronze Bar, 2 Coal"
+  },
+  {
+    "Name": "Masquerade",
+    "Level": "31",
+    "Type": "1H",
+    "Materials": "4 Polished Bronze Bar, 2 Coal",
+    "Materials to upgrade": "1 Masquerade, 2 Polished Bronze Bar, 1 Coal"
+  },
+  {
+    "Name": "Scimitar",
+    "Level": "36",
+    "Type": "1H",
+    "Materials": "Cannot be crafted",
+    "Materials to upgrade": "1 Scimitar, 2 Polished Bronze Bar, 2 Coal"
+  },
+  {
+    "Name": "Bramble",
+    "Level": "41",
+    "Type": "1H",
+    "Materials": "2 Polished Iron Bar, 2 Coal",
+    "Materials to upgrade": "1 Bramble, 1 Polished Iron Bar, 3 Coal"
+  },
+  {
+    "Name": "Club",
+    "Level": "41",
+    "Type": "1H",
+    "Materials": "Cannot be crafted",
+    "Materials to upgrade": "1 Club, 2 Polished Iron Bar, 2 Coal"
+  },
+  {
+    "Name": "Spiked Club",
+    "Level": "50",
+    "Type": "1H",
+    "Materials": "1 Club, 1 Polished Iron Bar, 2 Coal",
+    "Materials to upgrade": "1 Spiked Club, 3 Polished Iron Bar, 2 Coal"
+  },
+  {
+    "Name": "Chain Mace",
+    "Level": "60",
+    "Type": "1H",
+    "Materials": "3 Polished Iron Bar, 3 Coal",
+    "Materials to upgrade": "1 Chain Mace, 3 Polished Iron Bar, 3 Coal"
+  },
+  {
+    "Name": "Handaxe",
+    "Level": "71",
+    "Type": "1H",
+    "Materials": "2 Polished Mythril Bar, 2 Coal",
+    "Materials to upgrade": "1 Hand Axe, 2 Polished Mythril Bar, 2 Coal"
+  },
+  {
+    "Name": "Cutlass",
+    "Level": "80",
+    "Type": "1H",
+    "Materials": "Cannot be crafted",
+    "Materials to upgrade": "1 Cutlass, 3 Polished Mythril Bar, 2 Coal"
+  },
+  {
+    "Name": "Talgonite Axe",
+    "Level": "95",
+    "Type": "1H",
+    "Materials": "3 Polished Hy-brasyl Bar, 5 Coal",
+    "Materials to upgrade": "1 Talgonite Axe, 4 Polished Hy-brasyl Bar, 4 Coal"
+  },
+  {
+    "Name": "Dragon Slayer",
+    "Level": "99",
+    "Type": "1H",
+    "Materials": "Cannot be crafted",
+    "Materials to upgrade": "1 Dragon Slayer, 5 Polished Hy-brasyl Bar, 5 Coal"
+  },
+  {
+    "Name": "Ruby Saber",
+    "Level": "99",
+    "Type": "1H",
+    "Materials": "10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 25 Pristine Ruby",
+    "Materials to upgrade": "Can only be upgraded by a Polishing Stone"
+  },
+  {
+    "Name": "Sapphire Saber",
+    "Level": "99",
+    "Type": "1H",
+    "Materials": "10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 25 Pristine Sapphire",
+    "Materials to upgrade": "Can only be upgraded by a Polishing Stone"
+  },
+  {
+    "Name": "Beryl Saber",
+    "Level": "99",
+    "Type": "1H",
+    "Materials": "10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 25 Pristine Beryl",
+    "Materials to upgrade": "Can only be upgraded by a Polishing Stone"
+  },
+  {
+    "Name": "Longsword",
+    "Level": "50",
+    "Type": "2H",
+    "Materials": "3 Polished Iron Bar, 2 Coal",
+    "Materials to upgrade": "1 Longsword, 1 Polished Iron Bar, 3 Coal"
+  },
+  {
+    "Name": "Claidhmore",
+    "Level": "71",
+    "Type": "2H",
+    "Materials": "3 Polished Mythril Bar, 2 Coal",
+    "Materials to upgrade": "1 Claidhmore, 2 Polished Mythril Bar, 3 Coal"
+  },
+  {
+    "Name": "Emerald Sword",
+    "Level": "78",
+    "Type": "2H",
+    "Materials": "3 Polished Mythril Bar, 2 Coal",
+    "Materials to upgrade": "1 Emerald Sword, 2 Polished Mythril Bar, 3 Coal"
+  },
+  {
+    "Name": "Gladius",
+    "Level": "86",
+    "Type": "2H",
+    "Materials": "4 Polished Mythril Bar, 4 Coal",
+    "Materials to upgrade": "1 Gladius, 3 Polished Mythril Bar, 4 Coal"
+  },
+  {
+    "Name": "Kindjal",
+    "Level": "97",
+    "Type": "2H",
+    "Materials": "2 Polished Hy-brasyl Bar, 5 Coal",
+    "Materials to upgrade": "1 Kindjal, 3 Polished Hy-brasyl Bar, 4 Coal"
+  },
+  {
+    "Name": "Hy-Brasyl Battle Axe",
+    "Level": "99",
+    "Type": "2H",
+    "Materials": "Cannot be crafted",
+    "Materials to upgrade": "1 Hy-Brasyl Axe, 5 Polished Hy-brasyl Bar, 5 Coal"
+  },
+  {
+    "Name": "Forest Escalon",
+    "Level": "99",
+    "Type": "2H",
+    "Materials": "10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 15 Superior Monster Extract",
+    "Materials to upgrade": "Can only be upgraded by a Polishing Stone"
+  },
+  {
+    "Name": "Shadow Escalon",
+    "Level": "99",
+    "Type": "2H",
+    "Materials": "10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 25 Essence of Theselene",
+    "Materials to upgrade": "Can only be upgraded by a Polishing Stone"
+  },
+  {
+    "Name": "Moon Escalon",
+    "Level": "99",
+    "Type": "2H",
+    "Materials": "10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 1 Eclipse Pearl",
+    "Materials to upgrade": "Can only be upgraded by a Polishing Stone"
+  },
+  {
+    "Name": "Magus Ares",
+    "Level": "11",
+    "Type": "Staff",
+    "Materials": "2 Polished Bronze Bar, 1 Coal",
+    "Materials to upgrade": "1 Magus Ares, 2 Polished Bronze Bar, 1 Coal"
+  },
+  {
+    "Name": "Holy Hermes",
+    "Level": "11",
+    "Type": "Staff",
+    "Materials": "2 Polished Bronze Bar, 1 Coal",
+    "Materials to upgrade": "1 Holy Hermes, 2 Polished Bronze Bar, 1 Coal"
+  },
+  {
+    "Name": "Magus Zeus",
+    "Level": "41",
+    "Type": "Staff",
+    "Materials": "3 Polished Iron Bar, 2 Coal",
+    "Materials to upgrade": "1 Magus Zeus, 2 Polished Iron Bar, 1 Coal"
+  },
+  {
+    "Name": "Holy Kronos",
+    "Level": "41",
+    "Type": "Staff",
+    "Materials": "3 Polished Iron Bar, 2 Coal",
+    "Materials to upgrade": "1 Holy Kronos, 2 Polished Iron Bar, 1 Coal"
+  },
+  {
+    "Name": "Magus Diana",
+    "Level": "71",
+    "Type": "Staff",
+    "Materials": "Cannot be crafted",
+    "Materials to upgrade": "1 Magus Diana, 3 Polished Mythril Bar, 2 Coal"
+  },
+  {
+    "Name": "Holy Diana",
+    "Level": "71",
+    "Type": "Staff",
+    "Materials": "Cannot be crafted",
+    "Materials to upgrade": "1 Holy Diana, 3 Polished Mythril Bar, 2 Coal"
+  },
+  {
+    "Name": "Stone Cross",
+    "Level": "90",
+    "Type": "Staff",
+    "Materials": "Cannot be crafted",
+    "Materials to upgrade": "1 Stone Cross, 4 Polished Hy-brasyl Bar, 3 Coal"
+  },
+  {
+    "Name": "Oak Staff",
+    "Level": "97",
+    "Type": "Staff",
+    "Materials": "Cannot be crafted",
+    "Materials to upgrade": "1 Oak Staff, 5 Polished Hy-brasyl Bar, 4 Coal"
+  },
+  {
+    "Name": "Staff of Wisdom",
+    "Level": "97",
+    "Type": "Staff",
+    "Materials": "Cannot be crafted",
+    "Materials to upgrade": "1 Staff of Wisdom, 5 Polished Hy-brasyl Bar, 4 Coal"
+  },
+  {
+    "Name": "Staff of Aquaedon",
+    "Level": "99",
+    "Type": "Staff",
+    "Materials": "10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 20 Essence of Aquaedon",
+    "Materials to upgrade": "Can only be upgraded by a Polishing Stone"
+  },
+  {
+    "Name": "Staff of Miraelis",
+    "Level": "99",
+    "Type": "Staff",
+    "Materials": "10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 20 Essence of Miraelis",
+    "Materials to upgrade": "Can only be upgraded by a Polishing Stone"
+  },
+  {
+    "Name": "Staff of Zephyra",
+    "Level": "99",
+    "Type": "Staff",
+    "Materials": "10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 20 Essence of Zephyra",
+    "Materials to upgrade": "Can only be upgraded by a Polishing Stone"
+  },
+  {
+    "Name": "Staff of Ignatar",
+    "Level": "99",
+    "Type": "Staff",
+    "Materials": "10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 20 Essence of Ignatar",
+    "Materials to upgrade": "Can only be upgraded by a Polishing Stone"
+  },
+  {
+    "Name": "Staff of Geolith",
+    "Level": "99",
+    "Type": "Staff",
+    "Materials": "10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 20 Essence of Geolith",
+    "Materials to upgrade": "Can only be upgraded by a Polishing Stone"
+  },
+  {
+    "Name": "Staff of Theselene",
+    "Level": "99",
+    "Type": "Staff",
+    "Materials": "10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 20 Essence of Theselene",
+    "Materials to upgrade": "Can only be upgraded by a Polishing Stone"
+  },
+  {
+    "Name": "Snow Dagger",
+    "Level": "2",
+    "Type": "Dagger",
+    "Materials": "2 Raw Bronze, 1 Coal",
+    "Materials to upgrade": "1 Snow Dagger, 1 Raw Bronze, 1 Coal"
+  },
+  {
+    "Name": "Center Dagger",
+    "Level": "5",
+    "Type": "Dagger",
+    "Materials": "2 Raw Bronze, 1 Coal",
+    "Materials to upgrade": "1 Center Dagger, 1 Raw Bronze, 1 Coal"
+  },
+  {
+    "Name": "Blossom Dagger",
+    "Level": "11",
+    "Type": "Dagger",
+    "Materials": "2 Polished Bronze Bar, 1 Coal",
+    "Materials to upgrade": "1 Blossom Dagger, 2 Polished Bronze Bar, 1 Coal"
+  },
+  {
+    "Name": "Curved Dagger",
+    "Level": "30",
+    "Type": "Dagger",
+    "Materials": "Cannot be crafted",
+    "Materials to upgrade": "1 Curved Dagger, 3 Polished Bronze Bar, 1 Coal"
+  },
+  {
+    "Name": "Moon Dagger",
+    "Level": "31",
+    "Type": "Dagger",
+    "Materials": "3 Polished Bronze Bar, 2 Coal",
+    "Materials to upgrade": "1 Moon Dagger, 3 Polished Bronze Bar, 2 Coal"
+  },
+  {
+    "Name": "Light Dagger",
+    "Level": "42",
+    "Type": "Dagger",
+    "Materials": "2 Polished Iron Bar, 2 Coal",
+    "Materials to upgrade": "1 Light Dagger, 2 Polished Iron Bar, 2 Coal"
+  },
+  {
+    "Name": "Sun Dagger",
+    "Level": "62",
+    "Type": "Dagger",
+    "Materials": "3 Polished Iron Bar, 2 Coal",
+    "Materials to upgrade": "1 Sun Dagger, 3 Polished Iron Bar, 2 Coal"
+  },
+  {
+    "Name": "Lotus Dagger",
+    "Level": "75",
+    "Type": "Dagger",
+    "Materials": "2 Polished Mythril Bar, 2 Coal",
+    "Materials to upgrade": "1 Lotus Dagger, 2 Polished Mythril Bar, 1 Coal"
+  },
+  {
+    "Name": "Blood Dagger",
+    "Level": "89",
+    "Type": "Dagger",
+    "Materials": "3 Polished Mythril Bar, 3 Coal",
+    "Materials to upgrade": "1 Blood Dagger, 3 Polished Mythril Bar, 2 Coal"
+  },
+  {
+    "Name": "Nagetier Dagger",
+    "Level": "99",
+    "Type": "Dagger",
+    "Materials": "Cannot be crafted",
+    "Materials to upgrade": "1 Nagetier Dagger, 5 Polished Hy-brasyl Bar, 4 Coal"
+  },
+  {
+    "Name": "Chain Whip",
+    "Level": "99",
+    "Type": "Dagger",
+    "Materials": "10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 1 Eclipse Pearl",
+    "Materials to upgrade": "Can only be upgraded by a Polishing Stone"
+  },
+  {
+    "Name": "Kris",
+    "Level": "99",
+    "Type": "Dagger",
+    "Materials": "10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 1 Radiant Pearl",
+    "Materials to upgrade": "Can only be upgraded by a Polishing Stone"
+  },
+  {
+    "Name": "Scurvy Dagger",
+    "Level": "99",
+    "Type": "Dagger",
+    "Materials": "10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 15 Superior Monster Extract",
+    "Materials to upgrade": "Can only be upgraded by a Polishing Stone"
+  },
+  {
+    "Name": "Dull Claw",
+    "Level": "3",
+    "Type": "Claw",
+    "Materials": "2 Raw Bronze, 1 Coal",
+    "Materials to upgrade": "1 Dul Claw, 1 Raw Bronze, 1 Coal"
+  },
+  {
+    "Name": "Wolf Claw",
+    "Level": "11",
+    "Type": "Claw",
+    "Materials": "2 Polished Bronze Bar, 1 Coal",
+    "Materials to upgrade": "1 Wolf Claw, 2 Polished Bronze Bar, 1 Coal"
+  },
+  {
+    "Name": "Eagle Talon",
+    "Level": "41",
+    "Type": "Claw",
+    "Materials": "2 Polished Iron Bar, 1 Coal",
+    "Materials to upgrade": "1 Eagle Talon, 2 Polished Iron Bar, 1 Coal"
+  },
+  {
+    "Name": "Stone Fist",
+    "Level": "50",
+    "Type": "Claw",
+    "Materials": "Cannot be crafted",
+    "Materials to upgrade": "1 Stone Fist, 3 Polished Iron Bar, 2 Coal"
+  },
+  {
+    "Name": "Phoenix Claw",
+    "Level": "71",
+    "Type": "Claw",
+    "Materials": "2 Polished Mythril Bar, 1 Coal",
+    "Materials to upgrade": "1 Phoenix Claw, 2 Polished Mythril Bar, 1 Coal"
+  },
+  {
+    "Name": "Nunchaku",
+    "Level": "97",
+    "Type": "Claw",
+    "Materials": "Cannot be crafted",
+    "Materials to upgrade": "1 Nunchaku, 5 Polished Hy-brasyl Bar, 4 Coal"
+  },
+  {
+    "Name": "Emerald Tonfa",
+    "Level": "99",
+    "Type": "Claw",
+    "Materials": "10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 25 Pristine Emerald",
+    "Materials to upgrade": "Can only be upgraded by a Polishing Stone"
+  },
+  {
+    "Name": "Ruby Tonfa",
+    "Level": "99",
+    "Type": "Claw",
+    "Materials": "10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 25 Pristine Ruby",
+    "Materials to upgrade": "Can only be upgraded by a Polishing Stone"
+  },
+  {
+    "Name": "Sapphire Tonfa",
+    "Level": "99",
+    "Type": "Claw",
+    "Materials": "10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 25 Pristine Sapphire",
+    "Materials to upgrade": "Can only be upgraded by a Polishing Stone"
+  },
+  {
+    "Name": "Leather Shield",
+    "Level": "15",
+    "Type": "Shield",
+    "Materials": "2 Polished Bronze Bar, 1 Coal",
+    "Materials to upgrade": "1 Leather Shield, 2 Polished Bronze Bar, 1 Coal"
+  },
+  {
+    "Name": "Bronze Shield",
+    "Level": "31",
+    "Type": "Shield",
+    "Materials": "3 Polished Bronze Bar, 2 Coal",
+    "Materials to upgrade": "1 Bronze Shield, 3 Polished Bronze Bar, 2 Coal"
+  },
+  {
+    "Name": "Iron Shield",
+    "Level": "45",
+    "Type": "Shield",
+    "Materials": "2 Polished Iron Bar, 1 Coal",
+    "Materials to upgrade": "1 Iron Shield, 3 Polished Iron Bar, 2 Coal"
+  },
+  {
+    "Name": "Gravel Shield",
+    "Level": "41",
+    "Type": "Shield",
+    "Materials": "Cannot be crafted",
+    "Materials to upgrade": "1 Gravel Shield, 2 Polished Iron Bar, 1 Coal"
+  },
+  {
+    "Name": "Light Shield",
+    "Level": "50",
+    "Type": "Shield",
+    "Materials": "Cannot be crafted",
+    "Materials to upgrade": "1 Light Shield, 3 Polished Iron Bar, 2 Coal"
+  },
+  {
+    "Name": "Mythril Shield",
+    "Level": "61",
+    "Type": "Shield",
+    "Materials": "2 Polished Mythril Bar, 2 Coal",
+    "Materials to upgrade": "1 Mythril Shield, 3 Polished Mythril Bar, 2 Coal"
+  },
+  {
+    "Name": "Hy-Brasyl Shield",
+    "Level": "77",
+    "Type": "Shield",
+    "Materials": "2 Polished Hy-brasyl Bar, 1 Coal",
+    "Materials to upgrade": "1 Hy-Brasyl Shield, 4 Polished Hy-brasyl Bar, 3 Coal"
+  },
+  {
+    "Name": "Talgonite Shield",
+    "Level": "99",
+    "Type": "Shield",
+    "Materials": "Cannot be crafted",
+    "Materials to upgrade": "1 Talgonite Shield, 5 Polished Azurium Bar, 4 Coal"
+  },
+  {
+    "Name": "Captain's Shield",
+    "Level": "99",
+    "Type": "Shield",
+    "Materials": "Cannot be crafted",
+    "Materials to upgrade": "1 Captain's Shield, 10 Polished Azurium Bar, 5 Coal"
+  },
+  {
+    "Name": "Cursed Shield",
+    "Level": "99",
+    "Type": "Shield",
+    "Materials": "Cannot be crafted",
+    "Materials to upgrade": "1 Cursed Shield, 10 Polished Crimsonite Bar, 5 Coal"
+  },
+  {
+    "Name": "Cathonic Shield",
+    "Level": "99",
+    "Type": "Shield",
+    "Materials": "Cannot be crafted",
+    "Materials to upgrade": "1 Cathonic Shield, 10 Polished Crimsonite Bar, 5 Coal"
+  },
+  {
+    "Name": "Enchanting Stone",
+    "Level": "99",
+    "Type": "Master",
+    "Materials": "1 Strange Stone, 1 Radiant Pearl",
+    "Materials to upgrade": "Cannot be upgraded"
+  },
+  {
+    "Name": "Empowering Stone",
+    "Level": "99",
+    "Type": "Master",
+    "Materials": "1 Strange Stone, 1 Eclipse Pearl",
+    "Materials to upgrade": "Cannot be upgraded"
+  },
+  {
+    "Name": "Polishing Stone",
+    "Level": "99",
+    "Type": "Master",
+    "Materials": "2 Polished Crimsonite Bar, 2 Polished Azurium Bar, 10 Exquisite Hemp",
+    "Materials to upgrade": "Cannot be upgraded"
+  }
+]

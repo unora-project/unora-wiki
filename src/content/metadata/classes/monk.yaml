@@ -1,0 +1,35 @@
+description: >-
+  Your body will be a shield for others to gather near you. Attempt to grab the attention
+  of your foes to aid others in battle. While your heart is strong, so will your fists and legs.
+mastering:
+  - "14,000 base HP"
+  - "5,500 base MP"
+  - "250,000,000 experience (which will be sacrificed)"
+  - "Gold Sand (item drop from CR20)"
+  - "Cauldron (item drop from CR20)"
+  - "Skills learned: Wolf Fang Fist, Rapid Punch"
+dedication:
+  - "8,400 base HP"
+  - "3,400 base MP"
+  - "60,000,000 experience (which will be sacrificed)"
+  - "10 Strong Health Potions"
+dedicationCarryOver: "19 stat points will carry over into the class you dedicate into."
+statCaps:
+  - progression: Pre-Master
+    str: 100
+    int: 50
+    wis: 50
+    con: 120
+    dex: 80
+  - progression: Master
+    str: 150
+    int: 80
+    wis: 80
+    con: 180
+    dex: 120
+  - progression: Grandmaster
+    str: 180
+    int: 100
+    wis: 100
+    con: 215
+    dex: 150

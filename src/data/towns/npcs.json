@@ -1,0 +1,98 @@
+[
+  {
+    "town": "mileth",
+    "name": "Aingeal",
+    "type": "Bartender",
+    "coordinates": "42,5"
+  },
+  {
+    "town": "mileth",
+    "name": "Berteli",
+    "type": "White Magic Master",
+    "coordinates": "10,53"
+  },
+  {
+    "town": "mileth",
+    "name": "Callo",
+    "type": "Sells Weapons",
+    "coordinates": "5,38"
+  },
+  {
+    "town": "mileth",
+    "name": "Cassidy",
+    "type": "Bank",
+    "coordinates": "46,40"
+  },
+  {
+    "town": "mileth",
+    "name": "Dar",
+    "type": "Dark Magic Master",
+    "coordinates": "10,53"
+  },
+  {
+    "town": "mileth",
+    "name": "Elganjo",
+    "type": "Combat Master",
+    "coordinates": "6,11"
+  },
+  {
+    "town": "mileth",
+    "name": "Gendusa",
+    "type": "Cooking Trainer",
+    "coordinates": "54,33"
+  },
+  {
+    "town": "mileth",
+    "name": "Josephine",
+    "type": "Hair Stylist",
+    "coordinates": "52,49"
+  },
+  {
+    "town": "mileth",
+    "name": "Naomhan",
+    "type": "Church (Marriage/Divorce)",
+    "coordinates": "32,45"
+  },
+  {
+    "town": "mileth",
+    "name": "Nisk",
+    "type": "Skill Master",
+    "coordinates": "6,11"
+  },
+  {
+    "town": "mileth",
+    "name": "Oona",
+    "type": "Restaurant",
+    "coordinates": "34,12"
+  },
+  {
+    "town": "mileth",
+    "name": "Riona",
+    "type": "Inn",
+    "coordinates": "19,13"
+  },
+  {
+    "town": "mileth",
+    "name": "Skarn",
+    "type": "Mileth Crypt Quest Giver",
+    "coordinates": "58,25"
+  },
+  {
+    "town": "mileth",
+    "name": "Teague",
+    "type": "Quest Giver",
+    "coordinates": "42,5"
+  },
+  {
+    "town": "mileth",
+    "name": "Torrance",
+    "type": "Sells Armor",
+    "coordinates": "11,31"
+  },
+  {
+    "town": "mileth",
+    "name": "Urza",
+    "type": "Class Armor / Dyes",
+    "coordinates": "35,28"
+  }
+]

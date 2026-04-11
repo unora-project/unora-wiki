@@ -1,0 +1,17 @@
+name: Weaponsmithing
+description: Craft all types of weapons, increase weapon quality, and create stones used to improve weapon quality.
+cards:
+  - icon: MapPin
+    title: Where to Learn
+    body: Weaponsmithing can be learned from Thorin in the Tagor Forge (28,77).
+  - icon: Hammer
+    title: How to Craft
+    body: Stand by one of the anvils next to Thorin to start crafting.
+tip: >-
+  Aislings of any profession can polish Ore in the Weaponsmithing building.
+  There are separate polishing success rates for each ore type and quality.
+  Rates start at 60% and increase the more you do it.
+tables:
+  - title: Recipes
+    dataFile: weaponsmithing-recipes
+    searchPlaceholder: Search recipes...

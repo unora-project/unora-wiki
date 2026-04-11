@@ -1,0 +1,359 @@
+[
+  {
+    "Enchant": "Aquaedon's Clarity",
+    "Effects": "+25 MP",
+    "Rank": "Beginner",
+    "Name": "Meager",
+    "Level": "5"
+  },
+  {
+    "Enchant": "Ignatar's Envy",
+    "Effects": "+3 Flat Skill DMG -20 HP",
+    "Rank": "Beginner",
+    "Name": "Swift",
+    "Level": "3"
+  },
+  {
+    "Enchant": "Geolith's Gratitiude",
+    "Effects": "+50 HP",
+    "Rank": "Beginner",
+    "Name": "Skillful",
+    "Level": "3"
+  },
+  {
+    "Enchant": "Miraelis' Serenity",
+    "Effects": "+6 Flat Spell DMG -20 HP",
+    "Rank": "Beginner",
+    "Name": "Mystical",
+    "Level": "5"
+  },
+  {
+    "Enchant": "Theselene's Elusion",
+    "Effects": "+1% ATK Speed",
+    "Rank": "Beginner",
+    "Name": "Shrouded",
+    "Level": "5"
+  },
+  {
+    "Enchant": "Aquaedon's Calming",
+    "Effects": "+50 MP",
+    "Rank": "Basic",
+    "Name": "Serene",
+    "Level": "40"
+  },
+  {
+    "Enchant": "Ignatar's Grief",
+    "Effects": "+3 Flat Skill DMG +1 AC",
+    "Rank": "Basic",
+    "Name": "Minor",
+    "Level": "24"
+  },
+  {
+    "Enchant": "Geolith's Pride",
+    "Effects": "+100 HP",
+    "Rank": "Basic",
+    "Name": "Modest",
+    "Level": "28"
+  },
+  {
+    "Enchant": "Miraelis' Blessing",
+    "Effects": "+6 Flat Spell DMG +1 AC",
+    "Rank": "Basic",
+    "Name": "Tiny",
+    "Level": "34"
+  },
+  {
+    "Enchant": "Serendael's Luck",
+    "Effects": "+1 HIT",
+    "Rank": "Basic",
+    "Name": "Lucky",
+    "Level": "11"
+  },
+  {
+    "Enchant": "Skandara's Might",
+    "Effects": "+1 DMG +5 Flat Skill DMG",
+    "Rank": "Basic",
+    "Name": "Mighty",
+    "Level": "16"
+  },
+  {
+    "Enchant": "Theselene's Shadow",
+    "Effects": "+1% ATK Speed +1 DMG +3 Flat Skill DMG",
+    "Rank": "Basic",
+    "Name": "Darkened",
+    "Level": "37"
+  },
+  {
+    "Enchant": "Zephyra's Spirit",
+    "Effects": "+1% MR",
+    "Rank": "Basic",
+    "Name": "Breezy",
+    "Level": "20"
+  },
+  {
+    "Enchant": "Aquaedon's Wisdom",
+    "Effects": "+1 WIS",
+    "Rank": "Initiate",
+    "Name": "Wise",
+    "Level": "50"
+  },
+  {
+    "Enchant": "Ignatar's Jealousy",
+    "Effects": "+1% Skill DMG + 6 Flat Skill DMG",
+    "Rank": "Initiate",
+    "Name": "Crippling",
+    "Level": "60"
+  },
+  {
+    "Enchant": "Ignatar's Regret",
+    "Effects": "+2% ATK Speed + 6 Flat Skill DMG",
+    "Rank": "Initiate",
+    "Name": "Hasty",
+    "Level": "48"
+  },
+  {
+    "Enchant": "Geolith's Constitution",
+    "Effects": "+1 CON",
+    "Rank": "Initiate",
+    "Name": "Hale",
+    "Level": "50"
+  },
+  {
+    "Enchant": "Geolith's Obsession",
+    "Effects": "+150 HP",
+    "Rank": "Initiate",
+    "Name": "Powerful",
+    "Level": "65"
+  },
+  {
+    "Enchant": "Miraelis' Harmony",
+    "Effects": "+1% Spell DMG + 10 Flat Spell DMG",
+    "Rank": "Initiate",
+    "Name": "Bright",
+    "Level": "69"
+  },
+  {
+    "Enchant": "Miraelis' Intellect",
+    "Effects": "+1 INT",
+    "Rank": "Initiate",
+    "Name": "Brilliant",
+    "Level": "50"
+  },
+  {
+    "Enchant": "Serendael's Chance",
+    "Effects": "+1 Hit + 25 MP",
+    "Rank": "Initiate",
+    "Name": "Focused",
+    "Level": "55"
+  },
+  {
+    "Enchant": "Serendael's Magic",
+    "Effects": "+1 Hit + 50 HP",
+    "Rank": "Initiate",
+    "Name": "Airy",
+    "Level": "41"
+  },
+  {
+    "Enchant": "Skandara's Strength",
+    "Effects": "+1 STR",
+    "Rank": "Initiate",
+    "Name": "Tough",
+    "Level": "50"
+  },
+  {
+    "Enchant": "Skandara's Triumph",
+    "Effects": "+1 DMG + 10 Flat Skill DMG",
+    "Rank": "Initiate",
+    "Name": "Valiant",
+    "Level": "44"
+  },
+  {
+    "Enchant": "Theselene's Dexterity",
+    "Effects": "+1 DEX",
+    "Rank": "Initiate",
+    "Name": "Nimble",
+    "Level": "50"
+  },
+  {
+    "Enchant": "Zephyra's Mist",
+    "Effects": "+2% MR -1 Hit",
+    "Rank": "Initiate",
+    "Name": "Soft",
+    "Level": "45"
+  },
+  {
+    "Enchant": "Zephyra's Wind",
+    "Effects": "+3% MR -1 Hit +1 AC",
+    "Rank": "Initiate",
+    "Name": "Hazy",
+    "Level": "58"
+  },
+  {
+    "Enchant": "Aquaedon's Will",
+    "Effects": "+75 MP",
+    "Rank": "Artisan",
+    "Name": "Potent",
+    "Level": "71"
+  },
+  {
+    "Enchant": "Ignatar's Destruction",
+    "Effects": "+2% Skill DMG +9 Flat Skill DMG +1 AC",
+    "Rank": "Artisan",
+    "Name": "Ruthless",
+    "Level": "80"
+  },
+  {
+    "Enchant": "Geolith's Fortitude",
+    "Effects": "+1% Skill DMG +200 HP",
+    "Rank": "Artisan",
+    "Name": "Eternal",
+    "Level": "83"
+  },
+  {
+    "Enchant": "Miraelis' Nurturing",
+    "Effects": "+2% Spell DMG +12 Flat Spell DMG +1 AC",
+    "Rank": "Artisan",
+    "Name": "Ancient",
+    "Level": "88"
+  },
+  {
+    "Enchant": "Serendael's Roll",
+    "Effects": "+2 Hit",
+    "Rank": "Artisan",
+    "Name": "Precision",
+    "Level": "71"
+  },
+  {
+    "Enchant": "Skandara's Drive",
+    "Effects": "+2 DMG + 15 Flat Skill DMG +1 AC",
+    "Rank": "Artisan",
+    "Name": "Savage",
+    "Level": "75"
+  },
+  {
+    "Enchant": "Theselene's Balance",
+    "Effects": "+1% ATK Speed +1 DMG +9 Flat Skill DMG",
+    "Rank": "Artisan",
+    "Name": "Tight",
+    "Level": "71"
+  },
+  {
+    "Enchant": "Zephyra's Vortex",
+    "Effects": "+4% MR -2 Hit -4 DMG",
+    "Rank": "Artisan",
+    "Name": "Whirling",
+    "Level": "78"
+  },
+  {
+    "Enchant": "Aquaedon's Resolve",
+    "Effects": "+125 MP +1% Spell DMG",
+    "Rank": "Adept",
+    "Name": "Soothing",
+    "Level": "90"
+  },
+  {
+    "Enchant": "Serendael's Addiction",
+    "Effects": "+3 Hit -1 MR",
+    "Rank": "Adept",
+    "Name": "Persisting",
+    "Level": "90"
+  },
+  {
+    "Enchant": "Skandara's Pierce",
+    "Effects": "+3 DMG +20 Flat Skill DMG -1% MR",
+    "Rank": "Adept",
+    "Name": "Blazing",
+    "Level": "95"
+  },
+  {
+    "Enchant": "Theselene's Risk",
+    "Effects": "+2% ATK Speed +2 DMG +12 Flat Skill DMG",
+    "Rank": "Adept",
+    "Name": "Cursed",
+    "Level": "90"
+  },
+  {
+    "Enchant": "Zephyra's Gust",
+    "Effects": "+4% MR -1 Hit -2 DMG",
+    "Rank": "Adept",
+    "Name": "Howling",
+    "Level": "97"
+  },
+  {
+    "Enchant": "Ignatar's Dominance",
+    "Effects": "+4% Skill DMG +15 Flat Skill DMG +1 AC",
+    "Rank": "Advanced",
+    "Name": "Fury",
+    "Level": "99"
+  },
+  {
+    "Enchant": "Geolith's Testimony",
+    "Effects": "+300 HP +1% Skill DMG +15 Flat Skill DMG",
+    "Rank": "Advanced",
+    "Name": "Sturdy",
+    "Level": "99"
+  },
+  {
+    "Enchant": "Miraelis' Brace",
+    "Effects": "+3% Spell DMG +20 Flat Spell DMG +1 AC",
+    "Rank": "Advanced",
+    "Name": "Resilient",
+    "Level": "99"
+  },
+  {
+    "Enchant": "Aquaedon's Commitment",
+    "Effects": "+150 MP +1% Spell DMG +20 Flat Spell DMG",
+    "Rank": "Advanced",
+    "Name": "Spirited",
+    "Level": "99"
+  },
+  {
+    "Enchant": "Serendael's Success",
+    "Effects": "+4 Hit -1 MR",
+    "Rank": "Advanced",
+    "Name": "Pristine",
+    "Level": "99"
+  },
+  {
+    "Enchant": "Theselene's Sorrow",
+    "Effects": "+3% ATK Speed +3 DMG +15 Flat Skill DMG",
+    "Rank": "Advanced",
+    "Name": "Shaded",
+    "Level": "99"
+  },
+  {
+    "Enchant": "Skandara's Offense",
+    "Effects": "+6 DMG +30 Flat Skill DMG -1% MR",
+    "Rank": "Expert",
+    "Name": "Sinister",
+    "Level": "99"
+  },
+  {
+    "Enchant": "Zephyra's Power",
+    "Effects": "+5% MR -2 Hit -4 DMG",
+    "Rank": "Expert",
+    "Name": "Gleaming",
+    "Level": "99"
+  },
+  {
+    "Enchant": "Ignatar's Deficit",
+    "Effects": "+5% Skill DMG +18 Flat Skill DMG +1 AC -1% MR",
+    "Rank": "Expert",
+    "Name": "Infernal",
+    "Level": "99"
+  },
+  {
+    "Enchant": "Geolith's Barrier",
+    "Effects": "+400 HP +2 DMG +2% ATK Speed +1% Skill DMG +18 Flat Skill DMG",
+    "Rank": "Expert",
+    "Name": "Primal",
+    "Level": "99"
+  },
+  {
+    "Enchant": "Miraelis' Roots",
+    "Effects": "+4% Spell DMG +30 Flat Spell DMG +1 AC -1% MR",
+    "Rank": "Expert",
+    "Name": "Thick",
+    "Level": "99"
+  }
+]

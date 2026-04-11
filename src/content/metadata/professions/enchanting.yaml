@@ -1,0 +1,17 @@
+name: Enchanting
+description: >-
+  Add various stats to individual pieces of equipment. A successful crafting creates a scroll
+  which can be traded and applied to unequipped gear.
+cards:
+  - icon: MapPin
+    title: Where to Learn
+    body: >-
+      The Enchanting building is located in the house at (45,39) in Undine Village
+      and taught by the mundane Elara.
+tip: >-
+  Mundane Aria will exchange any type of Essence for any other type for 2,000 gold per essence.
+  Each rank of enchantment requires a specific number of Essence from the same God as the enchant you want to craft.
+tables:
+  - title: Enchantments
+    dataFile: enchanting-enchants
+    searchPlaceholder: Search enchants...

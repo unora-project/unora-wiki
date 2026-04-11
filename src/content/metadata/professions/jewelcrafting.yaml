@@ -1,0 +1,21 @@
+name: Jewelcrafting
+description: Craft various rings, necklaces, and earrings from gems and ores.
+cards:
+  - icon: MapPin
+    title: Where to Learn
+    body: >-
+      The Jewelcrafting building is located in the house at (20,10) in Rucesion
+      and taught by the mundane Celestia. Celestia will also buy any crafted items.
+  - icon: PackageOpen
+    title: Materials
+    body: >-
+      Uses Gems (from Grimlocks in Pravat Caves, Kobolds and Goblins in EW/WW/Wilderness)
+      and various types of Raw and Polished Ores
+      (Bronze, Iron, Mythril, Hy-Brasyl, Crimsonite, Azurium).
+tip: >-
+  Aislings of any profession can polish Gems in the Jewelcrafting building.
+  There are separate polishing success rates for each gem type and quality.
+tables:
+  - title: Recipes
+    dataFile: jewelcrafting-recipes
+    searchPlaceholder: Search recipes...

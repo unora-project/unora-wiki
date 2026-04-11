@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=IM+Fell+English+SC&family=Inter:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* ── Neutrals (the canvas) ── */
+  --color-obsidian: #0B0A0C;
+  --color-ink: #1A1820;
+  --color-ash: #6B6770;
+  --color-ivory: #EDE4D0;
+  --color-gilt: #C9A24C;
+
+  /* ── Core Elemental Palette ── */
+  --color-ignis: #E63419;
+  --color-tide: #2A8FD4;
+  --color-verdant: #5BA12C;
+  --color-bone: #EDE4D0;
+  --color-astral: #5B3FB8;
+
+  /* ── Parchment scale – light mode surfaces ── */
+  --color-parchment-50: #faf7f2;
+  --color-parchment-100: #f5f0e8;
+  --color-parchment-200: #ebe4d8;
+  --color-parchment-300: #dfd7c8;
+  --color-parchment-400: #c8b8a4;
+  --color-parchment-500: #a89478;
+  --color-parchment-600: #8a7560;
+  --color-parchment-700: #6b584a;
+  --color-parchment-800: #4a3c2e;
+  --color-parchment-900: #2a2016;
+
+  /* ── Crypt scale – dark mode surfaces (remapped to style guide) ── */
+  --color-crypt-50: #3a3448;
+  --color-crypt-100: #322d3e;
+  --color-crypt-200: #2a2634;
+  --color-crypt-300: #26222e;
+  --color-crypt-400: #1A1820;
+  --color-crypt-500: #0B0A0C;
+  --color-crypt-600: #09080b;
+  --color-crypt-700: #070608;
+  --color-crypt-800: #050406;
+  --color-crypt-900: #030204;
+
+  /* ── Fonts ── */
+  --font-heading: 'Cinzel', serif;
+  --font-body: 'EB Garamond', serif;
+  --font-ui: 'Inter', sans-serif;
+  --font-subtitle: 'IM Fell English SC', serif;
+}
+
+/* ── Base reset ── */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Light mode defaults ── */
+body {
+  background: var(--color-parchment-50);
+  color: var(--color-parchment-900);
+}
+
+/* ── Dark mode ── */
+.dark body,
+.dark {
+  background: var(--color-obsidian);
+  color: var(--color-ivory);
+}
+
+/* ── Scrollbar (light mode) ── */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-parchment-100);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-parchment-400);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-parchment-500);
+}
+
+/* ── Scrollbar (dark mode) ── */
+.dark ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.dark ::-webkit-scrollbar-track {
+  background: var(--color-obsidian);
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(201, 162, 76, 0.25);
+  border-radius: 4px;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(201, 162, 76, 0.4);
+}
+
+/* ── Paper-grain texture overlay ── */
+.paper-grain {
+  position: relative;
+}
+.paper-grain::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.04;
+  pointer-events: none;
+  border-radius: inherit;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  z-index: 1;
+}
+
+/* ── Gilt ornamental divider ── */
+.gilt-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2.5rem 0;
+  color: var(--color-gilt);
+  opacity: 0.6;
+}
+.gilt-divider::before,
+.gilt-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to var(--dir, right), transparent, var(--color-gilt), transparent);
+}
+.gilt-divider::after {
+  --dir: left;
+}
+.gilt-divider-ornament {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  line-height: 1;
+  color: var(--color-gilt);
+}
+
+/* ── Drop cap for lore pages ── */
+.drop-cap::first-letter {
+  font-family: var(--font-heading);
+  font-size: 4.2em;
+  float: left;
+  line-height: 0.8;
+  margin-right: 0.08em;
+  margin-top: 0.05em;
+  color: var(--drop-cap-color, var(--color-gilt));
+  font-weight: 700;
+}
+
+/* ── Font utilities ── */
+.font-subtitle {
+  font-family: var(--font-subtitle);
+}
+.font-ui {
+  font-family: var(--font-ui);
+}
+
+/* ── Prose max-width ── */
+.prose-width {
+  max-width: 68ch;
+}
+
+/* ── Focus-visible ring ── */
+:focus-visible {
+  outline: 2px solid var(--color-gilt);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ── Utility animations ── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.25s ease forwards;
+}

@@ -1,0 +1,432 @@
+[
+  {
+    "Name": "Small Ruby Ring",
+    "Level": "1",
+    "Materials": "1 Raw Bronze, 1 Raw Ruby"
+  },
+  {
+    "Name": "Beryl Ring",
+    "Level": "1",
+    "Materials": "1 Raw Bronze, 1 Raw Beryl"
+  },
+  {
+    "Name": "Fire Necklace",
+    "Level": "6",
+    "Materials": "1 Raw Bronze, 1 Raw Ruby"
+  },
+  {
+    "Name": "Sea Necklace",
+    "Level": "6",
+    "Materials": "1 Raw Bronze, 1 Raw Sapphire"
+  },
+  {
+    "Name": "Earth Necklace",
+    "Level": "6",
+    "Materials": "1 Raw Bronze, 1 Raw Beryl"
+  },
+  {
+    "Name": "Wind Necklace",
+    "Level": "6",
+    "Materials": "1 Raw Bronze, 1 Raw Emerald"
+  },
+  {
+    "Name": "Basic Beryl Earrings",
+    "Level": "11",
+    "Materials": "1 Polished Bronze, 1 Flawed Beryl"
+  },
+  {
+    "Name": "Basic Ruby Earrings",
+    "Level": "11",
+    "Materials": "1 Polished Bronze, 1 Flawed Ruby"
+  },
+  {
+    "Name": "Basic Sapphire Earrings",
+    "Level": "11",
+    "Materials": "1 Polished Bronze, 1 Flawed Sapphire"
+  },
+  {
+    "Name": "Basic Emerald Earrings",
+    "Level": "11",
+    "Materials": "1 Polished Bronze, 1 Flawed Emerald"
+  },
+  {
+    "Name": "Basic Heartstone Earrings",
+    "Level": "11",
+    "Materials": "1 Polished Bronze, 1 Flawed Heartstone"
+  },
+  {
+    "Name": "Bronze Beryl Ring",
+    "Level": "11",
+    "Materials": "1 Polished Bronze, 1 Flawed Beryl"
+  },
+  {
+    "Name": "Bronze Ruby Ring",
+    "Level": "11",
+    "Materials": "1 Polished Bronze, 1 Flawed Ruby"
+  },
+  {
+    "Name": "Bronze Sapphire Ring",
+    "Level": "11",
+    "Materials": "1 Polished Bronze, 1 Flawed Sapphire"
+  },
+  {
+    "Name": "Bronze Emerald Ring",
+    "Level": "11",
+    "Materials": "1 Polished Bronze, 1 Flawed Emerald"
+  },
+  {
+    "Name": "Bronze Heartstone Ring",
+    "Level": "11",
+    "Materials": "1 Polished Bronze, 1 Flawed Heartstone"
+  },
+  {
+    "Name": "Bone Fire Necklace",
+    "Level": "11",
+    "Materials": "1 Polished Bronze, 1 Flawed Ruby"
+  },
+  {
+    "Name": "Bone Sea Necklace",
+    "Level": "11",
+    "Materials": "1 Polished Bronze, 1 Flawed Sapphire"
+  },
+  {
+    "Name": "Bone Earth Necklace",
+    "Level": "11",
+    "Materials": "1 Polished Bronze, 1 Flawed Beryl"
+  },
+  {
+    "Name": "Bone Wind Necklace",
+    "Level": "11",
+    "Materials": "1 Polished Bronze, 1 Flawed Emerald"
+  },
+  {
+    "Name": "Iron Beryl Earrings",
+    "Level": "41",
+    "Materials": "1 Polished Iron, 1 Uncut Beryl"
+  },
+  {
+    "Name": "Iron Ruby Earrings",
+    "Level": "41",
+    "Materials": "1 Polished Iron, 1 Uncut Ruby"
+  },
+  {
+    "Name": "Iron Sapphire Earrings",
+    "Level": "41",
+    "Materials": "1 Polished Iron, 1 Uncut Sapphire"
+  },
+  {
+    "Name": "Iron Emerald Earrings",
+    "Level": "41",
+    "Materials": "1 Polished Iron, 1 Uncut Emerald"
+  },
+  {
+    "Name": "Iron Heartstone Earrings",
+    "Level": "41",
+    "Materials": "1 Polished Iron, 1 Uncut Heartstone"
+  },
+  {
+    "Name": "Iron Beryl Ring",
+    "Level": "41",
+    "Materials": "1 Polished Iron, 1 Uncut Beryl"
+  },
+  {
+    "Name": "Iron Ruby Ring",
+    "Level": "41",
+    "Materials": "1 Polished Iron, 1 Uncut Ruby"
+  },
+  {
+    "Name": "Iron Sapphire Ring",
+    "Level": "41",
+    "Materials": "1 Polished Iron, 1 Uncut Sapphire"
+  },
+  {
+    "Name": "Iron Emerald Ring",
+    "Level": "41",
+    "Materials": "1 Polished Iron, 1 Uncut Emerald"
+  },
+  {
+    "Name": "Iron Heartstone Ring",
+    "Level": "41",
+    "Materials": "1 Polished Iron, 1 Uncut Heartstone"
+  },
+  {
+    "Name": "Kanna Fire Necklace",
+    "Level": "41",
+    "Materials": "1 Polished Iron, 1 Uncut Ruby"
+  },
+  {
+    "Name": "Kanna Sea Necklace",
+    "Level": "41",
+    "Materials": "1 Polished Iron, 1 Uncut Sapphire"
+  },
+  {
+    "Name": "Kanna Earth Necklace",
+    "Level": "41",
+    "Materials": "1 Polished Iron, 1 Uncut Beryl"
+  },
+  {
+    "Name": "Kanna Wind Necklace",
+    "Level": "41",
+    "Materials": "1 Polished Iron, 1 Uncut Emerald"
+  },
+  {
+    "Name": "Mythril Beryl Earrings",
+    "Level": "71",
+    "Materials": "1 Polished Mythril, 1 Pristine Beryl"
+  },
+  {
+    "Name": "Mythril Ruby Earrings",
+    "Level": "71",
+    "Materials": "1 Polished Mythril, 1 Pristine Ruby"
+  },
+  {
+    "Name": "Mythril Sapphire Earrings",
+    "Level": "71",
+    "Materials": "1 Polished Mythril, 1 Pristine Sapphire"
+  },
+  {
+    "Name": "Mythril Emerald Earrings",
+    "Level": "71",
+    "Materials": "1 Polished Mythril, 1 Pristine Emerald"
+  },
+  {
+    "Name": "Mythril Heartstone Earrings",
+    "Level": "71",
+    "Materials": "1 Polished Mythril, 1 Pristine Heartstone"
+  },
+  {
+    "Name": "Mythril Beryl Ring",
+    "Level": "71",
+    "Materials": "1 Polished Mythril, 1 Pristine Beryl"
+  },
+  {
+    "Name": "Mythril Ruby Ring",
+    "Level": "71",
+    "Materials": "1 Polished Mythril, 1 Pristine Ruby"
+  },
+  {
+    "Name": "Mythril Sapphire Ring",
+    "Level": "71",
+    "Materials": "1 Polished Mythril, 1 Pristine Sapphire"
+  },
+  {
+    "Name": "Mythril Emerald Ring",
+    "Level": "71",
+    "Materials": "1 Polished Mythril, 1 Pristine Emerald"
+  },
+  {
+    "Name": "Mythril Heartstone Ring",
+    "Level": "71",
+    "Materials": "1 Polished Mythril, 1 Pristine Heartstone"
+  },
+  {
+    "Name": "Hy-Brasyl Beryl Earrings",
+    "Level": "97",
+    "Materials": "1 Polished Hy-Brasyl, 3 Pristine Beryl"
+  },
+  {
+    "Name": "Hy-Brasyl Ruby Earrings",
+    "Level": "97",
+    "Materials": "1 Polished Hy-Brasyl, 3 Pristine Ruby"
+  },
+  {
+    "Name": "Hy-Brasyl Sapphire Earrings",
+    "Level": "97",
+    "Materials": "1 Polished Hy-Brasyl, 3 Pristine Sapphire"
+  },
+  {
+    "Name": "Hy-Brasyl Emerald Earrings",
+    "Level": "97",
+    "Materials": "1 Polished Hy-Brasyl, 3 Pristine Emerald"
+  },
+  {
+    "Name": "Hy-Brasyl Heartstone Earrings",
+    "Level": "97",
+    "Materials": "1 Polished Hy-Brasyl, 3 Pristine Heartstone"
+  },
+  {
+    "Name": "Hy-Brasyl Beryl Ring",
+    "Level": "97",
+    "Materials": "1 Polished Hy-Brasyl, 3 Pristine Beryl"
+  },
+  {
+    "Name": "Hy-Brasyl Ruby Ring",
+    "Level": "97",
+    "Materials": "1 Polished Hy-Brasyl, 3 Pristine Ruby"
+  },
+  {
+    "Name": "Hy-Brasyl Sapphire Ring",
+    "Level": "97",
+    "Materials": "1 Polished Hy-Brasyl, 3 Pristine Sapphire"
+  },
+  {
+    "Name": "Hy-Brasyl Emerald Ring",
+    "Level": "97",
+    "Materials": "1 Polished Hy-Brasyl, 3 Pristine Emerald"
+  },
+  {
+    "Name": "Hy-Brasyl Heartstone Ring",
+    "Level": "97",
+    "Materials": "1 Polished Hy-Brasyl, 3 Pristine Heartstone"
+  },
+  {
+    "Name": "Crimsonite Beryl Earrings",
+    "Level": "Master",
+    "Materials": "4 Polished Crimsonite, 4 Pristine Beryl"
+  },
+  {
+    "Name": "Crimsonite Ruby Earrings",
+    "Level": "Master",
+    "Materials": "4 Polished Crimsonite, 4 Pristine Ruby"
+  },
+  {
+    "Name": "Crimsonite Sapphire Earrings",
+    "Level": "Master",
+    "Materials": "4 Polished Crimsonite, 4 Pristine Sapphire"
+  },
+  {
+    "Name": "Crimsonite Emerald Earrings",
+    "Level": "Master",
+    "Materials": "4 Polished Crimsonite, 4 Pristine Emerald"
+  },
+  {
+    "Name": "Crimsonite Heartstone Earrings",
+    "Level": "Master",
+    "Materials": "4 Polished Crimsonite, 4 Pristine Heartstone"
+  },
+  {
+    "Name": "Azurium Beryl Earrings",
+    "Level": "Master",
+    "Materials": "4 Polished Azurium, 4 Pristine Beryl"
+  },
+  {
+    "Name": "Azurium Ruby Earrings",
+    "Level": "Master",
+    "Materials": "4 Polished Azurium, 4 Pristine Ruby"
+  },
+  {
+    "Name": "Azurium Sapphire Earrings",
+    "Level": "Master",
+    "Materials": "4 Polished Azurium, 4 Pristine Sapphire"
+  },
+  {
+    "Name": "Azurium Emerald Earrings",
+    "Level": "Master",
+    "Materials": "4 Polished Azurium, 4 Pristine Emerald"
+  },
+  {
+    "Name": "Azurium Heartstone Earrings",
+    "Level": "Master",
+    "Materials": "4 Polished Azurium, 4 Pristine Heartstone"
+  },
+  {
+    "Name": "Crimsonite Beryl Ring",
+    "Level": "Master",
+    "Materials": "3 Polished Crimsonite, 5 Pristine Beryl"
+  },
+  {
+    "Name": "Crimsonite Ruby Ring",
+    "Level": "Master",
+    "Materials": "3 Polished Crimsonite, 5 Pristine Ruby"
+  },
+  {
+    "Name": "Crimsonite Sapphire Ring",
+    "Level": "Master",
+    "Materials": "3 Polished Crimsonite, 5 Pristine Sapphire"
+  },
+  {
+    "Name": "Crimsonite Emerald Ring",
+    "Level": "Master",
+    "Materials": "3 Polished Crimsonite, 5 Pristine Emerald"
+  },
+  {
+    "Name": "Crimsonite Heartstone Ring",
+    "Level": "Master",
+    "Materials": "3 Polished Crimsonite, 5 Pristine Heartstone"
+  },
+  {
+    "Name": "Azurium Beryl Ring",
+    "Level": "Master",
+    "Materials": "3 Polished Azurium, 5 Pristine Beryl"
+  },
+  {
+    "Name": "Azurium Ruby Ring",
+    "Level": "Master",
+    "Materials": "3 Polished Azurium, 5 Pristine Ruby"
+  },
+  {
+    "Name": "Azurium Sapphire Ring",
+    "Level": "Master",
+    "Materials": "3 Polished Azurium, 5 Pristine Sapphire"
+  },
+  {
+    "Name": "Azurium Emerald Ring",
+    "Level": "Master",
+    "Materials": "3 Polished Azurium, 5 Pristine Emerald"
+  },
+  {
+    "Name": "Azurium Heartstone Ring",
+    "Level": "Master",
+    "Materials": "3 Polished Azurium, 5 Pristine Heartstone"
+  },
+  {
+    "Name": "Crimsonite Fire Necklace",
+    "Level": "Master",
+    "Materials": "5 Polished Crimsonite, 4 Pristine Ruby"
+  },
+  {
+    "Name": "Crimsonite Sea Necklace",
+    "Level": "Master",
+    "Materials": "5 Polished Crimsonite, 4 Pristine Sapphire"
+  },
+  {
+    "Name": "Crimsonite Earth Necklace",
+    "Level": "Master",
+    "Materials": "5 Polished Crimsonite, 4 Pristine Beryl"
+  },
+  {
+    "Name": "Crimsonite Wind Necklace",
+    "Level": "Master",
+    "Materials": "5 Polished Crimsonite, 4 Pristine Emerald"
+  },
+  {
+    "Name": "Crimsonite Light Necklace",
+    "Level": "Master",
+    "Materials": "20 Polished Crimsonite, 1 Radiant Pearl"
+  },
+  {
+    "Name": "Crimsonite Dark Necklace",
+    "Level": "Master",
+    "Materials": "20 Polished Crimsonite, 1 Eclipse Pearl"
+  },
+  {
+    "Name": "Azurium Fire Necklace",
+    "Level": "Master",
+    "Materials": "5 Polished Azurium, 4 Pristine Ruby"
+  },
+  {
+    "Name": "Azurium Sea Necklace",
+    "Level": "Master",
+    "Materials": "5 Polished Azurium, 4 Pristine Sapphire"
+  },
+  {
+    "Name": "Azurium Earth Necklace",
+    "Level": "Master",
+    "Materials": "5 Polished Azurium, 4 Pristine Beryl"
+  },
+  {
+    "Name": "Azurium Wind Necklace",
+    "Level": "Master",
+    "Materials": "5 Polished Azurium, 4 Pristine Emerald"
+  },
+  {
+    "Name": "Azurium Light Necklace",
+    "Level": "Master",
+    "Materials": "20 Polished Azurium, 1 Radiant Pearl"
+  },
+  {
+    "Name": "Azurium Dark Necklace",
+    "Level": "Master",
+    "Materials": "20 Polished Azurium, 1 Eclipse Pearl"
+  }
+]

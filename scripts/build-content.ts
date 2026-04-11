@@ -1,0 +1,105 @@
+/**
+ * Content Build Script
+ * Reads YAML metadata from src/content/metadata/ and outputs typed JSON
+ * to src/data/metadata/ for the React app.
+ *
+ * Also reads per-area YAML files and merges them into a single areas.json.
+ *
+ * Usage: npx tsx scripts/build-content.ts
+ */
+
+import { readFileSync, writeFileSync, mkdirSync, readdirSync, existsSync } from 'fs'
+import { join, basename, dirname } from 'path'
+import { fileURLToPath } from 'url'
+import yaml from 'js-yaml'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
+
+const CONTENT_ROOT = join(__dirname, '..', 'src', 'content', 'metadata')
+const OUT_ROOT = join(__dirname, '..', 'src', 'data', 'metadata')
+
+function ensureDir(dir: string) {
+  if (!existsSync(dir)) mkdirSync(dir, { recursive: true })
+}
+
+function readYaml<T = unknown>(filePath: string): T {
+  const raw = readFileSync(filePath, 'utf-8')
+  return yaml.load(raw) as T
+}
+
+function writeJson(filePath: string, data: unknown) {
+  ensureDir(dirname(filePath))
+  writeFileSync(filePath, JSON.stringify(data, null, 2) + '\n', 'utf-8')
+}
+
+function buildFolderCollection(subfolder: string): Record<string, unknown> {
+  const dir = join(CONTENT_ROOT, subfolder)
+  if (!existsSync(dir)) return {}
+
+  const result: Record<string, unknown> = {}
+  for (const file of readdirSync(dir)) {
+    if (!file.endsWith('.yaml') && !file.endsWith('.yml')) continue
+    const slug = basename(file, file.endsWith('.yaml') ? '.yaml' : '.yml')
+    result[slug] = readYaml(join(dir, file))
+  }
+  return result
+}
+
+function buildSingleFile(relativePath: string): unknown {
+  const filePath = join(CONTENT_ROOT, relativePath)
+  if (!existsSync(filePath)) {
+    console.warn(`  Warning: ${relativePath} not found, skipping`)
+    return null
+  }
+  return readYaml(filePath)
+}
+
+// ── Main ──
+
+console.log('Building content from YAML...\n')
+
+// Classes metadata (per-class YAML → single classes.json)
+console.log('  Classes...')
+const classes = buildFolderCollection('classes')
+writeJson(join(OUT_ROOT, 'classes.json'), classes)
+
+// Professions metadata (per-profession YAML → single professions.json)
+console.log('  Professions...')
+const professions = buildFolderCollection('professions')
+writeJson(join(OUT_ROOT, 'professions.json'), professions)
+
+// Religion metadata (per-god YAML → single religion.json)
+console.log('  Religion...')
+const religion = buildFolderCollection('religion')
+writeJson(join(OUT_ROOT, 'religion.json'), religion)
+
+// Town names (single file)
+console.log('  Town names...')
+const townNames = buildSingleFile('towns/names.yaml')
+if (townNames) writeJson(join(OUT_ROOT, 'town-names.json'), townNames)
+
+// Hunting area names (single file)
+console.log('  Hunting area names...')
+const areaNames = buildSingleFile('hunting/area-names.yaml')
+if (areaNames) writeJson(join(OUT_ROOT, 'area-names.json'), areaNames)
+
+// Hunting map variants (single file)
+console.log('  Hunting map variants...')
+const mapVariants = buildSingleFile('hunting/map-variants.yaml')
+if (mapVariants) writeJson(join(OUT_ROOT, 'map-variants.json'), mapVariants)
+
+// Hunting index (areas list, tier config, chart data)
+console.log('  Hunting index...')
+const huntingIndex = buildSingleFile('hunting/index.yaml')
+if (huntingIndex) writeJson(join(OUT_ROOT, 'hunting-index.json'), huntingIndex)
+
+// Hunting area details (per-area YAML → single areas.json matching current format)
+console.log('  Hunting area details...')
+const areasDir = join(CONTENT_ROOT, 'hunting', 'areas')
+if (existsSync(areasDir)) {
+  const areas = buildFolderCollection('hunting/areas')
+  writeJson(join(OUT_ROOT, 'hunting-areas.json'), areas)
+}
+
+console.log('\nContent build complete!')

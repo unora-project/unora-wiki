@@ -1,0 +1,32 @@
+[
+  {
+    "Recipe": "Dinner Plate",
+    "Ingredients": "1 meat, 5 vegetable, 10 fruit",
+    "Where to learn": "Base recipe",
+    "Benefits": "+200 HP, +200 MP, +2 Dmg, +2 Hit, -1 AC"
+  },
+  {
+    "Recipe": "Fruit Basket",
+    "Ingredients": "15 fruit, 10 fruit, 5 fruit (each a different type)",
+    "Where to learn": "Base recipe",
+    "Benefits": "+8 Hit"
+  },
+  {
+    "Recipe": "Pie",
+    "Ingredients": "50 fruit, 1 Flour",
+    "Where to learn": "Loures library on a bookcase",
+    "Benefits": "Acorn: +500 Max MP<br>Apple: +500 Max HP<br>Cherry: +20 Max MP<br>Grape: +10% SPD<br>Green Grape: +20% SPD<br>Strawberry: +10% SKD<br>Tangerine: +20 MR"
+  },
+  {
+    "Recipe": "Steak Meal",
+    "Ingredients": "1 raw meat, 10 fruit, 5 vegetable, 1 Marinade",
+    "Where to learn": "Random drop from Secret Cow Level",
+    "Benefits": "+1000 HP, +1000 MP, +6 Hit, +6 Dmg, -6 AC"
+  },
+  {
+    "Recipe": "Sweet Buns",
+    "Ingredients": "15 fruit, 5 vegetables, 1 Flour",
+    "Where to learn": "Complete the quest: Supply Loures Army",
+    "Benefits": "+40% Attack Speed"
+  }
+]

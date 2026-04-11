@@ -1,0 +1,376 @@
+tierConfig:
+  early:
+    label: Early
+    classes: "border-tide/30 bg-tide/15 text-tide"
+  mid:
+    label: Mid
+    classes: "border-verdant/30 bg-verdant/15 text-verdant"
+  late:
+    label: Late
+    classes: "border-ignis/30 bg-ignis/15 text-ignis"
+  master:
+    label: Master
+    classes: "border-astral/30 bg-astral/15 text-astral"
+  grandmaster:
+    label: Grand Master
+    classes: "border-gilt/30 bg-gilt/15 text-gilt"
+
+tiers:
+  - id: all
+    label: All
+  - id: early
+    label: "Early (1-40)"
+  - id: mid
+    label: "Mid (41-70)"
+  - id: late
+    label: "Late (71-99)"
+  - id: master
+    label: Master
+  - id: grandmaster
+    label: Grand Master
+
+huntingAreas:
+  - name: Mileth Crypt
+    slug: mileth_crypt
+    levelRange: "1-65"
+    levelMin: 1
+    levelMax: 65
+    tier: early
+    image: mileth_crypt.png
+  - name: East Woodlands
+    slug: east_woodlands
+    levelRange: "1-41"
+    levelMin: 1
+    levelMax: 41
+    tier: early
+    image: east_woodlands.png
+  - name: Porte Forest
+    slug: porte_forest
+    levelRange: "5-41"
+    levelMin: 5
+    levelMax: 41
+    tier: early
+  - name: Astrid
+    slug: astrid
+    levelRange: "11-50"
+    levelMin: 11
+    levelMax: 50
+    tier: early
+    image: astrid.png
+  - name: Eingren Manor
+    slug: eingren_manor
+    levelRange: "15-99"
+    levelMin: 15
+    levelMax: 99
+    tier: mid
+  - name: Shinewood Forest
+    slug: shinewood_forest
+    levelRange: "11-Master"
+    levelMin: 11
+    levelMax: 100
+    tier: late
+    image: shinewood_forest.png
+  - name: Dubhaim Castle
+    slug: dubhaim_castle
+    levelRange: "15-99"
+    levelMin: 15
+    levelMax: 99
+    tier: late
+    image: dubhaim_castle.png
+  - name: House Macabre
+    slug: house_macabre
+    levelRange: "41-56"
+    levelMin: 41
+    levelMax: 56
+    tier: mid
+    image: house_macabre.png
+  - name: Karlopos Island
+    slug: karlopos_island
+    levelRange: "41-65"
+    levelMin: 41
+    levelMax: 65
+    tier: mid
+    image: karlopos_island.png
+  - name: West Woodlands
+    slug: west_woodlands
+    levelRange: "41-71"
+    levelMin: 41
+    levelMax: 71
+    tier: mid
+    image: west_woodlands.png
+  - name: Piet/Loures Sewer
+    slug: piet_sewers
+    levelRange: "41-71"
+    levelMin: 41
+    levelMax: 71
+    tier: mid
+    image: piet_sewers.png
+  - name: Lost Woodlands
+    slug: lost_woodlands
+    levelRange: "55-65"
+    levelMin: 55
+    levelMax: 65
+    tier: mid
+  - name: Undine Field
+    slug: undine_field
+    levelRange: "55-80"
+    levelMin: 55
+    levelMax: 80
+    tier: mid
+  - name: Cthonic Remains
+    slug: cthonic_remains
+    levelRange: "60-Master"
+    levelMin: 60
+    levelMax: 100
+    tier: late
+    image: cthonic_remains_1_11.png
+  - name: Abel Dungeon
+    slug: abel_dungeon
+    levelRange: "71-97"
+    levelMin: 71
+    levelMax: 97
+    tier: late
+    image: abel_dungeon.png
+  - name: Kasmanium Mines
+    slug: kasmanium_mines
+    levelRange: "80-99"
+    levelMin: 80
+    levelMax: 99
+    tier: late
+    image: kasmanium_mines.png
+  - name: Mehadi
+    slug: mehadi
+    levelRange: "80-99"
+    levelMin: 80
+    levelMax: 99
+    tier: late
+    image: mehadi.png
+  - name: Deep Crypt - Easy
+    slug: deep_crypt
+    levelRange: "80-99"
+    levelMin: 80
+    levelMax: 99
+    tier: late
+    image: deep_crypt.png
+  - name: Grassy Fields
+    slug: grassy_fields
+    levelRange: "99"
+    levelMin: 99
+    levelMax: 100
+    tier: master
+    image: grassy_fields.png
+  - name: Mount Giragan
+    slug: mount_giragan
+    levelRange: "99-Master"
+    levelMin: 99
+    levelMax: 100
+    tier: master
+    image: giragan_caves.png
+  - name: Nobis Maze
+    slug: nobis_maze
+    levelRange: "99-Master"
+    levelMin: 99
+    levelMax: 100
+    tier: master
+    image: nobis_maze.png
+  - name: Oren Ruins
+    slug: oren_ruins
+    levelRange: "99-Master"
+    levelMin: 99
+    levelMax: 100
+    tier: master
+    image: oren_ruins.png
+  - name: Deep Crypt - Medium
+    slug: deep_crypt
+    levelRange: Master
+    levelMin: 100
+    levelMax: 100
+    tier: master
+    image: deep_crypt.png
+  - name: Cthonic Demise
+    slug: cthonic_remains
+    levelRange: Master
+    levelMin: 100
+    levelMax: 100
+    tier: master
+    image: cthonic_remains_1_11.png
+  - name: Chaos
+    slug: chaos
+    levelRange: "Master-GM"
+    levelMin: 100
+    levelMax: 110
+    tier: grandmaster
+  - name: Limbo
+    slug: limbo
+    levelRange: "Master-GM"
+    levelMin: 100
+    levelMax: 110
+    tier: grandmaster
+    image: limbo.png
+  - name: Deep Crypt - Hard
+    slug: deep_crypt
+    levelRange: GM
+    levelMin: 110
+    levelMax: 110
+    tier: grandmaster
+    image: deep_crypt.png
+  - name: Secret Cow Level
+    slug: secret_cow_level
+    levelRange: GM
+    levelMin: 110
+    levelMax: 110
+    tier: grandmaster
+
+preMasterAreas:
+  - name: "Mileth Crypt (1-65)"
+    slug: mileth_crypt
+    startPercent: 0
+    widthPercent: 65
+    color: "#2a79ba"
+  - name: "East Woodlands (1-41)"
+    slug: east_woodlands
+    startPercent: 0
+    widthPercent: 41
+    color: "#2a79ba"
+  - name: "Porte Forest (5-41)"
+    slug: porte_forest
+    startPercent: 5
+    widthPercent: 36
+    color: "#2a79ba"
+  - name: "Astrid (11-50)"
+    slug: astrid
+    startPercent: 11
+    widthPercent: 39
+    color: "#2a79ba"
+  - name: "Shinewood Forest (11-Master)"
+    slug: shinewood_forest
+    startPercent: 11
+    widthPercent: 89
+    color: "#a070ff"
+  - name: "Eingren Manor (15-20)"
+    slug: eingren_manor
+    startPercent: 15
+    widthPercent: 10
+    color: "#2a79ba"
+  - name: "Dubhaim Castle (15-99)"
+    slug: dubhaim_castle
+    startPercent: 15
+    widthPercent: 85
+    color: "#a070ff"
+  - name: "House Macabre (41-56)"
+    slug: house_macabre
+    startPercent: 41
+    widthPercent: 15
+    color: "#189625"
+  - name: "Karlopos Island (41-65)"
+    slug: karlopos_island
+    startPercent: 41
+    widthPercent: 24
+    color: "#189625"
+  - name: "West Woodlands (41-71)"
+    slug: west_woodlands
+    startPercent: 41
+    widthPercent: 30
+    color: "#189625"
+  - name: "Piet/Loures Sewer (41-71)"
+    slug: piet_sewers
+    startPercent: 41
+    widthPercent: 30
+    color: "#189625"
+  - name: "Lost Woodlands (55-65)"
+    slug: lost_woodlands
+    startPercent: 55
+    widthPercent: 10
+    color: "#189625"
+  - name: "Undine Field (55-80)"
+    slug: undine_field
+    startPercent: 55
+    widthPercent: 25
+    color: "#189625"
+  - name: "Cthonic Remains (60-Master)"
+    slug: cthonic_remains
+    startPercent: 60
+    widthPercent: 40
+    color: "#a070ff"
+  - name: "Abel Dungeon (71-97)"
+    slug: abel_dungeon
+    startPercent: 71
+    widthPercent: 26
+    color: "#ff4258"
+  - name: "Kasmanium Mines (80-99)"
+    slug: kasmanium_mines
+    startPercent: 80
+    widthPercent: 20
+    color: "#ff4258"
+  - name: "Mehadi (80-99)"
+    slug: mehadi
+    startPercent: 80
+    widthPercent: 20
+    color: "#ff4258"
+  - name: "Deep Crypt - Easy (80-99)"
+    slug: deep_crypt
+    startPercent: 80
+    widthPercent: 20
+    color: "#ff4258"
+
+masterAreas:
+  - name: "Eingren Manor F3 (99)"
+    slug: eingren_manor
+    startPercent: 0
+    widthPercent: 33
+    color: "rgb(0, 161, 150)"
+  - name: "Grassy Fields (99)"
+    slug: grassy_fields
+    startPercent: 0
+    widthPercent: 33
+    color: "rgb(0, 161, 150)"
+  - name: "Mount Giragan (99-Master)"
+    slug: mount_giragan
+    startPercent: 0
+    widthPercent: 67
+    color: "rgb(0, 161, 150)"
+  - name: "Shinewood Forest (99-Master)"
+    slug: shinewood_forest
+    startPercent: 0
+    widthPercent: 67
+    color: "rgb(0, 161, 150)"
+  - name: "Nobis Maze (99-Master)"
+    slug: nobis_maze
+    startPercent: 0
+    widthPercent: 67
+    color: "rgb(0, 161, 150)"
+  - name: "Oren Ruins (99-Master)"
+    slug: oren_ruins
+    startPercent: 0
+    widthPercent: 67
+    color: "rgb(0, 161, 150)"
+  - name: "Deep Crypt - Medium (Master)"
+    slug: deep_crypt
+    startPercent: 33
+    widthPercent: 34
+    color: "rgb(92, 53, 190)"
+  - name: "Cthonic Demise (Master)"
+    slug: cthonic_remains
+    startPercent: 33
+    widthPercent: 34
+    color: "rgb(92, 53, 190)"
+  - name: "Chaos (Master+ - GM)"
+    slug: chaos
+    startPercent: 50
+    widthPercent: 50
+    color: "rgb(92, 53, 190)"
+  - name: "Limbo (Master+ - GM)"
+    slug: limbo
+    startPercent: 50
+    widthPercent: 50
+    color: "rgb(92, 53, 190)"
+  - name: "Deep Crypt - Hard (GM)"
+    slug: deep_crypt
+    startPercent: 66
+    widthPercent: 34
+    color: "rgb(189, 25, 38)"
+  - name: "Secret Cow Level (GM)"
+    slug: secret_cow_level
+    startPercent: 66
+    widthPercent: 34
+    color: "rgb(189, 25, 38)"

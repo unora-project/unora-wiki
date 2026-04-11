@@ -1,0 +1,76 @@
+{
+  "mythic": {
+    "description": "Mythic is an area comprised of 10 themed \"mini\" areas, each with their own leader. Each leader stands outside of their enemy's territory. You can make an alliance with up to 5 leaders, allowing those you've allied with to claim victory once you've completed their quest.",
+    "leaders": [
+      { "npc": "Horse Leader", "area": "Floppy Farms", "minimumLevel": "Bunny 1: 9+, Bunny 2: 41+, Bunny 3: 71+" },
+      { "npc": "King Mantis", "area": "Garden", "minimumLevel": "Bee 1: 14+, Bee 2: 46+, Bee 3: 76+" },
+      { "npc": "Bee Queen", "area": "Woodlands", "minimumLevel": "Mantis 1: 21+, Mantis 2: 51+, Mantis 3: 80+" },
+      { "npc": "Frog King", "area": "Wolf", "minimumLevel": "Wolf 1: 30+, Wolf 2: 60+, Wolf 3: 90+" },
+      { "npc": "Lord Gargoyle", "area": "Zombies", "minimumLevel": "Zombie 1: 41+, Zombie 2: 71+, Zombie 3: 97+" },
+      { "npc": "Wolf Pack Leader", "area": "Frogs", "minimumLevel": "Frog 1: 50+, Frog 2: 80+, Frog 3: 99+" },
+      { "npc": "Grimlock Queen", "area": "Kobolds", "minimumLevel": "Kobold 1: 60+, Kobold 2: 80+, Kobold 3: Master" },
+      { "npc": "Kobold Pack Leader", "area": "Grimlocks", "minimumLevel": "Grimlock 1: 71+, Grimlock 2: 90+, Grimlock 3: Master" },
+      { "npc": "Big Bunny", "area": "Horses", "minimumLevel": "Horse 1: 80+, Horse 2: 95+, Horse 3: Master" },
+      { "npc": "Superior Zombie", "area": "Gargoyles", "minimumLevel": "Gargoyle 1: 93+, Gargoyle 2: Master, Gargoyle 3: Grandmaster" }
+    ],
+    "shops": [
+      {
+        "npc": "Fabrizio",
+        "currency": "Mythic Tokens",
+        "items": [
+          { "name": "Reinforced Leather Greaves", "tab": "Greaves", "cost": 8 },
+          { "name": "Spiked Greaves", "tab": "Greaves", "cost": 50 },
+          { "name": "Fiery Greaves", "tab": "Greaves", "cost": 150 },
+          { "name": "Glace Greaves", "tab": "Greaves", "cost": 150 },
+          { "name": "Dust Boots", "tab": "Boots", "cost": 100 },
+          { "name": "Grace Boots", "tab": "Boots", "cost": 100 },
+          { "name": "Tract Boots", "tab": "Boots", "cost": 100 },
+          { "name": "Saffian Boots", "tab": "Boots", "cost": 100 },
+          { "name": "Star Boots", "tab": "Boots", "cost": 100 },
+          { "name": "Shion Boots", "tab": "Boots", "cost": 100 },
+          { "name": "Peace Boots", "tab": "Boots", "cost": 100 },
+          { "name": "Fabulous Boots", "tab": "Boots", "cost": 100 },
+          { "name": "Ialtag's Eye", "tab": "Ring", "cost": 30 },
+          { "name": "Star Ring", "tab": "Ring", "cost": 300 },
+          { "name": "Royal Gold Ring", "tab": "Ring", "cost": 6 },
+          { "name": "Royal Silver Ring", "tab": "Ring", "cost": 6 },
+          { "name": "Grand Emerald Ring", "tab": "Ring", "cost": 100 },
+          { "name": "Sonor Ring", "tab": "Ring", "cost": 30 },
+          { "name": "Grand Ruby Ring", "tab": "Ring", "cost": 100 },
+          { "name": "Myanmar Ring", "tab": "Ring", "cost": 30 },
+          { "name": "Pearl Chain Necklace", "tab": "Necklace", "cost": 40 },
+          { "name": "Dark Skull Necklace", "tab": "Necklace", "cost": 500 },
+          { "name": "Phoenix Necklace", "tab": "Necklace", "cost": 40 },
+          { "name": "Light Diamond Necklace", "tab": "Necklace", "cost": 50 },
+          { "name": "Dark Bone Necklace", "tab": "Necklace", "cost": 50 },
+          { "name": "Harpoon", "tab": "1H", "cost": 20 },
+          { "name": "Club", "tab": "1H", "cost": 50 },
+          { "name": "Scimitar", "tab": "1H", "cost": 35 },
+          { "name": "Cutlass", "tab": "1H", "cost": 200 },
+          { "name": "Strap Gauntlet", "tab": "Gauntlet", "cost": 100 },
+          { "name": "Padded Gauntlet", "tab": "Gauntlet", "cost": 6 },
+          { "name": "Chainmail Gauntlet", "tab": "Gauntlet", "cost": 30 },
+          { "name": "Light Shield", "tab": "Shield", "cost": 50 },
+          { "name": "Gravel Shield", "tab": "Shield", "cost": 40 },
+          { "name": "Light Secret", "tab": "Secret", "cost": 75 },
+          { "name": "Power Earrings", "tab": "Earrings", "cost": 250 },
+          { "name": "Salve Earrings", "tab": "Earrings", "cost": 250 },
+          { "name": "Mythril Earrings", "tab": "Earrings", "cost": 10 },
+          { "name": "Enchanted Earrings", "tab": "Earrings", "cost": 100 },
+          { "name": "Hy-brasyl Earrings", "tab": "Earrings", "cost": 10 },
+          { "name": "Might Earrings", "tab": "Earrings", "cost": 100 },
+          { "name": "Curved Dagger", "tab": "Dagger", "cost": 30 },
+          { "name": "Stone Fist", "tab": "Claw", "cost": 75 }
+        ]
+      }
+    ]
+  },
+  "east_woodlands": {
+    "subareas": [
+      { "area": "Enchanted Garden", "minimumLevel": 1 },
+      { "area": "East Woodlands 1", "minimumLevel": 6 },
+      { "area": "East Woodlands 4", "minimumLevel": 15 },
+      { "area": "East Woodlands 7", "minimumLevel": 26 }
+    ]
+  }
+}

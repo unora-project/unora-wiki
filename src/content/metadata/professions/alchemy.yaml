@@ -1,0 +1,21 @@
+name: Alchemy
+description: Create potions which grant temporary benefits during battle.
+cards:
+  - icon: MapPin
+    title: Where to Learn
+    body: >-
+      The Alchemy lab is located in the house at (18,35) in Piet Village and taught by the mundane Mathis.
+      Mathis also sells Empty Bottles for crafting potions, and will buy any potions you create.
+  - icon: Hammer
+    title: How to Craft
+    body: In the Alchemy lab, walk by the table next to Paracelsus.
+tip: >-
+  Mundane Paracelsus will trade you various types of Monster Extract in exchange for monster parts.
+  Mundane Luna will allow you to exchange flowers with any other types for a large amount of fixed gold.
+tables:
+  - title: Recipes
+    dataFile: alchemy-recipes
+    searchPlaceholder: Search recipes...
+  - title: Monster Extracts
+    dataFile: alchemy-extracts
+    searchPlaceholder: Search extracts...

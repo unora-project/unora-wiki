@@ -1,0 +1,17 @@
+name: Foraging
+description: A secondary profession for collecting flowers, fruit and vegetables from bushes.
+cards:
+  - icon: MapPin
+    title: Where to Learn
+    body: >-
+      Head to the Suomi Cherry Farmer in Suomi (17,72) and speak to Goran.
+      Purchase a Cloth Glove for 50,000 gold.
+  - icon: Hammer
+    title: How to Forage
+    body: >-
+      With the glove equipped, stand by a qualifying bush until you see a blinking question mark.
+      This is an idle profession for passive gathering while away from the game.
+tip: >-
+  Collect fruit and vegetables for cooking recipes, and flowers used in Alchemy to craft potions.
+  Bushes are scattered throughout most main towns.
+tables: []

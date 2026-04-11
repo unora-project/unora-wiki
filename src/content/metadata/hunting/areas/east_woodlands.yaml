@@ -1,0 +1,9 @@
+subareas:
+  - area: Enchanted Garden
+    minimumLevel: 1
+  - area: East Woodlands 1
+    minimumLevel: 6
+  - area: East Woodlands 4
+    minimumLevel: 15
+  - area: East Woodlands 7
+    minimumLevel: 26

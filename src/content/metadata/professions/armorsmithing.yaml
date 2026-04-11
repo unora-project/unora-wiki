@@ -1,0 +1,24 @@
+name: Armorsmithing
+description: Craft class armors, gauntlets, and belts from fibers.
+cards:
+  - icon: MapPin
+    title: Where to Learn
+    body: >-
+      The Armorsmithing building is located in the Wilderness near Mileth.
+      Cross the bridge in Mileth Village at (58,8), then head down to (16,177) in the Wilderness.
+      Mundane Gwendolyn teaches Armorsmithing and buys crafted items.
+  - icon: PackageOpen
+    title: Materials
+    body: >-
+      Recipes use different types of fibers: Linen (Kobolds in Wilderness/EW/WW),
+      Cotton (Kobold Hideout), Wool (Rams near Rucesion dock),
+      Silk (Silk Worms in Shifting Sands, level 71+),
+      Hemp (Shinewood forest and Mehadi).
+      Some recipes also require Ores and Gems.
+tip: >-
+  Aislings of any profession can refine fibers into "fine" and "exquisite" quality
+  by interacting with the crafting table on the east wall.
+tables:
+  - title: Recipes
+    dataFile: armorsmithing-recipes
+    searchPlaceholder: Search recipes...

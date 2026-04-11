@@ -1,0 +1,427 @@
+backend:
+  name: github
+  repo: owner/unora-wiki # TODO: Update with actual GitHub repo
+  branch: main
+  # base_url: https://your-cloudflare-worker.workers.dev # TODO: Set up OAuth proxy
+
+media_folder: public/images
+public_folder: /images
+
+# ─── Prose Content (Markdown) ───────────────────────────────────────────────
+
+collections:
+  - name: lore
+    label: Lore
+    label_singular: Lore Page
+    folder: src/content/lore
+    create: true
+    extension: md
+    format: frontmatter
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: body, label: Content, widget: markdown }
+
+  - name: patch-notes
+    label: Patch Notes
+    label_singular: Patch Note
+    folder: src/content/patch-notes
+    create: true
+    extension: md
+    format: frontmatter
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: body, label: Content, widget: markdown }
+
+  # ─── Class Metadata (YAML) ───────────────────────────────────────────────
+
+  - name: classes
+    label: Classes
+    label_singular: Class
+    folder: src/content/metadata/classes
+    create: true
+    extension: yaml
+    format: yaml
+    fields:
+      - { name: description, label: Description, widget: text }
+      - name: mastering
+        label: Mastering Requirements
+        widget: list
+        field: { name: requirement, label: Requirement, widget: string }
+      - name: dedication
+        label: Dedication Requirements
+        widget: list
+        field: { name: requirement, label: Requirement, widget: string }
+      - { name: dedicationCarryOver, label: Dedication Carry Over Note, widget: string }
+      - name: statCaps
+        label: Stat Caps
+        widget: list
+        fields:
+          - { name: progression, label: Progression, widget: string }
+          - { name: str, label: STR, widget: number }
+          - { name: int, label: INT, widget: number }
+          - { name: wis, label: WIS, widget: number }
+          - { name: con, label: CON, widget: number }
+          - { name: dex, label: DEX, widget: number }
+
+  # ─── Profession Metadata (YAML) ──────────────────────────────────────────
+
+  - name: professions
+    label: Professions
+    label_singular: Profession
+    folder: src/content/metadata/professions
+    create: true
+    extension: yaml
+    format: yaml
+    fields:
+      - { name: name, label: Display Name, widget: string }
+      - { name: description, label: Description, widget: text }
+      - name: cards
+        label: Info Cards
+        widget: list
+        fields:
+          - name: icon
+            label: Icon
+            widget: select
+            options: [MapPin, Hammer, PackageOpen, Lightbulb]
+          - { name: title, label: Card Title, widget: string }
+          - { name: body, label: Card Body, widget: text }
+      - { name: tip, label: Tip, widget: text, required: false }
+      - name: tables
+        label: Data Tables
+        widget: list
+        fields:
+          - { name: title, label: Table Title, widget: string }
+          - { name: dataFile, label: Data File Key, widget: string, hint: "e.g. alchemy-recipes, cooking-ingredients" }
+          - { name: searchPlaceholder, label: Search Placeholder, widget: string }
+
+  # ─── Religion / God Metadata (YAML) ──────────────────────────────────────
+
+  - name: religion
+    label: Goddesses
+    label_singular: Goddess
+    folder: src/content/metadata/religion
+    create: true
+    extension: yaml
+    format: yaml
+    fields:
+      - { name: name, label: Name, widget: string }
+      - { name: subtitle, label: Subtitle, widget: string }
+      - { name: location, label: Location (Town), widget: string }
+      - { name: description, label: Description, widget: text }
+      - { name: blessingBonus, label: Blessing Bonus, widget: string }
+
+  # ─── Hunting Area Detail (YAML) ──────────────────────────────────────────
+
+  - name: hunting-areas
+    label: Hunting Area Details
+    label_singular: Hunting Area
+    folder: src/content/metadata/hunting/areas
+    create: true
+    extension: yaml
+    format: yaml
+    fields:
+      - { name: description, label: Description, widget: text, required: false }
+      - name: subareas
+        label: Sub-areas
+        widget: list
+        required: false
+        fields:
+          - { name: area, label: Area Name, widget: string }
+          - { name: minimumLevel, label: Minimum Level, widget: number }
+      - name: leaders
+        label: Leaders
+        widget: list
+        required: false
+        fields:
+          - { name: npc, label: NPC Name, widget: string }
+          - { name: area, label: Area, widget: string }
+          - { name: minimumLevel, label: Minimum Level, widget: string }
+      - name: shops
+        label: Shops
+        widget: list
+        required: false
+        fields:
+          - { name: npc, label: Shop NPC, widget: string }
+          - { name: currency, label: Currency, widget: string }
+          - name: items
+            label: Items
+            widget: list
+            fields:
+              - { name: name, label: Item Name, widget: string }
+              - { name: tab, label: Category/Tab, widget: string }
+              - { name: cost, label: Cost, widget: number }
+
+  # ─── Hunting Index (single file) ─────────────────────────────────────────
+
+  - name: hunting-index
+    label: Hunting Grounds Config
+    files:
+      - name: index
+        label: Hunting Areas List & Chart
+        file: src/content/metadata/hunting/index.yaml
+        fields:
+          - name: tierConfig
+            label: Tier Configuration
+            widget: object
+            fields:
+              - name: early
+                label: Early Tier
+                widget: object
+                fields:
+                  - { name: label, label: Label, widget: string }
+                  - { name: classes, label: CSS Classes, widget: string }
+              - name: mid
+                label: Mid Tier
+                widget: object
+                fields:
+                  - { name: label, label: Label, widget: string }
+                  - { name: classes, label: CSS Classes, widget: string }
+              - name: late
+                label: Late Tier
+                widget: object
+                fields:
+                  - { name: label, label: Label, widget: string }
+                  - { name: classes, label: CSS Classes, widget: string }
+              - name: master
+                label: Master Tier
+                widget: object
+                fields:
+                  - { name: label, label: Label, widget: string }
+                  - { name: classes, label: CSS Classes, widget: string }
+              - name: grandmaster
+                label: Grandmaster Tier
+                widget: object
+                fields:
+                  - { name: label, label: Label, widget: string }
+                  - { name: classes, label: CSS Classes, widget: string }
+          - name: tiers
+            label: Tier Filter Buttons
+            widget: list
+            fields:
+              - { name: id, label: ID, widget: string }
+              - { name: label, label: Label, widget: string }
+          - name: huntingAreas
+            label: Hunting Areas
+            widget: list
+            fields:
+              - { name: name, label: Name, widget: string }
+              - { name: slug, label: Slug, widget: string }
+              - { name: levelRange, label: Level Range, widget: string }
+              - { name: levelMin, label: Level Min, widget: number }
+              - { name: levelMax, label: Level Max, widget: number }
+              - name: tier
+                label: Tier
+                widget: select
+                options: [early, mid, late, master, grandmaster]
+              - { name: image, label: Thumbnail Filename, widget: string, required: false }
+          - name: preMasterAreas
+            label: Pre-Master Chart Bars
+            widget: list
+            fields:
+              - { name: name, label: Label, widget: string }
+              - { name: slug, label: Slug, widget: string }
+              - { name: startPercent, label: Start %, widget: number }
+              - { name: widthPercent, label: Width %, widget: number }
+              - { name: color, label: Color, widget: string }
+          - name: masterAreas
+            label: Master Chart Bars
+            widget: list
+            fields:
+              - { name: name, label: Label, widget: string }
+              - { name: slug, label: Slug, widget: string }
+              - { name: startPercent, label: Start %, widget: number }
+              - { name: widthPercent, label: Width %, widget: number }
+              - { name: color, label: Color, widget: string }
+
+  # ─── Lookup Files (single files) ─────────────────────────────────────────
+
+  - name: lookups
+    label: Lookup Tables
+    files:
+      - name: area-names
+        label: Hunting Area Names
+        file: src/content/metadata/hunting/area-names.yaml
+        fields:
+          - { name: body, label: Area Names (YAML key-value pairs), widget: code, default_language: yaml }
+      - name: map-variants
+        label: Map Variants
+        file: src/content/metadata/hunting/map-variants.yaml
+        fields:
+          - { name: body, label: Map Variants (YAML), widget: code, default_language: yaml }
+      - name: town-names
+        label: Town Names
+        file: src/content/metadata/towns/names.yaml
+        fields:
+          - { name: body, label: Town Names (YAML key-value pairs), widget: code, default_language: yaml }
+
+  # ─── Game Data (JSON) ────────────────────────────────────────────────────
+
+  - name: equipment
+    label: Equipment
+    files:
+      - name: all
+        label: All Equipment
+        file: src/data/equipment/all.json
+        fields:
+          - name: items
+            label: Equipment
+            widget: list
+            fields:
+              - { name: name, label: Name, widget: string }
+              - { name: location, label: Location, widget: string }
+              - { name: level, label: Level, widget: number }
+              - { name: weight, label: Weight, widget: number }
+              - name: category
+                label: Category
+                widget: select
+                options: [weapon, armor, helmet, accessory, shield, belt, gauntlet, greaves, boots, overcoat, overhelmet]
+              - { name: class, label: Class, widget: string }
+              - { name: gender, label: Gender, widget: string, required: false }
+              - name: stats
+                label: Stats
+                widget: object
+                fields:
+                  - { name: hp, label: HP, widget: number, required: false }
+                  - { name: mp, label: MP, widget: number, required: false }
+                  - { name: ac, label: AC, widget: number, required: false }
+                  - { name: mr, label: MR, widget: number, required: false }
+                  - { name: str, label: STR, widget: number, required: false }
+                  - { name: int, label: INT, widget: number, required: false }
+                  - { name: wis, label: WIS, widget: number, required: false }
+                  - { name: con, label: CON, widget: number, required: false }
+                  - { name: dex, label: DEX, widget: number, required: false }
+                  - { name: dmg, label: DMG, widget: number, required: false }
+                  - { name: hit, label: HIT, widget: number, required: false }
+              - name: percentages
+                label: Percentages
+                widget: object
+                fields:
+                  - { name: attackSpeed, label: Attack Speed %, widget: number, required: false }
+                  - { name: skillDamage, label: Skill Damage, widget: number, required: false }
+                  - { name: skillDamagePercent, label: Skill Damage %, widget: number, required: false }
+                  - { name: spellDamage, label: Spell Damage, widget: number, required: false }
+                  - { name: spellDamagePercent, label: Spell Damage %, widget: number, required: false }
+                  - { name: flatHealBonus, label: Flat Heal Bonus, widget: number, required: false }
+                  - { name: healBonusPercent, label: Heal Bonus %, widget: number, required: false }
+                  - { name: cooldownReduction, label: Cooldown Reduction %, widget: number, required: false }
+
+  - name: skills
+    label: Skills
+    files:
+      - name: all-skills
+        label: All Skills
+        file: src/data/classes/skills.json
+        fields:
+          - name: items
+            label: Skills
+            widget: list
+            fields:
+              - { name: name, label: Name, widget: string }
+              - { name: class, label: Class, widget: string }
+              - { name: levelRequirement, label: Level Requirement, widget: string }
+              - { name: statRequirements, label: Stat Requirements, widget: string }
+              - { name: goldRequired, label: Gold Required, widget: string }
+              - { name: itemRequirements, label: Item Requirements, widget: string }
+              - { name: prerequisites, label: Prerequisites, widget: string }
+              - { name: learningLocation, label: Learning Location, widget: string }
+              - { name: description, label: Description, widget: text }
+
+  - name: spells
+    label: Spells
+    files:
+      - name: all-spells
+        label: All Spells
+        file: src/data/classes/spells.json
+        fields:
+          - name: items
+            label: Spells
+            widget: list
+            fields:
+              - { name: name, label: Name, widget: string }
+              - { name: class, label: Class, widget: string }
+              - { name: levelRequirement, label: Level Requirement, widget: string }
+              - { name: statRequirements, label: Stat Requirements, widget: string }
+              - { name: goldRequired, label: Gold Required, widget: string }
+              - { name: itemRequirements, label: Item Requirements, widget: string }
+              - { name: prerequisites, label: Prerequisites, widget: string }
+              - { name: learningLocation, label: Learning Location, widget: string }
+              - { name: description, label: Description, widget: text }
+
+  - name: bosses
+    label: Bosses
+    files:
+      - name: all-bosses
+        label: All Bosses
+        file: src/data/hunting/bosses.json
+        fields:
+          - name: items
+            label: Bosses
+            widget: list
+            fields:
+              - { name: boss, label: Boss Name, widget: string }
+              - { name: level, label: Level, widget: string }
+              - { name: location, label: Location, widget: string }
+              - { name: locationSlug, label: Location Slug, widget: string }
+              - { name: drops, label: Drops, widget: text }
+
+  - name: blessings
+    label: Blessings
+    files:
+      - name: all-blessings
+        label: All Blessings
+        file: src/data/religion/blessings.json
+        fields:
+          - name: items
+            label: Blessings
+            widget: list
+            fields:
+              - { name: goddess, label: Goddess, widget: string }
+              - { name: blessing, label: Blessing, widget: string }
+              - { name: cost, label: Cost, widget: string }
+              - { name: description, label: Description, widget: text }
+
+  - name: npcs
+    label: NPCs
+    files:
+      - name: all-npcs
+        label: All NPCs
+        file: src/data/towns/npcs.json
+        fields:
+          - name: items
+            label: NPCs
+            widget: list
+            fields:
+              - { name: town, label: Town, widget: string }
+              - { name: name, label: Name, widget: string }
+              - { name: type, label: Type/Role, widget: string }
+              - { name: coordinates, label: Coordinates, widget: string }
+
+  - name: mounts
+    label: Mounts
+    files:
+      - name: all-mounts
+        label: All Mounts
+        file: src/data/mounts/mounts.json
+        fields:
+          - name: items
+            label: Mounts
+            widget: list
+            fields:
+              - { name: name, label: Name, widget: string }
+              - { name: speed, label: Speed, widget: string }
+              - { name: obtained, label: How to Obtain, widget: text }
+
+  - name: cloaks
+    label: Cloaks
+    files:
+      - name: all-cloaks
+        label: All Cloaks
+        file: src/data/mounts/cloaks.json
+        fields:
+          - name: items
+            label: Cloaks
+            widget: list
+            fields:
+              - { name: name, label: Name, widget: string }
+              - { name: speed, label: Speed, widget: string }
+              - { name: obtained, label: How to Obtain, widget: text }
