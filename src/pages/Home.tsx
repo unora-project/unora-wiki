@@ -235,7 +235,7 @@ export function Home() {
       >
         <span className="rounded-full bg-tide/15 px-2 py-0.5 font-ui text-xs font-semibold text-tide">NEW</span>
         <span className="font-ui text-sm text-parchment-700 dark:text-ivory/80">
-          Latest patch: <span className="font-medium text-tide">March 19, 2025</span>
+          Latest patch: <span className="font-medium text-tide">March 30, 2026</span>
         </span>
         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-auto text-tide opacity-0 transition-opacity group-hover:opacity-100">
           <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
