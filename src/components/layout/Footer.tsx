@@ -1,4 +1,5 @@
 import { Link } from 'react-router'
+import { Heart } from 'lucide-react'
 
 export function Footer() {
   return (
@@ -25,9 +26,14 @@ export function Footer() {
             Download
           </a>
         </div>
-        <p className="font-ui text-xs text-ash/60">
-          An official compendium for Unora: Elemental Harmony.
-        </p>
+        <div className="flex flex-col items-center gap-1 sm:items-end">
+          <p className="font-ui text-xs text-ash/60">
+            An official compendium for Unora: Elemental Harmony.
+          </p>
+          <p className="flex items-center gap-1 font-ui text-xs text-ash/60">
+            Made by Lancelot with <Heart size={12} className="fill-ignis text-ignis" />
+          </p>
+        </div>
       </div>
     </footer>
   )
