@@ -42,13 +42,13 @@ export function Footer() {
           </p>
           <span className="text-ash/30">|</span>
           <p className="flex items-center gap-1 font-ui text-xs text-ash/60">
-            Unora Wiki made with <Heart size={12} className="fill-ignis text-ignis" /> by Lancelot
+            Unora Wiki made with <Heart size={12} className="fill-ignis text-ignis" /> by <strong className="font-semibold text-parchment-800 dark:text-ivory/90">Lancelot</strong>
             <img
               src="https://aislingexchange.com/news/images/lancelothead.png"
               alt="Lancelot"
               className="mx-0.5 h-4 w-auto"
             />
-            based on original version by Mebo.
+            based on original version by <strong className="font-semibold text-parchment-800 dark:text-ivory/90">Mebo</strong>.
           </p>
         </div>
       </div>
