@@ -17,7 +17,7 @@ You don't need to know code or Git to contribute. All content can be edited thro
 2. Sign in with your GitHub account
 3. Pick a collection from the sidebar (Lore, Patch Notes, Classes, Hunting Areas, etc.)
 4. Click an entry to edit it, or click "New" to create one
-5. Make your changes and click **Save** — the site will rebuild automatically
+5. Make your changes and click **Save** - the site will rebuild automatically
 
 ### What You Can Edit
 
