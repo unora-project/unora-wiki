@@ -48,7 +48,7 @@ export function Footer() {
               alt="Lancelot"
               className="mx-0.5 h-4 w-auto"
             />
-            based on original version by <strong className="font-semibold">Mebo</strong>.
+            based on original version by <span><strong className="font-semibold">Mebo</strong>.</span>
           </p>
         </div>
       </div>
