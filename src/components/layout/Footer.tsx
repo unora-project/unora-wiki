@@ -4,7 +4,7 @@ import { Heart, Home, Compass, MessageCircle, Download } from 'lucide-react'
 export function Footer() {
   return (
     <footer className="border-t border-parchment-300 bg-parchment-100 dark:border-ash/10 dark:bg-ink">
-      <div className="flex flex-col items-center gap-4 px-6 py-8 lg:px-10 2xl:px-16 sm:flex-row sm:justify-between">
+      <div className="flex flex-col items-center gap-4 px-6 py-8 lg:px-10 2xl:px-16">
         <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 font-ui text-sm text-ash">
           <Link to="/" className="flex items-center gap-1.5 transition-colors hover:text-gilt">
             <Home size={14} />
@@ -36,7 +36,7 @@ export function Footer() {
             Download
           </a>
         </div>
-        <div className="flex flex-col items-center gap-1 sm:items-end">
+        <div className="flex flex-col items-center gap-1">
           <p className="font-ui text-xs text-ash/60">
             An official compendium for Unora: Elemental Harmony.
           </p>
