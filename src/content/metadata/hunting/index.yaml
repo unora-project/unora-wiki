@@ -188,12 +188,12 @@ huntingAreas:
     tier: master
     image: deep_crypt.png
   - name: Cthonic Demise
-    slug: cthonic_remains
+    slug: cthonic_demise
     levelRange: Master
     levelMin: 100
     levelMax: 100
     tier: master
-    image: cthonic_remains_1_11.png
+    image: cthonic_demise.png
   - name: Chaos
     slug: chaos
     levelRange: "Master-GM"
@@ -350,7 +350,7 @@ masterAreas:
     widthPercent: 34
     color: "rgb(92, 53, 190)"
   - name: "Cthonic Demise (Master)"
-    slug: cthonic_remains
+    slug: cthonic_demise
     startPercent: 33
     widthPercent: 34
     color: "rgb(92, 53, 190)"
