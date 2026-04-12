@@ -2,8 +2,8 @@
 
 A community-editable game wiki for Unora, built with React + Vite and powered by [Sveltia CMS](https://sveltiacms.app/) for contributor-friendly editing.
 
-**Live site:** https://nismosan.github.io/unora-wiki/
-**CMS Admin:** https://nismosan.github.io/unora-wiki/admin/
+**Live site:** https://www.unora.wiki/
+**CMS Admin:** https://www.unora.wiki/admin/
 
 ---
 
@@ -13,7 +13,7 @@ You don't need to know code or Git to contribute. All content can be edited thro
 
 ### Editing Content
 
-1. Go to https://nismosan.github.io/unora-wiki/admin/
+1. Go to https://www.unora.wiki/admin/
 2. Sign in with your GitHub account
 3. Pick a collection from the sidebar (Lore, Patch Notes, Classes, Hunting Areas, etc.)
 4. Click an entry to edit it, or click "New" to create one
@@ -111,7 +111,7 @@ npm run preview
 npm run build-content
 ```
 
-The dev server runs at http://localhost:5173/unora-wiki/.
+The dev server runs at http://localhost:5173/.
 
 ### Deployment
 

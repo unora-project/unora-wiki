@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: NismoSan/unora-wiki
+  repo: unora-project/unora-wiki
   branch: master
   base_url: https://sveltia-cms-auth.thirdbrody.workers.dev
 

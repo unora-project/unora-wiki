@@ -47,7 +47,8 @@
       "Bash(echo \"EXIT CODE: $?\")",
       "Bash(gh auth:*)",
       "Bash(gh repo:*)",
-      "Bash(npx wrangler:*)"
+      "Bash(npx wrangler:*)",
+      "Bash(gh run:*)"
     ],
     "additionalDirectories": [
       "c:\\Users\\Third\\unora-wiki",

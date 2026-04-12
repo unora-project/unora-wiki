@@ -7,7 +7,7 @@ import { cloudflare } from "@cloudflare/vite-plugin";
 
 export default defineConfig({
   plugins: [react(), tailwindcss(), cloudflare()],
-  base: '/unora-wiki/',
+  base: '/',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
