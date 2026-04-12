@@ -27,7 +27,7 @@ function parsePatchNotes(): PatchNote[] {
     const month = dateStr.slice(4, 6)
     const day = dateStr.slice(6, 8)
 
-    const displayDate = new Date(`${year}-${month}-${day}`).toLocaleDateString('en-US', {
+    const displayDate = new Date(Number(year), Number(month) - 1, Number(day)).toLocaleDateString('en-US', {
       year: 'numeric',
       month: 'long',
       day: 'numeric',
