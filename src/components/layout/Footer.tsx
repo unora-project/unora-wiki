@@ -42,7 +42,7 @@ export function Footer() {
           </p>
           <span className="text-ash/30">|</span>
           <p className="flex items-center gap-1 font-ui text-xs text-ash/60">
-            Made with <Heart size={12} className="fill-ignis text-ignis" /> by Lancelot
+            Unora Wiki made with <Heart size={12} className="fill-ignis text-ignis" /> by Lancelot
             <img
               src="https://aislingexchange.com/news/images/lancelothead.png"
               alt="Lancelot"
