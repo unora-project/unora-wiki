@@ -42,6 +42,11 @@ export function Footer() {
           </p>
           <p className="flex items-center gap-1 font-ui text-xs text-ash/60">
             Made with <Heart size={12} className="fill-ignis text-ignis" /> by Lancelot
+            <img
+              src="https://aislingexchange.com/news/images/lancelothead.png"
+              alt="Lancelot"
+              className="ml-0.5 h-4 w-auto"
+            />
           </p>
         </div>
       </div>
