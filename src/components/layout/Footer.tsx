@@ -36,12 +36,11 @@ export function Footer() {
             Download
           </a>
         </div>
-        <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-center">
-          <p className="font-ui text-xs text-ash/60">
-            An official compendium for Unora: Elemental Harmony.
-          </p>
-          <span className="text-ash/30">|</span>
-          <p className="flex items-center gap-1 font-ui text-xs text-ash/60">
+        <p className="text-center font-ui text-xs text-ash/60">
+          An official compendium for Unora: Elemental Harmony.
+        </p>
+        <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-center font-ui text-xs text-ash/60">
+          <p className="flex items-center gap-1">
             Unora Wiki made with <Heart size={12} className="fill-ignis text-ignis" /> by <strong className="font-semibold">Lancelot</strong>
             <img
               src="https://aislingexchange.com/news/images/lancelothead.png"
@@ -50,15 +49,16 @@ export function Footer() {
             />
             based on original version by <span><strong className="font-semibold">Mebo</strong>.</span>
           </p>
+          <span className="text-ash/30">|</span>
+          <p>
+            Maintained and contributed to by{' '}
+            <strong className="font-semibold">Dylanlan</strong>,{' '}
+            <strong className="font-semibold">Iglis</strong>,{' '}
+            <strong className="font-semibold">Mylk</strong>,{' '}
+            <strong className="font-semibold">True</strong>, and{' '}
+            <strong className="font-semibold">Kryopterin</strong>.
+          </p>
         </div>
-        <p className="text-center font-ui text-xs text-ash/60">
-          Maintained and contributed to by{' '}
-          <strong className="font-semibold">Dylanlan</strong>,{' '}
-          <strong className="font-semibold">Iglis</strong>,{' '}
-          <strong className="font-semibold">Mylk</strong>,{' '}
-          <strong className="font-semibold">True</strong>, and{' '}
-          <strong className="font-semibold">Kryopterin</strong>.
-        </p>
       </div>
     </footer>
   )
