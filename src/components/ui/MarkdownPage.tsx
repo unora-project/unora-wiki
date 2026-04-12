@@ -1,6 +1,9 @@
+import { useEffect } from 'react'
+import { useLocation } from 'react-router'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import rehypeRaw from 'rehype-raw'
+import rehypeSlug from 'rehype-slug'
 import { preprocessMarkdown } from '@/lib/preprocessMarkdown'
 import { Admonition } from './Admonition'
 import type { Components } from 'react-markdown'
@@ -16,18 +19,18 @@ const components: Components = {
       {children}
     </h1>
   ),
-  h2: ({ children }) => (
-    <h2 className="mb-3 mt-8 font-heading text-2xl font-semibold uppercase tracking-[0.08em] text-gilt">
+  h2: ({ children, id }) => (
+    <h2 id={id} className="mb-3 mt-8 scroll-mt-24 font-heading text-2xl font-semibold uppercase tracking-[0.08em] text-gilt">
       {children}
     </h2>
   ),
-  h3: ({ children }) => (
-    <h3 className="mb-2 mt-6 font-heading text-xl font-semibold text-parchment-800 dark:text-ivory">
+  h3: ({ children, id }) => (
+    <h3 id={id} className="mb-2 mt-6 scroll-mt-24 font-heading text-xl font-semibold text-parchment-800 dark:text-ivory">
       {children}
     </h3>
   ),
-  h4: ({ children }) => (
-    <h4 className="mb-2 mt-4 font-heading text-lg font-medium text-parchment-700 dark:text-ivory/80">
+  h4: ({ children, id }) => (
+    <h4 id={id} className="mb-2 mt-4 scroll-mt-24 font-heading text-lg font-medium text-parchment-700 dark:text-ivory/80">
       {children}
     </h4>
   ),
@@ -182,11 +185,25 @@ const components: Components = {
 
 export function MarkdownPage({ content, imageBasePath }: MarkdownPageProps) {
   const processed = preprocessMarkdown(content, imageBasePath)
+  const { hash } = useLocation()
+
+  // HashRouter puts the route in window.location.hash, so in-page anchors
+  // live in the route-level hash (e.g. /quests/.../foo#part-5 → location.hash = '#part-5').
+  // Browser won't auto-scroll; do it ourselves after markdown renders.
+  useEffect(() => {
+    if (!hash) return
+    const id = hash.slice(1)
+    const el = document.getElementById(id)
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }, [hash, processed])
+
   return (
     <div className="prose-unora max-w-none">
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
-        rehypePlugins={[rehypeRaw]}
+        rehypePlugins={[rehypeRaw, rehypeSlug]}
         components={components}
       >
         {processed}

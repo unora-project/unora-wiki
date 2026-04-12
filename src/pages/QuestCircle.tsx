@@ -5,6 +5,8 @@ interface QuestLink {
   name: string
   slug: string
   circle: string
+  mainStory?: boolean
+  anchor?: string
 }
 
 const circles: Record<string, { title: string; levelRange: string; description: string; quests: QuestLink[] }> = {
@@ -42,6 +44,8 @@ const circles: Record<string, { title: string; levelRange: string; description: 
     levelRange: '41-70',
     description: 'Challenging quests for experienced aislings venturing into dangerous territory.',
     quests: [
+      { name: 'Find the Mysterious Artifact', slug: 'find_the_mysterious_artifact', circle: 'circle_1', mainStory: true, anchor: 'part-1-find-the-mysterious-artifact' },
+      { name: 'Elemental Guardians', slug: 'find_the_mysterious_artifact', circle: 'circle_1', mainStory: true, anchor: 'part-2-elemental-guardians' },
       { name: 'Feeding the Beggar', slug: 'feeding_the_beggar', circle: 'circle_3' },
       { name: 'Queen Octopus', slug: 'queen_octopus', circle: 'circle_3' },
       { name: 'Dragon Scale', slug: 'dragon_scale', circle: 'circle_3' },
@@ -55,6 +59,8 @@ const circles: Record<string, { title: string; levelRange: string; description: 
     levelRange: '71-98',
     description: 'Late-game quests that test even the most seasoned aislings.',
     quests: [
+      { name: "The Goddess' Trials", slug: 'find_the_mysterious_artifact', circle: 'circle_1', mainStory: true, anchor: 'part-3-the-goddess-trials' },
+      { name: 'Search for the Summoner', slug: 'find_the_mysterious_artifact', circle: 'circle_1', mainStory: true, anchor: 'part-4-search-for-the-summoner' },
       { name: 'Werewolf of Piet', slug: 'werewolf_of_piet', circle: 'circle_4' },
       { name: 'Protect Lynith Pirate Ship', slug: 'protect_lynith_pirate_ship', circle: 'circle_4' },
       { name: 'Challenge the Carnun', slug: 'challenge_the_carnun', circle: 'circle_4' },
@@ -66,8 +72,10 @@ const circles: Record<string, { title: string; levelRange: string; description: 
     levelRange: '99+',
     description: 'The final circle of quests for master-level aislings.',
     quests: [
+      { name: 'Find the Summoner Again', slug: 'find_the_mysterious_artifact', circle: 'circle_1', mainStory: true, anchor: 'part-5-find-the-summoner-again' },
+      { name: 'Defeat the Dark Army', slug: 'find_the_mysterious_artifact', circle: 'circle_1', mainStory: true, anchor: 'part-6-defeat-the-dark-army' },
+      { name: 'The Creants', slug: 'find_the_mysterious_artifact', circle: 'circle_1', mainStory: true, anchor: 'part-7-the-creants' },
       { name: 'Help Daltoo Escape', slug: 'help_daltoo_escape', circle: 'circle_5' },
-      { name: 'Find the Summoner Again', slug: 'find_the_summoner_again', circle: 'circle_5' },
       { name: 'Bounty Board', slug: 'bounty_board', circle: 'circle_5' },
     ],
   },
@@ -151,20 +159,32 @@ export function QuestCircle() {
       </p>
 
       <div className="grid gap-2 sm:grid-cols-2">
-        {data.quests.map((quest) => (
-          <Link
-            key={quest.slug}
-            to={`/quests/${quest.circle}/${quest.slug}`}
-            className="group flex items-center justify-between rounded-lg border border-parchment-300 bg-parchment-100 px-4 py-3 transition-all hover:-translate-y-0.5 hover:border-tide hover:shadow-sm dark:border-ash/10 dark:bg-ink dark:hover:border-tide/60"
-          >
-            <span className="font-ui text-sm font-medium text-parchment-800 transition-colors group-hover:text-tide dark:text-ivory/90 dark:group-hover:text-tide">
-              {quest.name}
-            </span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 text-ash/40 transition-colors group-hover:text-tide">
-              <path d="m9 18 6-6-6-6"/>
-            </svg>
-          </Link>
-        ))}
+        {data.quests.map((quest) => {
+          const to = quest.anchor
+            ? `/quests/${quest.circle}/${quest.slug}#${quest.anchor}`
+            : `/quests/${quest.circle}/${quest.slug}`
+          return (
+            <Link
+              key={`${quest.slug}-${quest.anchor ?? ''}`}
+              to={to}
+              className="group flex items-center justify-between gap-2 rounded-lg border border-parchment-300 bg-parchment-100 px-4 py-3 transition-all hover:-translate-y-0.5 hover:border-tide hover:shadow-sm dark:border-ash/10 dark:bg-ink dark:hover:border-tide/60"
+            >
+              <span className="flex min-w-0 items-center gap-2">
+                <span className="truncate font-ui text-sm font-medium text-parchment-800 transition-colors group-hover:text-tide dark:text-ivory/90 dark:group-hover:text-tide">
+                  {quest.name}
+                </span>
+                {quest.mainStory && (
+                  <span className="shrink-0 rounded-full border border-gilt/40 bg-gilt/10 px-1.5 py-0.5 font-ui text-[9px] font-semibold uppercase tracking-wider text-gilt">
+                    Main Story
+                  </span>
+                )}
+              </span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 text-ash/40 transition-colors group-hover:text-tide">
+                <path d="m9 18 6-6-6-6"/>
+              </svg>
+            </Link>
+          )
+        })}
       </div>
     </div>
   )
