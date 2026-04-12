@@ -46,8 +46,9 @@ export function Footer() {
             <img
               src="https://aislingexchange.com/news/images/lancelothead.png"
               alt="Lancelot"
-              className="ml-0.5 h-4 w-auto"
+              className="mx-0.5 h-4 w-auto"
             />
+            based on original version by Mebo.
           </p>
         </div>
       </div>
