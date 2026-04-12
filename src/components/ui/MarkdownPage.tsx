@@ -187,15 +187,41 @@ export function MarkdownPage({ content, imageBasePath }: MarkdownPageProps) {
   const processed = preprocessMarkdown(content, imageBasePath)
   const { hash } = useLocation()
 
-  // HashRouter puts the route in window.location.hash, so in-page anchors
-  // live in the route-level hash (e.g. /quests/.../foo#part-5 → location.hash = '#part-5').
-  // Browser won't auto-scroll; do it ourselves after markdown renders.
+  // HashRouter puts the route in window.location.hash, so in-page anchors live
+  // in location.hash (e.g. /quests/.../foo#part-5 → location.hash = '#part-5').
+  // The browser won't auto-scroll for these. We also need to retry a few frames
+  // in case images/late layout push the target down after first render.
   useEffect(() => {
     if (!hash) return
-    const id = hash.slice(1)
-    const el = document.getElementById(id)
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    const id = decodeURIComponent(hash.slice(1))
+    let cancelled = false
+    let attempts = 0
+
+    // Retry until the element exists (react-markdown renders synchronously but
+    // the first frame may fire before children are in the DOM).
+    const scroll = () => {
+      if (cancelled) return
+      const el = document.getElementById(id)
+      if (el) {
+        el.scrollIntoView({ behavior: 'auto', block: 'start' })
+        // Follow up once after images have had a chance to load, in case
+        // late layout pushed the target down.
+        setTimeout(() => {
+          if (cancelled) return
+          const again = document.getElementById(id)
+          if (again) again.scrollIntoView({ behavior: 'auto', block: 'start' })
+        }, 250)
+        return
+      }
+      if (attempts < 30) {
+        attempts++
+        requestAnimationFrame(scroll)
+      }
+    }
+
+    requestAnimationFrame(scroll)
+    return () => {
+      cancelled = true
     }
   }, [hash, processed])
 

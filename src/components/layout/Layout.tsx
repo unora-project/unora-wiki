@@ -7,8 +7,13 @@ import { SearchModal } from '@/components/search/SearchModal'
 import { BackToTop } from '@/components/ui/BackToTop'
 
 export function Layout() {
-  const { pathname } = useLocation()
-  useEffect(() => { window.scrollTo(0, 0) }, [pathname])
+  const { pathname, hash } = useLocation()
+  // Reset scroll on route change, but skip when the URL carries an in-page
+  // anchor — downstream pages scroll the target into view themselves.
+  useEffect(() => {
+    if (hash) return
+    window.scrollTo(0, 0)
+  }, [pathname, hash])
   return (
     <div className="min-h-screen bg-parchment-50 dark:bg-obsidian">
       <a

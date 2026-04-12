@@ -1,3 +1,55 @@
+function convertCollapsibles(md: string): string {
+  const lines = md.split('\n')
+  const result: string[] = []
+  let i = 0
+
+  while (i < lines.length) {
+    const match = lines[i].match(/^(\?{3}\+?)\s+\w+\s*(?:"([^"]*)")?\s*$/)
+    if (!match) {
+      result.push(lines[i])
+      i++
+      continue
+    }
+
+    const marker = match[1]
+    const title = match[2] ?? ''
+    i++
+
+    // Collect indented content, allowing blank lines inside the block
+    const contentLines: string[] = []
+    while (i < lines.length) {
+      const line = lines[i]
+      if (/^(?:    |\t)/.test(line)) {
+        contentLines.push(line.replace(/^(?:    |\t)/, ''))
+        i++
+        continue
+      }
+      if (line.trim() === '') {
+        // Peek ahead: if the next non-blank line is still indented, keep going.
+        let j = i + 1
+        while (j < lines.length && lines[j].trim() === '') j++
+        if (j < lines.length && /^(?:    |\t)/.test(lines[j])) {
+          contentLines.push('')
+          i++
+          continue
+        }
+      }
+      break
+    }
+
+    const open = marker.includes('+') ? ' open' : ''
+    const cleanContent = contentLines.join('\n').trim()
+    result.push(`<details${open}><summary>${title}</summary>`)
+    result.push('')
+    result.push(cleanContent)
+    result.push('')
+    result.push('</details>')
+    result.push('')
+  }
+
+  return result.join('\n')
+}
+
 function convertAdmonitions(md: string): string {
   const lines = md.split('\n')
   const result: string[] = []
@@ -97,14 +149,7 @@ export function preprocessMarkdown(raw: string, imageBasePath = `${import.meta.e
   md = convertAdmonitions(md)
 
   // Convert collapsible blocks: ???+ type "title" or ??? type "title"
-  md = md.replace(
-    /^(\?{3}\+?)\s+\w+\s*"([^"]*)"\s*\n((?:(?:    |\t).*\n?)*)/gm,
-    (_match, marker, title, content) => {
-      const cleanContent = content.replace(/^(?:    |\t)/gm, '').trim()
-      const open = marker.includes('+') ? ' open' : ''
-      return `<details${open}><summary>${title}</summary>\n\n${cleanContent}\n\n</details>\n`
-    }
-  )
+  md = convertCollapsibles(md)
 
   // Strip MkDocs image attributes like { width="900"; } or { align=right }
   md = md.replace(/\{[^}]*(?:width|align|loading)[^}]*\}/g, '')
