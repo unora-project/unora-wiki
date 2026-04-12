@@ -54,7 +54,7 @@ export function Footer() {
             Maintained and contributed to by{' '}
             <strong className="font-semibold">Dylanlan</strong>,{' '}
             <strong className="font-semibold">Iglis</strong>,{' '}
-            <strong className="font-semibold">Mylk</strong>,{' '}
+            <strong className="font-semibold">Fen</strong>,{' '}
             <strong className="font-semibold">True</strong>, and{' '}
             <strong className="font-semibold">Kryopterin</strong>.
           </p>
