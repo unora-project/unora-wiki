@@ -191,6 +191,7 @@ export function ClassDetail() {
             data={skills}
             columns={skillColumns}
             searchPlaceholder={`Search ${displayName} skills...`}
+            initialSorting={[{ id: 'levelRequirement', desc: false }]}
           />
         </section>
       )}
@@ -202,6 +203,7 @@ export function ClassDetail() {
             data={spells}
             columns={skillColumns}
             searchPlaceholder={`Search ${displayName} spells...`}
+            initialSorting={[{ id: 'levelRequirement', desc: false }]}
           />
         </section>
       )}

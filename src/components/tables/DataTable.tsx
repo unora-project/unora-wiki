@@ -8,16 +8,42 @@ import {
   flexRender,
   type ColumnDef,
   type SortingState,
+  type Row,
 } from '@tanstack/react-table'
 
 interface DataTableProps<T> {
   data: T[]
   columns: ColumnDef<T, any>[]
   searchPlaceholder?: string
+  initialSorting?: SortingState
 }
 
-export function DataTable<T>({ data, columns, searchPlaceholder = 'Search...' }: DataTableProps<T>) {
-  const [sorting, setSorting] = useState<SortingState>([])
+// Extracts the first numeric value from a string/number (e.g. "25 faith" -> 25,
+// "Level 10" -> 10). Returns NaN if none found. Used so mixed text/number
+// columns sort numerically instead of lexicographically.
+function extractNumber(value: unknown): number {
+  if (value == null) return NaN
+  if (typeof value === 'number') return value
+  const match = String(value).match(/-?\d+(?:\.\d+)?/)
+  return match ? parseFloat(match[0]) : NaN
+}
+
+function smartSort<T>(rowA: Row<T>, rowB: Row<T>, columnId: string): number {
+  const a = rowA.getValue(columnId)
+  const b = rowB.getValue(columnId)
+  const numA = extractNumber(a)
+  const numB = extractNumber(b)
+  const aIsNum = !Number.isNaN(numA)
+  const bIsNum = !Number.isNaN(numB)
+  if (aIsNum && bIsNum) return numA - numB
+  // Nullish values sort last
+  if (a == null || a === '' || a === '-') return 1
+  if (b == null || b === '' || b === '-') return -1
+  return String(a).localeCompare(String(b))
+}
+
+export function DataTable<T>({ data, columns, searchPlaceholder = 'Search...', initialSorting }: DataTableProps<T>) {
+  const [sorting, setSorting] = useState<SortingState>(initialSorting ?? [])
   const [globalFilter, setGlobalFilter] = useState('')
   const [viewMode, setViewMode] = useState<'table' | 'cards'>(
     window.innerWidth < 768 ? 'cards' : 'table'
@@ -33,6 +59,7 @@ export function DataTable<T>({ data, columns, searchPlaceholder = 'Search...' }:
     getSortedRowModel: getSortedRowModel(),
     getFilteredRowModel: getFilteredRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
+    defaultColumn: { sortingFn: smartSort as any },
     initialState: { pagination: { pageSize: 20 } },
   })
 

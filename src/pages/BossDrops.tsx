@@ -46,6 +46,7 @@ export function BossDrops() {
         data={bossesData as Boss[]}
         columns={columns}
         searchPlaceholder="Search bosses..."
+        initialSorting={[{ id: 'level', desc: false }]}
       />
     </div>
   )

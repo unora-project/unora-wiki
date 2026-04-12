@@ -108,6 +108,7 @@ export function HuntingArea() {
             data={areaDetail.subareas}
             columns={subareaColumns}
             searchPlaceholder="Search sub-areas..."
+            initialSorting={[{ id: 'minimumLevel', desc: false }]}
           />
         </section>
       )}
@@ -148,6 +149,7 @@ export function HuntingArea() {
             data={areaDetail.leaders}
             columns={leaderColumns}
             searchPlaceholder="Search leaders..."
+            initialSorting={[{ id: 'minimumLevel', desc: false }]}
           />
         </section>
       )}
@@ -165,6 +167,7 @@ export function HuntingArea() {
             data={shop.items}
             columns={shopItemColumns}
             searchPlaceholder={`Search ${shop.npc}'s inventory...`}
+            initialSorting={[{ id: 'cost', desc: false }]}
           />
         </section>
       ))}

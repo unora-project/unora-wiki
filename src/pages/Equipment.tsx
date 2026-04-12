@@ -54,6 +54,11 @@ const columns = [
   columnHelper.accessor((row) => row.stats.hit, { id: 'hit', header: 'HIT', cell: (info) => info.getValue() ?? '-' }),
   columnHelper.accessor((row) => row.percentages.attackSpeed, { id: 'as', header: 'AS%', cell: (info) => info.getValue() ?? '-' }),
   columnHelper.accessor((row) => row.percentages.skillDamage, { id: 'skd', header: 'SKD', cell: (info) => info.getValue() ?? '-' }),
+  columnHelper.accessor((row) => row.percentages.skillDamagePercent, { id: 'skdp', header: 'SKD%', cell: (info) => info.getValue() ?? '-' }),
+  columnHelper.accessor((row) => row.percentages.spellDamage, { id: 'spd', header: 'SPD', cell: (info) => info.getValue() ?? '-' }),
+  columnHelper.accessor((row) => row.percentages.spellDamagePercent, { id: 'spdp', header: 'SPD%', cell: (info) => info.getValue() ?? '-' }),
+  columnHelper.accessor((row) => row.percentages.flatHealBonus, { id: 'heal', header: 'HEAL', cell: (info) => info.getValue() ?? '-' }),
+  columnHelper.accessor((row) => row.percentages.healBonusPercent, { id: 'healp', header: 'HEAL%', cell: (info) => info.getValue() ?? '-' }),
 ]
 
 export function Equipment() {
@@ -122,6 +127,7 @@ export function Equipment() {
         data={filteredData}
         columns={columns}
         searchPlaceholder="Search equipment..."
+        initialSorting={[{ id: 'level', desc: false }]}
       />
     </div>
   )

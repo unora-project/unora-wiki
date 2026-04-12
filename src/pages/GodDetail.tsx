@@ -99,6 +99,7 @@ export function GodDetail() {
             data={blessings}
             columns={columns}
             searchPlaceholder="Search blessings..."
+            initialSorting={[{ id: 'cost', desc: false }]}
           />
         </section>
       )}
