@@ -31,7 +31,7 @@ export function Footer() {
             An official compendium for Unora: Elemental Harmony.
           </p>
           <p className="flex items-center gap-1 font-ui text-xs text-ash/60">
-            Made by Lancelot with <Heart size={12} className="fill-ignis text-ignis" />
+            Made with <Heart size={12} className="fill-ignis text-ignis" /> by Lancelot
           </p>
         </div>
       </div>
