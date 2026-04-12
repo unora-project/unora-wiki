@@ -216,13 +216,13 @@ export function Home() {
         </div>
 
         {/* God portraits — decorative */}
-        <div className="relative mt-4 flex items-end justify-center gap-2 sm:gap-6">
+        <div className="relative mt-4 flex w-full max-w-3xl items-end justify-center gap-1 sm:gap-4">
           {['serendael', 'skandara', 'miraelis', 'theselene'].map((god) => (
             <img
               key={god}
               src={`${import.meta.env.BASE_URL}images/religion/${god}.png`}
               alt={god.charAt(0).toUpperCase() + god.slice(1)}
-              className="h-40 w-auto drop-shadow-lg sm:h-52 lg:h-60"
+              className="h-auto min-w-0 max-w-[22%] flex-1 object-contain drop-shadow-lg"
             />
           ))}
         </div>

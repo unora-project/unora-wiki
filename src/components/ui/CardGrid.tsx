@@ -13,9 +13,12 @@ export interface CardItem {
 interface CardGridProps {
   items: CardItem[]
   columns?: 2 | 3 | 4
+  // "cover" crops to fill the card frame (default, good for landscape art).
+  // "contain" fits the whole image without cropping (for portraits/cutouts).
+  imageFit?: 'cover' | 'contain'
 }
 
-export function CardGrid({ items, columns = 3 }: CardGridProps) {
+export function CardGrid({ items, columns = 3, imageFit = 'cover' }: CardGridProps) {
   const gridCols = {
     2: 'sm:grid-cols-2 2xl:grid-cols-3',
     3: 'sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4',
@@ -31,11 +34,11 @@ export function CardGrid({ items, columns = 3 }: CardGridProps) {
           className="group overflow-hidden rounded-xl border border-parchment-300 bg-parchment-100 shadow-sm transition-all hover:-translate-y-0.5 hover:border-gilt hover:shadow-md dark:border-ash/10 dark:bg-ink dark:shadow-[0_2px_8px_rgba(0,0,0,0.3)] dark:hover:border-gilt dark:hover:shadow-[0_8px_24px_rgba(0,0,0,0.4),0_0_30px_rgba(201,162,76,0.06)]"
         >
           {item.image && (
-            <div className="aspect-video overflow-hidden">
+            <div className={`aspect-video overflow-hidden ${imageFit === 'contain' ? 'bg-parchment-200/60 dark:bg-obsidian/50' : ''}`}>
               <img
                 src={item.image}
                 alt={item.title}
-                className="h-full w-full object-cover transition-transform group-hover:scale-105"
+                className={`h-full w-full transition-transform group-hover:scale-105 ${imageFit === 'contain' ? 'object-contain p-2' : 'object-cover'}`}
                 loading="lazy"
               />
             </div>

@@ -73,7 +73,7 @@ export function Religion() {
       <h2 className="mb-4 font-heading text-2xl font-semibold text-gilt">
         The Four Goddesses
       </h2>
-      <CardGrid items={gods} columns={4} />
+      <CardGrid items={gods} columns={4} imageFit="contain" />
     </div>
   )
 }

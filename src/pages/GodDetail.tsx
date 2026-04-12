@@ -58,13 +58,13 @@ export function GodDetail() {
         ]}
       />
 
-      <div className="mb-8 flex flex-col gap-6 md:flex-row">
+      <div className="mb-8 flex flex-col items-center gap-6 md:flex-row md:items-start">
         {/* Portrait */}
         <div className="shrink-0">
           <img
             src={`${import.meta.env.BASE_URL}images/religion/${god}.png`}
             alt={info.name}
-            className="w-48 rounded-lg shadow-md md:w-56"
+            className="h-auto w-48 max-w-full rounded-lg shadow-md md:w-56"
           />
         </div>
 
