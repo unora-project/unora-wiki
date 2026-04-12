@@ -51,6 +51,14 @@ export function Footer() {
             based on original version by <span><strong className="font-semibold">Mebo</strong>.</span>
           </p>
         </div>
+        <p className="text-center font-ui text-xs text-ash/60">
+          Maintained and contributed to by{' '}
+          <strong className="font-semibold">Dylanlan</strong>,{' '}
+          <strong className="font-semibold">Iglis</strong>,{' '}
+          <strong className="font-semibold">Mylk</strong>,{' '}
+          <strong className="font-semibold">True</strong>, and{' '}
+          <strong className="font-semibold">Kryopterin</strong>.
+        </p>
       </div>
     </footer>
   )
