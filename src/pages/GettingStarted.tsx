@@ -6,6 +6,7 @@ import {
   Download, MessageCircle, Swords, Hand, Heart, Eye, Wand2,
   Scroll, Target, Shield, Hammer,
   Calculator, BookOpen, Skull, BookA, ArrowRight,
+  FlaskConical, Wand, Gem, Anvil, UtensilsCrossed, Fish, Leaf,
 } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 
@@ -255,15 +256,22 @@ export function GettingStarted() {
 
       <div className="mb-4 grid grid-cols-2 gap-2 sm:grid-cols-4">
         {[
-          'Alchemy', 'Armorsmithing', 'Weaponsmithing', 'Enchanting',
-          'Cooking', 'Fishing', 'Foraging', 'Jewelcrafting',
+          { name: 'Alchemy', icon: FlaskConical },
+          { name: 'Armorsmithing', icon: Shield },
+          { name: 'Weaponsmithing', icon: Anvil },
+          { name: 'Enchanting', icon: Wand },
+          { name: 'Cooking', icon: UtensilsCrossed },
+          { name: 'Fishing', icon: Fish },
+          { name: 'Foraging', icon: Leaf },
+          { name: 'Jewelcrafting', icon: Gem },
         ].map((p) => (
           <Link
-            key={p}
-            to={`/professions/${p.toLowerCase()}`}
-            className="rounded-lg border border-parchment-300 bg-parchment-100 px-3 py-2 text-center font-ui text-sm font-medium text-parchment-800 transition-all hover:-translate-y-0.5 hover:border-verdant hover:text-verdant dark:border-ash/10 dark:bg-ink dark:text-ivory/80 dark:hover:border-verdant dark:hover:text-verdant"
+            key={p.name}
+            to={`/professions/${p.name.toLowerCase()}`}
+            className="flex items-center gap-2 rounded-lg border border-parchment-300 bg-parchment-100 px-3 py-2 font-ui text-sm font-medium text-parchment-800 transition-all hover:-translate-y-0.5 hover:border-verdant hover:text-verdant dark:border-ash/10 dark:bg-ink dark:text-ivory/80 dark:hover:border-verdant dark:hover:text-verdant"
           >
-            {p}
+            <p.icon size={16} className="shrink-0 text-verdant" />
+            {p.name}
           </Link>
         ))}
       </div>
