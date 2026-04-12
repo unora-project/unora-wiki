@@ -147,7 +147,7 @@ export function GettingStarted() {
           Visit <strong>Callo</strong> the weaponsmith at (5,38). Collect 6 branches outside town and he'll craft you a stick and wooden shield.
         </StepCard>
         <StepCard step={3} title="Choose Your Class">
-          Head to the <strong>Temple of Choosing</strong> at (9,5). Speak to Aoife, enter the Inner Sanctum, and dedicate yourself to a class.
+          Head to the <strong>Temple of Choosing</strong> at (9,5). Speak to Aoife, enter the Inner Sanctum, and dedicate yourself to a class. See class descriptions below to help decide.
         </StepCard>
         <StepCard step={4} title="Slay the Crypt">
           Find <strong>Skarn</strong> at (58,25) near the Mileth Crypt. Accept the Slayer of the Crypt quest and clear it out.
