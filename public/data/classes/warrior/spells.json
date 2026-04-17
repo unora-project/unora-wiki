@@ -1,0 +1,79 @@
+[
+  {
+    "name": "Battle Cry",
+    "class": "warrior",
+    "levelRequirement": "11",
+    "statRequirements": "5/3/3/9/4",
+    "goldRequired": "2,000",
+    "itemRequirements": "Spider Silk (3)",
+    "prerequisites": "-",
+    "learningLocation": "Mileth Special Skills Master",
+    "description": "Increase damage and healing for 2 minutes."
+  },
+  {
+    "name": "Battle Frenzy",
+    "class": "warrior",
+    "levelRequirement": "Master (Pure)",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Master",
+    "description": "Heal when hit for a short time. Pure Only."
+  },
+  {
+    "name": "Fury",
+    "class": "warrior",
+    "levelRequirement": "Master",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Master Dungeon",
+    "description": "Warrior channels their inner fury, increasing attack damage while sacrificing health."
+  },
+  {
+    "name": "Inferno",
+    "class": "warrior",
+    "levelRequirement": "Master (Pure)",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "Whirlwind (100)",
+    "learningLocation": "Shamensyth",
+    "description": "Your temperature rises and burns enemies around you. Replaces Whirlwind. Pure Only."
+  },
+  {
+    "name": "War Cry",
+    "class": "warrior",
+    "levelRequirement": "50",
+    "statRequirements": "35/3/6/15/25",
+    "goldRequired": "25,000",
+    "itemRequirements": "Chainmail Gauntlet (1)",
+    "prerequisites": "Battle Cry (100)",
+    "learningLocation": "Mileth Special Skills Master",
+    "description": "Increase the group's damage and healing for 2 minutes. Replaces Battle Cry."
+  },
+  {
+    "name": "Whirlwind",
+    "class": "warrior",
+    "levelRequirement": "60",
+    "statRequirements": "52/15/7/33/27",
+    "goldRequired": "50,000",
+    "itemRequirements": "Wisp's Core (2), Spiked Flail (1)",
+    "prerequisites": "Wrath (100)",
+    "learningLocation": "Mileth Special Skills Master",
+    "description": "Damage enemies around user. Replaces Wrath."
+  },
+  {
+    "name": "Wrath",
+    "class": "warrior",
+    "levelRequirement": "11",
+    "statRequirements": "5/3/5/5/5",
+    "goldRequired": "5,000",
+    "itemRequirements": "Spider Silk (3)",
+    "prerequisites": "-",
+    "learningLocation": "Mileth Special Skills Master",
+    "description": "You enter a violent frenzy, flailing in all directions to repeatedly strike nearby foes."
+  }
+]

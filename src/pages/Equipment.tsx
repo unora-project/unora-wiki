@@ -1,7 +1,6 @@
-import { useState, useMemo } from 'react'
+import { useEffect, useState, useMemo } from 'react'
 import { createColumnHelper } from '@tanstack/react-table'
 import { DataTable } from '@/components/tables/DataTable'
-import allEquipment from '@/data/equipment/all.json'
 
 interface EquipmentItem {
   name: string
@@ -61,12 +60,42 @@ const columns = [
   columnHelper.accessor((row) => row.percentages.healBonusPercent, { id: 'healp', header: 'HEAL%', cell: (info) => info.getValue() ?? '-' }),
 ]
 
+let equipmentCache: EquipmentItem[] | null = null
+let equipmentPromise: Promise<EquipmentItem[]> | null = null
+
+function loadEquipment(): Promise<EquipmentItem[]> {
+  if (equipmentCache) return Promise.resolve(equipmentCache)
+  if (!equipmentPromise) {
+    equipmentPromise = fetch('/data/equipment.json')
+      .then((r) => {
+        if (!r.ok) throw new Error(`equipment.json ${r.status}`)
+        return r.json() as Promise<EquipmentItem[]>
+      })
+      .then((data) => {
+        equipmentCache = data
+        return data
+      })
+  }
+  return equipmentPromise
+}
+
 export function Equipment() {
   const [selectedCategory, setSelectedCategory] = useState('all')
   const [selectedClass, setSelectedClass] = useState('all')
+  const [data, setData] = useState<EquipmentItem[] | null>(equipmentCache)
+
+  useEffect(() => {
+    if (equipmentCache) return
+    let alive = true
+    loadEquipment().then((items) => {
+      if (alive) setData(items)
+    })
+    return () => { alive = false }
+  }, [])
 
   const filteredData = useMemo(() => {
-    let items = allEquipment as EquipmentItem[]
+    if (!data) return []
+    let items = data
     if (selectedCategory !== 'all') {
       items = items.filter((item) => item.category === selectedCategory)
     }
@@ -74,7 +103,7 @@ export function Equipment() {
       items = items.filter((item) => !item.class || item.class === selectedClass)
     }
     return items
-  }, [selectedCategory, selectedClass])
+  }, [data, selectedCategory, selectedClass])
 
   return (
     <div>
@@ -123,12 +152,18 @@ export function Equipment() {
       </div>
 
       {/* Data Table */}
-      <DataTable
-        data={filteredData}
-        columns={columns}
-        searchPlaceholder="Search equipment..."
-        initialSorting={[{ id: 'level', desc: false }]}
-      />
+      {data === null ? (
+        <div className="flex min-h-[40vh] items-center justify-center">
+          <div className="h-8 w-8 animate-spin rounded-full border-2 border-gilt/20 border-t-gilt" />
+        </div>
+      ) : (
+        <DataTable
+          data={filteredData}
+          columns={columns}
+          searchPlaceholder="Search equipment..."
+          initialSorting={[{ id: 'level', desc: false }]}
+        />
+      )}
     </div>
   )
 }

@@ -1,0 +1,167 @@
+[
+  {
+    "name": "Bolt Trap",
+    "class": "rogue",
+    "levelRequirement": "21",
+    "statRequirements": "15/6/3/9/22",
+    "goldRequired": "5,000",
+    "itemRequirements": "Blossom Secret (1), Scorpion's Sting (2)",
+    "prerequisites": "Stiletto Trap (100)",
+    "learningLocation": "Mileth Special Skills Master",
+    "description": "Lays a trap that deals a fair amount of pure damage."
+  },
+  {
+    "name": "Coiled Bolt Trap",
+    "class": "rogue",
+    "levelRequirement": "41",
+    "statRequirements": "20/6/3/18/35",
+    "goldRequired": "25,000",
+    "itemRequirements": "Moon Dagger (1), Hobgoblin's Skull (2)",
+    "prerequisites": "Bolt Trap (100)",
+    "learningLocation": "Mileth Special Skills Master",
+    "description": "Lays a trap that deals a large amount of pure damage."
+  },
+  {
+    "name": "Concentration",
+    "class": "rogue",
+    "levelRequirement": "Master (Pure)",
+    "statRequirements": "80/50/50/50/180",
+    "goldRequired": "500,000",
+    "itemRequirements": "Ruidhtear Toe (3)",
+    "prerequisites": "Focus (100)",
+    "learningLocation": "Rucesion Special Skills Master",
+    "description": "Increases damage and cdr based on your dexterity. Upgrades Focus. Pure Only."
+  },
+  {
+    "name": "Cunning",
+    "class": "rogue",
+    "levelRequirement": "Master",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Tauren",
+    "description": "Rogue channels their inner cunning, increasing attack damage while sacrificing mana."
+  },
+  {
+    "name": "Detect Traps",
+    "class": "rogue",
+    "levelRequirement": "12",
+    "statRequirements": "3/10/10/7/12",
+    "goldRequired": "5,000",
+    "itemRequirements": "Spider's Silk (2)",
+    "prerequisites": "-",
+    "learningLocation": "Suomi Special Skills Master",
+    "description": "Allows the rogue and allies to see nearby traps."
+  },
+  {
+    "name": "Eisd Creutair",
+    "class": "rogue",
+    "levelRequirement": "30",
+    "statRequirements": "10/11/8/10/21",
+    "goldRequired": "10,000",
+    "itemRequirements": "White Bat's Wing (2)",
+    "prerequisites": "-",
+    "learningLocation": "Suomi Special Skills Master",
+    "description": "Allows you to see hidden creatures."
+  },
+  {
+    "name": "Focus",
+    "class": "rogue",
+    "levelRequirement": "41",
+    "statRequirements": "25/13/10/8/33",
+    "goldRequired": "25,000",
+    "itemRequirements": "Goblin's Skull (3)",
+    "prerequisites": "-",
+    "learningLocation": "Suomi Special Skills Master",
+    "description": "Increases attack speed based on your dexterity."
+  },
+  {
+    "name": "Hide Group",
+    "class": "rogue",
+    "levelRequirement": "Master (Pure)",
+    "statRequirements": "50/45/20/35/110",
+    "goldRequired": "750,000",
+    "itemRequirements": "Ice Skeleton Skull (5)",
+    "prerequisites": "-",
+    "learningLocation": "Rucesion Skills Master",
+    "description": "Hides nearby group members. Pure Only."
+  },
+  {
+    "name": "Hide",
+    "class": "rogue",
+    "levelRequirement": "15",
+    "statRequirements": "6/7/5/5/15",
+    "goldRequired": "10,000",
+    "itemRequirements": "Bat's Wing (1)",
+    "prerequisites": "-",
+    "learningLocation": "Suomi Special Skills Master",
+    "description": "Shrouds you in darkness, hiding you from sight."
+  },
+  {
+    "name": "Maiden Trap",
+    "class": "rogue",
+    "levelRequirement": "90",
+    "statRequirements": "38/12/5/22/55",
+    "goldRequired": "75,000",
+    "itemRequirements": "Lotus Dagger (2), Gruesomefly's Wing (2)",
+    "prerequisites": "Spring Trap (100)",
+    "learningLocation": "Suomi Special Skills Master",
+    "description": "Lays a trap that deals a massive amount of pure damage."
+  },
+  {
+    "name": "Needle Trap",
+    "class": "rogue",
+    "levelRequirement": "5",
+    "statRequirements": "3/3/3/3/5",
+    "goldRequired": "500",
+    "itemRequirements": "Snow Dagger (1)",
+    "prerequisites": "-",
+    "learningLocation": "Mileth Special Skills Master",
+    "description": "Lays a trap that deals a very small amount of pure damage."
+  },
+  {
+    "name": "Pitfall Trap",
+    "class": "rogue",
+    "levelRequirement": "Master",
+    "statRequirements": "80/25/9/32/120",
+    "goldRequired": "500,000",
+    "itemRequirements": "Black Shocker Piece (3)",
+    "prerequisites": "Maiden Trap (100)",
+    "learningLocation": "Suomi Special Skills Master",
+    "description": "Lays a trap that deals an enormous amount of pure damage."
+  },
+  {
+    "name": "Spring Trap",
+    "class": "rogue",
+    "levelRequirement": "60",
+    "statRequirements": "30/10/5/22/42",
+    "goldRequired": "10,000",
+    "itemRequirements": "Light Secret (1), Wisp's Core (2)",
+    "prerequisites": "Coiled Bolt Trap (100)",
+    "learningLocation": "Suomi Special Skills Master",
+    "description": "Lays a trap that deals a huge amount of pure damage."
+  },
+  {
+    "name": "Stiletto Trap",
+    "class": "rogue",
+    "levelRequirement": "11",
+    "statRequirements": "5/5/3/3/11",
+    "goldRequired": "5,000",
+    "itemRequirements": "Center Dagger (1), Bat's Wing (1)",
+    "prerequisites": "Needle Trap (100)",
+    "learningLocation": "Mileth Special Skills Master",
+    "description": "Lays a trap that deals a small amount of pure damage."
+  },
+  {
+    "name": "Vanish",
+    "class": "rogue",
+    "levelRequirement": "Master",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Master Dungeon",
+    "description": "Shrouds you in darkness, hiding you from everything."
+  }
+]

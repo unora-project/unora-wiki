@@ -1,10 +1,8 @@
 import { useParams } from 'react-router'
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { createColumnHelper } from '@tanstack/react-table'
 import { DataTable } from '@/components/tables/DataTable'
 import { PageHeader } from '@/components/ui/PageHeader'
-import skillsData from '@/data/classes/skills.json'
-import spellsData from '@/data/classes/spells.json'
 import classInfo from '@/data/metadata/classes.json'
 
 interface SkillSpell {
@@ -40,18 +38,49 @@ const skillColumns = [
   skillColumnHelper.accessor('description', { header: 'Description' }),
 ]
 
+const classShardCache = new Map<string, { skills: SkillSpell[]; spells: SkillSpell[] }>()
+
+async function loadClassShard(className: string): Promise<{ skills: SkillSpell[]; spells: SkillSpell[] }> {
+  const cached = classShardCache.get(className)
+  if (cached) return cached
+  const base = import.meta.env.BASE_URL + 'data/classes/' + className
+  const [skills, spells] = await Promise.all([
+    fetch(base + '/skills.json').then((r) => (r.ok ? (r.json() as Promise<SkillSpell[]>) : [])).catch(() => []),
+    fetch(base + '/spells.json').then((r) => (r.ok ? (r.json() as Promise<SkillSpell[]>) : [])).catch(() => []),
+  ])
+  const result = { skills, spells }
+  classShardCache.set(className, result)
+  return result
+}
+
 export function ClassDetail() {
   const { className } = useParams<{ className: string }>()
   const info = className ? typedClassInfo[className] : null
 
-  const skills = useMemo(
-    () => (skillsData as SkillSpell[]).filter((s) => s.class === className),
-    [className]
-  )
-  const spells = useMemo(
-    () => (spellsData as SkillSpell[]).filter((s) => s.class === className),
-    [className]
-  )
+  const initial = className ? classShardCache.get(className) : undefined
+  const [skills, setSkills] = useState<SkillSpell[]>(initial?.skills ?? [])
+  const [spells, setSpells] = useState<SkillSpell[]>(initial?.spells ?? [])
+
+  useEffect(() => {
+    if (!className) return
+    let alive = true
+    loadClassShard(className).then((shard) => {
+      if (!alive) return
+      setSkills(shard.skills)
+      setSpells(shard.spells)
+    })
+    return () => { alive = false }
+  }, [className])
+
+  const tabs = useMemo(() => {
+    const t: { id: string; label: string }[] = []
+    if (info && info.statCaps.length > 0) t.push({ id: 'overview', label: 'Overview' })
+    if (skills.length > 0) t.push({ id: 'skills', label: `Skills (${skills.length})` })
+    if (spells.length > 0) t.push({ id: 'spells', label: `Spells (${spells.length})` })
+    return t
+  }, [info, skills, spells])
+
+  const [activeTab, setActiveTab] = useState(tabs[0]?.id ?? 'overview')
 
   if (!info || !className) {
     return (
@@ -62,16 +91,6 @@ export function ClassDetail() {
   }
 
   const displayName = className.charAt(0).toUpperCase() + className.slice(1)
-
-  const tabs = useMemo(() => {
-    const t: { id: string; label: string }[] = []
-    if (info.statCaps.length > 0) t.push({ id: 'overview', label: 'Overview' })
-    if (skills.length > 0) t.push({ id: 'skills', label: `Skills (${skills.length})` })
-    if (spells.length > 0) t.push({ id: 'spells', label: `Spells (${spells.length})` })
-    return t
-  }, [info, skills, spells])
-
-  const [activeTab, setActiveTab] = useState(tabs[0]?.id ?? 'overview')
 
   return (
     <div>

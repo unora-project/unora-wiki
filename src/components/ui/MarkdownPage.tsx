@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useMemo } from 'react'
 import { useLocation } from 'react-router'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
@@ -6,6 +6,7 @@ import rehypeRaw from 'rehype-raw'
 import rehypeSlug from 'rehype-slug'
 import { preprocessMarkdown } from '@/lib/preprocessMarkdown'
 import { Admonition } from './Admonition'
+import { OptimizedImage } from './OptimizedImage'
 import type { Components } from 'react-markdown'
 
 interface MarkdownPageProps {
@@ -92,11 +93,10 @@ const components: Components = {
   ),
   img: ({ src, alt }) => (
     <figure className="my-4">
-      <img
-        src={src}
+      <OptimizedImage
+        src={typeof src === 'string' ? src : ''}
         alt={alt || ''}
         className="max-w-full rounded-lg border border-gilt/30 shadow-md shadow-black/20"
-        loading="lazy"
         style={{ boxShadow: 'inset 0 2px 6px rgba(0,0,0,0.2), 0 4px 12px rgba(0,0,0,0.15)' }}
       />
       {alt && (
@@ -168,14 +168,22 @@ const components: Components = {
     }
     return <div className={className}>{children}</div>
   },
-  details: ({ children, ...props }) => (
-    <details
-      className="group my-3 rounded-lg border border-parchment-300 bg-parchment-100 dark:border-ash/20 dark:bg-ink"
-      {...(props as Record<string, unknown>)}
-    >
-      {children}
-    </details>
-  ),
+  details: ({ children, ...props }) => {
+    const childArray = Array.isArray(children) ? children : [children]
+    const summaryChild = childArray.find(
+      (c: any) => c?.props?.node?.tagName === 'summary'
+    )
+    const rest = childArray.filter((c: any) => c !== summaryChild)
+    return (
+      <details
+        className="group my-3 rounded-lg border border-parchment-300 bg-parchment-100 dark:border-ash/20 dark:bg-ink"
+        {...(props as Record<string, unknown>)}
+      >
+        {summaryChild}
+        <div className="px-4 pb-3 pt-1 [&>*:last-child]:mb-0">{rest}</div>
+      </details>
+    )
+  },
   summary: ({ children }) => (
     <summary className="cursor-pointer px-4 py-3 font-heading text-sm font-semibold text-gilt transition-colors hover:text-gilt/80">
       {children}
@@ -183,8 +191,11 @@ const components: Components = {
   ),
 }
 
+const remarkPlugins = [remarkGfm]
+const rehypePlugins = [rehypeRaw, rehypeSlug]
+
 export function MarkdownPage({ content, imageBasePath }: MarkdownPageProps) {
-  const processed = preprocessMarkdown(content, imageBasePath)
+  const processed = useMemo(() => preprocessMarkdown(content, imageBasePath), [content, imageBasePath])
   const { hash } = useLocation()
 
   // HashRouter puts the route in window.location.hash, so in-page anchors live
@@ -228,8 +239,8 @@ export function MarkdownPage({ content, imageBasePath }: MarkdownPageProps) {
   return (
     <div className="prose-unora max-w-none">
       <ReactMarkdown
-        remarkPlugins={[remarkGfm]}
-        rehypePlugins={[rehypeRaw, rehypeSlug]}
+        remarkPlugins={remarkPlugins}
+        rehypePlugins={rehypePlugins}
         components={components}
       >
         {processed}

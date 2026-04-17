@@ -4,6 +4,7 @@ import {
   Building2, Crown, Skull, BookOpen, ClipboardList, Calculator,
   MessageCircle, Download, ArrowRight,
 } from 'lucide-react'
+import { OptimizedImage } from '@/components/ui/OptimizedImage'
 
 type Element = 'ignis' | 'tide' | 'verdant' | 'astral'
 
@@ -170,9 +171,11 @@ export function Home() {
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_20%_50%,rgba(230,52,25,0.06),transparent_50%),radial-gradient(ellipse_at_40%_60%,rgba(42,143,212,0.05),transparent_50%),radial-gradient(ellipse_at_60%_40%,rgba(91,161,44,0.05),transparent_50%),radial-gradient(ellipse_at_80%_50%,rgba(91,63,184,0.06),transparent_50%)] dark:bg-[radial-gradient(ellipse_at_20%_50%,rgba(230,52,25,0.04),transparent_50%),radial-gradient(ellipse_at_40%_60%,rgba(42,143,212,0.04),transparent_50%),radial-gradient(ellipse_at_60%_40%,rgba(91,161,44,0.04),transparent_50%),radial-gradient(ellipse_at_80%_50%,rgba(91,63,184,0.05),transparent_50%)]" />
 
         <h1 className="relative">
-          <img
+          <OptimizedImage
             src={`${import.meta.env.BASE_URL}images/UnoraLogo.png`}
             alt="Unora"
+            width={996}
+            height={484}
             className="h-40 w-auto sm:h-52 drop-shadow-lg dark:drop-shadow-[0_2px_16px_rgba(201,162,76,0.15)]"
           />
         </h1>
@@ -217,11 +220,14 @@ export function Home() {
 
         {/* God portraits — decorative */}
         <div className="relative mt-4 flex w-full max-w-3xl items-end justify-center gap-1 sm:gap-4">
+          {/* Width/height are intrinsic; CSS scales to container. Using shared 360x330 as a close-enough aspect anchor (actual values 348–368 × 306–336). */}
           {['serendael', 'skandara', 'miraelis', 'theselene'].map((god) => (
-            <img
+            <OptimizedImage
               key={god}
               src={`${import.meta.env.BASE_URL}images/religion/${god}.png`}
               alt={god.charAt(0).toUpperCase() + god.slice(1)}
+              width={360}
+              height={330}
               className="h-auto min-w-0 max-w-[22%] flex-1 object-contain drop-shadow-lg"
             />
           ))}

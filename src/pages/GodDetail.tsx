@@ -3,6 +3,7 @@ import { useMemo } from 'react'
 import { createColumnHelper } from '@tanstack/react-table'
 import { DataTable } from '@/components/tables/DataTable'
 import { PageHeader } from '@/components/ui/PageHeader'
+import { OptimizedImage } from '@/components/ui/OptimizedImage'
 import blessingsData from '@/data/religion/blessings.json'
 import godInfoData from '@/data/metadata/religion.json'
 
@@ -61,9 +62,11 @@ export function GodDetail() {
       <div className="mb-8 flex flex-col items-center gap-6 md:flex-row md:items-start">
         {/* Portrait */}
         <div className="shrink-0">
-          <img
+          <OptimizedImage
             src={`${import.meta.env.BASE_URL}images/religion/${god}.png`}
             alt={info.name}
+            width={360}
+            height={330}
             className="h-auto w-48 max-w-full rounded-lg shadow-md md:w-56"
           />
         </div>

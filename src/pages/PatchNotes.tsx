@@ -49,7 +49,7 @@ function parsePatchNotes(): PatchNote[] {
 }
 
 export function PatchNotes() {
-  const notes = useMemo(parsePatchNotes, [])
+  const notes = useMemo(() => parsePatchNotes(), [])
   const [filter, setFilter] = useState('')
   const [expandedAll, setExpandedAll] = useState(false)
 

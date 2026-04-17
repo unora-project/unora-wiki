@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router'
 import { useThemeStore } from '@/stores/theme'
+import { OptimizedImage } from '@/components/ui/OptimizedImage'
 import { LeftNav } from './LeftNav'
 
 export function Header() {
@@ -30,9 +31,11 @@ export function Header() {
           </button>
 
           <Link to="/" className="flex flex-col items-center">
-            <img
+            <OptimizedImage
               src={`${import.meta.env.BASE_URL}images/UnoraLogo.png`}
               alt="Unora"
+              width={996}
+              height={484}
               className="h-18 w-auto rounded"
             />
             <span className="font-subtitle text-sm tracking-wide text-parchment-600 dark:text-ash">Elemental Harmony</span>

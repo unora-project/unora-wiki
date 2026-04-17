@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router'
-import { useRef, useEffect, useCallback, useState } from 'react'
+import { memo, useRef, useEffect, useCallback, useMemo, useState } from 'react'
 import {
   Swords, Shield, Target, Skull, Scroll, ClipboardList, Crown,
   Hammer, Building2, Sparkles, BookOpen, Calculator, BookA,
@@ -182,19 +182,26 @@ interface LeftNavProps {
 export function LeftNav({ onNavigate }: LeftNavProps) {
   const location = useLocation()
 
-  // Which section is expanded — null means only the active route's section is open
-  const [expandedLink, setExpandedLink] = useState<string | null>(null)
-
-  // Auto-sync to active route on navigation
-  useEffect(() => {
+  // Derive active route's expandable link during render — no effect needed
+  const routeExpandedLink = useMemo(() => {
     for (const link of sections.flatMap((s) => s.links)) {
       if (link.children && (location.pathname === link.to || location.pathname.startsWith(link.to + '/'))) {
-        setExpandedLink(link.to)
-        return
+        return link.to
       }
     }
-    setExpandedLink(null)
+    return null
   }, [location.pathname])
+
+  // User-toggled override; reset when route changes
+  const [userExpandedLink, setUserExpandedLink] = useState<string | null>(null)
+  const [prevPathname, setPrevPathname] = useState(location.pathname)
+  if (prevPathname !== location.pathname) {
+    setPrevPathname(location.pathname)
+    setUserExpandedLink(null)
+  }
+
+  const expandedLink = userExpandedLink ?? routeExpandedLink
+  const setExpandedLink = setUserExpandedLink
 
   return (
     <nav className="flex flex-col gap-6 py-4 font-ui">
@@ -289,7 +296,7 @@ export function LeftNav({ onNavigate }: LeftNavProps) {
   )
 }
 
-function ChildLink({ child, element, pathname, onNavigate }: {
+const ChildLink = memo(function ChildLink({ child, element, pathname, onNavigate }: {
   child: SubLink
   element: string
   pathname: string
@@ -312,4 +319,4 @@ function ChildLink({ child, element, pathname, onNavigate }: {
       </Link>
     </li>
   )
-}
+})

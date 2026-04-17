@@ -15,6 +15,9 @@ dist-ssr
 src/data/metadata/
 *.local
 
+# optimize-images.ts marker files
+*.png.shrunk
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

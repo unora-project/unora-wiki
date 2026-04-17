@@ -1,5 +1,5 @@
 import { Link } from 'react-router'
-import { Heart, Home, Compass, MessageCircle, Download } from 'lucide-react'
+import { Heart, Home, Compass, MessageCircle, Download, ScrollText } from 'lucide-react'
 
 export function Footer() {
   return (
@@ -49,6 +49,11 @@ export function Footer() {
             />
             based on original version by <span><strong className="font-semibold">Mebo</strong>.</span>
           </p>
+          <span className="text-ash/30">|</span>
+          <Link to="/changelog" className="flex items-center gap-1 transition-colors hover:text-gilt">
+            <ScrollText size={12} />
+            Changelog
+          </Link>
           <span className="text-ash/30">|</span>
           <p>
             Maintained and contributed to by{' '}

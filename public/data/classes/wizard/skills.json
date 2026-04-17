@@ -1,0 +1,79 @@
+[
+  {
+    "name": "Assail",
+    "class": "wizard",
+    "levelRequirement": "1",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Tutorial",
+    "description": "A basic attack that deals a small amount of damage to an enemy immediately in front of you."
+  },
+  {
+    "name": "Energy Bolt",
+    "class": "wizard",
+    "levelRequirement": "1",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Becoming Wizard",
+    "description": "A concentrated projectile of raw arcane energy."
+  },
+  {
+    "name": "Inspect",
+    "class": "wizard",
+    "levelRequirement": "3",
+    "statRequirements": "3/5/5/3/3",
+    "goldRequired": "2,000",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Mileth Special Skills Master",
+    "description": "Allows an aisling to study an item's attributes."
+  },
+  {
+    "name": "nis",
+    "class": "wizard",
+    "levelRequirement": "3",
+    "statRequirements": "3/5/5/3/3",
+    "goldRequired": "2,000",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Rucesion Special Skills Master",
+    "description": "Allows an aisling to check on Unora's current time."
+  },
+  {
+    "name": "Rumination",
+    "class": "wizard",
+    "levelRequirement": "11",
+    "statRequirements": "3/10/10/5/3",
+    "goldRequired": "5,000",
+    "itemRequirements": "Raw Honey (2)",
+    "prerequisites": "-",
+    "learningLocation": "Mileth Special Skills Master",
+    "description": "The user can sacrifice their own blood to gain mana returns while standing still."
+  },
+  {
+    "name": "Throw",
+    "class": "wizard",
+    "levelRequirement": "50",
+    "statRequirements": "5/9/5/3/3",
+    "goldRequired": "25,000",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Abel Combat Skills Master",
+    "description": "Allows an aisling to throw an entity away from them."
+  },
+  {
+    "name": "Uninterrupted Channeling",
+    "class": "wizard",
+    "levelRequirement": "Master",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Master Dungeon",
+    "description": "While uninterrupted, build 5% final spell damage per second, up to 25%."
+  }
+]

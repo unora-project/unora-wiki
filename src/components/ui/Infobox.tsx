@@ -1,3 +1,5 @@
+import { OptimizedImage } from './OptimizedImage'
+
 type ElementColor = 'ignis' | 'tide' | 'verdant' | 'astral' | 'gilt'
 
 const borderColors: Record<ElementColor, string> = {
@@ -41,11 +43,10 @@ export function Infobox({ title, element = 'gilt', image, entries }: InfoboxProp
       {/* Optional image */}
       {image && (
         <div className="px-4 pb-3">
-          <img
+          <OptimizedImage
             src={image}
             alt={title}
             className="w-full rounded border border-gilt/20"
-            loading="lazy"
           />
         </div>
       )}

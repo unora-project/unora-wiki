@@ -1,5 +1,5 @@
 import { useParams } from 'react-router'
-import { useMemo } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { createColumnHelper } from '@tanstack/react-table'
 import { DataTable } from '@/components/tables/DataTable'
 import { PageHeader } from '@/components/ui/PageHeader'
@@ -8,76 +8,66 @@ import {
   type LucideIcon,
 } from 'lucide-react'
 
-import alchemyRecipes from '@/data/professions/alchemy-recipes.json'
-import alchemyExtracts from '@/data/professions/alchemy-extracts.json'
-import armorsmithingRecipes from '@/data/professions/armorsmithing-recipes.json'
-import enchantingEnchants from '@/data/professions/enchanting-enchants.json'
-import jewelcraftingRecipes from '@/data/professions/jewelcrafting-recipes.json'
-import weaponsmithingRecipes from '@/data/professions/weaponsmithing-recipes.json'
-import cookingRecipes from '@/data/professions/cooking-recipes.json'
-import cookingIngredients from '@/data/professions/cooking-ingredients.json'
-import fishingFish from '@/data/professions/fishing-fish.json'
 import professionsMetadata from '@/data/metadata/professions.json'
 
 const iconMap: Record<string, LucideIcon> = { MapPin, Hammer, PackageOpen, Lightbulb }
 
-const dataFiles: Record<string, Record<string, unknown>[]> = {
-  'alchemy-recipes': alchemyRecipes,
-  'alchemy-extracts': alchemyExtracts,
-  'armorsmithing-recipes': armorsmithingRecipes,
-  'enchanting-enchants': enchantingEnchants,
-  'jewelcrafting-recipes': jewelcraftingRecipes,
-  'weaponsmithing-recipes': weaponsmithingRecipes,
-  'cooking-recipes': cookingRecipes,
-  'cooking-ingredients': cookingIngredients as Record<string, unknown>[],
-  'fishing-fish': fishingFish,
+// Map dataFile key -> dynamic import. Only the files needed by the active
+// profession are fetched; unused ones stay out of the JS graph for this route.
+const dataFileLoaders: Record<string, () => Promise<Record<string, unknown>[]>> = {
+  'alchemy-recipes': () => import('@/data/professions/alchemy-recipes.json').then((m) => m.default),
+  'alchemy-extracts': () => import('@/data/professions/alchemy-extracts.json').then((m) => m.default),
+  'armorsmithing-recipes': () => import('@/data/professions/armorsmithing-recipes.json').then((m) => m.default),
+  'enchanting-enchants': () => import('@/data/professions/enchanting-enchants.json').then((m) => m.default),
+  'jewelcrafting-recipes': () => import('@/data/professions/jewelcrafting-recipes.json').then((m) => m.default),
+  'weaponsmithing-recipes': () => import('@/data/professions/weaponsmithing-recipes.json').then((m) => m.default),
+  'cooking-recipes': () => import('@/data/professions/cooking-recipes.json').then((m) => m.default),
+  'cooking-ingredients': () => import('@/data/professions/cooking-ingredients.json').then((m) => m.default as Record<string, unknown>[]),
+  'fishing-fish': () => import('@/data/professions/fishing-fish.json').then((m) => m.default),
 }
 
-interface InfoCard {
-  icon: LucideIcon
-  title: string
-  body: string
-}
-
-interface ProfessionInfo {
-  name: string
-  description: string
-  cards: InfoCard[]
-  tip?: string
-  tables: { title: string; data: Record<string, unknown>[]; searchPlaceholder: string }[]
-}
-
-// Build professions from metadata YAML (icons are strings → resolved to components)
-const professions: Record<string, ProfessionInfo> = {}
-for (const [key, meta] of Object.entries(professionsMetadata as Record<string, {
+interface ProfessionMeta {
   name: string
   description: string
   cards: { icon: string; title: string; body: string }[]
   tip?: string
   tables: { title: string; dataFile: string; searchPlaceholder: string }[]
-}>)) {
-  professions[key] = {
-    name: meta.name,
-    description: meta.description,
-    cards: meta.cards.map((c) => ({
-      icon: iconMap[c.icon] || MapPin,
-      title: c.title,
-      body: c.body,
-    })),
-    tip: meta.tip,
-    tables: (meta.tables || []).map((t) => ({
-      title: t.title,
-      data: dataFiles[t.dataFile] || [],
-      searchPlaceholder: t.searchPlaceholder,
-    })),
-  }
+}
+
+const professionsMeta = professionsMetadata as Record<string, ProfessionMeta>
+
+interface ResolvedTable {
+  title: string
+  data: Record<string, unknown>[]
+  searchPlaceholder: string
 }
 
 export function ProfessionDetail() {
   const { type } = useParams<{ type: string }>()
-  const info = type ? professions[type] : null
+  const meta = type ? professionsMeta[type] : null
 
-  if (!info || !type) {
+  const [tables, setTables] = useState<ResolvedTable[] | null>(null)
+
+  useEffect(() => {
+    if (!meta) {
+      setTables([])
+      return
+    }
+    let alive = true
+    const defs = meta.tables ?? []
+    Promise.all(
+      defs.map(async (t) => ({
+        title: t.title,
+        searchPlaceholder: t.searchPlaceholder,
+        data: (await dataFileLoaders[t.dataFile]?.()) ?? [],
+      }))
+    ).then((resolved) => {
+      if (alive) setTables(resolved)
+    })
+    return () => { alive = false }
+  }, [meta])
+
+  if (!meta || !type) {
     return (
       <div className="py-20 text-center">
         <h1 className="font-heading text-2xl text-gilt">Profession not found</h1>
@@ -85,22 +75,28 @@ export function ProfessionDetail() {
     )
   }
 
+  const cards = meta.cards.map((c) => ({
+    icon: iconMap[c.icon] || MapPin,
+    title: c.title,
+    body: c.body,
+  }))
+
   return (
     <div>
       <PageHeader
-        title={info.name}
-        description={info.description}
+        title={meta.name}
+        description={meta.description}
         accent="verdant"
         breadcrumbs={[
           { label: 'Home', to: '/' },
           { label: 'Professions', to: '/professions' },
-          { label: info.name },
+          { label: meta.name },
         ]}
       />
 
       {/* Info cards grid */}
-      <div className={`mb-6 grid gap-4 ${info.cards.length >= 2 ? 'sm:grid-cols-2' : ''}`}>
-        {info.cards.map((card) => (
+      <div className={`mb-6 grid gap-4 ${cards.length >= 2 ? 'sm:grid-cols-2' : ''}`}>
+        {cards.map((card) => (
           <div
             key={card.title}
             className="rounded-xl border border-parchment-300 bg-parchment-100 p-5 dark:border-ash/10 dark:bg-ink"
@@ -117,24 +113,30 @@ export function ProfessionDetail() {
       </div>
 
       {/* Tip callout */}
-      {info.tip && (
+      {meta.tip && (
         <div className="mb-8 flex gap-3 rounded-lg border border-verdant/20 bg-verdant/5 p-4">
           <Lightbulb size={18} className="mt-0.5 shrink-0 text-verdant" />
           <p className="text-sm leading-relaxed text-parchment-700 dark:text-parchment-300">
-            {info.tip}
+            {meta.tip}
           </p>
         </div>
       )}
 
       {/* Data tables */}
-      {info.tables.map((table) => (
-        <section key={table.title} className="mb-8">
-          <h2 className="mb-4 font-heading text-xl font-semibold text-gilt">
-            {table.title}
-          </h2>
-          <GenericTable data={table.data} searchPlaceholder={table.searchPlaceholder} />
-        </section>
-      ))}
+      {tables === null ? (
+        <div className="flex min-h-[30vh] items-center justify-center">
+          <div className="h-8 w-8 animate-spin rounded-full border-2 border-gilt/20 border-t-gilt" />
+        </div>
+      ) : (
+        tables.map((table) => (
+          <section key={table.title} className="mb-8">
+            <h2 className="mb-4 font-heading text-xl font-semibold text-gilt">
+              {table.title}
+            </h2>
+            <GenericTable data={table.data} searchPlaceholder={table.searchPlaceholder} />
+          </section>
+        ))
+      )}
     </div>
   )
 }

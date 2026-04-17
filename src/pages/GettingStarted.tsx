@@ -2,6 +2,7 @@ import { Link } from 'react-router'
 import { PageHeader } from '@/components/ui/PageHeader'
 import { Admonition } from '@/components/ui/Admonition'
 import { GiltDivider } from '@/components/ui/GiltDivider'
+import { OptimizedImage } from '@/components/ui/OptimizedImage'
 import {
   Download, MessageCircle, Swords, Hand, Heart, Eye, Wand2,
   Scroll, Target, Shield, Hammer,
@@ -297,11 +298,10 @@ export function GettingStarted() {
             className="group overflow-hidden rounded-xl border border-parchment-300 bg-parchment-100 shadow-sm transition-all hover:-translate-y-0.5 hover:border-astral hover:shadow-md dark:border-ash/10 dark:bg-ink dark:hover:border-astral"
           >
             <div className="flex justify-center bg-parchment-200/50 py-3 dark:bg-obsidian/50">
-              <img
+              <OptimizedImage
                 src={`${import.meta.env.BASE_URL}images/religion/${g.image}.png`}
                 alt={g.name}
                 className="h-24 w-auto drop-shadow-md transition-transform group-hover:scale-105"
-                loading="lazy"
               />
             </div>
             <div className="p-3 text-center">

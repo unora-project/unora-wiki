@@ -3,6 +3,7 @@ import { useMemo, useState } from 'react'
 import { createColumnHelper } from '@tanstack/react-table'
 import { DataTable } from '@/components/tables/DataTable'
 import { PageHeader } from '@/components/ui/PageHeader'
+import { OptimizedImage } from '@/components/ui/OptimizedImage'
 import npcsData from '@/data/towns/npcs.json'
 import shopsData from '@/data/towns/shops.json'
 import { ChevronRight } from 'lucide-react'
@@ -80,11 +81,10 @@ export function TownDetail() {
 
       {/* Town Map */}
       <section className="mb-8">
-        <img
+        <OptimizedImage
           src={`${import.meta.env.BASE_URL}images/towns/${town}.png`}
           alt={`Map of ${displayName}`}
           className="max-w-full rounded-lg shadow-md"
-          loading="lazy"
         />
       </section>
 

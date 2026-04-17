@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { memo, useMemo, useState } from 'react'
 import {
   useReactTable,
   getCoreRowModel,
@@ -201,13 +201,17 @@ export function DataTable<T>({ data, columns, searchPlaceholder = 'Search...', i
   )
 }
 
-function CardRow<T>({ row }: { row: any; columns: ColumnDef<T, any>[] }) {
+const CardRow = memo(function CardRow({ row }: { row: any; columns: ColumnDef<any, any>[] }) {
   const cells = row.getVisibleCells()
   const name = cells[0]?.getValue() as string
-  const statCells = cells.slice(1).filter((cell: any) => {
-    const val = cell.getValue()
-    return val && val !== '-' && val !== '0' && val !== 0
-  })
+  const statCells = useMemo(
+    () =>
+      cells.slice(1).filter((cell: any) => {
+        const val = cell.getValue()
+        return val && val !== '-' && val !== '0' && val !== 0
+      }),
+    [cells]
+  )
 
   return (
     <div className="rounded-lg border border-parchment-300 bg-parchment-100 p-4 dark:border-ash/10 dark:bg-ink">
@@ -253,4 +257,4 @@ function CardRow<T>({ row }: { row: any; columns: ColumnDef<T, any>[] }) {
       )}
     </div>
   )
-}
+})

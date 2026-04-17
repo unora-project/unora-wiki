@@ -1,5 +1,6 @@
 import { Link } from 'react-router'
 import type { LucideIcon } from 'lucide-react'
+import { OptimizedImage } from './OptimizedImage'
 
 export interface CardItem {
   title: string
@@ -35,11 +36,10 @@ export function CardGrid({ items, columns = 3, imageFit = 'cover' }: CardGridPro
         >
           {item.image && (
             <div className={`aspect-video overflow-hidden ${imageFit === 'contain' ? 'bg-parchment-200/60 dark:bg-obsidian/50' : ''}`}>
-              <img
+              <OptimizedImage
                 src={item.image}
                 alt={item.title}
                 className={`h-full w-full transition-transform group-hover:scale-105 ${imageFit === 'contain' ? 'object-contain p-2' : 'object-cover'}`}
-                loading="lazy"
               />
             </div>
           )}

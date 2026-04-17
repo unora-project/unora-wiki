@@ -1,30 +1,54 @@
 import { useState, useEffect, useRef, useMemo } from 'react'
 import { useNavigate } from 'react-router'
-import Fuse from 'fuse.js'
-import { searchIndex } from '@/lib/searchIndex'
+import type Fuse from 'fuse.js'
+import { searchIndex, loadFullSearchIndex, getCachedFullSearchIndex, type SearchItem } from '@/lib/searchIndex'
 
 export function SearchModal() {
   const [isOpen, setIsOpen] = useState(false)
   const [query, setQuery] = useState('')
+  const [debouncedQuery, setDebouncedQuery] = useState('')
   const [selectedIndex, setSelectedIndex] = useState(0)
+  const [index, setIndex] = useState<SearchItem[]>(() => getCachedFullSearchIndex() ?? searchIndex)
+  const [fuse, setFuse] = useState<Fuse<SearchItem> | null>(null)
   const inputRef = useRef<HTMLInputElement>(null)
   const modalRef = useRef<HTMLDivElement>(null)
   const navigate = useNavigate()
 
-  const fuse = useMemo(
-    () => new Fuse(searchIndex, { keys: ['title', 'category'], threshold: 0.4 }),
-    []
-  )
+  // Debounce query → debouncedQuery
+  useEffect(() => {
+    const t = setTimeout(() => setDebouncedQuery(query), 120)
+    return () => clearTimeout(t)
+  }, [query])
+
+  // On first modal open, lazy-load Fuse + full index
+  useEffect(() => {
+    if (!isOpen || fuse) return
+    let alive = true
+    Promise.all([
+      import('fuse.js').then((m) => m.default),
+      loadFullSearchIndex(),
+    ]).then(([FuseCtor, full]) => {
+      if (!alive) return
+      setIndex(full)
+      setFuse(new FuseCtor(full, { keys: ['title', 'category'], threshold: 0.4 }))
+    })
+    return () => { alive = false }
+  }, [isOpen, fuse])
 
   const results = useMemo(() => {
-    if (!query) return searchIndex.slice(0, 8)
-    return fuse.search(query, { limit: 10 }).map((r) => r.item)
-  }, [query, fuse])
+    if (!debouncedQuery) return index.slice(0, 8)
+    if (!fuse) {
+      const q = debouncedQuery.toLowerCase()
+      return index.filter((i) => i.title.toLowerCase().includes(q)).slice(0, 10)
+    }
+    return fuse.search(debouncedQuery, { limit: 10 }).map((r) => r.item)
+  }, [debouncedQuery, fuse, index])
 
   useEffect(() => {
     function handleOpen() {
       setIsOpen(true)
       setQuery('')
+      setDebouncedQuery('')
       setSelectedIndex(0)
     }
 
@@ -133,7 +157,7 @@ export function SearchModal() {
           ) : (
             results.map((item, i) => (
               <button
-                key={item.path}
+                key={item.path + '|' + item.title}
                 onClick={() => handleNavigate(item.path)}
                 className={`flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-left text-sm transition-colors ${
                   i === selectedIndex

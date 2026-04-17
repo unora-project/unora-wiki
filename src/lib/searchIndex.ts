@@ -1,16 +1,10 @@
-import equipmentData from '@/data/equipment/all.json'
-import skillsData from '@/data/classes/skills.json'
-import spellsData from '@/data/classes/spells.json'
-import npcsData from '@/data/towns/npcs.json'
-import bossesData from '@/data/hunting/bosses.json'
-
 export interface SearchItem {
   title: string
   category: string
   path: string
 }
 
-// ── Static pages ──
+// ── Static pages (synchronous, tiny) ──
 const staticPages: SearchItem[] = [
   // Classes
   { title: 'Warrior', category: 'Classes', path: '/classes/warrior' },
@@ -133,63 +127,10 @@ const staticPages: SearchItem[] = [
   { title: 'Lucky Charms', category: 'Events', path: '/quests/events/lucky_charms' },
 ]
 
-// ── Equipment items (deduplicated by name → link to equipment page) ──
-const equipmentItems: SearchItem[] = (() => {
-  const seen = new Set<string>()
-  const items: SearchItem[] = []
-  for (const item of equipmentData as { name: string; category: string; class: string }[]) {
-    if (!seen.has(item.name)) {
-      seen.add(item.name)
-      items.push({
-        title: item.name,
-        category: 'Equipment',
-        path: '/equipment',
-      })
-    }
-  }
-  return items
-})()
+// Exported lightweight synchronous index — safe for eager consumers.
+// Heavy data (equipment / skills / spells / npcs / bosses) loads via loadFullSearchIndex.
+export const searchIndex: SearchItem[] = staticPages
 
-// ── Skills ──
-const skillItems: SearchItem[] = (skillsData as { name: string; class: string }[]).map((s) => ({
-  title: s.name,
-  category: `${s.class.charAt(0).toUpperCase() + s.class.slice(1)} Skill`,
-  path: `/classes/${s.class}`,
-}))
-
-// ── Spells ──
-const spellItems: SearchItem[] = (spellsData as { name: string; class: string }[]).map((s) => ({
-  title: s.name,
-  category: `${s.class.charAt(0).toUpperCase() + s.class.slice(1)} Spell`,
-  path: `/classes/${s.class}`,
-}))
-
-// ── NPCs ──
-const npcItems: SearchItem[] = (() => {
-  const seen = new Set<string>()
-  const items: SearchItem[] = []
-  for (const npc of npcsData as { name: string; town: string; type: string }[]) {
-    const key = `${npc.name}-${npc.town}`
-    if (!seen.has(key)) {
-      seen.add(key)
-      items.push({
-        title: npc.name,
-        category: `NPC (${npc.town.charAt(0).toUpperCase() + npc.town.slice(1)})`,
-        path: `/towns/${npc.town}`,
-      })
-    }
-  }
-  return items
-})()
-
-// ── Bosses ──
-const bossItems: SearchItem[] = (bossesData as { boss: string; locationSlug: string }[]).map((b) => ({
-  title: b.boss,
-  category: 'Boss',
-  path: '/boss-drops',
-}))
-
-// ── Deduplicate skills/spells with same name ──
 function deduplicateByTitle(items: SearchItem[]): SearchItem[] {
   const seen = new Set<string>()
   return items.filter((item) => {
@@ -200,11 +141,91 @@ function deduplicateByTitle(items: SearchItem[]): SearchItem[] {
   })
 }
 
-export const searchIndex: SearchItem[] = deduplicateByTitle([
-  ...staticPages,
-  ...skillItems,
-  ...spellItems,
-  ...bossItems,
-  ...npcItems,
-  ...equipmentItems,
-])
+let fullIndexCache: SearchItem[] | null = null
+let fullIndexPromise: Promise<SearchItem[]> | null = null
+
+async function buildFullIndex(): Promise<SearchItem[]> {
+  const [equipmentRes, skillsMod, spellsMod, npcsMod, bossesMod] = await Promise.all([
+    fetch('/data/equipment.json').then((r) => r.json() as Promise<{ name: string; category: string; class: string }[]>),
+    import('@/data/classes/skills.json'),
+    import('@/data/classes/spells.json'),
+    import('@/data/towns/npcs.json'),
+    import('@/data/hunting/bosses.json'),
+  ])
+
+  const skillsData = skillsMod.default as { name: string; class: string }[]
+  const spellsData = spellsMod.default as { name: string; class: string }[]
+  const npcsData = npcsMod.default as { name: string; town: string; type: string }[]
+  const bossesData = bossesMod.default as { boss: string; locationSlug: string }[]
+
+  const equipmentItems: SearchItem[] = (() => {
+    const seen = new Set<string>()
+    const items: SearchItem[] = []
+    for (const item of equipmentRes) {
+      if (!seen.has(item.name)) {
+        seen.add(item.name)
+        items.push({ title: item.name, category: 'Equipment', path: '/equipment' })
+      }
+    }
+    return items
+  })()
+
+  const skillItems: SearchItem[] = skillsData.map((s) => ({
+    title: s.name,
+    category: `${s.class.charAt(0).toUpperCase() + s.class.slice(1)} Skill`,
+    path: `/classes/${s.class}`,
+  }))
+
+  const spellItems: SearchItem[] = spellsData.map((s) => ({
+    title: s.name,
+    category: `${s.class.charAt(0).toUpperCase() + s.class.slice(1)} Spell`,
+    path: `/classes/${s.class}`,
+  }))
+
+  const npcItems: SearchItem[] = (() => {
+    const seen = new Set<string>()
+    const items: SearchItem[] = []
+    for (const npc of npcsData) {
+      const key = `${npc.name}-${npc.town}`
+      if (!seen.has(key)) {
+        seen.add(key)
+        items.push({
+          title: npc.name,
+          category: `NPC (${npc.town.charAt(0).toUpperCase() + npc.town.slice(1)})`,
+          path: `/towns/${npc.town}`,
+        })
+      }
+    }
+    return items
+  })()
+
+  const bossItems: SearchItem[] = bossesData.map((b) => ({
+    title: b.boss,
+    category: 'Boss',
+    path: '/boss-drops',
+  }))
+
+  return deduplicateByTitle([
+    ...staticPages,
+    ...skillItems,
+    ...spellItems,
+    ...bossItems,
+    ...npcItems,
+    ...equipmentItems,
+  ])
+}
+
+export function loadFullSearchIndex(): Promise<SearchItem[]> {
+  if (fullIndexCache) return Promise.resolve(fullIndexCache)
+  if (!fullIndexPromise) {
+    fullIndexPromise = buildFullIndex().then((items) => {
+      fullIndexCache = items
+      return items
+    })
+  }
+  return fullIndexPromise
+}
+
+export function getCachedFullSearchIndex(): SearchItem[] | null {
+  return fullIndexCache
+}

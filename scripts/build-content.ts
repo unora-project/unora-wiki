@@ -20,6 +20,7 @@ const CONTENT_ROOT = join(__dirname, '..', 'src', 'content', 'metadata')
 const DATA_CONTENT_ROOT = join(__dirname, '..', 'src', 'content', 'data')
 const OUT_ROOT = join(__dirname, '..', 'src', 'data', 'metadata')
 const DATA_OUT_ROOT = join(__dirname, '..', 'src', 'data')
+const PUBLIC_DATA_ROOT = join(__dirname, '..', 'public', 'data')
 
 function ensureDir(dir: string) {
   if (!existsSync(dir)) mkdirSync(dir, { recursive: true })
@@ -139,11 +140,24 @@ const cloaks = buildFolderArray('cloaks')
 if (cloaks.length) writeJson(join(DATA_OUT_ROOT, 'mounts', 'cloaks.json'), cloaks)
 
 console.log('  Skills...')
-const skills = buildFolderArray('skills')
+const skills = buildFolderArray('skills') as { class?: string }[]
 if (skills.length) writeJson(join(DATA_OUT_ROOT, 'classes', 'skills.json'), skills)
 
 console.log('  Spells...')
-const spells = buildFolderArray('spells')
+const spells = buildFolderArray('spells') as { class?: string }[]
 if (spells.length) writeJson(join(DATA_OUT_ROOT, 'classes', 'spells.json'), spells)
+
+// Per-class shards for public/data — ClassDetail fetches only its own slice.
+console.log('  Per-class skill/spell shards...')
+const shardClasses = new Set<string>()
+for (const s of skills) if (s.class) shardClasses.add(s.class)
+for (const s of spells) if (s.class) shardClasses.add(s.class)
+for (const cls of shardClasses) {
+  const classSkills = skills.filter((s) => s.class === cls)
+  const classSpells = spells.filter((s) => s.class === cls)
+  writeJson(join(PUBLIC_DATA_ROOT, 'classes', cls, 'skills.json'), classSkills)
+  writeJson(join(PUBLIC_DATA_ROOT, 'classes', cls, 'spells.json'), classSpells)
+}
+console.log(`    wrote ${shardClasses.size} class shard pair(s) to public/data/classes/`)
 
 console.log('\nContent build complete!')

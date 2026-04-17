@@ -3,6 +3,7 @@ import { useMemo } from 'react'
 import { createColumnHelper } from '@tanstack/react-table'
 import { DataTable } from '@/components/tables/DataTable'
 import { PageHeader } from '@/components/ui/PageHeader'
+import { OptimizedImage } from '@/components/ui/OptimizedImage'
 import areasData from '@/data/hunting/areas.json'
 import areaNamesData from '@/data/metadata/area-names.json'
 import mapVariantsData from '@/data/metadata/map-variants.json'
@@ -123,11 +124,10 @@ export function HuntingArea() {
                   {variant.label}
                 </h2>
               )}
-              <img
+              <OptimizedImage
                 src={variant.src}
                 alt={`${displayName}${variant.label ? ` - ${variant.label}` : ''}`}
                 className="max-w-full rounded-lg shadow-md"
-                loading="lazy"
                 onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }}
               />
             </section>

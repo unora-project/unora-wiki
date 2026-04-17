@@ -1,6 +1,7 @@
 import { useState, useMemo } from 'react'
 import { Link } from 'react-router'
 import { PageHeader } from '@/components/ui/PageHeader'
+import { OptimizedImage } from '@/components/ui/OptimizedImage'
 import { LayoutGrid, BarChart3, Skull, MapPin } from 'lucide-react'
 import bossesData from '@/data/hunting/bosses.json'
 import huntingIndexData from '@/data/metadata/hunting-index.json'
@@ -180,11 +181,10 @@ export function HuntingGrounds() {
                 {/* Thumbnail */}
                 {area.image ? (
                   <div className="aspect-video overflow-hidden bg-parchment-200 dark:bg-ink">
-                    <img
+                    <OptimizedImage
                       src={area.image}
                       alt={area.name}
                       className="h-full w-full object-cover transition-transform group-hover:scale-105"
-                      loading="lazy"
                     />
                   </div>
                 ) : (

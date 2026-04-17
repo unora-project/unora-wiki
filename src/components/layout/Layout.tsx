@@ -5,6 +5,7 @@ import { LeftNav } from './LeftNav'
 import { Footer } from './Footer'
 import { SearchModal } from '@/components/search/SearchModal'
 import { BackToTop } from '@/components/ui/BackToTop'
+import { prefetchAllRoutes } from '@/lib/prefetchRoutes'
 
 export function Layout() {
   const { pathname, hash } = useLocation()
@@ -14,6 +15,8 @@ export function Layout() {
     if (hash) return
     window.scrollTo(0, 0)
   }, [pathname, hash])
+
+  useEffect(() => prefetchAllRoutes(), [])
   return (
     <div className="min-h-screen bg-parchment-50 dark:bg-obsidian">
       <a
