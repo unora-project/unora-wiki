@@ -150,7 +150,9 @@ function GenericTable({ data, searchPlaceholder }: { data: Record<string, unknow
       colHelper.accessor((row) => row[key], {
         id: key,
         header: key,
-        cell: (info) => String(info.getValue() ?? '-'),
+        cell: (info) => (
+          <span className="whitespace-pre-line">{String(info.getValue() ?? '-')}</span>
+        ),
       })
     )
   }, [data])
