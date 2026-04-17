@@ -205,29 +205,98 @@ export function PatchNotes() {
   )
 }
 
-function PatchContent({ content }: { content: string }) {
-  // Parse the patch note content into sections
-  const lines = content.split('\n')
-  const sections: { heading: string; items: string[] }[] = []
-  let currentSection: { heading: string; items: string[] } | null = null
+// Bracketed heading, optionally prefixed with an emoji: `[Skills]`, `🎮 [Mount Merry]`.
+const BRACKET_HEADING_RE = /^[\p{Extended_Pictographic}\uFE0F\u200D\s]*\[(.+?)\]\s*$/u
+// Emoji-prefixed bare heading used by some mid-2025 notes: `⚔️ Warrior Skills`.
+const EMOJI_HEADING_RE = /^[\p{Extended_Pictographic}][\p{Extended_Pictographic}\uFE0F\u200D\s]*\S/u
+// Bullet markers used across note formats.
+const BULLET_RE = /^\s*[-•*]\s+/
 
-  for (const line of lines) {
-    const headingMatch = line.match(/^\[(.+)\]$/)
-    if (headingMatch) {
-      if (currentSection) sections.push(currentSection)
-      currentSection = { heading: headingMatch[1], items: [] }
-    } else if (line.startsWith('- ') && currentSection) {
-      currentSection.items.push(line.slice(2))
-    } else if (line.startsWith('    - ') && currentSection) {
-      // Sub-item
-      const lastItem = currentSection.items.length - 1
-      if (lastItem >= 0) {
-        currentSection.items[lastItem] += '\n  ' + line.trim().slice(2)
-      }
-    } else if (line.trim() && !line.startsWith('---') && currentSection) {
-      // Standalone text line
-      currentSection.items.push(line.trim())
+// Document-title lines that should be dropped rather than rendered as a section.
+function isDocTitle(heading: string): boolean {
+  const t = heading.toLowerCase().replace(/[\p{Extended_Pictographic}\uFE0F\u200D]/gu, '').trim()
+  if (!t) return true
+  if (t.startsWith('patch notes')) return true
+  if (t.startsWith('unora patch notes')) return true
+  return false
+}
+
+function isShortPlainHeading(line: string): boolean {
+  const t = line.trim()
+  if (!t || t.length > 60) return false
+  if (BULLET_RE.test(t)) return false
+  // Must look title-like: no trailing period / comma / colon, at least one letter.
+  if (/[.,:;]$/.test(t)) return false
+  if (!/[A-Za-z]/.test(t)) return false
+  return true
+}
+
+function looksLikeEmojiHeading(line: string): boolean {
+  const t = line.trim()
+  if (!t || t.length > 60) return false
+  if (BULLET_RE.test(t)) return false
+  return EMOJI_HEADING_RE.test(t)
+}
+
+type ParsedSection = { heading: string; items: string[] }
+
+function PatchContent({ content }: { content: string }) {
+  const lines = content.split('\n')
+  const sections: ParsedSection[] = []
+  let currentSection: ParsedSection | null = null
+
+  const nextNonBlank = (start: number): string | null => {
+    for (let k = start; k < lines.length; k++) {
+      const t = lines[k]?.trim()
+      if (t) return t
     }
+    return null
+  }
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i]
+    const trimmed = line.trim()
+
+    if (trimmed.startsWith('---')) continue
+
+    // Heading detection — bracket, emoji-prefixed bare, or plain-short-followed-by-bullet.
+    const bracket = line.match(BRACKET_HEADING_RE)
+    let headingText: string | null = null
+    if (bracket) {
+      headingText = bracket[1]
+    } else if (looksLikeEmojiHeading(line)) {
+      headingText = trimmed
+    } else if (isShortPlainHeading(line)) {
+      const peek = nextNonBlank(i + 1)
+      if (peek && BULLET_RE.test(peek)) headingText = trimmed
+    }
+
+    if (headingText !== null) {
+      if (isDocTitle(headingText)) continue
+      if (currentSection) sections.push(currentSection)
+      currentSection = { heading: headingText, items: [] }
+      continue
+    }
+
+    if (!currentSection) continue
+
+    const section: ParsedSection = currentSection
+
+    const bulletMatch = line.match(BULLET_RE)
+    if (bulletMatch) {
+      section.items.push(line.slice(bulletMatch[0].length))
+      continue
+    }
+
+    if (/^\s{2,}[-•*]\s+/.test(line)) {
+      const lastItem = section.items.length - 1
+      if (lastItem >= 0) {
+        section.items[lastItem] += '\n  ' + trimmed.replace(BULLET_RE, '')
+      }
+      continue
+    }
+
+    if (trimmed) section.items.push(trimmed)
   }
   if (currentSection) sections.push(currentSection)
 
