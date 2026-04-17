@@ -156,10 +156,10 @@ export function Changelog() {
   return (
     <div>
       <PageHeader
-        title="Changelog"
-        description={`${entries.length} entries.`}
+        title="Wiki Changelog"
+        description={`Updates to the Unora Wiki itself. ${entries.length} entries.`}
         accent="astral"
-        breadcrumbs={[{ label: 'Home', to: '/' }, { label: 'Changelog' }]}
+        breadcrumbs={[{ label: 'Home', to: '/' }, { label: 'Wiki Changelog' }]}
       />
 
       <div className="space-y-6">

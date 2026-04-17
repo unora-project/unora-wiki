@@ -52,7 +52,7 @@ export function Footer() {
           <span className="text-ash/30">|</span>
           <Link to="/changelog" className="flex items-center gap-1 transition-colors hover:text-gilt">
             <ScrollText size={12} />
-            Changelog
+            Wiki Changelog
           </Link>
           <span className="text-ash/30">|</span>
           <p>
