@@ -1,5 +1,66 @@
 import { useMemo, useState } from 'react'
 import { PageHeader } from '@/components/ui/PageHeader'
+import {
+  Swords, Shield, Scroll, Target, Hammer, Sparkles, Skull,
+  BookOpen, Calculator, Heart, Users, MapPin, Package, Settings, Bug, Zap,
+  ShoppingBag, Castle, Flag, MessageSquare, FileText, Dice5,
+  Anchor, Wrench, Flame, HeartHandshake, Cake, PartyPopper,
+  type LucideIcon,
+} from 'lucide-react'
+
+// Maps a stripped, lowercased patch-note section name to a lucide icon.
+// Missed keys fall back to the "Misc" icon.
+const ICON_MAP: Record<string, LucideIcon> = {
+  // Classes
+  'monk': Swords, 'priest': Sparkles, 'priests': Sparkles,
+  'light priest': Sparkles, 'dark priest': Sparkles,
+  'rogue': Swords, 'rogues': Swords, 'warrior': Swords, 'wizards': Sparkles,
+  'class': Swords,
+  // Skills/spells
+  'skill': Zap, 'skills': Zap, 'spell': Zap, 'spells': Zap,
+  'skills/spells': Zap, 'abilities': Zap,
+  // Crafting/professions
+  'alchemy': Flame, 'alchemy potions': Flame, 'enchanting': Sparkles,
+  'cooking': Cake, 'weaponsmithing': Hammer, 'weaponsmith': Hammer,
+  'crafting': Hammer, 'recipes': BookOpen, 'hemp/cotton': Package,
+  // Gear / items
+  'equipment': Shield, 'items': Package, 'monster drops': Package,
+  // Quests / zones
+  'quest': Scroll, 'quests': Scroll, 'tutorial': BookOpen,
+  'maps': MapPin, 'zones': MapPin, 'other zones': MapPin,
+  'master dungeon': Castle, 'chaos': Flame, 'chaos 12': Flame,
+  'limbo': Skull, 'mythic': Castle, 'mileth': Castle, 'ports': Anchor,
+  'cthonic remains': Skull, 'summoner kades (cr11)': Skull,
+  'realm of aetheria': Castle, 'medusa': Skull,
+  // Social / group
+  'group': Users, 'guilds': Users, 'guild halls': Users,
+  'marriage': HeartHandshake, 'villagers': Users,
+  // Systems
+  'balance': Target, 'stats': Calculator, 'experience': Zap,
+  'death': Skull, 'religion': Sparkles, 'critical': Zap,
+  'inspect': FileText, 'dialog': MessageSquare, 'animation priority': Zap,
+  'training dummies': Target, 'boards': Flag, 'arena': Swords,
+  'bug reporting': Bug, 'bugfixes': Bug,
+  // Events
+  'events': PartyPopper, 'easter': PartyPopper, 'paradise': PartyPopper,
+  'paradise event': PartyPopper, 'garamonde theatre': PartyPopper,
+  'damage game': Target,
+  // Services / misc
+  'casino': Dice5, 'the exchange': ShoppingBag, 'exchange': ShoppingBag,
+  'beauty shop': Heart, 'face shapes': Heart, 'wells': Heart,
+  'launcher': Wrench, 'general': Settings, 'misc': Settings, 'world': MapPin,
+  'other': Settings,
+}
+
+// Strip a leading emoji (or variation selector) + whitespace from a heading
+// so `🛠️ Weaponsmith` and `Weaponsmith` both key the same icon.
+function stripLeadingEmoji(heading: string): string {
+  return heading.replace(/^[\p{Extended_Pictographic}\uFE0F\u200D\s]+/u, '').trim()
+}
+
+function iconFor(heading: string): LucideIcon | undefined {
+  return ICON_MAP[stripLeadingEmoji(heading).toLowerCase()]
+}
 
 // Import all patch note markdown files at build time
 const patchModules = import.meta.glob<string>('@/content/patch-notes/*.md', {
@@ -171,23 +232,28 @@ function PatchContent({ content }: { content: string }) {
   if (currentSection) sections.push(currentSection)
 
   if (sections.length === 0) {
-    return <p className="whitespace-pre-wrap text-sm text-parchment-700 dark:text-parchment-300">{content}</p>
+    return <p className="whitespace-pre-wrap text-base text-parchment-700 dark:text-parchment-300">{content}</p>
   }
 
   return (
     <div className="space-y-4">
-      {sections.map((section, i) => (
-        <div key={i}>
-          <h3 className="mb-1.5 text-sm font-semibold text-parchment-800 dark:text-parchment-200">
-            {section.heading}
-          </h3>
-          <ul className="ml-5 list-disc space-y-0.5 text-sm text-parchment-700 marker:text-gilt dark:text-ivory/75">
-            {section.items.map((item, j) => (
-              <li key={j} className="whitespace-pre-wrap">{item}</li>
-            ))}
-          </ul>
-        </div>
-      ))}
+      {sections.map((section, i) => {
+        const Icon = iconFor(section.heading)
+        const displayHeading = stripLeadingEmoji(section.heading) || section.heading
+        return (
+          <div key={i}>
+            <h3 className="mb-2 flex items-center gap-2 border-b border-parchment-200 pb-1.5 font-heading text-lg font-semibold text-gilt dark:border-ash/15">
+              {Icon && <Icon size={18} className="shrink-0 text-gilt" />}
+              {displayHeading}
+            </h3>
+            <ul className="ml-5 list-disc space-y-1 text-base text-parchment-700 marker:text-gilt dark:text-ivory/75">
+              {section.items.map((item, j) => (
+                <li key={j} className="whitespace-pre-wrap">{item}</li>
+              ))}
+            </ul>
+          </div>
+        )
+      })}
     </div>
   )
 }
