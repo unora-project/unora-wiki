@@ -1,14 +1,15 @@
 Recipe,Ingredients,Where to learn,Benefits
-Dinner Plate,"1 Meat, 10 fruit, 5 Vegetables",Base recipe,"+5% HP, +7 DMG, -3AC"
-Fruit Basket,"15 fruit, 10 fruit, 5 fruit (each a different type)",Base recipe,"+5% MP, +3 Hit"
-Pie,"50 fruit, 1 Flour","Loures Library on a bookcase click bookcase next to 2,9","Acorn: +500MP
+Dinner Plate,"1 meat, 5 vegetable, 10 fruit",Base recipe,"+5% HP, +7 DMG, -3AC"
+Fruit Basket,"15 fruit, 10 fruit, 5 fruit",Base recipe,"+5% MP, +3 Hit"
+Pie,"50 fruit, 1 Flour","Loures library on a bookcase. Click bookcase next to 2,9.","Acorn: +500MP
 Apple: +20%HP
-Cherry: +10%MP, +7Hit
-Grape: +15Hit
+Cherry: +10%MP, +7 Hit
+Grape: +15 Hit
 Green Grape: +20% SPD
 Strawberry: +20% SKD
 Tangerine: +20 MR"
-Steak Meal,"1 raw meat, 10 fruit, 5 vegetable",Random drop from Secret Cow Level,"+10%HP, +15 DMG, -5 AC"
-Sweet Buns,"15 fruit, 5 vegetables, 1 Flour",Complete the quest: Supply Loures Army,+30% ATK SPD
-Hot Chocolate,,Complete quest,"+6%HP Regen, +3%MP Regen"
+Steak Meal,"1 raw meat, 10 fruit, 5 vegetable, 1 Marinade",Random drop from Secret Cow Level,"+10%HP, +15 DMG, -5 AC"
+Sweet Buns,"15 fruit, 5 vegetables, 1 Flour",Complete the quest: Supply Loures Army,+30% Attack Speed
+Soup,"1 Meat, 5 Vegetables, 1 Flour, 1 Salt",,+30 DMG
+Hot Chocolate,,Complete the quest:,".+6% HP Regen, +3%MP Regen"
 Mango Fish Dish,,Only available during Paradise Event,"+10%HP,+10%MP,+5HIT,+10DMG,-2AC"
