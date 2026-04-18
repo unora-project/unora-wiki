@@ -108,11 +108,32 @@ async function buildGenericDiff(
   const parsed = parseCSV(before)
   const headers = parsed.headers.length ? parsed.headers : [...schema.headers]
 
-  const outRows: Record<string, string>[] = rows.map((r) => {
-    const o: Record<string, string> = {}
-    for (const h of headers) o[h] = r[h] ?? ''
-    return o
+  // Merge editor rows into existing CSV by nameKey rather than replacing.
+  // The bundled seed can lag GitHub (e.g. Load Published only reads the shipped
+  // JSON), so a wholesale replace would silently delete rows that exist on
+  // GitHub but not in the seed.
+  const nameKey = headers.includes(schema.nameKey) ? schema.nameKey : headers[0]
+  const byName = new Map<string, number>()
+  const outRows: Record<string, string>[] = parsed.rows.map((r, idx) => {
+    const n = (r[nameKey] ?? '').trim()
+    if (n) byName.set(n.toLowerCase(), idx)
+    return { ...r }
   })
+
+  for (const r of rows) {
+    const name = (r[nameKey] ?? '').trim()
+    if (!name) continue
+    const editorRow: Record<string, string> = {}
+    for (const h of headers) editorRow[h] = r[h] ?? ''
+    const key = name.toLowerCase()
+    const idx = byName.get(key)
+    if (idx === undefined) {
+      outRows.push(editorRow)
+      byName.set(key, outRows.length - 1)
+    } else {
+      outRows[idx] = { ...outRows[idx], ...editorRow }
+    }
+  }
 
   const headerMask = parsed.quotedMask[0]
   const after = serializeCSV(headers, outRows, {
