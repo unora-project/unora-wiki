@@ -12,6 +12,7 @@ import { readFileSync, writeFileSync, mkdirSync, readdirSync, existsSync } from 
 import { join, basename, dirname } from 'path'
 import { fileURLToPath } from 'url'
 import yaml from 'js-yaml'
+import { parse as parseCsvSync } from 'csv-parse/sync'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
@@ -159,5 +160,46 @@ for (const cls of shardClasses) {
   writeJson(join(PUBLIC_DATA_ROOT, 'classes', cls, 'spells.json'), classSpells)
 }
 console.log(`    wrote ${shardClasses.size} class shard pair(s) to public/data/classes/`)
+
+// ── Profession CSV → editor seed / wiki render JSON ──
+//
+// data-source/professions/csv/*.csv is the source of truth the editor commits
+// to. The wiki and the editor's "Load Published" both read the bundled JSON
+// under src/data/professions/, so regenerate those from CSV here. Otherwise
+// editor commits never surface on the rendered site.
+//
+// Skip empty CSVs so a mistakenly-truncated source doesn't wipe live JSON.
+
+console.log('  Professions CSV → JSON...')
+const CSV_ROOT = join(__dirname, '..', 'data-source', 'professions', 'csv')
+const PROF_OUT = join(DATA_OUT_ROOT, 'professions')
+
+interface ProfMapping { csv: string; json: string }
+const PROF_MAPPINGS: ProfMapping[] = [
+  { csv: 'alchemy/extracts.csv',       json: 'alchemy-extracts.json' },
+  { csv: 'alchemy/recipes.csv',        json: 'alchemy-recipes.json' },
+  { csv: 'cooking/ingredients.csv',    json: 'cooking-ingredients.json' },
+  { csv: 'cooking/recipes.csv',        json: 'cooking-recipes.json' },
+  { csv: 'enchanting/enchants.csv',    json: 'enchanting-enchants.json' },
+  { csv: 'fishing/fish.csv',           json: 'fishing-fish.json' },
+  { csv: 'jewelcrafting/recipes.csv',  json: 'jewelcrafting-recipes.json' },
+  { csv: 'armorsmithing/recipes.csv',  json: 'armorsmithing-recipes.json' },
+  { csv: 'weaponsmithing/weapons.csv', json: 'weaponsmithing-recipes.json' },
+]
+
+for (const m of PROF_MAPPINGS) {
+  const csvPath = join(CSV_ROOT, m.csv)
+  const jsonPath = join(PROF_OUT, m.json)
+  if (!existsSync(csvPath)) { console.log(`    skip ${m.json} (no CSV)`); continue }
+  const raw = readFileSync(csvPath, 'utf-8')
+  const rows = parseCsvSync(raw, {
+    columns: true,
+    skip_empty_lines: true,
+    relax_quotes: true,
+  }) as Record<string, string>[]
+  if (rows.length === 0) { console.log(`    skip ${m.json} (empty CSV)`); continue }
+  writeJson(jsonPath, rows)
+  console.log(`    ${m.json} (${rows.length} rows)`)
+}
 
 console.log('\nContent build complete!')

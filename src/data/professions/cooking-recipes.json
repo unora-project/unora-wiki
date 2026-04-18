@@ -3,30 +3,48 @@
     "Recipe": "Dinner Plate",
     "Ingredients": "1 meat, 5 vegetable, 10 fruit",
     "Where to learn": "Base recipe",
-    "Benefits": "+200 HP, +200 MP, +2 Dmg, +2 Hit, -1 AC"
+    "Benefits": "+5% HP, +7 DMG, -3AC"
   },
   {
     "Recipe": "Fruit Basket",
-    "Ingredients": "15 fruit, 10 fruit, 5 fruit (each a different type)",
+    "Ingredients": "15 fruit, 10 fruit, 5 fruit",
     "Where to learn": "Base recipe",
-    "Benefits": "+8 Hit"
+    "Benefits": "+5% MP, +3 Hit"
   },
   {
     "Recipe": "Pie",
     "Ingredients": "50 fruit, 1 Flour",
-    "Where to learn": "Loures library on a bookcase",
-    "Benefits": "Acorn: +500 Max MP\nApple: +500 Max HP\nCherry: +20 Max MP\nGrape: +10% SPD\nGreen Grape: +20% SPD\nStrawberry: +10% SKD\nTangerine: +20 MR"
+    "Where to learn": "Loures library on a bookcase. Click bookcase next to 2,9.",
+    "Benefits": "Acorn: +500MP\r\nApple: +20%HP\r\nCherry: +10%MP, +7 Hit\r\nGrape: +15 Hit\r\nGreen Grape: +20% SPD\r\nStrawberry: +20% SKD\r\nTangerine: +20 MR"
   },
   {
     "Recipe": "Steak Meal",
     "Ingredients": "1 raw meat, 10 fruit, 5 vegetable, 1 Marinade",
     "Where to learn": "Random drop from Secret Cow Level",
-    "Benefits": "+1000 HP, +1000 MP, +6 Hit, +6 Dmg, -6 AC"
+    "Benefits": "+10%HP, +15 DMG, -5 AC"
   },
   {
     "Recipe": "Sweet Buns",
     "Ingredients": "15 fruit, 5 vegetables, 1 Flour",
     "Where to learn": "Complete the quest: Supply Loures Army",
-    "Benefits": "+40% Attack Speed"
+    "Benefits": "+30% Attack Speed"
+  },
+  {
+    "Recipe": "Soup",
+    "Ingredients": "1 Meat, 5 Vegetables, 1 Flour, 1 Salt",
+    "Where to learn": "",
+    "Benefits": "+30 DMG"
+  },
+  {
+    "Recipe": "Hot Chocolate",
+    "Ingredients": "",
+    "Where to learn": "Complete the quest:",
+    "Benefits": ".+6% HP Regen, +3%MP Regen"
+  },
+  {
+    "Recipe": "Mango Fish Dish",
+    "Ingredients": "",
+    "Where to learn": "Only available during Paradise Event",
+    "Benefits": "+10%HP,+10%MP,+5HIT,+10DMG,-2AC"
   }
 ]
