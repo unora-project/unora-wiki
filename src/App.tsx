@@ -27,6 +27,8 @@ const StatCalculator = lazy(() => import('@/pages/calculators/StatCalculator').t
 const Glossary = lazy(() => import('@/pages/Glossary').then((m) => ({ default: m.Glossary })))
 const GettingStarted = lazy(() => import('@/pages/GettingStarted').then((m) => ({ default: m.GettingStarted })))
 const Changelog = lazy(() => import('@/pages/Changelog').then((m) => ({ default: m.Changelog })))
+const AdminEditor = lazy(() => import('@/pages/AdminEditor').then((m) => ({ default: m.AdminEditor })))
+const AdminSettings = lazy(() => import('@/pages/AdminSettings').then((m) => ({ default: m.AdminSettings })))
 
 function RouteFallback() {
   return (
@@ -39,6 +41,24 @@ function RouteFallback() {
 export default function App() {
   return (
     <Routes>
+      {/* Bare editor route — no Layout chrome */}
+      <Route
+        path="admin-editor"
+        element={
+          <Suspense fallback={<RouteFallback />}>
+            <AdminEditor />
+          </Suspense>
+        }
+      />
+      <Route
+        path="admin-settings"
+        element={
+          <Suspense fallback={<RouteFallback />}>
+            <AdminSettings />
+          </Suspense>
+        }
+      />
+
       <Route element={<Layout />}>
         <Route index element={<Home />} />
 

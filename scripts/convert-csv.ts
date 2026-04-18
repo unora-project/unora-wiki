@@ -13,7 +13,7 @@ import { fileURLToPath } from 'url'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
-const WIKI_ROOT = join(__dirname, '..', '..', 'UnoraWiki', 'UnoraWiki', 'docs')
+const WIKI_ROOT = join(__dirname, '..', 'data-source')
 const OUT_ROOT = join(__dirname, '..', 'src', 'data')
 
 function splitCSVLine(line: string): string[] {

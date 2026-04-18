@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unora Database v10</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --accent: #3498db;
+            --bg: #eef2f5;
+            --surface: #ffffff;
+            --border: #ced6e0;
+            --text: #2f3542;
+            --header-height: 60px;
+            --nav-height: 45px;
+            --error: #e74c3c;
+            --warning: #f39c12;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* --- Header --- */
+        header {
+            height: var(--header-height);
+            background-color: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            flex-shrink: 0;
+            z-index: 20;
+        }
+
+        h1 { margin: 0; font-size: 1.4rem; font-weight: 600; letter-spacing: 0.5px; }
+        .header-controls { display: flex; gap: 10px; }
+
+        /* --- Tab Navigation --- */
+        .tab-nav {
+            height: var(--nav-height);
+            background-color: var(--surface);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+            gap: 5px;
+            flex-shrink: 0;
+        }
+
+        .tab-btn {
+            background: none; border: none; padding: 0 15px; height: 100%; cursor: pointer;
+            font-size: 0.9rem; color: #7f8c8d; font-weight: 600;
+            border-bottom: 3px solid transparent; transition: 0.2s;
+        }
+        .tab-btn:hover { background-color: #f8f9fa; color: var(--primary); }
+        .tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+        /* --- Layout --- */
+        .dashboard {
+            display: flex;
+            height: calc(100vh - var(--header-height) - var(--nav-height));
+            width: 100%;
+        }
+
+        .sidebar {
+            width: 420px;
+            background-color: var(--surface);
+            border-right: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 0;
+        }
+
+        .form-content { flex: 1; overflow-y: auto; padding: 20px; }
+
+        .form-footer {
+            padding: 15px 20px;
+            border-top: 1px solid var(--border);
+            background-color: #f8f9fa;
+            display: flex;
+            gap: 10px;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background-color: var(--bg);
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* --- Form Styling --- */
+        .section-header {
+            font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;
+            color: var(--accent); font-weight: 700; margin-top: 25px; margin-bottom: 10px;
+            border-bottom: 1px solid #eee; padding-bottom: 5px;
+        }
+        .section-header:first-of-type { margin-top: 0; }
+        .section-header.required::after { content: " *"; color: var(--error); }
+        
+        .crafting-divider { margin: 20px 0; border-top: 4px solid #f1f2f6; }
+
+        .form-row { display: flex; gap: 10px; margin-bottom: 10px; }
+        .form-group { flex: 1; }
+
+        label { display: block; font-size: 0.75rem; font-weight: 600; color: #7f8c8d; margin-bottom: 4px; }
+        .required-label::after { content: "*"; color: var(--error); margin-left: 2px; }
+
+        input, select {
+            width: 100%; padding: 8px 10px; border: 1px solid var(--border);
+            border-radius: 4px; font-size: 0.9rem; background-color: #fdfdfd;
+        }
+        input:focus, select:focus {
+            outline: none; border-color: var(--accent); background-color: #fff;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        }
+        input.input-error, select.input-error { border-color: var(--error); background-color: #fff8f8; }
+
+        .recipe-input-group { display: flex; gap: 5px; align-items: flex-end; margin-bottom: 10px; }
+        .recipe-list {
+            list-style: none; padding: 0; margin: 0; border: 1px solid #eee; border-radius: 4px;
+            background: #fafafa; min-height: 50px;
+        }
+        .recipe-item {
+            padding: 6px 10px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem;
+        }
+        .recipe-item:last-child { border-bottom: none; }
+        .remove-ingredient { cursor: pointer; color: #e74c3c; font-weight: bold; }
+
+        /* --- Table Styling --- */
+        .table-wrapper {
+            background: var(--surface); border-radius: 8px; border: 1px solid var(--border);
+            overflow: auto; flex: 1; box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+        table { width: 100%; border-collapse: collapse; font-size: 0.85rem; white-space: nowrap; }
+        thead { position: sticky; top: 0; background-color: var(--primary); color: white; z-index: 10; }
+        th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #eee; }
+        th { cursor: pointer; user-select: none; }
+        th:hover { background-color: #34495e; }
+        th.sort-asc::after { content: " \25B2"; opacity: 0.7; font-size: 0.8em;}
+        th.sort-desc::after { content: " \25BC"; opacity: 0.7; font-size: 0.8em;}
+        tbody tr:hover { background-color: #f1f2f6; }
+
+        button { cursor: pointer; border: none; border-radius: 4px; padding: 8px 12px; font-weight: 600; font-size: 0.85rem; transition: 0.2s; }
+        .btn-primary { background-color: var(--accent); color: white; width: 100%; padding: 10px; font-size: 1rem; }
+        .btn-primary:hover { background-color: #2980b9; }
+        .btn-update { background-color: var(--warning); color: white; width: 100%; padding: 10px; font-size: 1rem; }
+        .btn-outline { background: transparent; border: 1px solid var(--border); color: #666; }
+        .btn-outline:hover { border-color: #666; color: #333; }
+        .btn-sm { padding: 4px 10px; font-size: 0.75rem; color: #333; background: #fff; }
+        .btn-sm:hover { background: #eee; }
+        
+        .action-btn { background: transparent; padding: 2px 6px; font-size: 1.1rem; margin-right: 5px; }
+        .delete-btn { color: #e74c3c; }
+        .edit-btn { color: var(--accent); }
+        
+        #cancelEditBtn { display: none; color: #666; font-size: 0.8rem; text-decoration: underline; background: none; border: none; padding: 0; margin-left: 10px;}
+        .empty-state { padding: 40px; text-align: center; color: #aaa; font-style: italic; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div style="display:flex; align-items:center; gap:15px;">
+            <h1>Unora Database</h1>
+            <span style="font-size:0.75rem; background:rgba(255,255,255,0.2); padding:2px 8px; border-radius:10px;">v2.8</span>
+        </div>
+        <div class="header-controls">
+            <button class="btn-sm" onclick="saveProjectJSON()">Save Project</button>
+            <button class="btn-sm" onclick="document.getElementById('fileInput').click()">Load Project</button>
+            <input type="file" id="fileInput" accept=".json" style="display: none;" onchange="loadProjectJSON(this)">
+            <button class="btn-sm" onclick="exportToCSV()">Export CSV</button>
+            <button class="btn-sm" style="color:#e74c3c;" onclick="clearAllData()">Reset All</button>
+        </div>
+    </header>
+
+    <nav class="tab-nav">
+        <button class="tab-btn active" onclick="switchTab('items')">Item Database</button>
+        <button class="tab-btn" onclick="switchTab('jewelcrafting')">Jewelcrafting</button>
+        <button class="tab-btn" onclick="switchTab('armorsmithing')">Armorsmithing</button>
+        <button class="tab-btn" onclick="switchTab('weaponsmithing')">Weaponsmithing</button>
+    </nav>
+
+    <div class="dashboard">
+        <aside class="sidebar">
+            <form id="unoraForm">
+                <div class="form-content">
+                    <div id="dynamicFormFields"></div>
+                </div>
+                <div class="form-footer">
+                    <div style="display:flex; flex-direction:column; align-items:flex-start;">
+                        <button type="button" class="btn-outline" onclick="clearForm()">Clear</button>
+                        <button type="button" id="cancelEditBtn" onclick="cancelEdit()">Cancel Edit</button>
+                    </div>
+                    <button type="submit" id="submitBtn" class="btn-primary" style="flex:1;">+ Add Entry</button>
+                </div>
+            </form>
+        </aside>
+
+        <main class="main-content">
+            <div class="table-wrapper">
+                <table id="databaseTable">
+                    <thead></thead>
+                    <tbody></tbody>
+                </table>
+                <div id="emptyState" class="empty-state">No entries in this category.</div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // --- DATA STRUCTURE ---
+        let db = {
+            items: [],
+            jewelcrafting: [],
+            armorsmithing: [],
+            weaponsmithing: []
+        };
+        
+        let currentTab = 'items'; 
+        let currentRecipe = [];
+        let editIndex = -1;
+
+        // --- HTML TEMPLATES ---
+
+        // 1. FULL ITEM FORM (For Item Database Tab) - Includes Location & Set Bonus
+        const htmlItemStatsFull = `
+            <div class="section-header required">Item Details</div>
+            <div class="form-row">
+                <div class="form-group"><label class="required-label">Item Name</label><input type="text" id="item_name" placeholder="Name"></div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label class="required-label">Type</label>
+                    <select id="type">
+                        <option value="Accessories">Accessories</option><option value="Armors">Armors</option>
+                        <option value="Belts">Belts</option><option value="Boots">Boots</option>
+                        <option value="Earrings">Earrings</option><option value="Gauntlets">Gauntlets</option>
+                        <option value="Greaves">Greaves</option><option value="Necklaces">Necklaces</option>
+                        <option value="Rings">Rings</option><option value="Shields">Shields</option>
+                        <option value="Weapons">Weapons</option>
+                    </select>
+                </div>
+                <div class="form-group"><label>Location/Source</label><input type="text" id="location" placeholder="Source"></div>
+            </div>
+            <div class="form-row">
+                <div class="form-group"><label class="required-label">Value (Gold)</label><input type="number" id="value" placeholder="0"></div>
+                <div class="form-group"><label class="required-label">Weight</label><input type="number" id="weight" step="1" placeholder="0"></div>
+            </div>
+            <div class="form-row">
+                <div class="form-group"><label>Class</label>
+                    <select id="class"><option value="Peasant">Peasant</option><option value="Monk">Monk</option><option value="Priest">Priest</option><option value="Rogue">Rogue</option><option value="Warrior">Warrior</option><option value="Wizard">Wizard</option></select>
+                </div>
+                <div class="form-group"><label class="required-label">Level (1-99)</label><input type="number" id="level" placeholder="1" min="1" max="99"></div>
+                <div class="form-group"><label>Gender</label><select id="gender"><option value="Unisex">Unisex</option><option value="Male">Male</option><option value="Female">Female</option></select></div>
+            </div>
+            
+            <div class="section-header">Stats</div>
+            <div class="form-row">
+                <div class="form-group"><label>STR</label><input type="number" id="str"></div>
+                <div class="form-group"><label>INT</label><input type="number" id="int"></div>
+                <div class="form-group"><label>WIS</label><input type="number" id="wis"></div>
+                <div class="form-group"><label>CON</label><input type="number" id="con"></div>
+                <div class="form-group"><label>DEX</label><input type="number" id="dex"></div>
+            </div>
+            <div class="form-row">
+                <div class="form-group"><label>HP</label><input type="number" id="hp"></div>
+                <div class="form-group"><label>MP</label><input type="number" id="mp"></div>
+                <div class="form-group"><label>AC</label><input type="number" id="ac"></div>
+                <div class="form-group"><label>MR</label><input type="number" id="mr"></div>
+            </div>
+            <div class="form-row">
+                <div class="form-group"><label>DMG</label><input type="number" id="dmg"></div>
+                <div class="form-group"><label>HIT</label><input type="number" id="hit"></div>
+                <div class="form-group"><label>Atk Spd</label><input type="number" id="attack_speed" step="1"></div>
+            </div>
+            <div class="form-row">
+                <div class="form-group"><label>Skill(F)</label><input type="number" id="skill_dmg_flat"></div>
+                <div class="form-group"><label>Skill(%)</label><input type="number" id="skill_dmg_pct" step="1"></div>
+                <div class="form-group"><label>Spell(F)</label><input type="number" id="spell_dmg_flat"></div>
+                <div class="form-group"><label>Spell(%)</label><input type="number" id="spell_dmg_pct" step="1"></div>
+            </div>
+            <div class="form-row">
+                <div class="form-group"><label>Heal(F)</label><input type="number" id="heal_flat"></div>
+                <div class="form-group"><label>Heal(%)</label><input type="number" id="heal_pct" step="1"></div>
+                <div class="form-group"><label>CDR(%)</label><input type="number" id="cdr_pct" step="1"></div>
+            </div>
+            <div class="form-row">
+                <div class="form-group"><label>Set Bonus</label><select id="set_bonus"><option value="">(None)</option><option value="Dragon Scale">Dragon Scale</option><option value="Dark Aisling">Dark Aisling</option><option value="Forsaken">Forsaken</option><option value="Sacred">Sacred</option></select></div>
+            </div>
+        `;
+
+        // 2. CRAFTING ITEM FORM (Stripped Down) - NO Location, NO Set Bonus
+        const htmlItemStatsCrafting = `
+            <div class="section-header required">Item Stats</div>
+            <div class="form-row">
+                <div class="form-group"><label class="required-label">Item Name</label><input type="text" id="item_name" placeholder="Name"></div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label class="required-label">Type</label>
+                    <select id="type">
+                        <option value="Accessories">Accessories</option><option value="Armors">Armors</option>
+                        <option value="Belts">Belts</option><option value="Boots">Boots</option>
+                        <option value="Earrings">Earrings</option><option value="Gauntlets">Gauntlets</option>
+                        <option value="Greaves">Greaves</option><option value="Necklaces">Necklaces</option>
+                        <option value="Rings">Rings</option><option value="Shields">Shields</option>
+                        <option value="Weapons">Weapons</option>
+                    </select>
+                </div>
+                </div>
+            <div class="form-row">
+                <div class="form-group"><label class="required-label">Value (Gold)</label><input type="number" id="value" placeholder="0"></div>
+                <div class="form-group"><label class="required-label">Weight</label><input type="number" id="weight" step="1" placeholder="0"></div>
+            </div>
+            <div class="form-row">
+                <div class="form-group"><label>Class</label>
+                    <select id="class"><option value="Peasant">Peasant</option><option value="Monk">Monk</option><option value="Priest">Priest</option><option value="Rogue">Rogue</option><option value="Warrior">Warrior</option><option value="Wizard">Wizard</option></select>
+                </div>
+                <div class="form-group"><label class="required-label">Level Req (1-99)</label><input type="number" id="level" placeholder="1" min="1" max="99"></div>
+                <div class="form-group"><label>Gender</label><select id="gender"><option value="Unisex">Unisex</option><option value="Male">Male</option><option value="Female">Female</option></select></div>
+            </div>
+            
+            <div class="section-header">Stats</div>
+            <div class="form-row">
+                <div class="form-group"><label>STR</label><input type="number" id="str"></div>
+                <div class="form-group"><label>INT</label><input type="number" id="int"></div>
+                <div class="form-group"><label>WIS</label><input type="number" id="wis"></div>
+                <div class="form-group"><label>CON</label><input type="number" id="con"></div>
+                <div class="form-group"><label>DEX</label><input type="number" id="dex"></div>
+            </div>
+            <div class="form-row">
+                <div class="form-group"><label>HP</label><input type="number" id="hp"></div>
+                <div class="form-group"><label>MP</label><input type="number" id="mp"></div>
+                <div class="form-group"><label>AC</label><input type="number" id="ac"></div>
+                <div class="form-group"><label>MR</label><input type="number" id="mr"></div>
+            </div>
+            <div class="form-row">
+                <div class="form-group"><label>DMG</label><input type="number" id="dmg"></div>
+                <div class="form-group"><label>HIT</label><input type="number" id="hit"></div>
+                <div class="form-group"><label>Atk Spd</label><input type="number" id="attack_speed" step="1"></div>
+            </div>
+            <div class="form-row">
+                <div class="form-group"><label>Skill(F)</label><input type="number" id="skill_dmg_flat"></div>
+                <div class="form-group"><label>Skill(%)</label><input type="number" id="skill_dmg_pct" step="1"></div>
+                <div class="form-group"><label>Spell(F)</label><input type="number" id="spell_dmg_flat"></div>
+                <div class="form-group"><label>Spell(%)</label><input type="number" id="spell_dmg_pct" step="1"></div>
+            </div>
+            <div class="form-row">
+                <div class="form-group"><label>Heal(F)</label><input type="number" id="heal_flat"></div>
+                <div class="form-group"><label>Heal(%)</label><input type="number" id="heal_pct" step="1"></div>
+                <div class="form-group"><label>CDR(%)</label><input type="number" id="cdr_pct" step="1"></div>
+            </div>
+            `;
+
+        // 3. CRAFTING EXTRAS
+        const htmlCraftingExtras = `
+            <div class="section-header required">Crafting Requirements</div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label class="required-label">Rank</label>
+                    <select id="craft_rank">
+                        <option value="Beginner">Beginner</option>
+                        <option value="Novice">Novice</option>
+                        <option value="Initiate">Initiate</option>
+                        <option value="Artisan">Artisan</option>
+                        <option value="Adept">Adept</option>
+                        <option value="Advanced">Advanced</option>
+                        <option value="Expert">Expert</option>
+                        <option value="Master">Master</option>
+                    </select>
+                </div>
+                </div>
+            <div class="section-header required">Recipe</div>
+            <div style="background:#f1f2f6; padding:10px; border-radius:4px; margin-bottom:10px;">
+                <div class="recipe-input-group">
+                    <div style="width:60px;"><label style="font-size:0.7rem;">Qty</label><input type="number" id="ing_qty" placeholder="1"></div>
+                    <div style="flex:1;"><label style="font-size:0.7rem;">Ingredient</label><input type="text" id="ing_name" placeholder="Name"></div>
+                    <button type="button" class="btn-primary" style="width:auto; padding:8px;" onclick="addIngredient()">Add</button>
+                </div>
+                <ul id="recipeList" class="recipe-list"></ul>
+            </div>
+            <div class="crafting-divider"></div>
+        `;
+
+        const basicIds = [
+            "item_name", "type", "class", "gender", "level", "weight", "value", 
+            "ac", "hp", "mp", "attack_speed", "mr", "str", "int", "wis", "con", "dex", 
+            "dmg", "hit", "skill_dmg_flat", "skill_dmg_pct", "spell_dmg_flat", "spell_dmg_pct", 
+            "heal_flat", "heal_pct", "cdr_pct"
+        ];
+        // Extended IDs for main Item tab only
+        const extraIds = ["location", "set_bonus"];
+
+        // --- INIT ---
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedData = localStorage.getItem('unoraDataV10');
+            if (savedData) {
+                try {
+                    const parsed = JSON.parse(savedData);
+                    if(!Array.isArray(parsed)) db = parsed;
+                } catch(e) {}
+            }
+            ["items", "jewelcrafting", "armorsmithing", "weaponsmithing"].forEach(k => {
+                if(!db[k]) db[k] = [];
+            });
+            switchTab('items');
+        });
+
+        // --- TABS ---
+        function switchTab(tabName) {
+            cancelEdit();
+            currentTab = tabName;
+            
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll(`.tab-btn[onclick="switchTab('${tabName}')"]`)[0].classList.add('active');
+
+            const container = document.getElementById('dynamicFormFields');
+            if (tabName === 'items') {
+                container.innerHTML = htmlItemStatsFull;
+            } else {
+                container.innerHTML = htmlCraftingExtras + htmlItemStatsCrafting;
+            }
+
+            renderTableHeaders();
+            renderTable();
+        }
+
+        // --- RECIPE ---
+        window.addIngredient = function() {
+            const qEl = document.getElementById('ing_qty');
+            const nEl = document.getElementById('ing_name');
+            if(!qEl || !nEl) return;
+            if(qEl.value > 0 && nEl.value.trim() !== "") {
+                currentRecipe.push({ qty: qEl.value, name: nEl.value.trim() });
+                qEl.value = "1"; nEl.value = ""; nEl.focus();
+                renderRecipeList();
+            }
+        };
+
+        window.removeIngredient = function(idx) {
+            currentRecipe.splice(idx, 1);
+            renderRecipeList();
+        };
+
+        function renderRecipeList() {
+            const list = document.getElementById('recipeList');
+            if(!list) return;
+            list.innerHTML = "";
+            currentRecipe.forEach((ing, idx) => {
+                const li = document.createElement('li');
+                li.className = 'recipe-item';
+                li.innerHTML = `<span><b>${ing.qty}x</b> ${ing.name}</span><span class="remove-ingredient" onclick="removeIngredient(${idx})">&times;</span>`;
+                list.appendChild(li);
+            });
+        }
+
+        // --- SUBMIT ---
+        document.getElementById('unoraForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            let entry = {};
+            let missing = [];
+            
+            // Core requirements
+            ["item_name", "type", "value", "weight", "level"].forEach(id => {
+                const el = document.getElementById(id);
+                if(!el || !el.value.trim()) missing.push(id);
+            });
+
+            if (currentTab !== 'items') {
+                if(!document.getElementById('craft_rank').value) missing.push("Rank");
+                if(currentRecipe.length === 0) { alert("Recipe needs ingredients!"); return; }
+            }
+
+            if(missing.length > 0) { alert("Missing required fields: " + missing.join(", ")); return; }
+
+            // Extract Stats
+            basicIds.forEach(id => {
+                const el = document.getElementById(id);
+                if(el) entry[id] = (el.type === "number" && el.value !== "") ? parseFloat(el.value) : el.value;
+            });
+            // Extract Extras (Loc/Set) only if element exists (Item tab)
+            extraIds.forEach(id => {
+                const el = document.getElementById(id);
+                if(el) entry[id] = el.value;
+            });
+
+            // Extract Crafting
+            if (currentTab !== 'items') {
+                entry['craft_rank'] = document.getElementById('craft_rank').value;
+                entry['recipe'] = JSON.parse(JSON.stringify(currentRecipe));
+            }
+
+            // Save
+            const targetArray = db[currentTab];
+            if (editIndex === -1) targetArray.push(entry);
+            else targetArray[editIndex] = entry;
+            
+            targetArray.sort((a,b) => (a.level||0) - (b.level||0));
+            saveAndRender();
+            
+            // Reset
+            const btn = document.getElementById('submitBtn');
+            btn.innerText = "Saved!";
+            btn.style.backgroundColor = "#27ae60";
+            setTimeout(() => {
+                btn.innerText = "+ Add Entry";
+                btn.style.backgroundColor = "";
+                if(editIndex === -1) {
+                   document.getElementById('item_name').focus();
+                   if(currentTab !== 'items') { currentRecipe = []; renderRecipeList(); }
+                }
+            }, 1000);
+        });
+
+        // --- RENDER TABLE ---
+        function renderTableHeaders() {
+            const thead = document.querySelector('#databaseTable thead');
+            thead.innerHTML = "";
+            const tr = document.createElement('tr');
+            
+            const createTh = (txt, width) => {
+                let th = document.createElement('th');
+                th.innerText = txt;
+                if(width) th.style.width = width;
+                tr.appendChild(th);
+            };
+
+            createTh("Action", "60px");
+            createTh("Name");
+
+            if(currentTab !== 'items') {
+                createTh("Rank");
+                createTh("Recipe"); // No Lvl Req column, relying on item Lvl
+            }
+
+            // Base Stat Columns
+            let stats = ["Type", "Class", "Gen", "Lvl", "Wgt", "Val", "AC", "HP", "MP", "AS%", "MR", "STR", "INT", "WIS", "CON", "DEX", "DMG", "HIT", "Sk.D(F)", "Sk.D(%)", "Sp.D(F)", "Sp.D(%)", "Heal(F)", "Heal(%)", "CDR(%)"];
+            
+            // Add Loc/Set only for Item Tab
+            if(currentTab === 'items') {
+                // Insert Loc at index 3 (after Gen)
+                stats.splice(3, 0, "Loc");
+                // Insert Set at end
+                stats.push("Set");
+            }
+            
+            stats.forEach(h => createTh(h));
+            thead.appendChild(tr);
+        }
+
+        function renderTable() {
+            const tbody = document.querySelector('#databaseTable tbody');
+            tbody.innerHTML = "";
+            const data = db[currentTab];
+
+            if (data.length === 0) {
+                document.getElementById('emptyState').style.display = 'block';
+                return;
+            } else {
+                document.getElementById('emptyState').style.display = 'none';
+            }
+
+            data.forEach((row, index) => {
+                const tr = document.createElement('tr');
+                
+                // Action
+                const tdAct = document.createElement('td');
+                tdAct.innerHTML = `<button class="action-btn edit-btn" onclick="editEntry(${index})">&#9998;</button><button class="action-btn delete-btn" onclick="deleteEntry(${index})">&times;</button>`;
+                tr.appendChild(tdAct);
+
+                // Name
+                let tdName = document.createElement('td');
+                tdName.textContent = row.item_name || "-";
+                tr.appendChild(tdName);
+
+                // Crafting Specifics
+                if(currentTab !== 'items') {
+                    let tdRank = document.createElement('td');
+                    tdRank.textContent = row.craft_rank || "-";
+                    tr.appendChild(tdRank);
+                    
+                    let tdRec = document.createElement('td');
+                    tdRec.textContent = row.recipe ? row.recipe.map(r => `${r.qty}x ${r.name}`).join(", ") : "-";
+                    tr.appendChild(tdRec);
+                }
+
+                // Stats Loop
+                let keys = ["type", "class", "gender", "level", "weight", "value", 
+            "ac", "hp", "mp", "attack_speed", "mr", "str", "int", "wis", "con", "dex", 
+            "dmg", "hit", "skill_dmg_flat", "skill_dmg_pct", "spell_dmg_flat", "spell_dmg_pct", 
+            "heal_flat", "heal_pct", "cdr_pct"];
+                
+                if(currentTab === 'items') {
+                    keys.splice(3, 0, "location");
+                    keys.push("set_bonus");
+                }
+
+                keys.forEach(k => {
+                    let td = document.createElement('td');
+                    let val = row[k];
+                    td.textContent = (val === undefined || val === "") ? "-" : val;
+                    tr.appendChild(td);
+                });
+
+                tbody.appendChild(tr);
+            });
+        }
+
+        // --- EDIT/DELETE/SAVE ---
+        window.editEntry = function(idx) {
+            editIndex = idx;
+            const data = db[currentTab][idx];
+            
+            basicIds.forEach(id => {
+                const el = document.getElementById(id);
+                if(el && data[id] !== undefined) el.value = data[id];
+            });
+            extraIds.forEach(id => {
+                const el = document.getElementById(id);
+                if(el && data[id] !== undefined) el.value = data[id];
+            });
+
+            if(currentTab !== 'items') {
+                if(document.getElementById('craft_rank')) document.getElementById('craft_rank').value = data.craft_rank;
+                currentRecipe = data.recipe ? JSON.parse(JSON.stringify(data.recipe)) : [];
+                renderRecipeList();
+            }
+
+            const btn = document.getElementById('submitBtn');
+            btn.innerText = "Update Entry";
+            btn.className = "btn-update";
+            document.getElementById('cancelEditBtn').style.display = "block";
+        };
+
+        window.cancelEdit = function() {
+            editIndex = -1;
+            document.getElementById('submitBtn').innerText = "+ Add Entry";
+            document.getElementById('submitBtn').className = "btn-primary";
+            document.getElementById('cancelEditBtn').style.display = "none";
+            clearForm();
+        };
+
+        window.clearForm = function() {
+            document.getElementById('unoraForm').reset();
+            currentRecipe = [];
+            renderRecipeList();
+        };
+
+        window.deleteEntry = function(idx) {
+            if(confirm("Delete this entry?")) {
+                db[currentTab].splice(idx, 1);
+                saveAndRender();
+            }
+        };
+        
+        window.clearAllData = function() {
+            if(confirm("Wipe EVERYTHING?")) {
+                db = { items: [], jewelcrafting: [], armorsmithing: [], weaponsmithing: [] };
+                saveAndRender();
+            }
+        };
+
+        function saveAndRender() {
+            localStorage.setItem('unoraDataV10', JSON.stringify(db));
+            renderTable();
+        }
+
+        window.saveProjectJSON = function() {
+            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(db));
+            const a = document.createElement('a'); a.href = dataStr; a.download = "unora_project_v10.json";
+            document.body.appendChild(a); a.click(); a.remove();
+        };
+
+        window.loadProjectJSON = function(input) {
+            const file = input.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const parsed = JSON.parse(e.target.result);
+                    if(!Array.isArray(parsed)) db = parsed;
+                    ["items", "jewelcrafting", "armorsmithing", "weaponsmithing"].forEach(k => { if(!db[k]) db[k]=[]; });
+                    switchTab('items');
+                    saveAndRender();
+                    alert("Loaded!");
+                } catch (err) { alert("Invalid file."); }
+            };
+            reader.readAsText(file);
+            input.value = '';
+        };
+
+        window.exportToCSV = function() {
+            const data = db[currentTab];
+            if(data.length === 0) { alert("No data."); return; }
+            
+            const headerCells = Array.from(document.querySelectorAll('#databaseTable thead th'));
+            let csv = "data:text/csv;charset=utf-8," + headerCells.map(th => `"${th.innerText}"`).slice(1).join(",") + "\n";
+
+            data.forEach(row => {
+                let rowData = [];
+                rowData.push(row.item_name || "-");
+                
+                if(currentTab !== 'items') {
+                    rowData.push(row.craft_rank || "-");
+                    let recStr = row.recipe ? row.recipe.map(r => `${r.qty}x ${r.name}`).join("; ") : "-";
+                    rowData.push(recStr);
+                }
+
+                let keys = ["type", "class", "gender", "level", "weight", "value", 
+            "ac", "hp", "mp", "attack_speed", "mr", "str", "int", "wis", "con", "dex", 
+            "dmg", "hit", "skill_dmg_flat", "skill_dmg_pct", "spell_dmg_flat", "spell_dmg_pct", 
+            "heal_flat", "heal_pct", "cdr_pct"];
+
+                if(currentTab === 'items') {
+                    keys.splice(3, 0, "location");
+                    keys.push("set_bonus");
+                }
+
+                keys.forEach(k => rowData.push(row[k] !== undefined ? row[k] : "-"));
+                csv += rowData.map(v => `"${String(v).replace(/"/g, '""')}"`).join(",") + "\n";
+            });
+
+            const a = document.createElement('a'); a.href = encodeURI(csv);
+            a.download = `unora_${currentTab}.csv`;
+            document.body.appendChild(a); a.click(); a.remove();
+        };
+    </script>
+</body>
+</html>

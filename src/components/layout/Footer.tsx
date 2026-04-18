@@ -63,6 +63,10 @@ export function Footer() {
             <strong className="font-semibold">True</strong>, and{' '}
             <strong className="font-semibold">Kryopterin</strong>.
           </p>
+          <span className="text-ash/30">|</span>
+          <p>
+            Item editor contributed by <strong className="font-semibold">True</strong>.
+          </p>
         </div>
       </div>
     </footer>
