@@ -353,7 +353,7 @@ export function HpMpOptimizer() {
     <div className="max-w-5xl">
       <PageHeader
         title="HP/MP Optimizer"
-        description="Minimum-EXP plan to reach target stats via free points and purchases."
+        description="Minimum-EXP plan to reach target stats via free points and purchases. Credit and huge thanks to Fancyson for the original calculator!"
         accent="ignis"
         breadcrumbs={[
           { label: 'Home', to: '/' },
