@@ -31,6 +31,7 @@ const ROUTE_IMPORTERS: Importer[] = [
   () => import('@/pages/QuestCircle'),
   () => import('@/pages/QuestDetail'),
   () => import('@/pages/calculators/HpMpCalculator'),
+  () => import('@/pages/calculators/HpMpOptimizer'),
   () => import('@/pages/calculators/StatCalculator'),
 ]
 

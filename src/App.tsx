@@ -23,6 +23,7 @@ const LoreIndex = lazy(() => import('@/pages/Lore').then((m) => ({ default: m.Lo
 const LoreDetail = lazy(() => import('@/pages/Lore').then((m) => ({ default: m.LoreDetail })))
 const PatchNotes = lazy(() => import('@/pages/PatchNotes').then((m) => ({ default: m.PatchNotes })))
 const HpMpCalculator = lazy(() => import('@/pages/calculators/HpMpCalculator').then((m) => ({ default: m.HpMpCalculator })))
+const HpMpOptimizer = lazy(() => import('@/pages/calculators/HpMpOptimizer').then((m) => ({ default: m.HpMpOptimizer })))
 const StatCalculator = lazy(() => import('@/pages/calculators/StatCalculator').then((m) => ({ default: m.StatCalculator })))
 const Glossary = lazy(() => import('@/pages/Glossary').then((m) => ({ default: m.Glossary })))
 const GettingStarted = lazy(() => import('@/pages/GettingStarted').then((m) => ({ default: m.GettingStarted })))
@@ -115,6 +116,7 @@ function LazyRoutes() {
 
       {/* Calculators */}
       <Route path="calculators/hpmp" element={<HpMpCalculator />} />
+      <Route path="calculators/optimizer" element={<HpMpOptimizer />} />
       <Route path="calculators/stats" element={<StatCalculator />} />
 
       {/* Reference */}

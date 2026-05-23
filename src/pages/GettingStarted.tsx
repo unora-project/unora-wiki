@@ -350,6 +350,7 @@ export function GettingStarted() {
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         <LinkCard to="/calculators/stats" icon={Calculator} title="Stat Calculator" description="Plan your stat distribution" element="verdant" />
         <LinkCard to="/calculators/hpmp" icon={Calculator} title="HP/MP Calculator" description="Calculate health and mana pools" element="verdant" />
+        <LinkCard to="/calculators/optimizer" icon={Calculator} title="HP/MP Optimizer" description="Find the cheapest path to stat targets" element="verdant" />
         <LinkCard to="/equipment" icon={Shield} title="Equipment Database" description="Browse all weapons, armor, and accessories" element="ignis" />
         <LinkCard to="/boss-drops" icon={Skull} title="Boss Drops" description="See what loot bosses drop" element="ignis" />
         <LinkCard to="/glossary" icon={BookA} title="Glossary" description="Look up game terms and mechanics" element="tide" />

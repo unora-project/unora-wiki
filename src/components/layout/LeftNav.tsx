@@ -130,6 +130,7 @@ const sections: NavSection[] = [
     element: 'verdant',
     links: [
       { to: '/calculators/hpmp', label: 'HP/MP Calculator', icon: Calculator },
+      { to: '/calculators/optimizer', label: 'HP/MP Optimizer', icon: Calculator },
       { to: '/calculators/stats', label: 'Stat Calculator', icon: Calculator },
       { to: '/glossary', label: 'Glossary', icon: BookA },
     ],

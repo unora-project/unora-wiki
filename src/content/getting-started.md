@@ -150,6 +150,7 @@ Here are some helpful tools and references as you play:
 
 - [Stat Calculator](/calculators/stats) — Plan your stat distribution
 - [HP/MP Calculator](/calculators/hpmp) — Calculate your health and mana pools
+- [HP/MP Optimizer](/calculators/optimizer) — Find the cheapest path to stat targets
 - [Equipment Database](/equipment) — Browse all weapons, armor, and accessories
 - [Boss Drops](/boss-drops) — See what loot bosses drop
 - [Glossary](/glossary) — Look up game terms and mechanics

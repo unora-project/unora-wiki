@@ -46,6 +46,7 @@ const staticPages: SearchItem[] = [
   { title: 'The Great Divine War', category: 'Lore', path: '/lore/the_great_divine_war' },
   { title: 'Patch Notes', category: 'Patch Notes', path: '/patch-notes' },
   { title: 'HP/MP Calculator', category: 'Tools', path: '/calculators/hpmp' },
+  { title: 'HP/MP Optimizer', category: 'Tools', path: '/calculators/optimizer' },
   { title: 'Stat Calculator', category: 'Tools', path: '/calculators/stats' },
   { title: 'Glossary', category: 'Reference', path: '/glossary' },
   // Hunting areas
