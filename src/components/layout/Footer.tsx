@@ -27,7 +27,7 @@ export function Footer() {
           </a>
           <span className="text-ash/30">|</span>
           <a
-            href="https://github.com/Jinori/UnoraLaunchpad/releases/tag/v3.3.2"
+            href="http://unora.freeddns.org:5001/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 transition-colors hover:text-gilt"

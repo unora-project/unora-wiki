@@ -201,7 +201,7 @@ export function Home() {
             Discord
           </a>
           <a
-            href="https://github.com/Jinori/UnoraLaunchpad/releases/tag/v3.3.2"
+            href="http://unora.freeddns.org:5001/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-lg border border-gilt/40 bg-transparent px-4 py-2 font-ui text-sm font-medium text-parchment-700 transition-all hover:-translate-y-0.5 hover:border-gilt hover:text-gilt dark:text-ivory dark:hover:bg-gilt/10"
@@ -241,7 +241,7 @@ export function Home() {
       >
         <span className="rounded-full bg-tide/15 px-2 py-0.5 font-ui text-xs font-semibold text-tide">NEW</span>
         <span className="font-ui text-sm text-parchment-700 dark:text-ivory/80">
-          Latest patch: <span className="font-medium text-tide">May 4, 2026</span>
+          Latest patch: <span className="font-medium text-tide">June 25, 2026</span>
         </span>
         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-auto text-tide opacity-0 transition-opacity group-hover:opacity-100">
           <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>

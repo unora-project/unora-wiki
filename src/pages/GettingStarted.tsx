@@ -102,7 +102,7 @@ export function GettingStarted() {
 
       <div className="mb-4 flex flex-wrap gap-3">
         <a
-          href="https://github.com/Jinori/UnoraLaunchpad/releases/tag/v3.3.2"
+          href="http://unora.freeddns.org:5001/"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 rounded-lg border border-gilt/40 bg-transparent px-4 py-2 font-ui text-sm font-medium text-parchment-700 transition-all hover:-translate-y-0.5 hover:border-gilt hover:text-gilt dark:text-ivory dark:hover:bg-gilt/10"
