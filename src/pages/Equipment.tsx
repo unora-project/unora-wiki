@@ -1,6 +1,7 @@
 import { useEffect, useState, useMemo } from 'react'
 import { createColumnHelper } from '@tanstack/react-table'
 import { DataTable } from '@/components/tables/DataTable'
+import equipmentUrl from '@/data/equipment/all.json?url'
 
 interface EquipmentItem {
   name: string
@@ -66,7 +67,7 @@ let equipmentPromise: Promise<EquipmentItem[]> | null = null
 function loadEquipment(): Promise<EquipmentItem[]> {
   if (equipmentCache) return Promise.resolve(equipmentCache)
   if (!equipmentPromise) {
-    equipmentPromise = fetch('/data/equipment.json')
+    equipmentPromise = fetch(equipmentUrl)
       .then((r) => {
         if (!r.ok) throw new Error(`equipment.json ${r.status}`)
         return r.json() as Promise<EquipmentItem[]>

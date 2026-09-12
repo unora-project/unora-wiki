@@ -1,3 +1,5 @@
+import equipmentUrl from '@/data/equipment/all.json?url'
+
 export interface SearchItem {
   title: string
   category: string
@@ -147,7 +149,7 @@ let fullIndexPromise: Promise<SearchItem[]> | null = null
 
 async function buildFullIndex(): Promise<SearchItem[]> {
   const [equipmentRes, skillsMod, spellsMod, npcsMod, bossesMod] = await Promise.all([
-    fetch('/data/equipment.json').then((r) => r.json() as Promise<{ name: string; category: string; class: string }[]>),
+    fetch(equipmentUrl).then((r) => r.json() as Promise<{ name: string; category: string; class: string }[]>),
     import('@/data/classes/skills.json'),
     import('@/data/classes/spells.json'),
     import('@/data/towns/npcs.json'),
