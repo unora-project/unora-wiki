@@ -1,5 +1,5 @@
 Name,LOC,LVL,WGT,HP,MP,AC,MR,STR,INT,WIS,CON,DEX,DMG,HIT,AS%,SKD,SKD%,SPD,SPD%,FHB,HB%,CDR%,Value,Set
-Tester Weapon,-,-,-,-,-,-,-,4,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,Dragon Scale
+Tester Weapon,-,1,1,-,-,-,-,4,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,Dragon Scale
 Blue Polyp,-,1,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-
 Kobold Whacker,-,1,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-
 Lime Polyp,-,1,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-
