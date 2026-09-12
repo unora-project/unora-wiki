@@ -55,7 +55,7 @@ huntingAreas:
     levelMin: 9
     levelMax: 110
     tier: early
-    image: Mythic.png
+    image: mythic.png
   - name: Astrid
     slug: astrid
     levelRange: 11-50
