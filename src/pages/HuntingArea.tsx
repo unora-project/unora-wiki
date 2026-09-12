@@ -42,20 +42,7 @@ interface AreaDetail {
 const leaderColumnHelper = createColumnHelper<Leader>()
 const leaderColumns = [
   leaderColumnHelper.accessor('npc', { header: 'NPC' }),
-  leaderColumnHelper.accessor('area', {
-    header: 'Area',
-    cell: ({ row }) => {
-      const { area, areaSlug } = row.original
-      if (areaSlug) {
-        return (
-          <Link to={`/hunting/mythic/${locationSlug}`} className="text-ivory underline decoration-gilt/60 hover:decoration-gilt dark:text-ivory">
-            {area}
-          </Link>
-        )
-      }
-      return area
-    },
-  }),
+  leaderColumnHelper.accessor('area', {header: 'Area'}),
   leaderColumnHelper.accessor('minimumLevel', { header: 'Minimum Level' }),
 ]
 
