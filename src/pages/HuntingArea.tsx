@@ -48,7 +48,7 @@ const leaderColumns = [
       const { area, areaSlug } = row.original
       if (areaSlug) {
         return (
-          <Link to={`/hunting/${areaSlug}.png`} className="text-ivory underline decoration-gilt/60 hover:decoration-gilt dark:text-ivory">
+          <Link to={`/hunting/${areaSlug}`} className="text-ivory underline decoration-gilt/60 hover:decoration-gilt dark:text-ivory">
             {area}
           </Link>
         )
