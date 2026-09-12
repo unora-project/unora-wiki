@@ -53,7 +53,7 @@ const staticPages: SearchItem[] = [
   { title: 'Glossary', category: 'Reference', path: '/glossary' },
   // Hunting areas
   { title: 'Mythic', category: 'Hunting', path: '/hunting/mythic' },
-  { title: 'Floppy Farms', category: 'Hunting', path: '/hunting/mythic/Floppy_Farms'}
+  { title: 'Floppy Farms', category: 'Hunting', path: '/hunting/mythic/Floppy_Farms'},
   { title: 'Mileth Crypt', category: 'Hunting', path: '/hunting/mileth_crypt' },
   { title: 'East Woodlands', category: 'Hunting', path: '/hunting/east_woodlands' },
   { title: 'West Woodlands', category: 'Hunting', path: '/hunting/west_woodlands' },
