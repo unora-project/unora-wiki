@@ -1,38 +1,46 @@
-description: >-
-  Mythic is an area comprised of 10 themed "mini" areas, each with their own leader.
-  Each leader stands outside of their enemy's territory. You can make an alliance with
-  up to 5 leaders, allowing those you've allied with to claim victory once you've completed their quest.
+description: Mythic is an area comprised of 10 themed "mini" areas, each with their own leader. Each leader stands outside of their enemy's territory. You can make an alliance with up to 5 leaders, allowing those you've allied with to claim victory once you've completed their quest.
+subareas: []
 leaders:
   - npc: Horse Leader
     area: Floppy Farms
-    minimumLevel: "Bunny 1: 9+, Bunny 2: 41+, Bunny 3: 71+"
+    areaSlug: floppy_farms
+    minimumLevel: 'Bunny 1: 9+, Bunny 2: 41+, Bunny 3: 71+'
   - npc: King Mantis
     area: Garden
-    minimumLevel: "Bee 1: 14+, Bee 2: 46+, Bee 3: 76+"
+    areaSlug: garden
+    minimumLevel: 'Bee 1: 14+, Bee 2: 46+, Bee 3: 76+'
   - npc: Bee Queen
     area: Woodlands
-    minimumLevel: "Mantis 1: 21+, Mantis 2: 51+, Mantis 3: 80+"
+    areaSlug: woodlands
+    minimumLevel: 'Mantis 1: 21+, Mantis 2: 51+, Mantis 3: 80+'
   - npc: Frog King
     area: Wolf
-    minimumLevel: "Wolf 1: 30+, Wolf 2: 60+, Wolf 3: 90+"
+    areaSlug: wolf
+    minimumLevel: 'Wolf 1: 30+, Wolf 2: 60+, Wolf 3: 90+'
   - npc: Lord Gargoyle
     area: Zombies
-    minimumLevel: "Zombie 1: 41+, Zombie 2: 71+, Zombie 3: 97+"
+    areaSlug: zombies
+    minimumLevel: 'Zombie 1: 41+, Zombie 2: 71+, Zombie 3: 97+'
   - npc: Wolf Pack Leader
     area: Frogs
-    minimumLevel: "Frog 1: 50+, Frog 2: 80+, Frog 3: 99+"
+    areaSlug: frogs
+    minimumLevel: 'Frog 1: 50+, Frog 2: 80+, Frog 3: 99+'
   - npc: Grimlock Queen
     area: Kobolds
-    minimumLevel: "Kobold 1: 60+, Kobold 2: 80+, Kobold 3: Master"
+    areaSlug: kobolds
+    minimumLevel: 'Kobold 1: 60+, Kobold 2: 80+, Kobold 3: Master'
   - npc: Kobold Pack Leader
     area: Grimlocks
-    minimumLevel: "Grimlock 1: 71+, Grimlock 2: 90+, Grimlock 3: Master"
+    areaSlug: grimlocks
+    minimumLevel: 'Grimlock 1: 71+, Grimlock 2: 90+, Grimlock 3: Master'
   - npc: Big Bunny
     area: Horses
-    minimumLevel: "Horse 1: 80+, Horse 2: 95+, Horse 3: Master"
+    areaSlug: horses
+    minimumLevel: 'Horse 1: 80+, Horse 2: 95+, Horse 3: Master'
   - npc: Superior Zombie
     area: Gargoyles
-    minimumLevel: "Gargoyle 1: 93+, Gargoyle 2: Master, Gargoyle 3: Grandmaster"
+    areaSlug: gargoyles
+    minimumLevel: 'Gargoyle 1: 93+, Gargoyle 2: Master, Gargoyle 3: Grandmaster'
 shops:
   - npc: Fabrizio
     currency: Mythic Tokens
@@ -73,7 +81,7 @@ shops:
       - name: Fabulous Boots
         tab: Boots
         cost: 100
-      - name: "Ialtag's Eye"
+      - name: Ialtag's Eye
         tab: Ring
         cost: 30
       - name: Star Ring
