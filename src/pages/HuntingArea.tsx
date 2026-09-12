@@ -1,4 +1,4 @@
-import { useParams } from 'react-router'
+import { Link, useParams } from 'react-router'
 import { useMemo } from 'react'
 import { createColumnHelper } from '@tanstack/react-table'
 import { DataTable } from '@/components/tables/DataTable'
@@ -7,11 +7,12 @@ import { OptimizedImage } from '@/components/ui/OptimizedImage'
 import areasData from '@/data/metadata/hunting-areas.json'
 import areaNamesData from '@/data/metadata/area-names.json'
 import mapVariantsData from '@/data/metadata/map-variants.json'
+import { resolveHuntingImage } from '@/lib/hunting-image'
 
 interface Leader {
   npc: string
   area: string
-  areaSlug : string | null
+  areaSlug?: string | null
   minimumLevel: string
 }
 
@@ -33,7 +34,9 @@ interface Subarea {
 }
 
 interface AreaDetail {
+  area?: string
   description?: string
+  mapImage?: string | null
   leaders?: Leader[]
   shops?: AreaShop[]
   subareas?: Subarea[]
@@ -42,7 +45,10 @@ interface AreaDetail {
 const leaderColumnHelper = createColumnHelper<Leader>()
 const leaderColumns = [
   leaderColumnHelper.accessor('npc', { header: 'NPC' }),
-  leaderColumnHelper.accessor('area', {header: 'Area'}),
+  leaderColumnHelper.accessor('area', {
+    header: 'Area',
+    cell: ({ row }) => <LeaderAreaLink leader={row.original} />,
+  }),
   leaderColumnHelper.accessor('minimumLevel', { header: 'Minimum Level' }),
 ]
 
@@ -60,17 +66,35 @@ const subareaColumns = [
 ]
 
 const areaNames = areaNamesData as Record<string, string>
+const details = areasData as Record<string, AreaDetail>
+
+function LeaderAreaLink({ leader }: { leader: Leader }) {
+  const { area } = useParams<{ area: string }>()
+  const slug = leader.areaSlug?.trim()
+  if (!area || !slug) return leader.area
+  return (
+    <Link to={`/hunting/${encodeURIComponent(area)}/${encodeURIComponent(slug)}`}
+      className="underline decoration-gilt/60 hover:decoration-gilt">
+      {leader.area}
+    </Link>
+  )
+}
 
 export function HuntingArea() {
-  const { area } = useParams<{ area: string }>()
-  const displayName = area ? areaNames[area] || area.replace(/_/g, ' ') : ''
+  const { area: areaParam, subarea: subareaParam } = useParams<{ area: string; subarea: string }>()
+  const area = areaParam?.toLowerCase()
+  const subarea = subareaParam?.toLowerCase()
+  const key = subarea || area
+  const parent = area ? details[area] : undefined
+  const linkedArea = subarea ? parent?.leaders?.find(leader => leader.areaSlug?.trim().toLowerCase() === subarea) : undefined
+  const displayName = key ? linkedArea?.area || details[key]?.area || areaNames[key] || key.replace(/_/g, ' ') : ''
 
   const areaDetail = useMemo(
-    () => (area && (areasData as Record<string, AreaDetail>)[area]) || null,
-    [area]
+    () => (key && details[key]) || null,
+    [key]
   )
 
-  if (!area) {
+  if (!area || (subarea && (!linkedArea || !areaDetail))) {
     return (
       <div className="py-20 text-center">
         <h1 className="font-heading text-2xl text-gilt">Area not found</h1>
@@ -79,7 +103,8 @@ export function HuntingArea() {
   }
 
   // Check for multi-level maps
-  const mapVariants = getMapVariants(area)
+  const selectedMap = resolveHuntingImage(areaDetail?.mapImage ?? undefined, import.meta.env.BASE_URL)
+  const mapVariants = getMapVariants(key!)
 
   return (
     <div>
@@ -89,6 +114,7 @@ export function HuntingArea() {
         breadcrumbs={[
           { label: 'Home', to: '/' },
           { label: 'Hunting Grounds', to: '/hunting' },
+          ...(subarea ? [{ label: areaNames[area] || area, to: `/hunting/${area}` }] : []),
           { label: displayName },
         ]}
       />
@@ -116,7 +142,12 @@ export function HuntingArea() {
       )}
 
       {/* Maps */}
-      {mapVariants.length > 0 ? (
+      {selectedMap ? (
+        <div className="mb-8">
+          <img src={selectedMap} alt={displayName} loading="lazy" decoding="async"
+            className="max-w-full rounded-lg shadow-md" />
+        </div>
+      ) : mapVariants.length > 0 ? (
         <div className="mb-8 space-y-6">
           {mapVariants.map((variant) => (
             <section key={variant.src}>

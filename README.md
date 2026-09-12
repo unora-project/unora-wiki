@@ -91,6 +91,12 @@ The global media location is shared with other content; thumbnails do not need t
 
 Run `npx tsx --tsconfig tsconfig.app.json scripts/test-hunting-images.ts` to check picker configuration, existing assets, path compatibility, and a simulated upload through the content build and Vite serving.
 
+### Links to area maps
+
+In **Hunting Area Details**, select a **Map Image** on the destination page (for example, `floppy_farms`). On Mythic's leader row, set **Area Slug** to `floppy_farms`. The area name then links to `/hunting/mythic/floppy_farms`, with a breadcrumb back to Mythic. Leave **Area Slug** empty to display plain text. Map Image uses the global asset uploader and saves the selected public URL; existing maps still work when this field is empty.
+
+Run `node node_modules/tsx/dist/cli.mjs --tsconfig tsconfig.app.json scripts/test-hunting-links.ts` to verify optional slugs, map links, and the uploaded PNG.
+
 ### Content Pipeline
 
 Content lives in `src/content/` as YAML/Markdown. At build time, [scripts/build-content.ts](scripts/build-content.ts) converts it to JSON in `src/data/`, which the React app imports directly via Vite.

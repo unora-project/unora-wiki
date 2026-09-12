@@ -94,6 +94,7 @@ function LazyRoutes() {
       {/* Hunting Grounds */}
       <Route path="hunting" element={<HuntingGrounds />} />
       <Route path="hunting/:area" element={<HuntingArea />} />
+      <Route path="hunting/:area/:subarea" element={<HuntingArea />} />
 
       {/* Professions */}
       <Route path="professions" element={<Professions />} />
