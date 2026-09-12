@@ -1,9 +1,5 @@
 area: Floppy Farms
-description: |-
-  Boss: Mr. Hopps
-  Teleports
-  Does not cast spells
-  Spawns a wave of Slick Bunnies, followed by a wave of Angry Bunnies, followed by a wave of Clever Bunnies at certain HP thresholds.
+description: The boss monster Mr. Hopps will Teleport onto the player.  He does not cast spells, but will spawn waves of bunnies at certain HP thresholds.
 mapImage: /images/hunting/FloppyFarms.png
 subareas:
   - area: Bunny 1
