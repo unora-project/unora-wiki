@@ -34,35 +34,35 @@ huntingAreas:
     levelMin: 1
     levelMax: 65
     tier: early
-    image: mileth_crypt.png
+    image: /images/hunting/thumbs/mileth_crypt.webp
   - name: East Woodlands
     slug: east_woodlands
     levelRange: 1-41
     levelMin: 1
     levelMax: 41
     tier: early
-    image: east_woodlands.png
+    image: /images/hunting/thumbs/east_woodlands.webp
   - name: Porte Forest
     slug: porte_forest
     levelRange: 5-41
     levelMin: 5
     levelMax: 41
     tier: early
-    image: porte_forest.png
+    image: /images/hunting/thumbs/porte forest.webp
   - name: Mythic
     slug: mythic
     levelRange: 9-GM
     levelMin: 9
     levelMax: 110
     tier: early
-    image: mythic.png
+    image: /images/hunting/thumbs/mythic.webp
   - name: Astrid
     slug: astrid
     levelRange: 11-50
     levelMin: 11
     levelMax: 50
     tier: early
-    image: astrid.png
+    image: /images/hunting/thumbs/astrid.webp
   - name: Eingren Manor
     slug: eingren_manor
     levelRange: 15-99
@@ -76,42 +76,42 @@ huntingAreas:
     levelMin: 11
     levelMax: 100
     tier: late
-    image: shinewood_forest.png
+    image: /images/hunting/thumbs/shinewood_forest.webp
   - name: Dubhaim Castle
     slug: dubhaim_castle
     levelRange: 15-99
     levelMin: 15
     levelMax: 99
     tier: late
-    image: dubhaim_castle.png
+    image: /images/hunting/thumbs/dubhaim_castle.webp
   - name: House Macabre
     slug: house_macabre
     levelRange: 41-56
     levelMin: 41
     levelMax: 56
     tier: mid
-    image: house_macabre.png
+    image: /images/hunting/thumbs/house_macabre.webp
   - name: Karlopos Island
     slug: karlopos_island
     levelRange: 41-65
     levelMin: 41
     levelMax: 65
     tier: mid
-    image: karlopos_island.png
+    image: /images/hunting/thumbs/karlopos_island.webp
   - name: West Woodlands
     slug: west_woodlands
     levelRange: 41-71
     levelMin: 41
     levelMax: 71
     tier: mid
-    image: west_woodlands.png
+    image: /images/hunting/thumbs/west_woodlands.webp
   - name: Piet/Loures Sewer
     slug: piet_sewers
     levelRange: 41-71
     levelMin: 41
     levelMax: 71
     tier: mid
-    image: piet_sewers.png
+    image: /images/hunting/thumbs/piet_sewers.webp
   - name: Lost Woodlands
     slug: lost_woodlands
     levelRange: 55-65
@@ -132,77 +132,77 @@ huntingAreas:
     levelMin: 60
     levelMax: 100
     tier: late
-    image: cthonic_remains_1_11.png
+    image: /images/hunting/thumbs/cthonic_remains_1_11.webp
   - name: Abel Dungeon
     slug: abel_dungeon
     levelRange: 71-97
     levelMin: 71
     levelMax: 97
     tier: late
-    image: abel_dungeon.png
+    image: /images/hunting/thumbs/abel_dungeon.webp
   - name: Kasmanium Mines
     slug: kasmanium_mines
     levelRange: 80-99
     levelMin: 80
     levelMax: 99
     tier: late
-    image: kasmanium_mines.png
+    image: /images/hunting/thumbs/kasmanium_mines.webp
   - name: Mehadi
     slug: mehadi
     levelRange: 80-99
     levelMin: 80
     levelMax: 99
     tier: late
-    image: mehadi.png
+    image: /images/hunting/thumbs/mehadi.webp
   - name: Deep Crypt - Easy
     slug: deep_crypt
     levelRange: 80-99
     levelMin: 80
     levelMax: 99
     tier: late
-    image: deep_crypt.png
+    image: /images/hunting/thumbs/deep_crypt.webp
   - name: Grassy Fields
     slug: grassy_fields
     levelRange: '99'
     levelMin: 99
     levelMax: 100
     tier: master
-    image: grassy_fields.png
+    image: /images/hunting/thumbs/grassy_fields.webp
   - name: Mount Giragan
     slug: mount_giragan
     levelRange: 99-Master
     levelMin: 99
     levelMax: 100
     tier: master
-    image: giragan_caves.png
+    image: /images/hunting/thumbs/giragan_caves.webp
   - name: Nobis Maze
     slug: nobis_maze
     levelRange: 99-Master
     levelMin: 99
     levelMax: 100
     tier: master
-    image: nobis_maze.png
+    image: /images/hunting/thumbs/nobis_maze.webp
   - name: Oren Ruins
     slug: oren_ruins
     levelRange: 99-Master
     levelMin: 99
     levelMax: 100
     tier: master
-    image: oren_ruins.png
+    image: /images/hunting/thumbs/oren_ruins.webp
   - name: Deep Crypt - Medium
     slug: deep_crypt
     levelRange: Master
     levelMin: 100
     levelMax: 100
     tier: master
-    image: deep_crypt.png
+    image: /images/hunting/thumbs/deep_crypt.webp
   - name: Cthonic Demise
     slug: cthonic_demise
     levelRange: Master
     levelMin: 100
     levelMax: 100
     tier: master
-    image: cthonic_demise.png
+    image: /images/hunting/thumbs/cthonic_demise.webp
   - name: Chaos
     slug: chaos
     levelRange: Master-GM
@@ -216,14 +216,14 @@ huntingAreas:
     levelMin: 100
     levelMax: 110
     tier: grandmaster
-    image: limbo.png
+    image: /images/hunting/thumbs/limbo.webp
   - name: Deep Crypt - Hard
     slug: deep_crypt
     levelRange: GM
     levelMin: 110
     levelMax: 110
     tier: grandmaster
-    image: deep_crypt.png
+    image: /images/hunting/thumbs/deep_crypt.webp
   - name: Secret Cow Level
     slug: secret_cow_level
     levelRange: GM

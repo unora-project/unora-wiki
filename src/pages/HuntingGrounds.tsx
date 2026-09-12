@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react'
 import { Link } from 'react-router'
 import { PageHeader } from '@/components/ui/PageHeader'
-import { OptimizedImage } from '@/components/ui/OptimizedImage'
+import { resolveHuntingImage } from '@/lib/hunting-image'
 import { LayoutGrid, BarChart3, Skull, MapPin } from 'lucide-react'
 import bossesData from '@/data/hunting/bosses.json'
 import huntingIndexData from '@/data/metadata/hunting-index.json'
@@ -50,15 +50,11 @@ for (const b of bossesData) {
   bossCounts[b.locationSlug] = (bossCounts[b.locationSlug] || 0) + 1
 }
 
-/* ── Area data for card view (resolve image paths from filenames) ── */
-
-const thumbBase = import.meta.env.BASE_URL + 'images/hunting/thumbs/'
-
-function thumb(file: string) { return thumbBase + file.replace('.png', '.webp') }
+/* ── Area data for card view (CMS URLs and legacy thumbnail filenames) ── */
 
 const huntingAreas: HuntingArea[] = huntingIndex.huntingAreas.map((a) => ({
   ...a,
-  image: a.image ? thumb(a.image) : undefined,
+  image: resolveHuntingImage(a.image, import.meta.env.BASE_URL),
 }))
 
 /* ── Chart data ── */
@@ -181,9 +177,11 @@ export function HuntingGrounds() {
                 {/* Thumbnail */}
                 {area.image ? (
                   <div className="aspect-video overflow-hidden bg-parchment-200 dark:bg-ink">
-                    <OptimizedImage
+                    <img
                       src={area.image}
                       alt={area.name}
+                      loading="lazy"
+                      decoding="async"
                       className="h-full w-full object-cover transition-transform group-hover:scale-105"
                     />
                   </div>

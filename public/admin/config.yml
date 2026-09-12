@@ -213,7 +213,11 @@ collections:
                 label: Tier
                 widget: select
                 options: [early, mid, late, master, grandmaster]
-              - { name: image, label: Thumbnail Filename, widget: string, required: false }
+              - name: image
+                label: Map Thumbnail
+                widget: image
+                required: false
+                hint: "Upload or select a global asset. Its /images/ URL is saved automatically."
           - name: preMasterAreas
             label: Pre-Master Chart Bars
             widget: list

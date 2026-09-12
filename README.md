@@ -83,6 +83,14 @@ unora-wiki/
     └── deploy.yml          # Auto-deploys to GitHub Pages on push to master
 ```
 
+### Map thumbnails
+
+In the CMS, open **Hunting Grounds Config → Hunting Areas → Map Thumbnail** and upload or select an image from Global assets. Sveltia stores the file in `public/images/` and saves its public URL, such as `/images/my-map.png`, in the hunting index YAML. Save the entry and allow the site deployment to finish.
+
+The global media location is shared with other content; thumbnails do not need to be moved to a separate folder or manually converted to WebP. Hunting cards load the selected image directly. Existing generated thumbnails under `public/images/hunting/thumbs/` remain available, and older filename-only references are still supported. Sveltia manages asset writes through its Git backend, including the enclosing directories; the frontend does not write to the filesystem.
+
+Run `npx tsx --tsconfig tsconfig.app.json scripts/test-hunting-images.ts` to check picker configuration, existing assets, path compatibility, and a simulated upload through the content build and Vite serving.
+
 ### Content Pipeline
 
 Content lives in `src/content/` as YAML/Markdown. At build time, [scripts/build-content.ts](scripts/build-content.ts) converts it to JSON in `src/data/`, which the React app imports directly via Vite.
