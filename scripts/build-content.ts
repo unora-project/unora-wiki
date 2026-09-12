@@ -13,6 +13,7 @@ import { join, basename, dirname } from 'path'
 import { fileURLToPath } from 'url'
 import yaml from 'js-yaml'
 import { parse as parseCsvSync } from 'csv-parse/sync'
+import { buildEquipment } from './build-equipment.ts'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
@@ -160,6 +161,17 @@ for (const cls of shardClasses) {
   writeJson(join(PUBLIC_DATA_ROOT, 'classes', cls, 'spells.json'), classSpells)
 }
 console.log(`    wrote ${shardClasses.size} class shard pair(s) to public/data/classes/`)
+
+// Equipment edits must reach both the public page/search data and editor seed.
+console.log('  Equipment CSV → JSON...')
+const equipmentSeed = join(DATA_OUT_ROOT, 'equipment', 'all.json')
+const equipment = buildEquipment(
+  join(__dirname, '..', 'data-source', 'equipment', 'csv'),
+  existsSync(equipmentSeed) ? JSON.parse(readFileSync(equipmentSeed, 'utf8')) : [],
+)
+writeJson(equipmentSeed, equipment)
+writeJson(join(PUBLIC_DATA_ROOT, 'equipment.json'), equipment)
+console.log(`    wrote ${equipment.length} equipment items to site data and editor seed`)
 
 // ── Profession CSV → editor seed / wiki render JSON ──
 //

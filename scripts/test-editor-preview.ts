@@ -1,6 +1,5 @@
 // Run: npx tsx --tsconfig tsconfig.app.json scripts/test-editor-preview.ts
 import assert from 'node:assert/strict'
-import { readFileSync } from 'node:fs'
 import { test } from 'node:test'
 import { computeDiffs } from '../src/lib/editor-commit.ts'
 import { clearFileCache } from '../src/lib/github-client.ts'
@@ -32,7 +31,7 @@ for (const source of ['missing', 'empty', 'blank-lines', 'existing'] as const) {
   test(`preview includes added item when equipment CSV is ${source}`, async (t) => {
     clearFileCache()
     const before = source === 'blank-lines'
-      ? readFileSync(new URL('../data-source/equipment/csv/rings.csv', import.meta.url), 'utf8')
+      ? '\r\n'.repeat(61)
       : source === 'existing' ? 'Name,LVL,WGT,HP\nOld Ring,1,2,3\n' : ''
     t.mock.method(globalThis, 'fetch', async (input: string) => {
       const isEquipment = input.includes('/equipment/')
