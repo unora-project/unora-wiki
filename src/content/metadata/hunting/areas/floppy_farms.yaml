@@ -1,5 +1,16 @@
-description: Floppy Farms
+area: Floppy Farms
+description: |-
+  Boss: Mr. Hopps
+  Teleports
+  Does not cast spells
+  Spawns a wave of Slick Bunnies, followed by a wave of Angry Bunnies, followed by a wave of Clever Bunnies at certain HP thresholds.
 mapImage: /images/hunting/FloppyFarms.png
-subareas: []
+subareas:
+  - area: Bunny 1
+    minimumLevel: 9
+  - area: Bunny 2
+    minimumLevel: 41
+  - area: Bunny 3
+    minimumLevel: 71
 leaders: []
 shops: []
