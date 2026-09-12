@@ -50,6 +50,12 @@ huntingAreas:
     levelMin: 5
     levelMax: 41
     tier: early
+  - name: Mythic
+    slug: mythic
+    levelRange: "9-GM"
+    levelMin: 9
+    levelMax: 110
+    tier: early
   - name: Astrid
     slug: astrid
     levelRange: "11-50"
@@ -237,6 +243,11 @@ preMasterAreas:
     startPercent: 5
     widthPercent: 36
     color: "#2a79ba"
+  - name: "Mythic (9-99)"
+    slug: mythic
+    startPercent: 9
+    widthPercent: 91
+    color: "#2a79ba"
   - name: "Astrid (11-50)"
     slug: astrid
     startPercent: 11
@@ -314,6 +325,11 @@ preMasterAreas:
     color: "#ff4258"
 
 masterAreas:
+  - name: "Mythic (99-GM)"
+    slug: mythic
+    startPercent: 0
+    widthPercent: 100
+    color: "rgb(0, 161, 150)"
   - name: "Eingren Manor F3 (99)"
     slug: eingren_manor
     startPercent: 0

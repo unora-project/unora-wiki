@@ -52,6 +52,7 @@ const staticPages: SearchItem[] = [
   { title: 'Stat Calculator', category: 'Tools', path: '/calculators/stats' },
   { title: 'Glossary', category: 'Reference', path: '/glossary' },
   // Hunting areas
+  { title: 'Mythic', category: 'Hunting', path: '/hunting/mythic' },
   { title: 'Mileth Crypt', category: 'Hunting', path: '/hunting/mileth_crypt' },
   { title: 'East Woodlands', category: 'Hunting', path: '/hunting/east_woodlands' },
   { title: 'West Woodlands', category: 'Hunting', path: '/hunting/west_woodlands' },

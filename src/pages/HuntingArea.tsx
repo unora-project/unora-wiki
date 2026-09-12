@@ -4,7 +4,7 @@ import { createColumnHelper } from '@tanstack/react-table'
 import { DataTable } from '@/components/tables/DataTable'
 import { PageHeader } from '@/components/ui/PageHeader'
 import { OptimizedImage } from '@/components/ui/OptimizedImage'
-import areasData from '@/data/hunting/areas.json'
+import areasData from '@/data/metadata/hunting-areas.json'
 import areaNamesData from '@/data/metadata/area-names.json'
 import mapVariantsData from '@/data/metadata/map-variants.json'
 
