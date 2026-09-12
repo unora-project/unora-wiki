@@ -31,6 +31,7 @@ interface AreaShop {
 interface Subarea {
   area: string
   minimumLevel: number
+  mythicdrops: string
 }
 
 interface AreaDetail {
