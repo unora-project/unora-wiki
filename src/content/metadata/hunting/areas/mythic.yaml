@@ -5,7 +5,7 @@ description: >-
 leaders:
   - npc: Horse Leader
     area: Floppy Farms
-    slug: images/Floppy_Farms.png
+    slug: Floppy_Farms
     minimumLevel: "Bunny 1: 9+, Bunny 2: 41+, Bunny 3: 71+"
   - npc: King Mantis
     area: Garden
