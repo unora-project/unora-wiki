@@ -119,6 +119,7 @@ collections:
     create: true
     extension: yaml
     format: yaml
+    slug: "{{area}}"
     fields:
       - { name: description, label: Description, widget: text, required: false }
       - name: subareas
