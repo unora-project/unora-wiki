@@ -131,7 +131,7 @@ collections:
         fields:
           - { name: area, label: Area Name, widget: string }
           - { name: minimumLevel, label: Minimum Level, widget: number }
-          - { name: bossdrops, label: Boss Drops, widget: string, required: false }
+          - { name: mythicdrops, label: Boss Drops, widget: string, required: false }
       - name: leaders
         label: Leaders
         widget: list
