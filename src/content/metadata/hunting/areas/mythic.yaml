@@ -1,40 +1,38 @@
-description: >-
-  Mythic is an area comprised of 10 themed "mini" areas, each with their own leader.
-  Each leader stands outside of their enemy's territory. You can make an alliance with
-  up to 5 leaders, allowing those you've allied with to claim victory once you've completed their quest.
+description: Mythic is an area comprised of 10 themed "mini" areas, each with their own leader. Each leader stands outside of their enemy's territory. You can make an alliance with up to 5 leaders, allowing those you've allied with to claim victory once you've completed their quest.
+subareas: []
 leaders:
-  - npc: Horse Leader
+  - npc: Horse Leader (12,4)
     area: Floppy Farms
-    minimumLevel: "Bunny 1: 9+, Bunny 2: 41+, Bunny 3: 71+"
-  - npc: King Mantis
+    minimumLevel: 'Bunny 1: 9+, Bunny 2: 41+, Bunny 3: 71+'
+  - npc: King Mantis (17,44)
     area: Garden
-    minimumLevel: "Bee 1: 14+, Bee 2: 46+, Bee 3: 76+"
-  - npc: Bee Queen
+    minimumLevel: 'Bee 1: 14+, Bee 2: 46+, Bee 3: 76+'
+  - npc: Bee Queen (3,8)
     area: Woodlands
-    minimumLevel: "Mantis 1: 21+, Mantis 2: 51+, Mantis 3: 80+"
-  - npc: Frog King
+    minimumLevel: 'Mantis 1: 21+, Mantis 2: 51+, Mantis 3: 80+'
+  - npc: Frog King (4,37)
     area: Wolf
-    minimumLevel: "Wolf 1: 30+, Wolf 2: 60+, Wolf 3: 90+"
-  - npc: Lord Gargoyle
+    minimumLevel: 'Wolf 1: 30+, Wolf 2: 60+, Wolf 3: 90+'
+  - npc: Lord Gargoyle (4,26)
     area: Zombies
-    minimumLevel: "Zombie 1: 41+, Zombie 2: 71+, Zombie 3: 97+"
-  - npc: Wolf Pack Leader
+    minimumLevel: 'Zombie 1: 41+, Zombie 2: 71+, Zombie 3: 97+'
+  - npc: Wolf Pack Leader (4,17)
     area: Frogs
-    minimumLevel: "Frog 1: 50+, Frog 2: 80+, Frog 3: 99+"
-  - npc: Grimlock Queen
+    minimumLevel: 'Frog 1: 50+, Frog 2: 80+, Frog 3: 99+'
+  - npc: Grimlock Queen (25,32)
     area: Kobolds
-    minimumLevel: "Kobold 1: 60+, Kobold 2: 80+, Kobold 3: Master"
-  - npc: Kobold Pack Leader
+    minimumLevel: 'Kobold 1: 60+, Kobold 2: 80+, Kobold 3: Master'
+  - npc: Kobold Pack Leader (21,5)
     area: Grimlocks
-    minimumLevel: "Grimlock 1: 71+, Grimlock 2: 90+, Grimlock 3: Master"
-  - npc: Big Bunny
+    minimumLevel: 'Grimlock 1: 71+, Grimlock 2: 90+, Grimlock 3: Master'
+  - npc: Big Bunny (6,45)
     area: Horses
-    minimumLevel: "Horse 1: 80+, Horse 2: 95+, Horse 3: Master"
-  - npc: Superior Zombie
+    minimumLevel: 'Horse 1: 80+, Horse 2: 95+, Horse 3: Master'
+  - npc: Superior Zombie (25,10)
     area: Gargoyles
-    minimumLevel: "Gargoyle 1: 93+, Gargoyle 2: Master, Gargoyle 3: Grandmaster"
+    minimumLevel: 'Gargoyle 1: 93+, Gargoyle 2: Master, Gargoyle 3: Grandmaster'
 shops:
-  - npc: Fabrizio
+  - npc: Fabrizio (11,23)
     currency: Mythic Tokens
     items:
       - name: Reinforced Leather Greaves
@@ -73,7 +71,7 @@ shops:
       - name: Fabulous Boots
         tab: Boots
         cost: 100
-      - name: "Ialtag's Eye"
+      - name: Ialtag's Eye
         tab: Ring
         cost: 30
       - name: Star Ring
