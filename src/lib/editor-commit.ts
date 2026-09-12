@@ -1,4 +1,4 @@
-import type { EditorDb, EditorItem, EditorRecipe, EditorTab, GenericRow, GenericTab } from '@/types/editor'
+import type { EditorDb, EditorItem, EditorRecipe, EditorTab, GenericRow, GenericTab, RecipeTab } from '@/types/editor'
 import { FIELD_TO_CSV_HEADER, GENERIC_TAB_SCHEMAS } from '@/types/editor'
 import { parseCSV } from '@/lib/csv-parse'
 import { serializeCSV } from '@/lib/csv-serialize'
@@ -9,6 +9,20 @@ import { seedItemsFromPublished } from '@/lib/editor-seed'
 const GENERIC_TABS: GenericTab[] = [
   'alchemy-recipes', 'alchemy-extracts', 'cooking-recipes', 'cooking-ingredients', 'enchanting', 'fishing',
 ]
+
+type ItemTab = 'items' | RecipeTab
+
+// New files (and files written blank by the old editor) have no schema to infer.
+const DEFAULT_HEADERS: Record<ItemTab, string[]> = {
+  items: [
+    'Name', 'LOC', 'LVL', 'WGT', 'HP', 'MP', 'AC', 'MR', 'STR', 'INT', 'WIS',
+    'CON', 'DEX', 'DMG', 'HIT', 'AS%', 'SKD', 'SKD%', 'SPD', 'SPD%', 'FHB',
+    'HB%', 'CDR%', 'Value', 'Set',
+  ],
+  jewelcrafting: ['Name', 'Level', 'Materials'],
+  armorsmithing: ['Name', 'Class', 'Gender', 'Level', 'Materials'],
+  weaponsmithing: ['Name', 'Level', 'Type', 'Materials', 'Materials to upgrade'],
+}
 
 export interface FileDiff {
   path: string
@@ -29,12 +43,16 @@ function materialsToString(recipe: EditorRecipe['recipe']): string {
 
 function rowFromEditor(
   entry: EditorItem | EditorRecipe,
-  headers: string[]
+  headers: string[],
+  tab: ItemTab,
 ): Record<string, string> {
   const row: Record<string, string> = {}
   for (const h of headers) {
     // Preserve unknown columns as-is (via existing value) — caller merges.
-    const fieldKey = Object.entries(FIELD_TO_CSV_HEADER).find(([, v]) => v === h)?.[0]
+    const fieldKey = tab !== 'items' && h === 'Level' ? 'level'
+      : tab === 'weaponsmithing' && h === 'Type' && entry.weapon_type != null ? 'weapon_type'
+      : tab === 'weaponsmithing' && h === 'Materials to upgrade' ? 'upgrade_materials'
+      : Object.entries(FIELD_TO_CSV_HEADER).find(([, v]) => v === h)?.[0]
     if (!fieldKey) { row[h] = '' ; continue }
 
     if (fieldKey === 'recipe') {
@@ -50,12 +68,13 @@ function rowFromEditor(
 async function buildFileDiff(
   token: string,
   path: string,
-  rows: (EditorItem | EditorRecipe)[]
+  rows: (EditorItem | EditorRecipe)[],
+  tab: ItemTab,
 ): Promise<FileDiff & { sha: string | null }> {
   const existing = await getFile(token, EDITOR_REPO.owner, EDITOR_REPO.repo, path, EDITOR_REPO.branch)
   const before = existing?.content ?? ''
   const parsed = parseCSV(before)
-  const headers = parsed.headers
+  const headers = parsed.headers.length ? parsed.headers : DEFAULT_HEADERS[tab]
 
   const nameHeader = headers.includes('Name') ? 'Name' : headers[0]
   const byName = new Map<string, number>()
@@ -68,7 +87,7 @@ async function buildFileDiff(
   for (const entry of rows) {
     const name = entry.item_name?.trim()
     if (!name) continue
-    const editorRow = rowFromEditor(entry, headers)
+    const editorRow = rowFromEditor(entry, headers, tab)
     const key = name.toLowerCase()
     const idx = byName.get(key)
     if (idx === undefined) {
@@ -158,13 +177,13 @@ export async function computeDiffs(token: string, db: EditorDb): Promise<FileDif
   const tasks: Promise<FileDiff & { sha: string | null }>[] = []
 
   for (const [path, itemsAtPath] of groupItemsByPath(items)) {
-    tasks.push(buildFileDiff(token, path, itemsAtPath))
+    tasks.push(buildFileDiff(token, path, itemsAtPath, 'items'))
   }
 
-  for (const tab of ['jewelcrafting', 'armorsmithing', 'weaponsmithing'] as EditorTab[]) {
+  for (const tab of ['jewelcrafting', 'armorsmithing', 'weaponsmithing'] as RecipeTab[]) {
     const arr = db[tab] as EditorRecipe[]
     for (const [path, recs] of groupRecipesByPath(tab, arr)) {
-      tasks.push(buildFileDiff(token, path, recs))
+      tasks.push(buildFileDiff(token, path, recs, tab))
     }
   }
 

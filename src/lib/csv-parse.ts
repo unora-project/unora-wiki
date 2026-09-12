@@ -70,7 +70,7 @@ function splitCSVRecords(body: string): string[] {
 export function parseCSV(content: string): ParsedCSV {
   const trailingNewline = content.endsWith('\n')
   const body = trailingNewline ? content.slice(0, -1) : content
-  if (body.length === 0) {
+  if (body.trim().length === 0) {
     return { headers: [], rows: [], quotedMask: [], trailingNewline }
   }
   const records = splitCSVRecords(body)
