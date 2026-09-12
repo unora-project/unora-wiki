@@ -4,7 +4,7 @@ mapImage: /images/hunting/FloppyFarms.png
 subareas:
   - area: Bunny 1
     minimumLevel: 9
-    mythicdrops: ● Hatchet | ● Padded Gauntlet
+    mythicdrops: Hatchet |  Padded Gauntlet
   - area: Bunny 2
     minimumLevel: 41
     mythicdrops: ● Hy-Brasyl Earrings
