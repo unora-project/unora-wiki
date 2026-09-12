@@ -4,12 +4,12 @@ mapImage: /images/hunting/FloppyFarms.png
 subareas:
   - area: Bunny 1
     minimumLevel: 9
-    bossdrops: ●Hatchet | ●Padded Gauntlet
+    bossdrops: ● Hatchet | ● Padded Gauntlet
   - area: Bunny 2
     minimumLevel: 41
-    bossdrops: ●Hy-Brasyl Earrings
+    bossdrops: ● Hy-Brasyl Earrings
   - area: Bunny 3
     minimumLevel: 71
-    bossdrops: ●Flour | ●Ialtag's Eye a| ●Sugar
+    bossdrops: ● Flour | ● Ialtag's Eye | ● Sugar
 leaders: []
 shops: []
