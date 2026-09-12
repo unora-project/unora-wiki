@@ -48,7 +48,7 @@ huntingAreas:
     levelMin: 5
     levelMax: 41
     tier: early
-    image: ''
+    image: porte_forest.png
   - name: Mythic
     slug: mythic
     levelRange: 9-GM
