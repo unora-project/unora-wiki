@@ -7,39 +7,39 @@ leaders:
     minimumLevel: 'Bunny 1: 9+, Bunny 2: 41+, Bunny 3: 71+'
   - npc: King Mantis
     area: Garden
-    areaSlug: garden
+    areaSlug: ''
     minimumLevel: 'Bee 1: 14+, Bee 2: 46+, Bee 3: 76+'
   - npc: Bee Queen
     area: Woodlands
-    areaSlug: woodlands
+    areaSlug: ''
     minimumLevel: 'Mantis 1: 21+, Mantis 2: 51+, Mantis 3: 80+'
   - npc: Frog King
     area: Wolf
-    areaSlug: wolf
+    areaSlug: ''
     minimumLevel: 'Wolf 1: 30+, Wolf 2: 60+, Wolf 3: 90+'
   - npc: Lord Gargoyle
     area: Zombies
-    areaSlug: zombies
+    areaSlug: ''
     minimumLevel: 'Zombie 1: 41+, Zombie 2: 71+, Zombie 3: 97+'
   - npc: Wolf Pack Leader
     area: Frogs
-    areaSlug: frogs
+    areaSlug: ''
     minimumLevel: 'Frog 1: 50+, Frog 2: 80+, Frog 3: 99+'
   - npc: Grimlock Queen
     area: Kobolds
-    areaSlug: kobolds
+    areaSlug: ''
     minimumLevel: 'Kobold 1: 60+, Kobold 2: 80+, Kobold 3: Master'
   - npc: Kobold Pack Leader
     area: Grimlocks
-    areaSlug: grimlocks
+    areaSlug: ''
     minimumLevel: 'Grimlock 1: 71+, Grimlock 2: 90+, Grimlock 3: Master'
   - npc: Big Bunny
     area: Horses
-    areaSlug: horses
+    areaSlug: ''
     minimumLevel: 'Horse 1: 80+, Horse 2: 95+, Horse 3: Master'
   - npc: Superior Zombie
     area: Gargoyles
-    areaSlug: gargoyles
+    areaSlug: ''
     minimumLevel: 'Gargoyle 1: 93+, Gargoyle 2: Master, Gargoyle 3: Grandmaster'
 shops:
   - npc: Fabrizio
