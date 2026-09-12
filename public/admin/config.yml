@@ -136,7 +136,7 @@ collections:
         fields:
           - { name: npc, label: NPC Name, widget: string }
           - { name: area, label: Area, widget: string }
-          - { name: areaSlug, label: Area Slug, widget: string, required: false }
+          - { name: areaSlug, label: Area Slug, widget: string }
           - { name: minimumLevel, label: Minimum Level, widget: string }
       - name: shops
         label: Shops
