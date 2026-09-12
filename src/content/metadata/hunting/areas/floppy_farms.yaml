@@ -4,9 +4,12 @@ mapImage: /images/hunting/FloppyFarms.png
 subareas:
   - area: Bunny 1
     minimumLevel: 9
+    bossdrops: ●Hatchet
   - area: Bunny 2
     minimumLevel: 41
+    bossdrops: ''
   - area: Bunny 3
     minimumLevel: 71
+    bossdrops: ''
 leaders: []
 shops: []
