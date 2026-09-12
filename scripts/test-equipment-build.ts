@@ -58,4 +58,15 @@ test('deployment build publishes equipment edits to the site and editor seed', (
   assert.equal(updated.filter((row: { name: string }) => row.name === 'Tester Weapon').length, 1)
   assert.equal(updated.find((row: { name: string }) => row.name === 'Tester Weapon').stats.str, 8)
   assert.deepEqual(updated, read('src/data/equipment/all.json'))
+
+  // Deleting the final row leaves a valid header-only CSV, unlike a broken blank file.
+  write(weaponPath, 'Name,LVL,STR\n')
+  write('src/data/professions/cooking-recipes.json', '[{"Recipe":"Deleted Soup"}]')
+  write('data-source/professions/csv/cooking/recipes.csv', 'Recipe,Ingredients,Where to learn,Benefits\n')
+  build()
+  const cleared = read('public/data/equipment.json')
+  assert.ok(!cleared.some((row: { name: string }) => row.name === 'Tester Weapon'))
+  assert.ok(cleared.some((row: { name: string }) => row.name === 'Blank CSV Ring'))
+  assert.deepEqual(cleared, read('src/data/equipment/all.json'))
+  assert.deepEqual(read('src/data/professions/cooking-recipes.json'), [])
 })

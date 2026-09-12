@@ -65,14 +65,17 @@ export function buildEquipment(csvRoot: string, previous: EquipmentItem[]): Equi
   for (const source of sources) {
     const path = join(csvRoot, source.path)
     if (!existsSync(path)) continue
+    let headers: string[] = []
     const rows = parse(readFileSync(path, 'utf8'), {
-      columns: true, skip_empty_lines: true, bom: true, trim: true,
+      columns: (columns: string[]) => { headers = columns; return columns },
+      skip_empty_lines: true, bom: true, trim: true,
     }) as Record<string, string>[]
     // Retain published groups whose sources are still missing or blank.
-    if (!rows.length) continue
-    if (rows.some((row) => !row.Name?.trim())) {
+    if (!headers.length) continue
+    if (!headers.includes('Name') || rows.some((row) => !row.Name?.trim())) {
       throw new Error(`Equipment CSV contains a row without a Name: ${source.path}`)
     }
+    // A valid header with no rows explicitly clears this equipment group.
     replaced.add(group(source))
     for (const row of rows) {
       items.push({

@@ -51,13 +51,13 @@ export function resolveItemPath(item: EditorItem): string | null {
 
   if (type === 'overarmor') {
     const g = lc(item.gender)
-    if (!GENDER_DIRS.has(g)) return null
+    if (!GENDER_DIRS.has(g) && g !== 'unisex') return null
     return `${DATA_ROOT}/equipment/csv/overarmor/${g}/overarmor.csv`
   }
 
   if (type === 'overhelmet') {
     const g = lc(item.gender)
-    if (!GENDER_DIRS.has(g)) return null
+    if (!GENDER_DIRS.has(g) && g !== 'unisex') return null
     return `${DATA_ROOT}/equipment/csv/overhelmet/${g}/overhelmet.csv`
   }
 

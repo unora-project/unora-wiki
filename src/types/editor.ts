@@ -62,6 +62,8 @@ export interface EditorRecipe extends EditorItem {
 }
 
 export interface EditorDb {
+  pendingDeletions?: TrashEntry[]
+  initializedTabs?: EditorTab[]
   items: EditorItem[]
   jewelcrafting: EditorRecipe[]
   armorsmithing: EditorRecipe[]

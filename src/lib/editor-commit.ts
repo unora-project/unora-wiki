@@ -4,7 +4,7 @@ import { parseCSV } from '@/lib/csv-parse'
 import { serializeCSV } from '@/lib/csv-serialize'
 import { groupItemsByPath, groupRecipesByPath, resolveItemPath, resolveRecipePath } from '@/lib/csv-paths'
 import { getFile, commitMultiFile, clearFileCache, EDITOR_REPO } from '@/lib/github-client'
-import { seedItemsFromPublished } from '@/lib/editor-seed'
+import { seedItemsFromPublished, shouldSeedTab } from '@/lib/editor-seed'
 
 const GENERIC_TABS: GenericTab[] = [
   'alchemy-recipes', 'alchemy-extracts', 'cooking-recipes', 'cooking-ingredients', 'enchanting', 'fishing',
@@ -70,6 +70,7 @@ async function buildFileDiff(
   path: string,
   rows: (EditorItem | EditorRecipe)[],
   tab: ItemTab,
+  deletedNames: ReadonlySet<string> = new Set(),
 ): Promise<FileDiff & { sha: string | null }> {
   const existing = await getFile(token, EDITOR_REPO.owner, EDITOR_REPO.repo, path, EDITOR_REPO.branch)
   const before = existing?.content ?? ''
@@ -78,12 +79,14 @@ async function buildFileDiff(
 
   const nameHeader = headers.includes('Name') ? 'Name' : headers[0]
   const byName = new Map<string, number>()
-  parsed.rows.forEach((r, idx) => {
+  const outRows = parsed.rows
+    .filter((r) => !deletedNames.has((r[nameHeader] ?? '').trim().toLowerCase()))
+    .map((r) => ({ ...r }))
+  outRows.forEach((r, idx) => {
     const n = (r[nameHeader] ?? '').trim()
     if (n) byName.set(n.toLowerCase(), idx)
   })
 
-  const outRows = parsed.rows.map((r) => ({ ...r }))
   for (const entry of rows) {
     const name = entry.item_name?.trim()
     if (!name) continue
@@ -118,7 +121,8 @@ async function buildFileDiff(
 async function buildGenericDiff(
   token: string,
   tab: GenericTab,
-  rows: GenericRow[]
+  rows: GenericRow[],
+  deletedNames: ReadonlySet<string> = new Set(),
 ): Promise<FileDiff & { sha: string | null }> {
   const schema = GENERIC_TAB_SCHEMAS[tab]
   const path = schema.csvPath
@@ -133,11 +137,13 @@ async function buildGenericDiff(
   // GitHub but not in the seed.
   const nameKey = headers.includes(schema.nameKey) ? schema.nameKey : headers[0]
   const byName = new Map<string, number>()
-  const outRows: Record<string, string>[] = parsed.rows.map((r, idx) => {
-    const n = (r[nameKey] ?? '').trim()
-    if (n) byName.set(n.toLowerCase(), idx)
-    return { ...r }
-  })
+  const outRows: Record<string, string>[] = parsed.rows
+    .filter((r) => !deletedNames.has((r[nameKey] ?? '').trim().toLowerCase()))
+    .map((r, idx) => {
+      const n = (r[nameKey] ?? '').trim()
+      if (n) byName.set(n.toLowerCase(), idx)
+      return { ...r }
+    })
 
   for (const r of rows) {
     const name = (r[nameKey] ?? '').trim()
@@ -172,23 +178,55 @@ async function buildGenericDiff(
 export async function computeDiffs(token: string, db: EditorDb): Promise<FileDiff[]> {
   // Items tab is lazy-seeded. If Preview is clicked before items was ever visited,
   // load the seed now so we don't propose wiping all equipment CSVs.
-  const items = db.items.length === 0 ? await seedItemsFromPublished() : db.items
+  const items = shouldSeedTab(db, 'items') ? await seedItemsFromPublished() : db.items
+
+  // Remove only explicit deletions, never rows merely missing from a stale seed.
+  // Restored/re-added rows take precedence over an older deletion of the same identity.
+  const deletions = new Map<string, Set<string>>()
+  for (const entry of db.pendingDeletions ?? []) {
+    const generic = GENERIC_TABS.includes(entry.tab as GenericTab)
+    const schema = generic ? GENERIC_TAB_SCHEMAS[entry.tab as GenericTab] : null
+    const payload = entry.payload as EditorItem & GenericRow
+    if (!payload || typeof payload !== 'object') continue
+    const pathOf = (row: EditorItem & GenericRow) => schema?.csvPath
+      ?? (entry.tab === 'items' ? resolveItemPath(row) : resolveRecipePath(entry.tab, row as EditorRecipe))
+    const nameOf = (row: EditorItem & GenericRow) => String(row[schema?.nameKey ?? 'item_name'] ?? '').trim().toLowerCase()
+    const path = pathOf(payload)
+    const name = nameOf(payload)
+    if (!path || !name) continue
+    if ((db[entry.tab] as (EditorItem & GenericRow)[]).some((row) => pathOf(row) === path && nameOf(row) === name)) continue
+    const names = deletions.get(path) ?? new Set<string>()
+    names.add(name)
+    deletions.set(path, names)
+  }
 
   const tasks: Promise<FileDiff & { sha: string | null }>[] = []
 
-  for (const [path, itemsAtPath] of groupItemsByPath(items)) {
-    tasks.push(buildFileDiff(token, path, itemsAtPath, 'items'))
+  const itemGroups = groupItemsByPath(items)
+  for (const path of deletions.keys()) {
+    if (path.startsWith('data-source/equipment/') && !itemGroups.has(path)) itemGroups.set(path, [])
+  }
+  for (const [path, itemsAtPath] of itemGroups) {
+    tasks.push(buildFileDiff(token, path, itemsAtPath, 'items', deletions.get(path)))
   }
 
   for (const tab of ['jewelcrafting', 'armorsmithing', 'weaponsmithing'] as RecipeTab[]) {
     const arr = db[tab] as EditorRecipe[]
-    for (const [path, recs] of groupRecipesByPath(tab, arr)) {
-      tasks.push(buildFileDiff(token, path, recs, tab))
+    const groups = groupRecipesByPath(tab, arr)
+    for (const entry of db.pendingDeletions ?? []) {
+      if (entry.tab !== tab) continue
+      const path = resolveRecipePath(tab, entry.payload as EditorRecipe)
+      if (path && deletions.has(path) && !groups.has(path)) groups.set(path, [])
+    }
+    for (const [path, recs] of groups) {
+      tasks.push(buildFileDiff(token, path, recs, tab, deletions.get(path)))
     }
   }
 
   for (const tab of GENERIC_TABS) {
-    tasks.push(buildGenericDiff(token, tab, db[tab]))
+    const deletedNames = deletions.get(GENERIC_TAB_SCHEMAS[tab].csvPath)
+    if (db[tab].length === 0 && !deletedNames?.size) continue
+    tasks.push(buildGenericDiff(token, tab, db[tab], deletedNames))
   }
 
   const diffs = await Promise.all(tasks)

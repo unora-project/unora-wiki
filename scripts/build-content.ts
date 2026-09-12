@@ -186,17 +186,17 @@ console.log('  Professions CSV → JSON...')
 const CSV_ROOT = join(__dirname, '..', 'data-source', 'professions', 'csv')
 const PROF_OUT = join(DATA_OUT_ROOT, 'professions')
 
-interface ProfMapping { csv: string; json: string }
+interface ProfMapping { csv: string; json: string; nameHeader: string }
 const PROF_MAPPINGS: ProfMapping[] = [
-  { csv: 'alchemy/extracts.csv',       json: 'alchemy-extracts.json' },
-  { csv: 'alchemy/recipes.csv',        json: 'alchemy-recipes.json' },
-  { csv: 'cooking/ingredients.csv',    json: 'cooking-ingredients.json' },
-  { csv: 'cooking/recipes.csv',        json: 'cooking-recipes.json' },
-  { csv: 'enchanting/enchants.csv',    json: 'enchanting-enchants.json' },
-  { csv: 'fishing/fish.csv',           json: 'fishing-fish.json' },
-  { csv: 'jewelcrafting/recipes.csv',  json: 'jewelcrafting-recipes.json' },
-  { csv: 'armorsmithing/recipes.csv',  json: 'armorsmithing-recipes.json' },
-  { csv: 'weaponsmithing/weapons.csv', json: 'weaponsmithing-recipes.json' },
+  { csv: 'alchemy/extracts.csv',       json: 'alchemy-extracts.json', nameHeader: 'Monster Part' },
+  { csv: 'alchemy/recipes.csv',        json: 'alchemy-recipes.json', nameHeader: 'Potion' },
+  { csv: 'cooking/ingredients.csv',    json: 'cooking-ingredients.json', nameHeader: 'Name' },
+  { csv: 'cooking/recipes.csv',        json: 'cooking-recipes.json', nameHeader: 'Recipe' },
+  { csv: 'enchanting/enchants.csv',    json: 'enchanting-enchants.json', nameHeader: 'Enchant' },
+  { csv: 'fishing/fish.csv',           json: 'fishing-fish.json', nameHeader: 'Fish' },
+  { csv: 'jewelcrafting/recipes.csv',  json: 'jewelcrafting-recipes.json', nameHeader: 'Name' },
+  { csv: 'armorsmithing/recipes.csv',  json: 'armorsmithing-recipes.json', nameHeader: 'Name' },
+  { csv: 'weaponsmithing/weapons.csv', json: 'weaponsmithing-recipes.json', nameHeader: 'Name' },
 ]
 
 for (const m of PROF_MAPPINGS) {
@@ -204,12 +204,14 @@ for (const m of PROF_MAPPINGS) {
   const jsonPath = join(PROF_OUT, m.json)
   if (!existsSync(csvPath)) { console.log(`    skip ${m.json} (no CSV)`); continue }
   const raw = readFileSync(csvPath, 'utf-8')
+  let headers: string[] = []
   const rows = parseCsvSync(raw, {
-    columns: true,
+    columns: (columns: string[]) => { headers = columns; return columns },
     skip_empty_lines: true,
     relax_quotes: true,
   }) as Record<string, string>[]
-  if (rows.length === 0) { console.log(`    skip ${m.json} (empty CSV)`); continue }
+  if (headers.length === 0) { console.log(`    skip ${m.json} (empty CSV)`); continue }
+  if (!headers.includes(m.nameHeader)) throw new Error(`Missing ${m.nameHeader} header in ${m.csv}`)
   writeJson(jsonPath, rows)
   console.log(`    ${m.json} (${rows.length} rows)`)
 }

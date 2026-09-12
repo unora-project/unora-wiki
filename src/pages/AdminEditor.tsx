@@ -16,7 +16,7 @@ import { CommitDialog } from '@/components/editor/CommitDialog'
 import { ToastView, type Toast } from '@/components/editor/ToastView'
 import type { EditorDb, EditorItem, EditorRecipe, EditorTab, GenericRow, GenericTab, TrashEntry } from '@/types/editor'
 import { GENERIC_TAB_SCHEMAS } from '@/types/editor'
-import { seedFromPublished, seedItemsFromPublished, seedNonItemsFromPublished, loadFromLocal, saveToLocal, clearLocal, loadTrash, saveTrash, type NonItemsTab } from '@/lib/editor-seed'
+import { seedFromPublished, seedItemsFromPublished, seedNonItemsFromPublished, shouldSeedTab, loadFromLocal, saveToLocal, clearLocal, loadTrash, saveTrash, type NonItemsTab } from '@/lib/editor-seed'
 import { computeDiffs, commitDiffs, countUnresolvedItems, type FileDiff } from '@/lib/editor-commit'
 import { getToken, signOut } from '@/lib/github-auth'
 
@@ -96,6 +96,7 @@ function EditorShell({ login, dryRun }: { login: string; dryRun: boolean }) {
   const [toast, setToast] = useState<Toast>(null)
   const [dialogOpen, setDialogOpen] = useState(false)
   const [diffs, setDiffs] = useState<FileDiff[]>([])
+  const previewDeletions = useRef<TrashEntry[]>([])
   const [busy, setBusy] = useState<'idle' | 'loading-diff' | 'committing' | 'seeding'>('idle')
   const [trash, setTrash] = useState<TrashEntry[]>(() => loadTrash())
   const [trashOpen, setTrashOpen] = useState(false)
@@ -147,7 +148,7 @@ function EditorShell({ login, dryRun }: { login: string; dryRun: boolean }) {
       'jewelcrafting', 'armorsmithing', 'weaponsmithing',
       'alchemy-recipes', 'alchemy-extracts', 'cooking-recipes', 'cooking-ingredients', 'enchanting', 'fishing',
     ]
-    const emptyKeys = NON_ITEM_KEYS.filter((k) => (db[k]?.length ?? 0) === 0)
+    const emptyKeys = NON_ITEM_KEYS.filter((k) => shouldSeedTab(db, k))
     if (emptyKeys.length === 0) return
     setBusy('seeding')
     ;(async () => {
@@ -157,7 +158,7 @@ function EditorShell({ login, dryRun }: { login: string; dryRun: boolean }) {
         setDb((prev) => {
           const merged = { ...prev }
           for (const k of emptyKeys) {
-            if ((prev[k]?.length ?? 0) === 0 && seed[k]) (merged as any)[k] = seed[k]
+            if (shouldSeedTab(prev, k) && seed[k]) (merged as any)[k] = seed[k]
           }
           return merged
         })
@@ -174,7 +175,7 @@ function EditorShell({ login, dryRun }: { login: string; dryRun: boolean }) {
   const itemsSeedingRef = useRef(false)
   useEffect(() => {
     if (tab !== 'items') return
-    if (db.items.length > 0) return
+    if (!shouldSeedTab(db, 'items')) return
     if (itemsSeedingRef.current) return
     itemsSeedingRef.current = true
     let cancelled = false
@@ -183,7 +184,7 @@ function EditorShell({ login, dryRun }: { login: string; dryRun: boolean }) {
       try {
         const items = await seedItemsFromPublished()
         if (cancelled) return
-        setDb((prev) => prev.items.length > 0 ? prev : { ...prev, items })
+        setDb((prev) => shouldSeedTab(prev, 'items') ? { ...prev, items } : prev)
       } catch (e: any) {
         if (!cancelled) setToast({ kind: 'error', msg: `Items seed failed: ${e.message || e}` })
       } finally {
@@ -245,7 +246,10 @@ function EditorShell({ login, dryRun }: { login: string; dryRun: boolean }) {
       const arr = [...(prev[entry.tab] as any[])]
       const insertAt = Math.min(Math.max(entry.index, 0), arr.length)
       arr.splice(insertAt, 0, entry.payload)
-      return { ...prev, [entry.tab]: arr } as EditorDb
+      return {
+        ...prev, [entry.tab]: arr,
+        pendingDeletions: (prev.pendingDeletions ?? []).filter((d) => d.id !== entry.id),
+      } as EditorDb
     })
     setTrash((t) => t.filter((e) => e.id !== entry.id))
   }
@@ -262,7 +266,11 @@ function EditorShell({ login, dryRun }: { login: string; dryRun: boolean }) {
     }
     const arr = [...currentRows]
     arr.splice(i, 1)
-    setDb({ ...db, [tab]: arr })
+    setDb({
+      ...db, [tab]: arr,
+      pendingDeletions: [...(db.pendingDeletions ?? []), entry],
+      initializedTabs: [...new Set([...(db.initializedTabs ?? []), tab])],
+    })
     setTrash((t) => [...t, entry])
     setToast({
       kind: 'info',
@@ -279,7 +287,9 @@ function EditorShell({ login, dryRun }: { login: string; dryRun: boolean }) {
     if (!confirm('Reset draft from published data? This overwrites your current working copy.')) return
     setBusy('seeding')
     try {
-      const seed = await seedFromPublished()
+      const seed: EditorDb = {
+        ...await seedFromPublished(), pendingDeletions: [], initializedTabs: TABS.map((t) => t.id),
+      }
       setDb(seed)
       clearLocal()
       saveToLocal(seed)
@@ -297,6 +307,7 @@ function EditorShell({ login, dryRun }: { login: string; dryRun: boolean }) {
     setBusy('loading-diff')
     try {
       const d = await computeDiffs(token, db)
+      previewDeletions.current = db.pendingDeletions ?? []
       setDiffs(d)
       setDialogOpen(true)
       if (d.length === 0) setToast({ kind: 'info', msg: 'No changes vs. GitHub' })
@@ -311,10 +322,17 @@ function EditorShell({ login, dryRun }: { login: string; dryRun: boolean }) {
     const token = getToken()
     if (!token) return
     setBusy('committing')
+    const publishedDeletionIds = new Set(previewDeletions.current.map((entry) => entry.id))
+    const publishedDeletionTabs = previewDeletions.current.map((entry) => entry.tab)
     try {
       const trailer = `\n\nCo-Authored-By: True <true@unora.local>`
       const res = await commitDiffs(token, diffs, message + trailer, dryRun)
       if (res) {
+        if (!dryRun) setDb((prev) => ({
+          ...prev,
+          pendingDeletions: (prev.pendingDeletions ?? []).filter((entry) => !publishedDeletionIds.has(entry.id)),
+          initializedTabs: [...new Set([...(prev.initializedTabs ?? []), ...publishedDeletionTabs])],
+        }))
         setToast({
           kind: 'success',
           msg: dryRun ? 'Dry-run logged to console' : `Committed ${res.sha.slice(0, 7)} — site rebuild ~2 min`,

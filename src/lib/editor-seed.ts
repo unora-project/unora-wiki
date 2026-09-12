@@ -1,4 +1,4 @@
-import type { EditorDb, EditorItem, EditorRecipe, EditorIngredient, GenericRow, GenericTab } from '@/types/editor'
+import type { EditorDb, EditorItem, EditorRecipe, EditorIngredient, EditorTab, GenericRow, GenericTab } from '@/types/editor'
 import { GENERIC_TAB_SCHEMAS } from '@/types/editor'
 
 interface RawEquip {
@@ -160,7 +160,7 @@ function normalizeGeneric(raw: unknown, schema: { headers: readonly string[] }):
   })
 }
 
-export type NonItemsTab = Exclude<keyof EditorDb, 'items'>
+export type NonItemsTab = Exclude<EditorTab, 'items'>
 
 const GENERIC_LOADERS: Record<GenericTab, () => Promise<unknown>> = {
   'alchemy-recipes': () => import('@/data/professions/alchemy-recipes.json').then((m) => m.default ?? m),
@@ -235,6 +235,12 @@ export async function seedFromPublished(): Promise<EditorDb> {
 
 const LS_KEY = 'unoraDataV10'
 
+export function shouldSeedTab(db: EditorDb, tab: EditorTab): boolean {
+  return db[tab].length === 0
+    && !db.initializedTabs?.includes(tab)
+    && !db.pendingDeletions?.some((entry) => entry.tab === tab)
+}
+
 export function loadFromLocal(): EditorDb | null {
   try {
     const raw = localStorage.getItem(LS_KEY)
@@ -243,6 +249,10 @@ export function loadFromLocal(): EditorDb | null {
     if (Array.isArray(parsed)) return null
     const db = parsed as Partial<EditorDb>
     return {
+      // Migrate deletions made before the publish queue existed. An explicit
+      // empty queue means they were already published or reset, so do not replay Trash.
+      pendingDeletions: db.pendingDeletions ?? loadTrash(),
+      initializedTabs: db.initializedTabs ?? [],
       items: db.items ?? [],
       jewelcrafting: db.jewelcrafting ?? [],
       armorsmithing: db.armorsmithing ?? [],
