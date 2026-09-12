@@ -64,6 +64,7 @@ const subareaColumnHelper = createColumnHelper<Subarea>()
 const subareaColumns = [
   subareaColumnHelper.accessor('area', { header: 'Area' }),
   subareaColumnHelper.accessor('minimumLevel', { header: 'Minimum Level' }),
+  subareaColumnHelper.accessor('mythicdrops', { header: 'Boss Drops' }),
 ]
 
 const areaNames = areaNamesData as Record<string, string>
