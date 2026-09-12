@@ -10,10 +10,6 @@ subareas:
     bossdrops: ● Hy-Brasyl Earrings
   - area: Bunny 3
     minimumLevel: 71
-<<<<<<< HEAD
     bossdrops: ● Flour | ● Ialtag's Eye | ● Sugar
-=======
-    bossdrops: ● Flour | ● Ialtag's Eye | ● Sugar
->>>>>>> 23954841caf9a6ac6a359cd956277a589415bd42
 leaders: []
 shops: []
