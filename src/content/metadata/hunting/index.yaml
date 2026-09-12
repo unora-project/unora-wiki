@@ -49,6 +49,13 @@ huntingAreas:
     levelMax: 41
     tier: early
     image: /images/hunting/thumbs/porte forest.webp
+  - name: Floppy Farms
+    slug: floppy_farms
+    levelRange: ''
+    levelMin: ''
+    levelMax: ''
+    tier: ''
+    image: /images/hunting/FloppyFarms.png
   - name: Mythic
     slug: mythic
     levelRange: 9-GM
