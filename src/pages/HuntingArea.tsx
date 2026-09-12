@@ -11,7 +11,6 @@ import mapVariantsData from '@/data/metadata/map-variants.json'
 interface Leader {
   npc: string
   area: string
-  areaSlug: string | null
   minimumLevel: string
 }
 
@@ -42,20 +41,7 @@ interface AreaDetail {
 const leaderColumnHelper = createColumnHelper<Leader>()
 const leaderColumns = [
   leaderColumnHelper.accessor('npc', { header: 'NPC' }),
-  leaderColumnHelper.accessor('area', {
-    header: 'area',
-    cell: ({ row }) => {
-      const { area, areaSlug } = row.original
-      if (areaSlug) {
-        return (
-          <Link to={`/hunting/${areaSlug}`} className="text-ivory underline decoration-gilt/60 hover:decoration-gilt dark:text-ivory">
-            {area}
-          </Link>
-        )
-      }
-      return area
-    },
-  }),
+  leaderColumnHelper.accessor('area', {header: 'area'}),
   leaderColumnHelper.accessor('minimumLevel', { header: 'Minimum Level' }),
 ]
 
