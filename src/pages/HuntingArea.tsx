@@ -296,10 +296,13 @@ function renderDescriptionWithLinks(text: string) {
     }
 
     const isInternal = url.startsWith('/')
+    const currentKey = keyIndex
+    keyIndex += 1
+
     parts.push(
       isInternal ? (
         <Link
-          key={keyIndex++}
+          key={currentKey}
           to={url}
           className="underline decoration-gilt/60 hover:decoration-gilt"
         >
@@ -307,7 +310,7 @@ function renderDescriptionWithLinks(text: string) {
         </Link>
       ) : (
         
-          key={keyIndex++}
+          key={currentKey}
           href={url}
           target="_blank"
           rel="noopener noreferrer"
