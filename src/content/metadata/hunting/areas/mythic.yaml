@@ -9,7 +9,7 @@ leaders:
     minimumLevel: 'Bunny 1: 9+, Bunny 2: 41+, Bunny 3: 71+'
   - npc: King Mantis
     area: Mythic Garden
-    areaSlug: mythic_Garden
+    areaSlug: mythic_garden
     minimumLevel: 'Bee 1: 14+, Bee 2: 46+, Bee 3: 76+'
   - npc: Bee Queen
     area: Woodlands
