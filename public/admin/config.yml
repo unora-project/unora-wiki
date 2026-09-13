@@ -123,7 +123,7 @@ collections:
     fields:
       - { name: area, label: Area Name, widget: string, required: false, hint: "Set a name when creating a new area page." }
       - { name: description, label: Description, widget: text, required: false }
-      - { name: mapImage, label: Map Image, widget: image, required: false, hint: "Select the uploaded map from global assets. Leave empty to use the existing map files." }
+      - { name: mapImage, label: Map Image, widget: image, required: false, fig-align: center, hint: "Select the uploaded map from global assets. Leave empty to use the existing map files." }
       - name: subareas
         label: Sub-areas
         widget: list
