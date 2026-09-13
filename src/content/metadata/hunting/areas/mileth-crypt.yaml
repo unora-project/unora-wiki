@@ -1,0 +1,9 @@
+area: Mileth Crypt
+description: Beginner hunting zone located in the started town of Mileth.
+mapImage: /images/hunting/mileth_crypt.png
+subareas:
+  - area: Crypt 1
+    minimumLevel: 1
+    mythicdrops: ''
+leaders: []
+shops: []
