@@ -17,6 +17,12 @@ interface SkillSpell {
   description: string
 }
 
+interface Dugon {
+  name: string
+  target: string
+  meditation: string
+}
+
 const typedClassInfo = classInfo as Record<string, {
   description: string
   mastering: string[]
@@ -38,7 +44,16 @@ const skillColumns = [
   skillColumnHelper.accessor('description', { header: 'Description' }),
 ]
 
+const dugonColumnHelper = createColumnHelper<Dugon>()
+
+const dugonColumns = [
+  dugonColumnHelper.accessor('name', { header: 'Name' }),
+  dugonColumnHelper.accessor('target', { header: 'Target' }),
+  dugonColumnHelper.accessor('meditation', { header: 'Meditation Location' }),
+]
+
 const classShardCache = new Map<string, { skills: SkillSpell[]; spells: SkillSpell[] }>()
+const dugonCache = new Map<string, Dugon[]>()
 
 async function loadClassShard(className: string): Promise<{ skills: SkillSpell[]; spells: SkillSpell[] }> {
   const cached = classShardCache.get(className)
@@ -53,6 +68,17 @@ async function loadClassShard(className: string): Promise<{ skills: SkillSpell[]
   return result
 }
 
+async function loadDugons(className: string): Promise<Dugon[]> {
+  const cached = dugonCache.get(className)
+  if (cached) return cached
+  const base = import.meta.env.BASE_URL + 'data/classes/' + className
+  const dugons = await fetch(base + '/dugons.json')
+    .then((r) => (r.ok ? (r.json() as Promise<Dugon[]>) : []))
+    .catch(() => [])
+  dugonCache.set(className, dugons)
+  return dugons
+}
+
 export function ClassDetail() {
   const { className } = useParams<{ className: string }>()
   const info = className ? typedClassInfo[className] : null
@@ -60,6 +86,7 @@ export function ClassDetail() {
   const initial = className ? classShardCache.get(className) : undefined
   const [skills, setSkills] = useState<SkillSpell[]>(initial?.skills ?? [])
   const [spells, setSpells] = useState<SkillSpell[]>(initial?.spells ?? [])
+  const [dugons, setDugons] = useState<Dugon[]>(className ? dugonCache.get(className) ?? [] : [])
 
   useEffect(() => {
     if (!className) return
@@ -72,13 +99,27 @@ export function ClassDetail() {
     return () => { alive = false }
   }, [className])
 
+  useEffect(() => {
+    if (className !== 'monk') {
+      setDugons([])
+      return
+    }
+    let alive = true
+    loadDugons(className).then((data) => {
+      if (!alive) return
+      setDugons(data)
+    })
+    return () => { alive = false }
+  }, [className])
+
   const tabs = useMemo(() => {
     const t: { id: string; label: string }[] = []
     if (info && info.statCaps.length > 0) t.push({ id: 'overview', label: 'Overview' })
     if (skills.length > 0) t.push({ id: 'skills', label: `Skills (${skills.length})` })
     if (spells.length > 0) t.push({ id: 'spells', label: `Spells (${spells.length})` })
+    if (className === 'monk' && dugons.length > 0) t.push({ id: 'dugons', label: `Dugons (${dugons.length})` })
     return t
-  }, [info, skills, spells])
+  }, [info, skills, spells, dugons, className])
 
   const [activeTab, setActiveTab] = useState(tabs[0]?.id ?? 'overview')
 
@@ -223,6 +264,17 @@ export function ClassDetail() {
             columns={skillColumns}
             searchPlaceholder={`Search ${displayName} spells...`}
             initialSorting={[{ id: 'levelRequirement', desc: false }]}
+          />
+        </section>
+      )}
+
+      {/* Dugons Tab */}
+      {activeTab === 'dugons' && dugons.length > 0 && (
+        <section>
+          <DataTable
+            data={dugons}
+            columns={dugonColumns}
+            searchPlaceholder="Search Dugons..."
           />
         </section>
       )}
