@@ -1,4 +1,4 @@
-area: Mythic Garden
+area: mythic_Garden
 description: The boss monster Caroline will spawn a waves of Bees at certain HP thresholds, followed by a single heal.
 mapImage: /images/mythicgarden.png
 subareas:
