@@ -1,4 +1,6 @@
+area: ''
 description: Mythic is an area comprised of 10 themed "mini" areas, each with their own leader. Each leader stands outside of their enemy's territory. You can make an alliance with up to 5 leaders, allowing those you've allied with to claim victory once you've completed their quest.
+mapImage: ''
 subareas: []
 leaders:
   - npc: Horse Leader
@@ -6,7 +8,7 @@ leaders:
     areaSlug: floppy_farms
     minimumLevel: 'Bunny 1: 9+, Bunny 2: 41+, Bunny 3: 71+'
   - npc: King Mantis
-    area: Garden
+    area: Mythic Garden
     areaSlug: ''
     minimumLevel: 'Bee 1: 14+, Bee 2: 46+, Bee 3: 76+'
   - npc: Bee Queen
