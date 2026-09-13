@@ -1,6 +1,6 @@
 area: Floppy Farms
 description: The boss monster Mr. Hopps will Teleport onto the player.  He does not cast spells, but will spawn waves of bunnies at certain HP thresholds.
-mapImage: /images/hunting/FloppyFarms.png
+mapImage: /images/FloppyFarms.png
 subareas:
   - area: Bunny 1
     minimumLevel: 9
