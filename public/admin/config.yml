@@ -133,7 +133,6 @@ collections:
           - { name: minimumLevel, label: Minimum Level, widget: number }
           - { name: mythicdrops, label: Boss Drops, required: false }
           - { name: mobs, label: Mobs, required: false }
-          - { name: drops, label: Loot, required: false }
       - name: leaders
         label: Leaders
         widget: list

@@ -33,7 +33,6 @@ interface Subarea {
   minimumLevel: number
   mythicdrops: string
   mobs: string
-  drops: string
 }
 
 interface AreaDetail {
@@ -68,7 +67,6 @@ const subareaColumns = [
   subareaColumnHelper.accessor('minimumLevel', { header: 'Minimum Level' }),
   subareaColumnHelper.accessor('mythicdrops', { header: 'Boss Drops' }),
   subareaColumnHelper.accessor('mobs', { header: 'Mobs' }),
-  subareaColumnHelper.accessor('drops', { header: 'Loot' }),
 ]
 
 const areaNames = areaNamesData as Record<string, string>
