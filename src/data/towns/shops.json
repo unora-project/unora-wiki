@@ -242,5 +242,76 @@
       { "name": "Small Mana Potion", "type": "Potion", "cost": "1,000"},
       { "name": "Passport", "type": "Utility", "cost": "15,000"}
     ]
+  },
+  {
+    "town": "piet",
+    "npc": "Jilt",
+    "items": [
+      { "name": "Blouse", "type": "F Armor", "cost": "100"},
+      { "name": "Scout Leather", "type": "M Armor", "cost": "500"},
+      { "name": "Dwarvish Leather", "type": "M Armor", "cost": "7,000"},
+      { "name": "Shirt", "type": "M Armor", "cost": "100"}
+    ]
+  },
+  {
+    "town":"piet",
+    "npc": "Leo",
+    "items": [
+      { "name": "Earth Belt", "type": "Belt", "cost": "2,500"},
+      { "name": "Gold Earrings", "type": "Earrings", "cost": "8,000"},
+      { "name": "Silver Earrings", "type": "Earrings", "cost": "8,000"},
+      { "name": "Cuirass", "type": "F Armor", "cost": "7,000"},
+      { "name": "Kasmanium Hauberk", "type": "F Armor", "cost": "25,000"},
+      { "name": "Kasmanium Armor", "type": "M Armor", "cost": "25,000" }
+    ]
+  },
+  {
+    "town":"piet",
+    "npc":"Gunnar",
+    "items": [
+      { "name": "Dirk", "type":"Dagger","cost":"200"},
+      {"name":"Eppe","type":"1H Weapon","cost":"600"},
+      {"name":"Saber","type":"1H Weapon","cost":"3,200"},
+      {"name":"Broad Sword","type":"1H Weapon","cost":"8,200"},
+      {"name":"Battle Sword","type":"1H Weapon","cost":"12,800"},
+      {"name":"Masquerade","type":"1H Weapon","cost":"15,400:"}
+    ]
+  },
+  {
+    "town":"piet",
+    "npc":"Mathis",
+    "items":[
+      {"name":"Empty Bottle","type":"Misc","cost":"100"},
+      {"name":"[Recipe] Hemloch","type":"Recipe","cost":"25,000"}
+    ]
+  },
+  {
+    "town":"piet",
+    "npc":"Lia",
+    "items":[
+      {"name":"Rum","type":"Drink","cost":"100"},
+      {"name":"Wine","type":"Drink","cost":"40"}
+    ]
+  },
+  {
+      "town": "piet",
+      "npc": "Alleen",
+      "items": [
+        { "name": "Cherry", "type": "Food", "cost": "500" },
+        { "name": "Chicken", "type": "Food", "cost": "100" },
+        { "name": "Grapes", "type": "Food", "cost": "500" },
+        { "name": "Vegetable", "type": "Food", "cost": "100" },
+        { "name": "Beef", "type": "Food", "cost": "100" }
+      ]
+  },
+  {
+    "town": "piet",
+    "npc": "Appie",
+    "items": [
+      { "name": "Small Health Potion", "type": "Potion", "cost": "1,000"},
+      { "name": "Small Mana Potion", "type": "Potion", "cost": "1,000"},
+      { "name": "Passport", "type": "Utility", "cost": "15,000"}
+    ]
   }
+
 ]
