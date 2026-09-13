@@ -145,28 +145,28 @@ export function HuntingArea() {
 
       {/* Maps */}
       {selectedMap ? (
-        <div className="mb-8">
+        <div className="mb-8 flex justify-center">
           <img src={selectedMap} alt={displayName} loading="lazy" decoding="async"
             className="max-w-full rounded-lg shadow-md" />
         </div>
       ) : mapVariants.length > 0 ? (
         <div className="mb-8 space-y-6">
-          {mapVariants.map((variant) => (
-            <section key={variant.src}>
-              {variant.label && (
-                <h2 className="mb-3 font-heading text-xl font-semibold text-gilt">
-                  {variant.label}
-                </h2>
-              )}
-              <OptimizedImage
-                src={variant.src}
-                alt={`${displayName}${variant.label ? ` - ${variant.label}` : ''}`}
-                className="max-w-full rounded-lg shadow-md"
-                onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }}
-              />
-            </section>
-          ))}
-        </div>
+  {mapVariants.map((variant) => (
+    <section key={variant.src} className="text-center">
+      {variant.label && (
+        <h2 className="mb-3 font-heading text-xl font-semibold text-gilt">
+          {variant.label}
+        </h2>
+      )}
+      <OptimizedImage
+        src={variant.src}
+        alt={`${displayName}${variant.label ? ` - ${variant.label}` : ''}`}
+        className="mx-auto max-w-full rounded-lg shadow-md"
+        onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }}
+      />
+    </section>
+  ))}
+</div>
       ) : (
         <div className="py-10 text-center text-parchment-500 dark:text-parchment-600">
           <p>No map available for this area yet.</p>
