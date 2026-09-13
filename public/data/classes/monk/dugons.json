@@ -1,42 +1,42 @@
 [
   {
     "name": "White Dugon",
-    "target": "Mileth Crypt 3+ / Bat",
+    "target": "[Mileth Crypt 3+](/hunting/mileth_crypt) / Bat",
     "meditation": "East Woodlands Crossroads 16,11"
   },
   {
     "name": "Green Dugon",
-    "target": "East Woodlands 4+ / Goblin Soldier",
+    "target": "[East Woodlands 4+](/hunting/east_woodlands) / Goblin Soldier",
     "meditation": "Astrid Entrance 6,5"
   },
   {
     "name": "Blue Dugon",
-    "target": "Mileth Crypt 8+ / Mimic",
+    "target": "[Mileth Crypt 8+](/hunting/mileth_crypt) / Mimic",
     "meditation": "Rucession Village Way 22,2"
   },
   {
     "name": "Yellow Dugon",
-    "target": "Piet Dungeon 3+ / Anemone",
+    "target": "[Piet Dungeon 3+](/hunting/piet_sewers) / Anemone",
     "meditation": "Shinewood Forest Entrance 22,16"
   },
   {
     "name": "Purple Dugon",
-    "target": "Piet Dungeon 6+ / Gog",
+    "target": "[Piet Dungeon 6+](/hunting/piet_sewers) / Gog",
     "meditation": "West Woodlands Crossroads 8,4"
   },
   {
     "name": "Brown Dugon",
-    "target": "Cthonic Remains 1+ / Larva",
+    "target": "[Cthonic Remains 1+](/hunting/cthonic_remains) / Larva",
     "meditation": "Road to House Macabre 1,15"
   },
   {
     "name": "Red Dugon",
-    "target": "Abel Dungeon 4+ / Spore",
+    "target": "[Abel Dungeon 4+](/hunting/abel_dungeon) / Spore",
     "meditation": "Eingren Manor Entrance 41,49"
   },
   {
     "name": "Black Dugon",
-    "target": "Cthonic Remains 5+ / Mummy",
+    "target": "[Cthonic Remains 5+](/hunting/cthonic_remains) / Mummy",
     "meditation": "Lynith Beach South 6,1"
   }
 ]

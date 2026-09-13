@@ -4,6 +4,7 @@ import { createColumnHelper } from '@tanstack/react-table'
 import { DataTable } from '@/components/tables/DataTable'
 import { PageHeader } from '@/components/ui/PageHeader'
 import classInfo from '@/data/metadata/classes.json'
+import { Link, useParams } from 'react-router'
 
 interface SkillSpell {
   name: string
@@ -48,7 +49,10 @@ const dugonColumnHelper = createColumnHelper<Dugon>()
 
 const dugonColumns = [
   dugonColumnHelper.accessor('name', { header: 'Name' }),
-  dugonColumnHelper.accessor('target', { header: 'Target' }),
+  dugonColumnHelper.accessor('target', {
+    header: 'Target',
+    cell: ({ getValue }) => renderTextWithLinks(getValue()),
+  }),
   dugonColumnHelper.accessor('meditation', { header: 'Meditation Location' }),
 ]
 
@@ -280,4 +284,53 @@ export function ClassDetail() {
       )}
     </div>
   )
+}
+
+function renderTextWithLinks(text: string) {
+  const linkPattern = /\[([^\]]+)\]\(([^)]+)\)/g
+  const parts: (string | JSX.Element)[] = []
+  let lastIndex = 0
+  let match: RegExpExecArray | null
+  let keyIndex = 0
+
+  while ((match = linkPattern.exec(text)) !== null) {
+    const [fullMatch, label, url] = match
+    if (match.index > lastIndex) {
+      parts.push(text.slice(lastIndex, match.index))
+    }
+
+    const isInternal = url.startsWith('/')
+    const currentKey = keyIndex
+    keyIndex += 1
+
+    parts.push(
+      isInternal ? (
+        <Link
+          key={currentKey}
+          to={url}
+          className="underline decoration-gilt/60 hover:decoration-gilt"
+        >
+          {label}
+        </Link>
+      ) : (
+        
+          key={currentKey}
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline decoration-gilt/60 hover:decoration-gilt"
+        >
+          {label}
+        </a>
+      )
+    )
+
+    lastIndex = match.index + fullMatch.length
+  }
+
+  if (lastIndex < text.length) {
+    parts.push(text.slice(lastIndex))
+  }
+
+  return parts
 }
