@@ -62,12 +62,12 @@ const shopItemColumns = [
 ]
 
 const subareaColumnHelper = createColumnHelper<Subarea>()
-const subareaColumns = [
+const baseSubareaColumns = [
   subareaColumnHelper.accessor('area', { header: 'Area' }),
   subareaColumnHelper.accessor('minimumLevel', { header: 'Minimum Level' }),
-  subareaColumnHelper.accessor('mythicdrops', { header: 'Boss Drops' }),
-  subareaColumnHelper.accessor('mobs', { header: 'Mobs' }),
 ]
+const bossDropsColumn = subareaColumnHelper.accessor('mythicdrops', { header: 'Boss Drops' })
+const mobsColumn = subareaColumnHelper.accessor('mobs', { header: 'Mobs' })
 
 const areaNames = areaNamesData as Record<string, string>
 const details = areasData as Record<string, AreaDetail>
@@ -97,6 +97,17 @@ export function HuntingArea() {
     () => (key && details[key]) || null,
     [key]
   )
+  const subareaColumns = useMemo(() => {
+    const subareas = areaDetail?.subareas ?? []
+    const hasBossDrops = subareas.some((s) => s.mythicdrops?.trim())
+    const hasMobs = subareas.some((s) => s.mobs?.trim())
+
+    return [
+      ...baseSubareaColumns,
+      ...(hasBossDrops ? [bossDropsColumn] : []),
+      ...(hasMobs ? [mobsColumn] : []),
+    ]
+  }, [areaDetail])
 
   if (!area || (subarea && (!linkedArea || !areaDetail))) {
     return (
