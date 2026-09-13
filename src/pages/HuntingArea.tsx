@@ -137,7 +137,7 @@ export function HuntingArea() {
       {/* Description */}
       {areaDetail?.description && (
         <p className="mb-6 text-parchment-700 dark:text-ivory/80">
-          {areaDetail.description}
+        {renderDescriptionWithLinks(areaDetail.description)}
         </p>
       )}
 
@@ -280,4 +280,50 @@ function getMapVariants(area: string): { src: string; label?: string }[] {
 
   // Default: single map
   return [{ src: `${import.meta.env.BASE_URL}images/hunting/${area}.png` }]
+}
+
+function renderDescriptionWithLinks(text: string) {
+  const linkPattern = /\[([^\]]+)\]\(([^)]+)\)/g
+  const parts: (string | JSX.Element)[] = []
+  let lastIndex = 0
+  let match: RegExpExecArray | null
+  let keyIndex = 0
+
+  while ((match = linkPattern.exec(text)) !== null) {
+    const [fullMatch, label, url] = match
+    if (match.index > lastIndex) {
+      parts.push(text.slice(lastIndex, match.index))
+    }
+
+    const isInternal = url.startsWith('/')
+    parts.push(
+      isInternal ? (
+        <Link
+          key={keyIndex++}
+          to={url}
+          className="underline decoration-gilt/60 hover:decoration-gilt"
+        >
+          {label}
+        </Link>
+      ) : (
+        
+          key={keyIndex++}
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline decoration-gilt/60 hover:decoration-gilt"
+        >
+          {label}
+        </a>
+      )
+    )
+
+    lastIndex = match.index + fullMatch.length
+  }
+
+  if (lastIndex < text.length) {
+    parts.push(text.slice(lastIndex))
+  }
+
+  return parts
 }
