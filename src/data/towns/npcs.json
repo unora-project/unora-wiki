@@ -94,5 +94,77 @@
     "name": "Urza",
     "type": "Class Armor / Dyes",
     "coordinates": "35,28"
+  },
+  {
+    "town": "abel",
+    "name": "Steinar",
+    "type": "Sells Armor",
+    "coordinates": "61,12"
+  },
+  {
+    "town": "abel",
+    "name": "Vidar",
+    "type": "Sells Weapons",
+    "coordinates": "55,18"
+  },
+  {
+    "town": "abel",
+    "name": "Runa",
+    "type": "Inn",
+    "coordinates": "59,39"
+  },
+  {
+    "town": "abel",
+    "name": "Bodil",
+    "type": "Skill Master",
+    "coordinates": "44,50"
+  },
+  {
+    "town": "abel",
+    "name": "Kamel",
+    "type": "Fish Supplies",
+    "coordinates": "27,46"
+  },
+  {
+    "town": "abel",
+    "name": "Aricin",
+    "type": "Guild Registrar",
+    "coordinates": "13,45"
+  },
+  {
+    "town": "abel",
+    "name": "Frida",
+    "type": "Bartender",
+    "coordinates": "13,45"
+  },
+  {
+    "town": "abel",
+    "name": "Aud",
+    "type": "Restaurant",
+    "coordinates": "7,51"
+  },
+  {
+    "town": "abel",
+    "name": "Hauk",
+    "type": "Null",
+    "coordinates": "12,32"
+  },
+  {
+    "town": "abel",
+    "name": "Lamont",
+    "type": "Bank",
+    "coordinates": "14,9"
+  },
+  {
+    "town": "abel",
+    "name": "Arnljot",
+    "type": "Sells Armor",
+    "coordinates": "24,9"
+  },
+  {
+    "town": "abel",
+    "name": "Egil",
+    "type": "Sells Potions",
+    "coordinates": "44,11"
   }
 ]

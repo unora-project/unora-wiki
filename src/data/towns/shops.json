@@ -182,5 +182,65 @@
       { "name": "Mask", "type": "Helm", "cost": "1,000" },
       { "name": "Shirt", "type": "M Armor", "cost": "100" }
     ]
+  },
+  {
+    "town": "abel",
+    "npc": "Arnljot",
+    "items": [
+      { "name": "Magi Skirt", "type": "F Armor", "cost": "1,000" },
+      { "name": "Corsette", "type": "F Armor", "cost": "25,000" },
+      { "name": "Blouse", "type": "F Armor", "cost": "100" },
+      { "name": "Paluten", "type": "M Armor", "cost": "25,000" },
+      { "name": "Shirt", "type": "M Armor", "cost": "100" }
+    ]
+  },
+  {
+      "town": "abel",
+      "npc": "Aud",
+      "items": [
+        { "name": "Cherry", "type": "Food", "cost": "500" },
+        { "name": "Chicken", "type": "Food", "cost": "100" },
+        { "name": "Grapes", "type": "Food", "cost": "500" },
+        { "name": "Vegetable", "type": "Food", "cost": "100" },
+        { "name": "Beef", "type": "Food", "cost": "100" }
+      ]
+  },
+  {
+    "town": "Abel",
+    "npc": "Kamel",
+    "items": [
+      { "name": "Basic Fishing Pole", "type": "Tool", "cost": "1,000" },
+      { "name": "Fishing Bait", "type": "Bait", "cost": "100" }
+    ]
+  },
+  {
+    "town": "Abel",
+    "npc": "Vidar",
+    "items": [
+      { "name": "Dirk", "type": "Dagger", "cost": "200" },
+      { "name": "Stick", "type": "1H Weapon", "cost": "200" },
+      { "name": "Eppe", "type": "1H Weapon", "cost": "1,000" },
+      { "name": "Saber", "type": "1H Weapon", "cost": "3,200" }
+    ]
+  },
+  {
+    "town": "Abel",
+    "npc": "Steinar",
+    "items": [
+      { "name": "Leather Belt", "type": "Belt", "cost": "500" },
+      { "name": "Brigandine", "type": "F Armor", "cost": "7,000" },
+      { "name": "Leather Gauntlet", "type": "Gauntlet", "cost": "1,000" },
+      { "name": "Leather Greaves", "type": "Greaves", "cost": "7,000" },
+      { "name": "Coral Ring", "type": "Ring", "cost": "2,500" }
+    ]
+  },
+  {
+    "town": "Abel",
+    "npc": "Egil",
+    "items": [
+      { "name": "Small Health Potion", "type": "Potion", "cost": "1,000"},
+      { "name": "Small Mana Potion", "type": "Potion", "cost": "1,000"},
+      { "name": "Passport", "type": "Utility", "cost": "15,000"}
+    ]
   }
 ]
