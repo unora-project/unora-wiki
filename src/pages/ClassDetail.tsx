@@ -46,8 +46,27 @@ const skillColumns = [
 
 const dugonColumnHelper = createColumnHelper<Dugon>()
 
+const dugonColorMap: Record<string, string> = {
+  White: 'text-parchment-800 dark:text-ivory',
+  Green: 'text-green-600 dark:text-green-400',
+  Blue: 'text-blue-600 dark:text-blue-400',
+  Yellow: 'text-yellow-600 dark:text-yellow-400',
+  Purple: 'text-purple-600 dark:text-purple-400',
+  Brown: 'text-amber-700 dark:text-amber-500',
+  Red: 'text-red-600 dark:text-red-400',
+  Black: 'text-parchment-900 dark:text-parchment-200',
+}
+
 const dugonColumns = [
-  dugonColumnHelper.accessor('name', { header: 'Name' }),
+  dugonColumnHelper.accessor('name', {
+    header: 'Name',
+    cell: ({ getValue }) => {
+      const name = getValue()
+      const colorKey = Object.keys(dugonColorMap).find((c) => name.startsWith(c))
+      const colorClass = colorKey ? dugonColorMap[colorKey] : ''
+      return <span className={`font-medium ${colorClass}`}>{name}</span>
+    },
+  }),
   dugonColumnHelper.accessor('target', {
     header: 'Target',
     cell: ({ getValue }) => renderTextWithLinks(getValue()),
