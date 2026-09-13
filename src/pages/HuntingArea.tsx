@@ -128,21 +128,6 @@ export function HuntingArea() {
         </p>
       )}
 
-      {/* Sub-areas */}
-      {areaDetail?.subareas && areaDetail.subareas.length > 0 && (
-        <section className="mb-8">
-          <h2 className="mb-4 font-heading text-2xl font-semibold text-gilt">
-            Sub-areas
-          </h2>
-          <DataTable
-            data={areaDetail.subareas}
-            columns={subareaColumns}
-            searchPlaceholder="Search sub-areas..."
-            initialSorting={[{ id: 'minimumLevel', desc: false }]}
-          />
-        </section>
-      )}
-
       {/* Maps */}
       {selectedMap ? (
         <div className="mb-8 flex justify-center">
@@ -171,6 +156,21 @@ export function HuntingArea() {
         <div className="py-10 text-center text-parchment-500 dark:text-parchment-600">
           <p>No map available for this area yet.</p>
         </div>
+      )}
+
+      {/* Sub-areas */}
+      {areaDetail?.subareas && areaDetail.subareas.length > 0 && (
+        <section className="mb-8">
+          <h2 className="mb-4 font-heading text-2xl font-semibold text-gilt">
+            Sub-areas
+          </h2>
+          <DataTable
+            data={areaDetail.subareas}
+            columns={subareaColumns}
+            searchPlaceholder="Search sub-areas..."
+            initialSorting={[{ id: 'minimumLevel', desc: false }]}
+          />
+        </section>
       )}
 
       {/* Leaders */}
