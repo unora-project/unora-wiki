@@ -206,7 +206,7 @@
       ]
   },
   {
-    "town": "Abel",
+    "town": "abel",
     "npc": "Kamel",
     "items": [
       { "name": "Basic Fishing Pole", "type": "Tool", "cost": "1,000" },
@@ -214,7 +214,7 @@
     ]
   },
   {
-    "town": "Abel",
+    "town": "abel",
     "npc": "Vidar",
     "items": [
       { "name": "Dirk", "type": "Dagger", "cost": "200" },
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "town": "Abel",
+    "town": "abel",
     "npc": "Steinar",
     "items": [
       { "name": "Leather Belt", "type": "Belt", "cost": "500" },
@@ -235,7 +235,7 @@
     ]
   },
   {
-    "town": "Abel",
+    "town": "abel",
     "npc": "Egil",
     "items": [
       { "name": "Small Health Potion", "type": "Potion", "cost": "1,000"},
