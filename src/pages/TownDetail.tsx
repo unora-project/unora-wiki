@@ -80,7 +80,7 @@ export function TownDetail() {
       />
 
       {/* Town Map */}
-      <section className="mb-8">
+      <section className="mb-8 flex justify-center">
         <OptimizedImage
           src={`${import.meta.env.BASE_URL}images/towns/${town}.png`}
           alt={`Map of ${displayName}`}
