@@ -314,7 +314,7 @@ function renderTextWithLinks(text: string) {
         </Link>
       ) : (
         
-          key={currentKey}
+          <a key={currentKey}
           href={url}
           target="_blank"
           rel="noopener noreferrer"
