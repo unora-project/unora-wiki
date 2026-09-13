@@ -4,7 +4,7 @@ import { CardGrid, type CardItem } from '@/components/ui/CardGrid'
 const thumbs = import.meta.env.BASE_URL + 'images/towns/thumbs/'
 
 const towns: CardItem[] = [
-  { title: 'Mileth', description: 'The starting town. Home to class trainers and Miraelis.', to: '/towns/mileth', image: `${thumbs}mileth.webp` },
+  { title: 'Mileth', description: 'The starting town. Home to class trainers and Miraelis.', to: '/towns/mileth', image: `${thumbs}mileth.avif` },
   { title: 'Abel', description: 'A coastal town with the fishing market and boat access.', to: '/towns/abel', image: `${thumbs}abel.webp` },
   { title: 'Piet', description: 'Home to the Alchemy lab and Skandara\'s temple.', to: '/towns/piet', image: `${thumbs}piet.webp` },
   { title: 'Loures', description: 'A grand city with connections to various areas.', to: '/towns/loures', image: `${thumbs}loures.webp` },
