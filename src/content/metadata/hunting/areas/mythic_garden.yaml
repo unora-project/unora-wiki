@@ -4,10 +4,10 @@ mapImage: /images/mythicgarden.png
 subareas:
   - area: Bee 1
     minimumLevel: 14
-    mythicdrops: ● Royal Silver Ring
+    mythicdrops: ● Mythril Earrings | ● Royal Gold Ring | ● Royal Silver Ring
   - area: Bee 2
     minimumLevel: 46
-    mythicdrops: ''
+    mythicdrops: ● Royal Gold Ring | ● Sonor Ring
   - area: Bee 3
     minimumLevel: 76
     mythicdrops: ● Flour | ● Grace Boots | ● Grand Ruby Ring | ● Might Earrings | ● Strap Gauntlet
