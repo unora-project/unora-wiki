@@ -1,10 +1,9 @@
-import { useParams } from 'react-router'
+import { Link, useParams } from 'react-router'
 import { useState, useMemo, useEffect } from 'react'
 import { createColumnHelper } from '@tanstack/react-table'
 import { DataTable } from '@/components/tables/DataTable'
 import { PageHeader } from '@/components/ui/PageHeader'
 import classInfo from '@/data/metadata/classes.json'
-import { Link, useParams } from 'react-router'
 
 interface SkillSpell {
   name: string
