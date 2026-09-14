@@ -130,8 +130,23 @@ const blessings = buildFolderArray('blessings')
 if (blessings.length) writeJson(join(DATA_OUT_ROOT, 'religion', 'blessings.json'), blessings)
 
 console.log('  NPCs...')
-const npcs = buildFolderArray('npcs')
+const npcsRaw = buildFolderArray('npcs') as {
+  town?: string
+  name?: string
+  type?: string
+  coordinates?: string
+  shop?: { name: string; type: string; cost: string }[]
+}[]
+
+// Strip the `shop` field out of the public NPC list — that table doesn't need it
+const npcs = npcsRaw.map(({ shop, ...rest }) => rest)
 if (npcs.length) writeJson(join(DATA_OUT_ROOT, 'towns', 'npcs.json'), npcs)
+
+// Derive shops.json from any NPC that has shop items
+const shops = npcsRaw
+  .filter((n) => n.shop && n.shop.length > 0)
+  .map((n) => ({ town: n.town, npc: n.name, items: n.shop }))
+if (shops.length) writeJson(join(DATA_OUT_ROOT, 'towns', 'shops.json'), shops)
 
 console.log('  Mounts...')
 const mounts = buildFolderArray('mounts')

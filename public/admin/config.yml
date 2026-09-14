@@ -310,6 +310,15 @@ collections:
       - { name: name, label: Name, widget: string }
       - { name: type, label: Type/Role, widget: string }
       - { name: coordinates, label: Coordinates, widget: string }
+      - name: shop
+        label: Shop Inventory
+        widget: list
+        required: false
+        hint: "Only fill this in if this NPC sells items."
+        fields:
+          - { name: name, label: Item Name, widget: string }
+          - { name: type, label: Type, widget: string }
+          - { name: cost, label: Cost (Gold), widget: string }
 
   - name: mounts
     label: Mounts

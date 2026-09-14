@@ -4,6 +4,7 @@ import { createColumnHelper } from '@tanstack/react-table'
 import { DataTable } from '@/components/tables/DataTable'
 import { PageHeader } from '@/components/ui/PageHeader'
 import { OptimizedImage } from '@/components/ui/OptimizedImage'
+// Generated at build time from src/content/data/npcs/*.yaml — do not edit directly
 import npcsData from '@/data/towns/npcs.json'
 import shopsData from '@/data/towns/shops.json'
 import { ChevronRight } from 'lucide-react'
