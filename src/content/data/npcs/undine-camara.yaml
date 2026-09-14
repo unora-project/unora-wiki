@@ -1,0 +1,20 @@
+town: undine
+name: Camara
+type: Restaurant
+coordinates: 12,84
+shop:
+  - name: Cherry
+    type: Food
+    cost: '500'
+  - name: Chicken
+    type: Food
+    cost: '100'
+  - name: Grapes
+    type: Food
+    cost: '500'
+  - name: Vegetable
+    type: Food
+    cost: '100'
+  - name: Beef
+    type: Food
+    cost: '100'
