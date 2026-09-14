@@ -7,10 +7,10 @@ shop:
     type: Belt
     cost: 2,500
   - name: Leather Bracer
-    type: Bracer
+    type: Gauntlet
     cost: 1,500
   - name: Iron Bracer
-    type: Bracer
+    type: Gauntlet
     cost: 10,000
   - name: Cotehardie
     type: F Armor
@@ -37,11 +37,11 @@ shop:
     type: M Armor
     cost: 25,000
   - name: Sea Necklace
-    type: Necklaces
+    type: Necklace
     cost: 2,500
   - name: Jade Ring
-    type: Rings
+    type: Ring
     cost: 25,000
   - name: Mythril Shield
-    type: Shields
+    type: Shield
     cost: 40,000
