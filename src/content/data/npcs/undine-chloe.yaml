@@ -1,0 +1,11 @@
+town: undine
+name: Chloe
+type: Bartender
+coordinates: 19,77
+shop:
+  - name: Rum
+    type: Drink
+    cost: '100'
+  - name: Wine
+    type: Drink
+    cost: '40'
