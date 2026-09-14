@@ -307,6 +307,7 @@ collections:
     slug: "{{town}}-{{name}}"
     fields:
       - { name: town, label: Town, widget: string }
+        hint: "Town must be all lower-case letters"
       - { name: name, label: Name, widget: string }
       - { name: type, label: Type/Role, widget: string }
       - { name: coordinates, label: Coordinates, widget: string }
