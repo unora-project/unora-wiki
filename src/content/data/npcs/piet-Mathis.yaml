@@ -1,4 +1,11 @@
-town: "piet"
-name: "Mathis"
-type: "Alchemy Teacher"
-coordinates: "18,35"
+town: piet
+name: Mathis
+type: Alchemy Teacher
+coordinates: 18,35
+shop:
+  - name: Empty Bottle
+    type: Misc
+    cost: '100'
+  - name: '[Recipe] Hemloch'
+    type: Recipe
+    cost: 25,000

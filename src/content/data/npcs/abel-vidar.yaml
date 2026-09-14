@@ -1,4 +1,17 @@
-"town": "abel"
-"name": "Vidar"
-"type": "Sells Weapons"
-"coordinates": "55,18"
+town: abel
+name: Vidar
+type: Sells Weapons
+coordinates: 55,18
+shop:
+  - name: Dirk
+    type: Dagger
+    cost: '200'
+  - name: Stick
+    type: 1H Weapon
+    cost: '200'
+  - name: Eppe
+    type: 1H Weapon
+    cost: 1,000
+  - name: Saber
+    type: 1H Weapon
+    cost: 3,200

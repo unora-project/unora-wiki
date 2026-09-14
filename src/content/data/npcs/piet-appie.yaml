@@ -1,4 +1,14 @@
-town: "piet"
-name: "Appie"
-type: "Magic Shop"
-coordinates: "44,50"
+town: piet
+name: Appie
+type: Magic Shop
+coordinates: 44,50
+shop:
+  - name: Small Health Potion
+    type: Potion
+    cost: 1,000
+  - name: Small Mana Potion
+    type: Potion
+    cost: 1,000
+  - name: Passport
+    type: Utility
+    cost: 15,000

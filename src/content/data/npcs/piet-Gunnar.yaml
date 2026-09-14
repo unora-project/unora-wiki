@@ -1,4 +1,23 @@
-town: "piet"
-name: "Gunnar"
-type: "Sells Weapons"
-coordinates: "49,29"
+town: piet
+name: Gunnar
+type: Sells Weapons
+coordinates: 49,29
+shop:
+  - name: Dirk
+    type: Dagger
+    cost: '200'
+  - name: Eppe
+    type: 1H Weapon
+    cost: '600'
+  - name: Saber
+    type: 1H Weapon
+    cost: 3,200
+  - name: Broad Sword
+    type: 1H Weapon
+    cost: 8,200
+  - name: Battle Sword
+    type: 1H Weapon
+    cost: 12,800
+  - name: Masquerade
+    type: 1H Weapon
+    cost: '15,400:'

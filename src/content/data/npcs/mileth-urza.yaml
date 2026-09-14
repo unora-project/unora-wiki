@@ -1,4 +1,26 @@
-town: "mileth"
-name: "Urza"
-type: "Class Armor / Dyes"
-coordinates: "35,28"
+town: mileth
+name: Urza
+type: Class Armor / Dyes
+coordinates: 35,28
+shop:
+  - name: Blouse
+    type: F Armor
+    cost: '100'
+  - name: Cowl
+    type: M Armor
+    cost: 1,000
+  - name: Gorget Gown
+    type: F Armor
+    cost: 1,000
+  - name: Leather Bliaut
+    type: F Armor
+    cost: 1,000
+  - name: Leather Tunic
+    type: M Armor
+    cost: 1,000
+  - name: Mask
+    type: Helm
+    cost: 1,000
+  - name: Shirt
+    type: M Armor
+    cost: '100'

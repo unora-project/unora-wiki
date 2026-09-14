@@ -1,4 +1,8 @@
-town: "mileth"
-name: "Nisk"
-type: "Skill Master"
-coordinates: "6,11"
+town: mileth
+name: Nisk
+type: Skill Master
+coordinates: 6,11
+shop:
+  - name: Lockpicks
+    type: Tool
+    cost: 1,000

@@ -1,4 +1,23 @@
-town: "piet"
-name: "Leo"
-type: "Sells Armor"
-coordinates: "56,22"
+town: piet
+name: Leo
+type: Sells Armor
+coordinates: 56,22
+shop:
+  - name: Earth Belt
+    type: Belt
+    cost: 2,500
+  - name: Gold Earrings
+    type: Earrings
+    cost: 8,000
+  - name: Silver Earrings
+    type: Earrings
+    cost: 8,000
+  - name: Cuirass
+    type: F Armor
+    cost: 7,000
+  - name: Kasmanium Hauberk
+    type: F Armor
+    cost: 25,000
+  - name: Kasmanium Armor
+    type: M Armor
+    cost: 25,000

@@ -1,4 +1,20 @@
-town: "piet"
-name: "Alleen"
-type: "Restaurant"
-coordinates: "11,50"
+town: piet
+name: Alleen
+type: Restaurant
+coordinates: 11,50
+shop:
+  - name: Cherry
+    type: Food
+    cost: '500'
+  - name: Chicken
+    type: Food
+    cost: '100'
+  - name: Grapes
+    type: Food
+    cost: '500'
+  - name: Vegetable
+    type: Food
+    cost: '100'
+  - name: Beef
+    type: Food
+    cost: '100'

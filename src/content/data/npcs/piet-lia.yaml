@@ -1,4 +1,11 @@
-town: "piet"
-name: "Lia"
-type: "Bartender"
-coordinates: "18,43"
+town: piet
+name: Lia
+type: Bartender
+coordinates: 18,43
+shop:
+  - name: Rum
+    type: Drink
+    cost: '100'
+  - name: Wine
+    type: Drink
+    cost: '40'

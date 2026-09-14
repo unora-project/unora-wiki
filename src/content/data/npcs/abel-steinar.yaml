@@ -1,4 +1,20 @@
-"town": "abel"
-"name": "Steinar"
-"type": "Sells Armor"
-"coordinates": "61,12"
+town: abel
+name: Steinar
+type: Sells Armor
+coordinates: 61,12
+shop:
+  - name: Leather Belt
+    type: Belt
+    cost: '500'
+  - name: Brigandine
+    type: F Armor
+    cost: 7,000
+  - name: Leather Gauntlet
+    type: Gauntlet
+    cost: 1,000
+  - name: Leather Greaves
+    type: Greaves
+    cost: 7,000
+  - name: Coral Ring
+    type: Ring
+    cost: 2,500

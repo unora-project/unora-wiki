@@ -1,4 +1,17 @@
-town: "piet"
-name: "Jilt"
-type: "Bank/Sells Armor"
-coordinates: "51,14"
+town: piet
+name: Jilt
+type: Bank/Sells Armor
+coordinates: 51,14
+shop:
+  - name: Blouse
+    type: F Armor
+    cost: '100'
+  - name: Scout Leather
+    type: M Armor
+    cost: '500'
+  - name: Dwarvish Leather
+    type: M Armor
+    cost: 7,000
+  - name: Shirt
+    type: M Armor
+    cost: '100'

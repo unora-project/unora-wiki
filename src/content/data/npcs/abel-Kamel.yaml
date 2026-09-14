@@ -1,4 +1,11 @@
-"town": "abel"
-"name": "Kamel"
-"type": "Fish Supplies"
-"coordinates": "27,46"
+town: abel
+name: Kamel
+type: Fish Supplies
+coordinates: 27,46
+shop:
+  - name: Basic Fishing Pole
+    type: Tool
+    cost: 1,000
+  - name: Fishing Bait
+    type: Bait
+    cost: '100'

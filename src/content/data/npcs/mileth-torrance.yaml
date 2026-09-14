@@ -1,4 +1,56 @@
-town: "mileth"
-name: "Torrance"
-type: "Sells Armor"
-coordinates: "11,31"
+town: mileth
+name: Torrance
+type: Sells Armor
+coordinates: 11,31
+shop:
+  - name: Boots
+    type: Boots
+    cost: '100'
+  - name: Bronze Shield
+    type: Shield
+    cost: 16,000
+  - name: Coral Ring
+    type: Ring
+    cost: 2,500
+  - name: Emerald Ring
+    type: Ring
+    cost: 6,000
+  - name: Fire Belt
+    type: Belt
+    cost: 2,500
+  - name: Fire Necklace
+    type: Necklace
+    cost: 2,500
+  - name: Green Boots
+    type: Boots
+    cost: 12,000
+  - name: Grey Boots
+    type: Boots
+    cost: 1,000
+  - name: Iron Gauntlet
+    type: Gauntlet
+    cost: 8,000
+  - name: Iron Greaves
+    type: Greaves
+    cost: 9,000
+  - name: Iron Shield
+    type: Shield
+    cost: 24,000
+  - name: Leather Belt
+    type: Belt
+    cost: '500'
+  - name: Leather Gauntlet
+    type: Gauntlet
+    cost: 1,000
+  - name: Leather Greaves
+    type: Greaves
+    cost: 7,000
+  - name: Leather Shield
+    type: Shield
+    cost: 5,000
+  - name: Ruby Ring
+    type: Ring
+    cost: 1,000
+  - name: Wooden Shield
+    type: Shield
+    cost: '500'

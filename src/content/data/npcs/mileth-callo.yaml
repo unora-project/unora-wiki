@@ -1,4 +1,35 @@
-town: "mileth"
-name: "Callo"
-type: "Sells Weapons"
-coordinates: "5,38"
+town: mileth
+name: Callo
+type: Sells Weapons
+coordinates: 5,38
+shop:
+  - name: Claidheamh
+    type: 1H Weapon
+    cost: 5,000
+  - name: Dirk
+    type: 1H Weapon
+    cost: '500'
+  - name: Dull Claw
+    type: Claw
+    cost: '800'
+  - name: Eppe
+    type: 1H Weapon
+    cost: 1,000
+  - name: Holy Hermes
+    type: Staff
+    cost: 3,000
+  - name: Saber
+    type: 1H Weapon
+    cost: 2,000
+  - name: Snow Dagger
+    type: Dagger
+    cost: '800'
+  - name: Snow Secret
+    type: Secret
+    cost: '600'
+  - name: Stick
+    type: 1H Weapon
+    cost: '100'
+  - name: Wolf Claw
+    type: Claw
+    cost: 10,000

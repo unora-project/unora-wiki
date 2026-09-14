@@ -1,4 +1,20 @@
-"town": "abel"
-"name": "Arnljot"
-"type": "Sells Armor"
-"coordinates": "24,9"
+town: abel
+name: Arnljot
+type: Sells Armor
+coordinates: 24,9
+shop:
+  - name: Magi Skirt
+    type: F Armor
+    cost: 1,000
+  - name: Corsette
+    type: F Armor
+    cost: 25,000
+  - name: Blouse
+    type: F Armor
+    cost: '100'
+  - name: Paluten
+    type: M Armor
+    cost: 25,000
+  - name: Shirt
+    type: M Armor
+    cost: '100'

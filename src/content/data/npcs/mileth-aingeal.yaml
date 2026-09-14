@@ -1,4 +1,11 @@
-town: "mileth"
-name: "Aingeal"
-type: "Bartender"
-coordinates: "42,5"
+town: mileth
+name: Aingeal
+type: Bartender
+coordinates: 42,5
+shop:
+  - name: Rum
+    type: Drink
+    cost: '100'
+  - name: Wine
+    type: Drink
+    cost: '40'
