@@ -306,8 +306,7 @@ collections:
     format: yaml
     slug: "{{town}}-{{name}}"
     fields:
-      - { name: town, label: Town, widget: string }
-        hint: "Town must be all lower-case letters"
+      - { name: town, label: Town (lower case letters), widget: string }
       - { name: name, label: Name, widget: string }
       - { name: type, label: Type/Role, widget: string }
       - { name: coordinates, label: Coordinates, widget: string }
