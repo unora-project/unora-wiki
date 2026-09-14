@@ -1,0 +1,23 @@
+town: Undine
+name: Hali
+type: Sells Armor
+coordinates: 13,32
+shop:
+  - name: Earth Bodice
+    type: F Armor
+    cost: 1,000
+  - name: Lotus Bodice
+    type: F Armor
+    cost: 7,000
+  - name: Blouse
+    type: F Armor
+    cost: '100'
+  - name: Dobok
+    type: M Armor
+    cost: 1,000
+  - name: Culotte
+    type: M Armor
+    cost: 7,000
+  - name: Shirt
+    type: M Armor
+    cost: '100'
