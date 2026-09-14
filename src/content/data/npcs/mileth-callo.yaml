@@ -7,7 +7,7 @@ shop:
     type: 1H Weapon
     cost: 5,000
   - name: Dirk
-    type: 1H Weapon
+    type: Dagger
     cost: '500'
   - name: Dull Claw
     type: Claw
