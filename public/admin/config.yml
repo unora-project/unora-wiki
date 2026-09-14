@@ -306,7 +306,7 @@ collections:
     format: yaml
     slug: "{{town}}-{{name}}"
     fields:
-      - { name: town, label: Town (lower case letters), widget: string }
+      - { name: town, label: Town, widget: string }
       - { name: name, label: Name, widget: string }
       - { name: type, label: Type/Role, widget: string }
       - { name: coordinates, label: Coordinates, widget: string }
@@ -317,7 +317,39 @@ collections:
         hint: "Only fill this in if this NPC sells items."
         fields:
           - { name: name, label: Item Name, widget: string }
-          - { name: type, label: Type, widget: string }
+          - name: type
+            label: Type
+            widget: select
+            options:
+              - "1H Weapon"
+              - "2H Weapon"
+              - "Dagger"
+              - "Claw"
+              - "Staff"
+              - "Secret"
+              - "Shield"
+              - "M Armor"
+              - "F Armor"
+              - "Helm"
+              - "Boots"
+              - "Belt"
+              - "Ring"
+              - "Necklace"
+              - "Earrings"
+              - "Gauntlet"
+              - "Greaves"
+              - "Dye"
+              - "Body Color"
+              - "Face Shape"
+              - "Hair"
+              - "Food"
+              - "Drink"
+              - "Potion"
+              - "Bait"
+              - "Tool"
+              - "Recipe"
+              - "Utility"
+              - "Misc"
           - { name: cost, label: Cost (Gold), widget: string }
 
   - name: mounts
