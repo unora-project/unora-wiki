@@ -145,6 +145,12 @@ export function ClassDetail() {
 
   const [activeTab, setActiveTab] = useState(tabs[0]?.id ?? 'overview')
 
+useEffect(() => {
+  if (!tabs.some((t) => t.id === activeTab)) {
+    setActiveTab(tabs[0]?.id ?? 'overview')
+  }
+}, [tabs, activeTab])
+
   if (!info || !className) {
     return (
       <div className="py-20 text-center">
