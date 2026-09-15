@@ -293,11 +293,11 @@ export function ClassDetail() {
       {/* Dugons Tab */}
       {activeTab === 'dugons' && dugons.length > 0 && (
         <section>
-          <p className="mb-4 text-center text-sm text-parchment-600 dark:text-parchment-400">
-      Dugons are an important part of the Monk class!  Start by heading to Sapphire Streams and speaking to Sabonim!
-
-      When you're ready say "Sabonim, Please teach me the -color- dugon."  (ie. Sabonim, Please teach me the White dugon.)
-
+          <p className="mb-4 text-center text-base text-parchment-600 dark:text-parchment-400">
+      Dugons are an important part of the Monk class! Start by heading to Sapphire Streams and speaking to Sabonim!
+      <br /><br />
+      When you're ready say "Sabonim, Please teach me the -color- dugon." (ie. Sabonim, Please teach me the White dugon.)
+      <br /><br />
       After meditating (which can take a bit of time), return to Sabonim and say "Sabonim, I understand the -color- dugon." (ie. Sabonim, I understand the White dugon.)
     </p>
           <DataTable

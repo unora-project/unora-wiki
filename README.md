@@ -32,7 +32,7 @@ You don't need to know code or Git to contribute. All content can be edited thro
 | **Hunting Grounds Config** | Area list, tier settings, chart data |
 | **Bosses** | Boss names, levels, locations, drops |
 | **Blessings** | Divine blessings with costs and effects |
-| **NPCs** | Town NPCs with roles and coordinates |
+| **NPCs** | Town NPCs with roles and coordinates - as well as shops |
 | **Mounts / Cloaks** | Mount and cloak entries |
 | **Skills / Spells** | Class skills and spells |
 | **Lookup Tables** | Town names, area names, map variants |
