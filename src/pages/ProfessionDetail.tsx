@@ -12,6 +12,8 @@ import professionsMetadata from '@/data/metadata/professions.json'
 
 const iconMap: Record<string, LucideIcon> = { MapPin, Hammer, PackageOpen, Lightbulb }
 
+const RANK_ORDER = ['Beginner', 'Basic', 'Initiate', 'Artisan', 'Adept', 'Advanced', 'Expert']
+
 // Map dataFile key -> dynamic import. Only the files needed by the active
 // profession are fetched; unused ones stay out of the JS graph for this route.
 const dataFileLoaders: Record<string, () => Promise<Record<string, unknown>[]>> = {
@@ -142,9 +144,31 @@ export function ProfessionDetail() {
 }
 
 function GenericTable({ data, searchPlaceholder }: { data: Record<string, unknown>[]; searchPlaceholder: string }) {
+  const hasRank = data.length > 0 && 'Rank' in data[0]
+
+  const rankTabs = useMemo(() => {
+    if (!hasRank) return []
+    const present = new Set(data.map((row) => String(row.Rank)))
+    const ordered = RANK_ORDER.filter((r) => present.has(r))
+    return ['All', ...ordered]
+  }, [data, hasRank])
+
+  const [activeRank, setActiveRank] = useState('All')
+
+  useEffect(() => {
+    if (!rankTabs.includes(activeRank)) {
+      setActiveRank('All')
+    }
+  }, [rankTabs, activeRank])
+
+  const filteredData = useMemo(() => {
+    if (!hasRank || activeRank === 'All') return data
+    return data.filter((row) => row.Rank === activeRank)
+  }, [data, hasRank, activeRank])
+
   const columns = useMemo(() => {
-    if (data.length === 0) return []
-    const keys = Object.keys(data[0])
+    if (filteredData.length === 0) return []
+    const keys = Object.keys(filteredData[0]).filter((k) => k !== 'Rank')
     const colHelper = createColumnHelper<Record<string, unknown>>()
     return keys.map((key) =>
       colHelper.accessor((row) => row[key], {
@@ -155,11 +179,35 @@ function GenericTable({ data, searchPlaceholder }: { data: Record<string, unknow
         ),
       })
     )
-  }, [data])
+  }, [filteredData])
 
   if (data.length === 0) {
     return <p className="text-parchment-500 dark:text-parchment-600">No data available.</p>
   }
 
-  return <DataTable data={data} columns={columns} searchPlaceholder={searchPlaceholder} />
+  return (
+    <div>
+      {hasRank && rankTabs.length > 1 && (
+        <div className="mb-4 flex flex-wrap gap-1 border-b border-parchment-300 dark:border-ash/20">
+          {rankTabs.map((rank) => (
+            <button
+              key={rank}
+              onClick={() => setActiveRank(rank)}
+              className={`relative px-3 py-2 font-ui text-sm font-medium transition-colors ${
+                activeRank === rank
+                  ? 'text-gilt'
+                  : 'text-ash hover:text-parchment-800 dark:hover:text-ivory'
+              }`}
+            >
+              {rank}
+              {activeRank === rank && (
+                <span className="absolute inset-x-0 -bottom-px h-0.5 bg-gilt" />
+              )}
+            </button>
+          ))}
+        </div>
+      )}
+      <DataTable data={filteredData} columns={columns} searchPlaceholder={searchPlaceholder} />
+    </div>
+  )
 }
