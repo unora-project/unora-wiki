@@ -167,19 +167,21 @@ function GenericTable({ data, searchPlaceholder }: { data: Record<string, unknow
   }, [data, hasRank, activeRank])
 
   const columns = useMemo(() => {
-    if (filteredData.length === 0) return []
-    const keys = Object.keys(filteredData[0]).filter((k) => k !== 'Rank')
-    const colHelper = createColumnHelper<Record<string, unknown>>()
-    return keys.map((key) =>
-      colHelper.accessor((row) => row[key], {
-        id: key,
-        header: key,
-        cell: (info) => (
-          <span className="whitespace-pre-line">{String(info.getValue() ?? '-')}</span>
-        ),
-      })
-    )
-  }, [filteredData])
+  if (filteredData.length === 0) return []
+  const keys = Object.keys(filteredData[0]).filter(
+    (k) => !(k === 'Rank' && activeRank !== 'All')
+  )
+  const colHelper = createColumnHelper<Record<string, unknown>>()
+  return keys.map((key) =>
+    colHelper.accessor((row) => row[key], {
+      id: key,
+      header: key,
+      cell: (info) => (
+        <span className="whitespace-pre-line">{String(info.getValue() ?? '-')}</span>
+      ),
+    })
+  )
+}, [filteredData, activeRank])
 
   if (data.length === 0) {
     return <p className="text-parchment-500 dark:text-parchment-600">No data available.</p>
