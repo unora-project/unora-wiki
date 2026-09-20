@@ -52,13 +52,6 @@ interface Shop {
   items: ShopItem[]
 }
 
-const columnHelper = createColumnHelper<NPC>()
-const columns = [
-  columnHelper.accessor('name', { header: 'Name' }),
-  columnHelper.accessor('type', { header: 'Type' }),
-  columnHelper.accessor('coordinates', { header: 'Coordinates' }),
-]
-
 const shopColumnHelper = createColumnHelper<ShopItem>()
 const shopColumns = [
   shopColumnHelper.accessor('name', { header: 'Name' }),
