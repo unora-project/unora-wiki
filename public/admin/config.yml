@@ -341,6 +341,7 @@ collections:
           - "Fish Supplies"
           - "Guild Registrar"
           - "Sells Potions"
+          - "Misc"
       - { name: coordinates, label: Coordinates, widget: string }
       - name: shop
         label: Shop Inventory
