@@ -1,0 +1,17 @@
+town: suomi
+name: Viveka
+type: Bartender
+coordinates: 82,15
+shop:
+  - name: Brandy
+    type: Drink
+    cost: '40'
+  - name: Rum
+    type: Drink
+    cost: '100'
+  - name: Wine
+    type: Drink
+    cost: '40'
+quest:
+  name: Suomi Tavern
+  path: /quests/side/suomi_tavern
