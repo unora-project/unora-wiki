@@ -1,4 +1,6 @@
-"town": "abel"
-"name": "Hauk"
-"type": "Null"
-"coordinates": "12,32"
+town: abel
+name: Hauk
+type: Misc
+coordinates: 12,32
+shop: []
+quest: null
