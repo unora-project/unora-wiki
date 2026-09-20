@@ -1,4 +1,8 @@
-"town": "abel"
-"name": "Runa"
-"type": "Inn"
-"coordinates": "59,39"
+town: abel
+name: Runa
+type: Inn
+coordinates: 59,39
+shop: []
+quest:
+  name: Decorating the Inn
+  path: /quests/side/decorating_the_inn
