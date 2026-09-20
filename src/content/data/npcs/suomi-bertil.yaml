@@ -1,0 +1,8 @@
+town: suomi
+name: Bertil
+type: White Magic Master
+coordinates: 16,86
+shop: []
+quest:
+  name: Red Potion
+  path: /quests/side/red_potion
