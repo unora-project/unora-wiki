@@ -1,6 +1,6 @@
 town: mileth
 name: Skarn
-type: Mileth Crypt Quest Giver
+type: Quest Giver
 coordinates: 58,25
 shop: []
 quest:
