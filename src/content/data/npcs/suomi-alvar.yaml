@@ -1,0 +1,9 @@
+town: suomi
+name: Alvar
+type: Misc
+coordinates: 62,41
+shop:
+  - name: Grapes
+    type: Food
+    cost: '500'
+quest: null
