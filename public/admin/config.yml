@@ -297,7 +297,7 @@ collections:
       - { name: cost, label: Cost, widget: string }
       - { name: description, label: Description, widget: text }
 
-    - name: npcs
+  - name: npcs
     label: NPCs
     label_singular: NPC
     folder: src/content/data/npcs
