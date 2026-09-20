@@ -1,4 +1,8 @@
-town: "mileth"
-name: "Berteli"
-type: "White Magic Master"
-coordinates: "10,53"
+town: mileth
+name: Berteli
+type: White Magic Master
+coordinates: 10,53
+shop: []
+quest:
+  name: Holy Research
+  path: /quests/circle_1/holy_research
