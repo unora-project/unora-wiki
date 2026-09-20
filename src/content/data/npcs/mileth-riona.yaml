@@ -1,4 +1,8 @@
-town: "mileth"
-name: "Riona"
-type: "Inn"
-coordinates: "19,13"
+town: mileth
+name: Riona
+type: Inn
+coordinates: 19,13
+shop: []
+quest:
+  name: Tutorial
+  path: /quests/circle_1/tutorial
