@@ -342,6 +342,7 @@ collections:
           - "Guild Registrar"
           - "Sells Potions"
           - "Misc"
+          - "Forage Supplies"
       - { name: coordinates, label: Coordinates, widget: string }
       - name: shop
         label: Shop Inventory
