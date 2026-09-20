@@ -1,0 +1,12 @@
+town: suomi
+name: Goran
+type: Forage Supplies
+coordinates: 16,72
+shop:
+  - name: Cherry
+    type: Food
+    cost: '500'
+  - name: Cloth Glove
+    type: Tool
+    cost: 50,000
+quest: null
