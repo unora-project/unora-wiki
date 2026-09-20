@@ -306,10 +306,42 @@ collections:
     format: yaml
     slug: "{{town}}-{{name}}"
     fields:
-      - { name: town, label: Town, widget: string }
-      - { name: name, label: Name, widget: string }
-      - { name: type, label: Type/Role, widget: string }
-      - { name: coordinates, label: Coordinates, widget: string }
+      - name: town
+    label: Town
+    widget: select
+    options:
+    - "mileth"
+    - "abel"
+    - "piet"
+    - "loures"
+    - "undine"
+    - "suomi"
+    - "rucesion"
+    - "tagor"
+    - { name: name, label: Name, widget: string }
+      - name: type
+        label: Type/Role
+        widget: select
+        options:
+          - "Bartender"
+          - "White Magic Master"
+          - "Sells Weapons"
+          - "Bank"
+          - "Dark Magic Master"
+          - "Combat Master"
+          - "Cooking Trainer"
+          - "Hair Stylist"
+          - "Church (Marriage/Divorce)"
+          - "Skill Master"
+          - "Restaurant"
+          - "Inn"
+          - "Quest Giver"
+          - "Sells Armor"
+          - "Class Armor / Dyes"
+          - "Fish Supplies"
+          - "Guild Registrar"
+          - "Sells Potions"
+    - { name: coordinates, label: Coordinates, widget: string }
       - name: shop
         label: Shop Inventory
         widget: list
@@ -351,6 +383,14 @@ collections:
               - "Utility"
               - "Misc"
           - { name: cost, label: Cost (Gold), widget: string }
+          - name: quest
+        label: Quest Given
+        widget: object
+        required: false
+        hint: "Only fill this in if this NPC gives a quest."
+        fields:
+          - { name: name, label: Quest Name, widget: string }
+          - { name: path, label: Quest Page Path, widget: string, hint: "e.g. /quests/circle_1/leaders_of_mythic" }
 
   - name: mounts
     label: Mounts

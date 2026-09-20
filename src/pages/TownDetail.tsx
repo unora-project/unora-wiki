@@ -1,4 +1,4 @@
-import { useParams } from 'react-router'
+import { Link, useParams } from 'react-router'
 import { useMemo, useState } from 'react'
 import { createColumnHelper } from '@tanstack/react-table'
 import { DataTable } from '@/components/tables/DataTable'
@@ -14,7 +14,31 @@ interface NPC {
   name: string
   type: string
   coordinates: string
+  quest?: { name: string; path: string }
 }
+
+const columnHelper = createColumnHelper<NPC>()
+const columns = [
+  columnHelper.accessor('name', { header: 'Name' }),
+  columnHelper.accessor('type', { header: 'Type' }),
+  columnHelper.accessor('coordinates', { header: 'Coordinates' }),
+  columnHelper.accessor((row) => row.quest?.name ?? '', {
+    id: 'quest',
+    header: 'Quest',
+    cell: ({ row }) => {
+      const quest = row.original.quest
+      if (!quest) return '—'
+      return (
+        <Link
+          to={quest.path}
+          className="underline decoration-gilt/60 hover:decoration-gilt"
+        >
+          {quest.name}
+        </Link>
+      )
+    },
+  }),
+]
 
 interface ShopItem {
   name: string
