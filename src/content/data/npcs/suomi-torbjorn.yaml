@@ -1,0 +1,45 @@
+town: suomi
+name: Torbjorn
+type: Sells Weapons
+coordinates: 11,55
+shop:
+  - name: Dirk
+    type: Dagger
+    cost: '200'
+  - name: Eppe
+    type: 1H Weapon
+    cost: '600'
+  - name: Saber
+    type: 1H Weapon
+    cost: 3,200
+  - name: Dull Claw
+    type: Claw
+    cost: 1,200
+  - name: Wolf Claw
+    type: Claw
+    cost: 5,200
+  - name: Snow Dagger
+    type: Dagger
+    cost: '600'
+  - name: Center Dagger
+    type: Dagger
+    cost: 2,200
+  - name: Blossom Dagger
+    type: Dagger
+    cost: 5,200
+  - name: Moon Dagger
+    type: Dagger
+    cost: 15,400
+  - name: Snow Secret
+    type: Secret
+    cost: '600'
+  - name: Center Secret
+    type: Secret
+    cost: 4,600
+  - name: Blossom Secret
+    type: Secret
+    cost: 8,800
+  - name: Moon Secret
+    type: Secret
+    cost: 18,400
+quest: null
