@@ -1,0 +1,27 @@
+town: suomi
+name: Valdemar
+type: Sells Armor
+coordinates: 19,48
+shop:
+  - name: Leather Belt
+    type: Belt
+    cost: '500'
+  - name: Boots
+    type: Boots
+    cost: '100'
+  - name: Grey Boots
+    type: Boots
+    cost: 1,000
+  - name: Green Boots
+    type: Boots
+    cost: 12,000
+  - name: Leather Greaves
+    type: Greaves
+    cost: 7,000
+  - name: Ruby Ring
+    type: Ring
+    cost: 1,000
+  - name: Emerald Ring
+    type: Ring
+    cost: 6,000
+quest: null
