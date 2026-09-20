@@ -323,26 +323,34 @@ collections:
         label: Type/Role
         widget: select
         options:
-          - "Bartender"
-          - "White Magic Master"
-          - "Sells Weapons"
-          - "Bank"
-          - "Dark Magic Master"
+          # Trainers / Masters
           - "Combat Master"
-          - "Cooking Trainer"
-          - "Hair Stylist"
-          - "Church (Marriage/Divorce)"
           - "Skill Master"
-          - "Restaurant"
-          - "Inn"
-          - "Quest Giver"
+          - "White Magic Master"
+          - "Dark Magic Master"
+
+          # Shops
+          - "Sells Weapons"
           - "Sells Armor"
+          - "Sells Potions"
           - "Class Armor / Dyes"
           - "Fish Supplies"
-          - "Guild Registrar"
-          - "Sells Potions"
-          - "Misc"
           - "Forage Supplies"
+
+          # Services
+          - "Bank"
+          - "Inn"
+          - "Restaurant"
+          - "Bartender"
+          - "Hair Stylist"
+          - "Church (Marriage/Divorce)"
+          - "Guild Registrar"
+
+          # Quests
+          - "Quest Giver"
+
+          # Other
+          - "Misc"
       - { name: coordinates, label: Coordinates, widget: string }
       - name: shop
         label: Shop Inventory
@@ -355,6 +363,7 @@ collections:
             label: Type
             widget: select
             options:
+              # Weapons
               - "1H Weapon"
               - "2H Weapon"
               - "Dagger"
@@ -362,27 +371,39 @@ collections:
               - "Staff"
               - "Secret"
               - "Shield"
+
+              # Armor
               - "M Armor"
               - "F Armor"
               - "Helm"
               - "Boots"
               - "Belt"
+              - "Gauntlet"
+              - "Greaves"
+
+              # Jewelry
               - "Ring"
               - "Necklace"
               - "Earrings"
-              - "Gauntlet"
-              - "Greaves"
+
+              # Cosmetics
               - "Dye"
               - "Body Color"
               - "Face Shape"
               - "Hair"
+
+              # Consumables
               - "Food"
               - "Drink"
               - "Potion"
               - "Bait"
+
+              # Gear & Utility
               - "Tool"
               - "Recipe"
               - "Utility"
+
+              # Other
               - "Misc"
           - { name: cost, label: Cost (Gold), widget: string }
       - name: quest
