@@ -153,25 +153,24 @@ function ItemNameTooltip({ name }: { name: string }) {
         {name}
       </span>
       {hovered && coords && createPortal(
-        <div
-          className="fixed z-50 w-56 -translate-y-full rounded-lg border border-parchment-300 bg-parchment-100 p-3 text-left shadow-lg dark:border-ash/20 dark:bg-ink"
-          style={{ top: coords.top, left: coords.left }}
-        >
-          <p className="mb-1 font-heading text-sm font-semibold text-gilt">{item.name}</p>
-          <div className="space-y-0.5 text-xs text-parchment-700 dark:text-parchment-300">
-            {item.level !== null && <p>Level: {item.level}</p>}
-            {item.location && item.location !== '-' && <p>Location: {item.location}</p>}
-            {item.gender && <p>Gender: {item.gender}</p>}
-            {statEntries.map(([key, value]) => (
-              <p key={key}>{statLabels[key] ?? key}: {value}</p>
-            ))}
-            {percentEntries.map(([key, value]) => (
-              <p key={key}>{percentLabels[key] ?? key}: {value}</p>
-            ))}
-          </div>
-        </div>,
-        document.body
-      )}
+  <div
+    className="fixed z-50 w-56 -translate-y-full rounded-lg border border-parchment-300 bg-parchment-100 p-3 text-left shadow-lg dark:border-ash/20 dark:bg-ink"
+    style={{ top: coords.top, left: coords.left }}
+  >
+    <p className="mb-1 font-heading text-base font-semibold text-gilt">{item.name}</p>
+    <div className="space-y-0.5 text-sm text-parchment-700 dark:text-parchment-300">
+      {item.level !== null && <p>Level: {item.level}</p>}
+      {item.gender && <p>Gender: {item.gender}</p>}
+      {statEntries.map(([key, value]) => (
+        <p key={key}>{statLabels[key] ?? key}: {value}</p>
+      ))}
+      {percentEntries.map(([key, value]) => (
+        <p key={key}>{percentLabels[key] ?? key}: {value}</p>
+      ))}
+    </div>
+  </div>,
+  document.body
+)}
     </span>
   )
 }
