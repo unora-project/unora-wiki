@@ -1,0 +1,21 @@
+town: rucesion
+name: Carlos
+type: Sells Armor
+coordinates: 48,28
+shop:
+  - name: Wind Belt
+    type: Belt
+    cost: 2,500
+  - name: Earth Necklace
+    type: Necklace
+    cost: 2,500
+  - name: Fire Necklace
+    type: Necklace
+    cost: 2,500
+  - name: Sea Necklace
+    type: Necklace
+    cost: 2,500
+  - name: Wind Necklace
+    type: Necklace
+    cost: 2,500
+quest: null
