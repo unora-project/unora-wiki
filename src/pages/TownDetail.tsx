@@ -1,5 +1,5 @@
 import { Link, useParams } from 'react-router'
-import { useMemo, useState, useEffect } from 'react'
+import { useMemo, useState, useEffect, useRef } from 'react'
 import { createColumnHelper } from '@tanstack/react-table'
 import { DataTable } from '@/components/tables/DataTable'
 import { PageHeader } from '@/components/ui/PageHeader'
@@ -111,6 +111,8 @@ function loadEquipmentIndex(): Promise<Map<string, EquipmentItem>> {
 function ItemNameTooltip({ name }: { name: string }) {
   const [item, setItem] = useState<EquipmentItem | null | undefined>(undefined)
   const [hovered, setHovered] = useState(false)
+  const [coords, setCoords] = useState<{ top: number; left: number } | null>(null)
+  const triggerRef = useRef<HTMLSpanElement>(null)
 
   useEffect(() => {
     let alive = true
@@ -119,6 +121,17 @@ function ItemNameTooltip({ name }: { name: string }) {
     })
     return () => { alive = false }
   }, [name])
+
+  const handleEnter = () => {
+    const rect = triggerRef.current?.getBoundingClientRect()
+    if (rect) {
+      const tooltipWidth = 224 // w-56 = 14rem = 224px
+      let left = rect.left + rect.width / 2 - tooltipWidth / 2
+      left = Math.max(8, Math.min(left, window.innerWidth - tooltipWidth - 8))
+      setCoords({ top: rect.top - 8, left })
+    }
+    setHovered(true)
+  }
 
   if (!item) {
     return <span>{name}</span>
@@ -130,14 +143,18 @@ function ItemNameTooltip({ name }: { name: string }) {
   return (
     <span className="relative inline-block">
       <span
+        ref={triggerRef}
         className="cursor-help underline decoration-dotted decoration-ash/60 underline-offset-2"
-        onMouseEnter={() => setHovered(true)}
+        onMouseEnter={handleEnter}
         onMouseLeave={() => setHovered(false)}
       >
         {name}
       </span>
-      {hovered && (
-        <div className="absolute bottom-full left-1/2 z-50 mb-2 w-56 -translate-x-1/2 rounded-lg border border-parchment-300 bg-parchment-100 p-3 text-left shadow-lg dark:border-ash/20 dark:bg-ink">
+      {hovered && coords && (
+        <div
+          className="fixed z-50 w-56 -translate-y-full rounded-lg border border-parchment-300 bg-parchment-100 p-3 text-left shadow-lg dark:border-ash/20 dark:bg-ink"
+          style={{ top: coords.top, left: coords.left }}
+        >
           <p className="mb-1 font-heading text-sm font-semibold text-gilt">{item.name}</p>
           <div className="space-y-0.5 text-xs text-parchment-700 dark:text-parchment-300">
             {item.level !== null && <p>Level: {item.level}</p>}
