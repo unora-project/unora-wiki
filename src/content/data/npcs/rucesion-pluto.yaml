@@ -1,0 +1,27 @@
+town: rucesion
+name: Pluto
+type: Sells Armor
+coordinates: 17,24
+shop:
+  - name: Cotte
+    type: F Armor
+    cost: 1,000
+  - name: Benusta
+    type: F Armor
+    cost: 7,000
+  - name: Blouse
+    type: F Armor
+    cost: '100'
+  - name: Gardcorp
+    type: M Armor
+    cost: 1,000
+  - name: Galuchat Coat
+    type: M Armor
+    cost: 7,000
+  - name: Journeyman
+    type: M Armor
+    cost: 7,000
+  - name: Shirt
+    type: M Armor
+    cost: '100'
+quest: []
