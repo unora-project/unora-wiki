@@ -108,6 +108,8 @@ function loadEquipmentIndex(): Promise<Map<string, EquipmentItem>> {
   return equipmentIndexPromise
 }
 
+import { createPortal } from 'react-dom'
+
 function ItemNameTooltip({ name }: { name: string }) {
   const [item, setItem] = useState<EquipmentItem | null | undefined>(undefined)
   const [hovered, setHovered] = useState(false)
@@ -150,7 +152,7 @@ function ItemNameTooltip({ name }: { name: string }) {
       >
         {name}
       </span>
-      {hovered && coords && (
+      {hovered && coords && createPortal(
         <div
           className="fixed z-50 w-56 -translate-y-full rounded-lg border border-parchment-300 bg-parchment-100 p-3 text-left shadow-lg dark:border-ash/20 dark:bg-ink"
           style={{ top: coords.top, left: coords.left }}
@@ -167,7 +169,8 @@ function ItemNameTooltip({ name }: { name: string }) {
               <p key={key}>{percentLabels[key] ?? key}: {value}</p>
             ))}
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </span>
   )
