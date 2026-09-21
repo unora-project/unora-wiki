@@ -408,7 +408,7 @@ collections:
           - { name: cost, label: Cost (Gold), widget: string }
       - name: quest
         label: Quest Given
-        widget: object
+        widget: list
         required: false
         hint: "Only fill this in if this NPC gives a quest."
         fields:

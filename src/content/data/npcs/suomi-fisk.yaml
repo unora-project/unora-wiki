@@ -3,6 +3,6 @@ name: Fisk
 type: Skill Master
 coordinates: 12,18
 shop: []
-quest:
-  name: Fisk's Secret
+quests:
+- name: Fisk's Secret
   path: /quests/circle_2/fisks_secret

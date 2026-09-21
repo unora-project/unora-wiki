@@ -3,6 +3,6 @@ name: Ayumi
 type: Bank
 coordinates: 86,17
 shop: []
-quest:
-  name: Purple Whopper Scales
+quests:
+- name: Purple Whopper Scales
   path: /quests/side/purple_whopper_scales

@@ -24,4 +24,4 @@ shop:
   - name: Emerald Ring
     type: Ring
     cost: 6,000
-quest: null
+quests: null

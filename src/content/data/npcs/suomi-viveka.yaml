@@ -12,6 +12,6 @@ shop:
   - name: Wine
     type: Drink
     cost: '40'
-quest:
-  name: Suomi Tavern
+quests:
+- name: Suomi Tavern
   path: /quests/side/suomi_tavern

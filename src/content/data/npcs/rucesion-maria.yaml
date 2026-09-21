@@ -3,6 +3,8 @@ name: Maria
 type: Inn
 coordinates: 51,42
 shop: []
-quest:
-  name: Pretty Flower
+quests:
+- name: Pretty Flower
   path: /quests/side/pretty_flower
+- name: Queen Octopus
+  path: /quests/circle_3/queen_octopus

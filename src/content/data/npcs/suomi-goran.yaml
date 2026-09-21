@@ -9,4 +9,4 @@ shop:
   - name: Cloth Glove
     type: Tool
     cost: 50,000
-quest: null
+quests: null

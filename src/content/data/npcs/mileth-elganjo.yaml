@@ -3,6 +3,6 @@ name: Elganjo
 type: Combat Master
 coordinates: 6,11
 shop: []
-quest:
-  name: Crude Leather
+quests:
+- name: Crude Leather
   path: /quests/side/crude_leather

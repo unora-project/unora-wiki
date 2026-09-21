@@ -14,7 +14,7 @@ interface NPC {
   name: string
   type: string
   coordinates: string
-  quest?: { name: string; path: string }
+  quests?: { name: string; path: string }[]
 }
 
 const columnHelper = createColumnHelper<NPC>()
@@ -22,19 +22,24 @@ const columns = [
   columnHelper.accessor('name', { header: 'Name' }),
   columnHelper.accessor('type', { header: 'Type' }),
   columnHelper.accessor('coordinates', { header: 'Coordinates' }),
-  columnHelper.accessor((row) => row.quest?.name ?? '', {
-    id: 'quest',
-    header: 'Quest',
+  columnHelper.accessor((row) => row.quests?.map((q) => q.name).join(', ') ?? '', {
+    id: 'quests',
+    header: 'Quests',
     cell: ({ row }) => {
-      const quest = row.original.quest
-      if (!quest) return '—'
+      const quests = row.original.quests
+      if (!quests || quests.length === 0) return '—'
       return (
-        <Link
-          to={quest.path}
-          className="underline decoration-gilt/60 hover:decoration-gilt"
-        >
-          {quest.name}
-        </Link>
+        <div className="flex flex-col gap-1">
+          {quests.map((quest, i) => (
+            <Link
+              key={i}
+              to={quest.path}
+              className="underline decoration-gilt/60 hover:decoration-gilt"
+            >
+              {quest.name}
+            </Link>
+          ))}
+        </div>
       )
     },
   }),

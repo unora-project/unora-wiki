@@ -3,6 +3,6 @@ name: Skarn
 type: Quest Giver
 coordinates: 58,25
 shop: []
-quest:
-  name: Slayer of the Crypt
+quests:
+- name: Slayer of the Crypt
   path: /quests/slayers/slayer_of_the_crypt

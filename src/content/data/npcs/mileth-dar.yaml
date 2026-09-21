@@ -3,6 +3,6 @@ name: Dar
 type: Dark Magic Master
 coordinates: 10,53
 shop: []
-quest:
-  name: Dark Research
+quests:
+- name: Dark Research
   path: /quests/circle_1/dark_research

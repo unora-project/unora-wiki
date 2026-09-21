@@ -42,4 +42,4 @@ shop:
   - name: Moon Secret
     type: Secret
     cost: 18,400
-quest: null
+quests: null
