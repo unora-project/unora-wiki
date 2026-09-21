@@ -1,0 +1,8 @@
+town: rucesion
+name: Maria
+type: Inn
+coordinates: 51,42
+shop: []
+quest:
+  name: Pretty Flower
+  path: /quests/side/pretty_flower
