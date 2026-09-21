@@ -1,0 +1,117 @@
+town: rucesion
+name: Nyx
+type: Sells Armor
+coordinates: 32,19
+shop:
+  - name: Nyx's Umbral Shield
+    type: Shield
+    cost: 3 (Nyx Tokens)
+  - name: Nyx's Whisper
+    type: Earrings
+    cost: 3 (Nyx Tokens)
+  - name: Nyx's Twilight Band
+    type: Ring
+    cost: 2 (Nyx Tokens)
+  - name: Nyx's Embrace
+    type: Gauntlet
+    cost: 2 (Nyx Tokens)
+  - name: Nyx's Poleyns
+    type: Greaves
+    cost: 3 (Nyx Tokens)
+  - name: Expert Alchemy Box
+    type: Misc
+    cost: 3 (Nyx Tokens) or 4 (Bug Points)
+  - name: Expert Weaponsmithing Box
+    type: Misc
+    cost: 3 (Nyx Tokens) or 4 (Bug Points)
+  - name: Expert Enchanting Box
+    type: Misc
+    cost: 3 (Nyx Tokens) or 4 (Bug Points)
+  - name: Expert Jewelcrafting Box
+    type: Misc
+    cost: 3 (Nyx Tokens) or 4 (Bug Points)
+  - name: Expert Armorsmithing Box
+    type: Misc
+    cost: 3 (Nyx Tokens) or 4 (Bug Points)
+  - name: Bread
+    type: Food
+    cost: 1 (Nyx Tokens) or 1 (Bug Points)
+  - name: Cheese
+    type: Food
+    cost: 1 (Nyx Tokens) or 1 (Bug Points)
+  - name: Flour
+    type: Food
+    cost: 1 (Nyx Tokens) or 1 (Bug Points)
+  - name: Marinade
+    type: Food
+    cost: 1 (Nyx Tokens) or 1 (Bug Points)
+  - name: Salt
+    type: Food
+    cost: 1 (Nyx Tokens) or 1 (Bug Points)
+  - name: Sugar
+    type: Food
+    cost: 1 (Nyx Tokens) or 1 (Bug Points)
+  - name: Green Grapes
+    type: Food
+    cost: 1 (Nyx Tokens) or 1 (Bug Points)
+  - name: Strawberry
+    type: Food
+    cost: 1 (Nyx Tokens) or 1 (Bug Points)
+  - name: Tangerines
+    type: Food
+    cost: 1 (Nyx Tokens) or 1 (Bug Points)
+  - name: Beef Slices
+    type: Food
+    cost: 1 (Nyx Tokens) or 1 (Bug Points)
+  - name: Lobster Tail
+    type: Food
+    cost: 1 (Nyx Tokens) or 1 (Bug Points)
+  - name: Raw Meat
+    type: Food
+    cost: 1 (Nyx Tokens) or 1 (Bug Points)
+  - name: Clam
+    type: Food
+    cost: 1 (Nyx Tokens) or 1 (Bug Points)
+  - name: Prime Monster Extract
+    type: Misc
+    cost: 4 (Bug Points)
+  - name: Raw Azurium
+    type: Misc
+    cost: 4 (Bug Points)
+  - name: Raw Crimsonite
+    type: Misc
+    cost: 4 (Bug Points)
+  - name: Blossom of Betrayal
+    type: Misc
+    cost: 1 (Bug Points)
+  - name: Bocan Bough
+    type: Misc
+    cost: 1 (Bug Points)
+  - name: Cactus Flower
+    type: Misc
+    cost: 1 (Bug Points)
+  - name: Dochas Bloom
+    type: Misc
+    cost: 1 (Bug Points)
+  - name: Kabine Blossom
+    type: Misc
+    cost: 1 (Bug Points)
+  - name: Kobold Tail
+    type: Misc
+    cost: 1 (Bug Points)
+  - name: Lily Pad
+    type: Misc
+    cost: 1 (Bug Points)
+  - name: Passion Flower
+    type: Misc
+    cost: 1 (Bug Points)
+  - name: Raineach
+    type: Misc
+    cost: 1 (Bug Points)
+  - name: Spark Flower
+    type: Misc
+    cost: 1 (Bug Points)
+  - name: Passport
+    type: Utility
+    cost: 1 (Bug Points)
+quest: null
