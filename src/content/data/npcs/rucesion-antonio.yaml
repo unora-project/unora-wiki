@@ -1,0 +1,8 @@
+town: rucesion
+name: Antonio
+type: Bank
+coordinates: 52,12
+shop: []
+quest:
+  name: "*Antonio's Vault Squeaks*"
+  path: /quests/side/antonios_vault_squeaks
