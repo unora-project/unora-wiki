@@ -1,0 +1,18 @@
+town: rucesion
+name: Marcelo
+type: Sells Weapons
+coordinates: 42,34
+shop:
+  - name: Dirk
+    type: Dagger
+    cost: '200'
+  - name: Stick
+    type: 1H Weapon
+    cost: '200'
+  - name: Eppe
+    type: 1H Weapon
+    cost: '600'
+  - name: Saber
+    type: 1H Weapon
+    cost: 3,200
+quest: null
