@@ -1,0 +1,39 @@
+town: tagor
+name: Thorin
+type: Sells Weapons
+coordinates: 28,77
+shop:
+  - name: Dirk
+    type: Dagger
+    cost: '200'
+  - name: Stick
+    type: 1H Weapon
+    cost: '200'
+  - name: Eppe
+    type: 1H Weapon
+    cost: '600'
+  - name: Saber
+    type: 1H Weapon
+    cost: 3,200
+  - name: Claidheamh
+    type: 1H Weapon
+    cost: 5,200
+  - name: Dull Claw
+    type: Claw
+    cost: 1,200
+  - name: Wolf Claw
+    type: Claw
+    cost: 5,200
+  - name: Snow Dagger
+    type: Dagger
+    cost: '600'
+  - name: Coal
+    type: Misc
+    cost: '100'
+  - name: Snow Secret
+    type: Secret
+    cost: '600'
+  - name: Holy Hermes
+    type: Staff
+    cost: 5,200
+quest: []
