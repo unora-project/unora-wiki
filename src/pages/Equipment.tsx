@@ -15,6 +15,12 @@ interface EquipmentItem {
   percentages: Record<string, number | null>
 }
 
+interface DisplayRow extends EquipmentItem {
+  _groupKey: string
+  _availableTiers: string[]
+  _selectedTier: string
+}
+
 const categories = [
   { id: 'all', label: 'All' },
   { id: 'weapon', label: 'Weapons' },
@@ -36,45 +42,43 @@ const categories = [
 const classes = ['all', 'monk', 'priest', 'rogue', 'warrior', 'wizard', 'peasant']
 
 const TIER_PREFIXES = ['Good', 'Great', 'Grand']
+const TIER_ORDER = ['base', 'Good', 'Great', 'Grand']
+const TIER_LABELS: Record<string, string> = { base: 'Base', Good: 'Good', Great: 'Great', Grand: 'Grand' }
 
-const tiers = [
-  { id: 'all', label: 'All Tiers' },
-  { id: 'base', label: 'Base' },
-  { id: 'Good', label: 'Good' },
-  { id: 'Great', label: 'Great' },
-  { id: 'Grand', label: 'Grand' },
-]
-
-function getTier(name: string): string {
-  const firstWord = name.split(' ')[0]
-  return TIER_PREFIXES.includes(firstWord) ? firstWord : 'base'
+function parseTier(name: string): { tier: string; baseName: string } {
+  const parts = name.split(' ')
+  const first = parts[0]
+  if (TIER_PREFIXES.includes(first)) {
+    return { tier: first, baseName: parts.slice(1).join(' ') }
+  }
+  return { tier: 'base', baseName: name }
 }
 
-const columnHelper = createColumnHelper<EquipmentItem>()
+interface ItemGroup {
+  key: string
+  baseName: string
+  tiers: Partial<Record<string, EquipmentItem>>
+  availableTiers: string[]
+}
 
-const columns = [
-  columnHelper.accessor('name', { header: 'Name' }),
-  columnHelper.accessor('location', { header: 'LOC', cell: (info) => info.getValue() || '-' }),
-  columnHelper.accessor('level', { header: 'LVL', cell: (info) => info.getValue() ?? '-' }),
-  columnHelper.accessor((row) => row.stats.hp, { id: 'hp', header: 'HP', cell: (info) => info.getValue() ?? '-' }),
-  columnHelper.accessor((row) => row.stats.mp, { id: 'mp', header: 'MP', cell: (info) => info.getValue() ?? '-' }),
-  columnHelper.accessor((row) => row.stats.ac, { id: 'ac', header: 'AC', cell: (info) => info.getValue() ?? '-' }),
-  columnHelper.accessor((row) => row.stats.mr, { id: 'mr', header: 'MR', cell: (info) => info.getValue() ?? '-' }),
-  columnHelper.accessor((row) => row.stats.str, { id: 'str', header: 'STR', cell: (info) => info.getValue() ?? '-' }),
-  columnHelper.accessor((row) => row.stats.int, { id: 'int', header: 'INT', cell: (info) => info.getValue() ?? '-' }),
-  columnHelper.accessor((row) => row.stats.wis, { id: 'wis', header: 'WIS', cell: (info) => info.getValue() ?? '-' }),
-  columnHelper.accessor((row) => row.stats.con, { id: 'con', header: 'CON', cell: (info) => info.getValue() ?? '-' }),
-  columnHelper.accessor((row) => row.stats.dex, { id: 'dex', header: 'DEX', cell: (info) => info.getValue() ?? '-' }),
-  columnHelper.accessor((row) => row.stats.dmg, { id: 'dmg', header: 'DMG', cell: (info) => info.getValue() ?? '-' }),
-  columnHelper.accessor((row) => row.stats.hit, { id: 'hit', header: 'HIT', cell: (info) => info.getValue() ?? '-' }),
-  columnHelper.accessor((row) => row.percentages.attackSpeed, { id: 'as', header: 'AS%', cell: (info) => info.getValue() ?? '-' }),
-  columnHelper.accessor((row) => row.percentages.skillDamage, { id: 'skd', header: 'SKD', cell: (info) => info.getValue() ?? '-' }),
-  columnHelper.accessor((row) => row.percentages.skillDamagePercent, { id: 'skdp', header: 'SKD%', cell: (info) => info.getValue() ?? '-' }),
-  columnHelper.accessor((row) => row.percentages.spellDamage, { id: 'spd', header: 'SPD', cell: (info) => info.getValue() ?? '-' }),
-  columnHelper.accessor((row) => row.percentages.spellDamagePercent, { id: 'spdp', header: 'SPD%', cell: (info) => info.getValue() ?? '-' }),
-  columnHelper.accessor((row) => row.percentages.flatHealBonus, { id: 'heal', header: 'HEAL', cell: (info) => info.getValue() ?? '-' }),
-  columnHelper.accessor((row) => row.percentages.healBonusPercent, { id: 'healp', header: 'HEAL%', cell: (info) => info.getValue() ?? '-' }),
-]
+function groupEquipment(items: EquipmentItem[]): ItemGroup[] {
+  const map = new Map<string, ItemGroup>()
+  for (const item of items) {
+    const { tier, baseName } = parseTier(item.name)
+    const key = `${item.category}|${item.class ?? ''}|${baseName}`
+    let group = map.get(key)
+    if (!group) {
+      group = { key, baseName, tiers: {}, availableTiers: [] }
+      map.set(key, group)
+    }
+    group.tiers[tier] = item
+    group.availableTiers.push(tier)
+  }
+  for (const group of map.values()) {
+    group.availableTiers.sort((a, b) => TIER_ORDER.indexOf(a) - TIER_ORDER.indexOf(b))
+  }
+  return Array.from(map.values())
+}
 
 let equipmentCache: EquipmentItem[] | null = null
 let equipmentPromise: Promise<EquipmentItem[]> | null = null
@@ -98,8 +102,8 @@ function loadEquipment(): Promise<EquipmentItem[]> {
 export function Equipment() {
   const [selectedCategory, setSelectedCategory] = useState('all')
   const [selectedClass, setSelectedClass] = useState('all')
-  const [selectedTier, setSelectedTier] = useState('all')
   const [data, setData] = useState<EquipmentItem[] | null>(equipmentCache)
+  const [tierSelections, setTierSelections] = useState<Record<string, string>>({})
 
   useEffect(() => {
     if (equipmentCache) return
@@ -119,11 +123,73 @@ export function Equipment() {
     if (selectedClass !== 'all') {
       items = items.filter((item) => !item.class || item.class === selectedClass)
     }
-    if (selectedTier !== 'all') {
-      items = items.filter((item) => getTier(item.name) === selectedTier)
-    }
     return items
-  }, [data, selectedCategory, selectedClass, selectedTier])
+  }, [data, selectedCategory, selectedClass])
+
+  const groups = useMemo(() => groupEquipment(filteredData), [filteredData])
+
+  const displayRows = useMemo<DisplayRow[]>(() => {
+    return groups.map((g) => {
+      const selected = tierSelections[g.key] ?? g.availableTiers[0]
+      const tier = g.tiers[selected] ? selected : g.availableTiers[0]
+      const item = g.tiers[tier]!
+      return {
+        ...item,
+        _groupKey: g.key,
+        _availableTiers: g.availableTiers,
+        _selectedTier: tier,
+      }
+    })
+  }, [groups, tierSelections])
+
+  const columnHelper = useMemo(() => createColumnHelper<DisplayRow>(), [])
+
+  const columns = useMemo(() => [
+    columnHelper.display({
+      id: 'tier',
+      header: 'Tier',
+      cell: ({ row }) => {
+        const r = row.original
+        if (r._availableTiers.length <= 1) {
+          return <span className="text-xs text-parchment-500 dark:text-parchment-600">{TIER_LABELS[r._selectedTier]}</span>
+        }
+        return (
+          <select
+            value={r._selectedTier}
+            onChange={(e) =>
+              setTierSelections((prev) => ({ ...prev, [r._groupKey]: e.target.value }))
+            }
+            className="rounded border border-parchment-300 bg-parchment-100 px-1.5 py-0.5 text-xs text-parchment-700 dark:border-ash/20 dark:bg-obsidian dark:text-ash"
+          >
+            {r._availableTiers.map((t) => (
+              <option key={t} value={t}>{TIER_LABELS[t]}</option>
+            ))}
+          </select>
+        )
+      },
+    }),
+    columnHelper.accessor('name', { header: 'Name' }),
+    columnHelper.accessor('location', { header: 'LOC', cell: (info) => info.getValue() || '-' }),
+    columnHelper.accessor('level', { header: 'LVL', cell: (info) => info.getValue() ?? '-' }),
+    columnHelper.accessor((row) => row.stats.hp, { id: 'hp', header: 'HP', cell: (info) => info.getValue() ?? '-' }),
+    columnHelper.accessor((row) => row.stats.mp, { id: 'mp', header: 'MP', cell: (info) => info.getValue() ?? '-' }),
+    columnHelper.accessor((row) => row.stats.ac, { id: 'ac', header: 'AC', cell: (info) => info.getValue() ?? '-' }),
+    columnHelper.accessor((row) => row.stats.mr, { id: 'mr', header: 'MR', cell: (info) => info.getValue() ?? '-' }),
+    columnHelper.accessor((row) => row.stats.str, { id: 'str', header: 'STR', cell: (info) => info.getValue() ?? '-' }),
+    columnHelper.accessor((row) => row.stats.int, { id: 'int', header: 'INT', cell: (info) => info.getValue() ?? '-' }),
+    columnHelper.accessor((row) => row.stats.wis, { id: 'wis', header: 'WIS', cell: (info) => info.getValue() ?? '-' }),
+    columnHelper.accessor((row) => row.stats.con, { id: 'con', header: 'CON', cell: (info) => info.getValue() ?? '-' }),
+    columnHelper.accessor((row) => row.stats.dex, { id: 'dex', header: 'DEX', cell: (info) => info.getValue() ?? '-' }),
+    columnHelper.accessor((row) => row.stats.dmg, { id: 'dmg', header: 'DMG', cell: (info) => info.getValue() ?? '-' }),
+    columnHelper.accessor((row) => row.stats.hit, { id: 'hit', header: 'HIT', cell: (info) => info.getValue() ?? '-' }),
+    columnHelper.accessor((row) => row.percentages.attackSpeed, { id: 'as', header: 'AS%', cell: (info) => info.getValue() ?? '-' }),
+    columnHelper.accessor((row) => row.percentages.skillDamage, { id: 'skd', header: 'SKD', cell: (info) => info.getValue() ?? '-' }),
+    columnHelper.accessor((row) => row.percentages.skillDamagePercent, { id: 'skdp', header: 'SKD%', cell: (info) => info.getValue() ?? '-' }),
+    columnHelper.accessor((row) => row.percentages.spellDamage, { id: 'spd', header: 'SPD', cell: (info) => info.getValue() ?? '-' }),
+    columnHelper.accessor((row) => row.percentages.spellDamagePercent, { id: 'spdp', header: 'SPD%', cell: (info) => info.getValue() ?? '-' }),
+    columnHelper.accessor((row) => row.percentages.flatHealBonus, { id: 'heal', header: 'HEAL', cell: (info) => info.getValue() ?? '-' }),
+    columnHelper.accessor((row) => row.percentages.healBonusPercent, { id: 'healp', header: 'HEAL%', cell: (info) => info.getValue() ?? '-' }),
+  ], [columnHelper])
 
   return (
     <div>
@@ -169,24 +235,6 @@ export function Equipment() {
             </button>
           ))}
         </div>
-
-        {/* Tier filter (dropdown) */}
-        <div className="flex flex-wrap items-center gap-2">
-          <span className="text-xs font-medium uppercase tracking-wider text-parchment-500 dark:text-parchment-600">
-            Tier:
-          </span>
-          <select
-            value={selectedTier}
-            onChange={(e) => setSelectedTier(e.target.value)}
-            className="rounded-lg border border-parchment-300 bg-parchment-100 px-3 py-1.5 text-xs font-medium text-parchment-700 dark:border-ash/20 dark:bg-obsidian dark:text-ash"
-          >
-            {tiers.map((tier) => (
-              <option key={tier.id} value={tier.id}>
-                {tier.label}
-              </option>
-            ))}
-          </select>
-        </div>
       </div>
 
       {/* Data Table */}
@@ -196,7 +244,7 @@ export function Equipment() {
         </div>
       ) : (
         <DataTable
-          data={filteredData}
+          data={displayRows}
           columns={columns}
           searchPlaceholder="Search equipment..."
           initialSorting={[{ id: 'level', desc: false }]}
