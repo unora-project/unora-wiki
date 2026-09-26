@@ -197,6 +197,7 @@ export function Equipment() {
 
   const columns = useMemo(() => {
     const tierTextClass = textSize === 'large' ? 'text-lg' : 'text-sm'
+    const soldByTextClass = textSize === 'large' ? 'text-sm' : 'text-xs'
 
     return [
       columnHelper.display({
@@ -238,7 +239,7 @@ export function Equipment() {
               {seller && (
                 <Link
                   to={`/towns/${seller.town}`}
-                  className="text-xs underline decoration-gilt/60 hover:decoration-gilt"
+                  className={`${soldByTextClass} underline decoration-gilt/60 hover:decoration-gilt`}
                 >
                   Sold by {seller.npc}
                 </Link>
