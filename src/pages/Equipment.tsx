@@ -152,56 +152,62 @@ export function Equipment() {
     })
   }, [groups, tierSelections])
 
-  const columns = useMemo(() => {
-  const tierTextClass = textSize === 'large' ? 'text-lg' : 'text-sm'
+  const columnHelper = useMemo(() => createColumnHelper<DisplayRow>(), [])
 
-  return [
-    columnHelper.display({
-      id: 'tier',
-      header: 'Tier',
-      cell: ({ row }) => {
-        const r = row.original
-        if (r._availableTiers.length <= 1) {
-          return <span className={`${tierTextClass} font-medium text-parchment-600 dark:text-parchment-400`}>{TIER_LABELS[r._selectedTier]}</span>
-        }
-        return (
-          <select
-            value={r._selectedTier}
-            onChange={(e) =>
-              setTierSelections((prev) => ({ ...prev, [r._groupKey]: e.target.value }))
-            }
-            className={`rounded border border-parchment-300 bg-parchment-100 px-2 py-1 ${tierTextClass} font-medium text-parchment-700 dark:border-ash/20 dark:bg-obsidian dark:text-ash`}
-          >
-            {r._availableTiers.map((t) => (
-              <option key={t} value={t}>{TIER_LABELS[t]}</option>
-            ))}
-          </select>
-        )
-      },
-    }),
-    columnHelper.accessor('name', { header: 'Name' }),
-    columnHelper.accessor('location', { header: 'LOC', cell: (info) => info.getValue() || '-' }),
-    columnHelper.accessor('level', { header: 'LVL', cell: (info) => info.getValue() ?? '-' }),
-    columnHelper.accessor((row) => row.stats.hp, { id: 'hp', header: 'HP', cell: (info) => info.getValue() ?? '-' }),
-    columnHelper.accessor((row) => row.stats.mp, { id: 'mp', header: 'MP', cell: (info) => info.getValue() ?? '-' }),
-    columnHelper.accessor((row) => row.stats.ac, { id: 'ac', header: 'AC', cell: (info) => info.getValue() ?? '-' }),
-    columnHelper.accessor((row) => row.stats.mr, { id: 'mr', header: 'MR', cell: (info) => info.getValue() ?? '-' }),
-    columnHelper.accessor((row) => row.stats.str, { id: 'str', header: 'STR', cell: (info) => info.getValue() ?? '-' }),
-    columnHelper.accessor((row) => row.stats.int, { id: 'int', header: 'INT', cell: (info) => info.getValue() ?? '-' }),
-    columnHelper.accessor((row) => row.stats.wis, { id: 'wis', header: 'WIS', cell: (info) => info.getValue() ?? '-' }),
-    columnHelper.accessor((row) => row.stats.con, { id: 'con', header: 'CON', cell: (info) => info.getValue() ?? '-' }),
-    columnHelper.accessor((row) => row.stats.dex, { id: 'dex', header: 'DEX', cell: (info) => info.getValue() ?? '-' }),
-    columnHelper.accessor((row) => row.stats.dmg, { id: 'dmg', header: 'DMG', cell: (info) => info.getValue() ?? '-' }),
-    columnHelper.accessor((row) => row.stats.hit, { id: 'hit', header: 'HIT', cell: (info) => info.getValue() ?? '-' }),
-    columnHelper.accessor((row) => row.percentages.attackSpeed, { id: 'as', header: 'AS%', cell: (info) => info.getValue() ?? '-' }),
-    columnHelper.accessor((row) => row.percentages.skillDamage, { id: 'skd', header: 'SKD', cell: (info) => info.getValue() ?? '-' }),
-    columnHelper.accessor((row) => row.percentages.skillDamagePercent, { id: 'skdp', header: 'SKD%', cell: (info) => info.getValue() ?? '-' }),
-    columnHelper.accessor((row) => row.percentages.spellDamage, { id: 'spd', header: 'SPD', cell: (info) => info.getValue() ?? '-' }),
-    columnHelper.accessor((row) => row.percentages.spellDamagePercent, { id: 'spdp', header: 'SPD%', cell: (info) => info.getValue() ?? '-' }),
-    columnHelper.accessor((row) => row.percentages.flatHealBonus, { id: 'heal', header: 'HEAL', cell: (info) => info.getValue() ?? '-' }),
-    columnHelper.accessor((row) => row.percentages.healBonusPercent, { id: 'healp', header: 'HEAL%', cell: (info) => info.getValue() ?? '-' }),
-  ]
-}, [columnHelper, textSize])
+  const columns = useMemo(() => {
+    const tierTextClass = textSize === 'large' ? 'text-lg' : 'text-sm'
+
+    return [
+      columnHelper.display({
+        id: 'tier',
+        header: 'Tier',
+        cell: ({ row }) => {
+          const r = row.original
+          if (r._availableTiers.length <= 1) {
+            return (
+              <span className={`${tierTextClass} font-medium text-parchment-600 dark:text-parchment-400`}>
+                {TIER_LABELS[r._selectedTier]}
+              </span>
+            )
+          }
+          return (
+            <select
+              value={r._selectedTier}
+              onChange={(e) =>
+                setTierSelections((prev) => ({ ...prev, [r._groupKey]: e.target.value }))
+              }
+              className={`rounded border border-parchment-300 bg-parchment-100 px-2 py-1 ${tierTextClass} font-medium text-parchment-700 dark:border-ash/20 dark:bg-obsidian dark:text-ash`}
+            >
+              {r._availableTiers.map((t) => (
+                <option key={t} value={t}>{TIER_LABELS[t]}</option>
+              ))}
+            </select>
+          )
+        },
+      }),
+      columnHelper.accessor('name', { header: 'Name' }),
+      columnHelper.accessor('location', { header: 'LOC', cell: (info) => info.getValue() || '-' }),
+      columnHelper.accessor('level', { header: 'LVL', cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.stats.hp, { id: 'hp', header: 'HP', cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.stats.mp, { id: 'mp', header: 'MP', cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.stats.ac, { id: 'ac', header: 'AC', cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.stats.mr, { id: 'mr', header: 'MR', cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.stats.str, { id: 'str', header: 'STR', cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.stats.int, { id: 'int', header: 'INT', cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.stats.wis, { id: 'wis', header: 'WIS', cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.stats.con, { id: 'con', header: 'CON', cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.stats.dex, { id: 'dex', header: 'DEX', cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.stats.dmg, { id: 'dmg', header: 'DMG', cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.stats.hit, { id: 'hit', header: 'HIT', cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.percentages.attackSpeed, { id: 'as', header: 'AS%', cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.percentages.skillDamage, { id: 'skd', header: 'SKD', cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.percentages.skillDamagePercent, { id: 'skdp', header: 'SKD%', cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.percentages.spellDamage, { id: 'spd', header: 'SPD', cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.percentages.spellDamagePercent, { id: 'spdp', header: 'SPD%', cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.percentages.flatHealBonus, { id: 'heal', header: 'HEAL', cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.percentages.healBonusPercent, { id: 'healp', header: 'HEAL%', cell: (info) => info.getValue() ?? '-' }),
+    ]
+  }, [columnHelper, textSize])
 
   return (
     <div>
