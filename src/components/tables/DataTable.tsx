@@ -1,4 +1,4 @@
-import { memo, useEffect, useMemo, useRef, useState } from 'react'
+import { memo, useEffect, useMemo, useState } from 'react'
 import {
   useReactTable,
   getCoreRowModel,
@@ -9,7 +9,7 @@ import {
   type ColumnDef,
   type SortingState,
   type Row,
-} from '@tanstack/react-table
+} from '@tanstack/react-table'
 
 interface DataTableProps<T> {
   data: T[]
