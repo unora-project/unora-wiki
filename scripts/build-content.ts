@@ -147,6 +147,7 @@ const shops = npcsRaw
   .filter((n) => n.shop && n.shop.length > 0)
   .map((n) => ({ town: n.town, npc: n.name, items: n.shop }))
 if (shops.length) writeJson(join(DATA_OUT_ROOT, 'towns', 'shops.json'), shops)
+if (shops.length) writeJson(join(PUBLIC_DATA_ROOT, 'shops.json'), shops)
 
 console.log('  Mounts...')
 const mounts = buildFolderArray('mounts')

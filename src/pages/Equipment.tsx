@@ -1,4 +1,5 @@
 import { useEffect, useState, useMemo } from 'react'
+import { Link } from 'react-router'
 import { createColumnHelper } from '@tanstack/react-table'
 import { DataTable } from '@/components/tables/DataTable'
 import equipmentUrl from '@/data/equipment/all.json?url'
@@ -6,6 +7,7 @@ import equipmentUrl from '@/data/equipment/all.json?url'
 interface EquipmentItem {
   name: string
   location: string | null
+  locationLink: string | null
   level: number | null
   weight: number | null
   category: string
@@ -19,6 +21,12 @@ interface DisplayRow extends EquipmentItem {
   _groupKey: string
   _availableTiers: string[]
   _selectedTier: string
+}
+
+interface ShopEntry {
+  town: string
+  npc: string
+  items: { name: string; type: string; cost: string }[]
 }
 
 const categories = [
@@ -109,18 +117,50 @@ function loadEquipment(): Promise<EquipmentItem[]> {
   return equipmentPromise
 }
 
+let shopIndexPromise: Promise<Map<string, { npc: string; town: string }>> | null = null
+
+function loadShopIndex(): Promise<Map<string, { npc: string; town: string }>> {
+  if (!shopIndexPromise) {
+    shopIndexPromise = fetch(`${import.meta.env.BASE_URL}data/shops.json`)
+      .then((r) => (r.ok ? (r.json() as Promise<ShopEntry[]>) : []))
+      .then((shops) => {
+        const index = new Map<string, { npc: string; town: string }>()
+        for (const shop of shops) {
+          for (const item of shop.items) {
+            // First seller found wins if an item is sold in multiple shops.
+            if (!index.has(item.name)) {
+              index.set(item.name, { npc: shop.npc, town: shop.town })
+            }
+          }
+        }
+        return index
+      })
+      .catch(() => new Map())
+  }
+  return shopIndexPromise
+}
+
 export function Equipment() {
   const [selectedCategory, setSelectedCategory] = useState('all')
   const [selectedClass, setSelectedClass] = useState('all')
   const [data, setData] = useState<EquipmentItem[] | null>(equipmentCache)
   const [tierSelections, setTierSelections] = useState<Record<string, string>>({})
   const [textSize, setTextSize] = useState<'normal' | 'large'>('normal')
+  const [shopIndex, setShopIndex] = useState<Map<string, { npc: string; town: string }>>(new Map())
 
   useEffect(() => {
     if (equipmentCache) return
     let alive = true
     loadEquipment().then((items) => {
       if (alive) setData(items)
+    })
+    return () => { alive = false }
+  }, [])
+
+  useEffect(() => {
+    let alive = true
+    loadShopIndex().then((index) => {
+      if (alive) setShopIndex(index)
     })
     return () => { alive = false }
   }, [])
@@ -187,7 +227,26 @@ export function Equipment() {
         },
       }),
       columnHelper.accessor('name', { header: 'Name' }),
-      columnHelper.accessor('location', { header: 'LOC', cell: (info) => info.getValue() || '-' }),
+      columnHelper.accessor('location', {
+        header: 'LOC',
+        cell: ({ row }) => {
+          const item = row.original
+          const seller = shopIndex.get(item.name)
+          return (
+            <div className="flex flex-col">
+              <span>{item.location || '-'}</span>
+              {seller && (
+                <Link
+                  to={`/towns/${seller.town}`}
+                  className="text-xs underline decoration-gilt/60 hover:decoration-gilt"
+                >
+                  Sold by {seller.npc}
+                </Link>
+              )}
+            </div>
+          )
+        },
+      }),
       columnHelper.accessor('level', { header: 'LVL', cell: (info) => info.getValue() ?? '-' }),
       columnHelper.accessor((row) => row.stats.hp, { id: 'hp', header: 'HP', cell: (info) => info.getValue() ?? '-' }),
       columnHelper.accessor((row) => row.stats.mp, { id: 'mp', header: 'MP', cell: (info) => info.getValue() ?? '-' }),
@@ -208,7 +267,7 @@ export function Equipment() {
       columnHelper.accessor((row) => row.percentages.flatHealBonus, { id: 'heal', header: 'HEAL', cell: (info) => info.getValue() ?? '-' }),
       columnHelper.accessor((row) => row.percentages.healBonusPercent, { id: 'healp', header: 'HEAL%', cell: (info) => info.getValue() ?? '-' }),
     ]
-  }, [columnHelper, textSize])
+  }, [columnHelper, textSize, shopIndex])
 
   return (
     <div>
