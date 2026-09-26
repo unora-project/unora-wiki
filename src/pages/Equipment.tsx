@@ -235,16 +235,25 @@ export function Equipment() {
           const seller = shopIndex.get(item.name)
           return (
             <div className="flex flex-col">
-              <span>{item.location || '-'}</span>
-              {seller && (
-                <Link
-                  to={`/towns/${seller.town}`}
-                  className={`${soldByTextClass} underline decoration-gilt/60 hover:decoration-gilt`}
-                >
-                  Sold by {seller.npc}
-                </Link>
-              )}
-            </div>
+        {item.locationLink ? (
+          <Link
+            to={item.locationLink}
+            className="underline decoration-gilt/60 hover:decoration-gilt"
+          >
+            {item.location || '-'}
+          </Link>
+        ) : (
+          <span>{item.location || '-'}</span>
+        )}
+        {seller && (
+          <Link
+            to={`/towns/${seller.town}`}
+            className={`${soldByTextClass} underline decoration-gilt/60 hover:decoration-gilt`}
+          >
+            Sold by {seller.npc}
+          </Link>
+        )}
+      </div>
           )
         },
       }),
