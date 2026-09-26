@@ -35,6 +35,21 @@ const categories = [
 
 const classes = ['all', 'monk', 'priest', 'rogue', 'warrior', 'wizard', 'peasant']
 
+const TIER_PREFIXES = ['Good', 'Great', 'Grand']
+
+const tiers = [
+  { id: 'all', label: 'All Tiers' },
+  { id: 'base', label: 'Base' },
+  { id: 'Good', label: 'Good' },
+  { id: 'Great', label: 'Great' },
+  { id: 'Grand', label: 'Grand' },
+]
+
+function getTier(name: string): string {
+  const firstWord = name.split(' ')[0]
+  return TIER_PREFIXES.includes(firstWord) ? firstWord : 'base'
+}
+
 const columnHelper = createColumnHelper<EquipmentItem>()
 
 const columns = [
@@ -83,6 +98,7 @@ function loadEquipment(): Promise<EquipmentItem[]> {
 export function Equipment() {
   const [selectedCategory, setSelectedCategory] = useState('all')
   const [selectedClass, setSelectedClass] = useState('all')
+  const [selectedTier, setSelectedTier] = useState('all')
   const [data, setData] = useState<EquipmentItem[] | null>(equipmentCache)
 
   useEffect(() => {
@@ -103,8 +119,11 @@ export function Equipment() {
     if (selectedClass !== 'all') {
       items = items.filter((item) => !item.class || item.class === selectedClass)
     }
+    if (selectedTier !== 'all') {
+      items = items.filter((item) => getTier(item.name) === selectedTier)
+    }
     return items
-  }, [data, selectedCategory, selectedClass])
+  }, [data, selectedCategory, selectedClass, selectedTier])
 
   return (
     <div>
@@ -149,6 +168,24 @@ export function Equipment() {
               {cls}
             </button>
           ))}
+        </div>
+
+        {/* Tier filter (dropdown) */}
+        <div className="flex flex-wrap items-center gap-2">
+          <span className="text-xs font-medium uppercase tracking-wider text-parchment-500 dark:text-parchment-600">
+            Tier:
+          </span>
+          <select
+            value={selectedTier}
+            onChange={(e) => setSelectedTier(e.target.value)}
+            className="rounded-lg border border-parchment-300 bg-parchment-100 px-3 py-1.5 text-xs font-medium text-parchment-700 dark:border-ash/20 dark:bg-obsidian dark:text-ash"
+          >
+            {tiers.map((tier) => (
+              <option key={tier.id} value={tier.id}>
+                {tier.label}
+              </option>
+            ))}
+          </select>
         </div>
       </div>
 
