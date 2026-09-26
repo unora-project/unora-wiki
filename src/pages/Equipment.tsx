@@ -106,6 +106,7 @@ export function Equipment() {
   const [selectedClass, setSelectedClass] = useState('all')
   const [data, setData] = useState<EquipmentItem[] | null>(equipmentCache)
   const [tierSelections, setTierSelections] = useState<Record<string, string>>({})
+  const [textSize, setTextSize] = useState<'normal' | 'large'>('normal')
 
   useEffect(() => {
     if (equipmentCache) return
@@ -237,6 +238,21 @@ export function Equipment() {
             </button>
           ))}
         </div>
+
+        {/* Text size */}
+        <div className="flex flex-wrap items-center gap-2">
+          <span className="text-xs font-medium uppercase tracking-wider text-parchment-500 dark:text-parchment-600">
+            Text Size:
+          </span>
+          <select
+            value={textSize}
+            onChange={(e) => setTextSize(e.target.value as 'normal' | 'large')}
+            className="rounded-lg border border-parchment-300 bg-parchment-100 px-3 py-1.5 text-xs font-medium text-parchment-700 dark:border-ash/20 dark:bg-obsidian dark:text-ash"
+          >
+            <option value="normal">Normal</option>
+            <option value="large">Large</option>
+          </select>
+        </div>
       </div>
 
       {/* Data Table */}
@@ -250,6 +266,7 @@ export function Equipment() {
           columns={columns}
           searchPlaceholder="Search equipment..."
           initialSorting={[{ id: 'level', desc: false }]}
+          textSize={textSize}
         />
       )}
     </div>

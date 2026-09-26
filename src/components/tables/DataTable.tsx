@@ -16,6 +16,7 @@ interface DataTableProps<T> {
   columns: ColumnDef<T, any>[]
   searchPlaceholder?: string
   initialSorting?: SortingState
+  textSize?: 'normal' | 'large'
 }
 
 // Extracts the first numeric value from a string/number (e.g. "25 faith" -> 25,
@@ -42,12 +43,15 @@ function smartSort<T>(rowA: Row<T>, rowB: Row<T>, columnId: string): number {
   return String(a).localeCompare(String(b))
 }
 
-export function DataTable<T>({ data, columns, searchPlaceholder = 'Search...', initialSorting }: DataTableProps<T>) {
+export function DataTable<T>({ data, columns, searchPlaceholder = 'Search...', initialSorting, textSize = 'normal' }: DataTableProps<T>) {
   const [sorting, setSorting] = useState<SortingState>(initialSorting ?? [])
   const [globalFilter, setGlobalFilter] = useState('')
   const [viewMode, setViewMode] = useState<'table' | 'cards'>(
     window.innerWidth < 768 ? 'cards' : 'table'
   )
+
+  const headerTextClass = textSize === 'large' ? 'text-sm' : 'text-xs'
+  const cellTextClass = textSize === 'large' ? 'text-base' : 'text-sm'
 
   const table = useReactTable({
     data,
@@ -110,7 +114,7 @@ export function DataTable<T>({ data, columns, searchPlaceholder = 'Search...', i
                     <th
                       key={header.id}
                       onClick={header.column.getToggleSortingHandler()}
-                      className={`cursor-pointer select-none px-3 py-2.5 font-heading text-xs font-semibold uppercase tracking-wider text-gilt transition-colors hover:text-gilt/80 ${
+                      className={`cursor-pointer select-none px-3 py-2.5 font-heading ${headerTextClass} font-semibold uppercase tracking-wider text-gilt transition-colors hover:text-gilt/80 ${
                         idx === 0 ? 'sticky left-0 z-10 bg-parchment-50 dark:bg-obsidian' : ''
                       }`}
                     >
@@ -140,7 +144,7 @@ export function DataTable<T>({ data, columns, searchPlaceholder = 'Search...', i
                     {row.getVisibleCells().map((cell, idx) => (
                       <td
                         key={cell.id}
-                        className={`whitespace-nowrap px-3 py-2 text-sm ${
+                        className={`whitespace-nowrap px-3 py-2 ${cellTextClass} ${
                           idx === 0
                             ? 'sticky left-0 z-10 bg-parchment-50 font-semibold text-gilt shadow-[2px_0_4px_rgba(0,0,0,0.04)] dark:bg-obsidian'
                             : 'text-parchment-800 dark:text-ivory/85'
