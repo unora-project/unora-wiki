@@ -41,9 +41,16 @@ const categories = [
 
 const classes = ['all', 'monk', 'priest', 'rogue', 'warrior', 'wizard', 'peasant']
 
-const TIER_PREFIXES = ['Good', 'Great', 'Grand']
-const TIER_ORDER = ['base', 'Good', 'Great', 'Grand']
-const TIER_LABELS: Record<string, string> = { base: 'Base', Good: 'Good', Great: 'Great', Grand: 'Grand' }
+const TIER_PREFIXES = ['Good', 'Great', 'Grand', 'Enchanted', 'Empowered']
+const TIER_ORDER = ['base', 'Good', 'Great', 'Grand', 'Enchanted', 'Empowered']
+const TIER_LABELS: Record<string, string> = {
+  base: 'Base',
+  Good: 'Good',
+  Great: 'Great',
+  Grand: 'Grand',
+  Enchanted: 'Enchanted',
+  Empowered: 'Empowered',
+}
 
 function parseTier(name: string): { tier: string; baseName: string } {
   const parts = name.split(' ')
@@ -145,16 +152,17 @@ export function Equipment() {
     })
   }, [groups, tierSelections])
 
-  const columnHelper = useMemo(() => createColumnHelper<DisplayRow>(), [])
+  const columns = useMemo(() => {
+  const tierTextClass = textSize === 'large' ? 'text-lg' : 'text-sm'
 
-  const columns = useMemo(() => [
+  return [
     columnHelper.display({
       id: 'tier',
       header: 'Tier',
       cell: ({ row }) => {
         const r = row.original
         if (r._availableTiers.length <= 1) {
-          return <span className="text-xs text-parchment-500 dark:text-parchment-600">{TIER_LABELS[r._selectedTier]}</span>
+          return <span className={`${tierTextClass} font-medium text-parchment-600 dark:text-parchment-400`}>{TIER_LABELS[r._selectedTier]}</span>
         }
         return (
           <select
@@ -162,7 +170,7 @@ export function Equipment() {
             onChange={(e) =>
               setTierSelections((prev) => ({ ...prev, [r._groupKey]: e.target.value }))
             }
-            className="rounded border border-parchment-300 bg-parchment-100 px-1.5 py-0.5 text-xs text-parchment-700 dark:border-ash/20 dark:bg-obsidian dark:text-ash"
+            className={`rounded border border-parchment-300 bg-parchment-100 px-2 py-1 ${tierTextClass} font-medium text-parchment-700 dark:border-ash/20 dark:bg-obsidian dark:text-ash`}
           >
             {r._availableTiers.map((t) => (
               <option key={t} value={t}>{TIER_LABELS[t]}</option>
@@ -192,7 +200,8 @@ export function Equipment() {
     columnHelper.accessor((row) => row.percentages.spellDamagePercent, { id: 'spdp', header: 'SPD%', cell: (info) => info.getValue() ?? '-' }),
     columnHelper.accessor((row) => row.percentages.flatHealBonus, { id: 'heal', header: 'HEAL', cell: (info) => info.getValue() ?? '-' }),
     columnHelper.accessor((row) => row.percentages.healBonusPercent, { id: 'healp', header: 'HEAL%', cell: (info) => info.getValue() ?? '-' }),
-  ], [columnHelper])
+  ]
+}, [columnHelper, textSize])
 
   return (
     <div>
