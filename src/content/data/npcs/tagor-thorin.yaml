@@ -28,7 +28,7 @@ shop:
     type: Dagger
     cost: '600'
   - name: Coal
-    type: Misc
+    type: Ore
     cost: '100'
   - name: Snow Secret
     type: Secret
