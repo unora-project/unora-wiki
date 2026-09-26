@@ -142,7 +142,7 @@ export function ItemForm({ tab, value, onChange }: Props) {
             label="Quest/Location Link"
             value={value.locationLink}
             onChange={(v) => up({ locationLink: v })}
-            placeholder="/quests/circle_1/find_the_mysterious_artifact#part-7-the-creants"
+            placeholder="/hunting/mileth_crypt or /quests/circle_1/example_quest"
           />
         </div>
       )}
