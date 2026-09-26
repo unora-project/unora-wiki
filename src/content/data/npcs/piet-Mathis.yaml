@@ -1,6 +1,6 @@
 town: piet
 name: Mathis
-type: Alchemy Teacher
+type: Alchemy Master
 coordinates: 18,35
 shop:
   - name: Empty Bottle
@@ -9,3 +9,4 @@ shop:
   - name: '[Recipe] Hemloch'
     type: Recipe
     cost: 25,000
+quest: []
