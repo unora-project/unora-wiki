@@ -1,4 +1,4 @@
-import { memo, useMemo, useState } from 'react'
+import { memo, useEffect, useMemo, useRef, useState } from 'react'
 import {
   useReactTable,
   getCoreRowModel,
@@ -9,7 +9,7 @@ import {
   type ColumnDef,
   type SortingState,
   type Row,
-} from '@tanstack/react-table'
+} from '@tanstack/react-table
 
 interface DataTableProps<T> {
   data: T[]
@@ -67,6 +67,17 @@ export function DataTable<T>({ data, columns, searchPlaceholder = 'Search...', i
     initialState: { pagination: { pageSize: 20 } },
     autoResetPageIndex: false,
   })
+
+  // Only jump back to page 1 when the row COUNT changes (e.g. switching
+  // category/class filters) — not when the same rows are re-rendered with
+  // different content (e.g. a per-row tier dropdown swap).
+  const prevLengthRef = useRef(data.length)
+  useEffect(() => {
+    if (data.length !== prevLengthRef.current) {
+      table.setPageIndex(0)
+      prevLengthRef.current = data.length
+    }
+  }, [data.length, table])
 
   return (
     <div>
