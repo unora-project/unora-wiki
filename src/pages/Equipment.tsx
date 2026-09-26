@@ -71,7 +71,8 @@ interface ItemGroup {
 function groupEquipment(items: EquipmentItem[]): ItemGroup[] {
   const map = new Map<string, ItemGroup>()
   for (const item of items) {
-    const { tier, baseName } = parseTier(item.name)
+    const { tier, baseName } =
+      item.category === 'weapon' ? parseTier(item.name) : { tier: 'base', baseName: item.name }
     const key = `${item.category}|${item.class ?? ''}|${baseName}`
     let group = map.get(key)
     if (!group) {
