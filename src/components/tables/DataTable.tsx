@@ -68,16 +68,17 @@ export function DataTable<T>({ data, columns, searchPlaceholder = 'Search...', i
     autoResetPageIndex: false,
   })
 
-  // Only jump back to page 1 when the row COUNT changes (e.g. switching
-  // category/class filters) — not when the same rows are re-rendered with
-  // different content (e.g. a per-row tier dropdown swap).
-  const prevLengthRef = useRef(data.length)
-  useEffect(() => {
-    if (data.length !== prevLengthRef.current) {
-      table.setPageIndex(0)
-      prevLengthRef.current = data.length
-    }
-  }, [data.length, table])
+// Clamp back to the last valid page if the current pageIndex no longer
+// exists (e.g. after filtering to a smaller category). Leaves the page
+// untouched when it's still valid — so a same-row-count change like a
+// tier dropdown swap never causes an unwanted jump.
+useEffect(() => {
+  const pageCount = table.getPageCount()
+  const currentPage = table.getState().pagination.pageIndex
+  if (pageCount > 0 && currentPage >= pageCount) {
+    table.setPageIndex(pageCount - 1)
+  }
+}, [table, data])
 
   return (
     <div>
