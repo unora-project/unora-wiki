@@ -33,6 +33,7 @@ export interface EditorItem {
   weight: number | string
   value: number | string
   location?: string
+  locationLink?: string
   set_bonus?: string
   ac?: number | string
   hp?: number | string
@@ -136,7 +137,7 @@ export const BASIC_IDS = [
   'heal_flat', 'heal_pct', 'cdr_pct',
 ] as const
 
-export const EXTRA_IDS = ['location', 'set_bonus'] as const
+export const EXTRA_IDS = ['location', 'locationLink', 'set_bonus'] as const
 
 export const CRAFT_RANKS = [
   'Beginner', 'Novice', 'Initiate', 'Artisan', 'Adept', 'Advanced', 'Expert', 'Master',
@@ -155,6 +156,7 @@ export const SET_BONUSES = ['', 'Dragon Scale', 'Dark Aisling', 'Forsaken', 'Sac
 export const FIELD_TO_CSV_HEADER: Record<string, string> = {
   item_name: 'Name',
   location: 'LOC',
+  locationLink: 'LOC_LINK',
   level: 'LVL',
   weight: 'WGT',
   hp: 'HP',

@@ -5,6 +5,7 @@ import { parse } from 'csv-parse/sync'
 interface EquipmentItem {
   name: string
   location: string | null
+  locationLink: string | null
   level: number | null
   weight: number | null
   category: string
@@ -79,7 +80,7 @@ export function buildEquipment(csvRoot: string, previous: EquipmentItem[]): Equi
     replaced.add(group(source))
     for (const row of rows) {
       items.push({
-        name: row.Name.trim(), location: row.LOC || null,
+        name: row.Name.trim(), location: row.LOC || null, locationLink: row.LOC_LINK || null,
         level: numeric(row.LVL), weight: numeric(row.WGT),
         category: source.category, class: source.class, gender: source.gender,
         stats: Object.fromEntries(Object.entries(stats).map(([key, header]) => [key, numeric(row[header])])),

@@ -136,6 +136,16 @@ export function ItemForm({ tab, value, onChange }: Props) {
         <Sel label="Type *" value={value.type} onChange={(v) => up({ type: v })} options={ITEM_TYPES} />
         {!isCraft && <S label="Location/Source" value={value.location} onChange={(v) => up({ location: v })} />}
       </div>
+      {!isCraft && (
+        <div className="mt-2 grid grid-cols-1 gap-2">
+          <S
+            label="Quest/Location Link"
+            value={value.locationLink}
+            onChange={(v) => up({ locationLink: v })}
+            placeholder="/quests/circle_1/find_the_mysterious_artifact#part-7-the-creants"
+          />
+        </div>
+      )}
       <div className="mt-2 grid grid-cols-2 gap-2">
         <N label="Value (Gold)" value={value.value} onChange={(v) => up({ value: v })} />
         <N label="Weight *" value={value.weight} onChange={(v) => up({ weight: v })} />
