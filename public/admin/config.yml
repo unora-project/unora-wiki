@@ -328,6 +328,11 @@ collections:
           - "Skill Master"
           - "White Magic Master"
           - "Dark Magic Master"
+          - "Weaponsmithing Master"
+          - "Armorsmithing Master"
+          - "Jewelcrafting Master"
+          - "Enchanting Master"
+          - "Alchemy Master"
 
           # Shops
           - "Sells Weapons"
@@ -336,6 +341,7 @@ collections:
           - "Class Armor / Dyes"
           - "Fish Supplies"
           - "Forage Supplies"
+          - "Sells Pets"
 
           # Services
           - "Bank"
