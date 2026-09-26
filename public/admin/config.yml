@@ -408,6 +408,8 @@ collections:
               - "Tool"
               - "Recipe"
               - "Utility"
+              - "Ore"
+              - "Pets"
 
               # Other
               - "Misc"
