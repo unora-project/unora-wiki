@@ -80,7 +80,7 @@ export function buildEquipment(csvRoot: string, previous: EquipmentItem[]): Equi
     replaced.add(group(source))
     for (const row of rows) {
       items.push({
-        name: row.Name.trim(), location: row.LOC || null, locationLink: row.LOC_LINK || null,
+        name: row.Name.trim(), location: row.LOC || null, locationLink: row.LOC_LINK && row.LOC_LINK !== '-' ? row.LOC_LINK.trim() : null,
         level: numeric(row.LVL), weight: numeric(row.WGT),
         category: source.category, class: source.class, gender: source.gender,
         stats: Object.fromEntries(Object.entries(stats).map(([key, header]) => [key, numeric(row[header])])),
