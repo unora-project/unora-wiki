@@ -1,0 +1,15 @@
+town: tagor
+name: Matei
+type: Sells Potions
+coordinates: 32,39
+shop:
+  - name: Small Health Potion
+    type: Utility
+    cost: 1,000
+  - name: Small Mana Potion
+    type: Utility
+    cost: 1,000
+  - name: Passport
+    type: Utility
+    cost: 15,000
+quest: []
