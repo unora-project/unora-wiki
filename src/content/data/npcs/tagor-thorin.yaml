@@ -1,6 +1,6 @@
 town: tagor
 name: Thorin
-type: Sells Weapons
+type: Weaponsmithing Master
 coordinates: 28,77
 shop:
   - name: Dirk
