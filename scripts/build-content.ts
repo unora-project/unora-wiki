@@ -201,6 +201,7 @@ console.log(`    wrote ${equipment.length} equipment items to site data and edit
 console.log('  Professions CSV → JSON...')
 const CSV_ROOT = join(__dirname, '..', 'data-source', 'professions', 'csv')
 const PROF_OUT = join(DATA_OUT_ROOT, 'professions')
+const PROF_PUBLIC_OUT = join(PUBLIC_DATA_ROOT, 'professions')
 
 interface ProfMapping { csv: string; json: string; nameHeader: string }
 const PROF_MAPPINGS: ProfMapping[] = [
@@ -229,6 +230,10 @@ for (const m of PROF_MAPPINGS) {
   if (headers.length === 0) { console.log(`    skip ${m.json} (empty CSV)`); continue }
   if (!headers.includes(m.nameHeader)) throw new Error(`Missing ${m.nameHeader} header in ${m.csv}`)
   writeJson(jsonPath, rows)
+  // Weaponsmithing recipes are also fetched at runtime by the Equipment page.
+  if (m.json === 'weaponsmithing-recipes.json') {
+    writeJson(join(PROF_PUBLIC_OUT, m.json), rows)
+  }
   console.log(`    ${m.json} (${rows.length} rows)`)
 }
 

@@ -1,4 +1,5 @@
-import { useEffect, useState, useMemo } from 'react'
+import { useEffect, useState, useMemo, useRef } from 'react'
+import { createPortal } from 'react-dom'
 import { Link } from 'react-router'
 import { createColumnHelper } from '@tanstack/react-table'
 import { DataTable } from '@/components/tables/DataTable'
@@ -19,6 +20,7 @@ interface EquipmentItem {
 
 interface DisplayRow extends EquipmentItem {
   _groupKey: string
+  _baseName: string
   _availableTiers: string[]
   _selectedTier: string
 }
@@ -27,6 +29,14 @@ interface ShopEntry {
   town: string
   npc: string
   items: { name: string; type: string; cost: string }[]
+}
+
+interface WeaponRecipeRow {
+  Name: string
+  Level: string
+  Type: string
+  Materials: string
+  'Materials to upgrade': string
 }
 
 const categories = [
@@ -127,7 +137,6 @@ function loadShopIndex(): Promise<Map<string, { npc: string; town: string }>> {
         const index = new Map<string, { npc: string; town: string }>()
         for (const shop of shops) {
           for (const item of shop.items) {
-            // First seller found wins if an item is sold in multiple shops.
             if (!index.has(item.name)) {
               index.set(item.name, { npc: shop.npc, town: shop.town })
             }
@@ -140,6 +149,75 @@ function loadShopIndex(): Promise<Map<string, { npc: string; town: string }>> {
   return shopIndexPromise
 }
 
+let weaponRecipePromise: Promise<Map<string, WeaponRecipeRow>> | null = null
+
+function loadWeaponRecipes(): Promise<Map<string, WeaponRecipeRow>> {
+  if (!weaponRecipePromise) {
+    weaponRecipePromise = fetch(`${import.meta.env.BASE_URL}data/professions/weaponsmithing-recipes.json`)
+      .then((r) => (r.ok ? (r.json() as Promise<WeaponRecipeRow[]>) : []))
+      .then((rows) => new Map(rows.map((r) => [r.Name, r])))
+      .catch(() => new Map())
+  }
+  return weaponRecipePromise
+}
+
+// Returns the materials text to show for a given tier, or null when there's
+// nothing to show (base tier explicitly marked as not craftable).
+function getRecipeDisplay(recipe: WeaponRecipeRow | undefined, tier: string): string | null {
+  if (!recipe) return null
+  if (tier === 'base') {
+    const mats = recipe.Materials
+    if (!mats || /cannot be crafted/i.test(mats)) return null
+    return mats
+  }
+  return recipe['Materials to upgrade'] || null
+}
+
+function RecipeTag({ materials }: { materials: string }) {
+  const [hovered, setHovered] = useState(false)
+  const [coords, setCoords] = useState<{ top: number; left: number } | null>(null)
+  const triggerRef = useRef<HTMLSpanElement>(null)
+
+  const handleEnter = () => {
+    const rect = triggerRef.current?.getBoundingClientRect()
+    if (rect) {
+      const tooltipWidth = 224
+      let left = rect.left + rect.width / 2 - tooltipWidth / 2
+      left = Math.max(8, Math.min(left, window.innerWidth - tooltipWidth - 8))
+      setCoords({ top: rect.top - 8, left })
+    }
+    setHovered(true)
+  }
+
+  const isSpecial = /polishing stone|cannot be upgraded/i.test(materials)
+  const ingredients = isSpecial ? [materials] : materials.split(',').map((s) => s.trim()).filter(Boolean)
+
+  return (
+    <span className="relative inline-block">
+      <span
+        ref={triggerRef}
+        onMouseEnter={handleEnter}
+        onMouseLeave={() => setHovered(false)}
+        className="ml-1 cursor-help text-xs font-semibold text-verdant underline decoration-dotted"
+      >
+        [RECIPE]
+      </span>
+      {hovered && coords && createPortal(
+        <div
+          className="fixed z-50 w-56 -translate-y-full rounded-lg border border-parchment-300 bg-parchment-100 p-3 text-left shadow-lg dark:border-ash/20 dark:bg-ink"
+          style={{ top: coords.top, left: coords.left }}
+        >
+          <p className="mb-1 font-heading text-sm font-semibold text-gilt">Materials Required</p>
+          <div className="space-y-0.5 text-xs text-parchment-700 dark:text-parchment-300">
+            {ingredients.map((ing, i) => <p key={i}>{ing}</p>)}
+          </div>
+        </div>,
+        document.body
+      )}
+    </span>
+  )
+}
+
 export function Equipment() {
   const [selectedCategory, setSelectedCategory] = useState('all')
   const [selectedClass, setSelectedClass] = useState('all')
@@ -147,6 +225,7 @@ export function Equipment() {
   const [tierSelections, setTierSelections] = useState<Record<string, string>>({})
   const [textSize, setTextSize] = useState<'normal' | 'large'>('normal')
   const [shopIndex, setShopIndex] = useState<Map<string, { npc: string; town: string }>>(new Map())
+  const [weaponRecipes, setWeaponRecipes] = useState<Map<string, WeaponRecipeRow>>(new Map())
 
   useEffect(() => {
     if (equipmentCache) return
@@ -161,6 +240,14 @@ export function Equipment() {
     let alive = true
     loadShopIndex().then((index) => {
       if (alive) setShopIndex(index)
+    })
+    return () => { alive = false }
+  }, [])
+
+  useEffect(() => {
+    let alive = true
+    loadWeaponRecipes().then((index) => {
+      if (alive) setWeaponRecipes(index)
     })
     return () => { alive = false }
   }, [])
@@ -187,6 +274,7 @@ export function Equipment() {
       return {
         ...item,
         _groupKey: g.key,
+        _baseName: g.baseName,
         _availableTiers: g.availableTiers,
         _selectedTier: tier,
       }
@@ -227,7 +315,23 @@ export function Equipment() {
           )
         },
       }),
-      columnHelper.accessor('name', { header: 'Name' }),
+      columnHelper.accessor('name', {
+        header: 'Name',
+        cell: ({ row }) => {
+          const item = row.original
+          let recipeText: string | null = null
+          if (item.category === 'weapon' && item.location === 'Weaponsmithing') {
+            const recipe = weaponRecipes.get(item._baseName)
+            recipeText = getRecipeDisplay(recipe, item._selectedTier)
+          }
+          return (
+            <span>
+              {item.name}
+              {recipeText && <RecipeTag materials={recipeText} />}
+            </span>
+          )
+        },
+      }),
       columnHelper.accessor('location', {
         header: 'LOC',
         cell: ({ row }) => {
@@ -235,25 +339,25 @@ export function Equipment() {
           const seller = shopIndex.get(item.name)
           return (
             <div className="flex flex-col">
-        {item.locationLink ? (
-          <Link
-            to={item.locationLink}
-            className="underline decoration-gilt/60 hover:decoration-gilt"
-          >
-            {item.location || '-'}
-          </Link>
-        ) : (
-          <span>{item.location || '-'}</span>
-        )}
-        {seller && (
-          <Link
-            to={`/towns/${seller.town}`}
-            className={`${soldByTextClass} underline decoration-gilt/60 hover:decoration-gilt`}
-          >
-            Sold by {seller.npc}
-          </Link>
-        )}
-      </div>
+              {item.locationLink ? (
+                <Link
+                  to={item.locationLink}
+                  className="underline decoration-gilt/60 hover:decoration-gilt"
+                >
+                  {item.location || '-'}
+                </Link>
+              ) : (
+                <span>{item.location || '-'}</span>
+              )}
+              {seller && (
+                <Link
+                  to={`/towns/${seller.town}`}
+                  className={`${soldByTextClass} underline decoration-gilt/60 hover:decoration-gilt`}
+                >
+                  Sold by {seller.npc}
+                </Link>
+              )}
+            </div>
           )
         },
       }),
@@ -277,7 +381,7 @@ export function Equipment() {
       columnHelper.accessor((row) => row.percentages.flatHealBonus, { id: 'heal', header: 'HEAL', cell: (info) => info.getValue() ?? '-' }),
       columnHelper.accessor((row) => row.percentages.healBonusPercent, { id: 'healp', header: 'HEAL%', cell: (info) => info.getValue() ?? '-' }),
     ]
-  }, [columnHelper, textSize, shopIndex])
+  }, [columnHelper, textSize, shopIndex, weaponRecipes])
 
   return (
     <div>
