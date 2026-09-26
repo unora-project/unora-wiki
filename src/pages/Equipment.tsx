@@ -320,7 +320,7 @@ export function Equipment() {
         cell: ({ row }) => {
           const item = row.original
           let recipeText: string | null = null
-          if (item.category === 'weapon' && item.location === 'Weaponsmithing') {
+          if (item.category === 'weapon') {
             const recipe = weaponRecipes.get(item._baseName)
             recipeText = getRecipeDisplay(recipe, item._selectedTier)
           }
