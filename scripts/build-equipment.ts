@@ -6,7 +6,7 @@ interface EquipmentItem {
   name: string
   location: string | null
   locationLink: string | null
-  level: number | null
+  level: number | string | null
   weight: number | null
   category: string
   class: string | null
@@ -36,6 +36,12 @@ function numeric(value: string | undefined): number | null {
   if (!value?.trim() || value === '-') return null
   const number = Number(value)
   return Number.isFinite(number) ? number : null
+}
+
+function levelValue(value: string | undefined): number | string | null {
+  if (!value?.trim() || value === '-') return null
+  const number = Number(value)
+  return Number.isFinite(number) ? number : value.trim()
 }
 
 function group(item: Pick<EquipmentItem, 'category' | 'class' | 'gender'>): string {
@@ -80,12 +86,14 @@ export function buildEquipment(csvRoot: string, previous: EquipmentItem[]): Equi
     replaced.add(group(source))
     for (const row of rows) {
       items.push({
-        name: row.Name.trim(), location: row.LOC || null, locationLink: row.LOC_LINK && row.LOC_LINK !== '-' ? row.LOC_LINK.trim() : null,
-        level: numeric(row.LVL), weight: numeric(row.WGT),
-        category: source.category, class: source.class, gender: source.gender,
-        stats: Object.fromEntries(Object.entries(stats).map(([key, header]) => [key, numeric(row[header])])),
-        percentages: Object.fromEntries(Object.entries(percentages).map(([key, header]) => [key, numeric(row[header])])),
-      })
+  name: row.Name.trim(),
+  location: row.LOC || null,
+  locationLink: row.LOC_LINK && row.LOC_LINK !== '-' ? row.LOC_LINK.trim() : null,
+  level: levelValue(row.LVL), weight: numeric(row.WGT),
+  category: source.category, class: source.class, gender: source.gender,
+  stats: Object.fromEntries(Object.entries(stats).map(([key, header]) => [key, numeric(row[header])])),
+  percentages: Object.fromEntries(Object.entries(percentages).map(([key, header]) => [key, numeric(row[header])])),
+})
     }
   }
   return [...previous.filter((item) => !replaced.has(group(item))), ...items]

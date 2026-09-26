@@ -9,7 +9,7 @@ interface EquipmentItem {
   name: string
   location: string | null
   locationLink: string | null
-  level: number | null
+  level: number | string | null
   weight: number | null
   category: string
   class: string | null
