@@ -152,7 +152,7 @@ export function ItemForm({ tab, value, onChange }: Props) {
       </div>
       <div className="mt-2 grid grid-cols-3 gap-2">
         <Sel label="Class" value={value.class} onChange={(v) => up({ class: v })} options={CLASSES} />
-        <N label="Level *" value={value.level} onChange={(v) => up({ level: v })} />
+        <S label="Level *" value={value.level} onChange={(v) => up({ level: v })} />
         <Sel label="Gender" value={value.gender} onChange={(v) => up({ gender: v })} options={GENDERS} />
       </div>
 
