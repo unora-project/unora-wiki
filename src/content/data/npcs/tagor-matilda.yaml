@@ -1,0 +1,15 @@
+town: tagor
+name: Matilda
+type: Bartender
+coordinates: 90,8
+shop:
+  - name: Brandy
+    type: Drink
+    cost: '40'
+  - name: Rum
+    type: Drink
+    cost: '100'
+  - name: Wine
+    type: Drink
+    cost: '40'
+quest: []
