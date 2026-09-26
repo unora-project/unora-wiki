@@ -15,7 +15,7 @@ type ItemTab = 'items' | RecipeTab
 // New files (and files written blank by the old editor) have no schema to infer.
 const DEFAULT_HEADERS: Record<ItemTab, string[]> = {
   items: [
-    'Name', 'LOC', 'LVL', 'WGT', 'HP', 'MP', 'AC', 'MR', 'STR', 'INT', 'WIS',
+    'Name', 'LOC', 'LOC_LINK', 'LVL', 'WGT', 'HP', 'MP', 'AC', 'MR', 'STR', 'INT', 'WIS',
     'CON', 'DEX', 'DMG', 'HIT', 'AS%', 'SKD', 'SKD%', 'SPD', 'SPD%', 'FHB',
     'HB%', 'CDR%', 'Value', 'Set',
   ],
@@ -76,6 +76,17 @@ async function buildFileDiff(
   const before = existing?.content ?? ''
   const parsed = parseCSV(before)
   const headers = parsed.headers.length ? parsed.headers : DEFAULT_HEADERS[tab]
+
+  // Existing files predate the LOC_LINK field — add the column the first
+  // time an item being saved actually sets one, rather than requiring
+  // every equipment CSV to be manually migrated up front.
+  if (
+    tab === 'items' &&
+    !headers.includes('LOC_LINK') &&
+    rows.some((r) => (r as EditorItem).locationLink)
+  ) {
+    headers.push('LOC_LINK')
+  }
 
   const nameHeader = headers.includes('Name') ? 'Name' : headers[0]
   const byName = new Map<string, number>()
