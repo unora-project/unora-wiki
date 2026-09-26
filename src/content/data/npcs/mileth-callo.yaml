@@ -9,7 +9,7 @@ shop:
   - name: Dirk
     type: Dagger
     cost: '500'
-  - name: Dull Claw
+  - name: Dull Claws
     type: Claw
     cost: '800'
   - name: Eppe
@@ -30,6 +30,7 @@ shop:
   - name: Stick
     type: 1H Weapon
     cost: '100'
-  - name: Wolf Claw
+  - name: Wolf Claws
     type: Claw
     cost: 10,000
+quest: []
