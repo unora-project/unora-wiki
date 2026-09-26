@@ -65,6 +65,7 @@ export function DataTable<T>({ data, columns, searchPlaceholder = 'Search...', i
     getPaginationRowModel: getPaginationRowModel(),
     defaultColumn: { sortingFn: smartSort as any },
     initialState: { pagination: { pageSize: 20 } },
+    autoResetPageIndex: false,
   })
 
   return (
