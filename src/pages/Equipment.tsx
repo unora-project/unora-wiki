@@ -72,7 +72,9 @@ function groupEquipment(items: EquipmentItem[]): ItemGroup[] {
       map.set(key, group)
     }
     group.tiers[tier] = item
-    group.availableTiers.push(tier)
+    if (!group.availableTiers.includes(tier)) {
+      group.availableTiers.push(tier)
+    }
   }
   for (const group of map.values()) {
     group.availableTiers.sort((a, b) => TIER_ORDER.indexOf(a) - TIER_ORDER.indexOf(b))
