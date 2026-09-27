@@ -149,7 +149,19 @@ export const ITEM_TYPES = [
   'Shields', 'Weapons',
 ] as const
 
-export const CLASSES = ['Peasant', 'Monk', 'Priest', 'Rogue', 'Warrior', 'Wizard'] as const
+export const CLASS_GROUPS = [
+  {
+    label: 'Temuair',
+    options: ['Peasant', 'Monk', 'Priest', 'Rogue', 'Warrior', 'Wizard'],
+  },
+  {
+    label: 'Medenia',
+    options: [
+      'Adept', 'Druid', 'Plague Doctor', 'Bard', 'Assassin',
+      'Archer', 'Berserker', 'Warlord', 'Arcanist', 'Elementalist',
+    ],
+  },
+] as const
 export const GENDERS = ['Unisex', 'Male', 'Female'] as const
 export const SET_BONUSES = ['', 'Dragon Scale', 'Dark Aisling', 'Forsaken', 'Sacred'] as const
 

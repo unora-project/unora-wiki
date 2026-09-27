@@ -1,6 +1,6 @@
 import { Plus, X } from 'lucide-react'
 import type { EditorItem, EditorRecipe } from '@/types/editor'
-import { CLASSES, GENDERS, ITEM_TYPES, SET_BONUSES, CRAFT_RANKS } from '@/types/editor'
+import { CLASS_GROUPS, GENDERS, ITEM_TYPES, SET_BONUSES, CRAFT_RANKS } from '@/types/editor'
 
 type ItemFormTab = 'items' | 'jewelcrafting' | 'armorsmithing' | 'weaponsmithing'
 
@@ -46,6 +46,33 @@ function Sel({ label, value, onChange, options }: { label: string; value: any; o
       <select className={inputCls} value={value ?? ''} onChange={(e) => onChange(e.target.value)}>
         {options.map((o) => (
           <option key={o} value={o}>{o || '(None)'}</option>
+        ))}
+      </select>
+    </div>
+  )
+}
+
+function GroupedSel({
+  label,
+  value,
+  onChange,
+  groups,
+}: {
+  label: string
+  value: any
+  onChange: (v: string) => void
+  groups: readonly { label: string; options: readonly string[] }[]
+}) {
+  return (
+    <div>
+      <label className={labelCls}>{label}</label>
+      <select className={inputCls} value={value ?? ''} onChange={(e) => onChange(e.target.value)}>
+        {groups.map((group) => (
+          <optgroup key={group.label} label={group.label}>
+            {group.options.map((o) => (
+              <option key={o} value={o}>{o}</option>
+            ))}
+          </optgroup>
         ))}
       </select>
     </div>
@@ -151,7 +178,7 @@ export function ItemForm({ tab, value, onChange }: Props) {
         <N label="Weight *" value={value.weight} onChange={(v) => up({ weight: v })} />
       </div>
       <div className="mt-2 grid grid-cols-3 gap-2">
-        <Sel label="Class" value={value.class} onChange={(v) => up({ class: v })} options={CLASSES} />
+        <GroupedSel label="Class" value={value.class} onChange={(v) => up({ class: v })} groups={CLASS_GROUPS} />
         <S label="Level" value={value.level} onChange={(v) => up({ level: v })} />
         <Sel label="Gender" value={value.gender} onChange={(v) => up({ gender: v })} options={GENDERS} />
       </div>
