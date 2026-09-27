@@ -16,7 +16,7 @@ const CLASS_DIRS = new Set([
   'adept', 'druid', 'plague-doctor', 'bard', 'assassin',
   'archer', 'berserker', 'warlord', 'arcanist', 'elementalist',
 ])
-const GENDER_DIRS = new Set(['male', 'female'])
+const GENDER_DIRS = new Set(['male', 'female', 'unisex'])
 
 const SIMPLE_TYPE_FILES: Record<string, string> = {
   accessories: 'accessories.csv',
