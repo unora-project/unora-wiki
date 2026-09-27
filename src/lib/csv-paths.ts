@@ -11,7 +11,11 @@ function lc(s: string | undefined): string {
   return (s || '').toLowerCase().trim()
 }
 
-const CLASS_DIRS = new Set(['monk', 'peasant', 'priest', 'rogue', 'warrior', 'wizard'])
+const CLASS_DIRS = new Set([
+  'monk', 'peasant', 'priest', 'rogue', 'warrior', 'wizard',
+  'adept', 'druid', 'plague-doctor', 'bard', 'assassin',
+  'archer', 'berserker', 'warlord', 'arcanist', 'elementalist',
+])
 const GENDER_DIRS = new Set(['male', 'female'])
 
 const SIMPLE_TYPE_FILES: Record<string, string> = {
