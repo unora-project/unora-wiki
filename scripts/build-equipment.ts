@@ -52,7 +52,7 @@ export function buildEquipment(csvRoot: string, previous: EquipmentItem[]): Equi
   const sources: Source[] = []
   for (const cls of ['monk', 'peasant', 'priest', 'rogue', 'warrior', 'wizard']) {
     sources.push({ path: `weapons/${cls}/weapons.csv`, category: 'weapon', class: cls, gender: null })
-    for (const gender of ['male', 'female']) {
+    for (const gender of ['male', 'female', 'unisex']) {
       sources.push({ path: `armor/${cls}/${gender}/armor.csv`, category: 'armor', class: cls, gender })
       sources.push({ path: `helmets/${cls}/${gender}/helmets.csv`, category: 'helmet', class: cls, gender })
     }
