@@ -396,6 +396,7 @@ export function Equipment() {
       columnHelper.accessor((row) => row.percentages.spellDamagePercent, { id: 'spdp', header: 'SPD%', cell: (info) => info.getValue() ?? '-' }),
       columnHelper.accessor((row) => row.percentages.flatHealBonus, { id: 'heal', header: 'HEAL', cell: (info) => info.getValue() ?? '-' }),
       columnHelper.accessor((row) => row.percentages.healBonusPercent, { id: 'healp', header: 'HEAL%', cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.percentages.healBonusPercent, { id: 'cdr', header: 'CDR%', cell: (info) => info.getValue() ?? '-' }),
     ]
   }, [columnHelper, textSize, shopIndex, weaponRecipes])
 
