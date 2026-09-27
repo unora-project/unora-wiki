@@ -57,7 +57,25 @@ const categories = [
   { id: 'overhelmet', label: 'Overhelmet' },
 ]
 
-const classes = ['all', 'monk', 'priest', 'rogue', 'warrior', 'wizard', 'peasant']
+const classGroups = [
+  {
+    label: 'Temuair',
+    options: ['monk', 'priest', 'rogue', 'warrior', 'wizard', 'peasant'],
+  },
+  {
+    label: 'Medenia',
+    options: [
+      'adept', 'druid', 'plague-doctor', 'bard', 'assassin',
+      'archer', 'berserker', 'warlord', 'arcanist', 'elementalist',
+    ],
+  },
+]
+
+const classLabels: Record<string, string> = {
+  monk: 'Monk', priest: 'Priest', rogue: 'Rogue', warrior: 'Warrior', wizard: 'Wizard', peasant: 'Peasant',
+  adept: 'Adept', druid: 'Druid', 'plague-doctor': 'Plague Doctor', bard: 'Bard', assassin: 'Assassin',
+  archer: 'Archer', berserker: 'Berserker', warlord: 'Warlord', arcanist: 'Arcanist', elementalist: 'Elementalist',
+}
 
 const TIER_PREFIXES = ['Good', 'Great', 'Grand', 'Enchanted', 'Empowered']
 const TIER_ORDER = ['base', 'Good', 'Great', 'Grand', 'Enchanted', 'Empowered']
@@ -161,8 +179,6 @@ function loadWeaponRecipes(): Promise<Map<string, WeaponRecipeRow>> {
   return weaponRecipePromise
 }
 
-// Returns the materials text to show for a given tier, or null when there's
-// nothing to show (base tier explicitly marked as not craftable).
 function getRecipeDisplay(recipe: WeaponRecipeRow | undefined, tier: string): string | null {
   if (!recipe) return null
   if (tier === 'base') {
@@ -409,22 +425,41 @@ export function Equipment() {
         </div>
 
         {/* Class filter */}
-        <div className="flex flex-wrap gap-1.5">
-          <span className="self-center text-xs font-medium uppercase tracking-wider text-parchment-500 dark:text-parchment-600">
-            Class:
-          </span>
-          {classes.map((cls) => (
+        <div className="space-y-1.5">
+          <div className="flex flex-wrap gap-1.5">
+            <span className="self-center text-xs font-medium uppercase tracking-wider text-parchment-500 dark:text-parchment-600">
+              Class:
+            </span>
             <button
-              key={cls}
-              onClick={() => setSelectedClass(cls)}
-              className={`rounded-lg px-3 py-1.5 text-xs font-medium capitalize transition-colors ${
-                selectedClass === cls
+              onClick={() => setSelectedClass('all')}
+              className={`rounded-lg px-3 py-1.5 text-xs font-medium transition-colors ${
+                selectedClass === 'all'
                   ? 'border border-gilt bg-transparent text-gilt'
                   : 'border border-parchment-300 bg-parchment-100 text-parchment-600 hover:border-gilt hover:text-gilt dark:border-ash/20 dark:bg-obsidian dark:text-ash dark:hover:border-gilt'
               }`}
             >
-              {cls}
+              All
             </button>
+          </div>
+          {classGroups.map((group) => (
+            <div key={group.label} className="flex flex-wrap items-center gap-1.5">
+              <span className="self-center text-xs font-medium uppercase tracking-wider text-parchment-500 dark:text-parchment-600">
+                {group.label}:
+              </span>
+              {group.options.map((cls) => (
+                <button
+                  key={cls}
+                  onClick={() => setSelectedClass(cls)}
+                  className={`rounded-lg px-3 py-1.5 text-xs font-medium transition-colors ${
+                    selectedClass === cls
+                      ? 'border border-gilt bg-transparent text-gilt'
+                      : 'border border-parchment-300 bg-parchment-100 text-parchment-600 hover:border-gilt hover:text-gilt dark:border-ash/20 dark:bg-obsidian dark:text-ash dark:hover:border-gilt'
+                  }`}
+                >
+                  {classLabels[cls]}
+                </button>
+              ))}
+            </div>
           ))}
         </div>
 
