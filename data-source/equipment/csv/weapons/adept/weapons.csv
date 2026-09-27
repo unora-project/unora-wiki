@@ -1,1 +1,5 @@
 Name,LOC,LVL,WGT,HP,MP,AC,MR,STR,INT,WIS,CON,DEX,DMG,HIT,AS%,SKD,SKD%,SPD,SPD%,FHB,HB%,CDR%,Value,Set
+Aerium Ascetic Yowien Claw,Weaponsmithing,Ab 1,-,750,750,-,-,1,1,-,-,-,-,-,28,308,49,231,37,-,-,-,-,-
+Emberite Ascetic Yowien Claw,Weaponsmithing,Ab 1,-,750,750,-,-,-,-,-,-,-,-,2,20,400,57,-,-,-,-,-,-,-
+Hydrillium Ascetic Yowien Claw,-,Ab 1,-,750,1125,-,-,1,1,-,-,-,-,-,20,231,37,308,49,-,-,-,-,-
+Petramite Ascetic Yowien Claw,-,Ab 1,-,1125,750,-8,15,-,-,-,2,-,-,-,20,262,49,-,-,-,-,-,-,-
