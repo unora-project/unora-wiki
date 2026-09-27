@@ -50,7 +50,11 @@ function group(item: Pick<EquipmentItem, 'category' | 'class' | 'gender'>): stri
 
 export function buildEquipment(csvRoot: string, previous: EquipmentItem[]): EquipmentItem[] {
   const sources: Source[] = []
-  for (const cls of ['monk', 'peasant', 'priest', 'rogue', 'warrior', 'wizard']) {
+  for (const cls of [
+    'monk', 'peasant', 'priest', 'rogue', 'warrior', 'wizard',
+    'adept', 'druid', 'plague-doctor', 'bard', 'assassin',
+    'archer', 'berserker', 'warlord', 'arcanist', 'elementalist',
+  ]) {
     sources.push({ path: `weapons/${cls}/weapons.csv`, category: 'weapon', class: cls, gender: null })
     for (const gender of ['male', 'female', 'unisex']) {
       sources.push({ path: `armor/${cls}/${gender}/armor.csv`, category: 'armor', class: cls, gender })
