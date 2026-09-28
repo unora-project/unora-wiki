@@ -52,24 +52,24 @@ export function ProfessionDetail() {
   const [tables, setTables] = useState<ResolvedTable[] | null>(null)
 
   useEffect(() => {
-  if (!meta) {
-    setTables([])
-    return
-  }
-  let alive = true
-  const defs = meta.tables ?? []
-  Promise.all(
-    defs.map(async (t) => ({
-      title: t.title,
-      dataFile: t.dataFile,
-      searchPlaceholder: t.searchPlaceholder,
-      data: (await dataFileLoaders[t.dataFile]?.()) ?? [],
-    }))
-  ).then((resolved) => {
-    if (alive) setTables(resolved)
-  })
-  return () => { alive = false }
-}, [meta])
+    if (!meta) {
+      setTables([])
+      return
+    }
+    let alive = true
+    const defs = meta.tables ?? []
+    Promise.all(
+      defs.map(async (t) => ({
+        title: t.title,
+        dataFile: t.dataFile,
+        searchPlaceholder: t.searchPlaceholder,
+        data: (await dataFileLoaders[t.dataFile]?.()) ?? [],
+      }))
+    ).then((resolved) => {
+      if (alive) setTables(resolved)
+    })
+    return () => { alive = false }
+  }, [meta])
 
   if (!meta || !type) {
     return (
@@ -129,31 +129,28 @@ export function ProfessionDetail() {
       {/* Data tables */}
       {tables === null ? (
         <div className="flex min-h-[30vh] items-center justify-center">
-    <div className="h-8 w-8 animate-spin rounded-full border-2 border-gilt/20 border-t-gilt" />
-  </div>
-) : (
-  tables.map((table) => (
-    <section key={table.title} className="mb-8">
-      <h2 className="mb-4 font-heading text-xl font-semibold text-gilt">
-        {table.title}
-      </h2>
-      {table.dataFile === 'weaponsmithing-recipes' ? (
-        <WeaponRecipeTable data={table.data} searchPlaceholder={table.searchPlaceholder} />
+          <div className="h-8 w-8 animate-spin rounded-full border-2 border-gilt/20 border-t-gilt" />
+        </div>
       ) : (
-        <GenericTable data={table.data} searchPlaceholder={table.searchPlaceholder} />
+        tables.map((table) => (
+          <section key={table.title} className="mb-8">
+            <h2 className="mb-4 font-heading text-xl font-semibold text-gilt">
+              {table.title}
+            </h2>
+            {table.dataFile === 'weaponsmithing-recipes' ? (
+              <WeaponRecipeTable data={table.data} searchPlaceholder={table.searchPlaceholder} />
+            ) : (
+              <GenericTable data={table.data} searchPlaceholder={table.searchPlaceholder} />
+            )}
+          </section>
+        ))
       )}
-    </section>
-  ))
-)}
     </div>
   )
 }
 
 function GenericTable({ data, searchPlaceholder }: { data: Record<string, unknown>[]; searchPlaceholder: string }) {
   const hasRank = data.length > 0 && 'Rank' in data[0]
-
-function WeaponRecipeTable({ data, searchPlaceholder }: { data: Record<string, unknown>[]; searchPlaceholder: string }) {
-}  
 
   const rankTabs = useMemo(() => {
     if (!hasRank) return []
@@ -176,21 +173,21 @@ function WeaponRecipeTable({ data, searchPlaceholder }: { data: Record<string, u
   }, [data, hasRank, activeRank])
 
   const columns = useMemo(() => {
-  if (filteredData.length === 0) return []
-  const keys = Object.keys(filteredData[0]).filter(
-    (k) => !(k === 'Rank' && activeRank !== 'All')
-  )
-  const colHelper = createColumnHelper<Record<string, unknown>>()
-  return keys.map((key) =>
-    colHelper.accessor((row) => row[key], {
-      id: key,
-      header: key,
-      cell: (info) => (
-        <span className="whitespace-pre-line">{String(info.getValue() ?? '-')}</span>
-      ),
-    })
-  )
-}, [filteredData, activeRank])
+    if (filteredData.length === 0) return []
+    const keys = Object.keys(filteredData[0]).filter(
+      (k) => !(k === 'Rank' && activeRank !== 'All')
+    )
+    const colHelper = createColumnHelper<Record<string, unknown>>()
+    return keys.map((key) =>
+      colHelper.accessor((row) => row[key], {
+        id: key,
+        header: key,
+        cell: (info) => (
+          <span className="whitespace-pre-line">{String(info.getValue() ?? '-')}</span>
+        ),
+      })
+    )
+  }, [filteredData, activeRank])
 
   if (data.length === 0) {
     return <p className="text-parchment-500 dark:text-parchment-600">No data available.</p>
@@ -221,4 +218,80 @@ function WeaponRecipeTable({ data, searchPlaceholder }: { data: Record<string, u
       <DataTable data={filteredData} columns={columns} searchPlaceholder={searchPlaceholder} />
     </div>
   )
+}
+
+interface WeaponRecipeRow {
+  Name: string
+  Level: string
+  Type: string
+  Materials: string
+  'Materials to upgrade': string
+  'Upgrade to Great'?: string
+  'Upgrade to Grand'?: string
+  'Upgrade to Enchanted'?: string
+  'Upgrade to Empowered'?: string
+}
+
+const UPGRADE_TIERS: { key: keyof WeaponRecipeRow; label: string }[] = [
+  { key: 'Materials to upgrade', label: 'Good' },
+  { key: 'Upgrade to Great', label: 'Great' },
+  { key: 'Upgrade to Grand', label: 'Grand' },
+  { key: 'Upgrade to Enchanted', label: 'Enchanted' },
+  { key: 'Upgrade to Empowered', label: 'Empowered' },
+]
+
+function WeaponRecipeTable({ data, searchPlaceholder }: { data: Record<string, unknown>[]; searchPlaceholder: string }) {
+  const rows = data as unknown as WeaponRecipeRow[]
+  const [selectedTier, setSelectedTier] = useState<Record<string, keyof WeaponRecipeRow>>({})
+
+  const columns = useMemo(() => {
+    const colHelper = createColumnHelper<WeaponRecipeRow>()
+    return [
+      colHelper.accessor('Name', { header: 'Name' }),
+      colHelper.accessor('Level', { header: 'Level' }),
+      colHelper.accessor('Type', { header: 'Type' }),
+      colHelper.accessor('Materials', {
+        header: 'Materials to Craft',
+        cell: (info) => (
+          <span className="whitespace-pre-line">{String(info.getValue() ?? '-')}</span>
+        ),
+      }),
+      colHelper.display({
+        id: 'upgradeTier',
+        header: 'Upgrade To',
+        cell: ({ row }) => {
+          const r = row.original
+          const available = UPGRADE_TIERS.filter((t) => r[t.key]?.trim())
+          if (available.length === 0) return <span className="text-parchment-500 dark:text-parchment-600">-</span>
+          const current = selectedTier[r.Name] ?? available[0].key
+          return (
+            <select
+              value={current}
+              onChange={(e) =>
+                setSelectedTier((prev) => ({ ...prev, [r.Name]: e.target.value as keyof WeaponRecipeRow }))
+              }
+              className="rounded border border-parchment-300 bg-parchment-100 px-2 py-1 text-xs text-parchment-700 dark:border-ash/20 dark:bg-obsidian dark:text-ash"
+            >
+              {available.map((t) => (
+                <option key={t.key as string} value={t.key as string}>{t.label}</option>
+              ))}
+            </select>
+          )
+        },
+      }),
+      colHelper.display({
+        id: 'upgradeMaterials',
+        header: 'Materials to Upgrade',
+        cell: ({ row }) => {
+          const r = row.original
+          const available = UPGRADE_TIERS.filter((t) => r[t.key]?.trim())
+          if (available.length === 0) return <span>-</span>
+          const current = selectedTier[r.Name] ?? available[0].key
+          return <span className="whitespace-pre-line">{r[current] || '-'}</span>
+        },
+      }),
+    ]
+  }, [selectedTier])
+
+  return <DataTable data={rows} columns={columns} searchPlaceholder={searchPlaceholder} />
 }
