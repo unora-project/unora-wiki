@@ -60,6 +60,7 @@ export interface EditorItem {
 export interface EditorRecipe extends EditorItem {
   craft_rank: string
   recipe: EditorIngredient[]
+  upgrade_materials?: string
 }
 
 export interface EditorDb {

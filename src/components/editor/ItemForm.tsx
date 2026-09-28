@@ -112,48 +112,61 @@ export function ItemForm({ tab, value, onChange }: Props) {
   return (
     <div className="text-ivory">
       {isCraft && (
-        <>
-          <div className={sectionCls}>Crafting</div>
-          <div className="grid grid-cols-1 gap-2">
-            <Sel label="Rank" value={(value as EditorRecipe).craft_rank} onChange={(v) => up({ craft_rank: v } as any)} options={CRAFT_RANKS} />
-          </div>
-          <div className="mt-3 rounded bg-crypt-300/40 p-2">
-            <div className="flex items-end gap-2">
-              <div style={{ width: 56 }}>
-                <label className={labelCls}>Qty</label>
-                <input id="ing_qty" type="number" className={inputCls} defaultValue="1" />
-              </div>
-              <div className="flex-1">
-                <label className={labelCls}>Ingredient</label>
-                <input id="ing_name" type="text" className={inputCls} placeholder="Name" />
-              </div>
-              <button
-                type="button"
-                onClick={addIng}
-                className="inline-flex items-center gap-1.5 rounded bg-gilt px-3 py-2 text-sm font-semibold text-ink hover:bg-gilt/90"
-              >
-                <Plus className="h-4 w-4" aria-hidden="true" />
-                Add
-              </button>
-            </div>
-            <ul className="mt-2 divide-y divide-ash/10 rounded border border-ash/10 bg-crypt-400">
-              {rec.length === 0 && <li className="px-3 py-2 text-xs text-ash">No ingredients.</li>}
-              {rec.map((ing, i) => (
-                <li key={i} className="flex items-center justify-between px-3 py-2 text-sm">
-                  <span><b className="text-gilt">{ing.qty}x</b> {ing.name}</span>
-                  <button
-                    type="button"
-                    aria-label="Remove ingredient"
-                    title="Remove"
-                    className="inline-flex h-7 w-7 items-center justify-center rounded border border-ignis/40 bg-ignis/10 text-ignis hover:bg-ignis/25 focus:outline-none focus:ring-2 focus:ring-ignis/60"
-                    onClick={() => rmIng(i)}
-                  ><X className="h-3.5 w-3.5" aria-hidden="true" /></button>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </>
-      )}
+  <>
+    <div className={sectionCls}>Crafting</div>
+    <div className="grid grid-cols-1 gap-2">
+      <Sel label="Rank" value={(value as EditorRecipe).craft_rank} onChange={(v) => up({ craft_rank: v } as any)} options={CRAFT_RANKS} />
+    </div>
+    <div className="mt-3 rounded bg-crypt-300/40 p-2">
+      <div className="flex items-end gap-2">
+        <div style={{ width: 56 }}>
+          <label className={labelCls}>Qty</label>
+          <input id="ing_qty" type="number" className={inputCls} defaultValue="1" />
+        </div>
+        <div className="flex-1">
+          <label className={labelCls}>Ingredient</label>
+          <input id="ing_name" type="text" className={inputCls} placeholder="Name" />
+        </div>
+        <button
+          type="button"
+          onClick={addIng}
+          className="inline-flex items-center gap-1.5 rounded bg-gilt px-3 py-2 text-sm font-semibold text-ink hover:bg-gilt/90"
+        >
+          <Plus className="h-4 w-4" aria-hidden="true" />
+          Add
+        </button>
+      </div>
+      <ul className="mt-2 divide-y divide-ash/10 rounded border border-ash/10 bg-crypt-400">
+        {rec.length === 0 && <li className="px-3 py-2 text-xs text-ash">No ingredients.</li>}
+        {rec.map((ing, i) => (
+          <li key={i} className="flex items-center justify-between px-3 py-2 text-sm">
+            <span><b className="text-gilt">{ing.qty}x</b> {ing.name}</span>
+            <button
+              type="button"
+              aria-label="Remove ingredient"
+              title="Remove"
+              className="inline-flex h-7 w-7 items-center justify-center rounded border border-ignis/40 bg-ignis/10 text-ignis hover:bg-ignis/25 focus:outline-none focus:ring-2 focus:ring-ignis/60"
+              onClick={() => rmIng(i)}
+            ><X className="h-3.5 w-3.5" aria-hidden="true" /></button>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    {tab === 'weaponsmithing' && (
+      <div className="mt-3">
+        <label className={labelCls}>Materials to Upgrade</label>
+        <textarea
+          className={inputCls}
+          rows={2}
+          placeholder='e.g. "1 Eppe, 2 Raw Bronze, 1 Coal" or "Can only be upgraded by a Polishing Stone"'
+          value={(value as EditorRecipe).upgrade_materials ?? ''}
+          onChange={(e) => up({ upgrade_materials: e.target.value } as any)}
+        />
+      </div>
+    )}
+  </>
+)}
 
       <div className={sectionCls}>Item Details</div>
       <div className="grid grid-cols-1 gap-2">
