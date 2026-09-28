@@ -81,11 +81,11 @@ async function buildFileDiff(
   const existing = await getFile(token, EDITOR_REPO.owner, EDITOR_REPO.repo, path, EDITOR_REPO.branch)
   const before = existing?.content ?? ''
   const parsed = parseCSV(before)
-  const headers = parsed.headers.length ? parsed.headers : DEFAULT_HEADERS[tab]
+  const headers = parsed.headers.length ? [...parsed.headers] : [...DEFAULT_HEADERS[tab]]
 
-  // Existing files predate the LOC_LINK field — add the column the first
-  // time an item being saved actually sets one, rather than requiring
-  // every equipment CSV to be manually migrated up front.
+  // Existing files predate these fields — add each column the first time an
+  // entry being saved actually sets a value for it, rather than requiring
+  // every equipment/recipe CSV to be manually migrated up front.
   if (
     tab === 'items' &&
     !headers.includes('LOC_LINK') &&
@@ -94,7 +94,22 @@ async function buildFileDiff(
     headers.push('LOC_LINK')
   }
 
+  if (tab === 'weaponsmithing') {
+    const tierColumns: { header: string; field: keyof EditorRecipe }[] = [
+      { header: 'Upgrade to Great', field: 'upgrade_great' },
+      { header: 'Upgrade to Grand', field: 'upgrade_grand' },
+      { header: 'Upgrade to Enchanted', field: 'upgrade_enchanted' },
+      { header: 'Upgrade to Empowered', field: 'upgrade_empowered' },
+    ]
+    for (const { header, field } of tierColumns) {
+      if (!headers.includes(header) && rows.some((r) => (r as EditorRecipe)[field])) {
+        headers.push(header)
+      }
+    }
+  }
+
   const nameHeader = headers.includes('Name') ? 'Name' : headers[0]
+  // ...rest of the function unchanged
   const byName = new Map<string, number>()
   const outRows = parsed.rows
     .filter((r) => !deletedNames.has((r[nameHeader] ?? '').trim().toLowerCase()))
