@@ -152,6 +152,9 @@ export function ProfessionDetail() {
 function GenericTable({ data, searchPlaceholder }: { data: Record<string, unknown>[]; searchPlaceholder: string }) {
   const hasRank = data.length > 0 && 'Rank' in data[0]
 
+function WeaponRecipeTable({ data, searchPlaceholder }: { data: Record<string, unknown>[]; searchPlaceholder: string }) {
+}  
+
   const rankTabs = useMemo(() => {
     if (!hasRank) return []
     const present = new Set(data.map((row) => String(row.Rank)))
