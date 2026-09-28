@@ -21,7 +21,10 @@ const DEFAULT_HEADERS: Record<ItemTab, string[]> = {
   ],
   jewelcrafting: ['Name', 'Level', 'Materials'],
   armorsmithing: ['Name', 'Class', 'Gender', 'Level', 'Materials'],
-  weaponsmithing: ['Name', 'Level', 'Type', 'Materials', 'Materials to upgrade'],
+  weaponsmithing: [
+    'Name', 'Level', 'Type', 'Materials', 'Materials to upgrade',
+    'Upgrade to Great', 'Upgrade to Grand', 'Upgrade to Enchanted', 'Upgrade to Empowered',
+  ],
 }
 
 export interface FileDiff {
@@ -48,10 +51,13 @@ function rowFromEditor(
 ): Record<string, string> {
   const row: Record<string, string> = {}
   for (const h of headers) {
-    // Preserve unknown columns as-is (via existing value) — caller merges.
     const fieldKey = tab !== 'items' && h === 'Level' ? 'level'
-      : tab === 'weaponsmithing' && h === 'Type' && entry.weapon_type != null ? 'weapon_type'
+      : tab === 'weaponsmithing' && h === 'Type' ? 'weapon_type'
       : tab === 'weaponsmithing' && h === 'Materials to upgrade' ? 'upgrade_materials'
+      : tab === 'weaponsmithing' && h === 'Upgrade to Great' ? 'upgrade_great'
+      : tab === 'weaponsmithing' && h === 'Upgrade to Grand' ? 'upgrade_grand'
+      : tab === 'weaponsmithing' && h === 'Upgrade to Enchanted' ? 'upgrade_enchanted'
+      : tab === 'weaponsmithing' && h === 'Upgrade to Empowered' ? 'upgrade_empowered'
       : Object.entries(FIELD_TO_CSV_HEADER).find(([, v]) => v === h)?.[0]
     if (!fieldKey) { row[h] = '' ; continue }
 

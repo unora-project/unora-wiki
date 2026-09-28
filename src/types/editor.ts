@@ -60,7 +60,12 @@ export interface EditorItem {
 export interface EditorRecipe extends EditorItem {
   craft_rank: string
   recipe: EditorIngredient[]
-  upgrade_materials?: string
+  weapon_type?: string
+  upgrade_materials?: string   // Base → Good (existing column, kept as-is)
+  upgrade_great?: string       // Good → Great
+  upgrade_grand?: string       // Great → Grand
+  upgrade_enchanted?: string   // Base → Enchanted
+  upgrade_empowered?: string   // Enchanted → Empowered
 }
 
 export interface EditorDb {

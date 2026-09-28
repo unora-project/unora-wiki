@@ -37,6 +37,74 @@ interface WeaponRecipeRow {
   Type: string
   Materials: string
   'Materials to upgrade': string
+  'Upgrade to Great'?: string
+  'Upgrade to Grand'?: string
+  'Upgrade to Enchanted'?: string
+  'Upgrade to Empowered'?: string
+}
+
+const UPGRADE_TIERS: { key: keyof WeaponRecipeRow; label: string }[] = [
+  { key: 'Materials to upgrade', label: 'Good' },
+  { key: 'Upgrade to Great', label: 'Great' },
+  { key: 'Upgrade to Grand', label: 'Grand' },
+  { key: 'Upgrade to Enchanted', label: 'Enchanted' },
+  { key: 'Upgrade to Empowered', label: 'Empowered' },
+]
+
+function WeaponRecipeTable({ data, searchPlaceholder }: { data: Record<string, unknown>[]; searchPlaceholder: string }) {
+  const rows = data as unknown as WeaponRecipeRow[]
+  const [selectedTier, setSelectedTier] = useState<Record<string, keyof WeaponRecipeRow>>({})
+
+  const columns = useMemo(() => {
+    const colHelper = createColumnHelper<WeaponRecipeRow>()
+    return [
+      colHelper.accessor('Name', { header: 'Name' }),
+      colHelper.accessor('Level', { header: 'Level' }),
+      colHelper.accessor('Type', { header: 'Type' }),
+      colHelper.accessor('Materials', {
+        header: 'Materials to Craft',
+        cell: (info) => (
+          <span className="whitespace-pre-line">{String(info.getValue() ?? '-')}</span>
+        ),
+      }),
+      colHelper.display({
+        id: 'upgradeTier',
+        header: 'Upgrade To',
+        cell: ({ row }) => {
+          const r = row.original
+          const available = UPGRADE_TIERS.filter((t) => r[t.key]?.trim())
+          if (available.length === 0) return <span className="text-parchment-500 dark:text-parchment-600">-</span>
+          const current = selectedTier[r.Name] ?? available[0].key
+          return (
+            <select
+              value={current}
+              onChange={(e) =>
+                setSelectedTier((prev) => ({ ...prev, [r.Name]: e.target.value as keyof WeaponRecipeRow }))
+              }
+              className="rounded border border-parchment-300 bg-parchment-100 px-2 py-1 text-xs text-parchment-700 dark:border-ash/20 dark:bg-obsidian dark:text-ash"
+            >
+              {available.map((t) => (
+                <option key={t.key as string} value={t.key as string}>{t.label}</option>
+              ))}
+            </select>
+          )
+        },
+      }),
+      colHelper.display({
+        id: 'upgradeMaterials',
+        header: 'Materials to Upgrade',
+        cell: ({ row }) => {
+          const r = row.original
+          const available = UPGRADE_TIERS.filter((t) => r[t.key]?.trim())
+          if (available.length === 0) return <span>-</span>
+          const current = selectedTier[r.Name] ?? available[0].key
+          return <span className="whitespace-pre-line">{r[current] || '-'}</span>
+        },
+      }),
+    ]
+  }, [selectedTier])
+
+  return <DataTable data={rows} columns={columns} searchPlaceholder={searchPlaceholder} />
 }
 
 const categories = [
@@ -186,7 +254,15 @@ function getRecipeDisplay(recipe: WeaponRecipeRow | undefined, tier: string): st
     if (!mats || /cannot be crafted/i.test(mats)) return null
     return mats
   }
-  return recipe['Materials to upgrade'] || null
+  const columnByTier: Record<string, keyof WeaponRecipeRow> = {
+    Good: 'Materials to upgrade',
+    Great: 'Upgrade to Great',
+    Grand: 'Upgrade to Grand',
+    Enchanted: 'Upgrade to Enchanted',
+    Empowered: 'Upgrade to Empowered',
+  }
+  const column = columnByTier[tier]
+  return column ? recipe[column] || null : null
 }
 
 function RecipeTag({ materials }: { materials: string }) {

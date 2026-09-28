@@ -40,6 +40,7 @@ const professionsMeta = professionsMetadata as Record<string, ProfessionMeta>
 
 interface ResolvedTable {
   title: string
+  dataFile: string
   data: Record<string, unknown>[]
   searchPlaceholder: string
 }
@@ -51,23 +52,24 @@ export function ProfessionDetail() {
   const [tables, setTables] = useState<ResolvedTable[] | null>(null)
 
   useEffect(() => {
-    if (!meta) {
-      setTables([])
-      return
-    }
-    let alive = true
-    const defs = meta.tables ?? []
-    Promise.all(
-      defs.map(async (t) => ({
-        title: t.title,
-        searchPlaceholder: t.searchPlaceholder,
-        data: (await dataFileLoaders[t.dataFile]?.()) ?? [],
-      }))
-    ).then((resolved) => {
-      if (alive) setTables(resolved)
-    })
-    return () => { alive = false }
-  }, [meta])
+  if (!meta) {
+    setTables([])
+    return
+  }
+  let alive = true
+  const defs = meta.tables ?? []
+  Promise.all(
+    defs.map(async (t) => ({
+      title: t.title,
+      dataFile: t.dataFile,
+      searchPlaceholder: t.searchPlaceholder,
+      data: (await dataFileLoaders[t.dataFile]?.()) ?? [],
+    }))
+  ).then((resolved) => {
+    if (alive) setTables(resolved)
+  })
+  return () => { alive = false }
+}, [meta])
 
   if (!meta || !type) {
     return (
@@ -127,18 +129,22 @@ export function ProfessionDetail() {
       {/* Data tables */}
       {tables === null ? (
         <div className="flex min-h-[30vh] items-center justify-center">
-          <div className="h-8 w-8 animate-spin rounded-full border-2 border-gilt/20 border-t-gilt" />
-        </div>
+    <div className="h-8 w-8 animate-spin rounded-full border-2 border-gilt/20 border-t-gilt" />
+  </div>
+) : (
+  tables.map((table) => (
+    <section key={table.title} className="mb-8">
+      <h2 className="mb-4 font-heading text-xl font-semibold text-gilt">
+        {table.title}
+      </h2>
+      {table.dataFile === 'weaponsmithing-recipes' ? (
+        <WeaponRecipeTable data={table.data} searchPlaceholder={table.searchPlaceholder} />
       ) : (
-        tables.map((table) => (
-          <section key={table.title} className="mb-8">
-            <h2 className="mb-4 font-heading text-xl font-semibold text-gilt">
-              {table.title}
-            </h2>
-            <GenericTable data={table.data} searchPlaceholder={table.searchPlaceholder} />
-          </section>
-        ))
+        <GenericTable data={table.data} searchPlaceholder={table.searchPlaceholder} />
       )}
+    </section>
+  ))
+)}
     </div>
   )
 }
