@@ -500,6 +500,10 @@ export function Equipment() {
           )
         },
       }),
+      columnHelper.accessor('gender', {
+  header: 'Gender',
+  cell: (info) => info.getValue() ?? '-',
+}),
       columnHelper.accessor('level', { header: 'LVL', cell: (info) => info.getValue() ?? '-' }),
       columnHelper.accessor((row) => row.stats.hp, { id: 'hp', header: 'HP', cell: (info) => info.getValue() ?? '-' }),
       columnHelper.accessor((row) => row.stats.mp, { id: 'mp', header: 'MP', cell: (info) => info.getValue() ?? '-' }),
