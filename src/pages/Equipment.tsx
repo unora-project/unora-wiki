@@ -497,14 +497,23 @@ export function Equipment() {
                 </Link>
               )}
             </div>
-          )
-        },
-      }),
+        )
+      },
+    }),
+  ]
+
+  if (showGender) {
+    baseColumns.push(
       columnHelper.accessor('gender', {
-  header: 'Gender',
-  cell: (info) => info.getValue() ?? '-',
-}),
-      columnHelper.accessor('level', { header: 'LVL', cell: (info) => info.getValue() ?? '-' }),
+        header: 'Gender',
+        cell: (info) => info.getValue() ?? '-',
+      })
+    )
+  }
+
+  return [
+    ...baseColumns,
+    columnHelper.accessor('level', { header: 'LVL', cell: (info) => info.getValue() ?? '-' }),
       columnHelper.accessor((row) => row.stats.hp, { id: 'hp', header: 'HP', cell: (info) => info.getValue() ?? '-' }),
       columnHelper.accessor((row) => row.stats.mp, { id: 'mp', header: 'MP', cell: (info) => info.getValue() ?? '-' }),
       columnHelper.accessor((row) => row.stats.ac, { id: 'ac', header: 'AC', cell: (info) => info.getValue() ?? '-' }),
