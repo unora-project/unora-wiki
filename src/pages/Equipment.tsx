@@ -51,9 +51,32 @@ const UPGRADE_TIERS: { key: keyof WeaponRecipeRow; label: string }[] = [
   { key: 'Upgrade to Empowered', label: 'Empowered' },
 ]
 
+function isMedeniaLevel(level: unknown): boolean {
+  return typeof level === 'string' && /^ab\s*\d+/i.test(level.trim())
+}
+
 function WeaponRecipeTable({ data, searchPlaceholder }: { data: Record<string, unknown>[]; searchPlaceholder: string }) {
   const rows = data as unknown as WeaponRecipeRow[]
   const [selectedTier, setSelectedTier] = useState<Record<string, keyof WeaponRecipeRow>>({})
+
+  const regionTabs = useMemo(() => {
+    const tabs: { id: 'temuair' | 'medenia'; label: string }[] = []
+    if (rows.some((r) => !isMedeniaLevel(r.Level))) tabs.push({ id: 'temuair', label: 'Temuair' })
+    if (rows.some((r) => isMedeniaLevel(r.Level))) tabs.push({ id: 'medenia', label: 'Medenia' })
+    return tabs
+  }, [rows])
+
+  const [activeRegion, setActiveRegion] = useState<'temuair' | 'medenia'>('temuair')
+
+  useEffect(() => {
+    if (!regionTabs.some((t) => t.id === activeRegion)) {
+      setActiveRegion(regionTabs[0]?.id ?? 'temuair')
+    }
+  }, [regionTabs, activeRegion])
+
+  const filteredRows = useMemo(() => {
+    return rows.filter((r) => (activeRegion === 'medenia') === isMedeniaLevel(r.Level))
+  }, [rows, activeRegion])
 
   const columns = useMemo(() => {
     const colHelper = createColumnHelper<WeaponRecipeRow>()
@@ -104,7 +127,31 @@ function WeaponRecipeTable({ data, searchPlaceholder }: { data: Record<string, u
     ]
   }, [selectedTier])
 
-  return <DataTable data={rows} columns={columns} searchPlaceholder={searchPlaceholder} />
+  return (
+    <div>
+      {regionTabs.length > 1 && (
+        <div className="mb-4 flex gap-1 border-b border-parchment-300 dark:border-ash/20">
+          {regionTabs.map((t) => (
+            <button
+              key={t.id}
+              onClick={() => setActiveRegion(t.id)}
+              className={`relative px-4 py-2.5 font-ui text-sm font-medium transition-colors ${
+                activeRegion === t.id
+                  ? 'text-gilt'
+                  : 'text-ash hover:text-parchment-800 dark:hover:text-ivory'
+              }`}
+            >
+              {t.label}
+              {activeRegion === t.id && (
+                <span className="absolute inset-x-0 -bottom-px h-0.5 bg-gilt" />
+              )}
+            </button>
+          ))}
+        </div>
+      )}
+      <DataTable data={filteredRows} columns={columns} searchPlaceholder={searchPlaceholder} />
+    </div>
+  )
 }
 
 const categories = [

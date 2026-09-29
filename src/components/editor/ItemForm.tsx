@@ -94,6 +94,57 @@ function GroupedSel({
   )
 }
 
+function MultiClassSelect({
+  label,
+  value,
+  onChange,
+  groups,
+}: {
+  label: string
+  value: string | undefined
+  onChange: (v: string) => void
+  groups: readonly { label: string; options: readonly string[] }[]
+}) {
+  const selected = new Set(
+    (value ?? '').split(',').map((s) => s.trim()).filter(Boolean)
+  )
+
+  const toggle = (cls: string) => {
+    const next = new Set(selected)
+    if (next.has(cls)) next.delete(cls)
+    else next.add(cls)
+    onChange(Array.from(next).join(', '))
+  }
+
+  return (
+    <div>
+      <label className={labelCls}>{label}</label>
+      <div className="max-h-48 overflow-y-auto rounded border border-ash/20 bg-crypt-300 p-2">
+        {groups.map((group) => (
+          <div key={group.label} className="mb-2 last:mb-0">
+            <div className="mb-1 font-ui text-[10px] font-bold uppercase tracking-wider text-gilt/70">
+              {group.label}
+            </div>
+            <div className="grid grid-cols-2 gap-x-2 gap-y-1">
+              {group.options.map((o) => (
+                <label key={o} className="flex items-center gap-1.5 text-xs text-ivory/90">
+                  <input
+                    type="checkbox"
+                    checked={selected.has(o)}
+                    onChange={() => toggle(o)}
+                    className="h-3.5 w-3.5 rounded border-ash/40 bg-crypt-400 accent-gilt"
+                  />
+                  {o}
+                </label>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
 interface Props {
   tab: ItemFormTab
   value: EditorItem | EditorRecipe
@@ -247,11 +298,13 @@ export function ItemForm({ tab, value, onChange }: Props) {
             <N label="Value (Gold)" value={value.value} onChange={(v) => up({ value: v })} />
             <N label="Weight *" value={value.weight} onChange={(v) => up({ weight: v })} />
           </div>
-          <div className="mt-2 grid grid-cols-3 gap-2">
-            <GroupedSel label="Class" value={value.class} onChange={(v) => up({ class: v })} groups={CLASS_GROUPS} />
-            <S label="Level" value={value.level} onChange={(v) => up({ level: v })} />
-            <Sel label="Gender" value={value.gender} onChange={(v) => up({ gender: v })} options={GENDERS} />
-          </div>
+          <div className="mt-2">
+  <MultiClassSelect label="Class" value={value.class} onChange={(v) => up({ class: v })} groups={CLASS_GROUPS} />
+</div>
+<div className="mt-2 grid grid-cols-2 gap-2">
+  <S label="Level" value={value.level} onChange={(v) => up({ level: v })} />
+  <Sel label="Gender" value={value.gender} onChange={(v) => up({ gender: v })} options={GENDERS} />
+</div>
         </>
       )}
 

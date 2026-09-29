@@ -30,44 +30,63 @@ const SIMPLE_TYPE_FILES: Record<string, string> = {
   shields: 'shields.csv',
 }
 
-export function resolveItemPath(item: EditorItem): string | null {
+// Splits a possibly comma-separated Class field ("Adept, Druid") into the
+// individual class dirs it resolves to, ignoring anything unrecognized.
+function classList(item: EditorItem): string[] {
+  return (item.class || '')
+    .split(',')
+    .map((c) => lc(c))
+    .filter((c) => CLASS_DIRS.has(c))
+}
+
+// Returns every CSV path this item should be written to. A single-class
+// item resolves to one path (same as before); a multi-class item resolves
+// to one path per selected class, so the item gets duplicated into each
+// class's CSV.
+export function resolveItemPaths(item: EditorItem): string[] {
   const type = lc(item.type)
 
   if (type === 'weapons') {
-    const cls = lc(item.class)
-    if (!CLASS_DIRS.has(cls)) return null
-    return `${DATA_ROOT}/equipment/csv/weapons/${cls}/weapons.csv`
+    const classes = classList(item)
+    if (classes.length === 0) return []
+    return classes.map((cls) => `${DATA_ROOT}/equipment/csv/weapons/${cls}/weapons.csv`)
   }
 
   if (type === 'armors' || type === 'armor') {
-    const cls = lc(item.class)
+    const classes = classList(item)
     const g = lc(item.gender)
-    if (!CLASS_DIRS.has(cls) || !GENDER_DIRS.has(g)) return null
-    return `${DATA_ROOT}/equipment/csv/armor/${cls}/${g}/armor.csv`
+    if (classes.length === 0 || !GENDER_DIRS.has(g)) return []
+    return classes.map((cls) => `${DATA_ROOT}/equipment/csv/armor/${cls}/${g}/armor.csv`)
   }
 
   if (type === 'helmets' || type === 'helmet') {
-    const cls = lc(item.class)
+    const classes = classList(item)
     const g = lc(item.gender)
-    if (!CLASS_DIRS.has(cls) || !GENDER_DIRS.has(g)) return null
-    return `${DATA_ROOT}/equipment/csv/helmets/${cls}/${g}/helmets.csv`
+    if (classes.length === 0 || !GENDER_DIRS.has(g)) return []
+    return classes.map((cls) => `${DATA_ROOT}/equipment/csv/helmets/${cls}/${g}/helmets.csv`)
   }
 
   if (type === 'overarmor') {
     const g = lc(item.gender)
-    if (!GENDER_DIRS.has(g) && g !== 'unisex') return null
-    return `${DATA_ROOT}/equipment/csv/overarmor/${g}/overarmor.csv`
+    if (!GENDER_DIRS.has(g) && g !== 'unisex') return []
+    return [`${DATA_ROOT}/equipment/csv/overarmor/${g}/overarmor.csv`]
   }
 
   if (type === 'overhelmet') {
     const g = lc(item.gender)
-    if (!GENDER_DIRS.has(g) && g !== 'unisex') return null
-    return `${DATA_ROOT}/equipment/csv/overhelmet/${g}/overhelmet.csv`
+    if (!GENDER_DIRS.has(g) && g !== 'unisex') return []
+    return [`${DATA_ROOT}/equipment/csv/overhelmet/${g}/overhelmet.csv`]
   }
 
   const file = SIMPLE_TYPE_FILES[type]
-  if (file) return `${DATA_ROOT}/equipment/csv/${file}`
-  return null
+  if (file) return [`${DATA_ROOT}/equipment/csv/${file}`]
+  return []
+}
+
+// Kept for callers that only need a single representative path (e.g. the
+// unresolved-item counter). Returns the first resolved path, or null.
+export function resolveItemPath(item: EditorItem): string | null {
+  return resolveItemPaths(item)[0] ?? null
 }
 
 export function resolveRecipePath(tab: EditorTab, _recipe: EditorRecipe): string | null {
@@ -86,11 +105,12 @@ export function resolveRecipePath(tab: EditorTab, _recipe: EditorRecipe): string
 export function groupItemsByPath(items: EditorItem[]): Map<string, EditorItem[]> {
   const map = new Map<string, EditorItem[]>()
   for (const item of items) {
-    const p = resolveItemPath(item)
-    if (!p) continue
-    const arr = map.get(p) ?? []
-    arr.push(item)
-    map.set(p, arr)
+    const paths = resolveItemPaths(item)
+    for (const p of paths) {
+      const arr = map.get(p) ?? []
+      arr.push(item)
+      map.set(p, arr)
+    }
   }
   return map
 }
