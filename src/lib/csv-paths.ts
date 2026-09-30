@@ -35,7 +35,7 @@ const SIMPLE_TYPE_FILES: Record<string, string> = {
 function classList(item: EditorItem): string[] {
   return (item.class || '')
     .split(',')
-    .map((c) => lc(c))
+    .map((c) => lc(c).replace(/\s+/g, '-'))
     .filter((c) => CLASS_DIRS.has(c))
 }
 
