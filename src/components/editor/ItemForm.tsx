@@ -155,6 +155,8 @@ export function ItemForm({ tab, value, onChange }: Props) {
   const up = (patch: Partial<EditorItem | EditorRecipe>) => onChange({ ...value, ...patch } as any)
   const isCraft = tab !== 'items'
   const isWeaponsmithing = tab === 'weaponsmithing'
+  const isArmorsmithing = tab === 'armorsmithing'
+  const isJewelcrafting = tab === 'jewelcrafting'
   const rec = (value as EditorRecipe).recipe ?? []
 
   const addIng = () => {
@@ -193,6 +195,20 @@ export function ItemForm({ tab, value, onChange }: Props) {
                 onChange={(v) => up({ weapon_type: v } as any)}
                 placeholder="1H, 2H, Staff, Dagger, Claw, Shield, Bows, Master"
               />
+              <S label="Level" value={value.level} onChange={(v) => up({ level: v })} />
+            </div>
+          )}
+
+          {isArmorsmithing && (
+            <div className="mt-2 grid grid-cols-3 gap-2">
+              <GroupedSel label="Class" value={value.class} onChange={(v) => up({ class: v })} groups={CLASS_GROUPS} />
+              <Sel label="Gender" value={value.gender} onChange={(v) => up({ gender: v })} options={GENDERS} />
+              <S label="Level" value={value.level} onChange={(v) => up({ level: v })} />
+            </div>
+          )}
+
+          {isJewelcrafting && (
+            <div className="mt-2 grid grid-cols-1 gap-2">
               <S label="Level" value={value.level} onChange={(v) => up({ level: v })} />
             </div>
           )}
@@ -278,37 +294,35 @@ export function ItemForm({ tab, value, onChange }: Props) {
         <S label="Item Name *" value={value.item_name} onChange={(v) => up({ item_name: v })} />
       </div>
 
-      {!isWeaponsmithing && (
+      {!isCraft && (
         <>
           <div className="mt-2 grid grid-cols-2 gap-2">
             <Sel label="Type *" value={value.type} onChange={(v) => up({ type: v })} options={ITEM_TYPES} />
-            {!isCraft && <S label="Location/Source" value={value.location} onChange={(v) => up({ location: v })} />}
+            <S label="Location/Source" value={value.location} onChange={(v) => up({ location: v })} />
           </div>
-          {!isCraft && (
-            <div className="mt-2 grid grid-cols-1 gap-2">
-              <S
-                label="Quest/Location Link"
-                value={value.locationLink}
-                onChange={(v) => up({ locationLink: v })}
-                placeholder="/hunting/mileth_crypt or /quests/circle_1/example_quest"
-              />
-            </div>
-          )}
+          <div className="mt-2 grid grid-cols-1 gap-2">
+            <S
+              label="Quest/Location Link"
+              value={value.locationLink}
+              onChange={(v) => up({ locationLink: v })}
+              placeholder="/hunting/mileth_crypt or /quests/circle_1/example_quest"
+            />
+          </div>
           <div className="mt-2 grid grid-cols-2 gap-2">
             <N label="Value (Gold)" value={value.value} onChange={(v) => up({ value: v })} />
             <N label="Weight *" value={value.weight} onChange={(v) => up({ weight: v })} />
           </div>
           <div className="mt-2">
-  <MultiClassSelect label="Class" value={value.class} onChange={(v) => up({ class: v })} groups={CLASS_GROUPS} />
-</div>
-<div className="mt-2 grid grid-cols-2 gap-2">
-  <S label="Level" value={value.level} onChange={(v) => up({ level: v })} />
-  <Sel label="Gender" value={value.gender} onChange={(v) => up({ gender: v })} options={GENDERS} />
-</div>
+            <MultiClassSelect label="Class" value={value.class} onChange={(v) => up({ class: v })} groups={CLASS_GROUPS} />
+          </div>
+          <div className="mt-2 grid grid-cols-2 gap-2">
+            <S label="Level" value={value.level} onChange={(v) => up({ level: v })} />
+            <Sel label="Gender" value={value.gender} onChange={(v) => up({ gender: v })} options={GENDERS} />
+          </div>
         </>
       )}
 
-      {!isWeaponsmithing && (
+      {!isCraft && (
         <>
           <div className={sectionCls}>Stats</div>
           <div className="grid grid-cols-3 gap-2 sm:grid-cols-5">
