@@ -136,7 +136,7 @@ export const GENERIC_TAB_SCHEMAS: Record<GenericTab, GenericTabSchema> = {
   },
 }
 
-export const RANK_OPTIONS = ['Beginner', 'Basic', 'Initiate', 'Artisan', 'Adept', 'Advanced', 'Expert'] as const
+export const RANK_OPTIONS = ['Beginner', 'Basic', 'Initiate', 'Artisan', 'Adept', 'Advanced', 'Expert', 'Master'] as const
 
 export const BASIC_IDS = [
   'item_name', 'type', 'class', 'gender', 'level', 'weight', 'value',

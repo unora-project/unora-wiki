@@ -12,7 +12,7 @@ import professionsMetadata from '@/data/metadata/professions.json'
 
 const iconMap: Record<string, LucideIcon> = { MapPin, Hammer, PackageOpen, Lightbulb }
 
-const RANK_ORDER = ['Beginner', 'Basic', 'Initiate', 'Artisan', 'Adept', 'Advanced', 'Expert']
+const RANK_ORDER = ['Beginner', 'Basic', 'Initiate', 'Artisan', 'Adept', 'Advanced', 'Expert', 'Master']
 
 // Map dataFile key -> dynamic import. Only the files needed by the active
 // profession are fetched; unused ones stay out of the JS graph for this route.
