@@ -39,7 +39,7 @@ const GENERIC_TAB_SET: ReadonlySet<EditorTab> = new Set<EditorTab>([
 const isGenericTab = (t: EditorTab): t is GenericTab => GENERIC_TAB_SET.has(t)
 
 const EMPTY_ITEM = (): EditorItem => ({
-  item_name: '', type: 'Weapons', class: 'Peasant', gender: 'Unisex',
+  item_name: '', type: 'Weapons', class: '', gender: 'Unisex',
   level: '', weight: '', value: '', location: '', set_bonus: '',
 })
 
