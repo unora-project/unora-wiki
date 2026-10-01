@@ -39,7 +39,7 @@ export function GenericForm({ schema, value, onChange }: Props) {
             )
           }
 
-          const multi = MULTILINE_HEADERS.has(h) && (v.length > 40 || v.includes(','))
+          const multi = MULTILINE_HEADERS.has(h)
           return (
             <div key={h}>
               <label className={labelCls}>
