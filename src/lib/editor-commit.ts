@@ -19,10 +19,10 @@ const DEFAULT_HEADERS: Record<ItemTab, string[]> = {
     'CON', 'DEX', 'DMG', 'HIT', 'AS%', 'SKD', 'SKD%', 'SPD', 'SPD%', 'FHB',
     'HB%', 'CDR%', 'Value', 'Set',
   ],
-  jewelcrafting: ['Name', 'Level', 'Materials'],
-  armorsmithing: ['Name', 'Class', 'Gender', 'Level', 'Materials'],
+  jewelcrafting: ['Name', 'Rank', 'Level', 'Materials'],
+  armorsmithing: ['Name', 'Class', 'Gender', 'Rank', 'Level', 'Materials'],
   weaponsmithing: [
-    'Name', 'Level', 'Type', 'Materials', 'Materials to upgrade',
+    'Name', 'Rank', 'Level', 'Type', 'Materials', 'Materials to upgrade',
     'Upgrade to Great', 'Upgrade to Grand', 'Upgrade to Enchanted', 'Upgrade to Empowered',
   ],
 }
@@ -93,6 +93,13 @@ async function buildFileDiff(
   ) {
     headers.push('LOC_LINK')
   }
+  if (
+  (tab === 'armorsmithing' || tab === 'jewelcrafting' || tab === 'weaponsmithing') &&
+  !headers.includes('Rank') &&
+  rows.some((r) => (r as EditorRecipe).craft_rank)
+) {
+  headers.push('Rank')
+}
 
   if (tab === 'weaponsmithing') {
     const tierColumns: { header: string; field: keyof EditorRecipe }[] = [

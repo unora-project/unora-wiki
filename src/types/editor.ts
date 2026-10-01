@@ -93,12 +93,12 @@ export interface GenericTabSchema {
 
 export const GENERIC_TAB_SCHEMAS: Record<GenericTab, GenericTabSchema> = {
   'alchemy-recipes': {
-    tab: 'alchemy-recipes',
-    label: 'Alchemy Recipes',
-    csvPath: 'data-source/professions/csv/alchemy/recipes.csv',
-    headers: ['Potion', 'Ingredients', 'Learned From', 'Effects'],
-    nameKey: 'Potion',
-  },
+  tab: 'alchemy-recipes',
+  label: 'Alchemy Recipes',
+  csvPath: 'data-source/professions/csv/alchemy/recipes.csv',
+  headers: ['Potion', 'Rank', 'Ingredients', 'Learned From', 'Effects'],
+  nameKey: 'Potion',
+},
   'alchemy-extracts': {
     tab: 'alchemy-extracts',
     label: 'Alchemy Extracts',
@@ -135,6 +135,8 @@ export const GENERIC_TAB_SCHEMAS: Record<GenericTab, GenericTabSchema> = {
     nameKey: 'Fish',
   },
 }
+
+export const RANK_OPTIONS = ['Beginner', 'Basic', 'Initiate', 'Artisan', 'Adept', 'Advanced', 'Expert'] as const
 
 export const BASIC_IDS = [
   'item_name', 'type', 'class', 'gender', 'level', 'weight', 'value',
@@ -198,7 +200,7 @@ export const FIELD_TO_CSV_HEADER: Record<string, string> = {
   cdr_pct: 'CDR%',
   class: 'Class',
   gender: 'Gender',
-  craft_rank: 'Level',
+  craft_rank: 'Rank',
   recipe: 'Materials',
   type: 'Type',
   value: 'Value',

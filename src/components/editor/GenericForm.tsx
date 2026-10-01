@@ -1,4 +1,5 @@
 import type { GenericRow, GenericTabSchema } from '@/types/editor'
+import { RANK_OPTIONS } from '@/types/editor'
 
 interface Props {
   schema: GenericTabSchema
@@ -23,6 +24,21 @@ export function GenericForm({ schema, value, onChange }: Props) {
       <div className="flex flex-col gap-3">
         {schema.headers.map((h) => {
           const v = value[h] ?? ''
+
+          if (h === 'Rank') {
+            return (
+              <div key={h}>
+                <label className={labelCls}>{h}</label>
+                <select className={inputCls} value={v} onChange={(e) => set(h, e.target.value)}>
+                  <option value="">(None)</option>
+                  {RANK_OPTIONS.map((r) => (
+                    <option key={r} value={r}>{r}</option>
+                  ))}
+                </select>
+              </div>
+            )
+          }
+
           const multi = MULTILINE_HEADERS.has(h) && (v.length > 40 || v.includes(','))
           return (
             <div key={h}>

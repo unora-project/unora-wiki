@@ -33,6 +33,7 @@ interface ShopEntry {
 
 interface WeaponRecipeRow {
   Name: string
+  Rank?: string
   Level: string
   Type: string
   Materials: string
@@ -74,9 +75,31 @@ function WeaponRecipeTable({ data, searchPlaceholder }: { data: Record<string, u
     }
   }, [regionTabs, activeRegion])
 
-  const filteredRows = useMemo(() => {
+  const regionFilteredRows = useMemo(() => {
     return rows.filter((r) => (activeRegion === 'medenia') === isMedeniaLevel(r.Level))
   }, [rows, activeRegion])
+
+  const hasRank = regionFilteredRows.length > 0 && regionFilteredRows.some((r) => r.Rank?.trim())
+
+  const rankTabs = useMemo(() => {
+    if (!hasRank) return []
+    const present = new Set(regionFilteredRows.map((r) => r.Rank).filter(Boolean))
+    const ordered = RANK_ORDER.filter((r) => present.has(r))
+    return ['All', ...ordered]
+  }, [regionFilteredRows, hasRank])
+
+  const [activeRank, setActiveRank] = useState('All')
+
+  useEffect(() => {
+    if (!rankTabs.includes(activeRank)) {
+      setActiveRank('All')
+    }
+  }, [rankTabs, activeRank])
+
+  const filteredRows = useMemo(() => {
+    if (!hasRank || activeRank === 'All') return regionFilteredRows
+    return regionFilteredRows.filter((r) => r.Rank === activeRank)
+  }, [regionFilteredRows, hasRank, activeRank])
 
   const columns = useMemo(() => {
     const colHelper = createColumnHelper<WeaponRecipeRow>()
@@ -130,7 +153,7 @@ function WeaponRecipeTable({ data, searchPlaceholder }: { data: Record<string, u
   return (
     <div>
       {regionTabs.length > 1 && (
-        <div className="mb-4 flex gap-1 border-b border-parchment-300 dark:border-ash/20">
+        <div className="mb-3 flex gap-1 border-b border-parchment-300 dark:border-ash/20">
           {regionTabs.map((t) => (
             <button
               key={t.id}
@@ -143,6 +166,26 @@ function WeaponRecipeTable({ data, searchPlaceholder }: { data: Record<string, u
             >
               {t.label}
               {activeRegion === t.id && (
+                <span className="absolute inset-x-0 -bottom-px h-0.5 bg-gilt" />
+              )}
+            </button>
+          ))}
+        </div>
+      )}
+      {hasRank && rankTabs.length > 1 && (
+        <div className="mb-4 flex flex-wrap gap-1 border-b border-parchment-300 dark:border-ash/20">
+          {rankTabs.map((rank) => (
+            <button
+              key={rank}
+              onClick={() => setActiveRank(rank)}
+              className={`relative px-3 py-2 font-ui text-sm font-medium transition-colors ${
+                activeRank === rank
+                  ? 'text-gilt'
+                  : 'text-ash hover:text-parchment-800 dark:hover:text-ivory'
+              }`}
+            >
+              {rank}
+              {activeRank === rank && (
                 <span className="absolute inset-x-0 -bottom-px h-0.5 bg-gilt" />
               )}
             </button>
