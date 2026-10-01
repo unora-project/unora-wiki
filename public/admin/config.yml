@@ -318,6 +318,10 @@ collections:
           - "suomi"
           - "rucesion"
           - "tagor"
+          - "exchange"
+          - "asilon"
+          - "noam"
+          - "lama"
       - { name: name, label: Name, widget: string }
       - name: type
         label: Type/Role
