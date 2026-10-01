@@ -170,6 +170,12 @@ async function buildGenericDiff(
   const parsed = parseCSV(before)
   const headers = parsed.headers.length ? parsed.headers : [...schema.headers]
 
+  for (const h of schema.headers) {
+    if (!headers.includes(h) && rows.some((r) => r[h]?.trim())) {
+      headers.push(h)
+    }
+  }
+
   // Merge editor rows into existing CSV by nameKey rather than replacing.
   // The bundled seed can lag GitHub (e.g. Load Published only reads the shipped
   // JSON), so a wholesale replace would silently delete rows that exist on
