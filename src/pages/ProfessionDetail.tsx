@@ -1,7 +1,7 @@
 import { useParams } from 'react-router'
 import { useEffect, useMemo, useState } from 'react'
 import { createColumnHelper } from '@tanstack/react-table'
-import { DataTable } from '@/components/tables/DataTable'
+import { DataTable, compareLevels } from '@/components/tables/DataTable'
 import { PageHeader } from '@/components/ui/PageHeader'
 import {
   MapPin, Hammer, PackageOpen, Lightbulb,
