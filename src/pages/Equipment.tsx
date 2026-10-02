@@ -2,7 +2,7 @@ import { useEffect, useState, useMemo, useRef } from 'react'
 import { createPortal } from 'react-dom'
 import { Link } from 'react-router'
 import { createColumnHelper } from '@tanstack/react-table'
-import { DataTable } from '@/components/tables/DataTable'
+import { DataTable, compareLevels } from '@/components/tables/DataTable'
 import equipmentUrl from '@/data/equipment/all.json?url'
 
 interface EquipmentItem {
@@ -557,7 +557,7 @@ export function Equipment() {
 
   return [
     ...baseColumns,
-    columnHelper.accessor('level', { header: 'LVL', cell: (info) => info.getValue() ?? '-' }),
+    columnHelper.accessor('level', { header: 'LVL', cell: (info) => info.getValue() ?? '-', sortingFn: compareLevels }),
     columnHelper.accessor((row) => row.stats.hp, { id: 'hp', header: 'HP', cell: (info) => info.getValue() ?? '-' }),
     columnHelper.accessor((row) => row.stats.mp, { id: 'mp', header: 'MP', cell: (info) => info.getValue() ?? '-' }),
     columnHelper.accessor((row) => row.stats.ac, { id: 'ac', header: 'AC', cell: (info) => info.getValue() ?? '-' }),

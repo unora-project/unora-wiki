@@ -173,21 +173,22 @@ function GenericTable({ data, searchPlaceholder }: { data: Record<string, unknow
   }, [data, hasRank, activeRank])
 
   const columns = useMemo(() => {
-    if (filteredData.length === 0) return []
-    const keys = Object.keys(filteredData[0]).filter(
-      (k) => !(k === 'Rank' && activeRank !== 'All')
-    )
-    const colHelper = createColumnHelper<Record<string, unknown>>()
-    return keys.map((key) =>
-      colHelper.accessor((row) => row[key], {
-        id: key,
-        header: key,
-        cell: (info) => (
-          <span className="whitespace-pre-line">{String(info.getValue() ?? '-')}</span>
-        ),
-      })
-    )
-  }, [filteredData, activeRank])
+  if (filteredData.length === 0) return []
+  const keys = Object.keys(filteredData[0]).filter(
+    (k) => !(k === 'Rank' && activeRank !== 'All')
+  )
+  const colHelper = createColumnHelper<Record<string, unknown>>()
+  return keys.map((key) =>
+    colHelper.accessor((row) => row[key], {
+      id: key,
+      header: key,
+      cell: (info) => (
+        <span className="whitespace-pre-line">{String(info.getValue() ?? '-')}</span>
+      ),
+      ...(key.toLowerCase() === 'level' ? { sortingFn: compareLevels } : {}),
+    })
+  )
+}, [filteredData, activeRank])
 
   if (data.length === 0) {
     return <p className="text-parchment-500 dark:text-parchment-600">No data available.</p>
@@ -248,7 +249,7 @@ function WeaponRecipeTable({ data, searchPlaceholder }: { data: Record<string, u
     const colHelper = createColumnHelper<WeaponRecipeRow>()
     return [
       colHelper.accessor('Name', { header: 'Name' }),
-      colHelper.accessor('Level', { header: 'Level' }),
+      colHelper.accessor('Level', { header: 'Level', sortingFn: compareLevels }),
       colHelper.accessor('Type', { header: 'Type' }),
       colHelper.accessor('Materials', {
         header: 'Materials to Craft',

@@ -43,6 +43,27 @@ function smartSort<T>(rowA: Row<T>, rowB: Row<T>, columnId: string): number {
   return String(a).localeCompare(String(b))
 }
 
+function levelRank(raw: unknown): { tier: number; num: number } {
+  if (raw == null || raw === '' || raw === '-') return { tier: 5, num: 0 }
+  const s = String(raw).trim()
+  if (/^ab\s*\d+/i.test(s)) {
+    const n = s.match(/\d+/)
+    return { tier: 3, num: n ? parseFloat(n[0]) : 0 }
+  }
+  if (/^(grand\s*master|gm)$/i.test(s)) return { tier: 2, num: 0 }
+  if (/^master$/i.test(s)) return { tier: 1, num: 0 }
+  const n = s.match(/-?\d+(?:\.\d+)?/)
+  if (n) return { tier: 0, num: parseFloat(n[0]) }
+  return { tier: 4, num: 0 }
+}
+
+export function compareLevels(rowA: Row<any>, rowB: Row<any>, columnId: string): number {
+  const a = levelRank(rowA.getValue(columnId))
+  const b = levelRank(rowB.getValue(columnId))
+  if (a.tier !== b.tier) return a.tier - b.tier
+  return a.num - b.num
+}
+
 export function DataTable<T>({ data, columns, searchPlaceholder = 'Search...', initialSorting, textSize = 'normal' }: DataTableProps<T>) {
   const [sorting, setSorting] = useState<SortingState>(initialSorting ?? [])
   const [globalFilter, setGlobalFilter] = useState('')

@@ -14,7 +14,7 @@ interface Props {
 const PAGE_SIZES = [25, 50, 100, 250]
 
 type SortDir = 'asc' | 'desc'
-type ColKind = 'num' | 'str'
+type ColKind = 'num' | 'str' | 'lvl'
 type Col = { key: string; label: string; kind: ColKind; get: (r: any) => unknown; show: (r: any) => string; craftOnly?: boolean; itemOnly?: boolean; cellCls?: string }
 
 const recipeStr = (r: EditorRecipe) => r.recipe?.map((x) => `${x.qty}x ${x.name}`).join(', ') || ''
@@ -27,7 +27,7 @@ const COLS: Col[] = [
   { key: 'class', label: 'Class', kind: 'str', get: (r) => r.class, show: (r) => r.class ?? '' },
   { key: 'gender', label: 'Gen', kind: 'str', get: (r) => r.gender, show: (r) => r.gender ?? '' },
   { key: 'location', label: 'Loc', kind: 'str', get: (r) => r.location, show: (r) => r.location ?? '', itemOnly: true },
-  { key: 'level', label: 'Lvl', kind: 'num', get: (r) => r.level, show: (r) => r.level },
+  { key: 'level', label: 'Lvl', kind: 'lvl', get: (r) => r.level, show: (r) => r.level },,
   { key: 'weight', label: 'Wgt', kind: 'num', get: (r) => r.weight, show: (r) => r.weight, itemOnly: true },
   { key: 'value', label: 'Val', kind: 'num', get: (r) => r.value, show: (r) => r.value, itemOnly: true },
   { key: 'hp', label: 'HP', kind: 'num', get: (r) => r.hp, show: (r) => r.hp, itemOnly: true },
@@ -44,7 +44,27 @@ const COLS: Col[] = [
   { key: 'set_bonus', label: 'Set', kind: 'str', get: (r) => r.set_bonus, show: (r) => r.set_bonus ?? '', itemOnly: true },
 ]
 
+function levelRank(raw: unknown): { tier: number; num: number } {
+  if (raw == null || raw === '') return { tier: 5, num: 0 }
+  const s = String(raw).trim()
+  if (/^ab\s*\d+/i.test(s)) {
+    const n = s.match(/\d+/)
+    return { tier: 3, num: n ? parseFloat(n[0]) : 0 }
+  }
+  if (/^(grand\s*master|gm)$/i.test(s)) return { tier: 2, num: 0 }
+  if (/^master$/i.test(s)) return { tier: 1, num: 0 }
+  const n = s.match(/-?\d+(?:\.\d+)?/)
+  if (n) return { tier: 0, num: parseFloat(n[0]) }
+  return { tier: 4, num: 0 }
+}
+
 const cmp = (a: unknown, b: unknown, kind: ColKind): number => {
+  if (kind === 'lvl') {
+    const ra = levelRank(a)
+    const rb = levelRank(b)
+    if (ra.tier !== rb.tier) return ra.tier - rb.tier
+    return ra.num - rb.num
+  }
   const aEmpty = a === '' || a == null
   const bEmpty = b === '' || b == null
   if (aEmpty && bEmpty) return 0
