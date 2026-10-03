@@ -286,12 +286,13 @@ function CompareBar({
 }) {
   const [a, b] = items
   const [pos, setPos] = useState<{ top: number; left: number } | null>(null)
+  const [size, setSize] = useState<{ width: number; height: number } | null>(null)
   const dragRef = useRef<{ startX: number; startY: number; origTop: number; origLeft: number } | null>(null)
   const panelRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     if (pos !== null) return
-    const width = 420
+    const width = 460
     setPos({ top: 80, left: Math.max(16, window.innerWidth - width - 24) })
   }, [pos])
 
@@ -304,8 +305,8 @@ function CompareBar({
   const handlePointerMove = (e: React.PointerEvent) => {
     if (!dragRef.current) return
     const { startX, startY, origTop, origLeft } = dragRef.current
-    const panelWidth = panelRef.current?.offsetWidth ?? 420
-    const panelHeight = panelRef.current?.offsetHeight ?? 300
+    const panelWidth = panelRef.current?.offsetWidth ?? 460
+    const panelHeight = panelRef.current?.offsetHeight ?? 500
     let newLeft = origLeft + (e.clientX - startX)
     let newTop = origTop + (e.clientY - startY)
     newLeft = Math.max(8, Math.min(newLeft, window.innerWidth - panelWidth - 8))
@@ -349,14 +350,24 @@ function CompareBar({
   return createPortal(
     <div
       ref={panelRef}
-      className="fixed z-[100] w-[420px] max-w-[calc(100vw-32px)] rounded-lg border border-parchment-300 bg-parchment-50 shadow-[0_8px_30px_rgba(0,0,0,0.3)] dark:border-ash/20 dark:bg-obsidian"
-      style={{ top: pos.top, left: pos.left }}
+      className="fixed z-[100] flex min-w-[340px] min-h-[280px] max-w-[calc(100vw-32px)] max-h-[calc(100vh-32px)] flex-col resize overflow-hidden rounded-lg border border-parchment-300 bg-parchment-50 shadow-[0_8px_30px_rgba(0,0,0,0.3)] dark:border-ash/20 dark:bg-obsidian"
+      style={{
+        top: pos.top,
+        left: pos.left,
+        width: size?.width ?? 460,
+        height: size?.height ?? 500,
+      }}
+      onMouseUp={() => {
+        if (panelRef.current) {
+          setSize({ width: panelRef.current.offsetWidth, height: panelRef.current.offsetHeight })
+        }
+      }}
     >
       <div
         onPointerDown={handlePointerDown}
         onPointerMove={handlePointerMove}
         onPointerUp={handlePointerUp}
-        className="flex cursor-move items-center justify-between rounded-t-lg border-b border-parchment-300 bg-parchment-100 px-3 py-2 dark:border-ash/20 dark:bg-ink"
+        className="flex shrink-0 cursor-move items-center justify-between rounded-t-lg border-b border-parchment-300 bg-parchment-100 px-3 py-2 dark:border-ash/20 dark:bg-ink"
       >
         <h3 className="select-none font-heading text-sm font-semibold text-gilt">Compare Equipment</h3>
         <div className="flex items-center gap-2">
@@ -375,8 +386,8 @@ function CompareBar({
         </div>
       </div>
 
-      <div className="p-3">
-        <div className="mb-3 grid grid-cols-2 gap-2">
+      <div className="flex min-h-0 flex-1 flex-col p-3">
+        <div className="mb-3 grid shrink-0 grid-cols-2 gap-2">
           <div className="rounded-lg border border-parchment-300 bg-parchment-100 px-3 py-2 dark:border-ash/10 dark:bg-ink">
             <p className="text-[10px] font-semibold uppercase tracking-wider text-parchment-500 dark:text-parchment-600">Item 1</p>
             <p className="truncate font-heading text-sm font-semibold text-gilt">{a ? a.name : 'Select an item'}</p>
@@ -394,7 +405,7 @@ function CompareBar({
             Select two items (use the checkbox in the Compare column) to see stat differences.
           </p>
         ) : (
-          <div className="max-h-72 overflow-y-auto rounded-lg border border-parchment-300 dark:border-ash/20">
+          <div className="min-h-0 flex-1 overflow-y-auto rounded-lg border border-parchment-300 dark:border-ash/20">
             <table className="w-full text-sm">
               <thead className="sticky top-0 bg-parchment-200 dark:bg-ink">
                 <tr>
