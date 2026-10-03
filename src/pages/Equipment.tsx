@@ -304,60 +304,77 @@ function CompareBar({
     return [...statRows, ...pctRows].filter((r) => r.va !== null || r.vb !== null)
   }, [a, b])
 
-  const diffClass = (va: number | null, vb: number | null) => {
-    if (va == null || vb == null || va === vb) return 'text-parchment-700 dark:text-ivory/85'
-    return vb > va ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'
+  const cellClass = (value: number | null, other: number | null, isBetter: (v: number, o: number) => boolean) => {
+    if (value == null || other == null || value === other) {
+      return 'bg-parchment-100 text-parchment-800 dark:bg-ink dark:text-ivory/90'
+    }
+    return isBetter(value, other)
+      ? 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300'
+      : 'bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300'
   }
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-40 border-t border-parchment-300 bg-parchment-50 shadow-[0_-4px_12px_rgba(0,0,0,0.08)] dark:border-ash/20 dark:bg-obsidian">
-      <div className="mx-auto max-w-5xl px-4 py-3">
-        <div className="mb-2 flex items-center justify-between">
-          <h3 className="font-heading text-sm font-semibold text-gilt">Compare Equipment</h3>
+    <div className="fixed inset-x-0 bottom-0 z-[100] border-t border-parchment-300 bg-parchment-50 shadow-[0_-4px_20px_rgba(0,0,0,0.25)] dark:border-ash/20 dark:bg-obsidian">
+      <div className="mx-auto max-w-4xl px-4 py-4">
+        <div className="mb-3 flex items-center justify-between">
+          <h3 className="font-heading text-base font-semibold text-gilt">Compare Equipment</h3>
           <div className="flex items-center gap-2">
             <button
               onClick={onClear}
-              className="rounded border border-parchment-300 px-2 py-1 text-xs text-parchment-600 hover:border-gilt hover:text-gilt dark:border-ash/20 dark:text-ash"
+              className="rounded border border-parchment-300 px-3 py-1.5 text-xs font-medium text-parchment-600 hover:border-gilt hover:text-gilt dark:border-ash/20 dark:text-ash"
             >
               Clear
             </button>
             <button
               onClick={onClose}
-              className="rounded border border-parchment-300 px-2 py-1 text-xs text-parchment-600 hover:border-gilt hover:text-gilt dark:border-ash/20 dark:text-ash"
+              className="rounded border border-parchment-300 px-3 py-1.5 text-xs font-medium text-parchment-600 hover:border-gilt hover:text-gilt dark:border-ash/20 dark:text-ash"
             >
               Close
             </button>
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-4 mb-2">
-          <div className="rounded border border-parchment-300 bg-parchment-100 px-3 py-2 dark:border-ash/10 dark:bg-ink">
-            <p className="text-xs font-semibold uppercase tracking-wider text-parchment-500 dark:text-parchment-600">Item 1</p>
-            <p className="font-heading text-sm text-gilt">{a ? a.name : 'Select an item'}</p>
+        <div className="grid grid-cols-[1fr_1fr] gap-3 mb-3">
+          <div className="rounded-lg border border-parchment-300 bg-parchment-100 px-3 py-2 dark:border-ash/10 dark:bg-ink">
+            <p className="text-[10px] font-semibold uppercase tracking-wider text-parchment-500 dark:text-parchment-600">Item 1</p>
+            <p className="truncate font-heading text-sm font-semibold text-gilt">{a ? a.name : 'Select an item'}</p>
             {a && <p className="text-xs text-parchment-500 dark:text-parchment-600">Level {a.level ?? '-'}</p>}
           </div>
-          <div className="rounded border border-parchment-300 bg-parchment-100 px-3 py-2 dark:border-ash/10 dark:bg-ink">
-            <p className="text-xs font-semibold uppercase tracking-wider text-parchment-500 dark:text-parchment-600">Item 2</p>
-            <p className="font-heading text-sm text-gilt">{b ? b.name : 'Select an item'}</p>
+          <div className="rounded-lg border border-parchment-300 bg-parchment-100 px-3 py-2 dark:border-ash/10 dark:bg-ink">
+            <p className="text-[10px] font-semibold uppercase tracking-wider text-parchment-500 dark:text-parchment-600">Item 2</p>
+            <p className="truncate font-heading text-sm font-semibold text-gilt">{b ? b.name : 'Select an item'}</p>
             {b && <p className="text-xs text-parchment-500 dark:text-parchment-600">Level {b.level ?? '-'}</p>}
           </div>
         </div>
 
         {rows.length === 0 ? (
-          <p className="text-xs text-parchment-500 dark:text-parchment-600">
+          <p className="text-sm text-parchment-500 dark:text-parchment-600">
             Select two items (use the checkbox in the Compare column) to see stat differences.
           </p>
         ) : (
-          <div className="max-h-40 overflow-y-auto">
-            <div className="grid grid-cols-3 gap-2 text-xs">
-              {rows.map((r) => (
-                <div key={r.label} className="contents">
-                  <span className="text-parchment-500 dark:text-parchment-600">{r.label}</span>
-                  <span className="text-right text-parchment-700 dark:text-ivory/85">{r.va ?? '-'}</span>
-                  <span className={`text-right font-semibold ${diffClass(r.va, r.vb)}`}>{r.vb ?? '-'}</span>
-                </div>
-              ))}
-            </div>
+          <div className="max-h-48 overflow-y-auto rounded-lg border border-parchment-300 dark:border-ash/20">
+            <table className="w-full text-sm">
+              <thead className="sticky top-0 bg-parchment-200 dark:bg-ink">
+                <tr>
+                  <th className="px-3 py-1.5 text-left text-xs font-semibold uppercase tracking-wider text-parchment-600 dark:text-parchment-400">Stat</th>
+                  <th className="px-3 py-1.5 text-right text-xs font-semibold uppercase tracking-wider text-parchment-600 dark:text-parchment-400">Item 1</th>
+                  <th className="px-3 py-1.5 text-right text-xs font-semibold uppercase tracking-wider text-parchment-600 dark:text-parchment-400">Item 2</th>
+                </tr>
+              </thead>
+              <tbody>
+                {rows.map((r, i) => (
+                  <tr key={r.label} className={i % 2 ? 'bg-parchment-100/50 dark:bg-ink/20' : ''}>
+                    <td className="px-3 py-1.5 font-medium text-parchment-600 dark:text-parchment-400">{r.label}</td>
+                    <td className={`px-3 py-1.5 text-right font-semibold ${cellClass(r.va, r.vb, (v, o) => v > o)}`}>
+                      {r.va ?? '-'}
+                    </td>
+                    <td className={`px-3 py-1.5 text-right font-semibold ${cellClass(r.vb, r.va, (v, o) => v > o)}`}>
+                      {r.vb ?? '-'}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         )}
       </div>
