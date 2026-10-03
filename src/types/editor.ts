@@ -148,7 +148,7 @@ export const BASIC_IDS = [
 export const EXTRA_IDS = ['location', 'locationLink', 'set_bonus'] as const
 
 export const CRAFT_RANKS = [
-  'Beginner', 'Novice', 'Initiate', 'Artisan', 'Adept', 'Advanced', 'Expert', 'Master',
+  'Beginner', 'Basic', 'Initiate', 'Artisan', 'Adept', 'Advanced', 'Expert', 'Master',
 ] as const
 
 export const ITEM_TYPES = [
