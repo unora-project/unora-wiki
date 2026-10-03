@@ -738,20 +738,18 @@ export function Equipment() {
 
       {/* Data Table */}
       {data === null ? (
-        <div className="flex min-h-[40vh] items-center justify-center">
-          <div className="h-8 w-8 animate-spin rounded-full border-2 border-gilt/20 border-t-gilt" />
-        </div>
-      ) : (
-        <div className={compareMode ? 'pb-56' : ''}>
-          <DataTable
-            data={displayRows}
-            columns={columns}
-            searchPlaceholder="Search equipment..."
-            initialSorting={[{ id: 'level', desc: false }]}
-            textSize={textSize}
-          />
-        </div>
-      )}
+  <div className="flex min-h-[40vh] items-center justify-center">
+    <div className="h-8 w-8 animate-spin rounded-full border-2 border-gilt/20 border-t-gilt" />
+  </div>
+) : (
+  <DataTable
+    data={displayRows}
+    columns={columns}
+    searchPlaceholder="Search equipment..."
+    initialSorting={[{ id: 'level', desc: false }]}
+    textSize={textSize}
+  />
+)}
 
       {compareMode && (
         <CompareBar
