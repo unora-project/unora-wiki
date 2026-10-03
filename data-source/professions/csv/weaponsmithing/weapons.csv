@@ -9,40 +9,40 @@ Battle Sword,26,1H,"3 Polished Bronze Bar, 2 Coal","1 Battle Sword, 2 Polished B
 Masquerade,31,1H,"4 Polished Bronze Bar, 2 Coal","1 Masquerade, 2 Polished Bronze Bar, 1 Coal",-,-,Beginner
 Scimitar,36,1H,1 Cannot be crafted,"1 Scimitar, 2 Polished Bronze Bar, 2 Coal",-,-,Beginner
 Bramble,41,1H,"2 Polished Iron Bar, 2 Coal","1 Bramble, 1 Polished Iron Bar, 3 Coal",-,-,Beginner
-Club,41,1H,1 Cannot be crafted,"1 Club, 2 Polished Iron Bar, 2 Coal",-,-,Beginner
-Spiked Club,50,1H,"1 Club, 1 Polished Iron Bar, 2 Coal","1 Spiked Club, 3 Polished Iron Bar, 2 Coal",-,-,Beginner
+Club,41,1H,1 Cannot be crafted,"1 Club, 2 Polished Iron Bar, 2 Coal",-,-,Initiate
+Spiked Club,50,1H,"1 Club, 1 Polished Iron Bar, 2 Coal","1 Spiked Club, 3 Polished Iron Bar, 2 Coal",-,-,Initiate
 Chain Mace,60,1H,"3 Polished Iron Bar, 3 Coal","1 Chain Mace, 3 Polished Iron Bar, 3 Coal",-,-,Beginner
-Handaxe,71,1H,"2 Polished Mythril Bar, 2 Coal","1 Hand Axe, 2 Polished Mythril Bar, 2 Coal",-,-,Beginner
-Cutlass,80,1H,1 Cannot be crafted,"1 Cutlass, 3 Polished Mythril Bar, 2 Coal",-,-,Beginner
+Handaxe,71,1H,"2 Polished Mythril Bar, 2 Coal","1 Hand Axe, 2 Polished Mythril Bar, 2 Coal",-,-,Artisan
+Cutlass,80,1H,1 Cannot be crafted,"1 Cutlass, 3 Polished Mythril Bar, 2 Coal",-,-,Artisan
 Talgonite Axe,95,1H,"3 Polished Hy-brasyl Bar, 5 Coal","1 Talgonite Axe, 4 Polished Hy-brasyl Bar, 4 Coal",-,-,Beginner
-Dragon Slayer,99,1H,1 Cannot be crafted,"1 Dragon Slayer, 5 Polished Hy-brasyl Bar, 5 Coal",-,-,Beginner
-Ruby Saber,99,1H,"10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 25 Pristine Ruby",Can only be upgraded by a Polishing Stone,-,-,Beginner
-Sapphire Saber,99,1H,"10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 25 Pristine Sapphire",Can only be upgraded by a Polishing Stone,-,-,Beginner
-Beryl Saber,99,1H,"10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 25 Pristine Beryl",Can only be upgraded by a Polishing Stone,-,-,Beginner
+Dragon Slayer,99,1H,1 Cannot be crafted,"1 Dragon Slayer, 5 Polished Hy-brasyl Bar, 5 Coal",-,-,Adept
+Ruby Saber,99,1H,"10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 25 Pristine Ruby",Can only be upgraded by a Polishing Stone,-,-,Advanced
+Sapphire Saber,99,1H,"10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 25 Pristine Sapphire",Can only be upgraded by a Polishing Stone,-,-,Advanced
+Beryl Saber,99,1H,"10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 25 Pristine Beryl",Can only be upgraded by a Polishing Stone,-,-,Advanced
 Longsword,50,2H,"3 Polished Iron Bar, 2 Coal","1 Longsword, 1 Polished Iron Bar, 3 Coal",-,-,Beginner
 Claidhmore,71,2H,"3 Polished Mythril Bar, 2 Coal","1 Claidhmore, 2 Polished Mythril Bar, 3 Coal",-,-,Beginner
 Emerald Sword,78,2H,"3 Polished Mythril Bar, 2 Coal","1 Emerald Sword, 2 Polished Mythril Bar, 3 Coal",-,-,Beginner
 Gladius,86,2H,"4 Polished Mythril Bar, 4 Coal","1 Gladius, 3 Polished Mythril Bar, 4 Coal",-,-,Beginner
-Kindjal,97,2H,"2 Polished Hy-brasyl Bar, 5 Coal","1 Kindjal, 3 Polished Hy-brasyl Bar, 4 Coal",-,-,Beginner
+Kindjal,97,2H,"2 Polished Hy-brasyl Bar, 5 Coal","1 Kindjal, 3 Polished Hy-brasyl Bar, 4 Coal",-,-,Adept
 Hy-Brasyl Battle Axe,99,2H,1 Cannot be crafted,"1 Hy-Brasyl Axe, 5 Polished Hy-brasyl Bar, 5 Coal",-,-,Beginner
-Forest Escalon,99,2H,"10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 15 Superior Monster Extract",Can only be upgraded by a Polishing Stone,-,-,Beginner
-Shadow Escalon,99,2H,"10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 25 Essence of Theselene",Can only be upgraded by a Polishing Stone,-,-,Beginner
-Moon Escalon,99,2H,"10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 1 Eclipse Pearl",Can only be upgraded by a Polishing Stone,-,-,Beginner
+Forest Escalon,99,2H,"10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 15 Superior Monster Extract",Can only be upgraded by a Polishing Stone,-,-,Advanced
+Shadow Escalon,99,2H,"10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 25 Essence of Theselene",Can only be upgraded by a Polishing Stone,-,-,Advanced
+Moon Escalon,99,2H,"10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 1 Eclipse Pearl",Can only be upgraded by a Polishing Stone,-,-,Advanced
 Magus Ares,11,Staff,"2 Polished Bronze Bar, 1 Coal","1 Magus Ares, 2 Polished Bronze Bar, 1 Coal",-,-,Beginner
 Holy Hermes,11,Staff,"2 Polished Bronze Bar, 1 Coal","1 Holy Hermes, 2 Polished Bronze Bar, 1 Coal",-,-,Beginner
-Magus Zeus,41,Staff,"3 Polished Iron Bar, 2 Coal","1 Magus Zeus, 2 Polished Iron Bar, 1 Coal",-,-,Beginner
-Holy Kronos,41,Staff,"3 Polished Iron Bar, 2 Coal","1 Holy Kronos, 2 Polished Iron Bar, 1 Coal",-,-,Beginner
-Magus Diana,71,Staff,1 Cannot be crafted,"1 Magus Diana, 3 Polished Mythril Bar, 2 Coal",-,-,Beginner
-Holy Diana,71,Staff,1 Cannot be crafted,"1 Holy Diana, 3 Polished Mythril Bar, 2 Coal",-,-,Beginner
+Magus Zeus,41,Staff,"3 Polished Iron Bar, 2 Coal","1 Magus Zeus, 2 Polished Iron Bar, 1 Coal",-,-,Initiate
+Holy Kronos,41,Staff,"3 Polished Iron Bar, 2 Coal","1 Holy Kronos, 2 Polished Iron Bar, 1 Coal",-,-,Initiate
+Magus Diana,71,Staff,1 Cannot be crafted,"1 Magus Diana, 3 Polished Mythril Bar, 2 Coal",-,-,Artisan
+Holy Diana,71,Staff,1 Cannot be crafted,"1 Holy Diana, 3 Polished Mythril Bar, 2 Coal",-,-,Artisan
 Stone Cross,90,Staff,1 Cannot be crafted,"1 Stone Cross, 4 Polished Hy-brasyl Bar, 3 Coal",-,-,Beginner
 Oak Staff,97,Staff,1 Cannot be crafted,"1 Oak Staff, 5 Polished Hy-brasyl Bar, 4 Coal",-,-,Beginner
 Staff of Wisdom,97,Staff,1 Cannot be crafted,"1 Staff of Wisdom, 5 Polished Hy-brasyl Bar, 4 Coal",-,-,Beginner
-Staff of Aquaedon,99,Staff,"10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 20 Essence of Aquaedon",Can only be upgraded by a Polishing Stone,-,-,Beginner
-Staff of Miraelis,99,Staff,"10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 20 Essence of Miraelis",Can only be upgraded by a Polishing Stone,-,-,Beginner
-Staff of Zephyra,99,Staff,"10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 20 Essence of Zephyra",Can only be upgraded by a Polishing Stone,-,-,Beginner
-Staff of Ignatar,99,Staff,"10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 20 Essence of Ignatar",Can only be upgraded by a Polishing Stone,-,-,Beginner
-Staff of Geolith,99,Staff,"10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 20 Essence of Geolith",Can only be upgraded by a Polishing Stone,-,-,Beginner
-Staff of Theselene,99,Staff,"10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 20 Essence of Theselene",Can only be upgraded by a Polishing Stone,-,-,Beginner
+Staff of Aquaedon,99,Staff,"10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 20 Essence of Aquaedon",Can only be upgraded by a Polishing Stone,-,-,Advanced
+Staff of Miraelis,99,Staff,"10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 20 Essence of Miraelis",Can only be upgraded by a Polishing Stone,-,-,Advanced
+Staff of Zephyra,99,Staff,"10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 20 Essence of Zephyra",Can only be upgraded by a Polishing Stone,-,-,Advanced
+Staff of Ignatar,99,Staff,"10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 20 Essence of Ignatar",Can only be upgraded by a Polishing Stone,-,-,Advanced
+Staff of Geolith,99,Staff,"10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 20 Essence of Geolith",Can only be upgraded by a Polishing Stone,-,-,Advanced
+Staff of Theselene,99,Staff,"10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 20 Essence of Theselene",Can only be upgraded by a Polishing Stone,-,-,Advanced
 Snow Dagger,2,Dagger,"2 Raw Bronze, 1 Coal","1 Snow Dagger, 1 Raw Bronze, 1 Coal",-,-,Beginner
 Center Dagger,5,Dagger,"2 Raw Bronze, 1 Coal","1 Center Dagger, 1 Raw Bronze, 1 Coal",-,-,Beginner
 Blossom Dagger,11,Dagger,"2 Polished Bronze Bar, 1 Coal","1 Blossom Dagger, 2 Polished Bronze Bar, 1 Coal",-,-,Beginner
@@ -50,32 +50,33 @@ Curved Dagger,30,Dagger,1 Cannot be crafted,"1 Curved Dagger, 3 Polished Bronze 
 Moon Dagger,31,Dagger,"3 Polished Bronze Bar, 2 Coal","1 Moon Dagger, 3 Polished Bronze Bar, 2 Coal",-,-,Beginner
 Light Dagger,42,Dagger,"2 Polished Iron Bar, 2 Coal","1 Light Dagger, 2 Polished Iron Bar, 2 Coal",-,-,Beginner
 Sun Dagger,62,Dagger,"3 Polished Iron Bar, 2 Coal","1 Sun Dagger, 3 Polished Iron Bar, 2 Coal",-,-,Beginner
-Lotus Dagger,75,Dagger,"2 Polished Mythril Bar, 2 Coal","1 Lotus Dagger, 2 Polished Mythril Bar, 1 Coal",-,-,Beginner
-Blood Dagger,89,Dagger,"3 Polished Mythril Bar, 3 Coal","1 Blood Dagger, 3 Polished Mythril Bar, 2 Coal",-,-,Beginner
-Nagetier Dagger,99,Dagger,1 Cannot be crafted,"1 Nagetier Dagger, 5 Polished Hy-brasyl Bar, 4 Coal",-,-,Beginner
-Chain Whip,99,Dagger,"10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 1 Eclipse Pearl",Can only be upgraded by a Polishing Stone,-,-,Beginner
-Kris,99,Dagger,"10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 1 Radiant Pearl",Can only be upgraded by a Polishing Stone,-,-,Beginner
-Scurvy Dagger,99,Dagger,"10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 15 Superior Monster Extract",Can only be upgraded by a Polishing Stone,-,-,Beginner
+Lotus Dagger,75,Dagger,"2 Polished Mythril Bar, 2 Coal","1 Lotus Dagger, 2 Polished Mythril Bar, 1 Coal",-,-,Advanced
+Blood Dagger,89,Dagger,"3 Polished Mythril Bar, 3 Coal","1 Blood Dagger, 3 Polished Mythril Bar, 2 Coal",-,-,Artisan
+Nagetier Dagger,99,Dagger,1 Cannot be crafted,"1 Nagetier Dagger, 5 Polished Hy-brasyl Bar, 4 Coal",-,-,Adept
+Chain Whip,99,Dagger,"10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 1 Eclipse Pearl",Can only be upgraded by a Polishing Stone,-,-,Advanced
+Kris,99,Dagger,"10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 1 Radiant Pearl",Can only be upgraded by a Polishing Stone,-,-,Advanced
+Scurvy Dagger,99,Dagger,"10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 15 Superior Monster Extract",Can only be upgraded by a Polishing Stone,-,-,Advanced
 Dull Claw,3,Claw,"2 Raw Bronze, 1 Coal","1 Dul Claw, 1 Raw Bronze, 1 Coal",-,-,Beginner
-Wolf Claw,11,Claw,"2 Polished Bronze Bar, 1 Coal","1 Wolf Claw, 2 Polished Bronze Bar, 1 Coal",-,-,Beginner
-Eagle Talon,41,Claw,"2 Polished Iron Bar, 1 Coal","1 Eagle Talon, 2 Polished Iron Bar, 1 Coal",-,-,Beginner
-Stone Fist,50,Claw,1 Cannot be crafted,"1 Stone Fist, 3 Polished Iron Bar, 2 Coal",-,-,Beginner
-Phoenix Claw,71,Claw,"2 Polished Mythril Bar, 1 Coal","1 Phoenix Claw, 2 Polished Mythril Bar, 1 Coal",-,-,Beginner
-Nunchaku,97,Claw,1 Cannot be crafted,"1 Nunchaku, 5 Polished Hy-brasyl Bar, 4 Coal",-,-,Beginner
-Emerald Tonfa,99,Claw,"10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 25 Pristine Emerald",Can only be upgraded by a Polishing Stone,-,-,Beginner
-Ruby Tonfa,99,Claw,"10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 25 Pristine Ruby",Can only be upgraded by a Polishing Stone,-,-,Beginner
-Sapphire Tonfa,99,Claw,"10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 25 Pristine Sapphire",Can only be upgraded by a Polishing Stone,-,-,Beginner
-Leather Shield,15,Shield,"2 Polished Bronze Bar, 1 Coal","1 Leather Shield, 2 Polished Bronze Bar, 1 Coal",-,-,Beginner
-Bronze Shield,31,Shield,"3 Polished Bronze Bar, 2 Coal","1 Bronze Shield, 3 Polished Bronze Bar, 2 Coal",-,-,Beginner
-Iron Shield,45,Shield,"2 Polished Iron Bar, 1 Coal","1 Iron Shield, 3 Polished Iron Bar, 2 Coal",-,-,Beginner
-Gravel Shield,41,Shield,1 Cannot be crafted,"1 Gravel Shield, 2 Polished Iron Bar, 1 Coal",-,-,Beginner
-Light Shield,50,Shield,1 Cannot be crafted,"1 Light Shield, 3 Polished Iron Bar, 2 Coal",-,-,Beginner
-Mythril Shield,61,Shield,"2 Polished Mythril Bar, 2 Coal","1 Mythril Shield, 3 Polished Mythril Bar, 2 Coal",-,-,Beginner
-Hy-Brasyl Shield,77,Shield,"2 Polished Hy-brasyl Bar, 1 Coal","1 Hy-Brasyl Shield, 4 Polished Hy-brasyl Bar, 3 Coal",-,-,Beginner
+Wolf Claw,11,Claw,"2 Polished Bronze Bar, 1 Coal","1 Wolf Claw, 2 Polished Bronze Bar, 1 Coal",-,-,Novice
+Eagle Talon,41,Claw,"2 Polished Iron Bar, 1 Coal","1 Eagle Talon, 2 Polished Iron Bar, 1 Coal",-,-,Initiate
+Stone Fist,50,Claw,1 Cannot be crafted,"1 Stone Fist, 3 Polished Iron Bar, 2 Coal",-,-,Initiate
+Phoenix Claw,71,Claw,"2 Polished Mythril Bar, 1 Coal","1 Phoenix Claw, 2 Polished Mythril Bar, 1 Coal",-,-,Artisan
+Nunchaku,97,Claw,1 Cannot be crafted,"1 Nunchaku, 5 Polished Hy-brasyl Bar, 4 Coal",-,-,Adept
+Emerald Tonfa,99,Claw,"10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 25 Pristine Emerald",Can only be upgraded by a Polishing Stone,-,-,Advanced
+Ruby Tonfa,99,Claw,"10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 25 Pristine Ruby",Can only be upgraded by a Polishing Stone,-,-,Advanced
+Sapphire Tonfa,99,Claw,"10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 25 Pristine Sapphire",Can only be upgraded by a Polishing Stone,-,-,Advanced
+Leather Shield,15,Shield,"2 Polished Bronze Bar, 1 Coal","1 Leather Shield, 2 Polished Bronze Bar, 1 Coal",-,-,Novice
+Bronze Shield,31,Shield,"3 Polished Bronze Bar, 2 Coal","1 Bronze Shield, 3 Polished Bronze Bar, 2 Coal",-,-,Novice
+Iron Shield,45,Shield,"2 Polished Iron Bar, 1 Coal","1 Iron Shield, 3 Polished Iron Bar, 2 Coal",-,-,Initiate
+Gravel Shield,41,Shield,1 Cannot be crafted,"1 Gravel Shield, 2 Polished Iron Bar, 1 Coal",-,-,Initiate
+Light Shield,50,Shield,1 Cannot be crafted,"1 Light Shield, 3 Polished Iron Bar, 2 Coal",-,-,Initiate
+Mythril Shield,61,Shield,"2 Polished Mythril Bar, 2 Coal","1 Mythril Shield, 3 Polished Mythril Bar, 2 Coal",-,-,Initiate
+Hy-Brasyl Shield,77,Shield,"2 Polished Hy-brasyl Bar, 1 Coal","1 Hy-Brasyl Shield, 4 Polished Hy-brasyl Bar, 3 Coal",-,-,Artisan
 Talgonite Shield,99,Shield,1 Cannot be crafted,"1 Talgonite Shield, 5 Polished Azurium Bar, 4 Coal",-,-,Beginner
-Captain's Shield,99,Shield,1 Cannot be crafted,"1 Captain's Shield, 10 Polished Azurium Bar, 5 Coal",-,-,Beginner
-Cursed Shield,99,Shield,1 Cannot be crafted,"1 Cursed Shield, 10 Polished Crimsonite Bar, 5 Coal",-,-,Beginner
-Cathonic Shield,99,Shield,1 Cannot be crafted,"1 Cathonic Shield, 10 Polished Crimsonite Bar, 5 Coal",-,-,Beginner
-Enchanting Stone,99,Master,"1 Strange Stone, 1 Radiant Pearl",Cannot be upgraded,-,-,Beginner
-Empowering Stone,99,Master,"1 Strange Stone, 1 Eclipse Pearl",Cannot be upgraded,-,-,Beginner
-Polishing Stone,99,Master,"2 Polished Crimsonite Bar, 2 Polished Azurium Bar, 10 Exquisite Hemp",Cannot be upgraded,-,-,Beginner
+Captain's Shield,99,Shield,1 Cannot be crafted,"1 Captain's Shield, 10 Polished Azurium Bar, 5 Coal",-,-,Advanced
+Cursed Shield,99,Shield,1 Cannot be crafted,"1 Cursed Shield, 10 Polished Crimsonite Bar, 5 Coal",-,-,Advanced
+Cathonic Shield,99,Shield,1 Cannot be crafted,"1 Cathonic Shield, 10 Polished Crimsonite Bar, 5 Coal",-,-,Advanced
+Enchanting Stone,99,Master,"1 Strange Stone, 1 Radiant Pearl",Cannot be upgraded,-,-,Advanced
+Empowering Stone,99,Master,"1 Strange Stone, 1 Eclipse Pearl",Cannot be upgraded,-,-,Advanced
+Polishing Stone,99,Master,"2 Polished Crimsonite Bar, 2 Polished Azurium Bar, 10 Exquisite Hemp",Cannot be upgraded,-,-,Advanced
+Spiked Flail,60,1H,"3 Polished Iron Bar, 3 Coal","3 Polished Iron Bar, 3 Coal","6 Polished Iron Bar, 6 Coal","9 Polished Iron Bar, 9 Coal",Initiate
