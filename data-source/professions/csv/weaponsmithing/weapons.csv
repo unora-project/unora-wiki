@@ -57,7 +57,7 @@ Chain Whip,99,Dagger,"10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 1 Ecl
 Kris,99,Dagger,"10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 1 Radiant Pearl",Can only be upgraded by a Polishing Stone,-,-,Advanced
 Scurvy Dagger,99,Dagger,"10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 15 Superior Monster Extract",Can only be upgraded by a Polishing Stone,-,-,Advanced
 Dull Claw,3,Claw,"2 Raw Bronze, 1 Coal","1 Dul Claw, 1 Raw Bronze, 1 Coal",-,-,Beginner
-Wolf Claw,11,Claw,"2 Polished Bronze Bar, 1 Coal","1 Wolf Claw, 2 Polished Bronze Bar, 1 Coal",-,-,Novice
+Wolf Claw,11,Claw,"2 Polished Bronze Bar, 1 Coal","1 Wolf Claw, 2 Polished Bronze Bar, 1 Coal",-,-,Basic
 Eagle Talon,41,Claw,"2 Polished Iron Bar, 1 Coal","1 Eagle Talon, 2 Polished Iron Bar, 1 Coal",-,-,Initiate
 Stone Fist,50,Claw,1 Cannot be crafted,"1 Stone Fist, 3 Polished Iron Bar, 2 Coal",-,-,Initiate
 Phoenix Claw,71,Claw,"2 Polished Mythril Bar, 1 Coal","1 Phoenix Claw, 2 Polished Mythril Bar, 1 Coal",-,-,Artisan
@@ -65,8 +65,8 @@ Nunchaku,97,Claw,1 Cannot be crafted,"1 Nunchaku, 5 Polished Hy-brasyl Bar, 4 Co
 Emerald Tonfa,99,Claw,"10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 25 Pristine Emerald",Can only be upgraded by a Polishing Stone,-,-,Advanced
 Ruby Tonfa,99,Claw,"10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 25 Pristine Ruby",Can only be upgraded by a Polishing Stone,-,-,Advanced
 Sapphire Tonfa,99,Claw,"10 Polished Crimsonite Bar, 10 Polished Azurium Bar, 25 Pristine Sapphire",Can only be upgraded by a Polishing Stone,-,-,Advanced
-Leather Shield,15,Shield,"2 Polished Bronze Bar, 1 Coal","1 Leather Shield, 2 Polished Bronze Bar, 1 Coal",-,-,Novice
-Bronze Shield,31,Shield,"3 Polished Bronze Bar, 2 Coal","1 Bronze Shield, 3 Polished Bronze Bar, 2 Coal",-,-,Novice
+Leather Shield,15,Shield,"2 Polished Bronze Bar, 1 Coal","1 Leather Shield, 2 Polished Bronze Bar, 1 Coal",-,-,Basic
+Bronze Shield,31,Shield,"3 Polished Bronze Bar, 2 Coal","1 Bronze Shield, 3 Polished Bronze Bar, 2 Coal",-,-,Basic
 Iron Shield,45,Shield,"2 Polished Iron Bar, 1 Coal","1 Iron Shield, 3 Polished Iron Bar, 2 Coal",-,-,Initiate
 Gravel Shield,41,Shield,1 Cannot be crafted,"1 Gravel Shield, 2 Polished Iron Bar, 1 Coal",-,-,Initiate
 Light Shield,50,Shield,1 Cannot be crafted,"1 Light Shield, 3 Polished Iron Bar, 2 Coal",-,-,Initiate
