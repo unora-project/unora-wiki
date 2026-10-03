@@ -33,7 +33,6 @@ interface ShopEntry {
 
 interface WeaponRecipeRow {
   Name: string
-  Rank?: string
   Level: string
   Type: string
   Materials: string
@@ -51,151 +50,6 @@ const UPGRADE_TIERS: { key: keyof WeaponRecipeRow; label: string }[] = [
   { key: 'Upgrade to Enchanted', label: 'Enchanted' },
   { key: 'Upgrade to Empowered', label: 'Empowered' },
 ]
-
-function isMedeniaLevel(level: unknown): boolean {
-  return typeof level === 'string' && /^ab\s*\d+/i.test(level.trim())
-}
-
-function WeaponRecipeTable({ data, searchPlaceholder }: { data: Record<string, unknown>[]; searchPlaceholder: string }) {
-  const rows = data as unknown as WeaponRecipeRow[]
-  const [selectedTier, setSelectedTier] = useState<Record<string, keyof WeaponRecipeRow>>({})
-
-  const regionTabs = useMemo(() => {
-    const tabs: { id: 'temuair' | 'medenia'; label: string }[] = []
-    if (rows.some((r) => !isMedeniaLevel(r.Level))) tabs.push({ id: 'temuair', label: 'Temuair' })
-    if (rows.some((r) => isMedeniaLevel(r.Level))) tabs.push({ id: 'medenia', label: 'Medenia' })
-    return tabs
-  }, [rows])
-
-  const [activeRegion, setActiveRegion] = useState<'temuair' | 'medenia'>('temuair')
-
-  useEffect(() => {
-    if (!regionTabs.some((t) => t.id === activeRegion)) {
-      setActiveRegion(regionTabs[0]?.id ?? 'temuair')
-    }
-  }, [regionTabs, activeRegion])
-
-  const regionFilteredRows = useMemo(() => {
-    return rows.filter((r) => (activeRegion === 'medenia') === isMedeniaLevel(r.Level))
-  }, [rows, activeRegion])
-
-  const hasRank = regionFilteredRows.length > 0 && regionFilteredRows.some((r) => r.Rank?.trim())
-
-  const rankTabs = useMemo(() => {
-    if (!hasRank) return []
-    const present = new Set(regionFilteredRows.map((r) => r.Rank).filter(Boolean))
-    const ordered = RANK_ORDER.filter((r) => present.has(r))
-    return ['All', ...ordered]
-  }, [regionFilteredRows, hasRank])
-
-  const [activeRank, setActiveRank] = useState('All')
-
-  useEffect(() => {
-    if (!rankTabs.includes(activeRank)) {
-      setActiveRank('All')
-    }
-  }, [rankTabs, activeRank])
-
-  const filteredRows = useMemo(() => {
-    if (!hasRank || activeRank === 'All') return regionFilteredRows
-    return regionFilteredRows.filter((r) => r.Rank === activeRank)
-  }, [regionFilteredRows, hasRank, activeRank])
-
-  const columns = useMemo(() => {
-    const colHelper = createColumnHelper<WeaponRecipeRow>()
-    return [
-      colHelper.accessor('Name', { header: 'Name' }),
-      colHelper.accessor('Level', { header: 'Level' }),
-      colHelper.accessor('Type', { header: 'Type' }),
-      colHelper.accessor('Materials', {
-        header: 'Materials to Craft',
-        cell: (info) => (
-          <span className="whitespace-pre-line">{String(info.getValue() ?? '-')}</span>
-        ),
-      }),
-      colHelper.display({
-        id: 'upgradeTier',
-        header: 'Upgrade To',
-        cell: ({ row }) => {
-          const r = row.original
-          const available = UPGRADE_TIERS.filter((t) => r[t.key]?.trim())
-          if (available.length === 0) return <span className="text-parchment-500 dark:text-parchment-600">-</span>
-          const current = selectedTier[r.Name] ?? available[0].key
-          return (
-            <select
-              value={current}
-              onChange={(e) =>
-                setSelectedTier((prev) => ({ ...prev, [r.Name]: e.target.value as keyof WeaponRecipeRow }))
-              }
-              className="rounded border border-parchment-300 bg-parchment-100 px-2 py-1 text-xs text-parchment-700 dark:border-ash/20 dark:bg-obsidian dark:text-ash"
-            >
-              {available.map((t) => (
-                <option key={t.key as string} value={t.key as string}>{t.label}</option>
-              ))}
-            </select>
-          )
-        },
-      }),
-      colHelper.display({
-        id: 'upgradeMaterials',
-        header: 'Materials to Upgrade',
-        cell: ({ row }) => {
-          const r = row.original
-          const available = UPGRADE_TIERS.filter((t) => r[t.key]?.trim())
-          if (available.length === 0) return <span>-</span>
-          const current = selectedTier[r.Name] ?? available[0].key
-          return <span className="whitespace-pre-line">{r[current] || '-'}</span>
-        },
-      }),
-    ]
-  }, [selectedTier])
-
-  return (
-    <div>
-      {regionTabs.length > 1 && (
-        <div className="mb-3 flex gap-1 border-b border-parchment-300 dark:border-ash/20">
-          {regionTabs.map((t) => (
-            <button
-              key={t.id}
-              onClick={() => setActiveRegion(t.id)}
-              className={`relative px-4 py-2.5 font-ui text-sm font-medium transition-colors ${
-                activeRegion === t.id
-                  ? 'text-gilt'
-                  : 'text-ash hover:text-parchment-800 dark:hover:text-ivory'
-              }`}
-            >
-              {t.label}
-              {activeRegion === t.id && (
-                <span className="absolute inset-x-0 -bottom-px h-0.5 bg-gilt" />
-              )}
-            </button>
-          ))}
-        </div>
-      )}
-      {hasRank && rankTabs.length > 1 && (
-        <div className="mb-4 flex flex-wrap gap-1 border-b border-parchment-300 dark:border-ash/20">
-          {rankTabs.map((rank) => (
-            <button
-              key={rank}
-              onClick={() => setActiveRank(rank)}
-              className={`relative px-3 py-2 font-ui text-sm font-medium transition-colors ${
-                activeRank === rank
-                  ? 'text-gilt'
-                  : 'text-ash hover:text-parchment-800 dark:hover:text-ivory'
-              }`}
-            >
-              {rank}
-              {activeRank === rank && (
-                <span className="absolute inset-x-0 -bottom-px h-0.5 bg-gilt" />
-              )}
-            </button>
-          ))}
-        </div>
-      )}
-      <DataTable data={filteredRows} columns={columns} searchPlaceholder={searchPlaceholder} />
-    </div>
-  )
-}
 
 const categories = [
   { id: 'all', label: 'All' },
@@ -244,6 +98,23 @@ const TIER_LABELS: Record<string, string> = {
   Grand: 'Grand',
   Enchanted: 'Enchanted',
   Empowered: 'Empowered',
+}
+
+const statLabels: Record<string, string> = {
+  hp: 'HP', mp: 'MP', ac: 'AC', mr: 'MR',
+  str: 'STR', int: 'INT', wis: 'WIS', con: 'CON', dex: 'DEX',
+  dmg: 'DMG', hit: 'HIT',
+}
+
+const percentLabels: Record<string, string> = {
+  attackSpeed: 'AS%',
+  skillDamage: 'SKD',
+  skillDamagePercent: 'SKD%',
+  spellDamage: 'SPD',
+  spellDamagePercent: 'SPD%',
+  flatHealBonus: 'HEAL',
+  healBonusPercent: 'HEAL%',
+  cooldownReduction: 'CDR%',
 }
 
 function parseTier(name: string): { tier: string; baseName: string } {
@@ -400,6 +271,100 @@ function RecipeTag({ materials }: { materials: string }) {
   )
 }
 
+function compareKey(item: DisplayRow): string {
+  return `${item.category}|${item.name}|${item._selectedTier}`
+}
+
+function CompareBar({
+  items,
+  onClear,
+  onClose,
+}: {
+  items: DisplayRow[]
+  onClear: () => void
+  onClose: () => void
+}) {
+  const [a, b] = items
+
+  const rows = useMemo(() => {
+    const keys = new Set<string>()
+    if (a) Object.keys(a.stats).forEach((k) => keys.add(k))
+    if (b) Object.keys(b.stats).forEach((k) => keys.add(k))
+    const pctKeys = new Set<string>()
+    if (a) Object.keys(a.percentages).forEach((k) => pctKeys.add(k))
+    if (b) Object.keys(b.percentages).forEach((k) => pctKeys.add(k))
+
+    const statRows = Array.from(keys)
+      .filter((k) => statLabels[k])
+      .map((k) => ({ label: statLabels[k], va: a?.stats[k] ?? null, vb: b?.stats[k] ?? null }))
+    const pctRows = Array.from(pctKeys)
+      .filter((k) => percentLabels[k])
+      .map((k) => ({ label: percentLabels[k], va: a?.percentages[k] ?? null, vb: b?.percentages[k] ?? null }))
+
+    return [...statRows, ...pctRows].filter((r) => r.va !== null || r.vb !== null)
+  }, [a, b])
+
+  const diffClass = (va: number | null, vb: number | null) => {
+    if (va == null || vb == null || va === vb) return 'text-parchment-700 dark:text-ivory/85'
+    return vb > va ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'
+  }
+
+  return (
+    <div className="fixed inset-x-0 bottom-0 z-40 border-t border-parchment-300 bg-parchment-50 shadow-[0_-4px_12px_rgba(0,0,0,0.08)] dark:border-ash/20 dark:bg-obsidian">
+      <div className="mx-auto max-w-5xl px-4 py-3">
+        <div className="mb-2 flex items-center justify-between">
+          <h3 className="font-heading text-sm font-semibold text-gilt">Compare Equipment</h3>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={onClear}
+              className="rounded border border-parchment-300 px-2 py-1 text-xs text-parchment-600 hover:border-gilt hover:text-gilt dark:border-ash/20 dark:text-ash"
+            >
+              Clear
+            </button>
+            <button
+              onClick={onClose}
+              className="rounded border border-parchment-300 px-2 py-1 text-xs text-parchment-600 hover:border-gilt hover:text-gilt dark:border-ash/20 dark:text-ash"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-2 gap-4 mb-2">
+          <div className="rounded border border-parchment-300 bg-parchment-100 px-3 py-2 dark:border-ash/10 dark:bg-ink">
+            <p className="text-xs font-semibold uppercase tracking-wider text-parchment-500 dark:text-parchment-600">Item 1</p>
+            <p className="font-heading text-sm text-gilt">{a ? a.name : 'Select an item'}</p>
+            {a && <p className="text-xs text-parchment-500 dark:text-parchment-600">Level {a.level ?? '-'}</p>}
+          </div>
+          <div className="rounded border border-parchment-300 bg-parchment-100 px-3 py-2 dark:border-ash/10 dark:bg-ink">
+            <p className="text-xs font-semibold uppercase tracking-wider text-parchment-500 dark:text-parchment-600">Item 2</p>
+            <p className="font-heading text-sm text-gilt">{b ? b.name : 'Select an item'}</p>
+            {b && <p className="text-xs text-parchment-500 dark:text-parchment-600">Level {b.level ?? '-'}</p>}
+          </div>
+        </div>
+
+        {rows.length === 0 ? (
+          <p className="text-xs text-parchment-500 dark:text-parchment-600">
+            Select two items (use the checkbox in the Compare column) to see stat differences.
+          </p>
+        ) : (
+          <div className="max-h-40 overflow-y-auto">
+            <div className="grid grid-cols-3 gap-2 text-xs">
+              {rows.map((r) => (
+                <div key={r.label} className="contents">
+                  <span className="text-parchment-500 dark:text-parchment-600">{r.label}</span>
+                  <span className="text-right text-parchment-700 dark:text-ivory/85">{r.va ?? '-'}</span>
+                  <span className={`text-right font-semibold ${diffClass(r.va, r.vb)}`}>{r.vb ?? '-'}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  )
+}
+
 export function Equipment() {
   const [selectedCategory, setSelectedCategory] = useState('all')
   const [selectedClass, setSelectedClass] = useState('all')
@@ -408,6 +373,8 @@ export function Equipment() {
   const [textSize, setTextSize] = useState<'normal' | 'large'>('normal')
   const [shopIndex, setShopIndex] = useState<Map<string, { npc: string; town: string }>>(new Map())
   const [weaponRecipes, setWeaponRecipes] = useState<Map<string, WeaponRecipeRow>>(new Map())
+  const [compareMode, setCompareMode] = useState(false)
+  const [compareItems, setCompareItems] = useState<DisplayRow[]>([])
 
   useEffect(() => {
     if (equipmentCache) return
@@ -463,122 +430,155 @@ export function Equipment() {
     })
   }, [groups, tierSelections])
 
+  const toggleCompare = (item: DisplayRow) => {
+    setCompareItems((prev) => {
+      const key = compareKey(item)
+      const exists = prev.find((p) => compareKey(p) === key)
+      if (exists) return prev.filter((p) => compareKey(p) !== key)
+      if (prev.length >= 2) return [prev[1], item]
+      return [...prev, item]
+    })
+  }
+
   const columnHelper = useMemo(() => createColumnHelper<DisplayRow>(), [])
 
   const columns = useMemo(() => {
-  const tierTextClass = textSize === 'large' ? 'text-lg' : 'text-sm'
-  const soldByTextClass = textSize === 'large' ? 'text-sm' : 'text-xs'
-  const showGender = selectedCategory === 'armor' || selectedCategory === 'helmet'
+    const tierTextClass = textSize === 'large' ? 'text-lg' : 'text-sm'
+    const soldByTextClass = textSize === 'large' ? 'text-sm' : 'text-xs'
+    const showGender = selectedCategory === 'armor' || selectedCategory === 'helmet'
 
-  const baseColumns = [
-    columnHelper.display({
-      id: 'tier',
-      header: 'Tier',
-      cell: ({ row }) => {
-        const r = row.original
-        if (r._availableTiers.length <= 1) {
+    const baseColumns = []
+
+    if (compareMode) {
+      baseColumns.push(
+        columnHelper.display({
+          id: 'compare',
+          header: 'Compare',
+          cell: ({ row }) => {
+            const item = row.original
+            const checked = compareItems.some((p) => compareKey(p) === compareKey(item))
+            return (
+              <input
+                type="checkbox"
+                checked={checked}
+                onChange={() => toggleCompare(item)}
+                className="h-4 w-4 rounded border-ash/40 accent-gilt"
+              />
+            )
+          },
+        })
+      )
+    }
+
+    baseColumns.push(
+      columnHelper.display({
+        id: 'tier',
+        header: 'Tier',
+        cell: ({ row }) => {
+          const r = row.original
+          if (r._availableTiers.length <= 1) {
+            return (
+              <span className={`${tierTextClass} font-medium text-parchment-600 dark:text-parchment-400`}>
+                {TIER_LABELS[r._selectedTier]}
+              </span>
+            )
+          }
           return (
-            <span className={`${tierTextClass} font-medium text-parchment-600 dark:text-parchment-400`}>
-              {TIER_LABELS[r._selectedTier]}
+            <select
+              value={r._selectedTier}
+              onChange={(e) =>
+                setTierSelections((prev) => ({ ...prev, [r._groupKey]: e.target.value }))
+              }
+              className={`rounded border border-parchment-300 bg-parchment-100 px-2 py-1 ${tierTextClass} font-medium text-parchment-700 dark:border-ash/20 dark:bg-obsidian dark:text-ash`}
+            >
+              {r._availableTiers.map((t) => (
+                <option key={t} value={t}>{TIER_LABELS[t]}</option>
+              ))}
+            </select>
+          )
+        },
+      }),
+      columnHelper.accessor('name', {
+        header: 'Name',
+        cell: ({ row }) => {
+          const item = row.original
+          let recipeText: string | null = null
+          if (item.category === 'weapon') {
+            const recipe = weaponRecipes.get(item._baseName)
+            recipeText = getRecipeDisplay(recipe, item._selectedTier)
+          }
+          return (
+            <span>
+              {item.name}
+              {recipeText && <RecipeTag materials={recipeText} />}
             </span>
           )
-        }
-        return (
-          <select
-            value={r._selectedTier}
-            onChange={(e) =>
-              setTierSelections((prev) => ({ ...prev, [r._groupKey]: e.target.value }))
-            }
-            className={`rounded border border-parchment-300 bg-parchment-100 px-2 py-1 ${tierTextClass} font-medium text-parchment-700 dark:border-ash/20 dark:bg-obsidian dark:text-ash`}
-          >
-            {r._availableTiers.map((t) => (
-              <option key={t} value={t}>{TIER_LABELS[t]}</option>
-            ))}
-          </select>
-        )
-      },
-    }),
-    columnHelper.accessor('name', {
-      header: 'Name',
-      cell: ({ row }) => {
-        const item = row.original
-        let recipeText: string | null = null
-        if (item.category === 'weapon') {
-          const recipe = weaponRecipes.get(item._baseName)
-          recipeText = getRecipeDisplay(recipe, item._selectedTier)
-        }
-        return (
-          <span>
-            {item.name}
-            {recipeText && <RecipeTag materials={recipeText} />}
-          </span>
-        )
-      },
-    }),
-    columnHelper.accessor('location', {
-      header: 'LOC',
-      cell: ({ row }) => {
-        const item = row.original
-        const seller = shopIndex.get(item.name)
-        return (
-          <div className="flex flex-col">
-            {item.locationLink ? (
-              <Link
-                to={item.locationLink}
-                className="underline decoration-gilt/60 hover:decoration-gilt"
-              >
-                {item.location || '-'}
-              </Link>
-            ) : (
-              <span>{item.location || '-'}</span>
-            )}
-            {seller && (
-              <Link
-                to={`/towns/${seller.town}`}
-                className={`${soldByTextClass} underline decoration-gilt/60 hover:decoration-gilt`}
-              >
-                Sold by {seller.npc}
-              </Link>
-            )}
-          </div>
-        )
-      },
-    }),
-  ]
-
-  if (showGender) {
-    baseColumns.push(
-      columnHelper.accessor('gender', {
-        header: 'Gender',
-        cell: (info) => info.getValue() ?? '-',
-      })
+        },
+      }),
+      columnHelper.accessor('location', {
+        header: 'LOC',
+        cell: ({ row }) => {
+          const item = row.original
+          const seller = shopIndex.get(item.name)
+          return (
+            <div className="flex flex-col">
+              {item.locationLink ? (
+                <Link
+                  to={item.locationLink}
+                  className="underline decoration-gilt/60 hover:decoration-gilt"
+                >
+                  {item.location || '-'}
+                </Link>
+              ) : (
+                <span>{item.location || '-'}</span>
+              )}
+              {seller && (
+                <Link
+                  to={`/towns/${seller.town}`}
+                  className={`${soldByTextClass} underline decoration-gilt/60 hover:decoration-gilt`}
+                >
+                  Sold by {seller.npc}
+                </Link>
+              )}
+            </div>
+          )
+        },
+      }),
     )
-  }
 
-  return [
-    ...baseColumns,
-    columnHelper.accessor('level', { header: 'LVL', cell: (info) => info.getValue() ?? '-', sortingFn: compareLevels }),
-    columnHelper.accessor((row) => row.stats.hp, { id: 'hp', header: 'HP', cell: (info) => info.getValue() ?? '-' }),
-    columnHelper.accessor((row) => row.stats.mp, { id: 'mp', header: 'MP', cell: (info) => info.getValue() ?? '-' }),
-    columnHelper.accessor((row) => row.stats.ac, { id: 'ac', header: 'AC', cell: (info) => info.getValue() ?? '-' }),
-    columnHelper.accessor((row) => row.stats.mr, { id: 'mr', header: 'MR', cell: (info) => info.getValue() ?? '-' }),
-    columnHelper.accessor((row) => row.stats.str, { id: 'str', header: 'STR', cell: (info) => info.getValue() ?? '-' }),
-    columnHelper.accessor((row) => row.stats.int, { id: 'int', header: 'INT', cell: (info) => info.getValue() ?? '-' }),
-    columnHelper.accessor((row) => row.stats.wis, { id: 'wis', header: 'WIS', cell: (info) => info.getValue() ?? '-' }),
-    columnHelper.accessor((row) => row.stats.con, { id: 'con', header: 'CON', cell: (info) => info.getValue() ?? '-' }),
-    columnHelper.accessor((row) => row.stats.dex, { id: 'dex', header: 'DEX', cell: (info) => info.getValue() ?? '-' }),
-    columnHelper.accessor((row) => row.stats.dmg, { id: 'dmg', header: 'DMG', cell: (info) => info.getValue() ?? '-' }),
-    columnHelper.accessor((row) => row.stats.hit, { id: 'hit', header: 'HIT', cell: (info) => info.getValue() ?? '-' }),
-    columnHelper.accessor((row) => row.percentages.attackSpeed, { id: 'as', header: 'AS%', cell: (info) => info.getValue() ?? '-' }),
-    columnHelper.accessor((row) => row.percentages.skillDamage, { id: 'skd', header: 'SKD', cell: (info) => info.getValue() ?? '-' }),
-    columnHelper.accessor((row) => row.percentages.skillDamagePercent, { id: 'skdp', header: 'SKD%', cell: (info) => info.getValue() ?? '-' }),
-    columnHelper.accessor((row) => row.percentages.spellDamage, { id: 'spd', header: 'SPD', cell: (info) => info.getValue() ?? '-' }),
-    columnHelper.accessor((row) => row.percentages.spellDamagePercent, { id: 'spdp', header: 'SPD%', cell: (info) => info.getValue() ?? '-' }),
-    columnHelper.accessor((row) => row.percentages.flatHealBonus, { id: 'heal', header: 'HEAL', cell: (info) => info.getValue() ?? '-' }),
-    columnHelper.accessor((row) => row.percentages.healBonusPercent, { id: 'healp', header: 'HEAL%', cell: (info) => info.getValue() ?? '-' }),
-    columnHelper.accessor((row) => row.percentages.cooldownReduction, { id: 'cdr', header: 'CDR%', cell: (info) => info.getValue() ?? '-' }),
-  ]
-}, [columnHelper, textSize, shopIndex, weaponRecipes, selectedCategory])
+    if (showGender) {
+      baseColumns.push(
+        columnHelper.accessor('gender', {
+          header: 'Gender',
+          cell: (info) => info.getValue() ?? '-',
+        })
+      )
+    }
+
+    return [
+      ...baseColumns,
+      columnHelper.accessor('level', { header: 'LVL', cell: (info) => info.getValue() ?? '-', sortingFn: compareLevels }),
+      columnHelper.accessor((row) => row.stats.hp, { id: 'hp', header: 'HP', cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.stats.mp, { id: 'mp', header: 'MP', cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.stats.ac, { id: 'ac', header: 'AC', cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.stats.mr, { id: 'mr', header: 'MR', cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.stats.str, { id: 'str', header: 'STR', cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.stats.int, { id: 'int', header: 'INT', cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.stats.wis, { id: 'wis', header: 'WIS', cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.stats.con, { id: 'con', header: 'CON', cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.stats.dex, { id: 'dex', header: 'DEX', cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.stats.dmg, { id: 'dmg', header: 'DMG', cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.stats.hit, { id: 'hit', header: 'HIT', cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.percentages.attackSpeed, { id: 'as', header: 'AS%', cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.percentages.skillDamage, { id: 'skd', header: 'SKD', cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.percentages.skillDamagePercent, { id: 'skdp', header: 'SKD%', cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.percentages.spellDamage, { id: 'spd', header: 'SPD', cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.percentages.spellDamagePercent, { id: 'spdp', header: 'SPD%', cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.percentages.flatHealBonus, { id: 'heal', header: 'HEAL', cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.percentages.healBonusPercent, { id: 'healp', header: 'HEAL%', cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.percentages.cooldownReduction, { id: 'cdr', header: 'CDR%', cell: (info) => info.getValue() ?? '-' }),
+    ]
+  }, [columnHelper, textSize, shopIndex, weaponRecipes, selectedCategory, compareMode, compareItems])
 
   return (
     <div>
@@ -644,19 +644,35 @@ export function Equipment() {
           ))}
         </div>
 
-        {/* Text size */}
-        <div className="flex flex-wrap items-center gap-2">
-          <span className="text-xs font-medium uppercase tracking-wider text-parchment-500 dark:text-parchment-600">
-            Text Size:
-          </span>
-          <select
-            value={textSize}
-            onChange={(e) => setTextSize(e.target.value as 'normal' | 'large')}
-            className="rounded-lg border border-parchment-300 bg-parchment-100 px-3 py-1.5 text-xs font-medium text-parchment-700 dark:border-ash/20 dark:bg-obsidian dark:text-ash"
+        {/* Text size + Compare toggle */}
+        <div className="flex flex-wrap items-center gap-4">
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="text-xs font-medium uppercase tracking-wider text-parchment-500 dark:text-parchment-600">
+              Text Size:
+            </span>
+            <select
+              value={textSize}
+              onChange={(e) => setTextSize(e.target.value as 'normal' | 'large')}
+              className="rounded-lg border border-parchment-300 bg-parchment-100 px-3 py-1.5 text-xs font-medium text-parchment-700 dark:border-ash/20 dark:bg-obsidian dark:text-ash"
+            >
+              <option value="normal">Normal</option>
+              <option value="large">Large</option>
+            </select>
+          </div>
+
+          <button
+            onClick={() => {
+              setCompareMode((prev) => !prev)
+              if (compareMode) setCompareItems([])
+            }}
+            className={`rounded-lg px-3 py-1.5 text-xs font-medium transition-colors ${
+              compareMode
+                ? 'border border-gilt bg-transparent text-gilt'
+                : 'border border-parchment-300 bg-parchment-100 text-parchment-600 hover:border-gilt hover:text-gilt dark:border-ash/20 dark:bg-obsidian dark:text-ash dark:hover:border-gilt'
+            }`}
           >
-            <option value="normal">Normal</option>
-            <option value="large">Large</option>
-          </select>
+            {compareMode ? 'Exit Compare Mode' : 'Compare Equipment'}
+          </button>
         </div>
       </div>
 
@@ -666,12 +682,25 @@ export function Equipment() {
           <div className="h-8 w-8 animate-spin rounded-full border-2 border-gilt/20 border-t-gilt" />
         </div>
       ) : (
-        <DataTable
-          data={displayRows}
-          columns={columns}
-          searchPlaceholder="Search equipment..."
-          initialSorting={[{ id: 'level', desc: false }]}
-          textSize={textSize}
+        <div className={compareMode ? 'pb-56' : ''}>
+          <DataTable
+            data={displayRows}
+            columns={columns}
+            searchPlaceholder="Search equipment..."
+            initialSorting={[{ id: 'level', desc: false }]}
+            textSize={textSize}
+          />
+        </div>
+      )}
+
+      {compareMode && (
+        <CompareBar
+          items={compareItems}
+          onClear={() => setCompareItems([])}
+          onClose={() => {
+            setCompareMode(false)
+            setCompareItems([])
+          }}
         />
       )}
     </div>
