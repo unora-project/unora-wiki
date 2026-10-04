@@ -1,0 +1,9 @@
+name: Rout 1
+class: Warlord
+levelRequirement: Ab 3
+statRequirements: 3/3/3/3/3
+goldRequired: 750,000
+itemRequirements: 2 Terraclod Clump
+prerequisites: '-'
+learningLocation: Tarlok (Noam)
+description: A sweeping blow that strikes the enemies directly beside you.  It costs no health.
