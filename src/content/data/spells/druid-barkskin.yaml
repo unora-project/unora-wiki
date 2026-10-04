@@ -1,0 +1,10 @@
+name: Barkskin
+class: Druid
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Druid
+description: Bark enhances your skin for 45s (lowers AC and raises MR) for every enemy within 2 tiles.  Ignores 8% of all damage, and gives 35% chance to reflect damage back.  Standing in a grove doubles these.
