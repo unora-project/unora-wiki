@@ -1,0 +1,9 @@
+name: Guard 1
+class: Warlord
+levelRequirement: Ab 8
+statRequirements: 3/3/3/3/3
+goldRequired: 750,000
+itemRequirements: 2 Blue Blob Core
+prerequisites: '-'
+learningLocation: Tarlok (Noam)
+description: Protect an ally, taking 40% of their damage received.  Last 60s, or until you have absorbed half of your own max health.  Only works within 8 tiles.  Damage over time effects will not count.  Damage absorbed CAN kill you.
