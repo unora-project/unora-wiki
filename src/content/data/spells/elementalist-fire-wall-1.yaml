@@ -1,0 +1,9 @@
+name: Fire Wall 1
+class: Elementalist
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Elementalist
+description: Creates a 2x5 wall of fire in front of you for 8s.  Every 0.5s enemies standing in it take 4% of their max health (less against bosses), with a 20% chance to burn.  Sal spells cast can extinguish.
