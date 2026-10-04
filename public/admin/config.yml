@@ -467,6 +467,7 @@ collections:
     fields:
       - { name: name, label: Name, widget: string }
       - { name: class, label: Class, widget: string }
+      - { name: element, label: Element, widget: string, required: false, hint: "Optional. Used to group skills by element." }
       - { name: levelRequirement, label: Level Requirement, widget: string }
       - { name: statRequirements, label: Stat Requirements, widget: string }
       - { name: goldRequired, label: Gold Required, widget: string }
@@ -486,6 +487,7 @@ collections:
     fields:
       - { name: name, label: Name, widget: string }
       - { name: class, label: Class, widget: string }
+      - { name: element, label: Element, widget: string, required: false, hint: "Optional. Used to group spells by element." }
       - { name: levelRequirement, label: Level Requirement, widget: string }
       - { name: statRequirements, label: Stat Requirements, widget: string }
       - { name: goldRequired, label: Gold Required, widget: string }
