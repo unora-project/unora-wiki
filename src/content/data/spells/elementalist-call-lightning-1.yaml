@@ -1,0 +1,10 @@
+name: Call Lightning 1
+class: Elementalist
+element: Wind
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Elementalist
+description: After 2s delay, strike chosen location 5 times.  Damage scales with your mana, and has a 75% chance to apply crit.
