@@ -1,0 +1,10 @@
+name: Crescendo 1
+class: Bard
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Bard
+description: "Spends harmony built by your current song to heal you and your group within 6 tiles.  Your current song then adds it's own burst; - Mending: Shields, - March: rallies on top of its own bonus for 8s, - Bulwark: Lifts every affliction it knows, - Dirge: Wails at nearby enemies.  The heal and burst scales with harmony spent (except Bulwark)."
