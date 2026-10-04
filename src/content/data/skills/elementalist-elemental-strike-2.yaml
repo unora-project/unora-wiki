@@ -1,0 +1,10 @@
+name: Elemental Strike 2
+class: Elementalist
+element: ''
+levelRequirement: Ab 20
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: Elemental Strike 1 (100)
+learningLocation: Chief (Asilon)
+description: Takes the element of your necklace to assail a target up to 5 tiles away (scales with INT).
