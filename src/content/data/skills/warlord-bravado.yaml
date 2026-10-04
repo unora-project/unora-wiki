@@ -1,0 +1,9 @@
+name: Bravado
+class: Warlord
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Warlord
+description: A finisher that instantly kills normal enemies (15%> hp).  Kill restores 30% of your health and 15% of team's.  Also restores 7.5% mana to group.  Instant kills reduce cooldown by half.
