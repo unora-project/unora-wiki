@@ -1,4 +1,5 @@
 import equipmentUrl from '@/data/equipment/all.json?url'
+import { classSlug, classLabel, parentClass } from '@/lib/class-families'
 
 export interface SearchItem {
   title: string
@@ -176,17 +177,23 @@ async function buildFullIndex(): Promise<SearchItem[]> {
     return items
   })()
 
-  const skillItems: SearchItem[] = skillsData.map((s) => ({
-    title: s.name,
-    category: `${s.class.charAt(0).toUpperCase() + s.class.slice(1)} Skill`,
-    path: `/classes/${s.class}`,
-  }))
+    const skillItems: SearchItem[] = skillsData.map((s) => {
+    const slug = classSlug(s.class)
+    return {
+      title: s.name,
+      category: `${classLabel(slug)} Skill`,
+      path: `/classes/${parentClass(slug)}`,
+    }
+  })
 
-  const spellItems: SearchItem[] = spellsData.map((s) => ({
-    title: s.name,
-    category: `${s.class.charAt(0).toUpperCase() + s.class.slice(1)} Spell`,
-    path: `/classes/${s.class}`,
-  }))
+  const spellItems: SearchItem[] = spellsData.map((s) => {
+    const slug = classSlug(s.class)
+    return {
+      title: s.name,
+      category: `${classLabel(slug)} Spell`,
+      path: `/classes/${parentClass(slug)}`,
+    }
+  })
 
   const npcItems: SearchItem[] = (() => {
     const seen = new Set<string>()

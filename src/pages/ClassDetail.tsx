@@ -1,9 +1,10 @@
 import { Link, useParams } from 'react-router'
 import { useState, useMemo, useEffect } from 'react'
 import { createColumnHelper } from '@tanstack/react-table'
-import { DataTable } from '@/components/tables/DataTable'
+import { DataTable, compareLevels } from '@/components/tables/DataTable'
 import { PageHeader } from '@/components/ui/PageHeader'
 import classInfo from '@/data/metadata/classes.json'
+import { CLASS_FAMILIES, classLabel } from '@/lib/class-families'
 
 interface SkillSpell {
   name: string
@@ -23,6 +24,13 @@ interface Dugon {
   meditation: string
 }
 
+interface Shard {
+  skills: SkillSpell[]
+  spells: SkillSpell[]
+}
+
+const EMPTY_SHARD: Shard = { skills: [], spells: [] }
+
 const typedClassInfo = classInfo as Record<string, {
   description: string
   mastering: string[]
@@ -35,7 +43,7 @@ const skillColumnHelper = createColumnHelper<SkillSpell>()
 
 const skillColumns = [
   skillColumnHelper.accessor('name', { header: 'Name' }),
-  skillColumnHelper.accessor('levelRequirement', { header: 'Level' }),
+  skillColumnHelper.accessor('levelRequirement', { header: 'Level', sortingFn: compareLevels }),
   skillColumnHelper.accessor('statRequirements', { header: 'Stats' }),
   skillColumnHelper.accessor('goldRequired', { header: 'Gold' }),
   skillColumnHelper.accessor('itemRequirements', { header: 'Items' }),
@@ -74,19 +82,19 @@ const dugonColumns = [
   dugonColumnHelper.accessor('meditation', { header: 'Meditation Location' }),
 ]
 
-const classShardCache = new Map<string, { skills: SkillSpell[]; spells: SkillSpell[] }>()
+const classShardCache = new Map<string, Shard>()
 const dugonCache = new Map<string, Dugon[]>()
 
-async function loadClassShard(className: string): Promise<{ skills: SkillSpell[]; spells: SkillSpell[] }> {
-  const cached = classShardCache.get(className)
+async function loadClassShard(slug: string): Promise<Shard> {
+  const cached = classShardCache.get(slug)
   if (cached) return cached
-  const base = import.meta.env.BASE_URL + 'data/classes/' + className
+  const base = import.meta.env.BASE_URL + 'data/classes/' + slug
   const [skills, spells] = await Promise.all([
     fetch(base + '/skills.json').then((r) => (r.ok ? (r.json() as Promise<SkillSpell[]>) : [])).catch(() => []),
     fetch(base + '/spells.json').then((r) => (r.ok ? (r.json() as Promise<SkillSpell[]>) : [])).catch(() => []),
   ])
   const result = { skills, spells }
-  classShardCache.set(className, result)
+  classShardCache.set(slug, result)
   return result
 }
 
@@ -101,25 +109,63 @@ async function loadDugons(className: string): Promise<Dugon[]> {
   return dugons
 }
 
+function SubTabs({
+  items,
+  active,
+  onChange,
+}: {
+  items: { slug: string; label: string; count: number }[]
+  active: string
+  onChange: (slug: string) => void
+}) {
+  if (items.length <= 1) return null
+  return (
+    <div className="mb-4 flex flex-wrap gap-1.5">
+      {items.map((item) => (
+        <button
+          key={item.slug}
+          onClick={() => onChange(item.slug)}
+          className={`rounded-lg px-3 py-1.5 text-xs font-medium transition-colors ${
+            active === item.slug
+              ? 'border border-gilt bg-transparent text-gilt'
+              : 'border border-parchment-300 bg-parchment-100 text-parchment-600 hover:border-gilt hover:text-gilt dark:border-ash/20 dark:bg-obsidian dark:text-ash dark:hover:border-gilt'
+          }`}
+        >
+          {item.label} ({item.count})
+        </button>
+      ))}
+    </div>
+  )
+}
+
 export function ClassDetail() {
   const { className } = useParams<{ className: string }>()
   const info = className ? typedClassInfo[className] : null
 
-  const initial = className ? classShardCache.get(className) : undefined
-  const [skills, setSkills] = useState<SkillSpell[]>(initial?.skills ?? [])
-  const [spells, setSpells] = useState<SkillSpell[]>(initial?.spells ?? [])
+  // The class itself plus its two Medenia branches (e.g. monk, adept, druid).
+  const family = useMemo(
+    () => (className ? CLASS_FAMILIES[className] ?? [className] : []),
+    [className]
+  )
+
+  const [shards, setShards] = useState<Record<string, Shard>>({})
   const [dugons, setDugons] = useState<Dugon[]>(className ? dugonCache.get(className) ?? [] : [])
+  const [activeSub, setActiveSub] = useState('')
 
   useEffect(() => {
-    if (!className) return
+    setActiveSub('')
+  }, [className])
+
+  useEffect(() => {
     let alive = true
-    loadClassShard(className).then((shard) => {
+    Promise.all(
+      family.map(async (slug) => [slug, await loadClassShard(slug)] as const)
+    ).then((entries) => {
       if (!alive) return
-      setSkills(shard.skills)
-      setSpells(shard.spells)
+      setShards((prev) => ({ ...prev, ...Object.fromEntries(entries) }))
     })
     return () => { alive = false }
-  }, [className])
+  }, [family])
 
   useEffect(() => {
     if (className !== 'monk') {
@@ -134,22 +180,35 @@ export function ClassDetail() {
     return () => { alive = false }
   }, [className])
 
+  const familyData = useMemo(
+    () =>
+      family.map((slug) => ({
+        slug,
+        label: classLabel(slug),
+        shard: shards[slug] ?? classShardCache.get(slug) ?? EMPTY_SHARD,
+      })),
+    [family, shards]
+  )
+
+  const totalSkills = familyData.reduce((n, f) => n + f.shard.skills.length, 0)
+  const totalSpells = familyData.reduce((n, f) => n + f.shard.spells.length, 0)
+
   const tabs = useMemo(() => {
     const t: { id: string; label: string }[] = []
     if (info && info.statCaps.length > 0) t.push({ id: 'overview', label: 'Overview' })
-    if (skills.length > 0) t.push({ id: 'skills', label: `Skills (${skills.length})` })
-    if (spells.length > 0) t.push({ id: 'spells', label: `Spells (${spells.length})` })
+    if (totalSkills > 0) t.push({ id: 'skills', label: `Skills (${totalSkills})` })
+    if (totalSpells > 0) t.push({ id: 'spells', label: `Spells (${totalSpells})` })
     if (className === 'monk' && dugons.length > 0) t.push({ id: 'dugons', label: `Dugons (${dugons.length})` })
     return t
-  }, [info, skills, spells, dugons, className])
+  }, [info, totalSkills, totalSpells, dugons, className])
 
   const [activeTab, setActiveTab] = useState(tabs[0]?.id ?? 'overview')
 
-useEffect(() => {
-  if (!tabs.some((t) => t.id === activeTab)) {
-    setActiveTab(tabs[0]?.id ?? 'overview')
-  }
-}, [tabs, activeTab])
+  useEffect(() => {
+    if (!tabs.some((t) => t.id === activeTab)) {
+      setActiveTab(tabs[0]?.id ?? 'overview')
+    }
+  }, [tabs, activeTab])
 
   if (!info || !className) {
     return (
@@ -159,7 +218,35 @@ useEffect(() => {
     )
   }
 
-  const displayName = className.charAt(0).toUpperCase() + className.slice(1)
+  const displayName = classLabel(className)
+  const currentSub = family.includes(activeSub) ? activeSub : (family[0] ?? '')
+  const currentShard = familyData.find((f) => f.slug === currentSub)?.shard ?? EMPTY_SHARD
+
+  const renderSkillSpellPanel = (kind: 'skills' | 'spells') => {
+    const rows = currentShard[kind]
+    return (
+      <section>
+        <SubTabs
+          items={familyData.map((f) => ({ slug: f.slug, label: f.label, count: f.shard[kind].length }))}
+          active={currentSub}
+          onChange={setActiveSub}
+        />
+        {rows.length === 0 ? (
+          <p className="py-10 text-center text-parchment-500 dark:text-parchment-600">
+            No {kind} added for {classLabel(currentSub)} yet.
+          </p>
+        ) : (
+          <DataTable
+            key={`${kind}-${currentSub}`}
+            data={rows}
+            columns={skillColumns}
+            searchPlaceholder={`Search ${classLabel(currentSub)} ${kind}...`}
+            initialSorting={[{ id: 'levelRequirement', desc: false }]}
+          />
+        )}
+      </section>
+    )
+  }
 
   return (
     <div>
@@ -238,7 +325,6 @@ useEffect(() => {
 
           {/* Mastering & Dedication side by side */}
           <div className="grid gap-6 sm:grid-cols-2">
-            {/* Mastering Requirements */}
             {info.mastering.length > 0 && (
               <section className="rounded-lg border border-parchment-300 bg-parchment-100 p-5 dark:border-ash/10 dark:bg-ink">
                 <h2 className="mb-3 font-heading text-xl font-semibold text-gilt">
@@ -252,7 +338,6 @@ useEffect(() => {
               </section>
             )}
 
-            {/* Class Dedication */}
             {info.dedication.length > 0 && (
               <section className="rounded-lg border border-parchment-300 bg-parchment-100 p-5 dark:border-ash/10 dark:bg-ink">
                 <h2 className="mb-3 font-heading text-xl font-semibold text-gilt">
@@ -273,39 +358,21 @@ useEffect(() => {
       )}
 
       {/* Skills Tab */}
-      {activeTab === 'skills' && skills.length > 0 && (
-        <section>
-          <DataTable
-            data={skills}
-            columns={skillColumns}
-            searchPlaceholder={`Search ${displayName} skills...`}
-            initialSorting={[{ id: 'levelRequirement', desc: false }]}
-          />
-        </section>
-      )}
+      {activeTab === 'skills' && renderSkillSpellPanel('skills')}
 
       {/* Spells Tab */}
-      {activeTab === 'spells' && spells.length > 0 && (
-        <section>
-          <DataTable
-            data={spells}
-            columns={skillColumns}
-            searchPlaceholder={`Search ${displayName} spells...`}
-            initialSorting={[{ id: 'levelRequirement', desc: false }]}
-          />
-        </section>
-      )}
+      {activeTab === 'spells' && renderSkillSpellPanel('spells')}
 
       {/* Dugons Tab */}
       {activeTab === 'dugons' && dugons.length > 0 && (
         <section>
           <p className="mb-4 text-center text-base text-parchment-600 dark:text-parchment-400">
-      Dugons are an important part of the Monk class! Start by heading to Sapphire Streams and speaking to Sabonim!
-      <br /><br />
-      When you're ready say "Sabonim, Please teach me the -color- dugon." (ie. Sabonim, Please teach me the White dugon.)
-      <br /><br />
-      After meditating (which can take a bit of time), return to Sabonim and say "Sabonim, I understand the -color- dugon." (ie. Sabonim, I understand the White dugon.)
-    </p>
+            Dugons are an important part of the Monk class! Start by heading to Sapphire Streams and speaking to Sabonim!
+            <br /><br />
+            When you're ready say "Sabonim, Please teach me the -color- dugon." (ie. Sabonim, Please teach me the White dugon.)
+            <br /><br />
+            After meditating (which can take a bit of time), return to Sabonim and say "Sabonim, I understand the -color- dugon." (ie. Sabonim, I understand the White dugon.)
+          </p>
           <DataTable
             data={dugons}
             columns={dugonColumns}
@@ -344,8 +411,8 @@ function renderTextWithLinks(text: string) {
           {label}
         </Link>
       ) : (
-        
-          <a key={currentKey}
+        <a
+          key={currentKey}
           href={url}
           target="_blank"
           rel="noopener noreferrer"
