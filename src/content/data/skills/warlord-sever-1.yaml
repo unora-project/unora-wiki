@@ -1,0 +1,9 @@
+name: Sever 1
+class: Warlord
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Warlord
+description: An attack that strikes enemies up to 4 tiles in front of you, stopping at walls.  Damage scales with your health.
