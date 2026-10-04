@@ -28,6 +28,51 @@ shop:
     type: F Armor
     cost: 500,000
   - name: Incarnate Moon Codex
-    type: 1H Weapon
+    type: Grimoire
+    cost: 750,000
+  - name: Incarnate Prism Codex
+    type: Grimoire
+    cost: 250,000
+  - name: Resonant Rosewood Harp
+    type: Harp
+    cost: 750,000
+  - name: Resonant Wooden Harp
+    type: Harp
+    cost: 250,000
+  - name: Festering Blightward Garb
+    type: M Armor
+    cost: 1,000,000
+  - name: Festering Rotward Garb
+    type: M Armor
+    cost: 500,000
+  - name: Incarnate Aiquil
+    type: M Armor
+    cost: 500,000
+  - name: Incarnate Vaeril
+    type: M Armor
+    cost: 1,000,000
+  - name: Primordial Aiquil
+    type: M Armor
+    cost: 500,000
+  - name: Primordial Vaeril
+    type: M Armor
+    cost: 1,000,000
+  - name: Resonant Selae
+    type: M Armor
+    cost: 1,000,000
+  - name: Resonant Vaina
+    type: M Armor
+    cost: 500,000
+  - name: Primordial Maron Sphere
+    type: Sphere
+    cost: 750,000
+  - name: Primordial Sphere
+    type: Sphere
+    cost: 250,000
+  - name: Festering Crow Staff
+    type: Staff
+    cost: 250,000
+  - name: Festering Winged Staff
+    type: Staff
     cost: 750,000
 quest: []
