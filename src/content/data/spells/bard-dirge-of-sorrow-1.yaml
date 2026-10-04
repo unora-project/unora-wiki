@@ -1,0 +1,10 @@
+name: Dirge of Sorrow 1
+class: Bard
+element: ''
+levelRequirement: Ab 5
+statRequirements: 3/3/3/3/3
+goldRequired: 750,000
+itemRequirements: Green Blob Core (5)
+prerequisites: '-'
+learningLocation: Peytri (Noam)
+description: Weakens enemies within 6 tiles, lowering their damage by 8% up to 12% at full harmony.  Slows the walk speed of monsters by 1/5 or more (including bosses).  Drains 250 mana + 1% of max each second.  Only one song may play at a time (cast it again to stop).  Answer its call to build harmony which strengthens it by up to half (Harmony fades if you stop answering).
