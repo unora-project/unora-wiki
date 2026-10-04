@@ -9,6 +9,7 @@ import { CLASS_FAMILIES, classLabel } from '@/lib/class-families'
 interface SkillSpell {
   name: string
   class: string
+  element?: string
   levelRequirement: string
   statRequirements: string
   goldRequired: string
@@ -50,6 +51,27 @@ const skillColumns = [
   skillColumnHelper.accessor('prerequisites', { header: 'Prereqs' }),
   skillColumnHelper.accessor('learningLocation', { header: 'Location' }),
   skillColumnHelper.accessor('description', { header: 'Description' }),
+]
+
+function normalizeElement(raw: unknown): string {
+  return typeof raw === 'string' ? raw.trim().toLowerCase() : ''
+}
+
+function elementLabel(slug: string): string {
+  return slug.charAt(0).toUpperCase() + slug.slice(1)
+}
+
+const ELEMENT_ORDER = ['fire', 'water', 'earth', 'wind']
+
+// Same columns as skillColumns, plus an Element column after Name. Used on
+// the "All" view so people can see which attunement each spell belongs to.
+const skillColumnsWithElement = [
+  skillColumnHelper.accessor('name', { header: 'Name' }),
+  skillColumnHelper.accessor(
+    (row) => (normalizeElement(row.element) ? elementLabel(normalizeElement(row.element)) : 'Any'),
+    { id: 'element', header: 'Element' }
+  ),
+  ...skillColumns.slice(1),
 ]
 
 const dugonColumnHelper = createColumnHelper<Dugon>()
@@ -138,6 +160,37 @@ function SubTabs({
   )
 }
 
+function ElementTabs({
+  items,
+  active,
+  onChange,
+}: {
+  items: { id: string; label: string; count: number }[]
+  active: string
+  onChange: (id: string) => void
+}) {
+  return (
+    <div className="mb-4 flex flex-wrap items-center gap-1.5">
+      <span className="mr-1 text-xs font-medium uppercase tracking-wider text-parchment-500 dark:text-parchment-600">
+        Attunement:
+      </span>
+      {items.map((item) => (
+        <button
+          key={item.id}
+          onClick={() => onChange(item.id)}
+          className={`rounded-lg px-3 py-1.5 text-xs font-medium transition-colors ${
+            active === item.id
+              ? 'border border-gilt bg-transparent text-gilt'
+              : 'border border-parchment-300 bg-parchment-100 text-parchment-600 hover:border-gilt hover:text-gilt dark:border-ash/20 dark:bg-obsidian dark:text-ash dark:hover:border-gilt'
+          }`}
+        >
+          {item.label} ({item.count})
+        </button>
+      ))}
+    </div>
+  )
+}
+
 export function ClassDetail() {
   const { className } = useParams<{ className: string }>()
   const info = className ? typedClassInfo[className] : null
@@ -151,10 +204,15 @@ export function ClassDetail() {
   const [shards, setShards] = useState<Record<string, Shard>>({})
   const [dugons, setDugons] = useState<Dugon[]>(className ? dugonCache.get(className) ?? [] : [])
   const [activeSub, setActiveSub] = useState('')
+  const [activeElement, setActiveElement] = useState('all')
 
   useEffect(() => {
     setActiveSub('')
   }, [className])
+
+  useEffect(() => {
+    setActiveElement('all')
+  }, [className, activeSub])
 
   useEffect(() => {
     let alive = true
@@ -222,8 +280,24 @@ export function ClassDetail() {
   const currentSub = family.includes(activeSub) ? activeSub : (family[0] ?? '')
   const currentShard = familyData.find((f) => f.slug === currentSub)?.shard ?? EMPTY_SHARD
 
-  const renderSkillSpellPanel = (kind: 'skills' | 'spells') => {
+    const renderSkillSpellPanel = (kind: 'skills' | 'spells') => {
     const rows = currentShard[kind]
+
+    // Elements tagged on this class's entries, in a stable order.
+    const elementsPresent = Array.from(
+      new Set(rows.map((r) => normalizeElement(r.element)).filter(Boolean))
+    ).sort((a, b) => {
+      const ai = ELEMENT_ORDER.indexOf(a)
+      const bi = ELEMENT_ORDER.indexOf(b)
+      return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi) || a.localeCompare(b)
+    })
+    const hasElements = elementsPresent.length > 0
+    const activeEl = hasElements && elementsPresent.includes(activeElement) ? activeElement : 'all'
+
+    const elementRows =
+      activeEl === 'all' ? rows : rows.filter((r) => normalizeElement(r.element) === activeEl)
+    const anyRows = activeEl === 'all' ? [] : rows.filter((r) => !normalizeElement(r.element))
+
     return (
       <section>
         <SubTabs
@@ -231,18 +305,57 @@ export function ClassDetail() {
           active={currentSub}
           onChange={setActiveSub}
         />
+
+        {hasElements && (
+          <ElementTabs
+            items={[
+              { id: 'all', label: 'All', count: rows.length },
+              ...elementsPresent.map((el) => ({
+                id: el,
+                label: elementLabel(el),
+                count: rows.filter((r) => normalizeElement(r.element) === el).length,
+              })),
+            ]}
+            active={activeEl}
+            onChange={setActiveElement}
+          />
+        )}
+
         {rows.length === 0 ? (
           <p className="py-10 text-center text-parchment-500 dark:text-parchment-600">
             No {kind} added for {classLabel(currentSub)} yet.
           </p>
         ) : (
-          <DataTable
-            key={`${kind}-${currentSub}`}
-            data={rows}
-            columns={skillColumns}
-            searchPlaceholder={`Search ${classLabel(currentSub)} ${kind}...`}
-            initialSorting={[{ id: 'levelRequirement', desc: false }]}
-          />
+          <>
+            {activeEl !== 'all' && (
+              <h3 className="mb-3 font-heading text-lg font-semibold text-gilt">
+                {elementLabel(activeEl)} Attunement
+              </h3>
+            )}
+            <DataTable
+              key={`${kind}-${currentSub}-${activeEl}`}
+              data={elementRows}
+              columns={hasElements && activeEl === 'all' ? skillColumnsWithElement : skillColumns}
+              searchPlaceholder={`Search ${classLabel(currentSub)} ${kind}...`}
+              initialSorting={[{ id: 'levelRequirement', desc: false }]}
+            />
+
+            {anyRows.length > 0 && (
+              <div className="mt-8">
+                <h3 className="mb-1 font-heading text-lg font-semibold text-gilt">Any Attunement</h3>
+                <p className="mb-3 text-sm text-parchment-600 dark:text-parchment-400">
+                  These {kind} don't depend on which element you're attuned to.
+                </p>
+                <DataTable
+                  key={`${kind}-${currentSub}-any`}
+                  data={anyRows}
+                  columns={skillColumns}
+                  searchPlaceholder={`Search ${classLabel(currentSub)} ${kind}...`}
+                  initialSorting={[{ id: 'levelRequirement', desc: false }]}
+                />
+              </div>
+            )}
+          </>
         )}
       </section>
     )
