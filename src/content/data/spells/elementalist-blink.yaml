@@ -1,0 +1,10 @@
+name: Blink
+class: Elementalist
+element: ''
+levelRequirement: Ab 12
+statRequirements: 3/3/3/3/3
+goldRequired: 1,500,000
+itemRequirements: Scravelmaw Head (1), Vulture Feather (5)
+prerequisites: '-'
+learningLocation: Peytri (Noam)
+description: Teleports you up to 7 tiles away so long as no wall blocks the path.
