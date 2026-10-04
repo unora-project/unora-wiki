@@ -1,0 +1,10 @@
+name: Cyclone 1
+class: Elementalist
+element: Wind
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Elementalist
+description: Summons a wind tornado for 8s.  Every 0.5s it pushes enemies on or beside it 1 tile away.  Bosses are not moved and aislings can pass through.
