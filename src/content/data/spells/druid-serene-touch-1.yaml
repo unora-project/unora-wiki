@@ -1,0 +1,10 @@
+name: Serene Touch 1
+class: Druid
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Druid
+description: Restores 1200 health + 18*WIS + 6% of max mana to your group within 2 tiles.  Extra healing costs no mana.
