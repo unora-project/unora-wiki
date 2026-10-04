@@ -1,0 +1,10 @@
+name: Seismic Shift 1
+class: Elementalist
+element: Earth
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Elementist
+description: Spell cascades outward in a cone up to 3 tiles, striking enemies and pushing them away.  Damage scales with your mana, and has a 75% chance to apply Beag Suain.
