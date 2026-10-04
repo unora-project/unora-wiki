@@ -1,0 +1,10 @@
+name: Ashen Pull 1
+class: Druid
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Druid
+description: Drag enemies from the tile you target, and 4 tiles around it to your side.  Taunts enemies, and reapplies every second for 5s.
