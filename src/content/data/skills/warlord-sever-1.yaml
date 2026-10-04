@@ -1,7 +1,7 @@
 name: Sever 1
 class: Warlord
 levelRequirement: Ab 1
-statRequirements: 3/3/3/3/
+statRequirements: 3/3/3/3/3
 goldRequired: '-'
 itemRequirements: '-'
 prerequisites: '-'
