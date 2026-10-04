@@ -1,0 +1,10 @@
+name: Song of Mending 1
+class: Bard
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Bard
+description: A song that heals you and you group within 6 tiles for 3*WIS + 1% of their max health each second.  Anyone at full health gains a barrier instead (pets not affected).  Drains 250 mana + 1% of your max mana each second.  Only one song may play at a time (cast it again to stop).  Answer its call to build harmony which strengthens it by up to half (Harmony fades if you stop answering).
