@@ -1,0 +1,10 @@
+name: Mind Hymn 1
+class: Bard
+element: ''
+levelRequirement: Ab 3
+statRequirements: 3/3/3/3/3
+goldRequired: 1,000,000
+itemRequirements: Borim (3)
+prerequisites: '-'
+learningLocation: Peytri (Noam)
+description: Siphons 15% of the targets max mana (of what they have left).  Mana beyond your maximum is lost, and a target with 0 mana will give nothing.
