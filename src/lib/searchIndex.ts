@@ -38,6 +38,7 @@ const staticPages: SearchItem[] = [
   { title: 'Suomi', category: 'Towns', path: '/towns/suomi' },
   { title: 'Rucesion', category: 'Towns', path: '/towns/rucesion' },
   { title: 'Tagor', category: 'Towns', path: '/towns/tagor' },
+  { title: 'Asilon', category: 'Towns', path: '/towns/asilon' },
   // Main sections
   { title: 'Equipment', category: 'Equipment', path: '/equipment' },
   { title: 'Quests', category: 'Quests', path: '/quests' },

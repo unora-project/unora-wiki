@@ -7,6 +7,8 @@ import {
   FlaskConical, Gem, Anvil, UtensilsCrossed, Fish, Leaf, Wand,
 } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
+import { TOWN_REGIONS } from '@/lib/town-regions'
+import townNamesData from '@/data/metadata/town-names.json'
 
 interface SubLink {
   to: string
@@ -36,6 +38,16 @@ interface NavSection {
 function isSubGroup(item: SubLink | SubGroup): item is SubGroup {
   return 'links' in item
 }
+
+const townNames = townNamesData as Record<string, string>
+
+const townGroups: SubGroup[] = TOWN_REGIONS.map((region) => ({
+  label: region.label,
+  links: region.towns.map((slug) => ({
+    to: `/towns/${slug}`,
+    label: townNames[slug] ?? slug.charAt(0).toUpperCase() + slug.slice(1),
+  })),
+}))
 
 const sections: NavSection[] = [
   {
@@ -98,16 +110,7 @@ const sections: NavSection[] = [
           { to: '/professions/foraging', label: 'Foraging', icon: Leaf },
         ]},
       ]},
-      { to: '/towns', label: 'Towns', icon: Building2, children: [
-        { to: '/towns/mileth', label: 'Mileth' },
-        { to: '/towns/abel', label: 'Abel' },
-        { to: '/towns/piet', label: 'Piet' },
-        { to: '/towns/loures', label: 'Loures' },
-        { to: '/towns/undine', label: 'Undine' },
-        { to: '/towns/suomi', label: 'Suomi' },
-        { to: '/towns/rucesion', label: 'Rucesion' },
-        { to: '/towns/tagor', label: 'Tagor' },
-      ]},
+          { to: '/towns', label: 'Towns', icon: Building2, children: townGroups },
     ],
   },
   {
