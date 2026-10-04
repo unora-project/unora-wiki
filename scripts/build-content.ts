@@ -76,21 +76,10 @@ function buildSingleFile(relativePath: string): unknown {
 
 console.log('Building content from YAML...\n')
 
-// Per-class shards for public/data — ClassDetail fetches only its own slice.
-console.log('  Per-class skill/spell shards...')
-// CMS class values may be typed as "Plague Doctor", "plague doctor", etc.;
-// folders are always lowercase-hyphenated so the site can find them.
-const classSlug = (c: string) => c.trim().toLowerCase().replace(/\s+/g, '-')
-const shardClasses = new Set<string>()
-for (const s of skills) if (s.class) shardClasses.add(classSlug(s.class))
-for (const s of spells) if (s.class) shardClasses.add(classSlug(s.class))
-for (const cls of shardClasses) {
-  const classSkills = skills.filter((s) => s.class && classSlug(s.class) === cls)
-  const classSpells = spells.filter((s) => s.class && classSlug(s.class) === cls)
-  writeJson(join(PUBLIC_DATA_ROOT, 'classes', cls, 'skills.json'), classSkills)
-  writeJson(join(PUBLIC_DATA_ROOT, 'classes', cls, 'spells.json'), classSpells)
-}
-console.log(`    wrote ${shardClasses.size} class shard pair(s) to public/data/classes/`)
+// Classes metadata (per-class YAML → single classes.json)
+console.log('  Classes...')
+const classes = buildFolderCollection('classes')
+writeJson(join(OUT_ROOT, 'classes.json'), classes)
 
 // Professions metadata (per-profession YAML → single professions.json)
 console.log('  Professions...')
@@ -178,12 +167,15 @@ if (spells.length) writeJson(join(DATA_OUT_ROOT, 'classes', 'spells.json'), spel
 
 // Per-class shards for public/data — ClassDetail fetches only its own slice.
 console.log('  Per-class skill/spell shards...')
+// CMS class values may be typed as "Plague Doctor", "plague doctor", etc.;
+// folders are always lowercase-hyphenated so the site can find them.
+const classSlug = (c: string) => c.trim().toLowerCase().replace(/\s+/g, '-')
 const shardClasses = new Set<string>()
-for (const s of skills) if (s.class) shardClasses.add(s.class)
-for (const s of spells) if (s.class) shardClasses.add(s.class)
+for (const s of skills) if (s.class) shardClasses.add(classSlug(s.class))
+for (const s of spells) if (s.class) shardClasses.add(classSlug(s.class))
 for (const cls of shardClasses) {
-  const classSkills = skills.filter((s) => s.class === cls)
-  const classSpells = spells.filter((s) => s.class === cls)
+  const classSkills = skills.filter((s) => s.class && classSlug(s.class) === cls)
+  const classSpells = spells.filter((s) => s.class && classSlug(s.class) === cls)
   writeJson(join(PUBLIC_DATA_ROOT, 'classes', cls, 'skills.json'), classSkills)
   writeJson(join(PUBLIC_DATA_ROOT, 'classes', cls, 'spells.json'), classSpells)
 }
