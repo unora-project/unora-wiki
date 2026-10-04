@@ -1,0 +1,10 @@
+name: Heart of the Grove
+class: Druid
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Druid
+description: Forces the grove you are standing in to fully mature for 10s.  All enhancements it provides are doubled for everyone inside.  Gains max root effects instantly.  Must be your own grove.
