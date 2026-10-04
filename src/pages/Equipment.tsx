@@ -454,7 +454,12 @@ function groupedSortingFn(
     const a = rowA.original
     const b = rowB.original
     if (a._groupKey === b._groupKey) {
-      return TIER_ORDER.indexOf(a._selectedTier) - TIER_ORDER.indexOf(b._selectedTier)
+      // Same group: always keep the pre-built insertion order (Base, then
+      // tiers in sequence). Returning 0 relies on the sort being stable,
+      // which holds regardless of ascending/descending direction — a
+      // nonzero tier-difference here would get flipped under descending
+      // sort, which was the bug.
+      return 0
     }
     const parentA = parentLookup.get(a._groupKey) ?? a
     const parentB = parentLookup.get(b._groupKey) ?? b
