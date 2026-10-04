@@ -337,13 +337,15 @@ function CompareBar({
   }, [a, b])
 
   const cellClass = (value: number | null, other: number | null, isBetter: (v: number, o: number) => boolean) => {
-    if (value == null || other == null || value === other) {
-      return 'bg-parchment-100 text-parchment-800 dark:bg-ink dark:text-ivory/90'
-    }
-    return isBetter(value, other)
-      ? 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300'
-      : 'bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300'
+  const v = value ?? 0
+  const o = other ?? 0
+  if (v === o) {
+    return 'bg-parchment-100 text-parchment-800 dark:bg-ink dark:text-ivory/90'
   }
+  return isBetter(v, o)
+    ? 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300'
+    : 'bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300'
+}
 
   if (!pos) return null
 
