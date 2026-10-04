@@ -1,0 +1,114 @@
+town: asilon
+name: Akum
+type: Sells Weapons
+coordinates: 22,37
+shop:
+  - name: Defiant Dane Blade
+    type: 2H Weapon
+    cost: 250,000
+  - name: Defiant Grum Blade
+    type: 2H Weapon
+    cost: 750,000
+  - name: Wreckless Dane Blade
+    type: 2H Weapon
+    cost: 250,000
+  - name: Wreckless Grum Blade
+    type: 2H Weapon
+    cost: 750,000
+  - name: Deadeye Jenwir Bow
+    type: Bows
+    cost: 750,000
+  - name: Deadeye Wooden Bow
+    type: Bows
+    cost: 250,000
+  - name: Ascetic Feathered Claw
+    type: Claw
+    cost: 750,000
+  - name: Ascetic Vowien Claw
+    type: Claw
+    cost: 250,000
+  - name: Verdant Feathered Claw
+    type: Claw
+    cost: 750,000
+  - name: Verdant Vowien Claw
+    type: Claw
+    cost: 250,000
+  - name: Merciless  Tanken Dagger
+    type: Dagger
+    cost: 250,000
+  - name: Merciless Veitsi Dagger
+    type: Dagger
+    cost: 750,000
+  - name: Ascetic Keluni
+    type: F Armor
+    cost: 1,000,000
+  - name: Ascetic Soroni
+    type: F Armor
+    cost: 500,000
+  - name: Deadeye Kanon
+    type: F Armor
+    cost: 500,000
+  - name: Deadeye Veron
+    type: F Armor
+    cost: 1,000,000
+  - name: Defiant Garnulan
+    type: F Armor
+    cost: 1,000,000
+  - name: Defiant Tarsilan
+    type: F Armor
+    cost: 500,000
+  - name: Merciless Kanon
+    type: F Armor
+    cost: 500,000
+  - name: Merciless Veron
+    type: F Armor
+    cost: 1,000,000
+  - name: Verdant Keluni
+    type: F Armor
+    cost: 1,000,000
+  - name: Verdant Soroni
+    type: F Armor
+    cost: 500,000
+  - name: Wreckless Garnulan
+    type: F Armor
+    cost: 1,000,000
+  - name: Wreckless Tarsilan
+    type: F Armor
+    cost: 500,000
+  - name: Ascetic Kelun
+    type: M Armor
+    cost: 1,000,000
+  - name: Ascetic Soron
+    type: M Armor
+    cost: 500,000
+  - name: Deadeye Kano
+    type: M Armor
+    cost: 500,000
+  - name: Deadeye Vero
+    type: M Armor
+    cost: 1,000,000
+  - name: Defiant Garnul
+    type: M Armor
+    cost: 1,000,000
+  - name: Defiant Tarsil
+    type: M Armor
+    cost: 500,000
+  - name: Merciless Kano
+    type: M Armor
+    cost: 500,000
+  - name: Merciless Vero
+    type: M Armor
+    cost: 1,000,000
+  - name: Verdant Kelun
+    type: M Armor
+    cost: 1,000,000
+  - name: Verdant Soron
+    type: M Armor
+    cost: 500,000
+  - name: Wreckless Garnul
+    type: M Armor
+    cost: 1,000,000
+  - name: Wreckless Tarsil
+    type: M Armor
+    cost: 500,000
+quest: []
