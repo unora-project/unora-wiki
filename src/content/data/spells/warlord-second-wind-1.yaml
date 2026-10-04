@@ -3,7 +3,7 @@ class: Warlord
 levelRequirement: Ab 12
 statRequirements: 3/3/3/3/3
 goldRequired: 1,000,000
-itemRequirements: 5 Ant Chitin
+itemRequirements: Ant Chitin (5)
 prerequisites: '-'
 learningLocation: Tarlok (Noam)
 description: Grants you and your group within 6 tiles a barrier worth 12% of each member's own max health.  Shares a short cooldown with other shouts.
