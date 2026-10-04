@@ -1,0 +1,10 @@
+name: Ancient Grove 1
+class: Druid
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Druid
+description: Roots a grove on a tile for 45s.  Your group within 5 tiles take 12% less damage and heal 1.5% of their hp each second.  While standing in your own grove, take 3% less damage every 8s, up to 15%.  Leaving your grove resets the roots, and planting a new one uproots the last.
