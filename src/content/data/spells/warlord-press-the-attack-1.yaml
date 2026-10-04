@@ -1,0 +1,9 @@
+name: Press the Attack 1
+class: Warlord
+levelRequirement: Ab 3
+statRequirements: 3/3/3/3/3
+goldRequired: 750,000
+itemRequirements: 1 Beetle Horn
+prerequisites: '-'
+learningLocation: Tarlok (Noam)
+description: Grants you and your group within 6 tiles 15% attack speed, and 15% cooldown reduction for 20 seconds.  Shares a short cooldown with other shouts.
