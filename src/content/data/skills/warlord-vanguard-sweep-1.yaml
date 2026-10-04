@@ -1,0 +1,9 @@
+name: Vanguard Sweep 1
+class: Warlord
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Warlord
+description: An assail that sweeps enemies directly beside you, but not diagonally.
