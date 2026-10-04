@@ -1,0 +1,10 @@
+name: Seething Hatred 1
+class: Druid
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Druid
+description: Taunts an enemy for 5s.  Every second, starting 1s after cast, adds 2500 threat for each point of CON.  Casting it again refreshes.
