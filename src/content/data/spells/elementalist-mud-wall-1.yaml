@@ -1,0 +1,10 @@
+name: Mud Wall 1
+class: Elementalist
+element: Earth
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Elementalist
+description: Surrounds a target with walls of mud for 12s.  You and your group may pass through.  Each wall breaks after 5 hits from an aisling, or 10 from a monster.
