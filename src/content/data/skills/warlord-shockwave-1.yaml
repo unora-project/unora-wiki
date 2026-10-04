@@ -1,0 +1,9 @@
+name: Shockwave 1
+class: Warlord
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Warlord
+description: An attack that cascades outward in a cone, dealing massive damage to enemies up to 4 tiles in front of you.
