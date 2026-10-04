@@ -1,0 +1,33 @@
+town: asilon
+name: Juwerl
+type: Sells Weapons
+coordinates: 23,37
+shop:
+  - name: Festering Blightward Gown
+    type: F Armor
+    cost: 1,000,000
+  - name: Festering Rotward Gown
+    type: F Armor
+    cost: 500,000
+  - name: Incarnate Aiquilon
+    type: F Armor
+    cost: 500,000
+  - name: Incarnate Vaerilon
+    type: F Armor
+    cost: 1,000,000
+  - name: Primordial Aiquilon
+    type: F Armor
+    cost: 500,000
+  - name: Primordial Vaerilon
+    type: F Armor
+    cost: 1,000,000
+  - name: Resonant Selaer
+    type: F Armor
+    cost: 1,000,000
+  - name: Resonant Vainar
+    type: F Armor
+    cost: 500,000
+  - name: Incarnate Moon Codex
+    type: 1H Weapon
+    cost: 750,000
+quest: []
