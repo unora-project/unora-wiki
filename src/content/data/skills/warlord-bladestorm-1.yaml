@@ -1,0 +1,9 @@
+name: Bladestorm 1
+class: Warlord
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Warlord
+description: A storm of slashes that cascades outward, striking the enemies within 3 tiles.
