@@ -1,0 +1,10 @@
+name: Thornbound 1
+class: Druid
+element: ''
+levelRequirement: Ab 10
+statRequirements: 3/3/3/3/3
+goldRequired: 1,000,000
+itemRequirements: Crag Tyrant Scale (1)
+prerequisites: '-'
+learningLocation: Tarlok (Noam)
+description: Binds every ally within 8 tiles to you for 20s.  You take 20% of all damage dealt in their place, until you've taken 75% of your own max health on their behalf.  Allies who leave 8 tiles are released, and those who return are bound.  You can die from shared damage.
