@@ -1,0 +1,9 @@
+name: Hold the Line 1
+class: Warlord
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Warlord
+description: For 10s, you and your group within 6 tiles will have a 40% chance to reflect strikes.  Shares a cooldown with other shouts.  Pure only.
