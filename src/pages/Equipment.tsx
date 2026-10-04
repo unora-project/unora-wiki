@@ -1,7 +1,7 @@
 import { useEffect, useState, useMemo, useRef } from 'react'
 import { createPortal } from 'react-dom'
 import { Link } from 'react-router'
-import { createColumnHelper } from '@tanstack/react-table'
+import { createColumnHelper, type Row } from '@tanstack/react-table'
 import { DataTable, compareLevels } from '@/components/tables/DataTable'
 import equipmentUrl from '@/data/equipment/all.json?url'
 
@@ -23,6 +23,7 @@ interface DisplayRow extends EquipmentItem {
   _baseName: string
   _availableTiers: string[]
   _selectedTier: string
+  _isVariant: boolean
 }
 
 interface ShopEntry {
@@ -89,17 +90,6 @@ const classLabels: Record<string, string> = {
   archer: 'Archer', berserker: 'Berserker', warlord: 'Warlord', arcanist: 'Arcanist', elementalist: 'Elementalist',
 }
 
-const TIER_PREFIXES = ['Good', 'Great', 'Grand', 'Enchanted', 'Empowered']
-const TIER_ORDER = ['base', 'Good', 'Great', 'Grand', 'Enchanted', 'Empowered']
-const TIER_LABELS: Record<string, string> = {
-  base: 'Base',
-  Good: 'Good',
-  Great: 'Great',
-  Grand: 'Grand',
-  Enchanted: 'Enchanted',
-  Empowered: 'Empowered',
-}
-
 const statLabels: Record<string, string> = {
   hp: 'HP', mp: 'MP', ac: 'AC', mr: 'MR',
   str: 'STR', int: 'INT', wis: 'WIS', con: 'CON', dex: 'DEX',
@@ -115,6 +105,17 @@ const percentLabels: Record<string, string> = {
   flatHealBonus: 'HEAL',
   healBonusPercent: 'HEAL%',
   cooldownReduction: 'CDR%',
+}
+
+const TIER_PREFIXES = ['Good', 'Great', 'Grand', 'Enchanted', 'Empowered']
+const TIER_ORDER = ['base', 'Good', 'Great', 'Grand', 'Enchanted', 'Empowered']
+const TIER_LABELS: Record<string, string> = {
+  base: 'Base',
+  Good: 'Good',
+  Great: 'Great',
+  Grand: 'Grand',
+  Enchanted: 'Enchanted',
+  Empowered: 'Empowered',
 }
 
 function parseTier(name: string): { tier: string; baseName: string } {
@@ -339,15 +340,15 @@ function CompareBar({
   }, [a, b])
 
   const cellClass = (value: number | null, other: number | null, isBetter: (v: number, o: number) => boolean) => {
-  const v = value ?? 0
-  const o = other ?? 0
-  if (v === o) {
-    return 'bg-parchment-100 text-parchment-800 dark:bg-ink dark:text-ivory/90'
+    const v = value ?? 0
+    const o = other ?? 0
+    if (v === o) {
+      return 'bg-parchment-100 text-parchment-800 dark:bg-ink dark:text-ivory/90'
+    }
+    return isBetter(v, o)
+      ? 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300'
+      : 'bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300'
   }
-  return isBetter(v, o)
-    ? 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300'
-    : 'bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300'
-}
 
   if (!pos) return null
 
@@ -440,11 +441,66 @@ function CompareBar({
   )
 }
 
+// Compares two rows so that variant rows always resolve to their parent's
+// value for this column, and rows within the same group are ordered by
+// tier. This keeps an expanded item's variants glued to it regardless of
+// which column header the user sorts by.
+function groupedSortingFn(
+  getValue: (row: DisplayRow) => unknown,
+  compareRaw: (a: unknown, b: unknown) => number,
+  parentLookup: Map<string, DisplayRow>,
+) {
+  return (rowA: Row<DisplayRow>, rowB: Row<DisplayRow>) => {
+    const a = rowA.original
+    const b = rowB.original
+    if (a._groupKey === b._groupKey) {
+      return TIER_ORDER.indexOf(a._selectedTier) - TIER_ORDER.indexOf(b._selectedTier)
+    }
+    const parentA = parentLookup.get(a._groupKey) ?? a
+    const parentB = parentLookup.get(b._groupKey) ?? b
+    return compareRaw(getValue(parentA), getValue(parentB))
+  }
+}
+
+function compareNum(a: unknown, b: unknown): number {
+  const an = a == null ? -Infinity : Number(a)
+  const bn = b == null ? -Infinity : Number(b)
+  return an - bn
+}
+
+function compareStr(a: unknown, b: unknown): number {
+  const as = a == null ? '' : String(a)
+  const bs = b == null ? '' : String(b)
+  return as.localeCompare(bs, undefined, { numeric: true, sensitivity: 'base' })
+}
+
+const LEVEL_TIER_ORDER = ['Beginner-num', 'Master', 'Grandmaster', 'Ab']
+function levelRankValue(raw: unknown): { tier: number; num: number } {
+  if (raw == null || raw === '' || raw === '-') return { tier: 5, num: 0 }
+  const s = String(raw).trim()
+  if (/^ab\s*\d+/i.test(s)) {
+    const n = s.match(/\d+/)
+    return { tier: 3, num: n ? parseFloat(n[0]) : 0 }
+  }
+  if (/^(grand\s*master|gm)$/i.test(s)) return { tier: 2, num: 0 }
+  if (/^master$/i.test(s)) return { tier: 1, num: 0 }
+  const n = s.match(/-?\d+(?:\.\d+)?/)
+  if (n) return { tier: 0, num: parseFloat(n[0]) }
+  return { tier: 4, num: 0 }
+}
+
+function compareLevelRaw(a: unknown, b: unknown): number {
+  const ra = levelRankValue(a)
+  const rb = levelRankValue(b)
+  if (ra.tier !== rb.tier) return ra.tier - rb.tier
+  return ra.num - rb.num
+}
+
 export function Equipment() {
   const [selectedCategory, setSelectedCategory] = useState('all')
   const [selectedClass, setSelectedClass] = useState('all')
   const [data, setData] = useState<EquipmentItem[] | null>(equipmentCache)
-  const [tierSelections, setTierSelections] = useState<Record<string, string>>({})
+  const [expandedGroups, setExpandedGroups] = useState<Record<string, boolean>>({})
   const [textSize, setTextSize] = useState<'normal' | 'large'>('normal')
   const [shopIndex, setShopIndex] = useState<Map<string, { npc: string; town: string }>>(new Map())
   const [weaponRecipes, setWeaponRecipes] = useState<Map<string, WeaponRecipeRow>>(new Map())
@@ -490,20 +546,53 @@ export function Equipment() {
 
   const groups = useMemo(() => groupEquipment(filteredData), [filteredData])
 
-  const displayRows = useMemo<DisplayRow[]>(() => {
-    return groups.map((g) => {
-      const selected = tierSelections[g.key] ?? g.availableTiers[0]
-      const tier = g.tiers[selected] ? selected : g.availableTiers[0]
+  // One representative row per group: the base tier if it exists, else
+  // whichever tier is first in TIER_ORDER. This is both what shows as the
+  // main (collapsed) row AND the value every sort comparison uses for the
+  // whole group, so variants never scatter away from it.
+  const baseRowByGroup = useMemo(() => {
+    const map = new Map<string, DisplayRow>()
+    for (const g of groups) {
+      const tier = g.tiers['base'] ? 'base' : g.availableTiers[0]
       const item = g.tiers[tier]!
-      return {
+      map.set(g.key, {
         ...item,
         _groupKey: g.key,
         _baseName: g.baseName,
         _availableTiers: g.availableTiers,
         _selectedTier: tier,
+        _isVariant: false,
+      })
+    }
+    return map
+  }, [groups])
+
+  const displayRows = useMemo<DisplayRow[]>(() => {
+    const rows: DisplayRow[] = []
+    for (const g of groups) {
+      const baseRow = baseRowByGroup.get(g.key)!
+      rows.push(baseRow)
+      if (expandedGroups[g.key]) {
+        for (const tier of g.availableTiers) {
+          if (tier === baseRow._selectedTier) continue
+          const item = g.tiers[tier]!
+          rows.push({
+            ...item,
+            _groupKey: g.key,
+            _baseName: g.baseName,
+            _availableTiers: g.availableTiers,
+            _selectedTier: tier,
+            _isVariant: true,
+          })
+        }
       }
-    })
-  }, [groups, tierSelections])
+    }
+    return rows
+  }, [groups, baseRowByGroup, expandedGroups])
+
+  const toggleExpand = (groupKey: string) => {
+    setExpandedGroups((prev) => ({ ...prev, [groupKey]: !prev[groupKey] }))
+  }
 
   const toggleCompare = (item: DisplayRow) => {
     setCompareItems((prev) => {
@@ -521,6 +610,9 @@ export function Equipment() {
     const tierTextClass = textSize === 'large' ? 'text-lg' : 'text-sm'
     const soldByTextClass = textSize === 'large' ? 'text-sm' : 'text-xs'
     const showGender = selectedCategory === 'armor' || selectedCategory === 'helmet'
+
+    const g = (fn: (row: DisplayRow) => unknown, kind: 'num' | 'str' | 'level') =>
+      groupedSortingFn(fn, kind === 'num' ? compareNum : kind === 'level' ? compareLevelRaw : compareStr, baseRowByGroup)
 
     const baseColumns = []
 
@@ -551,6 +643,13 @@ export function Equipment() {
         header: 'Tier',
         cell: ({ row }) => {
           const r = row.original
+          if (r._isVariant) {
+            return (
+              <span className={`${tierTextClass} pl-3 font-medium text-parchment-500 dark:text-parchment-500`}>
+                ↳ {TIER_LABELS[r._selectedTier]}
+              </span>
+            )
+          }
           if (r._availableTiers.length <= 1) {
             return (
               <span className={`${tierTextClass} font-medium text-parchment-600 dark:text-parchment-400`}>
@@ -558,23 +657,21 @@ export function Equipment() {
               </span>
             )
           }
+          const isOpen = !!expandedGroups[r._groupKey]
           return (
-            <select
-              value={r._selectedTier}
-              onChange={(e) =>
-                setTierSelections((prev) => ({ ...prev, [r._groupKey]: e.target.value }))
-              }
-              className={`rounded border border-parchment-300 bg-parchment-100 px-2 py-1 ${tierTextClass} font-medium text-parchment-700 dark:border-ash/20 dark:bg-obsidian dark:text-ash`}
+            <button
+              onClick={() => toggleExpand(r._groupKey)}
+              className={`flex items-center gap-1 ${tierTextClass} font-medium text-parchment-700 hover:text-gilt dark:text-ash dark:hover:text-gilt`}
             >
-              {r._availableTiers.map((t) => (
-                <option key={t} value={t}>{TIER_LABELS[t]}</option>
-              ))}
-            </select>
+              <span className={`inline-block transition-transform ${isOpen ? 'rotate-90' : ''}`}>▸</span>
+              {TIER_LABELS[r._selectedTier]}
+            </button>
           )
         },
       }),
       columnHelper.accessor('name', {
         header: 'Name',
+        sortingFn: g((r) => r.name, 'str'),
         cell: ({ row }) => {
           const item = row.original
           let recipeText: string | null = null
@@ -583,7 +680,7 @@ export function Equipment() {
             recipeText = getRecipeDisplay(recipe, item._selectedTier)
           }
           return (
-            <span>
+            <span className={item._isVariant ? 'text-parchment-600 dark:text-ivory/70' : ''}>
               {item.name}
               {recipeText && <RecipeTag materials={recipeText} />}
             </span>
@@ -592,6 +689,7 @@ export function Equipment() {
       }),
       columnHelper.accessor('location', {
         header: 'LOC',
+        sortingFn: g((r) => r.location, 'str'),
         cell: ({ row }) => {
           const item = row.original
           const seller = shopIndex.get(item.name)
@@ -625,6 +723,7 @@ export function Equipment() {
       baseColumns.push(
         columnHelper.accessor('gender', {
           header: 'Gender',
+          sortingFn: g((r) => r.gender, 'str'),
           cell: (info) => info.getValue() ?? '-',
         })
       )
@@ -632,28 +731,32 @@ export function Equipment() {
 
     return [
       ...baseColumns,
-      columnHelper.accessor('level', { header: 'LVL', cell: (info) => info.getValue() ?? '-', sortingFn: compareLevels }),
-      columnHelper.accessor((row) => row.stats.hp, { id: 'hp', header: 'HP', cell: (info) => info.getValue() ?? '-' }),
-      columnHelper.accessor((row) => row.stats.mp, { id: 'mp', header: 'MP', cell: (info) => info.getValue() ?? '-' }),
-      columnHelper.accessor((row) => row.stats.ac, { id: 'ac', header: 'AC', cell: (info) => info.getValue() ?? '-' }),
-      columnHelper.accessor((row) => row.stats.mr, { id: 'mr', header: 'MR', cell: (info) => info.getValue() ?? '-' }),
-      columnHelper.accessor((row) => row.stats.str, { id: 'str', header: 'STR', cell: (info) => info.getValue() ?? '-' }),
-      columnHelper.accessor((row) => row.stats.int, { id: 'int', header: 'INT', cell: (info) => info.getValue() ?? '-' }),
-      columnHelper.accessor((row) => row.stats.wis, { id: 'wis', header: 'WIS', cell: (info) => info.getValue() ?? '-' }),
-      columnHelper.accessor((row) => row.stats.con, { id: 'con', header: 'CON', cell: (info) => info.getValue() ?? '-' }),
-      columnHelper.accessor((row) => row.stats.dex, { id: 'dex', header: 'DEX', cell: (info) => info.getValue() ?? '-' }),
-      columnHelper.accessor((row) => row.stats.dmg, { id: 'dmg', header: 'DMG', cell: (info) => info.getValue() ?? '-' }),
-      columnHelper.accessor((row) => row.stats.hit, { id: 'hit', header: 'HIT', cell: (info) => info.getValue() ?? '-' }),
-      columnHelper.accessor((row) => row.percentages.attackSpeed, { id: 'as', header: 'AS%', cell: (info) => info.getValue() ?? '-' }),
-      columnHelper.accessor((row) => row.percentages.skillDamage, { id: 'skd', header: 'SKD', cell: (info) => info.getValue() ?? '-' }),
-      columnHelper.accessor((row) => row.percentages.skillDamagePercent, { id: 'skdp', header: 'SKD%', cell: (info) => info.getValue() ?? '-' }),
-      columnHelper.accessor((row) => row.percentages.spellDamage, { id: 'spd', header: 'SPD', cell: (info) => info.getValue() ?? '-' }),
-      columnHelper.accessor((row) => row.percentages.spellDamagePercent, { id: 'spdp', header: 'SPD%', cell: (info) => info.getValue() ?? '-' }),
-      columnHelper.accessor((row) => row.percentages.flatHealBonus, { id: 'heal', header: 'HEAL', cell: (info) => info.getValue() ?? '-' }),
-      columnHelper.accessor((row) => row.percentages.healBonusPercent, { id: 'healp', header: 'HEAL%', cell: (info) => info.getValue() ?? '-' }),
-      columnHelper.accessor((row) => row.percentages.cooldownReduction, { id: 'cdr', header: 'CDR%', cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor('level', {
+        header: 'LVL',
+        sortingFn: g((r) => r.level, 'level'),
+        cell: (info) => info.getValue() ?? '-',
+      }),
+      columnHelper.accessor((row) => row.stats.hp, { id: 'hp', header: 'HP', sortingFn: g((r) => r.stats.hp, 'num'), cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.stats.mp, { id: 'mp', header: 'MP', sortingFn: g((r) => r.stats.mp, 'num'), cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.stats.ac, { id: 'ac', header: 'AC', sortingFn: g((r) => r.stats.ac, 'num'), cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.stats.mr, { id: 'mr', header: 'MR', sortingFn: g((r) => r.stats.mr, 'num'), cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.stats.str, { id: 'str', header: 'STR', sortingFn: g((r) => r.stats.str, 'num'), cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.stats.int, { id: 'int', header: 'INT', sortingFn: g((r) => r.stats.int, 'num'), cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.stats.wis, { id: 'wis', header: 'WIS', sortingFn: g((r) => r.stats.wis, 'num'), cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.stats.con, { id: 'con', header: 'CON', sortingFn: g((r) => r.stats.con, 'num'), cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.stats.dex, { id: 'dex', header: 'DEX', sortingFn: g((r) => r.stats.dex, 'num'), cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.stats.dmg, { id: 'dmg', header: 'DMG', sortingFn: g((r) => r.stats.dmg, 'num'), cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.stats.hit, { id: 'hit', header: 'HIT', sortingFn: g((r) => r.stats.hit, 'num'), cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.percentages.attackSpeed, { id: 'as', header: 'AS%', sortingFn: g((r) => r.percentages.attackSpeed, 'num'), cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.percentages.skillDamage, { id: 'skd', header: 'SKD', sortingFn: g((r) => r.percentages.skillDamage, 'num'), cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.percentages.skillDamagePercent, { id: 'skdp', header: 'SKD%', sortingFn: g((r) => r.percentages.skillDamagePercent, 'num'), cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.percentages.spellDamage, { id: 'spd', header: 'SPD', sortingFn: g((r) => r.percentages.spellDamage, 'num'), cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.percentages.spellDamagePercent, { id: 'spdp', header: 'SPD%', sortingFn: g((r) => r.percentages.spellDamagePercent, 'num'), cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.percentages.flatHealBonus, { id: 'heal', header: 'HEAL', sortingFn: g((r) => r.percentages.flatHealBonus, 'num'), cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.percentages.healBonusPercent, { id: 'healp', header: 'HEAL%', sortingFn: g((r) => r.percentages.healBonusPercent, 'num'), cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.percentages.cooldownReduction, { id: 'cdr', header: 'CDR%', sortingFn: g((r) => r.percentages.cooldownReduction, 'num'), cell: (info) => info.getValue() ?? '-' }),
     ]
-  }, [columnHelper, textSize, shopIndex, weaponRecipes, selectedCategory, compareMode, compareItems])
+  }, [columnHelper, textSize, shopIndex, weaponRecipes, selectedCategory, compareMode, compareItems, expandedGroups, baseRowByGroup])
 
   return (
     <div>
@@ -753,18 +856,18 @@ export function Equipment() {
 
       {/* Data Table */}
       {data === null ? (
-  <div className="flex min-h-[40vh] items-center justify-center">
-    <div className="h-8 w-8 animate-spin rounded-full border-2 border-gilt/20 border-t-gilt" />
-  </div>
-) : (
-  <DataTable
-    data={displayRows}
-    columns={columns}
-    searchPlaceholder="Search equipment..."
-    initialSorting={[{ id: 'level', desc: false }]}
-    textSize={textSize}
-  />
-)}
+        <div className="flex min-h-[40vh] items-center justify-center">
+          <div className="h-8 w-8 animate-spin rounded-full border-2 border-gilt/20 border-t-gilt" />
+        </div>
+      ) : (
+        <DataTable
+          data={displayRows}
+          columns={columns}
+          searchPlaceholder="Search equipment..."
+          initialSorting={[{ id: 'level', desc: false }]}
+          textSize={textSize}
+        />
+      )}
 
       {compareMode && (
         <CompareBar
