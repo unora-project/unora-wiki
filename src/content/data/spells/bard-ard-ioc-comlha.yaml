@@ -1,0 +1,10 @@
+name: Ard Ioc Comlha
+class: Bard
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Bard
+description: Restores health to your group within 12 tiles, but not yourself.  Scales with WIS.
