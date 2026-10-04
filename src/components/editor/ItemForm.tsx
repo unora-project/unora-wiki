@@ -193,7 +193,7 @@ export function ItemForm({ tab, value, onChange }: Props) {
                 label="Weapon Type"
                 value={(value as EditorRecipe).weapon_type}
                 onChange={(v) => up({ weapon_type: v } as any)}
-                placeholder="1H, 2H, Staff, Dagger, Claw, Shield, Bows, Master"
+                placeholder="1H, 2H, Staff, Dagger, Claw, Shield, Bows, Harp, Grimoire, Sphere, Master"
               />
               <S label="Level" value={value.level} onChange={(v) => up({ level: v })} />
             </div>
