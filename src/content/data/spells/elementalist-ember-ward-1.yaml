@@ -1,0 +1,9 @@
+name: Ember Ward 1
+class: Elementalist
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Elementalist
+description: For 20s your spells have +25% spell damage and +300 flat spell damage on every spell hit.
