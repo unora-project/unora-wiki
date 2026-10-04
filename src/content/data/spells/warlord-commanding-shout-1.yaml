@@ -1,0 +1,9 @@
+name: Commanding Shout 1
+class: Warlord
+levelRequirement: Ab 1
+statRequirements: '-'
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Warlord
+description: A commanding shout that greaatly increases the damage and healing of your group within 15 tiles for 2 minutes, scaling with each memeber's strength.
