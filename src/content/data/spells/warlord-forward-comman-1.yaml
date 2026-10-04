@@ -1,0 +1,9 @@
+name: Forward Comman 1
+class: Warlord
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Warlord
+description: For 15s your authority carries your next order.  The next shout you cast, will cost 0 Valor.
