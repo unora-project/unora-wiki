@@ -379,9 +379,12 @@ collections:
               - "Bows"
               - "Dagger"
               - "Claw"
+              - "Grimoire"
+              - "Harp"
               - "Staff"
               - "Secret"
               - "Shield"
+              - "Sphere"
 
               # Armor
               - "M Armor"
