@@ -1,0 +1,10 @@
+name: Briarcoat 1
+class: Druid
+element: ''
+levelRequirement: Ab 3
+statRequirements: 3/3/3/3/3
+goldRequired: 750,000
+itemRequirements: Ant Chitin (3)
+prerequisites: '-'
+learningLocation: Tarlok (Noam)
+description: For 12 seconds everything that strikes you takes 20%  of damage returned (Takes into account enemies full damage without reductions).  Can't damage more than 25% of your max health.
