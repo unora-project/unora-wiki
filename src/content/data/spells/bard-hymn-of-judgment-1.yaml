@@ -1,0 +1,10 @@
+name: Hymn of Judgment 1
+class: Bard
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Bard
+description: Strikes chosen tile and four tiles beside it with intense light.  Scales with INT and max mana.
