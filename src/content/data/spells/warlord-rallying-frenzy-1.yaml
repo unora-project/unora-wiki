@@ -1,0 +1,9 @@
+name: Rallying Frenzy 1
+class: Warlord
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Warlord
+description: A rallying cry that shares your battle frenzy with your group within 12 tiles, healing each of them when struck for a short time.
