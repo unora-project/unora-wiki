@@ -1,0 +1,10 @@
+name: Defiance of Heaven
+class: Druid
+element: ''
+levelRequirement: Ab 12
+statRequirements: 3/3/3/3/3
+goldRequired: 1,250,000
+itemRequirements: Scravelmaw Head (1)
+prerequisites: '-'
+learningLocation: Tarlok (Noam)
+description: Wards your group (excluding yourself/pets) within 12 tiles for 30s.  Prevents fatal blows, instead leaves aislings at 1 health, with 3 seconds of invulnerability.  Can only cast with someone in range.
