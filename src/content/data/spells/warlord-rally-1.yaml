@@ -1,0 +1,9 @@
+name: Rally 1
+class: Warlord
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Warlord
+description: Shakes one affliction off each member of your group for 30s.  Shares a short cooldown with other shouts.
