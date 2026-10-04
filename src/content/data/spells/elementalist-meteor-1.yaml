@@ -1,5 +1,6 @@
 name: Meteor 1
 class: Elementalist
+element: Fire
 levelRequirement: Ab 1
 statRequirements: 3/3/3/3/3
 goldRequired: '-'
