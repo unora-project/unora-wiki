@@ -164,15 +164,17 @@ function ElementTabs({
   items,
   active,
   onChange,
+  label,
 }: {
   items: { id: string; label: string; count: number }[]
   active: string
   onChange: (id: string) => void
+  label: string
 }) {
   return (
     <div className="mb-4 flex flex-wrap items-center gap-1.5">
       <span className="mr-1 text-xs font-medium uppercase tracking-wider text-parchment-500 dark:text-parchment-600">
-        Attunement:
+        {label}:
       </span>
       {items.map((item) => (
         <button
@@ -280,8 +282,13 @@ export function ClassDetail() {
   const currentSub = family.includes(activeSub) ? activeSub : (family[0] ?? '')
   const currentShard = familyData.find((f) => f.slug === currentSub)?.shard ?? EMPTY_SHARD
 
-    const renderSkillSpellPanel = (kind: 'skills' | 'spells') => {
+      const renderSkillSpellPanel = (kind: 'skills' | 'spells') => {
     const rows = currentShard[kind]
+
+    // "Attunement" is Elementalist-only wording; every other class that
+    // tags entries with an element just sees "Element".
+    const isElementalist = currentSub === 'elementalist'
+    const groupWord = isElementalist ? 'Attunement' : 'Element'
 
     // Elements tagged on this class's entries, in a stable order.
     const elementsPresent = Array.from(
@@ -308,6 +315,7 @@ export function ClassDetail() {
 
         {hasElements && (
           <ElementTabs
+            label={groupWord}
             items={[
               { id: 'all', label: 'All', count: rows.length },
               ...elementsPresent.map((el) => ({
@@ -329,7 +337,7 @@ export function ClassDetail() {
           <>
             {activeEl !== 'all' && (
               <h3 className="mb-3 font-heading text-lg font-semibold text-gilt">
-                {elementLabel(activeEl)} Attunement
+                {isElementalist ? `${elementLabel(activeEl)} Attunement` : elementLabel(activeEl)}
               </h3>
             )}
             <DataTable
@@ -342,9 +350,13 @@ export function ClassDetail() {
 
             {anyRows.length > 0 && (
               <div className="mt-8">
-                <h3 className="mb-1 font-heading text-lg font-semibold text-gilt">Any Attunement</h3>
+                <h3 className="mb-1 font-heading text-lg font-semibold text-gilt">
+                  {isElementalist ? 'Any Attunement' : 'No Element'}
+                </h3>
                 <p className="mb-3 text-sm text-parchment-600 dark:text-parchment-400">
-                  These {kind} don't depend on which element you're attuned to.
+                  {isElementalist
+                    ? `These ${kind} don't depend on which element you're attuned to.`
+                    : `These ${kind} aren't tied to an element.`}
                 </p>
                 <DataTable
                   key={`${kind}-${currentSub}-any`}
