@@ -1,0 +1,9 @@
+name: Banner of Heroism 1
+class: Warlord
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Warlord
+description: Summons a Banner anywhere in your sight for 30s.  You and your group within 15 tiles have their defense bolstered, and regen more than their full health over 30s.
