@@ -11,6 +11,10 @@ import {
   type Row,
 } from '@tanstack/react-table'
 
+// Cells with text longer than this wrap onto multiple lines instead of
+// forcing a horizontal scroll. Shorter cells (numbers, names) stay on one line.
+const LONG_TEXT_CHARS = 40
+
 interface DataTableProps<T> {
   data: T[]
   columns: ColumnDef<T, any>[]
@@ -175,18 +179,27 @@ useEffect(() => {
                     key={row.id}
                     className="border-b border-ash/10 transition-colors hover:bg-parchment-100/50 dark:hover:bg-ink/40"
                   >
-                    {row.getVisibleCells().map((cell, idx) => (
-                      <td
-                        key={cell.id}
-                        className={`whitespace-nowrap px-3 py-2 ${cellTextClass} ${
-                          idx === 0
-                            ? 'sticky left-0 z-10 bg-parchment-50 font-semibold text-gilt shadow-[2px_0_4px_rgba(0,0,0,0.04)] dark:bg-obsidian'
-                            : 'text-parchment-800 dark:text-ivory/85'
-                        }`}
-                      >
-                        {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                      </td>
-                    ))}
+                    {row.getVisibleCells().map((cell, idx) => {
+                      const raw = cell.getValue()
+                      const isLongText =
+                        idx !== 0 && typeof raw === 'string' && raw.length > LONG_TEXT_CHARS
+                      return (
+                        <td
+                          key={cell.id}
+                          className={`px-3 py-2 ${cellTextClass} ${
+                            isLongText
+                              ? 'min-w-[16rem] whitespace-normal break-words'
+                              : 'whitespace-nowrap'
+                          } ${
+                            idx === 0
+                              ? 'sticky left-0 z-10 bg-parchment-50 font-semibold text-gilt shadow-[2px_0_4px_rgba(0,0,0,0.04)] dark:bg-obsidian'
+                              : 'text-parchment-800 dark:text-ivory/85'
+                          }`}
+                        >
+                          {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                        </td>
+                      )
+                    })}
                   </tr>
                 ))
               )}
