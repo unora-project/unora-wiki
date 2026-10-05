@@ -1,0 +1,10 @@
+name: Bramblestorm 1
+class: Druid
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Druid
+description: Pulls every enemy within 6 tiles to your side and taunts them.  Taunt is reapplied every second for 5s.  Threat scales with CON.
