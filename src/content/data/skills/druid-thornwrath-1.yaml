@@ -1,0 +1,10 @@
+name: Thornwrath 1
+class: Druid
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Druid
+description: Thorns tear outward in a wider ring than Bramblestorm, pulling every enemy within 7 tiles to your side.  Everything is taunted, and taunt reapplies every second for 5s.  Damage and threat both scales with CON.  Pure only.
