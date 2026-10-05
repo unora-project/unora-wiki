@@ -1,0 +1,10 @@
+name: Warden's Burden
+class: Druid
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Druid
+description: Steals threat from member of your group within 8 tiles.  Every enemy within 12 tiles set on them, is taunted by you (provoked further based on your CON).  Needs a group member near by.
