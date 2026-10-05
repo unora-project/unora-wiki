@@ -423,18 +423,22 @@ function CompareBar({
                 </tr>
               </thead>
               <tbody>
-                {rows.map((r, i) => (
-                  <tr key={r.label} className={i % 2 ? 'bg-parchment-100/50 dark:bg-ink/20' : ''}>
-                    <td className="px-3 py-1.5 font-medium text-parchment-600 dark:text-parchment-400">{r.label}</td>
-                    <td className={`px-3 py-1.5 text-right font-semibold ${cellClass(r.va, r.vb, LOWER_IS_BETTER.has(r.label) ? (v, o) => v < o : (v, o) => v > o)}`}>
-                      {r.va ?? '-'}
-                    </td>
-                    <td className={`px-3 py-1.5 text-right font-semibold ${cellClass(r.vb, r.va, LOWER_IS_BETTER.has(r.label) ? (v, o) => v < o : (v, o) => v > o)}`}>
-                      {r.vb ?? '-'}
-                    </td>
-                    </td>
-                  </tr>
-                ))}
+                {rows.map((r, i) => {
+                  const better = LOWER_IS_BETTER.has(r.label)
+                    ? (v: number, o: number) => v < o
+                    : (v: number, o: number) => v > o
+                  return (
+                    <tr key={r.label} className={i % 2 ? 'bg-parchment-100/50 dark:bg-ink/20' : ''}>
+                      <td className="px-3 py-1.5 font-medium text-parchment-600 dark:text-parchment-400">{r.label}</td>
+                      <td className={`px-3 py-1.5 text-right font-semibold ${cellClass(r.va, r.vb, better)}`}>
+                        {r.va ?? '-'}
+                      </td>
+                      <td className={`px-3 py-1.5 text-right font-semibold ${cellClass(r.vb, r.va, better)}`}>
+                        {r.vb ?? '-'}
+                      </td>
+                    </tr>
+                  )
+                })}
               </tbody>
             </table>
           </div>
