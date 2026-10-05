@@ -1,0 +1,10 @@
+name: Bramble Rend 1
+class: Druid
+element: ''
+levelRequirement: Ab 1
+statRequirements: '-'
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Druid
+description: Briars erupt in an arc before you, taunting everything they hit.  The more hit, the more damage done.  Necklace decides what element it uses.
