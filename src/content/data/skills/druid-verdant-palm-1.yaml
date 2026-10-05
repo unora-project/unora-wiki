@@ -1,0 +1,10 @@
+name: Verdant Palm 1
+class: Druid
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Druid
+description: Siphons life from everything around you.  The more enemies and lower your own health, the more health returns.  Uses your necklace for it's element.
