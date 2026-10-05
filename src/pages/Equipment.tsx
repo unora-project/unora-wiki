@@ -278,6 +278,9 @@ function compareKey(item: DisplayRow): string {
   return `${item.category}|${item.name}|${item._selectedTier}`
 }
 
+// Stats where a LOWER number is the better one (shown green in Compare).
+const LOWER_IS_BETTER = new Set(['AC'])
+
 function CompareBar({
   items,
   onClear,
