@@ -1,17 +1,17 @@
 Name,LOC,LVL,WGT,HP,MP,AC,MR,STR,INT,WIS,CON,DEX,DMG,HIT,AS%,SKD,SKD%,SPD,SPD%,FHB,HB%,CDR%,Value,Set
 Forsaken Belt,-,-,1,800,400,-3,15,-3,-,-,-3,-3,8,-,-,-,-,-,-,-,-,2,-,-
-Dark Azurium Belt,-,-,1,-,600,-1,10,-,1,1,1,-,-,-,-,-,-,-,-,-,-,-,-,-
-Earth Azurium Belt,-,-,1,-,600,-1,10,-,1,1,1,-,-,-,-,-,-,-,-,-,-,-,-,-
-Fire Azurium Belt,-,-,1,-,600,-1,10,-,1,1,1,-,-,-,-,-,-,-,-,-,-,-,-,-
-Light Azurium Belt,-,-,1,-,600,-1,10,-,1,1,1,-,-,-,-,-,-,-,-,-,-,-,-,-
-Sea Azurium Belt,-,-,1,-,600,-1,10,-,1,1,1,-,-,-,-,-,-,-,-,-,-,-,-,-
-Wind Azurium Belt,-,-,1,-,600,-1,10,-,1,1,1,-,-,-,-,-,-,-,-,-,-,-,-,-
-Dark Crimsonite Belt,-,-,1,600,-,-2,10,1,-,-,1,1,5,-,-,-,-,-,-,-,-,-,-,-
-Earth Crimsonite Belt,-,-,1,600,-,-2,10,1,-,-,1,1,5,-,-,-,-,-,-,-,-,-,-,-
-Fire Crimsonite Belt,-,-,1,600,-,-2,10,1,-,-,1,1,5,-,-,-,-,-,-,-,-,-,-,-
-Light Crimsonite Belt,-,-,1,600,-,-2,10,1,-,-,1,1,5,-,-,-,-,-,-,-,-,-,-,-
-Sea Crimsonite Belt,-,-,1,600,-,-2,10,1,-,-,1,1,5,-,-,-,-,-,-,-,-,-,-,-
-Wind Crimsonite Belt,-,-,1,600,-,-2,10,1,-,-,1,1,5,-,-,-,-,-,-,-,-,-,-,-
+Dark Azurium Belt,Armorsmithing,Master,1,-,600,-1,10,-,1,1,1,-,-,-,-,-,-,-,-,-,-,-,-,-
+Earth Azurium Belt,Armorsmithing,Master,1,-,600,-1,10,-,1,1,1,-,-,-,-,-,-,-,-,-,-,-,-,-
+Fire Azurium Belt,Armorsmithing,Master,1,-,600,-1,10,-,1,1,1,-,-,-,-,-,-,-,-,-,-,-,-,-
+Light Azurium Belt,Armorsmithing,Master,1,-,600,-1,10,-,1,1,1,-,-,-,-,-,-,-,-,-,-,-,-,-
+Sea Azurium Belt,Armorsmithing,Master,1,-,600,-1,10,-,1,1,1,-,-,-,-,-,-,-,-,-,-,-,-,-
+Wind Azurium Belt,Armorsmiting,Master,1,-,600,-1,10,-,1,1,1,-,-,-,-,-,-,-,-,-,-,-,-,-
+Dark Crimsonite Belt,Armorsmithing,Master,1,600,-,-2,10,1,-,-,1,1,5,-,-,-,-,-,-,-,-,-,-,-
+Earth Crimsonite Belt,Armorsmithing,Master,1,600,-,-2,10,1,-,-,1,1,5,-,-,-,-,-,-,-,-,-,-,-
+Fire Crimsonite Belt,Armorsmithing,Master,1,600,-,-2,10,1,-,-,1,1,5,-,-,-,-,-,-,-,-,-,-,-
+Light Crimsonite Belt,Armorsmithing,Master,1,600,-,-2,10,1,-,-,1,1,5,-,-,-,-,-,-,-,-,-,-,-
+Sea Crimsonite Belt,Armorsmithing,Master,1,600,-,-2,10,1,-,-,1,1,5,-,-,-,-,-,-,-,-,-,-,-
+Wind Crimsonite Belt,Armorsmithing,Master,1,600,-,-2,10,1,-,-,1,1,5,-,-,-,-,-,-,-,-,-,-,-
 Earth Belt,-,4,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-
 Fire Belt,-,4,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-
 Leather Belt,-,4,1,50,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-
