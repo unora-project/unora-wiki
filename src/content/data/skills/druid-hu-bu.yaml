@@ -1,0 +1,10 @@
+name: Hu Bu
+class: Druid
+element: ''
+levelRequirement: Ab 1
+statRequirements: '-'
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Druid
+description: Stance greatly amplifies your own skill damage for 8s.  An additional 0.075% for every point of CON, plus 1.5 flat skill damage per point.
