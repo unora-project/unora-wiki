@@ -42,15 +42,34 @@ const typedClassInfo = classInfo as Record<string, {
 
 const skillColumnHelper = createColumnHelper<SkillSpell>()
 
+// Renders text with every "Pure only." (any capitalization) in pink.
+function highlightPure(text: string) {
+  // The capture group makes split() keep the matches, which land at odd indexes.
+  return text.split(/(pure only\.)/i).map((part, i) =>
+    i % 2 === 1 ? (
+      <span key={i} className="text-pink-500 dark:text-pink-400">
+        {part}
+      </span>
+    ) : (
+      part
+    )
+  )
+}
+
+const textCell = (info: { getValue: () => unknown }) => {
+  const v = info.getValue()
+  return v == null ? null : highlightPure(String(v))
+}
+
 const skillColumns = [
-  skillColumnHelper.accessor('name', { header: 'Name' }),
-  skillColumnHelper.accessor('levelRequirement', { header: 'Level', sortingFn: compareLevels }),
-  skillColumnHelper.accessor('statRequirements', { header: 'Stats' }),
-  skillColumnHelper.accessor('goldRequired', { header: 'Gold' }),
-  skillColumnHelper.accessor('itemRequirements', { header: 'Items' }),
-  skillColumnHelper.accessor('prerequisites', { header: 'Prereqs' }),
-  skillColumnHelper.accessor('learningLocation', { header: 'Location' }),
-  skillColumnHelper.accessor('description', { header: 'Description' }),
+  skillColumnHelper.accessor('name', { header: 'Name', cell: textCell }),
+  skillColumnHelper.accessor('levelRequirement', { header: 'Level', sortingFn: compareLevels, cell: textCell }),
+  skillColumnHelper.accessor('statRequirements', { header: 'Stats', cell: textCell }),
+  skillColumnHelper.accessor('goldRequired', { header: 'Gold', cell: textCell }),
+  skillColumnHelper.accessor('itemRequirements', { header: 'Items', cell: textCell }),
+  skillColumnHelper.accessor('prerequisites', { header: 'Prereqs', cell: textCell }),
+  skillColumnHelper.accessor('learningLocation', { header: 'Location', cell: textCell }),
+  skillColumnHelper.accessor('description', { header: 'Description', cell: textCell }),
 ]
 
 function normalizeElement(raw: unknown): string {
