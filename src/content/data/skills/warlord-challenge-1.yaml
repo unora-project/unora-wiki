@@ -1,0 +1,10 @@
+name: Challenge 1
+class: Warlord
+element: ''
+levelRequirement: Ab 12
+statRequirements: 3/3/3/3/3
+goldRequired: 1,000,000
+itemRequirements: Ant Chitin (3)
+prerequisites: '-'
+learningLocation: Tarlok (Noam)
+description: Taunts every enemy within 3 tiles for a few seconds.
