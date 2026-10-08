@@ -7,4 +7,4 @@ goldRequired: '-'
 itemRequirements: '-'
 prerequisites: '-'
 learningLocation: Becoming Druid
-description: Spend 2/3 of current health to strike every enemy for 1/3 of it.  No resistances can block or reflect this damage.  This skill can't kill you, skill damage bonuses do not raise it.  Half damage in Arena.
+description: Strike deals massive non-elemental damage in front of you.  Scales with CON and max health.
