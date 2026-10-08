@@ -2,3 +2,11 @@ Name,LOC,LVL,WGT,HP,MP,AC,MR,STR,INT,WIS,CON,DEX,DMG,HIT,AS%,SKD,SKD%,SPD,SPD%,F
 Good Emberite Wreckless Dane Blade,Weaponsmithing,Ab 1,10,1250,150,8,1,-,-,-,-,-,15,2,-24,572,45,-,-,-,-,-,-,-
 Great Emberite Wreckless Dane Blade,Weaponsmithing,Ab 1,10,1450,350,7,2,-,-,-,-,-,16,3,-24,624,46,-,-,-,-,-,-,-
 Grand Emberite Wreckless Dane Blade,Weaponsmithing,Ab 1,10,1750,600,7,3,-,-,-,-,-,17,4,-24,676,47,-,-,-,-,2,-,-
+Aerium Wreckless Dane Blade,Weaponsmithin,Ab 1,10,1000,-,8,-,1,1,-,-,-,13,4,-16,400,36,300,27,225,26,-,-,-
+Hydrillium Wreckless Dane Blade,Weaponsmithing,Ab 1,10,1000,1000,8,-,1,1,-,-,-,12,7,-24,300,27,400,36,225,26,-,-,-
+Good Aerium Wreckless Dane Blade,Weaponsmithing,Ab 1,10,1250,150,8,1,1,1,-,-,-,14,5,-16,440,37,330,29,250,28,-,-,-
+Good Hydrillium Wreckless Dane Blade,Weaponsmithing,Ab 1,10,1250,1150,8,1,1,1,-,-,-,12,8,-24,330,28,440,38,250,28,-,-,-
+Great Aerium Wreckless Dane Blade,Weaponsmithing,Ab 1,10,1450,350,7,2,1,1,-,-,-,15,6,-,480,38,360,31,275,30,-,-,-
+Great Hydrillium Wreckless Dane Blade,Weaponsmithing,Ab 1,-,1450,1350,7,2,1,1,-,-,-,13,9,-24,360,29,480,40,275,30,-,-,-
+Grand Aerium Wreckless Dane Blade,Weaponsmithing,Ab 1,10,1750,600,7,3,1,1,-,-,-,16,7,-16,520,39,390,33,300,33,2,-,-
+Grand Hydrillium Wreckless Dane Blade,Weaponsmithing,Ab 1,10,1750,1600,7,3,1,1,-,-,-,14,10,-24,390,30,520,42,300,33,2,-,-

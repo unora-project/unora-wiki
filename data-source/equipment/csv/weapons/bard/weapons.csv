@@ -1,1 +1,5 @@
 Name,LOC,LVL,WGT,HP,MP,AC,MR,STR,INT,WIS,CON,DEX,DMG,HIT,AS%,SKD,SKD%,SPD,SPD%,FHB,HB%,CDR%,Value,Set
+Emberite Resonant Wooden Harp,Weaponsmithing,Ab 1,5,-200,1000,-,-,-,-,-,-,-,-,5,-,-,-,204,26,315,45,-,-,-
+Good Emberite Resonant Wooden Harp,Weaponsmithing,Ab 1,5,50,1150,-,1,-,-,-,-,-,-,5,-,54,-,225,28,350,48,-,-,-
+Great Emberite Resonant Wooden Harp,Weaponsmithing,Ab 1,5,250,1350,-,2,-,-,-,-,-,-,6,-,59,-,245,30,385,49,-,-,-
+Grand Emberite Resonant Wooden Harp,Weaponsmithing,Ab 1,5,550,1600,-,3,-,-,-,-,-,-,7,-,-,-,266,32,420,53,2,-,-
