@@ -1,0 +1,10 @@
+name: Smoke Arrow 1
+class: Archer
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Archer
+description: Launch an arrow applying Dall (blind) to all enemies within 4 tiles of where it lands.
