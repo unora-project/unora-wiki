@@ -4,7 +4,7 @@ element: ''
 levelRequirement: Ab 8
 statRequirements: 3/3/3/3/3
 goldRequired: 1,000,000
-itemRequirements: Comodo Tongue (2), Fox Fur (1)
+itemRequirements: Comodo Tongue (2), Brown Fox Fur (1)
 prerequisites: '-'
 learningLocation: Peytri (Noam)
 description: Restores 1% of the group's max mana each second, within 6 tiles.  Every 3s, removes one affliction from each member (suain, dall, cradh, miasma, poison, burn, amnesia or slow).  Drains 250 mana each second.  Only one song may play at a time (cast it again to stop).  Answer its call to build harmony which strengthens it by up to half (Harmony fades if you stop answering).
