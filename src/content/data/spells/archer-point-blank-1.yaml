@@ -1,0 +1,10 @@
+name: Point Blank 1
+class: Archer
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Archer
+description: For 6s any monster that strikes you from directly beside you will take a point blank arrow and thrown 2 tiles back.  Bosses will not be moved.
