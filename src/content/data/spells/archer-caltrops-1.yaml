@@ -1,0 +1,10 @@
+name: Caltrops 1
+class: Archer
+element: ''
+levelRequirement: Ab 3
+statRequirements: 3/3/3/3/3
+goldRequired: 750,000
+itemRequirements: Hyena Fang (3)
+prerequisites: '-'
+learningLocation: Tarlok (Noam)
+description: Scatter caltrops on your tiles and tiles directly beside you for 10s.  Each trap deals minor damage, ignoring armor and flows the first 4 enemies for 4s.  The trap under you only works once you step off.
