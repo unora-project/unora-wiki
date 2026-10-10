@@ -1,0 +1,10 @@
+name: Venom Arrow 1
+class: Archer
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Archer
+description: An arrow that applies Venom to all enemies within 3 tiles of where it lands.
