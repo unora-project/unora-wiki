@@ -1,0 +1,10 @@
+name: Snare Ring 1
+class: Archer
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Archer
+description: Places 4 snares around your target.  Each deals heavy damage to the first enemy to touch them, and roots them for 3s.
