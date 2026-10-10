@@ -1,0 +1,10 @@
+name: Shadowmeld 1
+class: Archer
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Archer
+description: Shroud yourself for 5s, wiping all aggro and cleansing negative effects (Suain, Beag Suain, pramh, root, etc).  Can be cast even while under those effects.
