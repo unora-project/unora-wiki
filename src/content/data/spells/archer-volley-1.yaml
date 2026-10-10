@@ -1,0 +1,10 @@
+name: Volley 1
+class: Archer
+element: ''
+levelRequirement: Ab 12
+statRequirements: 3/3/3/3/3
+goldRequired: 1,250,000
+itemRequirements: Sand Rat Tail (2)
+prerequisites: '-'
+learningLocation: Tarlok (Noam)
+description: Launch a volley of arrows striking every enemy within 2 tiles.  Does damage over time based on how long the enemies remain in it.
