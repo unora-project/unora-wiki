@@ -1,0 +1,10 @@
+name: Hunter's Mark 1
+class: Archer
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Archer
+description: Applies Intimidate on an enemy 7 tiles away.
