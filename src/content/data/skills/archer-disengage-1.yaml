@@ -1,0 +1,10 @@
+name: Disengage 1
+class: Archer
+element: ''
+levelRequirement: Ab 5
+statRequirements: 3/3/3/3/3
+goldRequired: 750,000
+itemRequirements: Vulture Feather (3)
+prerequisites: '-'
+learningLocation: Tarlok (Noam)
+description: Jump 4 tiles backwards, and roots any enemy you were beside for 4s.  Needs no target.  Deals 0 damage and will not break hide.
