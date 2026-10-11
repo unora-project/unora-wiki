@@ -1,0 +1,10 @@
+name: Siphoning Shot 1
+class: Archer
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Archer
+description: Drains 10% of the mana from your target within 7 tiles, restoring up to 20% of the mana to you and your group within 15 tiles.  Deals damage equal to the mana stolen.
