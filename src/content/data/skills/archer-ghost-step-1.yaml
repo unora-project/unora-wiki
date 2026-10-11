@@ -1,0 +1,10 @@
+name: Ghost Step 1
+class: Archer
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Archer
+description: Vaults over the target directly in front of you, and sends you 5 tiles away.  Works on monsters or aislings.  Deals 0 damage, and will not break hide.  Pure only.
