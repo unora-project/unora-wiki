@@ -1,0 +1,10 @@
+name: Elemental Sight 1
+class: Archer
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Archer
+description: A toggle that reveals the defensive element of enemies within 8 tiles.
