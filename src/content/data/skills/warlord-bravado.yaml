@@ -7,4 +7,4 @@ goldRequired: '-'
 itemRequirements: '-'
 prerequisites: '-'
 learningLocation: Becoming Warlord
-description: A finisher that instantly kills normal enemies (15%> hp).  Kill restores 30% of your health and 15% of team's.  Also restores 7.5% mana to group. Otherwise deals damage based on STR and 2.4% of max health  Instant kills reduce cooldown by half.
+description: A finisher that instantly kills normal enemies (15%> hp).  Kill restores 30% of your health and 15% of team's.  Also restores 7.5% mana to group. Otherwise deals damage based on STR and 6.7% of max health  Instant kills reduce cooldown by half.
