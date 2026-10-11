@@ -152,18 +152,20 @@ let fullIndexCache: SearchItem[] | null = null
 let fullIndexPromise: Promise<SearchItem[]> | null = null
 
 async function buildFullIndex(): Promise<SearchItem[]> {
-  const [equipmentRes, skillsMod, spellsMod, npcsMod, bossesMod] = await Promise.all([
+  const [equipmentRes, skillsMod, spellsMod, npcsMod, bossesMod, enchantsMod] = await Promise.all([
     fetch(equipmentUrl).then((r) => r.json() as Promise<{ name: string; category: string; class: string }[]>),
     import('@/data/classes/skills.json'),
     import('@/data/classes/spells.json'),
     import('@/data/towns/npcs.json'),
     import('@/data/hunting/bosses.json'),
+    import('@/data/professions/enchanting-enchants.json'),
   ])
 
   const skillsData = skillsMod.default as { name: string; class: string }[]
   const spellsData = spellsMod.default as { name: string; class: string }[]
   const npcsData = npcsMod.default as { name: string; town: string; type: string }[]
   const bossesData = bossesMod.default as { boss: string; locationSlug: string }[]
+  const enchantsData = enchantsMod.default as { Enchant?: string; Name?: string; Rank?: string }[]
 
   const equipmentItems: SearchItem[] = (() => {
     const seen = new Set<string>()
@@ -218,12 +220,30 @@ async function buildFullIndex(): Promise<SearchItem[]> {
     path: '/boss-drops',
   }))
 
+    const enchantItems: SearchItem[] = enchantsData.flatMap((e) => {
+    const items: SearchItem[] = []
+    const enchant = e.Enchant?.trim()
+    const name = e.Name?.trim()
+    if (enchant) {
+      items.push({ title: enchant, category: 'Enchantment', path: '/professions/enchanting' })
+    }
+    if (name) {
+      items.push({
+        title: name,
+        category: enchant ? `Enchantment (${enchant})` : 'Enchantment',
+        path: '/professions/enchanting',
+      })
+    }
+    return items
+  })
+
   return deduplicateByTitle([
     ...staticPages,
     ...skillItems,
     ...spellItems,
     ...bossItems,
     ...npcItems,
+    ...enchantItems,
     ...equipmentItems,
   ])
 }
