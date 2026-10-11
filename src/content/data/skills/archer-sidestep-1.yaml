@@ -1,0 +1,10 @@
+name: Sidestep 1
+class: Archer
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Archer
+description: Vaults over the enemy directly in front of you, and jumps another 3 tiles away.  Deals no damage and will not break hide.
