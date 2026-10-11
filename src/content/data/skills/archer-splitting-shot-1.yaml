@@ -1,0 +1,10 @@
+name: Splitting Shot 1
+class: Archer
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Archer
+description: An arrow that splits in front of you, for up to 7 tiles or until it hits a target.  Applies Armor Break.
