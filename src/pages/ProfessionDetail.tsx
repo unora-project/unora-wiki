@@ -1,4 +1,4 @@
-import { useParams } from 'react-router'
+import { useParams, useSearchParams } from 'react-router'
 import { useEffect, useMemo, useState } from 'react'
 import { createColumnHelper } from '@tanstack/react-table'
 import { DataTable, compareLevels } from '@/components/tables/DataTable'
@@ -159,7 +159,20 @@ function GenericTable({ data, searchPlaceholder }: { data: Record<string, unknow
     return ['All', ...ordered]
   }, [data, hasRank])
 
-  const [activeRank, setActiveRank] = useState('All')
+  const [searchParams] = useSearchParams()
+  const rankParam = searchParams.get('rank')
+
+  // When arriving from search (?rank=Expert), open that rank's tab.
+  const tabFromUrl = useMemo(
+    () => (rankParam ? rankTabs.find((t) => t.toLowerCase() === rankParam.toLowerCase()) : undefined),
+    [rankParam, rankTabs]
+  )
+
+  const [activeRank, setActiveRank] = useState(tabFromUrl ?? 'All')
+
+  useEffect(() => {
+    if (tabFromUrl) setActiveRank(tabFromUrl)
+  }, [tabFromUrl])
 
   useEffect(() => {
     if (!rankTabs.includes(activeRank)) {

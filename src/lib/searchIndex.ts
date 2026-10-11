@@ -224,14 +224,18 @@ async function buildFullIndex(): Promise<SearchItem[]> {
     const items: SearchItem[] = []
     const enchant = e.Enchant?.trim()
     const name = e.Name?.trim()
+    const rank = e.Rank?.trim()
+    const path = rank
+      ? `/professions/enchanting?rank=${encodeURIComponent(rank)}`
+      : '/professions/enchanting'
     if (enchant) {
-      items.push({ title: enchant, category: 'Enchantment', path: '/professions/enchanting' })
+      items.push({ title: enchant, category: 'Enchantment', path })
     }
     if (name) {
       items.push({
         title: name,
         category: enchant ? `Enchantment (${enchant})` : 'Enchantment',
-        path: '/professions/enchanting',
+        path,
       })
     }
     return items
