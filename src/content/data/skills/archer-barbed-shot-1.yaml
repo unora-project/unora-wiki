@@ -1,0 +1,10 @@
+name: Barbed Shot 1
+class: Archer
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Archer
+description: Attacks an enemy up to 7 tiles away and applies Bleed.  Pure only.
