@@ -1,0 +1,10 @@
+name: Snipe 1
+class: Archer
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Archer
+description: First at the first enemy within 7 tiles in front of you, dealing massive damage, and 3x as much against monsters.  Damage is further increased if you are not on the threat list already, and even more while used while hidden.  Has a 30% chance to instantly kill, if you were not the last one to hit it.  Scales with DEX and max health/mana.
