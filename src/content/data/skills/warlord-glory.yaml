@@ -1,9 +1,10 @@
 name: Glory
 class: Warlord
+element: ''
 levelRequirement: Ab 1
 statRequirements: 3/3/3/3/3
 goldRequired: '-'
 itemRequirements: '-'
 prerequisites: '-'
 learningLocation: Becoming Warlord
-description: A finisher that instantly kills normal enemies (20%> hp).  Kill restores 40% of your health and 20% of team's.  Also restores 10% mana to group.  Instant kills reduce cooldown by half.  Pure only.
+description: A finisher that instantly kills normal enemies (20%> hp).  Kill restores 40% of your health and 20% of team's. Otherwise deals damage based on STR and 3.2% of max health. Also restores 10% mana to group.  Instant kills reduce cooldown by half.  Pure only.
