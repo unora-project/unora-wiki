@@ -1,0 +1,10 @@
+name: Steady Aim 1
+class: Archer
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Archer
+description: Adds up to 25% extra damage based on your distance from the target.  +15% at range 2 or 7; +20% at range 3 or 6; +25% at range 4 or 5; and no bonus at ranges 1 or 8+.  Applies to skills and spells (excluding damage that ignores armor).
