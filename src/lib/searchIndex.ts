@@ -120,6 +120,7 @@ const staticPages: SearchItem[] = [
   { title: 'Purple Whopper Scales', category: 'Side Quests', path: '/quests/side/purple_whopper_scales' },
   { title: 'Red Potion', category: 'Side Quests', path: '/quests/side/red_potion' },
   { title: 'Suomi Tavern', category: 'Side Quests', path: '/quests/side/suomi_tavern' },
+  { title: "Culwin's Catch", category: 'Side Quests', path: '/quests/side/culwins_catch' },
   // Slayer quests
   { title: 'Abel Dungeon Slayer', category: 'Slayer Quests', path: '/quests/slayers/abel_dungeon_slayer' },
   { title: 'Astrid Slayer', category: 'Slayer Quests', path: '/quests/slayers/astrid_slayer' },

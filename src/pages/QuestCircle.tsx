@@ -7,9 +7,25 @@ interface QuestLink {
   circle: string
   mainStory?: boolean
   anchor?: string
+  // Which region a quest belongs to. Leave out for Temuair.
+  region?: 'temuair' | 'medenia'
 }
 
-const circles: Record<string, { title: string; levelRange: string; description: string; quests: QuestLink[] }> = {
+interface CircleData {
+  title: string
+  levelRange: string
+  description: string
+  quests: QuestLink[]
+  // When true, the quest list is shown under Temuair / Medenia headers.
+  splitByRegion?: boolean
+}
+
+const REGIONS = [
+  { id: 'temuair', label: 'Temuair' },
+  { id: 'medenia', label: 'Medenia' },
+] as const
+
+const circles: Record<string, CircleData> = {
   circle_1: {
     title: 'Circle 1',
     levelRange: '1-10',
@@ -83,6 +99,7 @@ const circles: Record<string, { title: string; levelRange: string; description: 
     title: 'Daily Quests',
     levelRange: 'Any',
     description: 'Quests which can be completed more than once (with a cooldown).',
+    splitByRegion: true,
     quests: [
       { name: "Antonio's Vault Squeaks", slug: 'antonios_vault_squeaks', circle: 'side' },
       { name: 'Blade Material', slug: 'blade_material', circle: 'side' },
@@ -92,6 +109,9 @@ const circles: Record<string, { title: string; levelRange: string; description: 
       { name: 'Pretty Flower', slug: 'pretty_flower', circle: 'side' },
       { name: 'Red Potion', slug: 'red_potion', circle: 'side' },
       { name: 'Suomi Tavern', slug: 'suomi_tavern', circle: 'side' },
+      // Medenia dailies go here, tagged like:
+      // { name: 'Quest Name', slug: 'quest_slug', circle: 'side', region: 'medenia' },
+      { name: "Culwin's Catch", slug: 'culwins_catch', circle: 'side', region: 'medenia' },
     ],
   },
   slayers: {
@@ -118,6 +138,39 @@ const circles: Record<string, { title: string; levelRange: string; description: 
       { name: 'Hopocalypse (Easter Event)', slug: 'hopocalypse', circle: 'events' },
     ],
   },
+}
+
+function QuestGrid({ quests }: { quests: QuestLink[] }) {
+  return (
+    <div className="grid gap-2 sm:grid-cols-2">
+      {quests.map((quest) => {
+        const to = quest.anchor
+          ? `/quests/${quest.circle}/${quest.slug}#${quest.anchor}`
+          : `/quests/${quest.circle}/${quest.slug}`
+        return (
+          <Link
+            key={`${quest.slug}-${quest.anchor ?? ''}`}
+            to={to}
+            className="group flex items-center justify-between gap-2 rounded-lg border border-parchment-300 bg-parchment-100 px-4 py-3 transition-all hover:-translate-y-0.5 hover:border-tide hover:shadow-sm dark:border-ash/10 dark:bg-ink dark:hover:border-tide/60"
+          >
+            <span className="flex min-w-0 items-center gap-2">
+              <span className="truncate font-ui text-sm font-medium text-parchment-800 transition-colors group-hover:text-tide dark:text-ivory/90 dark:group-hover:text-tide">
+                {quest.name}
+              </span>
+              {quest.mainStory && (
+                <span className="shrink-0 rounded-full border border-gilt/40 bg-gilt/10 px-1.5 py-0.5 font-ui text-[9px] font-semibold uppercase tracking-wider text-gilt">
+                  Main Story
+                </span>
+              )}
+            </span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 text-ash/40 transition-colors group-hover:text-tide">
+              <path d="m9 18 6-6-6-6"/>
+            </svg>
+          </Link>
+        )
+      })}
+    </div>
+  )
 }
 
 export function QuestCircle() {
@@ -158,34 +211,22 @@ export function QuestCircle() {
         {data.description}
       </p>
 
-      <div className="grid gap-2 sm:grid-cols-2">
-        {data.quests.map((quest) => {
-          const to = quest.anchor
-            ? `/quests/${quest.circle}/${quest.slug}#${quest.anchor}`
-            : `/quests/${quest.circle}/${quest.slug}`
+      {data.splitByRegion ? (
+        REGIONS.map((region) => {
+          const quests = data.quests.filter((q) => (q.region ?? 'temuair') === region.id)
+          if (quests.length === 0) return null
           return (
-            <Link
-              key={`${quest.slug}-${quest.anchor ?? ''}`}
-              to={to}
-              className="group flex items-center justify-between gap-2 rounded-lg border border-parchment-300 bg-parchment-100 px-4 py-3 transition-all hover:-translate-y-0.5 hover:border-tide hover:shadow-sm dark:border-ash/10 dark:bg-ink dark:hover:border-tide/60"
-            >
-              <span className="flex min-w-0 items-center gap-2">
-                <span className="truncate font-ui text-sm font-medium text-parchment-800 transition-colors group-hover:text-tide dark:text-ivory/90 dark:group-hover:text-tide">
-                  {quest.name}
-                </span>
-                {quest.mainStory && (
-                  <span className="shrink-0 rounded-full border border-gilt/40 bg-gilt/10 px-1.5 py-0.5 font-ui text-[9px] font-semibold uppercase tracking-wider text-gilt">
-                    Main Story
-                  </span>
-                )}
-              </span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 text-ash/40 transition-colors group-hover:text-tide">
-                <path d="m9 18 6-6-6-6"/>
-              </svg>
-            </Link>
+            <section key={region.id} className="mb-8">
+              <h2 className="mb-3 font-heading text-2xl font-semibold text-gilt">
+                {region.label}
+              </h2>
+              <QuestGrid quests={quests} />
+            </section>
           )
-        })}
-      </div>
+        })
+      ) : (
+        <QuestGrid quests={data.quests} />
+      )}
     </div>
   )
 }
