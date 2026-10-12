@@ -121,6 +121,8 @@ const circles: Record<string, CircleData> = {
       // Medenia dailies go here, tagged like:
       // { name: 'Quest Name', slug: 'quest_slug', circle: 'side', region: 'medenia' },
       { name: "Culwin's Catch", slug: 'culwins_catch', circle: 'side', region: 'medenia' },
+      { name: "Scravelmaw Hunt", slug: 'scravelmaw_hunt', circle: 'side', region: 'medenia' },
+      { name: "Bermin's Daily Hunt", slug: 'bermins_daily_hunt', circle: 'side', region: 'medenia' },
     ],
   },
   slayers: {

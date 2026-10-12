@@ -108,6 +108,8 @@ const dailyQuests: QuestLink[] = [
   { name: 'Red Potion', slug: 'red_potion', circle: 'side' },
   { name: 'Suomi Tavern', slug: 'suomi_tavern', circle: 'side' },
   { name: "Culwin's Catch", slug: 'culwins_catch', circle: 'side', region: 'medenia' },
+  { name: "Scravelmaw Hunt", slug: 'scravelmaw_hunt', circle: 'side', region: 'medenia' },
+  { name: "Bermin's Daily Hunt", slug: 'bermins_daily_hunt', circle: 'side', region: 'medenia' },
 ]
 
 const slayerQuests: QuestLink[] = [
