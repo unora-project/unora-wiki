@@ -94,7 +94,7 @@ const circleQuests: { title: string; levelRange: string; circle: string; quests:
     quests: [
       {name: "Jelus's Blade", slug: 'jelus_blade', circle: 'medenia'},
     ]
-  }
+  },
 ]
 
 const dailyQuests: QuestLink[] = [

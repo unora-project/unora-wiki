@@ -102,6 +102,7 @@ const circles: Record<string, CircleData> = {
     quests: [
       {name: "Jelus's Blade", slug: 'jelus_blade', circle: 'medenia'},
     ],
+  },
   side: {
     title: 'Daily Quests',
     levelRange: 'Any',
