@@ -96,6 +96,7 @@ const dailyQuests: QuestLink[] = [
   { name: 'Pretty Flower', slug: 'pretty_flower', circle: 'side' },
   { name: 'Red Potion', slug: 'red_potion', circle: 'side' },
   { name: 'Suomi Tavern', slug: 'suomi_tavern', circle: 'side' },
+  { name: "Culwin's Catch", slug: 'culwins_catch', circle: 'side' },
 ]
 
 const slayerQuests: QuestLink[] = [
