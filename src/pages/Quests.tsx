@@ -87,6 +87,14 @@ const circleQuests: { title: string; levelRange: string; circle: string; quests:
       { name: 'Bounty Board', slug: 'bounty_board', circle: 'circle_5' },
     ],
   },
+  {
+    title: 'Medenia',
+    levelRange: 'Ab 1+',
+    circle: 'medenia',
+    quests: [
+      {name: "Jelus's Blade", slug: 'jelus_blade', circle: 'medenia'},
+    ]
+  }
 ]
 
 const dailyQuests: QuestLink[] = [

@@ -15,6 +15,7 @@ const circleNames: Record<string, string> = {
   circle_3: 'Circle 3',
   circle_4: 'Circle 4',
   circle_5: 'Circle 5',
+  medenia: 'Medenia',
   side: 'Side Quests',
   slayers: 'Daily Kill Quests',
   events: 'Event Quests',

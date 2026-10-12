@@ -95,6 +95,13 @@ const circles: Record<string, CircleData> = {
       { name: 'Bounty Board', slug: 'bounty_board', circle: 'circle_5' },
     ],
   },
+  medenia: {
+    title: 'Medenia',
+    levelRange: 'Ab 1+',
+    description: 'Beginning of new adventures on a new continent'
+    quests: [
+      {name: "Jelus's Blade", slug: 'jelus_blade', circle: 'medenia'},
+    ],
   side: {
     title: 'Daily Quests',
     levelRange: 'Any',

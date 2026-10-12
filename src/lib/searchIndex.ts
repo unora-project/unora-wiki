@@ -109,6 +109,7 @@ const staticPages: SearchItem[] = [
   { title: 'Bounty Board', category: 'Quests', path: '/quests/circle_5/bounty_board' },
   { title: 'Find the Summoner Again', category: 'Quests', path: '/quests/circle_5/find_the_summoner_again' },
   { title: 'Help Daltoo Escape', category: 'Quests', path: '/quests/circle_5/help_daltoo_escape' },
+  { title: "Jelus's Blade", category: 'Quests', path: '/quests/medenia/jelus_blade' },
   // Side quests
   { title: "Antonio's Vault Squeaks", category: 'Side Quests', path: '/quests/side/antonios_vault_squeaks' },
   { title: 'Blade Material', category: 'Side Quests', path: '/quests/side/blade_material' },
