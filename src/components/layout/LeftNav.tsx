@@ -80,6 +80,7 @@ const sections: NavSection[] = [
           { to: '/quests/circle_3', label: 'Circle 3' },
           { to: '/quests/circle_4', label: 'Circle 4' },
           { to: '/quests/circle_5', label: 'Circle 5' },
+          { to: '/quests/medenia', label: 'Medenia' },
         ]},
         { label: 'Other', links: [
           { to: '/quests/side', label: 'Daily Quests' },
