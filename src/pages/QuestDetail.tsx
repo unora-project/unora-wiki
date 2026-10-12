@@ -50,7 +50,7 @@ export function QuestDetail() {
 
   // Extract title from first H1 in content
   const titleMatch = content.match(/^#\s+(.+)$/m)
-  const title = titleMatch ? titleMatch[1] : slug.replace(/_/g, ' ')
+  const title = titleMatch ? titleMatch[1].replace(/[*_]/g, '').trim() : slug.replace(/_/g, ' ')
 
   return (
     <div>

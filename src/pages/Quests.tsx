@@ -14,6 +14,8 @@ interface QuestLink {
   mainStory?: boolean
   // Optional anchor (heading id) to jump to inside the target quest page.
   anchor?: string
+  // Which region a quest belongs to. Leave out for Temuair.
+  region?: 'temuair' | 'medenia'
 }
 
 const circleQuests: { title: string; levelRange: string; circle: string; quests: QuestLink[] }[] = [
@@ -96,7 +98,7 @@ const dailyQuests: QuestLink[] = [
   { name: 'Pretty Flower', slug: 'pretty_flower', circle: 'side' },
   { name: 'Red Potion', slug: 'red_potion', circle: 'side' },
   { name: 'Suomi Tavern', slug: 'suomi_tavern', circle: 'side' },
-  { name: "Culwin's Catch", slug: 'culwins_catch', circle: 'side' },
+  { name: "Culwin's Catch", slug: 'culwins_catch', circle: 'side', region: 'medenia' },
 ]
 
 const slayerQuests: QuestLink[] = [
@@ -191,7 +193,20 @@ function StoryTab() {
   )
 }
 
-function SimpleQuestGrid({ quests, description }: { quests: QuestLink[]; description?: string }) {
+const REGIONS = [
+  { id: 'temuair', label: 'Temuair' },
+  { id: 'medenia', label: 'Medenia' },
+] as const
+
+function SimpleQuestGrid({
+  quests,
+  description,
+  splitByRegion,
+}: {
+  quests: QuestLink[]
+  description?: string
+  splitByRegion?: boolean
+}) {
   return (
     <div>
       {description && (
@@ -199,11 +214,30 @@ function SimpleQuestGrid({ quests, description }: { quests: QuestLink[]; descrip
           {description}
         </p>
       )}
-      <div className="grid gap-2 sm:grid-cols-2">
-        {quests.map((q) => (
-          <QuestCard key={`${q.circle}/${q.slug}#${q.anchor ?? ''}`} quest={q} />
-        ))}
-      </div>
+      {splitByRegion ? (
+        REGIONS.map((region) => {
+          const items = quests.filter((q) => (q.region ?? 'temuair') === region.id)
+          if (items.length === 0) return null
+          return (
+            <section key={region.id} className="mb-8">
+              <h3 className="mb-3 font-heading text-lg font-semibold text-gilt">
+                {region.label}
+              </h3>
+              <div className="grid gap-2 sm:grid-cols-2">
+                {items.map((q) => (
+                  <QuestCard key={`${q.circle}/${q.slug}#${q.anchor ?? ''}`} quest={q} />
+                ))}
+              </div>
+            </section>
+          )
+        })
+      ) : (
+        <div className="grid gap-2 sm:grid-cols-2">
+          {quests.map((q) => (
+            <QuestCard key={`${q.circle}/${q.slug}#${q.anchor ?? ''}`} quest={q} />
+          ))}
+        </div>
+      )}
     </div>
   )
 }
@@ -251,6 +285,7 @@ export function Quests() {
           <SimpleQuestGrid
             quests={dailyQuests}
             description="Quests which can be completed more than once (with a cooldown)."
+            splitByRegion
           />
         )}
         {activeTab === 'slayer' && (
