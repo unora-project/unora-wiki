@@ -16,6 +16,7 @@
 2. Start fishing for any of the new Medenia fish.
 3. Return to Asilon, and enter the Canteena at 10,12.
 4. Speak to Culwin and select "I brought you some fish".
+5. After handing in 1,000 fish, you will be rewarded with a Breath Ring
 
 | Fish | Ability |
 | --- | ---: |
@@ -27,5 +28,3 @@
 | Scarlet Wavefish | 110 |
 | Amethyst Goldfin | 110 |
 | Moonlit Angler | 200 |
-
-5. After handing in 1,000 fish, you will be rewarded with a Breath Ring
