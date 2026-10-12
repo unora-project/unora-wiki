@@ -101,6 +101,7 @@ const circles: Record<string, CircleData> = {
     description: 'Beginning of new adventures on a new continent',
     quests: [
       { name: "Jelus's Blade", slug: 'jelus_blade', circle: 'medenia' },
+      { name: "Bermin's Trust", slug: 'bermins_trust', circle: 'medenia' },
     ],
   },
   side: {

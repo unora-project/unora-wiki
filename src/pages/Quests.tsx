@@ -92,7 +92,8 @@ const circleQuests: { title: string; levelRange: string; circle: string; quests:
     levelRange: 'Ab 1+',
     circle: 'medenia',
     quests: [
-      {name: "Jelus's Blade", slug: 'jelus_blade', circle: 'medenia'},
+      { name: "Jelus's Blade", slug: 'jelus_blade', circle: 'medenia' },
+      { name: "Bermin's Trust", slug: 'bermins_trust', circle: 'medenia' },
     ]
   },
 ]
