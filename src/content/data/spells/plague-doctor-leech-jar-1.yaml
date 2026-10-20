@@ -1,0 +1,10 @@
+name: Leech Jar 1
+class: Plague Doctor
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Plague Doctor
+description: Hangs a jar on your group for 2s.  While it hands, anything rotting within 4 tiles, heals them for half of what the disease takes.  Healing past full becomes a shield, up to half of their maximum health.  Does not affect yourself.
