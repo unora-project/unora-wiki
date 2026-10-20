@@ -1,9 +1,11 @@
-name: "Paralyze Force"
-class: "warrior"
-levelRequirement: "Master (Pure)"
-statRequirements: "180/15/15/80/80"
-goldRequired: "-"
-itemRequirements: "-"
-prerequisites: "Ground Stomp (100)"
-learningLocation: "Shamensyth"
-description: "Paralyzes all enemies within four spaces. Pure Only."
+name: Paralyze Force
+class: warrior
+element: ''
+levelRequirement: Master (Pure)
+statRequirements: 180/15/15/80/80
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: Ground Stomp (100)
+learningLocation: Shamensyth
+description: Paralyzes all enemies within four spaces. Pure Only.
+image: /images/abilities/PF.png
