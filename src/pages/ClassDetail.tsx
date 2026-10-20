@@ -297,15 +297,36 @@ function ViewToggle({
   )
 }
 
-function CardDetail({ label, value }: { label: string; value?: string }) {
+// "vertical": one item per line. "horizontal": comma-separated, wrapping.
+const ITEMS_LAYOUT: 'vertical' | 'horizontal' = 'vertical'
+
+// Splits "Losgann Tail (3), Black Shocker Piece (5)" into separate items,
+// ignoring any commas that sit inside parentheses.
+function splitList(value: string): string[] {
+  return value.split(/,\s*(?![^()]*\))/).map((s) => s.trim()).filter(Boolean)
+}
+
+function CardDetail({ label, value, list }: { label: string; value?: string; list?: boolean }) {
   if (!hasText(value)) return null
+  const entries = list && ITEMS_LAYOUT === 'vertical' ? splitList(value) : null
   return (
     <div className="flex items-baseline justify-between gap-3">
       <dt className="shrink-0 text-xs font-semibold uppercase tracking-wider text-ash">{label}</dt>
-      <dd className="text-right text-base text-parchment-800 dark:text-ivory">{highlightPure(value)}</dd>
+      <dd className="text-right text-base text-parchment-800 dark:text-ivory">
+        {entries && entries.length > 1 ? (
+          <ul className="space-y-0.5">
+            {entries.map((entry, i) => (
+              <li key={i}>{highlightPure(entry)}</li>
+            ))}
+          </ul>
+        ) : (
+          highlightPure(value)
+        )}
+      </dd>
     </div>
   )
 }
+
 
 function SkillSpellCard({ item, kind }: { item: SkillSpell; kind: 'skills' | 'spells' }) {
   const img = cardImageSrc(item.image)
@@ -388,15 +409,17 @@ function SkillSpellCard({ item, kind }: { item: SkillSpell; kind: 'skills' | 'sp
       {hasDetails && (
         <dl className="mt-3 space-y-1.5 border-t border-parchment-300 pt-3 dark:border-ash/20">
           <CardDetail label="Gold" value={item.goldRequired} />
-          <CardDetail label="Items" value={item.itemRequirements} />
+          <CardDetail label="Items" value={item.itemRequirements} list />
           <CardDetail label="Prereqs" value={item.prerequisites} />
         </dl>
       )}
 
       {hasText(descriptionText) && (
-        <p className="mt-3 border-t border-parchment-300 pt-3 text-center font-ui text-base leading-relaxed text-parchment-800 dark:border-ash/20 dark:text-ivory">
-          {descriptionText}
-        </p>
+        <div className="mt-3 flex flex-1 flex-col border-t border-parchment-300 pt-3 dark:border-ash/20">
+          <p className="my-auto text-center font-ui text-base leading-relaxed text-parchment-800 dark:text-ivory">
+            {descriptionText}
+          </p>
+        </div>
       )}
     </article>
   )
