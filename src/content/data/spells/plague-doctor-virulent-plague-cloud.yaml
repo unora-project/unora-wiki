@@ -1,0 +1,10 @@
+name: Virulent Plague Cloud
+class: Plague Doctor
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Plague Doctor
+description: A cloud of rot that clings to your target, and follows them for 15s, infecting anything standing within 3 tiles.  The rot lasts 15s, drains health each second and eats their armour (worsening from 5 AC to 15).  It also cuts healing received by 30%.  If the target dies (or leaves), the cloud will settle where it last stood.  If the target dies it will burst onto nearby enemies.  Every point of health it takes, is threat pulled off of you, and handed to the group member nearest the target.  Pure Only.
