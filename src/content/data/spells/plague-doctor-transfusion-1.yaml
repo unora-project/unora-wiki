@@ -1,0 +1,10 @@
+name: Transfusion 1
+class: Plague Doctor
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Plague Doctor
+description: An instant heal on yourself or one ally for 3200, plus 45 for every point of WIS.
