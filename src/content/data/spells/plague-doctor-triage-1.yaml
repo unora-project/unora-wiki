@@ -1,0 +1,10 @@
+name: Triage 1
+class: Plague Doctor
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Plague Doctor
+description: Stripes every PD disease, including poison, miasma, burn, amnesia and slow from you and your group within 12 tiles.  Costs 10 ichor, plus 5 for each effect it removes.
