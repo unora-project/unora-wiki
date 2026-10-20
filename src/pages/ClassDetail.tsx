@@ -251,11 +251,13 @@ function reqFontClass(level: string): string {
   return 'text-[9px]'
 }
 
-// Shortens long level names so they fit inside the REQ circle.
+// Shortens long level names so they fit inside the REQ circle. "(Pure)" is
+// shown above the name instead, so it's dropped from the circle.
 function shortLevel(level: string): string {
-  if (/^(grand\s*master|gm)$/i.test(level)) return 'GM'
-  if (/^master$/i.test(level)) return 'M'
-  return level
+  const cleaned = level.replace(/\s*\(pure\)\s*/gi, ' ').trim()
+  if (/^(grand\s*master|gm)$/i.test(cleaned)) return 'GM'
+  if (/^master$/i.test(cleaned)) return 'M'
+  return cleaned
 }
 
 // Pulls "Pure only." out of a description so the card can show it above the name.
@@ -308,7 +310,9 @@ function CardDetail({ label, value }: { label: string; value?: string }) {
 function SkillSpellCard({ item, kind }: { item: SkillSpell; kind: 'skills' | 'spells' }) {
   const img = cardImageSrc(item.image)
   const Placeholder = kind === 'spells' ? Sparkles : Swords
-  const level = hasText(item.levelRequirement) ? shortLevel(item.levelRequirement.trim()) : null
+  const rawLevel = hasText(item.levelRequirement) ? item.levelRequirement.trim() : null
+  const levelIsPure = rawLevel ? /\(pure\)/i.test(rawLevel) : false
+  const level = rawLevel ? shortLevel(rawLevel) : null
   const statParts = hasText(item.statRequirements)
     ? item.statRequirements.split('/').map((s) => s.trim())
     : []
@@ -316,51 +320,52 @@ function SkillSpellCard({ item, kind }: { item: SkillSpell; kind: 'skills' | 'sp
   const element = normalizeElement(item.element)
   const hasDetails =
     hasText(item.goldRequired) || hasText(item.itemRequirements) || hasText(item.prerequisites)
-  const { isPure, rest: descriptionText } = hasText(item.description)
+  const { isPure: descIsPure, rest: descriptionText } = hasText(item.description)
     ? splitPure(item.description)
     : { isPure: false, rest: '' }
+  const isPure = descIsPure || levelIsPure
 
   return (
     <article className="flex flex-col rounded-2xl border border-parchment-300 bg-parchment-100 p-4 text-parchment-800 shadow-sm transition-colors hover:border-gilt/50 dark:border-ash/10 dark:bg-ink dark:text-ivory/90">
       <div className="flex items-start justify-between gap-2">
-        <div className="flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-sm border border-gilt/40 bg-parchment-200 dark:bg-obsidian">
+                <div className="flex h-[70px] w-[70px] shrink-0 items-center justify-center overflow-hidden rounded-sm border border-gilt/40 bg-parchment-200 dark:bg-obsidian">
           {img ? (
-            <img src={img} alt="" loading="lazy" className="h-full w-full object-cover" />
+            <img src={img} alt="" width={70} height={70} loading="lazy" className="h-[70px] w-[70px] object-cover" />
           ) : (
-            <Placeholder size={28} className="text-gilt/60" />
+            <Placeholder size={30} className="text-gilt/60" />
           )}
         </div>
 
-        {level && (
-          <div className="flex h-16 w-16 shrink-0 flex-col items-center justify-center rounded-full border-2 border-gilt bg-gilt/10 text-center leading-none text-gilt">
+        <div className="min-w-0 flex-1 text-center">
+          {isPure && (
+            <p className="text-sm font-bold uppercase leading-tight tracking-wider text-pink-500 dark:text-pink-400">
+              Pure only.
+            </p>
+          )}
+          <h3 className="break-words text-xl font-semibold italic leading-tight text-gilt">
+            {highlightPure(item.name)}
+          </h3>
+          {hasText(item.learningLocation) && (
+            <p className="mt-0.5 text-sm font-semibold italic text-parchment-600 dark:text-parchment-400">
+              {highlightPure(item.learningLocation)}
+            </p>
+          )}
+          {element && (
+            <p className="mt-1">
+              <span className="rounded-full border border-gilt/50 px-2 py-0.5 text-xs font-semibold uppercase tracking-wider text-gilt">
+                {elementLabel(element)}
+              </span>
+            </p>
+          )}
+        </div>
+
+        {level ? (
+          <div className="flex h-14 w-14 shrink-0 flex-col items-center justify-center rounded-full border-2 border-gilt bg-gilt/10 text-center leading-none text-gilt">
             <span className="text-[10px] font-semibold uppercase tracking-wider">REQ</span>
-            <span className={`mt-0.5 font-bold ${reqFontClass(level)}`}>{highlightPure(level)}</span>
+            <span className={`mt-0.5 font-bold ${reqFontClass(level)}`}>{level}</span>
           </div>
-        )}
-      </div>
-
-      {isPure && (
-        <p className="mt-3 text-center text-sm font-bold uppercase tracking-wider text-pink-500 dark:text-pink-400">
-          Pure only.
-        </p>
-      )}
-
-      <h3 className={`${isPure ? 'mt-1' : 'mt-3'} break-words text-center text-2xl font-semibold italic leading-tight text-gilt`}>
-        {highlightPure(item.name)}
-      </h3>
-
-      <div className="mt-1 space-y-1 text-center font-semibold italic">
-        {hasText(item.learningLocation) && (
-          <p className="text-base text-parchment-600 dark:text-parchment-400">
-            {highlightPure(item.learningLocation)}
-          </p>
-        )}
-        {element && (
-          <p>
-            <span className="rounded-full border border-gilt/50 px-2 py-0.5 text-xs font-semibold uppercase tracking-wider not-italic text-gilt">
-              {elementLabel(element)}
-            </span>
-          </p>
+        ) : (
+          <div className="h-14 w-14 shrink-0" />
         )}
       </div>
 
@@ -389,7 +394,7 @@ function SkillSpellCard({ item, kind }: { item: SkillSpell; kind: 'skills' | 'sp
       )}
 
       {hasText(descriptionText) && (
-        <p className="mt-3 border-t border-parchment-300 pt-3 text-center text-base italic leading-relaxed text-parchment-700 dark:border-ash/20 dark:text-ivory/90">
+        <p className="mt-3 border-t border-parchment-300 pt-3 text-center font-ui text-base leading-relaxed text-parchment-800 dark:border-ash/20 dark:text-ivory">
           {descriptionText}
         </p>
       )}
