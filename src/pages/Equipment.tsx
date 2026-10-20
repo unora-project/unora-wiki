@@ -2,7 +2,8 @@ import { useEffect, useState, useMemo, useRef } from 'react'
 import { createPortal } from 'react-dom'
 import { Link } from 'react-router'
 import { createColumnHelper, type Row } from '@tanstack/react-table'
-import { DataTable, compareLevels } from '@/components/tables/DataTable'
+import { ChevronRight, Gem, Shield, Swords, type LucideIcon } from 'lucide-react'
+import { DataTable } from '@/components/tables/DataTable'
 import equipmentUrl from '@/data/equipment/all.json?url'
 
 interface EquipmentItem {
@@ -26,6 +27,12 @@ interface DisplayRow extends EquipmentItem {
   _isVariant: boolean
 }
 
+interface CardGroup {
+  key: string
+  base: DisplayRow
+  variants: DisplayRow[]
+}
+
 interface ShopEntry {
   town: string
   npc: string
@@ -43,14 +50,6 @@ interface WeaponRecipeRow {
   'Upgrade to Enchanted'?: string
   'Upgrade to Empowered'?: string
 }
-
-const UPGRADE_TIERS: { key: keyof WeaponRecipeRow; label: string }[] = [
-  { key: 'Materials to upgrade', label: 'Good' },
-  { key: 'Upgrade to Great', label: 'Great' },
-  { key: 'Upgrade to Grand', label: 'Grand' },
-  { key: 'Upgrade to Enchanted', label: 'Enchanted' },
-  { key: 'Upgrade to Empowered', label: 'Empowered' },
-]
 
 const categories = [
   { id: 'all', label: 'All' },
@@ -118,6 +117,70 @@ const TIER_LABELS: Record<string, string> = {
   Empowered: 'Empowered',
 }
 
+// Symbol shown beside an item's name. Swap ⚦ for ♂ if you prefer the standard male sign.
+const GENDER_BADGE: Record<string, { symbol: string; cls: string; title: string }> = {
+  male: { symbol: '♂', cls: 'text-blue-500 dark:text-blue-400', title: 'Male' },
+  female: { symbol: '♀', cls: 'text-pink-500 dark:text-pink-400', title: 'Female' },
+  unisex: { symbol: '⚥', cls: 'text-purple-500 dark:text-purple-400', title: 'Unisex' },
+}
+
+// Attribute colors follow the UNORA logo, same as the skill/spell cards.
+const ATTRIBUTE_STYLES = [
+  { key: 'str', label: 'STR', cls: 'text-ignis' },
+  { key: 'int', label: 'INT', cls: 'text-tide' },
+  { key: 'wis', label: 'WIS', cls: 'text-verdant' },
+  { key: 'con', label: 'CON', cls: 'text-amber-700 dark:text-ivory' },
+  { key: 'dex', label: 'DEX', cls: 'text-astral' },
+]
+
+// Every stat on a card can be clicked to sort by it. Items missing that stat go last.
+const SORT_GETTERS: Record<string, (r: EquipmentItem) => number | null | undefined> = {
+  hp: (r) => r.stats.hp,
+  mp: (r) => r.stats.mp,
+  ac: (r) => r.stats.ac,
+  mr: (r) => r.stats.mr,
+  str: (r) => r.stats.str,
+  int: (r) => r.stats.int,
+  wis: (r) => r.stats.wis,
+  con: (r) => r.stats.con,
+  dex: (r) => r.stats.dex,
+  dmg: (r) => r.stats.dmg,
+  hit: (r) => r.stats.hit,
+  as: (r) => r.percentages.attackSpeed,
+  cdr: (r) => r.percentages.cooldownReduction,
+  skd: (r) => r.percentages.skillDamage,
+  skdp: (r) => r.percentages.skillDamagePercent,
+  spd: (r) => r.percentages.spellDamage,
+  spdp: (r) => r.percentages.spellDamagePercent,
+  heal: (r) => r.percentages.flatHealBonus,
+  healp: (r) => r.percentages.healBonusPercent,
+}
+
+const SORT_LABELS: Record<string, string> = {
+  level: 'Level', name: 'Name',
+  hp: 'HP', mp: 'MP', ac: 'AC', mr: 'MR',
+  str: 'STR', int: 'INT', wis: 'WIS', con: 'CON', dex: 'DEX',
+  dmg: 'DMG', hit: 'HIT', as: 'AS%', cdr: 'CDR%',
+  skd: 'SKD', skdp: 'SKD%', spd: 'SPD', spdp: 'SPD%',
+  heal: 'HEAL', healp: 'HEAL%',
+}
+
+// Stats where the lowest number is best, so the first click sorts lowest first.
+const LOWEST_FIRST = new Set(['ac'])
+
+const PAGE_SIZE = 40
+const CARD_GRID = 'grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5'
+const controlLabelCls = 'text-xs font-medium uppercase tracking-wider text-parchment-500 dark:text-parchment-600'
+const selectCls =
+  'rounded-lg border border-parchment-300 bg-parchment-100 px-3 py-1.5 text-xs font-medium text-parchment-700 dark:border-ash/20 dark:bg-obsidian dark:text-ash'
+
+const pillCls = (active: boolean) =>
+  `rounded-lg px-3 py-1.5 text-xs font-medium transition-colors ${
+    active
+      ? 'border border-gilt bg-transparent text-gilt'
+      : 'border border-parchment-300 bg-parchment-100 text-parchment-600 hover:border-gilt hover:text-gilt dark:border-ash/20 dark:bg-obsidian dark:text-ash dark:hover:border-gilt'
+  }`
+
 function parseTier(name: string): { tier: string; baseName: string } {
   const parts = name.split(' ')
   const first = parts[0]
@@ -156,6 +219,17 @@ function groupEquipment(items: EquipmentItem[]): ItemGroup[] {
     group.availableTiers.sort((a, b) => TIER_ORDER.indexOf(a) - TIER_ORDER.indexOf(b))
   }
   return Array.from(map.values())
+}
+
+function makeRow(g: ItemGroup, tier: string, isVariant: boolean): DisplayRow {
+  return {
+    ...g.tiers[tier]!,
+    _groupKey: g.key,
+    _baseName: g.baseName,
+    _availableTiers: g.availableTiers,
+    _selectedTier: tier,
+    _isVariant: isVariant,
+  }
 }
 
 let equipmentCache: EquipmentItem[] | null = null
@@ -274,8 +348,262 @@ function RecipeTag({ materials }: { materials: string }) {
   )
 }
 
+// Includes class and gender so same-named items for different classes don't select together.
 function compareKey(item: DisplayRow): string {
-  return `${item.category}|${item.name}|${item._selectedTier}`
+  return `${item.category}|${item.class ?? ''}|${item.gender ?? ''}|${item.name}|${item._selectedTier}`
+}
+
+const hasText = (v: unknown): v is string =>
+  typeof v === 'string' && v.trim() !== '' && v.trim() !== '-'
+
+// Shortens long level names so they fit inside the REQ circle.
+function shortLevel(level: string): string {
+  const cleaned = level.replace(/\s*\(pure\)\s*/gi, ' ').trim()
+  if (/^(grand\s*master|gm)$/i.test(cleaned)) return 'GM'
+  if (/^master$/i.test(cleaned)) return 'M'
+  return cleaned
+}
+
+function reqFontClass(level: string): string {
+  const n = level.length
+  if (n <= 3) return 'text-xl'
+  if (n <= 5) return 'text-base'
+  if (n <= 8) return 'text-xs'
+  return 'text-[9px]'
+}
+
+function categoryIcon(category: string): LucideIcon {
+  if (category === 'weapon') return Swords
+  if (['ring', 'earring', 'necklace', 'accessory'].includes(category)) return Gem
+  return Shield
+}
+
+function StatRow({
+  entries,
+  sortKey,
+  sortDir,
+  onSort,
+}: {
+  entries: { id: string; label: string; value: number | null | undefined; cls?: string }[]
+  sortKey: string
+  sortDir: 'asc' | 'desc'
+  onSort: (key: string) => void
+}) {
+  const present = entries.filter((e) => e.value !== null && e.value !== undefined)
+  if (present.length === 0) return null
+  return (
+    <div
+      className="mt-2 grid gap-1 text-center"
+      style={{ gridTemplateColumns: `repeat(${present.length}, minmax(0, 1fr))` }}
+    >
+      {present.map((e) => {
+        const active = sortKey === e.id
+        return (
+          <button
+            key={e.id}
+            type="button"
+            onClick={() => onSort(e.id)}
+            title={`Sort by ${e.label}`}
+            className={`rounded-md px-0.5 py-0.5 transition-colors hover:bg-gilt/10 ${
+              active ? 'bg-gilt/15 ring-1 ring-gilt/60' : ''
+            } ${e.cls ?? ''}`}
+          >
+            <span
+              className={`block text-xs font-semibold uppercase tracking-wider ${e.cls ? '' : 'text-ash'}`}
+            >
+              {e.label}
+              {active && <span className="ml-0.5">{sortDir === 'asc' ? '↑' : '↓'}</span>}
+            </span>
+            <span
+              className={`block text-xl font-bold leading-tight ${
+                e.cls ? '' : 'text-parchment-800 dark:text-ivory'
+              }`}
+            >
+              {e.value}
+            </span>
+          </button>
+        )
+      })}
+    </div>
+  )
+}
+
+function EquipmentCard({
+  item,
+  seller,
+  recipeText,
+  compareMode,
+  checked,
+  onToggleCompare,
+  sortKey,
+  sortDir,
+  onSort,
+  upgradeCount = 0,
+  upgradesOpen = false,
+  onToggleUpgrades,
+  highlight = false,
+}: {
+  item: DisplayRow
+  seller?: { npc: string; town: string }
+  recipeText: string | null
+  compareMode: boolean
+  checked: boolean
+  onToggleCompare: (item: DisplayRow) => void
+  sortKey: string
+  sortDir: 'asc' | 'desc'
+  onSort: (key: string) => void
+  upgradeCount?: number
+  upgradesOpen?: boolean
+  onToggleUpgrades?: () => void
+  highlight?: boolean
+}) {
+  const Icon = categoryIcon(item.category)
+  const gender = item.gender ? GENDER_BADGE[item.gender.toLowerCase()] : undefined
+  const classText = item.class ? classLabels[item.class] ?? item.class : null
+  const level =
+    item.level == null || String(item.level).trim() === '' ? null : shortLevel(String(item.level).trim())
+  const location = hasText(item.location) ? item.location.trim() : null
+  const hasFooter = !!location || !!seller
+  const linkCls = 'underline decoration-gilt/60 hover:decoration-gilt'
+  const sortProps = { sortKey, sortDir, onSort }
+
+  const s = item.stats
+  const p = item.percentages
+  const vitals = [
+    { id: 'hp', label: 'HP', value: s.hp, cls: 'text-red-600 dark:text-red-400' },
+    { id: 'mp', label: 'MP', value: s.mp, cls: 'text-blue-600 dark:text-blue-400' },
+    { id: 'ac', label: 'AC', value: s.ac, cls: 'text-zinc-600 dark:text-zinc-400' },
+    { id: 'mr', label: 'MR', value: s.mr, cls: 'text-parchment-900 dark:text-white' },
+  ]
+  const attributes = ATTRIBUTE_STYLES.map((a) => ({
+    id: a.key,
+    label: a.label,
+    value: s[a.key],
+    cls: a.cls,
+  }))
+  const offense = [
+    { id: 'dmg', label: 'DMG', value: s.dmg },
+    { id: 'hit', label: 'HIT', value: s.hit },
+    { id: 'as', label: 'AS%', value: p.attackSpeed },
+    { id: 'cdr', label: 'CDR%', value: p.cooldownReduction },
+  ]
+  const skillSpell = [
+    { id: 'skd', label: 'SKD', value: p.skillDamage },
+    { id: 'skdp', label: 'SKD%', value: p.skillDamagePercent },
+    { id: 'spd', label: 'SPD', value: p.spellDamage },
+    { id: 'spdp', label: 'SPD%', value: p.spellDamagePercent },
+  ]
+  const healing = [
+    { id: 'heal', label: 'HEAL', value: p.flatHealBonus },
+    { id: 'healp', label: 'HEAL%', value: p.healBonusPercent },
+  ]
+
+  return (
+    <article
+      className={`flex flex-col rounded-2xl border bg-parchment-100 p-4 text-parchment-800 shadow-sm transition-colors dark:bg-ink dark:text-ivory/90 ${
+        checked
+          ? 'border-gilt ring-2 ring-gilt/60'
+          : highlight
+            ? 'border-gilt'
+            : 'border-parchment-300 hover:border-gilt/50 dark:border-ash/10'
+      }`}
+    >
+      {compareMode && (
+        <label className="mb-2 flex cursor-pointer items-center gap-2 text-xs font-semibold uppercase tracking-wider text-ash">
+          <input
+            type="checkbox"
+            checked={checked}
+            onChange={() => onToggleCompare(item)}
+            className="h-4 w-4 rounded border-ash/40 accent-gilt"
+          />
+          Compare
+        </label>
+      )}
+
+      <div className="flex items-start justify-between gap-2">
+        <div className="flex h-[70px] w-[70px] shrink-0 items-center justify-center overflow-hidden rounded-sm border border-gilt/40 bg-parchment-200 dark:bg-obsidian">
+          <Icon size={30} className="text-gilt/60" />
+        </div>
+
+        <div className="min-w-0 flex-1 text-center">
+          <h3 className="break-words text-xl font-semibold italic leading-tight text-gilt">
+            {item.name}
+            {gender && (
+              <span title={gender.title} className={`ml-1.5 not-italic ${gender.cls}`}>
+                {gender.symbol}
+              </span>
+            )}
+          </h3>
+          {classText && (
+            <p className="mt-0.5 text-sm font-semibold italic text-parchment-600 dark:text-parchment-400">
+              {classText}
+            </p>
+          )}
+          {recipeText && (
+            <p className="mt-0.5">
+              <RecipeTag materials={recipeText} />
+            </p>
+          )}
+        </div>
+
+        {level ? (
+          <button
+            type="button"
+            onClick={() => onSort('level')}
+            title="Sort by level"
+            className="flex h-14 w-14 shrink-0 flex-col items-center justify-center rounded-full border-2 border-gilt bg-gilt/10 text-center leading-none text-gilt transition-colors hover:bg-gilt/25"
+          >
+            <span className="text-[10px] font-semibold uppercase tracking-wider">REQ</span>
+            <span className={`mt-0.5 font-bold ${reqFontClass(level)}`}>{level}</span>
+          </button>
+        ) : (
+          <div className="h-14 w-14 shrink-0" />
+        )}
+      </div>
+
+      <StatRow entries={vitals} {...sortProps} />
+      <StatRow entries={attributes} {...sortProps} />
+      <StatRow entries={offense} {...sortProps} />
+      <StatRow entries={skillSpell} {...sortProps} />
+      <StatRow entries={healing} {...sortProps} />
+
+      {(hasFooter || upgradeCount > 0) && (
+        <div className="mt-auto pt-3">
+          {upgradeCount > 0 && onToggleUpgrades && (
+            <button
+              type="button"
+              onClick={onToggleUpgrades}
+              aria-expanded={upgradesOpen}
+              className="mb-3 flex w-full items-center justify-center gap-1 rounded-lg border border-gilt/40 bg-gilt/10 px-2 py-1.5 text-xs font-semibold uppercase tracking-wider text-gilt transition-colors hover:bg-gilt/20"
+            >
+              {upgradesOpen ? 'Hide upgrades' : `Upgrades (${upgradeCount})`}
+              <ChevronRight size={14} className={upgradesOpen ? 'rotate-180' : ''} />
+            </button>
+          )}
+
+          {hasFooter && (
+            <div className="flex items-end justify-between gap-3 border-t border-parchment-300 pt-3 text-sm dark:border-ash/20">
+              <span className="min-w-0 text-left text-parchment-700 dark:text-parchment-300">
+                {location && !item.locationLink ? location : ''}
+              </span>
+              <span className="flex min-w-0 flex-col items-end text-right">
+                {location && item.locationLink && (
+                  <Link to={item.locationLink} className={linkCls}>
+                    {location}
+                  </Link>
+                )}
+                {seller && (
+                  <Link to={`/towns/${seller.town}`} className={linkCls}>
+                    Sold by {seller.npc}
+                  </Link>
+                )}
+              </span>
+            </div>
+          )}
+        </div>
+      )}
+    </article>
+  )
 }
 
 // Stats where a LOWER number is the better one (shown green in Compare).
@@ -410,7 +738,7 @@ function CompareBar({
 
         {rows.length === 0 ? (
           <p className="text-sm text-parchment-500 dark:text-parchment-600">
-            Select two items (use the checkbox in the Compare column) to see stat differences.
+            Select two items (use the Compare checkbox) to see stat differences.
           </p>
         ) : (
           <div className="min-h-0 flex-1 overflow-y-auto rounded-lg border border-parchment-300 dark:border-ash/20">
@@ -449,10 +777,8 @@ function CompareBar({
   )
 }
 
-// Compares two rows so that variant rows always resolve to their parent's
-// value for this column, and rows within the same group are ordered by
-// tier. This keeps an expanded item's variants glued to it regardless of
-// which column header the user sorts by.
+// List view: variant rows always sort using their group's base row, and rows
+// inside a group keep their built order, so an expanded item never scatters.
 function groupedSortingFn(
   getValue: (row: DisplayRow) => unknown,
   compareRaw: (a: unknown, b: unknown) => number,
@@ -461,14 +787,7 @@ function groupedSortingFn(
   return (rowA: Row<DisplayRow>, rowB: Row<DisplayRow>) => {
     const a = rowA.original
     const b = rowB.original
-    if (a._groupKey === b._groupKey) {
-      // Same group: always keep the pre-built insertion order (Base, then
-      // tiers in sequence). Returning 0 relies on the sort being stable,
-      // which holds regardless of ascending/descending direction — a
-      // nonzero tier-difference here would get flipped under descending
-      // sort, which was the bug.
-      return 0
-    }
+    if (a._groupKey === b._groupKey) return 0
     const parentA = parentLookup.get(a._groupKey) ?? a
     const parentB = parentLookup.get(b._groupKey) ?? b
     return compareRaw(getValue(parentA), getValue(parentB))
@@ -487,7 +806,6 @@ function compareStr(a: unknown, b: unknown): number {
   return as.localeCompare(bs, undefined, { numeric: true, sensitivity: 'base' })
 }
 
-const LEVEL_TIER_ORDER = ['Beginner-num', 'Master', 'Grandmaster', 'Ab']
 function levelRankValue(raw: unknown): { tier: number; num: number } {
   if (raw == null || raw === '' || raw === '-') return { tier: 5, num: 0 }
   const s = String(raw).trim()
@@ -509,16 +827,51 @@ function compareLevelRaw(a: unknown, b: unknown): number {
   return ra.num - rb.num
 }
 
+// Card view sorting. Items missing the chosen stat always go last.
+function cardSortCompare(key: string, dir: number, a: EquipmentItem, b: EquipmentItem): number {
+  if (key === 'name') return dir * compareStr(a.name, b.name)
+  if (key === 'level') return dir * compareLevelRaw(a.level, b.level)
+  const get = SORT_GETTERS[key]
+  if (!get) return 0
+  const av = get(a)
+  const bv = get(b)
+  if (av == null && bv == null) return 0
+  if (av == null) return 1
+  if (bv == null) return -1
+  return dir * (av - bv)
+}
+
 export function Equipment() {
   const [selectedCategory, setSelectedCategory] = useState('all')
   const [selectedClass, setSelectedClass] = useState('all')
   const [data, setData] = useState<EquipmentItem[] | null>(equipmentCache)
   const [expandedGroups, setExpandedGroups] = useState<Record<string, boolean>>({})
+  const [openGroup, setOpenGroup] = useState<string | null>(null)
   const [textSize, setTextSize] = useState<'normal' | 'large'>('normal')
   const [shopIndex, setShopIndex] = useState<Map<string, { npc: string; town: string }>>(new Map())
   const [weaponRecipes, setWeaponRecipes] = useState<Map<string, WeaponRecipeRow>>(new Map())
   const [compareMode, setCompareMode] = useState(false)
   const [compareItems, setCompareItems] = useState<DisplayRow[]>([])
+  const [sortKey, setSortKey] = useState('level')
+  const [sortDir, setSortDir] = useState<'asc' | 'desc'>('asc')
+  const [cardQuery, setCardQuery] = useState('')
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE)
+  const [viewMode, setViewMode] = useState<'cards' | 'list'>(() => {
+    try {
+      return localStorage.getItem('equipmentViewMode') === 'list' ? 'list' : 'cards'
+    } catch {
+      return 'cards'
+    }
+  })
+
+  const changeView = (v: 'cards' | 'list') => {
+    setViewMode(v)
+    try {
+      localStorage.setItem('equipmentViewMode', v)
+    } catch {
+      /* ignore */
+    }
+  }
 
   useEffect(() => {
     if (equipmentCache) return
@@ -545,6 +898,11 @@ export function Equipment() {
     return () => { alive = false }
   }, [])
 
+  // Start the card list over from the top whenever the view of it changes.
+  useEffect(() => {
+    setVisibleCount(PAGE_SIZE)
+  }, [selectedCategory, selectedClass, cardQuery, sortKey, sortDir, viewMode])
+
   const filteredData = useMemo(() => {
     if (!data) return []
     let items = data
@@ -559,27 +917,19 @@ export function Equipment() {
 
   const groups = useMemo(() => groupEquipment(filteredData), [filteredData])
 
-  // One representative row per group: the base tier if it exists, else
-  // whichever tier is first in TIER_ORDER. This is both what shows as the
-  // main (collapsed) row AND the value every sort comparison uses for the
-  // whole group, so variants never scatter away from it.
+  // One representative row per group: the base tier if it exists, else the
+  // first tier in order. It is the collapsed row/card and the sort value for
+  // the whole group.
   const baseRowByGroup = useMemo(() => {
     const map = new Map<string, DisplayRow>()
     for (const g of groups) {
       const tier = g.tiers['base'] ? 'base' : g.availableTiers[0]
-      const item = g.tiers[tier]!
-      map.set(g.key, {
-        ...item,
-        _groupKey: g.key,
-        _baseName: g.baseName,
-        _availableTiers: g.availableTiers,
-        _selectedTier: tier,
-        _isVariant: false,
-      })
+      map.set(g.key, makeRow(g, tier, false))
     }
     return map
   }, [groups])
 
+  // List view rows (several groups can be expanded at once).
   const displayRows = useMemo<DisplayRow[]>(() => {
     const rows: DisplayRow[] = []
     for (const g of groups) {
@@ -588,20 +938,42 @@ export function Equipment() {
       if (expandedGroups[g.key]) {
         for (const tier of g.availableTiers) {
           if (tier === baseRow._selectedTier) continue
-          const item = g.tiers[tier]!
-          rows.push({
-            ...item,
-            _groupKey: g.key,
-            _baseName: g.baseName,
-            _availableTiers: g.availableTiers,
-            _selectedTier: tier,
-            _isVariant: true,
-          })
+          rows.push(makeRow(g, tier, true))
         }
       }
     }
     return rows
   }, [groups, baseRowByGroup, expandedGroups])
+
+  // Card view groups: search, then sort by each group's base item.
+  const cardGroups = useMemo<CardGroup[]>(() => {
+    const q = cardQuery.trim().toLowerCase()
+    const dir = sortDir === 'asc' ? 1 : -1
+    const list: CardGroup[] = []
+    for (const g of groups) {
+      const base = baseRowByGroup.get(g.key)!
+      const variants = g.availableTiers
+        .filter((t) => t !== base._selectedTier)
+        .map((t) => makeRow(g, t, true))
+      if (q) {
+        const haystack = [base, ...variants]
+          .map((r) =>
+            [r.name, r.location, r.class ? classLabels[r.class] ?? r.class : '', r.gender]
+              .filter(Boolean)
+              .join(' ')
+          )
+          .join(' ')
+          .toLowerCase()
+        if (!haystack.includes(q)) continue
+      }
+      list.push({ key: g.key, base, variants })
+    }
+    list.sort(
+      (a, b) =>
+        cardSortCompare(sortKey, dir, a.base, b.base) || compareStr(a.base.name, b.base.name)
+    )
+    return list
+  }, [groups, baseRowByGroup, cardQuery, sortKey, sortDir])
 
   const toggleExpand = (groupKey: string) => {
     setExpandedGroups((prev) => ({ ...prev, [groupKey]: !prev[groupKey] }))
@@ -616,6 +988,49 @@ export function Equipment() {
       return [...prev, item]
     })
   }
+
+    // Clicking a stat sorts by it; clicking it again reverses the order.
+  const handleSort = (key: string) => {
+    if (sortKey === key) {
+      setSortDir((d) => (d === 'asc' ? 'desc' : 'asc'))
+    } else {
+      setSortKey(key)
+      setSortDir(key === 'level' || LOWEST_FIRST.has(key) ? 'asc' : 'desc')
+    }
+  }
+
+  const resetSort = () => {
+    setSortKey('level')
+    setSortDir('asc')
+  }
+
+  const renderCard = (
+    row: DisplayRow,
+    extra: {
+      upgradeCount?: number
+      upgradesOpen?: boolean
+      onToggleUpgrades?: () => void
+      highlight?: boolean
+    } = {}
+  ) => (
+    <EquipmentCard
+      key={compareKey(row)}
+      item={row}
+      seller={shopIndex.get(row.name)}
+      recipeText={
+        row.category === 'weapon'
+          ? getRecipeDisplay(weaponRecipes.get(row._baseName), row._selectedTier)
+          : null
+      }
+      compareMode={compareMode}
+      checked={compareItems.some((p) => compareKey(p) === compareKey(row))}
+      onToggleCompare={toggleCompare}
+      sortKey={sortKey}
+      sortDir={sortDir}
+      onSort={handleSort}
+      {...extra}
+    />
+  )
 
   const columnHelper = useMemo(() => createColumnHelper<DisplayRow>(), [])
 
@@ -777,102 +1192,99 @@ export function Equipment() {
         Equipment
       </h1>
 
-      {/* Filters */}
-      <div className="mb-6 space-y-3">
-        {/* Category tabs */}
-        <div className="flex flex-wrap gap-1.5">
-          {categories.map((cat) => (
-            <button
-              key={cat.id}
-              onClick={() => setSelectedCategory(cat.id)}
-              className={`rounded-lg px-3 py-1.5 text-xs font-medium transition-colors ${
-                selectedCategory === cat.id
-                  ? 'border border-gilt bg-transparent text-gilt'
-                  : 'border border-parchment-300 bg-parchment-100 text-parchment-600 hover:border-gilt hover:text-gilt dark:border-ash/20 dark:bg-obsidian dark:text-ash dark:hover:border-gilt'
-              }`}
-            >
-              {cat.label}
-            </button>
-          ))}
-        </div>
+      {/* Controls */}
+      <div className="mb-6 flex flex-wrap items-center gap-x-5 gap-y-3">
+        <label className="flex items-center gap-2">
+          <span className={controlLabelCls}>Category:</span>
+          <select
+            value={selectedCategory}
+            onChange={(e) => setSelectedCategory(e.target.value)}
+            className={selectCls}
+          >
+            {categories.map((cat) => (
+              <option key={cat.id} value={cat.id}>
+                {cat.label}
+              </option>
+            ))}
+          </select>
+        </label>
 
-        {/* Class filter */}
-        <div className="space-y-1.5">
-          <div className="flex flex-wrap gap-1.5">
-            <span className="self-center text-xs font-medium uppercase tracking-wider text-parchment-500 dark:text-parchment-600">
-              Class:
-            </span>
-            <button
-              onClick={() => setSelectedClass('all')}
-              className={`rounded-lg px-3 py-1.5 text-xs font-medium transition-colors ${
-                selectedClass === 'all'
-                  ? 'border border-gilt bg-transparent text-gilt'
-                  : 'border border-parchment-300 bg-parchment-100 text-parchment-600 hover:border-gilt hover:text-gilt dark:border-ash/20 dark:bg-obsidian dark:text-ash dark:hover:border-gilt'
-              }`}
-            >
-              All
-            </button>
-          </div>
-          {classGroups.map((group) => (
-            <div key={group.label} className="flex flex-wrap items-center gap-1.5">
-              <span className="self-center text-xs font-medium uppercase tracking-wider text-parchment-500 dark:text-parchment-600">
-                {group.label}:
-              </span>
-              {group.options.map((cls) => (
-                <button
-                  key={cls}
-                  onClick={() => setSelectedClass(cls)}
-                  className={`rounded-lg px-3 py-1.5 text-xs font-medium transition-colors ${
-                    selectedClass === cls
-                      ? 'border border-gilt bg-transparent text-gilt'
-                      : 'border border-parchment-300 bg-parchment-100 text-parchment-600 hover:border-gilt hover:text-gilt dark:border-ash/20 dark:bg-obsidian dark:text-ash dark:hover:border-gilt'
-                  }`}
-                >
-                  {classLabels[cls]}
-                </button>
-              ))}
-            </div>
-          ))}
-        </div>
+        <label className="flex items-center gap-2">
+          <span className={controlLabelCls}>Class:</span>
+          <select
+            value={selectedClass}
+            onChange={(e) => setSelectedClass(e.target.value)}
+            className={selectCls}
+          >
+            <option value="all">All Classes</option>
+            {classGroups.map((group) => (
+              <optgroup key={group.label} label={group.label}>
+                {group.options.map((cls) => (
+                  <option key={cls} value={cls}>
+                    {classLabels[cls]}
+                  </option>
+                ))}
+              </optgroup>
+            ))}
+          </select>
+        </label>
 
-        {/* Text size + Compare toggle */}
-        <div className="flex flex-wrap items-center gap-4">
+        {viewMode === 'cards' && (
           <div className="flex flex-wrap items-center gap-2">
-            <span className="text-xs font-medium uppercase tracking-wider text-parchment-500 dark:text-parchment-600">
-              Text Size:
+            <span className={controlLabelCls}>Sorted by:</span>
+            <span className="text-xs font-semibold text-gilt">
+              {SORT_LABELS[sortKey]} {sortDir === 'asc' ? '↑' : '↓'}
             </span>
+            {(sortKey !== 'level' || sortDir !== 'asc') && (
+              <button type="button" onClick={resetSort} className={pillCls(false)}>
+                Reset
+              </button>
+            )}
+            <span className="text-xs text-ash">Click any stat on a card to sort.</span>
+          </div>
+        )}
+
+        {viewMode === 'list' && (
+          <label className="flex items-center gap-2">
+            <span className={controlLabelCls}>Text Size:</span>
             <select
               value={textSize}
               onChange={(e) => setTextSize(e.target.value as 'normal' | 'large')}
-              className="rounded-lg border border-parchment-300 bg-parchment-100 px-3 py-1.5 text-xs font-medium text-parchment-700 dark:border-ash/20 dark:bg-obsidian dark:text-ash"
+              className={selectCls}
             >
               <option value="normal">Normal</option>
               <option value="large">Large</option>
             </select>
-          </div>
+          </label>
+        )}
 
-          <button
-            onClick={() => {
-              setCompareMode((prev) => !prev)
-              if (compareMode) setCompareItems([])
-            }}
-            className={`rounded-lg px-3 py-1.5 text-xs font-medium transition-colors ${
-              compareMode
-                ? 'border border-gilt bg-transparent text-gilt'
-                : 'border border-parchment-300 bg-parchment-100 text-parchment-600 hover:border-gilt hover:text-gilt dark:border-ash/20 dark:bg-obsidian dark:text-ash dark:hover:border-gilt'
-            }`}
-          >
-            {compareMode ? 'Exit Compare Mode' : 'Compare Equipment'}
+        <div className="flex items-center gap-1.5">
+          <span className={controlLabelCls}>View:</span>
+          <button type="button" onClick={() => changeView('cards')} className={pillCls(viewMode === 'cards')}>
+            Cards
+          </button>
+          <button type="button" onClick={() => changeView('list')} className={pillCls(viewMode === 'list')}>
+            List
           </button>
         </div>
+
+        <button
+          onClick={() => {
+            setCompareMode((prev) => !prev)
+            if (compareMode) setCompareItems([])
+          }}
+          className={pillCls(compareMode)}
+        >
+          {compareMode ? 'Exit Compare Mode' : 'Compare Equipment'}
+        </button>
       </div>
 
-      {/* Data Table */}
+      {/* Content */}
       {data === null ? (
         <div className="flex min-h-[40vh] items-center justify-center">
           <div className="h-8 w-8 animate-spin rounded-full border-2 border-gilt/20 border-t-gilt" />
         </div>
-      ) : (
+      ) : viewMode === 'list' ? (
         <DataTable
           data={displayRows}
           columns={columns}
@@ -880,6 +1292,55 @@ export function Equipment() {
           initialSorting={[{ id: 'level', desc: false }]}
           textSize={textSize}
         />
+      ) : (
+        <div>
+          <input
+            type="text"
+            value={cardQuery}
+            onChange={(e) => setCardQuery(e.target.value)}
+            placeholder="Search equipment..."
+            className="mb-4 w-full rounded-lg border border-parchment-300 bg-parchment-50 px-4 py-2 font-ui text-sm text-parchment-900 outline-none transition-colors placeholder:text-ash focus:border-gilt focus:ring-2 focus:ring-gilt/20 dark:border-ash/20 dark:bg-obsidian dark:text-ivory dark:placeholder:text-ash dark:focus:border-gilt sm:max-w-xs"
+          />
+
+          {cardGroups.length === 0 ? (
+            <p className="py-10 text-center text-parchment-500 dark:text-parchment-600">No matches.</p>
+          ) : (
+            <div className={CARD_GRID}>
+              {cardGroups.slice(0, visibleCount).map((cg) => {
+                const open = openGroup === cg.key && cg.variants.length > 0
+                const baseCard = renderCard(cg.base, {
+                  upgradeCount: cg.variants.length,
+                  upgradesOpen: open,
+                  onToggleUpgrades: () => setOpenGroup((cur) => (cur === cg.key ? null : cg.key)),
+                  highlight: open,
+                })
+                if (!open) return baseCard
+                return (
+                  <div key={cg.key} className={`col-span-full ${CARD_GRID}`}>
+                    {baseCard}
+                    {cg.variants.map((v) => renderCard(v))}
+                  </div>
+                )
+              })}
+            </div>
+          )}
+
+          {cardGroups.length > visibleCount && (
+            <div className="mt-6 flex justify-center">
+              <button
+                type="button"
+                onClick={() => setVisibleCount((c) => c + PAGE_SIZE)}
+                className="rounded-lg border border-gilt px-4 py-2 text-sm font-medium text-gilt transition-colors hover:bg-gilt/10"
+              >
+                Show more ({cardGroups.length - visibleCount} remaining)
+              </button>
+            </div>
+          )}
+
+          <p className="mt-4 font-ui text-sm text-ash">
+            {Math.min(visibleCount, cardGroups.length)} of {cardGroups.length} items
+          </p>
+        </div>
       )}
 
       {compareMode && (
