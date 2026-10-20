@@ -505,6 +505,18 @@ function EquipmentCard({
   const hasFooter = !!location || !!seller
   const linkCls = 'underline decoration-gilt/60 hover:decoration-gilt'
 
+  // In compare mode, a click anywhere on the card selects it, except on links
+  // and anything marked data-no-select (the Upgrades button).
+  const handleCardClick = (e: React.MouseEvent) => {
+    if (!compareMode) return
+    if ((e.target as HTMLElement).closest('a, [data-no-select]')) return
+    onToggleCompare(item)
+  }
+
+  // Stats and the REQ circle only sort when compare mode is off; in compare
+  // mode their clicks fall through to the card and select it instead.
+  const statSort = compareMode ? () => {} : onSort
+
   const s = item.stats
   const p = item.percentages
   const stat = (id: string, label: string, value: number | null | undefined): StatEntry => ({
@@ -559,7 +571,10 @@ function EquipmentCard({
 
   return (
     <article
+      onClick={handleCardClick}
       className={`flex flex-col rounded-2xl border bg-parchment-100 p-4 text-parchment-800 shadow-sm transition-colors dark:bg-ink dark:text-ivory/90 ${
+        compareMode ? 'cursor-pointer select-none' : ''
+      } ${
         checked
           ? 'border-gilt ring-2 ring-gilt/60'
           : highlight
@@ -568,15 +583,17 @@ function EquipmentCard({
       }`}
     >
       {compareMode && (
-        <label className="mb-2 flex cursor-pointer items-center gap-2 text-xs font-semibold uppercase tracking-wider text-ash">
+        // The checkbox is now just an indicator; the card handles the click.
+        // It stays keyboard-focusable: pressing Space on it still toggles.
+        <div className="pointer-events-none mb-2 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-ash">
           <input
             type="checkbox"
             checked={checked}
-            onChange={() => onToggleCompare(item)}
+            onChange={() => {}}
             className="h-4 w-4 rounded border-ash/40 accent-gilt"
           />
           Compare
-        </label>
+        </div>
       )}
 
       <div className="flex items-start justify-between gap-2">
@@ -608,8 +625,8 @@ function EquipmentCard({
         {level ? (
           <button
             type="button"
-            onClick={() => onSort('level')}
-            title="Sort by level"
+            onClick={compareMode ? undefined : () => onSort('level')}
+            title={compareMode ? undefined : 'Sort by level'}
             className="flex h-14 w-14 shrink-0 flex-col items-center justify-center rounded-full border-2 border-gilt bg-gilt/10 text-center leading-none text-gilt transition-colors hover:bg-gilt/25"
           >
             <span className="text-[10px] font-semibold uppercase tracking-wider">REQ</span>
@@ -620,13 +637,14 @@ function EquipmentCard({
         )}
       </div>
 
-      <StatPanel groups={statGroups} sortKey={sortKey} sortDir={sortDir} onSort={onSort} />
+      <StatPanel groups={statGroups} sortKey={sortKey} sortDir={sortDir} onSort={statSort} />
 
       {(hasFooter || upgradeCount > 0) && (
         <div className="mt-auto pt-3">
           {upgradeCount > 0 && onToggleUpgrades && (
             <button
               type="button"
+              data-no-select
               onClick={onToggleUpgrades}
               aria-expanded={upgradesOpen}
               className="mb-3 flex w-full items-center justify-center gap-1 rounded-lg border border-gilt/40 bg-gilt/10 px-2 py-1.5 text-xs font-semibold uppercase tracking-wider text-gilt transition-colors hover:bg-gilt/20"
