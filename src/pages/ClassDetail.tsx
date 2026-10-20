@@ -233,8 +233,38 @@ function cardImageSrc(image?: string): string | null {
   return import.meta.env.BASE_URL + image.replace(/^\/+/, '')
 }
 
-const STAT_LABELS = ['STR', 'INT', 'WIS', 'CON', 'DEX']
-const PURE_ON_BROWN = 'font-bold text-pink-300'
+// Stat colors follow the UNORA logo: U (red), N (blue), O (green), R (cream), A (purple).
+const STAT_STYLES = [
+  { label: 'STR', cls: 'text-ignis' },
+  { label: 'INT', cls: 'text-tide' },
+  { label: 'WIS', cls: 'text-verdant' },
+  { label: 'CON', cls: 'text-amber-700 dark:text-ivory' },
+  { label: 'DEX', cls: 'text-astral' },
+]
+
+// Shrinks the text inside the REQ circle for longer levels like "Master".
+function reqFontClass(level: string): string {
+  const n = level.length
+  if (n <= 3) return 'text-xl'
+  if (n <= 5) return 'text-base'
+  if (n <= 8) return 'text-xs'
+  return 'text-[9px]'
+}
+
+// Shortens long level names so they fit inside the REQ circle.
+function shortLevel(level: string): string {
+  if (/^(grand\s*master|gm)$/i.test(level)) return 'GM'
+  if (/^master$/i.test(level)) return 'M'
+  return level
+}
+
+// Pulls "Pure only." out of a description so the card can show it above the name.
+function splitPure(text: string): { isPure: boolean; rest: string } {
+  const pattern = /pure only\./i
+  if (!pattern.test(text)) return { isPure: false, rest: text }
+  const rest = text.replace(/pure only\./gi, '').replace(/\s{2,}/g, ' ').trim()
+  return { isPure: true, rest }
+}
 
 function ViewToggle({
   value,
@@ -269,8 +299,8 @@ function CardDetail({ label, value }: { label: string; value?: string }) {
   if (!hasText(value)) return null
   return (
     <div className="flex items-baseline justify-between gap-3">
-      <dt className="shrink-0 text-[11px] font-semibold uppercase tracking-wider text-[#d8bfa8]">{label}</dt>
-      <dd className="text-right">{highlightPure(value, PURE_ON_BROWN)}</dd>
+      <dt className="shrink-0 text-xs font-semibold uppercase tracking-wider text-ash">{label}</dt>
+      <dd className="text-right text-base text-parchment-800 dark:text-ivory">{highlightPure(value)}</dd>
     </div>
   )
 }
@@ -278,6 +308,7 @@ function CardDetail({ label, value }: { label: string; value?: string }) {
 function SkillSpellCard({ item, kind }: { item: SkillSpell; kind: 'skills' | 'spells' }) {
   const img = cardImageSrc(item.image)
   const Placeholder = kind === 'spells' ? Sparkles : Swords
+  const level = hasText(item.levelRequirement) ? shortLevel(item.levelRequirement.trim()) : null
   const statParts = hasText(item.statRequirements)
     ? item.statRequirements.split('/').map((s) => s.trim())
     : []
@@ -285,32 +316,48 @@ function SkillSpellCard({ item, kind }: { item: SkillSpell; kind: 'skills' | 'sp
   const element = normalizeElement(item.element)
   const hasDetails =
     hasText(item.goldRequired) || hasText(item.itemRequirements) || hasText(item.prerequisites)
+  const { isPure, rest: descriptionText } = hasText(item.description)
+    ? splitPure(item.description)
+    : { isPure: false, rest: '' }
 
   return (
-    <article className="flex flex-col rounded-2xl border-2 border-[#2a1a10] bg-gradient-to-b from-[#6e4d38] to-[#4b3123] p-4 text-[#f3e6d8] shadow-md ring-1 ring-inset ring-[#8a6548]/50">
-      <div className="flex items-center gap-3">
-        <div className="flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-sm border-2 border-black bg-[#2a1a10]">
+    <article className="flex flex-col rounded-2xl border border-parchment-300 bg-parchment-100 p-4 text-parchment-800 shadow-sm transition-colors hover:border-gilt/50 dark:border-ash/10 dark:bg-ink dark:text-ivory/90">
+      <div className="flex items-start justify-between gap-2">
+        <div className="flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-sm border border-gilt/40 bg-parchment-200 dark:bg-obsidian">
           {img ? (
             <img src={img} alt="" loading="lazy" className="h-full w-full object-cover" />
           ) : (
-            <Placeholder size={28} className="text-[#c9a27a]/70" />
+            <Placeholder size={28} className="text-gilt/60" />
           )}
         </div>
-        <h3 className="min-w-0 break-words text-2xl font-semibold italic leading-tight text-[#f0d9c9]">
-          {highlightPure(item.name, PURE_ON_BROWN)}
-        </h3>
+
+        {level && (
+          <div className="flex h-16 w-16 shrink-0 flex-col items-center justify-center rounded-full border-2 border-gilt bg-gilt/10 text-center leading-none text-gilt">
+            <span className="text-[10px] font-semibold uppercase tracking-wider">REQ</span>
+            <span className={`mt-0.5 font-bold ${reqFontClass(level)}`}>{highlightPure(level)}</span>
+          </div>
+        )}
       </div>
 
-      <div className="mt-3 space-y-0.5 text-center font-semibold italic">
-        {hasText(item.levelRequirement) && (
-          <p className="text-lg">Level {highlightPure(item.levelRequirement, PURE_ON_BROWN)}</p>
-        )}
+      {isPure && (
+        <p className="mt-3 text-center text-sm font-bold uppercase tracking-wider text-pink-500 dark:text-pink-400">
+          Pure only.
+        </p>
+      )}
+
+      <h3 className={`${isPure ? 'mt-1' : 'mt-3'} break-words text-center text-2xl font-semibold italic leading-tight text-gilt`}>
+        {highlightPure(item.name)}
+      </h3>
+
+      <div className="mt-1 space-y-1 text-center font-semibold italic">
         {hasText(item.learningLocation) && (
-          <p className="text-base text-[#e4cdb8]">{highlightPure(item.learningLocation, PURE_ON_BROWN)}</p>
+          <p className="text-base text-parchment-600 dark:text-parchment-400">
+            {highlightPure(item.learningLocation)}
+          </p>
         )}
         {element && (
-          <p className="pt-1">
-            <span className="rounded-full border border-[#c9a27a]/60 bg-black/20 px-2 py-0.5 text-xs font-semibold uppercase tracking-wider not-italic">
+          <p>
+            <span className="rounded-full border border-gilt/50 px-2 py-0.5 text-xs font-semibold uppercase tracking-wider not-italic text-gilt">
               {elementLabel(element)}
             </span>
           </p>
@@ -319,31 +366,31 @@ function SkillSpellCard({ item, kind }: { item: SkillSpell; kind: 'skills' | 'sp
 
       {showStatGrid ? (
         <div className="mt-3 grid grid-cols-5 gap-1 text-center">
-          {STAT_LABELS.map((label, i) => (
-            <div key={label}>
-              <p className="text-[11px] font-semibold uppercase tracking-wider text-[#d8bfa8]">{label}</p>
-              <p className="text-lg font-bold leading-tight">{statParts[i] || '-'}</p>
+          {STAT_STYLES.map((stat, i) => (
+            <div key={stat.label} className={stat.cls}>
+              <p className="text-xs font-semibold uppercase tracking-wider">{stat.label}</p>
+              <p className="text-xl font-bold leading-tight">{statParts[i] || '-'}</p>
             </div>
           ))}
         </div>
       ) : hasText(item.statRequirements) ? (
         <p className="mt-3 text-center text-sm">
-          <span className="text-[#d8bfa8]">Stats: </span>
+          <span className="text-ash">Stats: </span>
           {item.statRequirements}
         </p>
       ) : null}
 
       {hasDetails && (
-        <dl className="mt-3 space-y-1 border-t border-[#2a1a10]/60 pt-3 text-sm">
+        <dl className="mt-3 space-y-1.5 border-t border-parchment-300 pt-3 dark:border-ash/20">
           <CardDetail label="Gold" value={item.goldRequired} />
           <CardDetail label="Items" value={item.itemRequirements} />
           <CardDetail label="Prereqs" value={item.prerequisites} />
         </dl>
       )}
 
-      {hasText(item.description) && (
-        <p className="mt-3 border-t border-[#2a1a10]/60 pt-3 text-center text-sm italic leading-relaxed">
-          {highlightPure(item.description, PURE_ON_BROWN)}
+      {hasText(descriptionText) && (
+        <p className="mt-3 border-t border-parchment-300 pt-3 text-center text-base italic leading-relaxed text-parchment-700 dark:border-ash/20 dark:text-ivory/90">
+          {descriptionText}
         </p>
       )}
     </article>
