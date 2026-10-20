@@ -5,11 +5,13 @@ import { DataTable, compareLevels } from '@/components/tables/DataTable'
 import { PageHeader } from '@/components/ui/PageHeader'
 import classInfo from '@/data/metadata/classes.json'
 import { CLASS_FAMILIES, classLabel } from '@/lib/class-families'
+import { Sparkles, Swords } from 'lucide-react'
 
 interface SkillSpell {
   name: string
   class: string
   element?: string
+  image?: string
   levelRequirement: string
   statRequirements: string
   goldRequired: string
@@ -42,12 +44,10 @@ const typedClassInfo = classInfo as Record<string, {
 
 const skillColumnHelper = createColumnHelper<SkillSpell>()
 
-// Renders text with every "Pure only." (any capitalization) in pink.
-function highlightPure(text: string) {
-  // The capture group makes split() keep the matches, which land at odd indexes.
+function highlightPure(text: string, className = 'text-pink-500 dark:text-pink-400') {
   return text.split(/(pure only\.)/i).map((part, i) =>
     i % 2 === 1 ? (
-      <span key={i} className="text-pink-500 dark:text-pink-400">
+      <span key={i} className={className}>
         {part}
       </span>
     ) : (
@@ -212,6 +212,194 @@ function ElementTabs({
   )
 }
 
+const hasText = (v: unknown): v is string =>
+  typeof v === 'string' && v.trim() !== '' && v.trim() !== '-'
+
+// One sortable number per level: 1-99, then Master, Grandmaster, then Ab #.
+function levelSortKey(raw: unknown): number {
+  const s = String(raw ?? '').trim()
+  if (!s || s === '-') return Number.MAX_SAFE_INTEGER
+  const n = s.match(/\d+/)
+  const num = n ? parseFloat(n[0]) : 0
+  if (/^ab\s*\d+/i.test(s)) return 3000 + num
+  if (/^(grand\s*master|gm)$/i.test(s)) return 2000
+  if (/^master$/i.test(s)) return 1000
+  return n ? num : 4000
+}
+
+function cardImageSrc(image?: string): string | null {
+  if (!image?.trim()) return null
+  if (/^https?:\/\//i.test(image)) return image
+  return import.meta.env.BASE_URL + image.replace(/^\/+/, '')
+}
+
+const STAT_LABELS = ['STR', 'INT', 'WIS', 'CON', 'DEX']
+const PURE_ON_BROWN = 'font-bold text-pink-300'
+
+function ViewToggle({
+  value,
+  onChange,
+}: {
+  value: 'list' | 'cards'
+  onChange: (v: 'list' | 'cards') => void
+}) {
+  return (
+    <div className="mb-4 flex flex-wrap items-center gap-1.5">
+      <span className="mr-1 text-xs font-medium uppercase tracking-wider text-parchment-500 dark:text-parchment-600">
+        View:
+      </span>
+      {(['list', 'cards'] as const).map((mode) => (
+        <button
+          key={mode}
+          onClick={() => onChange(mode)}
+          className={`rounded-lg px-3 py-1.5 text-xs font-medium capitalize transition-colors ${
+            value === mode
+              ? 'border border-gilt bg-transparent text-gilt'
+              : 'border border-parchment-300 bg-parchment-100 text-parchment-600 hover:border-gilt hover:text-gilt dark:border-ash/20 dark:bg-obsidian dark:text-ash dark:hover:border-gilt'
+          }`}
+        >
+          {mode}
+        </button>
+      ))}
+    </div>
+  )
+}
+
+function CardDetail({ label, value }: { label: string; value?: string }) {
+  if (!hasText(value)) return null
+  return (
+    <div className="flex items-baseline justify-between gap-3">
+      <dt className="shrink-0 text-[11px] font-semibold uppercase tracking-wider text-[#d8bfa8]">{label}</dt>
+      <dd className="text-right">{highlightPure(value, PURE_ON_BROWN)}</dd>
+    </div>
+  )
+}
+
+function SkillSpellCard({ item, kind }: { item: SkillSpell; kind: 'skills' | 'spells' }) {
+  const img = cardImageSrc(item.image)
+  const Placeholder = kind === 'spells' ? Sparkles : Swords
+  const statParts = hasText(item.statRequirements)
+    ? item.statRequirements.split('/').map((s) => s.trim())
+    : []
+  const showStatGrid = statParts.length === 5
+  const element = normalizeElement(item.element)
+  const hasDetails =
+    hasText(item.goldRequired) || hasText(item.itemRequirements) || hasText(item.prerequisites)
+
+  return (
+    <article className="flex flex-col rounded-2xl border-2 border-[#2a1a10] bg-gradient-to-b from-[#6e4d38] to-[#4b3123] p-4 text-[#f3e6d8] shadow-md ring-1 ring-inset ring-[#8a6548]/50">
+      <div className="flex items-center gap-3">
+        <div className="flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-sm border-2 border-black bg-[#2a1a10]">
+          {img ? (
+            <img src={img} alt="" loading="lazy" className="h-full w-full object-cover" />
+          ) : (
+            <Placeholder size={28} className="text-[#c9a27a]/70" />
+          )}
+        </div>
+        <h3 className="min-w-0 break-words text-2xl font-semibold italic leading-tight text-[#f0d9c9]">
+          {highlightPure(item.name, PURE_ON_BROWN)}
+        </h3>
+      </div>
+
+      <div className="mt-3 space-y-0.5 text-center font-semibold italic">
+        {hasText(item.levelRequirement) && (
+          <p className="text-lg">Level {highlightPure(item.levelRequirement, PURE_ON_BROWN)}</p>
+        )}
+        {hasText(item.learningLocation) && (
+          <p className="text-base text-[#e4cdb8]">{highlightPure(item.learningLocation, PURE_ON_BROWN)}</p>
+        )}
+        {element && (
+          <p className="pt-1">
+            <span className="rounded-full border border-[#c9a27a]/60 bg-black/20 px-2 py-0.5 text-xs font-semibold uppercase tracking-wider not-italic">
+              {elementLabel(element)}
+            </span>
+          </p>
+        )}
+      </div>
+
+      {showStatGrid ? (
+        <div className="mt-3 grid grid-cols-5 gap-1 text-center">
+          {STAT_LABELS.map((label, i) => (
+            <div key={label}>
+              <p className="text-[11px] font-semibold uppercase tracking-wider text-[#d8bfa8]">{label}</p>
+              <p className="text-lg font-bold leading-tight">{statParts[i] || '-'}</p>
+            </div>
+          ))}
+        </div>
+      ) : hasText(item.statRequirements) ? (
+        <p className="mt-3 text-center text-sm">
+          <span className="text-[#d8bfa8]">Stats: </span>
+          {item.statRequirements}
+        </p>
+      ) : null}
+
+      {hasDetails && (
+        <dl className="mt-3 space-y-1 border-t border-[#2a1a10]/60 pt-3 text-sm">
+          <CardDetail label="Gold" value={item.goldRequired} />
+          <CardDetail label="Items" value={item.itemRequirements} />
+          <CardDetail label="Prereqs" value={item.prerequisites} />
+        </dl>
+      )}
+
+      {hasText(item.description) && (
+        <p className="mt-3 border-t border-[#2a1a10]/60 pt-3 text-center text-sm italic leading-relaxed">
+          {highlightPure(item.description, PURE_ON_BROWN)}
+        </p>
+      )}
+    </article>
+  )
+}
+
+function SkillSpellCards({
+  rows,
+  kind,
+  searchPlaceholder,
+}: {
+  rows: SkillSpell[]
+  kind: 'skills' | 'spells'
+  searchPlaceholder: string
+}) {
+  const [query, setQuery] = useState('')
+
+  const visible = useMemo(() => {
+    const sorted = [...rows].sort(
+      (a, b) =>
+        levelSortKey(a.levelRequirement) - levelSortKey(b.levelRequirement) ||
+        a.name.localeCompare(b.name, undefined, { numeric: true })
+    )
+    const q = query.trim().toLowerCase()
+    if (!q) return sorted
+    return sorted.filter((r) =>
+      [
+        r.name, r.element, r.levelRequirement, r.statRequirements, r.goldRequired,
+        r.itemRequirements, r.prerequisites, r.learningLocation, r.description,
+      ].some((v) => typeof v === 'string' && v.toLowerCase().includes(q))
+    )
+  }, [rows, query])
+
+  return (
+    <div>
+      <input
+        type="text"
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        placeholder={searchPlaceholder}
+        className="mb-4 w-full rounded-lg border border-parchment-300 bg-parchment-50 px-4 py-2 font-ui text-sm text-parchment-900 outline-none transition-colors placeholder:text-ash focus:border-gilt focus:ring-2 focus:ring-gilt/20 dark:border-ash/20 dark:bg-obsidian dark:text-ivory dark:placeholder:text-ash dark:focus:border-gilt sm:max-w-xs"
+      />
+      {visible.length === 0 ? (
+        <p className="py-10 text-center text-parchment-500 dark:text-parchment-600">No matches.</p>
+      ) : (
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+          {visible.map((item, i) => (
+            <SkillSpellCard key={`${item.name}-${i}`} item={item} kind={kind} />
+          ))}
+        </div>
+      )}
+      <p className="mt-4 font-ui text-sm text-ash">{visible.length} items</p>
+    </div>
+  )
+}
+
 export function ClassDetail() {
   const { className } = useParams<{ className: string }>()
   const info = className ? typedClassInfo[className] : null
@@ -226,6 +414,21 @@ export function ClassDetail() {
   const [dugons, setDugons] = useState<Dugon[]>(className ? dugonCache.get(className) ?? [] : [])
   const [activeSub, setActiveSub] = useState('')
   const [activeElement, setActiveElement] = useState('all')
+  const [viewMode, setViewMode] = useState<'list' | 'cards'>(() => {
+    try {
+      return localStorage.getItem('classViewMode') === 'cards' ? 'cards' : 'list'
+    } catch {
+      return 'list'
+    }
+  })
+  const changeView = (v: 'list' | 'cards') => {
+    setViewMode(v)
+    try {
+      localStorage.setItem('classViewMode', v)
+    } catch {
+      /* ignore */
+    }
+  }
 
   useEffect(() => {
     setActiveSub('')
@@ -301,15 +504,12 @@ export function ClassDetail() {
   const currentSub = family.includes(activeSub) ? activeSub : (family[0] ?? '')
   const currentShard = familyData.find((f) => f.slug === currentSub)?.shard ?? EMPTY_SHARD
 
-      const renderSkillSpellPanel = (kind: 'skills' | 'spells') => {
+  const renderSkillSpellPanel = (kind: 'skills' | 'spells') => {
     const rows = currentShard[kind]
 
-    // "Attunement" is Elementalist-only wording; every other class that
-    // tags entries with an element just sees "Element".
     const isElementalist = currentSub === 'elementalist'
     const groupWord = isElementalist ? 'Attunement' : 'Element'
 
-    // Elements tagged on this class's entries, in a stable order.
     const elementsPresent = Array.from(
       new Set(rows.map((r) => normalizeElement(r.element)).filter(Boolean))
     ).sort((a, b) => {
@@ -324,6 +524,26 @@ export function ClassDetail() {
       activeEl === 'all' ? rows : rows.filter((r) => normalizeElement(r.element) === activeEl)
     const anyRows = activeEl === 'all' ? [] : rows.filter((r) => !normalizeElement(r.element))
 
+    const searchPlaceholder = `Search ${classLabel(currentSub)} ${kind}...`
+
+    const renderEntries = (data: SkillSpell[], id: string, withElementColumn: boolean) =>
+      viewMode === 'cards' ? (
+        <SkillSpellCards
+          key={`cards-${id}`}
+          rows={data}
+          kind={kind}
+          searchPlaceholder={searchPlaceholder}
+        />
+      ) : (
+        <DataTable
+          key={`list-${id}`}
+          data={data}
+          columns={withElementColumn ? skillColumnsWithElement : skillColumns}
+          searchPlaceholder={searchPlaceholder}
+          initialSorting={[{ id: 'levelRequirement', desc: false }]}
+        />
+      )
+
     return (
       <section>
         <SubTabs
@@ -331,6 +551,8 @@ export function ClassDetail() {
           active={currentSub}
           onChange={setActiveSub}
         />
+
+        <ViewToggle value={viewMode} onChange={changeView} />
 
         {hasElements && (
           <ElementTabs
@@ -359,13 +581,11 @@ export function ClassDetail() {
                 {isElementalist ? `${elementLabel(activeEl)} Attunement` : elementLabel(activeEl)}
               </h3>
             )}
-            <DataTable
-              key={`${kind}-${currentSub}-${activeEl}`}
-              data={elementRows}
-              columns={hasElements && activeEl === 'all' ? skillColumnsWithElement : skillColumns}
-              searchPlaceholder={`Search ${classLabel(currentSub)} ${kind}...`}
-              initialSorting={[{ id: 'levelRequirement', desc: false }]}
-            />
+            {renderEntries(
+              elementRows,
+              `${kind}-${currentSub}-${activeEl}`,
+              hasElements && activeEl === 'all'
+            )}
 
             {anyRows.length > 0 && (
               <div className="mt-8">
@@ -377,13 +597,7 @@ export function ClassDetail() {
                     ? `These ${kind} don't depend on which element you're attuned to.`
                     : `These ${kind} aren't tied to an element.`}
                 </p>
-                <DataTable
-                  key={`${kind}-${currentSub}-any`}
-                  data={anyRows}
-                  columns={skillColumns}
-                  searchPlaceholder={`Search ${classLabel(currentSub)} ${kind}...`}
-                  initialSorting={[{ id: 'levelRequirement', desc: false }]}
-                />
+                {renderEntries(anyRows, `${kind}-${currentSub}-any`, false)}
               </div>
             )}
           </>

@@ -464,6 +464,8 @@ collections:
     extension: yaml
     format: yaml
     slug: "{{class}}-{{name}}"
+    media_folder: /public/images/abilities
+    public_folder: /images/abilities
     fields:
       - { name: name, label: Name, widget: string }
       - { name: class, label: Class, widget: string }
@@ -475,6 +477,7 @@ collections:
       - { name: prerequisites, label: Prerequisites, widget: string }
       - { name: learningLocation, label: Learning Location, widget: string }
       - { name: description, label: Description, widget: text }
+      - { name: image, label: Image, widget: image, required: false, hint: "Optional. Upload a square PNG; it shows on the card view." }
 
   - name: spells
     label: Spells
@@ -484,6 +487,8 @@ collections:
     extension: yaml
     format: yaml
     slug: "{{class}}-{{name}}"
+    media_folder: /public/images/abilities
+    public_folder: /images/abilities
     fields:
       - { name: name, label: Name, widget: string }
       - { name: class, label: Class, widget: string }
@@ -495,3 +500,4 @@ collections:
       - { name: prerequisites, label: Prerequisites, widget: string }
       - { name: learningLocation, label: Learning Location, widget: string }
       - { name: description, label: Description, widget: text }
+      - { name: image, label: Image, widget: image, required: false, hint: "Optional. Upload a square PNG; it shows on the card view." }
