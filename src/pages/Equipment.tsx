@@ -124,14 +124,29 @@ const GENDER_BADGE: Record<string, { symbol: string; cls: string; title: string 
   unisex: { symbol: '⚥', cls: 'text-purple-500 dark:text-purple-400', title: 'Unisex' },
 }
 
-// Attribute colors follow the UNORA logo, same as the skill/spell cards.
-const ATTRIBUTE_STYLES = [
-  { key: 'str', label: 'STR', cls: 'text-ignis' },
-  { key: 'int', label: 'INT', cls: 'text-tide' },
-  { key: 'wis', label: 'WIS', cls: 'text-verdant' },
-  { key: 'con', label: 'CON', cls: 'text-amber-700 dark:text-ivory' },
-  { key: 'dex', label: 'DEX', cls: 'text-astral' },
-]
+// One color per stat. Change a color here and it updates everywhere on the cards.
+// Attributes (STR..DEX) follow the UNORA logo, same as the skill/spell cards.
+const STAT_COLORS: Record<string, string> = {
+  hp: 'text-red-600 dark:text-red-400',
+  mp: 'text-blue-600 dark:text-blue-400',
+  ac: 'text-zinc-600 dark:text-zinc-400',
+  mr: 'text-parchment-900 dark:text-white',
+  str: 'text-ignis',
+  int: 'text-tide',
+  wis: 'text-verdant',
+  con: 'text-amber-700 dark:text-ivory',
+  dex: 'text-astral',
+  dmg: 'text-orange-600 dark:text-orange-400',
+  hit: 'text-orange-600 dark:text-orange-400',
+  as: 'text-cyan-600 dark:text-cyan-400',
+  cdr: 'text-cyan-600 dark:text-cyan-400',
+  skd: 'text-yellow-600 dark:text-yellow-400',
+  skdp: 'text-yellow-600 dark:text-yellow-400',
+  spd: 'text-fuchsia-600 dark:text-fuchsia-400',
+  spdp: 'text-fuchsia-600 dark:text-fuchsia-400',
+  heal: 'text-green-600 dark:text-green-400',
+  healp: 'text-green-600 dark:text-green-400',
+}
 
 // Every stat on a card can be clicked to sort by it. Items missing that stat go last.
 const SORT_GETTERS: Record<string, (r: EquipmentItem) => number | null | undefined> = {
@@ -378,52 +393,76 @@ function categoryIcon(category: string): LucideIcon {
   return Shield
 }
 
-function StatRow({
-  entries,
+interface StatEntry {
+  id: string
+  label: string
+  value: number | null | undefined
+  cls: string
+}
+
+interface StatGroup {
+  id: string
+  perRow: 2 | 3 | 4 | 5
+  entries: StatEntry[]
+}
+
+const TILE_BASIS: Record<number, string> = {
+  2: 'basis-1/2',
+  3: 'basis-1/3',
+  4: 'basis-1/4',
+  5: 'basis-1/5',
+}
+
+function StatPanel({
+  groups,
   sortKey,
   sortDir,
   onSort,
 }: {
-  entries: { id: string; label: string; value: number | null | undefined; cls?: string }[]
+  groups: StatGroup[]
   sortKey: string
   sortDir: 'asc' | 'desc'
   onSort: (key: string) => void
 }) {
-  const present = entries.filter((e) => e.value !== null && e.value !== undefined)
-  if (present.length === 0) return null
+  const visible = groups
+    .map((g) => ({
+      ...g,
+      entries: g.entries.filter((e) => e.value !== null && e.value !== undefined),
+    }))
+    .filter((g) => g.entries.length > 0)
+  if (visible.length === 0) return null
+
   return (
-    <div
-      className="mt-2 grid gap-1 text-center"
-      style={{ gridTemplateColumns: `repeat(${present.length}, minmax(0, 1fr))` }}
-    >
-      {present.map((e) => {
-        const active = sortKey === e.id
-        return (
-          <button
-            key={e.id}
-            type="button"
-            onClick={() => onSort(e.id)}
-            title={`Sort by ${e.label}`}
-            className={`rounded-md px-0.5 py-0.5 transition-colors hover:bg-gilt/10 ${
-              active ? 'bg-gilt/15 ring-1 ring-gilt/60' : ''
-            } ${e.cls ?? ''}`}
-          >
-            <span
-              className={`block text-xs font-semibold uppercase tracking-wider ${e.cls ? '' : 'text-ash'}`}
-            >
-              {e.label}
-              {active && <span className="ml-0.5">{sortDir === 'asc' ? '↑' : '↓'}</span>}
-            </span>
-            <span
-              className={`block text-xl font-bold leading-tight ${
-                e.cls ? '' : 'text-parchment-800 dark:text-ivory'
-              }`}
-            >
-              {e.value}
-            </span>
-          </button>
-        )
-      })}
+    <div className="mt-3 rounded-xl border border-parchment-300/70 bg-parchment-50/60 px-1 dark:border-ash/15 dark:bg-obsidian/40">
+      {visible.map((g, gi) => (
+        <div
+          key={g.id}
+          className={`flex flex-wrap justify-center py-1.5 ${
+            gi > 0 ? 'border-t border-parchment-300/60 dark:border-ash/10' : ''
+          }`}
+        >
+          {g.entries.map((e) => {
+            const active = sortKey === e.id
+            return (
+              <button
+                key={e.id}
+                type="button"
+                onClick={() => onSort(e.id)}
+                title={`Sort by ${e.label}`}
+                className={`${TILE_BASIS[g.perRow]} rounded-md px-0.5 py-0.5 text-center transition-colors hover:bg-gilt/10 ${
+                  active ? 'bg-gilt/15 ring-1 ring-gilt/60' : ''
+                } ${e.cls}`}
+              >
+                <span className="block text-[11px] font-semibold uppercase tracking-wider opacity-80">
+                  {e.label}
+                  {active && <span className="ml-0.5">{sortDir === 'asc' ? '↑' : '↓'}</span>}
+                </span>
+                <span className="block text-lg font-bold leading-tight">{e.value}</span>
+              </button>
+            )
+          })}
+        </div>
+      ))}
     </div>
   )
 }
@@ -465,37 +504,57 @@ function EquipmentCard({
   const location = hasText(item.location) ? item.location.trim() : null
   const hasFooter = !!location || !!seller
   const linkCls = 'underline decoration-gilt/60 hover:decoration-gilt'
-  const sortProps = { sortKey, sortDir, onSort }
 
   const s = item.stats
   const p = item.percentages
-  const vitals = [
-    { id: 'hp', label: 'HP', value: s.hp, cls: 'text-red-600 dark:text-red-400' },
-    { id: 'mp', label: 'MP', value: s.mp, cls: 'text-blue-600 dark:text-blue-400' },
-    { id: 'ac', label: 'AC', value: s.ac, cls: 'text-zinc-600 dark:text-zinc-400' },
-    { id: 'mr', label: 'MR', value: s.mr, cls: 'text-parchment-900 dark:text-white' },
-  ]
-  const attributes = ATTRIBUTE_STYLES.map((a) => ({
-    id: a.key,
-    label: a.label,
-    value: s[a.key],
-    cls: a.cls,
-  }))
-  const offense = [
-    { id: 'dmg', label: 'DMG', value: s.dmg },
-    { id: 'hit', label: 'HIT', value: s.hit },
-    { id: 'as', label: 'AS%', value: p.attackSpeed },
-    { id: 'cdr', label: 'CDR%', value: p.cooldownReduction },
-  ]
-  const skillSpell = [
-    { id: 'skd', label: 'SKD', value: p.skillDamage },
-    { id: 'skdp', label: 'SKD%', value: p.skillDamagePercent },
-    { id: 'spd', label: 'SPD', value: p.spellDamage },
-    { id: 'spdp', label: 'SPD%', value: p.spellDamagePercent },
-  ]
-  const healing = [
-    { id: 'heal', label: 'HEAL', value: p.flatHealBonus },
-    { id: 'healp', label: 'HEAL%', value: p.healBonusPercent },
+  const stat = (id: string, label: string, value: number | null | undefined): StatEntry => ({
+    id,
+    label,
+    value,
+    cls: STAT_COLORS[id],
+  })
+  const statGroups: StatGroup[] = [
+    {
+      id: 'vitals',
+      perRow: 4,
+      entries: [stat('hp', 'HP', s.hp), stat('mp', 'MP', s.mp), stat('ac', 'AC', s.ac), stat('mr', 'MR', s.mr)],
+    },
+    {
+      id: 'attributes',
+      perRow: 5,
+      entries: [
+        stat('str', 'STR', s.str),
+        stat('int', 'INT', s.int),
+        stat('wis', 'WIS', s.wis),
+        stat('con', 'CON', s.con),
+        stat('dex', 'DEX', s.dex),
+      ],
+    },
+    {
+      id: 'offense',
+      perRow: 4,
+      entries: [
+        stat('dmg', 'DMG', s.dmg),
+        stat('hit', 'HIT', s.hit),
+        stat('as', 'AS%', p.attackSpeed),
+        stat('cdr', 'CDR%', p.cooldownReduction),
+      ],
+    },
+    {
+      id: 'skillspell',
+      perRow: 4,
+      entries: [
+        stat('skd', 'SKD', p.skillDamage),
+        stat('skdp', 'SKD%', p.skillDamagePercent),
+        stat('spd', 'SPD', p.spellDamage),
+        stat('spdp', 'SPD%', p.spellDamagePercent),
+      ],
+    },
+    {
+      id: 'healing',
+      perRow: 4,
+      entries: [stat('heal', 'HEAL', p.flatHealBonus), stat('healp', 'HEAL%', p.healBonusPercent)],
+    },
   ]
 
   return (
@@ -561,11 +620,7 @@ function EquipmentCard({
         )}
       </div>
 
-      <StatRow entries={vitals} {...sortProps} />
-      <StatRow entries={attributes} {...sortProps} />
-      <StatRow entries={offense} {...sortProps} />
-      <StatRow entries={skillSpell} {...sortProps} />
-      <StatRow entries={healing} {...sortProps} />
+      <StatPanel groups={statGroups} sortKey={sortKey} sortDir={sortDir} onSort={onSort} />
 
       {(hasFooter || upgradeCount > 0) && (
         <div className="mt-auto pt-3">
