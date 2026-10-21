@@ -1,0 +1,11 @@
+name: Grand Arcane Circle
+class: Arcanist
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Arcanist
+description: Creates a circle of power where you stand for 20s, 9 tiles across at it's widest.  You and friendlies standing within 3 tiles of it gain 5% final spell damage each second, up to 35%.  The circle stays even if you die or leave.  Pure Only.
+image: /images/abilities/Grand Arcane Circle.png
