@@ -1,0 +1,11 @@
+name: Focal Ruin 1
+class: Arcanist
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Arcanist
+description: Place a point of ruin, causing a wave to go out 3 tiles from that location instantly, then repeats every 1.5s.  Each wave drains 15% of your maximum mana.  Moving, attacking or casting anything else will break the spell.  Will also end if you can't afford the next wave.
+image: /images/abilities/Focal Ruin 1.png
