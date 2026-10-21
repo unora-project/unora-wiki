@@ -1,0 +1,11 @@
+name: Bloodwave 1
+class: Berserker
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Berserker
+description: Cascading wave torn out of your own blood striking everything in a cone three tiles ahead.  Costs 8% of your maximum health.
+image: /images/abilities/Bloodwave 1.png
