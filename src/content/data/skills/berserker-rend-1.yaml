@@ -1,0 +1,11 @@
+name: Rend 1
+class: Berserker
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Berserker
+description: Strikes every enemy in a line up to 4 tiles away.  Costs 5% of your maximum health.
+image: /images/abilities/Rend 1.png
