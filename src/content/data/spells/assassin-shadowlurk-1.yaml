@@ -1,0 +1,11 @@
+name: Shadowlurk 1
+class: Assassin
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Assassin
+description: Shrouds you in darkness for 5s.  Clears all threat and negative effects.
+image: /images/abilities/Shadowlurk 1.png
