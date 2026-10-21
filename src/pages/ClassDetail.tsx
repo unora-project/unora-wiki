@@ -1,11 +1,12 @@
 import { Link, useParams } from 'react-router'
-import { useState, useMemo, useEffect } from 'react'
+import { useState, useMemo, useEffect, useRef } from 'react'
+import { createPortal } from 'react-dom'
 import { createColumnHelper } from '@tanstack/react-table'
 import { DataTable, compareLevels } from '@/components/tables/DataTable'
 import { PageHeader } from '@/components/ui/PageHeader'
 import classInfo from '@/data/metadata/classes.json'
 import { CLASS_FAMILIES, classLabel } from '@/lib/class-families'
-import { Sparkles, Swords } from 'lucide-react'
+import { ChevronDown, ClipboardList, Eye, EyeOff, Sparkles, Swords, X } from 'lucide-react'
 
 interface SkillSpell {
   name: string
@@ -268,12 +269,29 @@ function splitPure(text: string): { isPure: boolean; rest: string } {
   return { isPure: true, rest }
 }
 
+const pillCls = (active: boolean) =>
+  `rounded-lg px-3 py-1.5 text-xs font-medium transition-colors ${
+    active
+      ? 'border border-gilt bg-transparent text-gilt'
+      : 'border border-parchment-300 bg-parchment-100 text-parchment-600 hover:border-gilt hover:text-gilt dark:border-ash/20 dark:bg-obsidian dark:text-ash dark:hover:border-gilt'
+  }`
+
 function ViewToggle({
   value,
   onChange,
+  hiddenCount,
+  onResetHidden,
+  planOpen,
+  planCount,
+  onTogglePlan,
 }: {
   value: 'list' | 'cards'
   onChange: (v: 'list' | 'cards') => void
+  hiddenCount: number
+  onResetHidden: () => void
+  planOpen: boolean
+  planCount: number
+  onTogglePlan: () => void
 }) {
   return (
     <div className="mb-4 flex flex-wrap items-center gap-1.5">
@@ -284,18 +302,58 @@ function ViewToggle({
         <button
           key={mode}
           onClick={() => onChange(mode)}
-          className={`rounded-lg px-3 py-1.5 text-xs font-medium capitalize transition-colors ${
-            value === mode
-              ? 'border border-gilt bg-transparent text-gilt'
-              : 'border border-parchment-300 bg-parchment-100 text-parchment-600 hover:border-gilt hover:text-gilt dark:border-ash/20 dark:bg-obsidian dark:text-ash dark:hover:border-gilt'
-          }`}
+          className={`${pillCls(value === mode)} capitalize`}
         >
           {mode}
         </button>
       ))}
+      <button
+        type="button"
+        onClick={onResetHidden}
+        disabled={hiddenCount === 0}
+        title="Show every hidden card for this class again"
+        className={`${pillCls(false)} ml-2 disabled:cursor-default disabled:opacity-40 disabled:hover:border-parchment-300 disabled:hover:text-parchment-600`}
+      >
+        Reset Hidden{hiddenCount > 0 ? ` (${hiddenCount})` : ''}
+      </button>
+      {value === 'cards' && (
+        <button
+          type="button"
+          onClick={onTogglePlan}
+          title="Pick skills and spells to total up the gold and items you need"
+          className={pillCls(planOpen)}
+        >
+          Build Plan{planCount > 0 ? ` (${planCount})` : ''}
+        </button>
+      )}
     </div>
   )
 }
+
+// Same grid everywhere cards are shown. Cards never get narrower than 320px (max 5 per row).
+const CARD_GRID = 'grid gap-4 grid-cols-[repeat(auto-fill,minmax(min(100%,max(320px,calc((100%_-_4rem)/5))),1fr))]'
+
+// Remembers a value in localStorage so it survives page reloads.
+function usePersistentState<T>(key: string, initial: T) {
+  const [value, setValue] = useState<T>(() => {
+    try {
+      const raw = localStorage.getItem(key)
+      return raw ? (JSON.parse(raw) as T) : initial
+    } catch {
+      return initial
+    }
+  })
+  useEffect(() => {
+    try {
+      localStorage.setItem(key, JSON.stringify(value))
+    } catch {
+      /* ignore */
+    }
+  }, [key, value])
+  return [value, setValue] as const
+}
+
+const itemKey = (kind: 'skills' | 'spells', name: string) => `${kind}|${name}`
 
 // "vertical": one item per line. "horizontal": comma-separated, wrapping.
 const ITEMS_LAYOUT: 'vertical' | 'horizontal' = 'vertical'
@@ -328,7 +386,23 @@ function CardDetail({ label, value, list }: { label: string; value?: string; lis
 }
 
 
-function SkillSpellCard({ item, kind }: { item: SkillSpell; kind: 'skills' | 'spells' }) {
+function SkillSpellCard({
+  item,
+  kind,
+  onHide,
+  onShow,
+  planMode = false,
+  selected = false,
+  onToggleSelect,
+}: {
+  item: SkillSpell
+  kind: 'skills' | 'spells'
+  onHide?: () => void
+  onShow?: () => void
+  planMode?: boolean
+  selected?: boolean
+  onToggleSelect?: () => void
+}) {
   const img = cardImageSrc(item.image)
   const Placeholder = kind === 'spells' ? Sparkles : Swords
   const rawLevel = hasText(item.levelRequirement) ? item.levelRequirement.trim() : null
@@ -347,7 +421,69 @@ function SkillSpellCard({ item, kind }: { item: SkillSpell; kind: 'skills' | 'sp
   const isPure = descIsPure || levelIsPure
 
   return (
-    <article className="flex flex-col rounded-2xl border border-parchment-300 bg-parchment-100 p-4 text-parchment-800 shadow-sm transition-colors hover:border-gilt/50 dark:border-ash/10 dark:bg-ink dark:text-ivory/90">
+    <article
+      onClick={
+        planMode && onToggleSelect
+          ? (e) => {
+              if ((e.target as HTMLElement).closest('a, [data-no-select]')) return
+              onToggleSelect()
+            }
+          : undefined
+      }
+      className={`flex flex-col rounded-2xl border bg-parchment-100 p-4 text-parchment-800 shadow-sm transition-colors dark:bg-ink dark:text-ivory/90 ${
+        planMode ? 'cursor-pointer select-none' : ''
+      } ${
+        selected
+          ? 'border-gilt ring-2 ring-gilt/60'
+          : 'border-parchment-300 hover:border-gilt/50 dark:border-ash/10'
+      } ${onShow ? 'opacity-80' : ''}`}
+    >
+      {(onHide || onShow || planMode) && (
+        <div className="mb-2 flex items-center justify-between gap-2 text-xs font-semibold uppercase tracking-wider text-ash">
+          {planMode && onToggleSelect ? (
+            <span className="pointer-events-none flex items-center gap-2">
+              <input
+                type="checkbox"
+                checked={selected}
+                onChange={() => {}}
+                className="h-4 w-4 rounded border-ash/40 accent-gilt"
+              />
+              {selected ? 'In plan' : 'Add to plan'}
+            </span>
+          ) : (
+            <span />
+          )}
+          {onHide && (
+            <button
+              type="button"
+              data-no-select
+              onClick={(e) => {
+                e.stopPropagation()
+                onHide()
+              }}
+              title="Hide this card"
+              className="flex items-center gap-1 rounded px-1.5 py-0.5 normal-case tracking-normal transition-colors hover:text-gilt"
+            >
+              <EyeOff size={14} /> Hide
+            </button>
+          )}
+          {onShow && (
+            <button
+              type="button"
+              data-no-select
+              onClick={(e) => {
+                e.stopPropagation()
+                onShow()
+              }}
+              title="Show this card again"
+              className="flex items-center gap-1 rounded border border-gilt/40 px-2 py-0.5 normal-case tracking-normal text-gilt transition-colors hover:bg-gilt/10"
+            >
+              <Eye size={14} /> Show
+            </button>
+          )}
+        </div>
+      )}
+
       <div className="flex items-start justify-between gap-2">
                 <div className="flex h-[70px] w-[70px] shrink-0 items-center justify-center overflow-hidden rounded-sm border border-gilt/40 bg-parchment-200 dark:bg-obsidian">
           {img ? (
@@ -425,14 +561,255 @@ function SkillSpellCard({ item, kind }: { item: SkillSpell; kind: 'skills' | 'sp
   )
 }
 
+// ---- Hidden cards ----------------------------------------------------------
+
+function HiddenSection({
+  entries,
+  onShow,
+}: {
+  entries: { kind: 'skills' | 'spells'; item: SkillSpell }[]
+  onShow: (kind: 'skills' | 'spells', item: SkillSpell) => void
+}) {
+  const [open, setOpen] = useState(false)
+  if (entries.length === 0) return null
+  return (
+    <section className="mt-10 border-t border-parchment-300 pt-4 dark:border-ash/20">
+      <button
+        type="button"
+        onClick={() => setOpen((o) => !o)}
+        aria-expanded={open}
+        className="flex items-center gap-2 font-heading text-lg font-semibold text-gilt"
+      >
+        <ChevronDown size={18} className={`transition-transform ${open ? '' : '-rotate-90'}`} />
+        Hidden ({entries.length})
+      </button>
+      {open && (
+        <div className={`mt-4 ${CARD_GRID}`}>
+          {entries.map(({ kind, item }, i) => (
+            <SkillSpellCard
+              key={`${kind}-${item.name}-${i}`}
+              item={item}
+              kind={kind}
+              onShow={() => onShow(kind, item)}
+            />
+          ))}
+        </div>
+      )}
+    </section>
+  )
+}
+
+// ---- Build Plan ------------------------------------------------------------
+
+interface PlanEntry {
+  key: string
+  kind: 'skills' | 'spells'
+  item: SkillSpell
+}
+
+function parseGold(v?: string): number {
+  if (!hasText(v)) return 0
+  const n = parseInt(v.replace(/[^0-9]/g, ''), 10)
+  return Number.isFinite(n) ? n : 0
+}
+
+// "Wolf Teeth (2), Raw Bronze (5), Fur" -> [{Wolf Teeth, 2}, {Raw Bronze, 5}, {Fur, 1}]
+function parseItems(v?: string): { name: string; qty: number }[] {
+  if (!hasText(v)) return []
+  return splitList(v)
+    .map((entry) => {
+      const m = entry.match(/^(.*?)\s*\((\d+)\)\s*$/)
+      return m ? { name: m[1].trim(), qty: parseInt(m[2], 10) } : { name: entry.trim(), qty: 1 }
+    })
+    .filter((e) => e.name)
+}
+
+function BuildPlanPanel({
+  title,
+  entries,
+  onRemove,
+  onClear,
+  onClose,
+}: {
+  title: string
+  entries: PlanEntry[]
+  onRemove: (key: string) => void
+  onClear: () => void
+  onClose: () => void
+}) {
+  const [pos, setPos] = useState<{ top: number; left: number } | null>(null)
+  const [size, setSize] = useState<{ width: number; height: number } | null>(null)
+  const dragRef = useRef<{ startX: number; startY: number; origTop: number; origLeft: number } | null>(null)
+  const panelRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (pos !== null) return
+    const width = 380
+    setPos({ top: 96, left: Math.max(16, window.innerWidth - width - 24) })
+  }, [pos])
+
+  const handlePointerDown = (e: React.PointerEvent) => {
+    if (!pos) return
+    dragRef.current = { startX: e.clientX, startY: e.clientY, origTop: pos.top, origLeft: pos.left }
+    ;(e.target as HTMLElement).setPointerCapture(e.pointerId)
+  }
+
+  const handlePointerMove = (e: React.PointerEvent) => {
+    if (!dragRef.current) return
+    const { startX, startY, origTop, origLeft } = dragRef.current
+    const panelWidth = panelRef.current?.offsetWidth ?? 380
+    const panelHeight = panelRef.current?.offsetHeight ?? 460
+    const newLeft = Math.max(8, Math.min(origLeft + (e.clientX - startX), window.innerWidth - panelWidth - 8))
+    const newTop = Math.max(8, Math.min(origTop + (e.clientY - startY), window.innerHeight - panelHeight - 8))
+    setPos({ top: newTop, left: newLeft })
+  }
+
+  const handlePointerUp = () => {
+    dragRef.current = null
+  }
+
+  const sorted = useMemo(
+    () =>
+      [...entries].sort(
+        (a, b) =>
+          levelSortKey(a.item.levelRequirement) - levelSortKey(b.item.levelRequirement) ||
+          a.item.name.localeCompare(b.item.name, undefined, { numeric: true })
+      ),
+    [entries]
+  )
+
+  const totals = useMemo(() => {
+    let gold = 0
+    const items = new Map<string, { name: string; qty: number }>()
+    for (const { item } of entries) {
+      gold += parseGold(item.goldRequired)
+      for (const it of parseItems(item.itemRequirements)) {
+        const k = it.name.toLowerCase()
+        const cur = items.get(k)
+        if (cur) cur.qty += it.qty
+        else items.set(k, { ...it })
+      }
+    }
+    return {
+      gold,
+      items: [...items.values()].sort((a, b) => a.name.localeCompare(b.name)),
+    }
+  }, [entries])
+
+  if (!pos) return null
+
+  return createPortal(
+    <div
+      ref={panelRef}
+      className="fixed z-[100] flex min-h-[260px] min-w-[300px] max-h-[calc(100vh-32px)] max-w-[calc(100vw-32px)] resize flex-col overflow-hidden rounded-lg border border-parchment-300 bg-parchment-50 shadow-[0_8px_30px_rgba(0,0,0,0.3)] dark:border-ash/20 dark:bg-obsidian"
+      style={{ top: pos.top, left: pos.left, width: size?.width ?? 380, height: size?.height ?? 460 }}
+      onMouseUp={() => {
+        if (panelRef.current) {
+          setSize({ width: panelRef.current.offsetWidth, height: panelRef.current.offsetHeight })
+        }
+      }}
+    >
+      <div
+        onPointerDown={handlePointerDown}
+        onPointerMove={handlePointerMove}
+        onPointerUp={handlePointerUp}
+        className="flex shrink-0 cursor-move items-center justify-between gap-2 rounded-t-lg border-b border-parchment-300 bg-parchment-100 px-3 py-2 dark:border-ash/20 dark:bg-ink"
+      >
+        <h3 className="flex select-none items-center gap-1.5 font-heading text-sm font-semibold text-gilt">
+          <ClipboardList size={15} /> Build Plan: {title}
+        </h3>
+        <div className="flex items-center gap-2">
+          <button
+            onClick={onClear}
+            disabled={entries.length === 0}
+            className="rounded border border-parchment-300 px-2 py-1 text-xs font-medium text-parchment-600 hover:border-gilt hover:text-gilt disabled:opacity-40 dark:border-ash/20 dark:text-ash"
+          >
+            Clear
+          </button>
+          <button
+            onClick={onClose}
+            className="rounded border border-parchment-300 px-2 py-1 text-xs font-medium text-parchment-600 hover:border-gilt hover:text-gilt dark:border-ash/20 dark:text-ash"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+
+      <div className="min-h-0 flex-1 space-y-3 overflow-y-auto p-3 text-sm">
+        {entries.length === 0 ? (
+          <p className="text-parchment-500 dark:text-parchment-600">
+            Click skill or spell cards to add them. Your picks are saved for this class.
+          </p>
+        ) : (
+          <>
+            <div className="rounded-lg border border-parchment-300 bg-parchment-100 p-3 dark:border-ash/10 dark:bg-ink">
+              <p className="text-[10px] font-semibold uppercase tracking-wider text-parchment-500 dark:text-parchment-600">
+                Total needed
+              </p>
+              <div className="mt-1 flex items-baseline justify-between">
+                <span className="text-xs font-semibold uppercase tracking-wider text-ash">Gold</span>
+                <span className="text-lg font-bold text-gilt">{totals.gold.toLocaleString('en-US')}</span>
+              </div>
+              {totals.items.length > 0 && (
+                <ul className="mt-2 space-y-0.5 border-t border-parchment-300 pt-2 dark:border-ash/20">
+                  {totals.items.map((it) => (
+                    <li key={it.name} className="flex justify-between gap-3">
+                      <span className="text-parchment-800 dark:text-ivory">{it.name}</span>
+                      <span className="font-semibold text-gilt">{it.qty}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+
+            <div>
+              <p className="mb-1 text-[10px] font-semibold uppercase tracking-wider text-parchment-500 dark:text-parchment-600">
+                Selected ({entries.length})
+              </p>
+              <ul className="divide-y divide-parchment-300 rounded-lg border border-parchment-300 dark:divide-ash/10 dark:border-ash/20">
+                {sorted.map((e) => {
+                  const g = parseGold(e.item.goldRequired)
+                  return (
+                    <li key={e.key} className="flex items-center gap-2 px-3 py-1.5">
+                      <span className="min-w-0 flex-1 truncate text-parchment-800 dark:text-ivory">{e.item.name}</span>
+                      {g > 0 && <span className="shrink-0 text-xs text-ash">{g.toLocaleString('en-US')} g</span>}
+                      <button
+                        type="button"
+                        onClick={() => onRemove(e.key)}
+                        title="Remove from plan"
+                        className="shrink-0 rounded p-0.5 text-ash hover:text-gilt"
+                      >
+                        <X size={14} />
+                      </button>
+                    </li>
+                  )
+                })}
+              </ul>
+            </div>
+          </>
+        )}
+      </div>
+    </div>,
+    document.body
+  )
+}
+
 function SkillSpellCards({
   rows,
   kind,
   searchPlaceholder,
+  planMode,
+  selectedKeys,
+  onToggleSelect,
+  onHide,
 }: {
   rows: SkillSpell[]
   kind: 'skills' | 'spells'
   searchPlaceholder: string
+  planMode: boolean
+  selectedKeys: Set<string>
+  onToggleSelect: (item: SkillSpell) => void
+  onHide: (item: SkillSpell) => void
 }) {
   const [query, setQuery] = useState('')
 
@@ -464,9 +841,17 @@ function SkillSpellCards({
       {visible.length === 0 ? (
         <p className="py-10 text-center text-parchment-500 dark:text-parchment-600">No matches.</p>
       ) : (
-        <div className="grid gap-4 grid-cols-[repeat(auto-fill,minmax(min(100%,max(320px,calc((100%_-_4rem)/5))),1fr))]">
+        <div className={CARD_GRID}>
           {visible.map((item, i) => (
-            <SkillSpellCard key={`${item.name}-${i}`} item={item} kind={kind} />
+            <SkillSpellCard
+              key={`${item.name}-${i}`}
+              item={item}
+              kind={kind}
+              planMode={planMode}
+              selected={selectedKeys.has(itemKey(kind, item.name))}
+              onToggleSelect={() => onToggleSelect(item)}
+              onHide={() => onHide(item)}
+            />
           ))}
         </div>
       )}
@@ -504,6 +889,11 @@ export function ClassDetail() {
       /* ignore */
     }
   }
+
+  // Per class (e.g. wizard, elementalist), remembered in the browser.
+  const [hiddenMap, setHiddenMap] = usePersistentState<Record<string, string[]>>('abilityHidden.v1', {})
+  const [planMap, setPlanMap] = usePersistentState<Record<string, string[]>>('abilityPlan.v1', {})
+  const [planOpenMap, setPlanOpenMap] = usePersistentState<Record<string, boolean>>('abilityPlanOpen.v1', {})
 
   useEffect(() => {
     setActiveSub('')
@@ -579,6 +969,42 @@ export function ClassDetail() {
   const currentSub = family.includes(activeSub) ? activeSub : (family[0] ?? '')
   const currentShard = familyData.find((f) => f.slug === currentSub)?.shard ?? EMPTY_SHARD
 
+  const hiddenKeys = new Set(hiddenMap[currentSub] ?? [])
+  const selectedKeys = new Set(planMap[currentSub] ?? [])
+  const planOpen = !!planOpenMap[currentSub]
+
+  const hideItem = (kind: 'skills' | 'spells', item: SkillSpell) =>
+    setHiddenMap((prev) => {
+      const key = itemKey(kind, item.name)
+      const cur = prev[currentSub] ?? []
+      return cur.includes(key) ? prev : { ...prev, [currentSub]: [...cur, key] }
+    })
+  const showItem = (kind: 'skills' | 'spells', item: SkillSpell) =>
+    setHiddenMap((prev) => ({
+      ...prev,
+      [currentSub]: (prev[currentSub] ?? []).filter((k) => k !== itemKey(kind, item.name)),
+    }))
+  const resetHidden = () => setHiddenMap((prev) => ({ ...prev, [currentSub]: [] }))
+
+  const toggleSelect = (kind: 'skills' | 'spells', item: SkillSpell) =>
+    setPlanMap((prev) => {
+      const key = itemKey(kind, item.name)
+      const cur = prev[currentSub] ?? []
+      return { ...prev, [currentSub]: cur.includes(key) ? cur.filter((k) => k !== key) : [...cur, key] }
+    })
+  const removeFromPlan = (key: string) =>
+    setPlanMap((prev) => ({ ...prev, [currentSub]: (prev[currentSub] ?? []).filter((k) => k !== key) }))
+  const clearPlan = () => setPlanMap((prev) => ({ ...prev, [currentSub]: [] }))
+  const setPlanOpen = (open: boolean) => setPlanOpenMap((prev) => ({ ...prev, [currentSub]: open }))
+
+  const planEntries: PlanEntry[] = (planMap[currentSub] ?? []).flatMap((key) => {
+    const [kind, ...rest] = key.split('|')
+    if (kind !== 'skills' && kind !== 'spells') return []
+    const name = rest.join('|')
+    const item = currentShard[kind].find((i) => i.name === name)
+    return item ? [{ key, kind, item }] : []
+  })
+
   const renderSkillSpellPanel = (kind: 'skills' | 'spells') => {
     const rows = currentShard[kind]
 
@@ -605,9 +1031,13 @@ export function ClassDetail() {
       viewMode === 'cards' ? (
         <SkillSpellCards
           key={`cards-${id}`}
-          rows={data}
+          rows={data.filter((r) => !hiddenKeys.has(itemKey(kind, r.name)))}
           kind={kind}
           searchPlaceholder={searchPlaceholder}
+          planMode={planOpen}
+          selectedKeys={selectedKeys}
+          onToggleSelect={(item) => toggleSelect(kind, item)}
+          onHide={(item) => hideItem(kind, item)}
         />
       ) : (
         <DataTable
@@ -627,7 +1057,15 @@ export function ClassDetail() {
           onChange={setActiveSub}
         />
 
-        <ViewToggle value={viewMode} onChange={changeView} />
+        <ViewToggle
+          value={viewMode}
+          onChange={changeView}
+          hiddenCount={hiddenKeys.size}
+          onResetHidden={resetHidden}
+          planOpen={planOpen}
+          planCount={planEntries.length}
+          onTogglePlan={() => setPlanOpen(!planOpen)}
+        />
 
         {hasElements && (
           <ElementTabs
@@ -674,6 +1112,15 @@ export function ClassDetail() {
                 </p>
                 {renderEntries(anyRows, `${kind}-${currentSub}-any`, false)}
               </div>
+            )}
+
+            {viewMode === 'cards' && (
+              <HiddenSection
+                entries={rows
+                  .filter((r) => hiddenKeys.has(itemKey(kind, r.name)))
+                  .map((item) => ({ kind, item }))}
+                onShow={showItem}
+              />
             )}
           </>
         )}
@@ -795,6 +1242,17 @@ export function ClassDetail() {
 
       {/* Spells Tab */}
       {activeTab === 'spells' && renderSkillSpellPanel('spells')}
+
+      {/* Build Plan window: follows the selected class across the Skills and Spells tabs */}
+      {(activeTab === 'skills' || activeTab === 'spells') && planOpen && (
+        <BuildPlanPanel
+          title={classLabel(currentSub)}
+          entries={planEntries}
+          onRemove={removeFromPlan}
+          onClear={clearPlan}
+          onClose={() => setPlanOpen(false)}
+        />
+      )}
 
       {/* Dugons Tab */}
       {activeTab === 'dugons' && dugons.length > 0 && (
