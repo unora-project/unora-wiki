@@ -1,0 +1,11 @@
+name: Wild Destruction 1
+class: Arcanist
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Arcanist
+description: Select a tile and a storm will spawn in a 4x4 block for 8s, striking one random tile in that black about 3 times a second.  The strikes cannot be resisted.  The damage is non-elemental, and scales with your mana.  Ends if you die or leave the map.
+image: /images/abilities/Wild Destruction 1.png
