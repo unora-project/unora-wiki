@@ -1,0 +1,11 @@
+name: Assassin Strike 1
+class: Assassin
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Assassin
+description: Strikes the enemy in front of you for massive damage, increased further if you used true hide.  30% chance to instantly kill a normal monster that is not wary of you.  Damage scales with your vitality and DEX.
+image: ''
