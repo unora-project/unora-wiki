@@ -1,0 +1,11 @@
+name: Shadow Slip 1
+class: Assassin
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Assassin
+description: Slips you in behind an enemy directly in front of you, leaving you facing their back.  Deals no damage and does not break hide.
+image: /images/abilities/Shadow Slip 1.png
