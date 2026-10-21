@@ -1,2 +1,7 @@
 Name,LOC,LVL,WGT,HP,MP,AC,MR,STR,INT,WIS,CON,DEX,DMG,HIT,AS%,SKD,SKD%,SPD,SPD%,FHB,HB%,CDR%,Value,Set
 Deadeye Wooden Bow,-,Ab 1,10,500,500,1,-,1,-1,-1,1,1,-,-,12,225,38,-,-,-,-,-,-,-
+Great Aerium Deadeye Wooden Bow,Weaponsmithing,-,10,950,850,-,-,2,-,-1,-,1,7,5,20,270,40,203,32,225,32,-,-,-
+Aerium Deadeye Wooden Bow,Weaponsmithing,Ab 1,10,500,500,1,-,2,-,-1,-,1,-,-,20,225,38,169,28,-,20,-,-,-
+Emberite Deadeye Wooden Bow,Weaponsmithing,Ab 1,10,500,500,1,-,1,-1,-1,-,1,-,2,12,292,46,-,-,-,-,-,-,-
+Hydrillium Deadeye Wooden Bow,Weaponsmithing,Ab 1,10,500,750,1,-,2,-,-1,-,1,-,-,12,169,28,225,38,-,20,-,-,-
+Petramite Deadeye Wooden Bow,Weaponsmithing,Ab 1,10,750,500,-7,15,1,-1,-1,2,1,-,-,12,191,38,-,-,-,-,-,-,-
