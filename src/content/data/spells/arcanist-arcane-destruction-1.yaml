@@ -1,0 +1,11 @@
+name: Arcane Destruction 1
+class: Arcanist
+element: ''
+levelRequirement: Ab 1
+statRequirements: '-'
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Arcanist
+description: Rapid detonation at chosen location, striking everything within 2 tiles of it.  The damage is non-elemental.  It can be resisted.  Each cast burns 4% of your maximum mana and part of the damage comes from the mana burnt.
+image: /images/abilities/Arcane Destruction 1.png
