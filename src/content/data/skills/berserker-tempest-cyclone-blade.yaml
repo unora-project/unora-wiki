@@ -1,0 +1,11 @@
+name: Tempest Cyclone Blade
+class: Berserker
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Berserker
+description: Vortex of blades that cascades inward from 3 tiles away.  Pulls every enemy, roots and shreds them.  Pure Only.
+image: /images/abilities/Tempest Cyclone Blade 1.png
