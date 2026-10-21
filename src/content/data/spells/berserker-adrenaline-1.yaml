@@ -1,0 +1,11 @@
+name: Adrenaline 1
+class: Berserker
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Berserker
+description: Surge of adrenaline that lasts 20s.  A fatal hit will leave you at 1 health, followed by a 25% heal of your maximum health and enter adrenal flow.  2 minute cooldown.
+image: /images/abilities/Adrenal ine 1.png
