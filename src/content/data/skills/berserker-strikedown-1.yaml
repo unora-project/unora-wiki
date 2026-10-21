@@ -1,0 +1,11 @@
+name: Strikedown 1
+class: Berserker
+element: ''
+levelRequirement: Ab 8
+statRequirements: 3/3/3/3/3
+goldRequired: '750,000'
+itemRequirements: Red Blob Core (1)
+prerequisites: '-'
+learningLocation: Tarlok (Noam)
+description: Strike in a line up to 3 tiles in front of you.  Costs 4% of your maximum health.
+image: /images/abilities/Strikedown 1.png
