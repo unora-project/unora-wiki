@@ -1,5 +1,4 @@
 name: Blessed Intervention 1
-image: /images/abilities/Blessed%20Intervention%201.png
 class: Bard
 element: ''
 levelRequirement: Ab 1
@@ -8,4 +7,5 @@ goldRequired: '-'
 itemRequirements: '-'
 prerequisites: '-'
 learningLocation: Becoming Bard
-description: Blesses you and your group within 12 tiles for 15s.  Next 5 hits each member takes will heal them.  Scales with WIS and max mana.  Damage over time does not count as a hit.
+description: Blesses you and your group within 12 tiles for 15s.  Next 10 hits each member takes will heal them.  Scales with WIS and max mana.  Damage over time does not count as a hit.
+image: /images/abilities/Blessed%20Intervention%201.png
