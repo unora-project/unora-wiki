@@ -1,0 +1,11 @@
+name: Killer's Edge 1
+class: Assassin
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Assassin
+description: Increases Advantage's bonus from from the side or behind by an addictional 15%.
+image: /images/abilities/Killer's Edge 1.png
