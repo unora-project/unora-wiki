@@ -1,0 +1,11 @@
+name: First Blood 1
+class: Assassin
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Assassin
+description: Attacks every enemy in a row for 3 tiles in front of you.
+image: /images/abilities/First Blood 1.png
