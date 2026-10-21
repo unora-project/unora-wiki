@@ -5,6 +5,7 @@ import { createColumnHelper, type Row } from '@tanstack/react-table'
 import { ChevronRight, Gem, Shield, Swords, type LucideIcon } from 'lucide-react'
 import { DataTable } from '@/components/tables/DataTable'
 import equipmentUrl from '@/data/equipment/all.json?url'
+import jewelRecipesUrl from '@/data/professions/jewelcrafting-recipes.json?url'
 
 interface EquipmentItem {
   name: string
@@ -49,6 +50,12 @@ interface WeaponRecipeRow {
   'Upgrade to Grand'?: string
   'Upgrade to Enchanted'?: string
   'Upgrade to Empowered'?: string
+}
+
+interface JewelRecipeRow {
+  Name: string
+  Level?: string
+  Materials?: string
 }
 
 const categories = [
@@ -299,6 +306,37 @@ function loadWeaponRecipes(): Promise<Map<string, WeaponRecipeRow>> {
       .catch(() => new Map())
   }
   return weaponRecipePromise
+}
+
+// Jewelcrafting recipes, looked up by item name (case and spacing ignored).
+const JEWEL_CATEGORIES = new Set(['belt', 'necklace', 'earring', 'ring'])
+const recipeKey = (name: string) => name.trim().toLowerCase().replace(/\s+/g, ' ')
+
+let jewelRecipePromise: Promise<Map<string, JewelRecipeRow>> | null = null
+
+function loadJewelRecipes(): Promise<Map<string, JewelRecipeRow>> {
+  if (!jewelRecipePromise) {
+    jewelRecipePromise = fetch(jewelRecipesUrl)
+      .then((r) => (r.ok ? (r.json() as Promise<JewelRecipeRow[]>) : []))
+      .then((rows) => new Map(rows.filter((r) => r.Name).map((r) => [recipeKey(r.Name), r])))
+      .catch(() => new Map())
+  }
+  return jewelRecipePromise
+}
+
+// The materials shown in the [RECIPE] tooltip for an item, or null if it has none.
+function recipeTextFor(
+  item: DisplayRow,
+  weapons: Map<string, WeaponRecipeRow>,
+  jewels: Map<string, JewelRecipeRow>
+): string | null {
+  if (item.category === 'weapon') return getRecipeDisplay(weapons.get(item._baseName), item._selectedTier)
+  if (JEWEL_CATEGORIES.has(item.category)) {
+    const mats = jewels.get(recipeKey(item.name))?.Materials?.trim()
+    if (!mats || mats === '-' || /cannot be crafted/i.test(mats)) return null
+    return mats
+  }
+  return null
 }
 
 function getRecipeDisplay(recipe: WeaponRecipeRow | undefined, tier: string): string | null {
@@ -924,6 +962,7 @@ export function Equipment() {
   const [textSize, setTextSize] = useState<'normal' | 'large'>('normal')
   const [shopIndex, setShopIndex] = useState<Map<string, { npc: string; town: string }>>(new Map())
   const [weaponRecipes, setWeaponRecipes] = useState<Map<string, WeaponRecipeRow>>(new Map())
+  const [jewelRecipes, setJewelRecipes] = useState<Map<string, JewelRecipeRow>>(new Map())
   const [compareMode, setCompareMode] = useState(false)
   const [compareItems, setCompareItems] = useState<DisplayRow[]>([])
   const [sortKey, setSortKey] = useState('level')
@@ -968,6 +1007,14 @@ export function Equipment() {
     let alive = true
     loadWeaponRecipes().then((index) => {
       if (alive) setWeaponRecipes(index)
+    })
+    return () => { alive = false }
+  }, [])
+
+  useEffect(() => {
+    let alive = true
+    loadJewelRecipes().then((index) => {
+      if (alive) setJewelRecipes(index)
     })
     return () => { alive = false }
   }, [])
@@ -1091,11 +1138,7 @@ export function Equipment() {
       key={compareKey(row)}
       item={row}
       seller={shopIndex.get(row.name)}
-      recipeText={
-        row.category === 'weapon'
-          ? getRecipeDisplay(weaponRecipes.get(row._baseName), row._selectedTier)
-          : null
-      }
+      recipeText={recipeTextFor(row, weaponRecipes, jewelRecipes)}
       compareMode={compareMode}
       checked={compareItems.some((p) => compareKey(p) === compareKey(row))}
       onToggleCompare={toggleCompare}
@@ -1176,11 +1219,7 @@ export function Equipment() {
         sortingFn: g((r) => r.name, 'str'),
         cell: ({ row }) => {
           const item = row.original
-          let recipeText: string | null = null
-          if (item.category === 'weapon') {
-            const recipe = weaponRecipes.get(item._baseName)
-            recipeText = getRecipeDisplay(recipe, item._selectedTier)
-          }
+          const recipeText = recipeTextFor(item, weaponRecipes, jewelRecipes)
           return (
             <span className={item._isVariant ? 'text-parchment-600 dark:text-ivory/70' : ''}>
               {item.name}
@@ -1258,7 +1297,7 @@ export function Equipment() {
       columnHelper.accessor((row) => row.percentages.healBonusPercent, { id: 'healp', header: 'HEAL%', sortingFn: g((r) => r.percentages.healBonusPercent, 'num'), cell: (info) => info.getValue() ?? '-' }),
       columnHelper.accessor((row) => row.percentages.cooldownReduction, { id: 'cdr', header: 'CDR%', sortingFn: g((r) => r.percentages.cooldownReduction, 'num'), cell: (info) => info.getValue() ?? '-' }),
     ]
-  }, [columnHelper, textSize, shopIndex, weaponRecipes, selectedCategory, compareMode, compareItems, expandedGroups, baseRowByGroup])
+  }, [columnHelper, textSize, shopIndex, weaponRecipes, jewelRecipes, selectedCategory, compareMode, compareItems, expandedGroups, baseRowByGroup])
 
   return (
     <div>
