@@ -1,0 +1,11 @@
+name: Duneswipe 1
+class: Berserker
+element: ''
+levelRequirement: Ab 5
+statRequirements: 3/3/3/3/3
+goldRequired: '500,000'
+itemRequirements: Comodo Tongue (1)
+prerequisites: '-'
+learningLocation: Tarlok (Noam)
+description: Sweeping strike that hits all tiles directly beside you.  Costs 4% of your maximum health.
+image: /images/abilities/Duneswipe 1.png
