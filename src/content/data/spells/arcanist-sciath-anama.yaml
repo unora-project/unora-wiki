@@ -1,0 +1,11 @@
+name: Sciath Anama
+class: Arcanist
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Arcanist
+description: A permanent ward that when your health reaches 15%, every point of damage will begin to take away from your mana instead.  When your mana can no longer keep up, you'll start to take damage to your health again.  Damage over time is not covered.  Costs 5% of your maximum mana to cast, and casting again will drop the ward.
+image: /images/abilities/Sciath Anama.png
