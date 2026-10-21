@@ -1,4 +1,5 @@
 name: "ao mor cradh"
+image: /images/abilities/ao%20mor%20cradh.png
 class: "priest"
 levelRequirement: "60"
 statRequirements: "3/20/60/3/3"

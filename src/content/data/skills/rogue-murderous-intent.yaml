@@ -1,4 +1,5 @@
 name: "Murderous Intent"
+image: /images/abilities/Murderous%20Intent.png
 class: "rogue"
 levelRequirement: "Master"
 statRequirements: "3/3/3/3/3"

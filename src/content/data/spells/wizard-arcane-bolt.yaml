@@ -1,4 +1,5 @@
 name: "Arcane Bolt"
+image: /images/abilities/Arcane%20Bolt.png
 class: "wizard"
 levelRequirement: "3"
 statRequirements: "3/3/3/3/3"

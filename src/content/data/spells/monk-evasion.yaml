@@ -1,4 +1,5 @@
 name: "Evasion"
+image: /images/abilities/Evasion.png
 class: "monk"
 levelRequirement: "Master (Pure)"
 statRequirements: "3/3/3/3/3"

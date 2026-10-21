@@ -1,4 +1,5 @@
 name: "Ard Creag"
+image: /images/abilities/Ard%20Creag.png
 class: "wizard"
 levelRequirement: "80"
 statRequirements: "5/76/44/20/5"

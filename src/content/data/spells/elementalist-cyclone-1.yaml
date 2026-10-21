@@ -1,4 +1,5 @@
 name: Cyclone 1
+image: /images/abilities/Cyclone%201.png
 class: Elementalist
 element: Wind
 levelRequirement: Ab 1

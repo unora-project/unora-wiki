@@ -1,4 +1,5 @@
 name: "Backstab"
+image: /images/abilities/Backstab.png
 class: "rogue"
 levelRequirement: "35"
 statRequirements: "16/7/7/10/35"

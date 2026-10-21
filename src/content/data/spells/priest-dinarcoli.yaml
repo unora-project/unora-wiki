@@ -1,4 +1,5 @@
 name: "dinarcoli"
+image: /images/abilities/dinarcoli.png
 class: "priest"
 levelRequirement: "71"
 statRequirements: "5/35/60/15/5"

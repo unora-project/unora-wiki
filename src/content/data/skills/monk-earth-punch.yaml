@@ -1,4 +1,5 @@
 name: "Earth Punch"
+image: /images/abilities/Earth%20Punch.png
 class: "monk"
 levelRequirement: "11"
 statRequirements: "9/3/3/16/6"

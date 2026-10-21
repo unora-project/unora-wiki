@@ -1,4 +1,5 @@
 name: "Concentration"
+image: /images/abilities/Concentration.png
 class: "rogue"
 levelRequirement: "Master (Pure)"
 statRequirements: "80/50/50/50/180"

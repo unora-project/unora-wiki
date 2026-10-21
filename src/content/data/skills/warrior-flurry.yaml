@@ -1,4 +1,5 @@
 name: "Flurry"
+image: /images/abilities/Flurry.png
 class: "warrior"
 levelRequirement: "20"
 statRequirements: "25/3/5/8/18"

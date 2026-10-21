@@ -1,4 +1,5 @@
 name: "Leverage Kick"
+image: /images/abilities/Leverage%20Kick.png
 class: "monk"
 levelRequirement: "Master"
 statRequirements: "3/3/3/3/3"

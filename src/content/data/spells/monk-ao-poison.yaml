@@ -1,4 +1,5 @@
 name: "ao poison"
+image: /images/abilities/ao%20poison.png
 class: "monk"
 levelRequirement: "21"
 statRequirements: "3/8/9/15/3"

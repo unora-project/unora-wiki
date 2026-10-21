@@ -1,4 +1,5 @@
 name: "Dia Cradh"
+image: /images/abilities/Dia%20Cradh.png
 class: "wizard"
 levelRequirement: "Master (Pure)"
 statRequirements: "3/3/3/3/3"

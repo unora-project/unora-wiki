@@ -1,4 +1,5 @@
 name: "Wavebreaker"
+image: /images/abilities/Wavebreaker.png
 class: "monk"
 levelRequirement: "Master"
 statRequirements: "80/50/50/150/80"

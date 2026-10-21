@@ -1,4 +1,5 @@
 name: "Scathe"
+image: /images/abilities/Scathe.png
 class: "warrior"
 levelRequirement: "15"
 statRequirements: "20/3/3/7/8"

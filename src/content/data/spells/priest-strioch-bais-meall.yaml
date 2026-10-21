@@ -1,4 +1,5 @@
 name: "Strioch Bais Meall"
+image: /images/abilities/Strioch%20Bais%20Meall.png
 class: "priest"
 levelRequirement: "Master (Dark)"
 statRequirements: "30/120/180/25/15"

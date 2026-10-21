@@ -1,4 +1,5 @@
 name: "Water Punch"
+image: /images/abilities/Water%20Punch.png
 class: "monk"
 levelRequirement: "11"
 statRequirements: "9/7/5/12/7"

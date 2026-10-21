@@ -1,4 +1,5 @@
 name: "Prevent Affliction"
+image: /images/abilities/Prevent%20Affliction.png
 class: "priest"
 levelRequirement: "80"
 statRequirements: "7/56/68/7/7"

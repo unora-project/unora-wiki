@@ -1,4 +1,5 @@
 name: "Stab Twice"
+image: /images/abilities/Stab%20Twice.png
 class: "rogue"
 levelRequirement: "Master"
 statRequirements: "50/18/11/28/88"

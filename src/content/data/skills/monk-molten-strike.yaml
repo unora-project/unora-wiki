@@ -1,4 +1,5 @@
 name: "Molten Strike"
+image: /images/abilities/Molten%20Strike.png
 class: "monk"
 levelRequirement: "Master"
 statRequirements: "60/15/10/140/50"

@@ -1,4 +1,5 @@
 name: "Focus"
+image: /images/abilities/Focus.png
 class: "rogue"
 levelRequirement: "41"
 statRequirements: "25/13/10/8/33"

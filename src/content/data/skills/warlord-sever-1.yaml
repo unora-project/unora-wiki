@@ -1,4 +1,5 @@
 name: Sever 1
+image: /images/abilities/Sever%201.png
 class: Warlord
 levelRequirement: Ab 1
 statRequirements: 3/3/3/3/3

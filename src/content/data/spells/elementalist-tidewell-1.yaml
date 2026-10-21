@@ -1,4 +1,5 @@
 name: Tidewell 1
+image: /images/abilities/Tidewell%201.png
 class: Elementalist
 element: Water
 levelRequirement: Ab 1

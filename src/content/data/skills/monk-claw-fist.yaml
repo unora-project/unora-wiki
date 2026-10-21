@@ -1,4 +1,5 @@
 name: "Claw Fist"
+image: /images/abilities/Claw%20Fist.png
 class: "monk"
 levelRequirement: "50"
 statRequirements: "24/14/3/32/18"

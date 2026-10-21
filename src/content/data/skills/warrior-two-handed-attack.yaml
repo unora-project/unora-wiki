@@ -1,4 +1,5 @@
 name: "Two Handed Attack"
+image: /images/abilities/Two%20Handed%20Attack.png
 class: "warrior"
 levelRequirement: "50"
 statRequirements: "40/3/3/34/18"

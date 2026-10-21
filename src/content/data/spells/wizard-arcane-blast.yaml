@@ -1,4 +1,5 @@
 name: "Arcane Blast"
+image: /images/abilities/Arcane%20Blast.png
 class: "wizard"
 levelRequirement: "71"
 statRequirements: "5/72/38/5/5"

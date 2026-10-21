@@ -1,4 +1,5 @@
 name: "Wind Blade"
+image: /images/abilities/Wind%20Blade.png
 class: "warrior"
 levelRequirement: "11"
 statRequirements: "10/3/3/5/10"

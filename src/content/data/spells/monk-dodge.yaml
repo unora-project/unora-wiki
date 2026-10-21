@@ -1,4 +1,5 @@
 name: "Dodge"
+image: /images/abilities/Dodge.png
 class: "monk"
 levelRequirement: "5"
 statRequirements: "5/3/3/8/3"

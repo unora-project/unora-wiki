@@ -1,4 +1,5 @@
 name: "Nightfall Strike"
+image: /images/abilities/Nightfall%20Strike.png
 class: "rogue"
 levelRequirement: "Master"
 statRequirements: "90/20/15/45/130"

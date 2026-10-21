@@ -1,4 +1,5 @@
 name: "Void Jolt"
+image: /images/abilities/Void%20Jolt.png
 class: "priest"
 levelRequirement: "Master (Dark)"
 statRequirements: "3/3/3/3/3"

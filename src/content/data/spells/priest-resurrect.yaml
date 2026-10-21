@@ -1,4 +1,5 @@
 name: "Resurrect"
+image: /images/abilities/Resurrect.png
 class: "priest"
 levelRequirement: "Master (Pure)"
 statRequirements: "3/3/3/3/3"

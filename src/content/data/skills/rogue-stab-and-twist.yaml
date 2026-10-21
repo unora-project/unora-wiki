@@ -1,4 +1,5 @@
 name: "Stab and Twist"
+image: /images/abilities/Stab%20and%20Twist.png
 class: "rogue"
 levelRequirement: "60"
 statRequirements: "34/11/6/17/51"

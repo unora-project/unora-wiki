@@ -1,4 +1,5 @@
 name: "Barrage"
+image: /images/abilities/Barrage.png
 class: "rogue"
 levelRequirement: "71"
 statRequirements: "28/10/9/24/66"

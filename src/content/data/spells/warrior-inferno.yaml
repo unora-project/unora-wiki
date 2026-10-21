@@ -1,4 +1,5 @@
 name: "Inferno"
+image: /images/abilities/Inferno.png
 class: "warrior"
 levelRequirement: "Master (Pure)"
 statRequirements: "3/3/3/3/3"

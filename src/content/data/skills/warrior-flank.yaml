@@ -1,4 +1,5 @@
 name: "Flank"
+image: /images/abilities/Flank.png
 class: "warrior"
 levelRequirement: "30"
 statRequirements: "30/4/4/15/17"

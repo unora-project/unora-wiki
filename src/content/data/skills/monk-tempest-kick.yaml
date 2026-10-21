@@ -1,4 +1,5 @@
 name: "Tempest Kick"
+image: /images/abilities/Tempest%20Kick.png
 class: "monk"
 levelRequirement: "71"
 statRequirements: "27/9/9/53/39"

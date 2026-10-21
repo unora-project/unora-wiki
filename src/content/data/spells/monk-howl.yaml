@@ -1,4 +1,5 @@
 name: "Howl"
+image: /images/abilities/Howl.png
 class: "monk"
 levelRequirement: "41"
 statRequirements: "23/3/12/38/10"

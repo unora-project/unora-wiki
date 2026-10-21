@@ -1,4 +1,5 @@
 name: "Slaughter"
+image: /images/abilities/Slaughter.png
 class: "warrior"
 levelRequirement: "Master"
 statRequirements: "215/50/50/150/180"

@@ -1,4 +1,5 @@
 name: "Hide"
+image: /images/abilities/Hide.png
 class: "rogue"
 levelRequirement: "15"
 statRequirements: "6/7/5/5/15"

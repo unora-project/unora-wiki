@@ -1,4 +1,5 @@
 name: "Aura of Blessing"
+image: /images/abilities/Aura%20of%20Blessing.png
 class: "priest"
 levelRequirement: "Master (Light)"
 statRequirements: "3/3/3/3/3"

@@ -1,4 +1,5 @@
 name: "Spring Trap"
+image: /images/abilities/Spring%20Trap.png
 class: "rogue"
 levelRequirement: "60"
 statRequirements: "30/10/5/22/42"

@@ -1,4 +1,5 @@
 name: "Dark Storm"
+image: /images/abilities/Dark%20Storm.png
 class: "priest"
 levelRequirement: "Master (Pure Dark)"
 statRequirements: "5/90/132/10/15"

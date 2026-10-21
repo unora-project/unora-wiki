@@ -1,4 +1,5 @@
 name: "Soulful Touch"
+image: /images/abilities/Soulful%20Touch.png
 class: "monk"
 levelRequirement: "Master"
 statRequirements: "3/3/3/3/3"

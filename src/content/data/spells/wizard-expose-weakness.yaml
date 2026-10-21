@@ -1,4 +1,5 @@
 name: "Expose Weakness"
+image: /images/abilities/Expose%20Weakness.png
 class: "wizard"
 levelRequirement: "58"
 statRequirements: "3/52/30/12/7"

@@ -1,4 +1,5 @@
 name: "Coiled Bolt Trap"
+image: /images/abilities/Coiled%20Bolt%20Trap.png
 class: "rogue"
 levelRequirement: "41"
 statRequirements: "20/6/3/18/35"

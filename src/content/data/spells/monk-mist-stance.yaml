@@ -1,4 +1,5 @@
 name: "Mist Stance"
+image: /images/abilities/Mist%20Stance.png
 class: "monk"
 levelRequirement: "60"
 statRequirements: "19/8/15/40/15"

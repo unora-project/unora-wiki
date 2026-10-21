@@ -1,4 +1,5 @@
 name: "Sal"
+image: /images/abilities/Sal.png
 class: "wizard"
 levelRequirement: "11"
 statRequirements: "4/14/7/4/4"

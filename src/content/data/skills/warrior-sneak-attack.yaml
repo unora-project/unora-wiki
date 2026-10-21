@@ -1,4 +1,5 @@
 name: "Sneak Attack"
+image: /images/abilities/Sneak%20Attack.png
 class: "warrior"
 levelRequirement: "Master (Pure)"
 statRequirements: "150/25/25/95/100"

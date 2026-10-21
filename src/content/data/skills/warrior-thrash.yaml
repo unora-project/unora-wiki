@@ -1,4 +1,5 @@
 name: "Thrash"
+image: /images/abilities/Thrash.png
 class: "warrior"
 levelRequirement: "Master"
 statRequirements: "3/3/3/3/3"

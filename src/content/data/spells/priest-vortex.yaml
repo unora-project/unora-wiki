@@ -1,4 +1,5 @@
 name: "Vortex"
+image: /images/abilities/Vortex.png
 class: "priest"
 levelRequirement: "Master"
 statRequirements: "3/3/3/3/3"

@@ -1,4 +1,5 @@
 name: "Rock Stance"
+image: /images/abilities/Rock%20Stance.png
 class: "monk"
 levelRequirement: "Master"
 statRequirements: "115/25/30/180/65"

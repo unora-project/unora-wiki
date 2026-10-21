@@ -1,4 +1,5 @@
 name: "Motivate"
+image: /images/abilities/Motivate.png
 class: "priest"
 levelRequirement: "30"
 statRequirements: "5/20/30/8/6"

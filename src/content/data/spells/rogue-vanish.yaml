@@ -1,4 +1,5 @@
 name: "Vanish"
+image: /images/abilities/Vanish.png
 class: "rogue"
 levelRequirement: "Master"
 statRequirements: "3/3/3/3/3"

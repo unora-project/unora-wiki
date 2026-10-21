@@ -1,4 +1,5 @@
 name: "Execute"
+image: /images/abilities/Execute.png
 class: "warrior"
 levelRequirement: "60"
 statRequirements: "44/8/6/25/30"

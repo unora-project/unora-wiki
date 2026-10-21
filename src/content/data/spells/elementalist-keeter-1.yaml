@@ -1,4 +1,5 @@
 name: Keeter 1
+image: /images/abilities/Keeter%201.png
 class: Elementalist
 element: Wind
 levelRequirement: Ab 1

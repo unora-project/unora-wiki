@@ -1,4 +1,5 @@
 name: "Dachaidh"
+image: /images/abilities/Dachaidh.png
 class: "priest"
 levelRequirement: "41"
 statRequirements: "3/30/48/5/3"

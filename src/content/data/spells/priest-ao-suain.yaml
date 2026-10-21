@@ -1,4 +1,5 @@
 name: "ao suain"
+image: /images/abilities/ao%20suain.png
 class: "priest"
 levelRequirement: "71"
 statRequirements: "5/38/70/13/5"

@@ -1,4 +1,5 @@
 name: "Seismic Kick"
+image: /images/abilities/Seismic%20Kick.png
 class: "monk"
 levelRequirement: "71"
 statRequirements: "40/7/7/59/20"

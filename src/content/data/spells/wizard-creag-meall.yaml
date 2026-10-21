@@ -1,4 +1,5 @@
 name: "Creag Meall"
+image: /images/abilities/Creag%20Meall.png
 class: "wizard"
 levelRequirement: "41"
 statRequirements: "3/36/23/11/3"

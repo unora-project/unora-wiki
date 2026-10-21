@@ -1,4 +1,5 @@
 name: "Tidal Breeze"
+image: /images/abilities/Tidal%20Breeze.png
 class: "wizard"
 levelRequirement: "Master (Pure)"
 statRequirements: "25/140/90/15/15"

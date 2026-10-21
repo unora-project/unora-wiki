@@ -1,4 +1,5 @@
 name: "Dragon Strike"
+image: /images/abilities/Dragon%20Strike.png
 class: "monk"
 levelRequirement: "Master (Pure)"
 statRequirements: "80/25/20/120/60"

@@ -1,4 +1,5 @@
 name: "Arcane Missile"
+image: /images/abilities/Arcane%20Missile.png
 class: "wizard"
 levelRequirement: "21"
 statRequirements: "3/25/17/5/5"

@@ -1,4 +1,5 @@
 name: "Poison Punch"
+image: /images/abilities/Poison%20Punch.png
 class: "monk"
 levelRequirement: "11"
 statRequirements: "6/9/5/11/10"

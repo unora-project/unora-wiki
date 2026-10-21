@@ -1,4 +1,5 @@
 name: "Bolt Trap"
+image: /images/abilities/Bolt%20Trap.png
 class: "rogue"
 levelRequirement: "21"
 statRequirements: "15/6/3/9/22"

@@ -1,4 +1,5 @@
 name: "Sever"
+image: /images/abilities/Sever%201.png
 class: "warrior"
 levelRequirement: "Master"
 statRequirements: "140/8/8/60/50"

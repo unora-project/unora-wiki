@@ -1,4 +1,5 @@
 name: "Transfer Blood"
+image: /images/abilities/Transfer%20Blood.png
 class: "priest"
 levelRequirement: "11"
 statRequirements: "3/7/12/4/3"

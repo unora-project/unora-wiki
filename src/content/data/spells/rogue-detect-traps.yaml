@@ -1,4 +1,5 @@
 name: "Detect Traps"
+image: /images/abilities/Detect%20Traps.png
 class: "rogue"
 levelRequirement: "12"
 statRequirements: "3/10/10/7/12"

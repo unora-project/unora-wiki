@@ -1,4 +1,5 @@
 name: "beothaich"
+image: /images/abilities/beothaich.png
 class: "priest"
 levelRequirement: "3"
 statRequirements: "3/3/5/3/3"

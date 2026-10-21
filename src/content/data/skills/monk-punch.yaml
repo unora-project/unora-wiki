@@ -1,4 +1,5 @@
 name: "Punch"
+image: /images/abilities/Punch.png
 class: "monk"
 levelRequirement: "1"
 statRequirements: "3/3/3/3/3"

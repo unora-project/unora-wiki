@@ -1,4 +1,5 @@
 name: "Dragon Breath"
+image: /images/abilities/Dragon%20Breath.png
 class: "monk"
 levelRequirement: "71"
 statRequirements: "46/9/9/50/20"

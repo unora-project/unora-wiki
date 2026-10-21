@@ -1,4 +1,5 @@
 name: "Cure Ailments"
+image: /images/abilities/Cure%20Ailments.png
 class: "monk"
 levelRequirement: "Master"
 statRequirements: "3/3/3/3/3"

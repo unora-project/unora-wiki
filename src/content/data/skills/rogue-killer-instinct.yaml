@@ -1,4 +1,5 @@
 name: "Killer Instinct"
+image: /images/abilities/Killer%20Instinct.png
 class: "rogue"
 levelRequirement: "Master"
 statRequirements: "75/60/40/40/120"

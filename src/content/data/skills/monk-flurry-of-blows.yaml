@@ -1,4 +1,5 @@
 name: "Flurry of Blows"
+image: /images/abilities/Flurry%20of%20Blows.png
 class: "monk"
 levelRequirement: "Master"
 statRequirements: "80/10/10/100/40"

@@ -1,4 +1,5 @@
 name: "Energy Bolt"
+image: /images/abilities/Energy%20Bolt.png
 class: "wizard"
 levelRequirement: "1"
 statRequirements: "3/3/3/3/3"

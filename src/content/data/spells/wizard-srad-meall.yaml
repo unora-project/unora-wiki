@@ -1,4 +1,5 @@
 name: "Srad Meall"
+image: /images/abilities/Srad%20Meall.png
 class: "wizard"
 levelRequirement: "41"
 statRequirements: "11/36/23/3/3"

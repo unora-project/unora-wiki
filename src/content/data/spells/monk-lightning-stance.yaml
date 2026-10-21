@@ -1,4 +1,5 @@
 name: "Lightning Stance"
+image: /images/abilities/Lightning%20Stance.png
 class: "monk"
 levelRequirement: "Master"
 statRequirements: "95/40/31/160/55"

@@ -1,4 +1,5 @@
 name: "nuadhaich"
+image: /images/abilities/nuadhaich.png
 class: "priest"
 levelRequirement: "Master"
 statRequirements: "6/75/110/21/5"

@@ -1,4 +1,5 @@
 name: "Throw Smokebomb"
+image: /images/abilities/Throw%20Smokebomb.png
 class: "rogue"
 levelRequirement: "9"
 statRequirements: "5/4/3/3/11"

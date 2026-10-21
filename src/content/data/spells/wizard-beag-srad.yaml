@@ -1,4 +1,5 @@
 name: "Beag Srad"
+image: /images/abilities/Beag%20Srad.png
 class: "wizard"
 levelRequirement: "3"
 statRequirements: "3/5/3/3/3"

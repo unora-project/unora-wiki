@@ -1,4 +1,5 @@
 name: "Sap Needle"
+image: /images/abilities/Sap%20Needle.png
 class: "rogue"
 levelRequirement: "20"
 statRequirements: "6/7/11/5/19"

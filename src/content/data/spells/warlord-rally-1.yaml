@@ -1,4 +1,5 @@
 name: Rally 1
+image: /images/abilities/Rally%201.png
 class: Warlord
 element: ''
 levelRequirement: Ab 1

@@ -1,4 +1,5 @@
 name: "Self Revive"
+image: /images/abilities/Self%20Revive.png
 class: "priest"
 levelRequirement: "41"
 statRequirements: "3/22/40/18/3"

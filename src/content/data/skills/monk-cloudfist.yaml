@@ -1,4 +1,5 @@
 name: "Cloudfist"
+image: /images/abilities/Cloudfist.png
 class: "monk"
 levelRequirement: "Master"
 statRequirements: "75/25/20/125/40"

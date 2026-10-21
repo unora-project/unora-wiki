@@ -1,4 +1,5 @@
 name: "Look"
+image: /images/abilities/Look.png
 class: "rogue"
 levelRequirement: "3"
 statRequirements: "3/5/5/3/3"

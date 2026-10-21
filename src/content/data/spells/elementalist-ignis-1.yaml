@@ -1,4 +1,5 @@
 name: Ignis 1
+image: /images/abilities/Ignis%201.png
 class: Elementalist
 element: Fire
 levelRequirement: Ab 1

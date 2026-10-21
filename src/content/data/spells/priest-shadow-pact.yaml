@@ -1,4 +1,5 @@
 name: "Shadow Pact"
+image: /images/abilities/Shadow%20Pact.png
 class: "priest"
 levelRequirement: "Master (Dark)"
 statRequirements: "3/3/3/3/3"

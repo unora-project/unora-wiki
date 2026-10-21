@@ -1,4 +1,5 @@
 name: "Battle Frenzy"
+image: /images/abilities/Battle%20Frenzy.png
 class: "warrior"
 levelRequirement: "Master (Pure)"
 statRequirements: "3/3/3/3/3"

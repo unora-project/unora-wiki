@@ -1,4 +1,5 @@
 name: "Flame Stance"
+image: /images/abilities/Flame%20Stance.png
 class: "monk"
 levelRequirement: "Master"
 statRequirements: "180/25/30/110/50"

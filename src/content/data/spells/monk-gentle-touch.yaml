@@ -1,4 +1,5 @@
 name: "Gentle Touch"
+image: /images/abilities/Gentle%20Touch.png
 class: "monk"
 levelRequirement: "22"
 statRequirements: "3/3/13/19/4"

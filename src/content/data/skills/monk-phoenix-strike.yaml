@@ -1,4 +1,5 @@
 name: "Phoenix Strike"
+image: /images/abilities/Phoenix%20Strike.png
 class: "monk"
 levelRequirement: "88"
 statRequirements: "45/14/8/59/29"

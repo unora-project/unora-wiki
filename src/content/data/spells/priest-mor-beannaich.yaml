@@ -1,4 +1,5 @@
 name: "mor beannaich"
+image: /images/abilities/mor%20beannaich.png
 class: "priest"
 levelRequirement: "41"
 statRequirements: "5/20/35/5/9"

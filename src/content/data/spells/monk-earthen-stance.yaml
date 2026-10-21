@@ -1,4 +1,5 @@
 name: "Earthen Stance"
+image: /images/abilities/Earthen%20Stance.png
 class: "monk"
 levelRequirement: "60"
 statRequirements: "25/5/5/44/16"

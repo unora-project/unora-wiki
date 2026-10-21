@@ -1,4 +1,5 @@
 name: "Trip"
+image: /images/abilities/Trip.png
 class: "rogue"
 levelRequirement: "80"
 statRequirements: "50/20/15/25/70"

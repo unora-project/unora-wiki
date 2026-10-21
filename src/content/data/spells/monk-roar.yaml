@@ -1,4 +1,5 @@
 name: "Roar"
+image: /images/abilities/Roar.png
 class: "monk"
 levelRequirement: "Master"
 statRequirements: "3/3/3/3/3"

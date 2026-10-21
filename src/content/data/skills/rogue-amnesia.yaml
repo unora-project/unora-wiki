@@ -1,4 +1,5 @@
 name: "Amnesia"
+image: /images/abilities/Amnesia.png
 class: "rogue"
 levelRequirement: "24"
 statRequirements: "6/12/12/6/12"

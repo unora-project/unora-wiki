@@ -1,4 +1,5 @@
 name: "Pitfall Trap"
+image: /images/abilities/Pitfall%20Trap.png
 class: "rogue"
 levelRequirement: "Master"
 statRequirements: "80/25/9/32/120"

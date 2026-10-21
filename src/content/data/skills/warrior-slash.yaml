@@ -1,4 +1,5 @@
 name: "Slash"
+image: /images/abilities/Slash.png
 class: "warrior"
 levelRequirement: "3"
 statRequirements: "3/3/3/3/3"

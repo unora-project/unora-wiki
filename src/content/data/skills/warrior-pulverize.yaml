@@ -1,4 +1,5 @@
 name: "Pulverize"
+image: /images/abilities/Pulverize.png
 class: "warrior"
 levelRequirement: "71"
 statRequirements: "72/3/3/30/23"

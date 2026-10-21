@@ -1,4 +1,5 @@
 name: "Last Stand"
+image: /images/abilities/Last%20Stand.png
 class: "monk"
 levelRequirement: "40"
 statRequirements: "23/5/8/36/17"

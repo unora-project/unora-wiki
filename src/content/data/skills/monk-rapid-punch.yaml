@@ -1,4 +1,5 @@
 name: "Rapid Punch"
+image: /images/abilities/Rapid%20Punch.png
 class: "monk"
 levelRequirement: "71"
 statRequirements: "49/11/11/56/27"

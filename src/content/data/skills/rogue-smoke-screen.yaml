@@ -1,4 +1,5 @@
 name: "Smoke Screen"
+image: /images/abilities/Smoke%20Screen.png
 class: "rogue"
 levelRequirement: "60"
 statRequirements: "10/5/5/5/16"

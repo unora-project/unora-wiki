@@ -1,4 +1,5 @@
 name: "beag pramh"
+image: /images/abilities/beag%20pramh.png
 class: "priest"
 levelRequirement: "90"
 statRequirements: "3/64/58/10/15"

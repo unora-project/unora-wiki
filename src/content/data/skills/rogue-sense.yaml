@@ -1,4 +1,5 @@
 name: "Sense"
+image: /images/abilities/Sense.png
 class: "rogue"
 levelRequirement: "90"
 statRequirements: "36/11/11/24/76"

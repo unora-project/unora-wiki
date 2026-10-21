@@ -1,4 +1,5 @@
 name: "War Cry"
+image: /images/abilities/War%20Cry.png
 class: "warrior"
 levelRequirement: "50"
 statRequirements: "35/3/6/15/25"

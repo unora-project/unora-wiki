@@ -1,4 +1,5 @@
 name: "Goad"
+image: /images/abilities/Goad.png
 class: "monk"
 levelRequirement: "15"
 statRequirements: "7/3/8/15/8"

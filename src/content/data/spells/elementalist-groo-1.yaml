@@ -1,4 +1,5 @@
 name: Groo 1
+image: /images/abilities/Groo%201.png
 class: Elementalist
 element: Earth
 levelRequirement: Ab 1

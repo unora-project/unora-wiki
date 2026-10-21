@@ -1,4 +1,5 @@
 name: "ao dall"
+image: /images/abilities/ao%20dall.png
 class: "monk"
 levelRequirement: "41"
 statRequirements: "3/10/12/25/5"

@@ -1,4 +1,5 @@
 name: "Hide Group"
+image: /images/abilities/Hide%20Group.png
 class: "rogue"
 levelRequirement: "Master (Pure)"
 statRequirements: "50/45/20/35/110"

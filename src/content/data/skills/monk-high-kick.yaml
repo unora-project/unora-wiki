@@ -1,4 +1,5 @@
 name: "High Kick"
+image: /images/abilities/High%20Kick.png
 class: "monk"
 levelRequirement: "9"
 statRequirements: "7/3/3/9/4"

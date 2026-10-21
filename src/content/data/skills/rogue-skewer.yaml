@@ -1,4 +1,5 @@
 name: "Skewer"
+image: /images/abilities/Skewer.png
 class: "rogue"
 levelRequirement: "90"
 statRequirements: "36/11/11/24/76"

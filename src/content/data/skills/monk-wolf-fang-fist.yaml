@@ -1,4 +1,5 @@
 name: "Wolf Fang Fist"
+image: /images/abilities/Wolf%20Fang%20Fist.png
 class: "monk"
 levelRequirement: "77"
 statRequirements: "58/24/11/33/25"

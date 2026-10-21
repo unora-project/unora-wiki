@@ -1,4 +1,5 @@
 name: "mor ioc"
+image: /images/abilities/mor%20ioc.png
 class: "priest"
 levelRequirement: "41"
 statRequirements: "3/16/38/3/3"

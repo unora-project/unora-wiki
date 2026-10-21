@@ -1,4 +1,5 @@
 name: "Bind"
+image: /images/abilities/Bind.png
 class: "priest"
 levelRequirement: "Master (Dark)"
 statRequirements: "3/3/3/3/3"

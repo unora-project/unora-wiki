@@ -1,4 +1,5 @@
 name: Meteor 1
+image: /images/abilities/Meteor%201.png
 class: Elementalist
 element: Fire
 levelRequirement: Ab 1

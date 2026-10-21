@@ -1,4 +1,5 @@
 name: "Crasher"
+image: /images/abilities/Crasher.png
 class: "warrior"
 levelRequirement: "50"
 statRequirements: "50/9/9/28/20"

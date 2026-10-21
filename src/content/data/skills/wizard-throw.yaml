@@ -1,4 +1,5 @@
 name: "Throw"
+image: /images/abilities/Throw.png
 class: "wizard"
 levelRequirement: "50"
 statRequirements: "5/9/5/3/3"

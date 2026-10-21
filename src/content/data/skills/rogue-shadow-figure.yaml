@@ -1,4 +1,5 @@
 name: "Shadow Figure"
+image: /images/abilities/Shadow%20Figure.png
 class: "rogue"
 levelRequirement: "Master (Pure)"
 statRequirements: "3/3/3/3/3"

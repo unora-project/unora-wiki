@@ -1,4 +1,5 @@
 name: "Chaos Fist"
+image: /images/abilities/Chaos%20Fist.png
 class: "monk"
 levelRequirement: "Master (Pure)"
 statRequirements: "95/25/3/120/35"

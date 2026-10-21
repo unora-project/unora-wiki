@@ -1,4 +1,5 @@
 name: "Cradh"
+image: /images/abilities/Cradh.png
 class: "wizard"
 levelRequirement: "30"
 statRequirements: "3/32/15/5/6"

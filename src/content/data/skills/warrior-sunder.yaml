@@ -1,4 +1,5 @@
 name: "Sunder"
+image: /images/abilities/Sunder.png
 class: "warrior"
 levelRequirement: "36"
 statRequirements: "40/3/3/19/14"

@@ -1,4 +1,5 @@
 name: "Kick"
+image: /images/abilities/Kick.png
 class: "monk"
 levelRequirement: "3"
 statRequirements: "3/3/3/3/3"

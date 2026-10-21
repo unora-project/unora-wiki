@@ -1,4 +1,5 @@
 name: "Throw Surigum"
+image: /images/abilities/Throw%20Surigum.png
 class: "rogue"
 levelRequirement: "16"
 statRequirements: "7/3/4/4/15"

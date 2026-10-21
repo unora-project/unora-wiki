@@ -1,4 +1,5 @@
 name: "Thunder Stance"
+image: /images/abilities/Thunder%20Stance.png
 class: "monk"
 levelRequirement: "60"
 statRequirements: "24/5/5/51/15"

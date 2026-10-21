@@ -1,4 +1,5 @@
 name: "Tide Stance"
+image: /images/abilities/Tide%20Stance.png
 class: "monk"
 levelRequirement: "Master"
 statRequirements: "100/50/50/175/75"

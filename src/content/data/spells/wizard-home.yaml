@@ -1,4 +1,5 @@
 name: "Home"
+image: /images/abilities/Home.png
 class: "wizard"
 levelRequirement: "41"
 statRequirements: "3/42/35/5/5"

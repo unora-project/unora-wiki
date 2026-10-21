@@ -1,4 +1,5 @@
 name: "Adaptive Skin"
+image: /images/abilities/Adaptive%20Skin.png
 class: "monk"
 levelRequirement: "Master"
 statRequirements: "3/3/3/3/3"

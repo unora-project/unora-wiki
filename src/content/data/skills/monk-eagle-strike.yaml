@@ -1,4 +1,5 @@
 name: "Eagle Strike"
+image: /images/abilities/Eagle%20Strike.png
 class: "monk"
 levelRequirement: "44"
 statRequirements: "20/13/5/33/9"

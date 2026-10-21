@@ -1,4 +1,5 @@
 name: "Shockwave"
+image: /images/abilities/Shockwave%201.png
 class: "warrior"
 levelRequirement: "Master"
 statRequirements: "3/3/3/3/3"

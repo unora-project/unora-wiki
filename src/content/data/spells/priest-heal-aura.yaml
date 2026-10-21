@@ -1,4 +1,5 @@
 name: "Heal Aura"
+image: /images/abilities/Heal%20Aura.png
 class: "priest"
 levelRequirement: "Master (Pure Light)"
 statRequirements: "7/85/135/30/18"

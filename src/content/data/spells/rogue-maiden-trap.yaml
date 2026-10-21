@@ -1,4 +1,5 @@
 name: "Maiden Trap"
+image: /images/abilities/Maiden%20Trap.png
 class: "rogue"
 levelRequirement: "90"
 statRequirements: "38/12/5/22/55"

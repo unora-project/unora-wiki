@@ -1,4 +1,5 @@
 name: "Blitz"
+image: /images/abilities/Blitz.png
 class: "rogue"
 levelRequirement: "41"
 statRequirements: "28/5/5/8/38"

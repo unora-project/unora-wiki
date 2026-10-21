@@ -1,4 +1,5 @@
 name: "Devour"
+image: /images/abilities/Devour.png
 class: "warrior"
 levelRequirement: "Master"
 statRequirements: "3/3/3/3/3"

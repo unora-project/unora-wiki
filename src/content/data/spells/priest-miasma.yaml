@@ -1,4 +1,5 @@
 name: "Miasma"
+image: /images/abilities/Miasma.png
 class: "priest"
 levelRequirement: "Master (Dark)"
 statRequirements: "3/3/3/3/3"

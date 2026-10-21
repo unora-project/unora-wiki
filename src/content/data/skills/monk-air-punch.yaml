@@ -1,4 +1,5 @@
 name: "Air Punch"
+image: /images/abilities/Air%20Punch.png
 class: "monk"
 levelRequirement: "11"
 statRequirements: "8/3/3/13/9"

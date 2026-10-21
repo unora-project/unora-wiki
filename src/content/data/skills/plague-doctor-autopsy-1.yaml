@@ -1,4 +1,5 @@
 name: Autopsy 1
+image: /images/abilities/Autopsy%201.png
 class: Plague Doctor
 element: ''
 levelRequirement: Ab 8

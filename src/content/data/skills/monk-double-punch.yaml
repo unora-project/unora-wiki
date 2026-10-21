@@ -1,4 +1,5 @@
 name: "Double Punch"
+image: /images/abilities/Double%20Punch.png
 class: "monk"
 levelRequirement: "20"
 statRequirements: "13/3/3/19/9"

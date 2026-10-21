@@ -1,4 +1,5 @@
 name: "Ground Shattering"
+image: /images/abilities/Ground%20Shattering.png
 class: "warrior"
 levelRequirement: "Master"
 statRequirements: "180/15/15/80/80"

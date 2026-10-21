@@ -8,4 +8,4 @@ itemRequirements: '-'
 prerequisites: '-'
 learningLocation: Becoming Assassin
 description: Instantly kills normal monsters below 20% health.  Deals an additional 3% for every rank of malice you hold, up to 35% at a full bar.  Successful execute keeps your malice, but if it does not execute, will spend it all.  Successful execute will halve the cooldown.  Anything that survives will take damage based on your DEX and 4.3% of your max health.
-image: /images/abilities/Last Breath 1.png
+image: /images/abilities/Last%20Breath%201.png

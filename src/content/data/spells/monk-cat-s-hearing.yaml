@@ -1,4 +1,5 @@
 name: "Cat's Hearing"
+image: /images/abilities/Cat's%20Hearing.png
 class: "monk"
 levelRequirement: "80"
 statRequirements: "35/15/12/60/35"

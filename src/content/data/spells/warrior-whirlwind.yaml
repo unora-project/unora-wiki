@@ -1,4 +1,5 @@
 name: "Whirlwind"
+image: /images/abilities/Whirlwind.png
 class: "warrior"
 levelRequirement: "60"
 statRequirements: "52/15/7/33/27"

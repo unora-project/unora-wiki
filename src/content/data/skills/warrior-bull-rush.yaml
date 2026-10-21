@@ -1,4 +1,5 @@
 name: "Bull Rush"
+image: /images/abilities/Bull%20Rush.png
 class: "warrior"
 levelRequirement: "56"
 statRequirements: "55/3/3/23/25"

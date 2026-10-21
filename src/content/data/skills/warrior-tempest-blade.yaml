@@ -1,4 +1,5 @@
 name: "Tempest Blade"
+image: /images/abilities/Tempest%20Blade.png
 class: "warrior"
 levelRequirement: "60"
 statRequirements: "58/3/3/22/35"

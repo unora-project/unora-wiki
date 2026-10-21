@@ -1,4 +1,5 @@
 name: "Smoke Stance"
+image: /images/abilities/Smoke%20Stance.png
 class: "monk"
 levelRequirement: "60"
 statRequirements: "24/6/6/38/24"

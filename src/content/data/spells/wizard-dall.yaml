@@ -1,4 +1,5 @@
 name: "Dall"
+image: /images/abilities/Dall.png
 class: "wizard"
 levelRequirement: "48"
 statRequirements: "3/42/38/10/3"

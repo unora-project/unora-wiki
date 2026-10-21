@@ -1,4 +1,5 @@
 name: Cloudburst 1
+image: /images/abilities/Cloudburst%201.png
 class: Elementalist
 element: Water
 levelRequirement: Ab 1

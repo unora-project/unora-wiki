@@ -1,4 +1,5 @@
 name: "Eisd Creutair"
+image: /images/abilities/Eisd%20Creutair.png
 class: "rogue"
 levelRequirement: "30"
 statRequirements: "10/11/8/10/21"

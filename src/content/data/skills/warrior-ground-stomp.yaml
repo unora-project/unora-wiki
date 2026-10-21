@@ -1,4 +1,5 @@
 name: "Ground Stomp"
+image: /images/abilities/Ground%20Stomp.png
 class: "warrior"
 levelRequirement: "80"
 statRequirements: "77/8/8/27/39"

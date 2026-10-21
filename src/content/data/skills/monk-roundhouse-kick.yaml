@@ -1,4 +1,5 @@
 name: "Roundhouse Kick"
+image: /images/abilities/Roundhouse%20Kick.png
 class: "monk"
 levelRequirement: "33"
 statRequirements: "14/6/4/31/15"

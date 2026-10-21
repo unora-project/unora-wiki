@@ -1,4 +1,5 @@
 name: "Tsunami Kick"
+image: /images/abilities/Tsunami%20Kick.png
 class: "monk"
 levelRequirement: "71"
 statRequirements: "29/21/12/49/26"

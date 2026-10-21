@@ -1,4 +1,5 @@
 name: "Fire Punch"
+image: /images/abilities/Fire%20Punch.png
 class: "monk"
 levelRequirement: "11"
 statRequirements: "13/3/3/13/7"

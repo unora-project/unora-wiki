@@ -1,4 +1,5 @@
 name: "nis"
+image: /images/abilities/nis.png
 class: "priest"
 levelRequirement: "3"
 statRequirements: "3/5/5/3/3"

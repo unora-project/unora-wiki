@@ -1,4 +1,5 @@
 name: "Mor Srad"
+image: /images/abilities/Mor%20Srad.png
 class: "wizard"
 levelRequirement: "41"
 statRequirements: "12/40/27/3/3"

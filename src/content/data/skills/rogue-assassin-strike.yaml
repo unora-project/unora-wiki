@@ -1,4 +1,5 @@
 name: "Assassin Strike"
+image: /images/abilities/Assassin%20Strike.png
 class: "rogue"
 levelRequirement: "Master"
 statRequirements: "3/3/3/3/3"

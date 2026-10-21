@@ -1,4 +1,5 @@
 name: "Charge"
+image: /images/abilities/Charge.png
 class: "warrior"
 levelRequirement: "Master"
 statRequirements: "3/3/3/3/3"

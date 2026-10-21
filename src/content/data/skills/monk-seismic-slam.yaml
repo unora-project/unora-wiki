@@ -1,4 +1,5 @@
 name: "Seismic Slam"
+image: /images/abilities/Seismic%20Slam.png
 class: "monk"
 levelRequirement: "Master"
 statRequirements: "80/15/10/135/60"
