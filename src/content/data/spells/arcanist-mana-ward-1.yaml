@@ -1,0 +1,11 @@
+name: Mana Ward 1
+class: Arcanist
+element: ''
+levelRequirement: Ab 12
+statRequirements: 3/3/3/3/3
+goldRequired: '1,500,000'
+itemRequirements: Blue Blob Core (5)
+prerequisites: '-'
+learningLocation: Peytri (Noam)
+description: Plant a ward on the ground that feeds mana to you and your group for 20% of your maximum mana.  For 12s it gives everyone friendly within 3 tiles, 6% of their own maximum mana each second (Even through walls).  Stops if you die or leave the map.
+image: /images/abilities/Mana Ward 1.png
