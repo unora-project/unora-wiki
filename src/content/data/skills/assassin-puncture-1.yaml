@@ -1,0 +1,11 @@
+name: Puncture 1
+class: Assassin
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Assassin
+description: Thrust into the enemy directly in front of you dealing tremendous damage and applying Armor Break.
+image: /images/abilities/Puncture 1.png
