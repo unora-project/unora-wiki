@@ -1,0 +1,2260 @@
+[
+  {
+    "town": "abel",
+    "npc": "Arnljot",
+    "items": [
+      {
+        "name": "Magi Skirt",
+        "type": "F Armor",
+        "cost": "1,000"
+      },
+      {
+        "name": "Corsette",
+        "type": "F Armor",
+        "cost": "25,000"
+      },
+      {
+        "name": "Blouse",
+        "type": "F Armor",
+        "cost": "100"
+      },
+      {
+        "name": "Paluten",
+        "type": "M Armor",
+        "cost": "25,000"
+      },
+      {
+        "name": "Shirt",
+        "type": "M Armor",
+        "cost": "100"
+      }
+    ]
+  },
+  {
+    "town": "abel",
+    "npc": "Aud",
+    "items": [
+      {
+        "name": "Cherry",
+        "type": "Food",
+        "cost": "500"
+      },
+      {
+        "name": "Chicken",
+        "type": "Food",
+        "cost": "100"
+      },
+      {
+        "name": "Grapes",
+        "type": "Food",
+        "cost": "500"
+      },
+      {
+        "name": "Vegetable",
+        "type": "Food",
+        "cost": "100"
+      },
+      {
+        "name": "Beef",
+        "type": "Food",
+        "cost": "100"
+      }
+    ]
+  },
+  {
+    "town": "abel",
+    "npc": "Egil",
+    "items": [
+      {
+        "name": "Small Health Potion",
+        "type": "Potion",
+        "cost": "1,000"
+      },
+      {
+        "name": "Small Mana Potion",
+        "type": "Potion",
+        "cost": "1,000"
+      },
+      {
+        "name": "Passport",
+        "type": "Utility",
+        "cost": "15,000"
+      }
+    ]
+  },
+  {
+    "town": "abel",
+    "npc": "Kamel",
+    "items": [
+      {
+        "name": "Basic Fishing Pole",
+        "type": "Tool",
+        "cost": "1,000"
+      },
+      {
+        "name": "Fishing Bait",
+        "type": "Bait",
+        "cost": "100"
+      }
+    ]
+  },
+  {
+    "town": "abel",
+    "npc": "Steinar",
+    "items": [
+      {
+        "name": "Leather Belt",
+        "type": "Belt",
+        "cost": "500"
+      },
+      {
+        "name": "Brigandine",
+        "type": "F Armor",
+        "cost": "7,000"
+      },
+      {
+        "name": "Leather Gauntlet",
+        "type": "Gauntlet",
+        "cost": "1,000"
+      },
+      {
+        "name": "Leather Greaves",
+        "type": "Greaves",
+        "cost": "7,000"
+      },
+      {
+        "name": "Coral Ring",
+        "type": "Ring",
+        "cost": "2,500"
+      }
+    ]
+  },
+  {
+    "town": "abel",
+    "npc": "Vidar",
+    "items": [
+      {
+        "name": "Dirk",
+        "type": "Dagger",
+        "cost": "200"
+      },
+      {
+        "name": "Stick",
+        "type": "1H Weapon",
+        "cost": "200"
+      },
+      {
+        "name": "Eppe",
+        "type": "1H Weapon",
+        "cost": "1,000"
+      },
+      {
+        "name": "Saber",
+        "type": "1H Weapon",
+        "cost": "3,200"
+      }
+    ]
+  },
+  {
+    "town": "asilon",
+    "npc": "Akum",
+    "items": [
+      {
+        "name": "Defiant Dane Blade",
+        "type": "2H Weapon",
+        "cost": "250,000"
+      },
+      {
+        "name": "Defiant Grum Blade",
+        "type": "2H Weapon",
+        "cost": "750,000"
+      },
+      {
+        "name": "Wreckless Dane Blade",
+        "type": "2H Weapon",
+        "cost": "250,000"
+      },
+      {
+        "name": "Wreckless Grum Blade",
+        "type": "2H Weapon",
+        "cost": "750,000"
+      },
+      {
+        "name": "Deadeye Jenwir Bow",
+        "type": "Bows",
+        "cost": "750,000"
+      },
+      {
+        "name": "Deadeye Wooden Bow",
+        "type": "Bows",
+        "cost": "250,000"
+      },
+      {
+        "name": "Ascetic Feathered Claw",
+        "type": "Claw",
+        "cost": "750,000"
+      },
+      {
+        "name": "Ascetic Vowien Claw",
+        "type": "Claw",
+        "cost": "250,000"
+      },
+      {
+        "name": "Verdant Feathered Claw",
+        "type": "Claw",
+        "cost": "750,000"
+      },
+      {
+        "name": "Verdant Vowien Claw",
+        "type": "Claw",
+        "cost": "250,000"
+      },
+      {
+        "name": "Merciless  Tanken Dagger",
+        "type": "Dagger",
+        "cost": "250,000"
+      },
+      {
+        "name": "Merciless Veitsi Dagger",
+        "type": "Dagger",
+        "cost": "750,000"
+      },
+      {
+        "name": "Ascetic Keluni",
+        "type": "F Armor",
+        "cost": "1,000,000"
+      },
+      {
+        "name": "Ascetic Soroni",
+        "type": "F Armor",
+        "cost": "500,000"
+      },
+      {
+        "name": "Deadeye Kanon",
+        "type": "F Armor",
+        "cost": "500,000"
+      },
+      {
+        "name": "Deadeye Veron",
+        "type": "F Armor",
+        "cost": "1,000,000"
+      },
+      {
+        "name": "Defiant Garnulan",
+        "type": "F Armor",
+        "cost": "1,000,000"
+      },
+      {
+        "name": "Defiant Tarsilan",
+        "type": "F Armor",
+        "cost": "500,000"
+      },
+      {
+        "name": "Merciless Kanon",
+        "type": "F Armor",
+        "cost": "500,000"
+      },
+      {
+        "name": "Merciless Veron",
+        "type": "F Armor",
+        "cost": "1,000,000"
+      },
+      {
+        "name": "Verdant Keluni",
+        "type": "F Armor",
+        "cost": "1,000,000"
+      },
+      {
+        "name": "Verdant Soroni",
+        "type": "F Armor",
+        "cost": "500,000"
+      },
+      {
+        "name": "Wreckless Garnulan",
+        "type": "F Armor",
+        "cost": "1,000,000"
+      },
+      {
+        "name": "Wreckless Tarsilan",
+        "type": "F Armor",
+        "cost": "500,000"
+      },
+      {
+        "name": "Ascetic Kelun",
+        "type": "M Armor",
+        "cost": "1,000,000"
+      },
+      {
+        "name": "Ascetic Soron",
+        "type": "M Armor",
+        "cost": "500,000"
+      },
+      {
+        "name": "Deadeye Kano",
+        "type": "M Armor",
+        "cost": "500,000"
+      },
+      {
+        "name": "Deadeye Vero",
+        "type": "M Armor",
+        "cost": "1,000,000"
+      },
+      {
+        "name": "Defiant Garnul",
+        "type": "M Armor",
+        "cost": "1,000,000"
+      },
+      {
+        "name": "Defiant Tarsil",
+        "type": "M Armor",
+        "cost": "500,000"
+      },
+      {
+        "name": "Merciless Kano",
+        "type": "M Armor",
+        "cost": "500,000"
+      },
+      {
+        "name": "Merciless Vero",
+        "type": "M Armor",
+        "cost": "1,000,000"
+      },
+      {
+        "name": "Verdant Kelun",
+        "type": "M Armor",
+        "cost": "1,000,000"
+      },
+      {
+        "name": "Verdant Soron",
+        "type": "M Armor",
+        "cost": "500,000"
+      },
+      {
+        "name": "Wreckless Garnul",
+        "type": "M Armor",
+        "cost": "1,000,000"
+      },
+      {
+        "name": "Wreckless Tarsil",
+        "type": "M Armor",
+        "cost": "500,000"
+      }
+    ]
+  },
+  {
+    "town": "asilon",
+    "npc": "Juwerl",
+    "items": [
+      {
+        "name": "Festering Blightward Gown",
+        "type": "F Armor",
+        "cost": "1,000,000"
+      },
+      {
+        "name": "Festering Rotward Gown",
+        "type": "F Armor",
+        "cost": "500,000"
+      },
+      {
+        "name": "Incarnate Aiquilon",
+        "type": "F Armor",
+        "cost": "500,000"
+      },
+      {
+        "name": "Incarnate Vaerilon",
+        "type": "F Armor",
+        "cost": "1,000,000"
+      },
+      {
+        "name": "Primordial Aiquilon",
+        "type": "F Armor",
+        "cost": "500,000"
+      },
+      {
+        "name": "Primordial Vaerilon",
+        "type": "F Armor",
+        "cost": "1,000,000"
+      },
+      {
+        "name": "Resonant Selaer",
+        "type": "F Armor",
+        "cost": "1,000,000"
+      },
+      {
+        "name": "Resonant Vainar",
+        "type": "F Armor",
+        "cost": "500,000"
+      },
+      {
+        "name": "Incarnate Moon Codex",
+        "type": "Grimoire",
+        "cost": "750,000"
+      },
+      {
+        "name": "Incarnate Prism Codex",
+        "type": "Grimoire",
+        "cost": "250,000"
+      },
+      {
+        "name": "Resonant Rosewood Harp",
+        "type": "Harp",
+        "cost": "750,000"
+      },
+      {
+        "name": "Resonant Wooden Harp",
+        "type": "Harp",
+        "cost": "250,000"
+      },
+      {
+        "name": "Festering Blightward Garb",
+        "type": "M Armor",
+        "cost": "1,000,000"
+      },
+      {
+        "name": "Festering Rotward Garb",
+        "type": "M Armor",
+        "cost": "500,000"
+      },
+      {
+        "name": "Incarnate Aiquil",
+        "type": "M Armor",
+        "cost": "500,000"
+      },
+      {
+        "name": "Incarnate Vaeril",
+        "type": "M Armor",
+        "cost": "1,000,000"
+      },
+      {
+        "name": "Primordial Aiquil",
+        "type": "M Armor",
+        "cost": "500,000"
+      },
+      {
+        "name": "Primordial Vaeril",
+        "type": "M Armor",
+        "cost": "1,000,000"
+      },
+      {
+        "name": "Resonant Selae",
+        "type": "M Armor",
+        "cost": "1,000,000"
+      },
+      {
+        "name": "Resonant Vaina",
+        "type": "M Armor",
+        "cost": "500,000"
+      },
+      {
+        "name": "Primordial Maron Sphere",
+        "type": "Sphere",
+        "cost": "750,000"
+      },
+      {
+        "name": "Primordial Sphere",
+        "type": "Sphere",
+        "cost": "250,000"
+      },
+      {
+        "name": "Festering Crow Staff",
+        "type": "Staff",
+        "cost": "250,000"
+      },
+      {
+        "name": "Festering Winged Staff",
+        "type": "Staff",
+        "cost": "750,000"
+      }
+    ]
+  },
+  {
+    "town": "mileth",
+    "npc": "Aingeal",
+    "items": [
+      {
+        "name": "Rum",
+        "type": "Drink",
+        "cost": "100"
+      },
+      {
+        "name": "Wine",
+        "type": "Drink",
+        "cost": "40"
+      }
+    ]
+  },
+  {
+    "town": "mileth",
+    "npc": "Callo",
+    "items": [
+      {
+        "name": "Claidheamh",
+        "type": "1H Weapon",
+        "cost": "5,000"
+      },
+      {
+        "name": "Dirk",
+        "type": "Dagger",
+        "cost": "500"
+      },
+      {
+        "name": "Dull Claws",
+        "type": "Claw",
+        "cost": "800"
+      },
+      {
+        "name": "Eppe",
+        "type": "1H Weapon",
+        "cost": "1,000"
+      },
+      {
+        "name": "Holy Hermes",
+        "type": "Staff",
+        "cost": "3,000"
+      },
+      {
+        "name": "Saber",
+        "type": "1H Weapon",
+        "cost": "2,000"
+      },
+      {
+        "name": "Snow Dagger",
+        "type": "Dagger",
+        "cost": "800"
+      },
+      {
+        "name": "Snow Secret",
+        "type": "Secret",
+        "cost": "600"
+      },
+      {
+        "name": "Stick",
+        "type": "1H Weapon",
+        "cost": "100"
+      },
+      {
+        "name": "Wolf Claws",
+        "type": "Claw",
+        "cost": "10,000"
+      }
+    ]
+  },
+  {
+    "town": "mileth",
+    "npc": "Josephine",
+    "items": [
+      {
+        "name": "Hairstyles 1–98",
+        "type": "Hair",
+        "cost": "1,000"
+      },
+      {
+        "name": "Default Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Black Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Apple Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Carrot Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Yellow Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Teal Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Blue Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Violet Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Olive Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Green Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Pumpkin Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Brown Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Gray Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Navy Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Tan Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "White Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Pink Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Chartreuse Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Orange Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Light Blonde Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Midnight Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Sky Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Mauve Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Orchid Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Bubblegum Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Light Blue Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Hot Pink Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Cyan Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Lilac Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Salmon Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Neon Blue Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Neon Green Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Pastel Green Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Blonde Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Royal Blue Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Leather Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Scarlet Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Forest Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Yale Blue Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Tangerine Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Dirty Blonde Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Sage Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Grass Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Cobalt Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Blush Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Glitch Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Aqua Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Lime Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Purple Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Neon Red Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Neon Yellow Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Pale Pink Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Peach Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Crimson Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Mustard Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Silver Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Fire Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Ice Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Magenta Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Pale Green Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Baby Blue Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Void Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Ghost Blue Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Mint Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Fern Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Ghost Pink Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Flamingo Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Turquoise Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Matte Black Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Taffy Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "Neon Purple Hair Dye",
+        "type": "Dye",
+        "cost": "1,000"
+      },
+      {
+        "name": "White Body Dye",
+        "type": "Body Color",
+        "cost": "1,000"
+      },
+      {
+        "name": "Pale Body Dye",
+        "type": "Body Color",
+        "cost": "1,000"
+      },
+      {
+        "name": "Brown Body Dye",
+        "type": "Body Color",
+        "cost": "1,000"
+      },
+      {
+        "name": "Green Body Dye",
+        "type": "Body Color",
+        "cost": "1,000"
+      },
+      {
+        "name": "Yellow Body Dye",
+        "type": "Body Color",
+        "cost": "1,000"
+      },
+      {
+        "name": "Tan Body Dye",
+        "type": "Body Color",
+        "cost": "1,000"
+      },
+      {
+        "name": "Grey Body Dye",
+        "type": "Body Color",
+        "cost": "1,000"
+      },
+      {
+        "name": "Light Blue Body Dye",
+        "type": "Body Color",
+        "cost": "1,000"
+      },
+      {
+        "name": "Orange Body Dye",
+        "type": "Body Color",
+        "cost": "1,000"
+      },
+      {
+        "name": "Purple Body Dye",
+        "type": "Body Color",
+        "cost": "1,000"
+      },
+      {
+        "name": "Default Face Shape",
+        "type": "Face Shape",
+        "cost": "50,000"
+      },
+      {
+        "name": "Blush Face Shape",
+        "type": "Face Shape",
+        "cost": "50,000"
+      },
+      {
+        "name": "Derpy Face Shape",
+        "type": "Face Shape",
+        "cost": "50,000"
+      },
+      {
+        "name": "Bug Face Shape",
+        "type": "Face Shape",
+        "cost": "50,000"
+      },
+      {
+        "name": "Surprised Face Shape",
+        "type": "Face Shape",
+        "cost": "50,000"
+      },
+      {
+        "name": "Squinting Face Shape",
+        "type": "Face Shape",
+        "cost": "50,000"
+      },
+      {
+        "name": "Fishy Face Shape",
+        "type": "Face Shape",
+        "cost": "50,000"
+      },
+      {
+        "name": "Old Man Face Shape",
+        "type": "Face Shape",
+        "cost": "50,000"
+      },
+      {
+        "name": "Mean Face Shape",
+        "type": "Face Shape",
+        "cost": "50,000"
+      },
+      {
+        "name": "Beauty Face Shape",
+        "type": "Face Shape",
+        "cost": "50,000"
+      },
+      {
+        "name": "Soulless Face Shape",
+        "type": "Face Shape",
+        "cost": "50,000"
+      },
+      {
+        "name": "Possessed Face Shape",
+        "type": "Face Shape",
+        "cost": "50,000"
+      },
+      {
+        "name": "Deep Eyes Face Shape",
+        "type": "Face Shape",
+        "cost": "50,000"
+      },
+      {
+        "name": "Closed Eyes Face Shape",
+        "type": "Face Shape",
+        "cost": "50,000"
+      },
+      {
+        "name": "Sleepy Eyes Face Shape",
+        "type": "Face Shape",
+        "cost": "50,000"
+      },
+      {
+        "name": "Fake Smile Face Shape",
+        "type": "Face Shape",
+        "cost": "50,000"
+      },
+      {
+        "name": "Stepped On A Lego Face Shape",
+        "type": "Face Shape",
+        "cost": "50,000"
+      },
+      {
+        "name": "Resting Bitch Face Shape",
+        "type": "Face Shape",
+        "cost": "50,000"
+      }
+    ]
+  },
+  {
+    "town": "mileth",
+    "npc": "Nisk",
+    "items": [
+      {
+        "name": "Lockpicks",
+        "type": "Tool",
+        "cost": "1,000"
+      }
+    ]
+  },
+  {
+    "town": "mileth",
+    "npc": "Oona",
+    "items": [
+      {
+        "name": "Beef",
+        "type": "Food",
+        "cost": "100"
+      },
+      {
+        "name": "Cherry",
+        "type": "Food",
+        "cost": "500"
+      },
+      {
+        "name": "Chicken",
+        "type": "Food",
+        "cost": "100"
+      },
+      {
+        "name": "Grapes",
+        "type": "Food",
+        "cost": "500"
+      },
+      {
+        "name": "Vegetable",
+        "type": "Food",
+        "cost": "100"
+      }
+    ]
+  },
+  {
+    "town": "mileth",
+    "npc": "Torrance",
+    "items": [
+      {
+        "name": "Boots",
+        "type": "Boots",
+        "cost": "100"
+      },
+      {
+        "name": "Bronze Shield",
+        "type": "Shield",
+        "cost": "16,000"
+      },
+      {
+        "name": "Coral Ring",
+        "type": "Ring",
+        "cost": "2,500"
+      },
+      {
+        "name": "Emerald Ring",
+        "type": "Ring",
+        "cost": "6,000"
+      },
+      {
+        "name": "Fire Belt",
+        "type": "Belt",
+        "cost": "2,500"
+      },
+      {
+        "name": "Fire Necklace",
+        "type": "Necklace",
+        "cost": "2,500"
+      },
+      {
+        "name": "Green Boots",
+        "type": "Boots",
+        "cost": "12,000"
+      },
+      {
+        "name": "Grey Boots",
+        "type": "Boots",
+        "cost": "1,000"
+      },
+      {
+        "name": "Iron Gauntlet",
+        "type": "Gauntlet",
+        "cost": "8,000"
+      },
+      {
+        "name": "Iron Greaves",
+        "type": "Greaves",
+        "cost": "9,000"
+      },
+      {
+        "name": "Iron Shield",
+        "type": "Shield",
+        "cost": "24,000"
+      },
+      {
+        "name": "Leather Belt",
+        "type": "Belt",
+        "cost": "500"
+      },
+      {
+        "name": "Leather Gauntlet",
+        "type": "Gauntlet",
+        "cost": "1,000"
+      },
+      {
+        "name": "Leather Greaves",
+        "type": "Greaves",
+        "cost": "7,000"
+      },
+      {
+        "name": "Leather Shield",
+        "type": "Shield",
+        "cost": "5,000"
+      },
+      {
+        "name": "Ruby Ring",
+        "type": "Ring",
+        "cost": "1,000"
+      },
+      {
+        "name": "Wooden Shield",
+        "type": "Shield",
+        "cost": "500"
+      }
+    ]
+  },
+  {
+    "town": "mileth",
+    "npc": "Urza",
+    "items": [
+      {
+        "name": "Blouse",
+        "type": "F Armor",
+        "cost": "100"
+      },
+      {
+        "name": "Cowl",
+        "type": "M Armor",
+        "cost": "1,000"
+      },
+      {
+        "name": "Gorget Gown",
+        "type": "F Armor",
+        "cost": "1,000"
+      },
+      {
+        "name": "Leather Bliaut",
+        "type": "F Armor",
+        "cost": "1,000"
+      },
+      {
+        "name": "Leather Tunic",
+        "type": "M Armor",
+        "cost": "1,000"
+      },
+      {
+        "name": "Mask",
+        "type": "Helm",
+        "cost": "1,000"
+      },
+      {
+        "name": "Shirt",
+        "type": "M Armor",
+        "cost": "100"
+      }
+    ]
+  },
+  {
+    "town": "piet",
+    "npc": "Gunnar",
+    "items": [
+      {
+        "name": "Dirk",
+        "type": "Dagger",
+        "cost": "200"
+      },
+      {
+        "name": "Eppe",
+        "type": "1H Weapon",
+        "cost": "600"
+      },
+      {
+        "name": "Saber",
+        "type": "1H Weapon",
+        "cost": "3,200"
+      },
+      {
+        "name": "Broad Sword",
+        "type": "1H Weapon",
+        "cost": "8,200"
+      },
+      {
+        "name": "Battle Sword",
+        "type": "1H Weapon",
+        "cost": "12,800"
+      },
+      {
+        "name": "Masquerade",
+        "type": "1H Weapon",
+        "cost": "15,400:"
+      }
+    ]
+  },
+  {
+    "town": "piet",
+    "npc": "Mathis",
+    "items": [
+      {
+        "name": "Empty Bottle",
+        "type": "Misc",
+        "cost": "100"
+      },
+      {
+        "name": "[Recipe] Hemloch",
+        "type": "Recipe",
+        "cost": "25,000"
+      }
+    ]
+  },
+  {
+    "town": "piet",
+    "npc": "Alleen",
+    "items": [
+      {
+        "name": "Cherry",
+        "type": "Food",
+        "cost": "500"
+      },
+      {
+        "name": "Chicken",
+        "type": "Food",
+        "cost": "100"
+      },
+      {
+        "name": "Grapes",
+        "type": "Food",
+        "cost": "500"
+      },
+      {
+        "name": "Vegetable",
+        "type": "Food",
+        "cost": "100"
+      },
+      {
+        "name": "Beef",
+        "type": "Food",
+        "cost": "100"
+      }
+    ]
+  },
+  {
+    "town": "piet",
+    "npc": "Appie",
+    "items": [
+      {
+        "name": "Small Health Potion",
+        "type": "Potion",
+        "cost": "1,000"
+      },
+      {
+        "name": "Small Mana Potion",
+        "type": "Potion",
+        "cost": "1,000"
+      },
+      {
+        "name": "Passport",
+        "type": "Utility",
+        "cost": "15,000"
+      }
+    ]
+  },
+  {
+    "town": "piet",
+    "npc": "Jilt",
+    "items": [
+      {
+        "name": "Blouse",
+        "type": "F Armor",
+        "cost": "100"
+      },
+      {
+        "name": "Scout Leather",
+        "type": "M Armor",
+        "cost": "500"
+      },
+      {
+        "name": "Dwarvish Leather",
+        "type": "M Armor",
+        "cost": "7,000"
+      },
+      {
+        "name": "Shirt",
+        "type": "M Armor",
+        "cost": "100"
+      }
+    ]
+  },
+  {
+    "town": "piet",
+    "npc": "Leo",
+    "items": [
+      {
+        "name": "Earth Belt",
+        "type": "Belt",
+        "cost": "2,500"
+      },
+      {
+        "name": "Gold Earrings",
+        "type": "Earrings",
+        "cost": "8,000"
+      },
+      {
+        "name": "Silver Earrings",
+        "type": "Earrings",
+        "cost": "8,000"
+      },
+      {
+        "name": "Cuirass",
+        "type": "F Armor",
+        "cost": "7,000"
+      },
+      {
+        "name": "Kasmanium Hauberk",
+        "type": "F Armor",
+        "cost": "25,000"
+      },
+      {
+        "name": "Kasmanium Armor",
+        "type": "M Armor",
+        "cost": "25,000"
+      }
+    ]
+  },
+  {
+    "town": "piet",
+    "npc": "Lia",
+    "items": [
+      {
+        "name": "Rum",
+        "type": "Drink",
+        "cost": "100"
+      },
+      {
+        "name": "Wine",
+        "type": "Drink",
+        "cost": "40"
+      }
+    ]
+  },
+  {
+    "town": "rucesion",
+    "npc": "Carlos",
+    "items": [
+      {
+        "name": "Wind Belt",
+        "type": "Belt",
+        "cost": "2,500"
+      },
+      {
+        "name": "Earth Necklace",
+        "type": "Necklace",
+        "cost": "2,500"
+      },
+      {
+        "name": "Fire Necklace",
+        "type": "Necklace",
+        "cost": "2,500"
+      },
+      {
+        "name": "Sea Necklace",
+        "type": "Necklace",
+        "cost": "2,500"
+      },
+      {
+        "name": "Wind Necklace",
+        "type": "Necklace",
+        "cost": "2,500"
+      }
+    ]
+  },
+  {
+    "town": "rucesion",
+    "npc": "Marcelo",
+    "items": [
+      {
+        "name": "Dirk",
+        "type": "Dagger",
+        "cost": "200"
+      },
+      {
+        "name": "Stick",
+        "type": "1H Weapon",
+        "cost": "200"
+      },
+      {
+        "name": "Eppe",
+        "type": "1H Weapon",
+        "cost": "600"
+      },
+      {
+        "name": "Saber",
+        "type": "1H Weapon",
+        "cost": "3,200"
+      }
+    ]
+  },
+  {
+    "town": "rucesion",
+    "npc": "Nyx",
+    "items": [
+      {
+        "name": "Nyx's Umbral Shield",
+        "type": "Shield",
+        "cost": "3 (Nyx Tokens)"
+      },
+      {
+        "name": "Nyx's Whisper",
+        "type": "Earrings",
+        "cost": "3 (Nyx Tokens)"
+      },
+      {
+        "name": "Nyx's Twilight Band",
+        "type": "Ring",
+        "cost": "2 (Nyx Tokens)"
+      },
+      {
+        "name": "Nyx's Embrace",
+        "type": "Gauntlet",
+        "cost": "2 (Nyx Tokens)"
+      },
+      {
+        "name": "Nyx's Poleyns",
+        "type": "Greaves",
+        "cost": "3 (Nyx Tokens)"
+      },
+      {
+        "name": "Expert Alchemy Box",
+        "type": "Misc",
+        "cost": "3 (Nyx Tokens) or 4 (Bug Points)"
+      },
+      {
+        "name": "Expert Weaponsmithing Box",
+        "type": "Misc",
+        "cost": "3 (Nyx Tokens) or 4 (Bug Points)"
+      },
+      {
+        "name": "Expert Enchanting Box",
+        "type": "Misc",
+        "cost": "3 (Nyx Tokens) or 4 (Bug Points)"
+      },
+      {
+        "name": "Expert Jewelcrafting Box",
+        "type": "Misc",
+        "cost": "3 (Nyx Tokens) or 4 (Bug Points)"
+      },
+      {
+        "name": "Expert Armorsmithing Box",
+        "type": "Misc",
+        "cost": "3 (Nyx Tokens) or 4 (Bug Points)"
+      },
+      {
+        "name": "Bread",
+        "type": "Food",
+        "cost": "1 (Nyx Tokens) or 1 (Bug Points)"
+      },
+      {
+        "name": "Cheese",
+        "type": "Food",
+        "cost": "1 (Nyx Tokens) or 1 (Bug Points)"
+      },
+      {
+        "name": "Flour",
+        "type": "Food",
+        "cost": "1 (Nyx Tokens) or 1 (Bug Points)"
+      },
+      {
+        "name": "Marinade",
+        "type": "Food",
+        "cost": "1 (Nyx Tokens) or 1 (Bug Points)"
+      },
+      {
+        "name": "Salt",
+        "type": "Food",
+        "cost": "1 (Nyx Tokens) or 1 (Bug Points)"
+      },
+      {
+        "name": "Sugar",
+        "type": "Food",
+        "cost": "1 (Nyx Tokens) or 1 (Bug Points)"
+      },
+      {
+        "name": "Green Grapes",
+        "type": "Food",
+        "cost": "1 (Nyx Tokens) or 1 (Bug Points)"
+      },
+      {
+        "name": "Strawberry",
+        "type": "Food",
+        "cost": "1 (Nyx Tokens) or 1 (Bug Points)"
+      },
+      {
+        "name": "Tangerines",
+        "type": "Food",
+        "cost": "1 (Nyx Tokens) or 1 (Bug Points)"
+      },
+      {
+        "name": "Beef Slices",
+        "type": "Food",
+        "cost": "1 (Nyx Tokens) or 1 (Bug Points)"
+      },
+      {
+        "name": "Lobster Tail",
+        "type": "Food",
+        "cost": "1 (Nyx Tokens) or 1 (Bug Points)"
+      },
+      {
+        "name": "Raw Meat",
+        "type": "Food",
+        "cost": "1 (Nyx Tokens) or 1 (Bug Points)"
+      },
+      {
+        "name": "Clam",
+        "type": "Food",
+        "cost": "1 (Nyx Tokens) or 1 (Bug Points)"
+      },
+      {
+        "name": "Prime Monster Extract",
+        "type": "Misc",
+        "cost": "4 (Bug Points)"
+      },
+      {
+        "name": "Raw Azurium",
+        "type": "Misc",
+        "cost": "4 (Bug Points)"
+      },
+      {
+        "name": "Raw Crimsonite",
+        "type": "Misc",
+        "cost": "4 (Bug Points)"
+      },
+      {
+        "name": "Blossom of Betrayal",
+        "type": "Misc",
+        "cost": "1 (Bug Points)"
+      },
+      {
+        "name": "Bocan Bough",
+        "type": "Misc",
+        "cost": "1 (Bug Points)"
+      },
+      {
+        "name": "Cactus Flower",
+        "type": "Misc",
+        "cost": "1 (Bug Points)"
+      },
+      {
+        "name": "Dochas Bloom",
+        "type": "Misc",
+        "cost": "1 (Bug Points)"
+      },
+      {
+        "name": "Kabine Blossom",
+        "type": "Misc",
+        "cost": "1 (Bug Points)"
+      },
+      {
+        "name": "Kobold Tail",
+        "type": "Misc",
+        "cost": "1 (Bug Points)"
+      },
+      {
+        "name": "Lily Pad",
+        "type": "Misc",
+        "cost": "1 (Bug Points)"
+      },
+      {
+        "name": "Passion Flower",
+        "type": "Misc",
+        "cost": "1 (Bug Points)"
+      },
+      {
+        "name": "Raineach",
+        "type": "Misc",
+        "cost": "1 (Bug Points)"
+      },
+      {
+        "name": "Spark Flower",
+        "type": "Misc",
+        "cost": "1 (Bug Points)"
+      },
+      {
+        "name": "Passport",
+        "type": "Utility",
+        "cost": "1 (Bug Points)"
+      }
+    ]
+  },
+  {
+    "town": "rucesion",
+    "npc": "Pluto",
+    "items": [
+      {
+        "name": "Cotte",
+        "type": "F Armor",
+        "cost": "1,000"
+      },
+      {
+        "name": "Benusta",
+        "type": "F Armor",
+        "cost": "7,000"
+      },
+      {
+        "name": "Blouse",
+        "type": "F Armor",
+        "cost": "100"
+      },
+      {
+        "name": "Gardcorp",
+        "type": "M Armor",
+        "cost": "1,000"
+      },
+      {
+        "name": "Galuchat Coat",
+        "type": "M Armor",
+        "cost": "7,000"
+      },
+      {
+        "name": "Journeyman",
+        "type": "M Armor",
+        "cost": "7,000"
+      },
+      {
+        "name": "Shirt",
+        "type": "M Armor",
+        "cost": "100"
+      }
+    ]
+  },
+  {
+    "town": "rucesion",
+    "npc": "Wureen",
+    "items": [
+      {
+        "name": "Blouse",
+        "type": "F Armor",
+        "cost": "100"
+      },
+      {
+        "name": "Apple",
+        "type": "Food",
+        "cost": "500"
+      },
+      {
+        "name": "Shirt",
+        "type": "M Armor",
+        "cost": "100"
+      },
+      {
+        "name": "Lockpicks",
+        "type": "Tool",
+        "cost": "1,000"
+      }
+    ]
+  },
+  {
+    "town": "suomi",
+    "npc": "Alvar",
+    "items": [
+      {
+        "name": "Grapes",
+        "type": "Food",
+        "cost": "500"
+      }
+    ]
+  },
+  {
+    "town": "suomi",
+    "npc": "Goran",
+    "items": [
+      {
+        "name": "Cherry",
+        "type": "Food",
+        "cost": "500"
+      },
+      {
+        "name": "Cloth Glove",
+        "type": "Tool",
+        "cost": "50,000"
+      }
+    ]
+  },
+  {
+    "town": "suomi",
+    "npc": "Gudny",
+    "items": [
+      {
+        "name": "Cherry",
+        "type": "Food",
+        "cost": "500"
+      },
+      {
+        "name": "Chicken",
+        "type": "Food",
+        "cost": "100"
+      },
+      {
+        "name": "Grapes",
+        "type": "Food",
+        "cost": "500"
+      },
+      {
+        "name": "Vegetable",
+        "type": "Food",
+        "cost": "100"
+      },
+      {
+        "name": "Beef",
+        "type": "Food",
+        "cost": "100"
+      }
+    ]
+  },
+  {
+    "town": "suomi",
+    "npc": "Torbjorn",
+    "items": [
+      {
+        "name": "Dirk",
+        "type": "Dagger",
+        "cost": "200"
+      },
+      {
+        "name": "Eppe",
+        "type": "1H Weapon",
+        "cost": "600"
+      },
+      {
+        "name": "Saber",
+        "type": "1H Weapon",
+        "cost": "3,200"
+      },
+      {
+        "name": "Dull Claw",
+        "type": "Claw",
+        "cost": "1,200"
+      },
+      {
+        "name": "Wolf Claw",
+        "type": "Claw",
+        "cost": "5,200"
+      },
+      {
+        "name": "Snow Dagger",
+        "type": "Dagger",
+        "cost": "600"
+      },
+      {
+        "name": "Center Dagger",
+        "type": "Dagger",
+        "cost": "2,200"
+      },
+      {
+        "name": "Blossom Dagger",
+        "type": "Dagger",
+        "cost": "5,200"
+      },
+      {
+        "name": "Moon Dagger",
+        "type": "Dagger",
+        "cost": "15,400"
+      },
+      {
+        "name": "Snow Secret",
+        "type": "Secret",
+        "cost": "600"
+      },
+      {
+        "name": "Center Secret",
+        "type": "Secret",
+        "cost": "4,600"
+      },
+      {
+        "name": "Blossom Secret",
+        "type": "Secret",
+        "cost": "8,800"
+      },
+      {
+        "name": "Moon Secret",
+        "type": "Secret",
+        "cost": "18,400"
+      }
+    ]
+  },
+  {
+    "town": "suomi",
+    "npc": "Valdemar",
+    "items": [
+      {
+        "name": "Leather Belt",
+        "type": "Belt",
+        "cost": "500"
+      },
+      {
+        "name": "Boots",
+        "type": "Boots",
+        "cost": "100"
+      },
+      {
+        "name": "Grey Boots",
+        "type": "Boots",
+        "cost": "1,000"
+      },
+      {
+        "name": "Green Boots",
+        "type": "Boots",
+        "cost": "12,000"
+      },
+      {
+        "name": "Leather Greaves",
+        "type": "Greaves",
+        "cost": "7,000"
+      },
+      {
+        "name": "Ruby Ring",
+        "type": "Ring",
+        "cost": "1,000"
+      },
+      {
+        "name": "Emerald Ring",
+        "type": "Ring",
+        "cost": "6,000"
+      }
+    ]
+  },
+  {
+    "town": "suomi",
+    "npc": "Viveka",
+    "items": [
+      {
+        "name": "Brandy",
+        "type": "Drink",
+        "cost": "40"
+      },
+      {
+        "name": "Rum",
+        "type": "Drink",
+        "cost": "100"
+      },
+      {
+        "name": "Wine",
+        "type": "Drink",
+        "cost": "40"
+      }
+    ]
+  },
+  {
+    "town": "tagor",
+    "npc": "Areini",
+    "items": [
+      {
+        "name": "Pet Male Floppy",
+        "type": "Pets",
+        "cost": "1,000,000"
+      },
+      {
+        "name": "Pet Mongrel",
+        "type": "Pets",
+        "cost": "1,000,000"
+      },
+      {
+        "name": "Pet Black Cat",
+        "type": "Pets",
+        "cost": "1,000,000"
+      },
+      {
+        "name": "Pet Blob",
+        "type": "Pets",
+        "cost": "1,000,000"
+      },
+      {
+        "name": "Pet Ducklings",
+        "type": "Pets",
+        "cost": "1,000,000"
+      },
+      {
+        "name": "Pet Female Floppy",
+        "type": "Pets",
+        "cost": "1,000,000"
+      }
+    ]
+  },
+  {
+    "town": "tagor",
+    "npc": "Matei",
+    "items": [
+      {
+        "name": "Small Health Potion",
+        "type": "Utility",
+        "cost": "1,000"
+      },
+      {
+        "name": "Small Mana Potion",
+        "type": "Utility",
+        "cost": "1,000"
+      },
+      {
+        "name": "Passport",
+        "type": "Utility",
+        "cost": "15,000"
+      }
+    ]
+  },
+  {
+    "town": "tagor",
+    "npc": "Matilda",
+    "items": [
+      {
+        "name": "Brandy",
+        "type": "Drink",
+        "cost": "40"
+      },
+      {
+        "name": "Rum",
+        "type": "Drink",
+        "cost": "100"
+      },
+      {
+        "name": "Wine",
+        "type": "Drink",
+        "cost": "40"
+      }
+    ]
+  },
+  {
+    "town": "tagor",
+    "npc": "Rosie",
+    "items": [
+      {
+        "name": "Cherry",
+        "type": "Food",
+        "cost": "500"
+      },
+      {
+        "name": "Chicken",
+        "type": "Food",
+        "cost": "100"
+      },
+      {
+        "name": "Grapes",
+        "type": "Food",
+        "cost": "500"
+      },
+      {
+        "name": "Vegetable",
+        "type": "Food",
+        "cost": "100"
+      },
+      {
+        "name": "Beef",
+        "type": "Food",
+        "cost": "100"
+      }
+    ]
+  },
+  {
+    "town": "tagor",
+    "npc": "Thorin",
+    "items": [
+      {
+        "name": "Dirk",
+        "type": "Dagger",
+        "cost": "200"
+      },
+      {
+        "name": "Stick",
+        "type": "1H Weapon",
+        "cost": "200"
+      },
+      {
+        "name": "Eppe",
+        "type": "1H Weapon",
+        "cost": "600"
+      },
+      {
+        "name": "Saber",
+        "type": "1H Weapon",
+        "cost": "3,200"
+      },
+      {
+        "name": "Claidheamh",
+        "type": "1H Weapon",
+        "cost": "5,200"
+      },
+      {
+        "name": "Dull Claw",
+        "type": "Claw",
+        "cost": "1,200"
+      },
+      {
+        "name": "Wolf Claw",
+        "type": "Claw",
+        "cost": "5,200"
+      },
+      {
+        "name": "Snow Dagger",
+        "type": "Dagger",
+        "cost": "600"
+      },
+      {
+        "name": "Coal",
+        "type": "Ore",
+        "cost": "100"
+      },
+      {
+        "name": "Snow Secret",
+        "type": "Secret",
+        "cost": "600"
+      },
+      {
+        "name": "Holy Hermes",
+        "type": "Staff",
+        "cost": "5,200"
+      }
+    ]
+  },
+  {
+    "town": "undine",
+    "npc": "Alexios",
+    "items": [
+      {
+        "name": "Sea Belt",
+        "type": "Belt",
+        "cost": "2,500"
+      },
+      {
+        "name": "Leather Bracer",
+        "type": "Gauntlet",
+        "cost": "1,500"
+      },
+      {
+        "name": "Iron Bracer",
+        "type": "Gauntlet",
+        "cost": "10,000"
+      },
+      {
+        "name": "Cotehardie",
+        "type": "F Armor",
+        "cost": "15,000"
+      },
+      {
+        "name": "Moon Bodice",
+        "type": "F Armor",
+        "cost": "25,000"
+      },
+      {
+        "name": "Mythril Gauntlet",
+        "type": "Gauntlet",
+        "cost": "24,000"
+      },
+      {
+        "name": "Hy-Brasyl Gauntlet",
+        "type": "Gauntlet",
+        "cost": "50,000"
+      },
+      {
+        "name": "Mythril Greaves",
+        "type": "Greaves",
+        "cost": "32,000"
+      },
+      {
+        "name": "Hy-Brasyl Greaves",
+        "type": "Greaves",
+        "cost": "60,000"
+      },
+      {
+        "name": "Lorica",
+        "type": "M Armor",
+        "cost": "15,000"
+      },
+      {
+        "name": "Earth Garb",
+        "type": "M Armor",
+        "cost": "25,000"
+      },
+      {
+        "name": "Sea Necklace",
+        "type": "Necklace",
+        "cost": "2,500"
+      },
+      {
+        "name": "Jade Ring",
+        "type": "Ring",
+        "cost": "25,000"
+      },
+      {
+        "name": "Mythril Shield",
+        "type": "Shield",
+        "cost": "40,000"
+      }
+    ]
+  },
+  {
+    "town": "undine",
+    "npc": "Avel",
+    "items": [
+      {
+        "name": "Claidhmore",
+        "type": "2H Weapon",
+        "cost": "35,800"
+      },
+      {
+        "name": "Emerald Sword",
+        "type": "2H Weapon",
+        "cost": "39,400"
+      },
+      {
+        "name": "Gladius",
+        "type": "2H Weapon",
+        "cost": "43,400"
+      }
+    ]
+  },
+  {
+    "town": "undine",
+    "npc": "Camara",
+    "items": [
+      {
+        "name": "Cherry",
+        "type": "Food",
+        "cost": "500"
+      },
+      {
+        "name": "Chicken",
+        "type": "Food",
+        "cost": "100"
+      },
+      {
+        "name": "Grapes",
+        "type": "Food",
+        "cost": "500"
+      },
+      {
+        "name": "Vegetable",
+        "type": "Food",
+        "cost": "100"
+      },
+      {
+        "name": "Beef",
+        "type": "Food",
+        "cost": "100"
+      }
+    ]
+  },
+  {
+    "town": "undine",
+    "npc": "Chloe",
+    "items": [
+      {
+        "name": "Rum",
+        "type": "Drink",
+        "cost": "100"
+      },
+      {
+        "name": "Wine",
+        "type": "Drink",
+        "cost": "40"
+      }
+    ]
+  },
+  {
+    "town": "undine",
+    "npc": "Hali",
+    "items": [
+      {
+        "name": "Earth Bodice",
+        "type": "F Armor",
+        "cost": "1,000"
+      },
+      {
+        "name": "Lotus Bodice",
+        "type": "F Armor",
+        "cost": "7,000"
+      },
+      {
+        "name": "Blouse",
+        "type": "F Armor",
+        "cost": "100"
+      },
+      {
+        "name": "Dobok",
+        "type": "M Armor",
+        "cost": "1,000"
+      },
+      {
+        "name": "Culotte",
+        "type": "M Armor",
+        "cost": "7,000"
+      },
+      {
+        "name": "Shirt",
+        "type": "M Armor",
+        "cost": "100"
+      }
+    ]
+  }
+]

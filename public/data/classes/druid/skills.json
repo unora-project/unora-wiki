@@ -1,0 +1,122 @@
+[
+  {
+    "name": "Bajiquan 1",
+    "class": "Druid",
+    "element": "",
+    "levelRequirement": "Ab 1",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Becoming Druid",
+    "description": "Stance that overwhelmingly amplifies your own skill damage for 8 seconds (2x what Hu Bu gives).  Makes you immune to CC while it lasts.  Scales with Con.  Pure only."
+  },
+  {
+    "name": "Blood Moon 1",
+    "class": "Druid",
+    "element": "",
+    "levelRequirement": "Ab 1",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Becoming Druid",
+    "description": "Strike deals massive non-elemental damage in front of you.  Scales with CON and max health."
+  },
+  {
+    "name": "Bramble Rend 1",
+    "class": "Druid",
+    "element": "",
+    "levelRequirement": "Ab 1",
+    "statRequirements": "-",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Becoming Druid",
+    "description": "Briars erupt in an arc before you, taunting everything they hit.  The more hit, the more damage done.  Necklace decides what element it uses."
+  },
+  {
+    "name": "Bramblestorm 1",
+    "class": "Druid",
+    "element": "",
+    "levelRequirement": "Ab 1",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Becoming Druid",
+    "description": "Pulls every enemy within 6 tiles to your side and taunts them.  Taunt is reapplied every second for 5s.  Threat scales with CON."
+  },
+  {
+    "name": "Heartwood Rend",
+    "class": "Druid",
+    "element": "",
+    "levelRequirement": "Ab 12",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "1,000,000",
+    "itemRequirements": "Ant Chitin (3)",
+    "prerequisites": "-",
+    "learningLocation": "Tarlok (Noam)",
+    "description": "Spend 2/3 of your current health to strike every enemy in front of you for 1/3 of it (Wont kill you).  Skill damage bonuses do not raise the damage, and damage is halved in arena."
+  },
+  {
+    "name": "Hu Bu",
+    "class": "Druid",
+    "element": "",
+    "levelRequirement": "Ab 1",
+    "statRequirements": "-",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Becoming Druid",
+    "description": "Stance greatly amplifies your own skill damage for 8s.  An additional 0.075% for every point of CON, plus 1.5 flat skill damage per point."
+  },
+  {
+    "name": "Thornlash 1",
+    "class": "Druid",
+    "element": "",
+    "levelRequirement": "Ab 1",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Becoming Druid",
+    "description": "Attacks a single enemy, taunting them.  Scales with CON.  Uses your necklace for element."
+  },
+  {
+    "name": "Thornwrath 1",
+    "class": "Druid",
+    "element": "",
+    "levelRequirement": "Ab 1",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Becoming Druid",
+    "description": "Thorns tear outward in a wider ring than Bramblestorm, pulling every enemy within 7 tiles to your side.  Everything is taunted, and taunt reapplies every second for 5s.  Damage and threat both scales with CON.  Pure only."
+  },
+  {
+    "name": "Verdant Palm 1",
+    "class": "Druid",
+    "element": "",
+    "levelRequirement": "Ab 1",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Becoming Druid",
+    "description": "Siphons life from everything around you.  The more enemies and lower your own health, the more health returns.  Uses your necklace for it's element."
+  },
+  {
+    "name": "Warden's Burden",
+    "class": "Druid",
+    "element": "",
+    "levelRequirement": "Ab 1",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Becoming Druid",
+    "description": "Steals threat from member of your group within 8 tiles.  Every enemy within 12 tiles set on them, is taunted by you (provoked further based on your CON).  Needs a group member near by."
+  }
+]

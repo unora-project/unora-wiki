@@ -15,7 +15,7 @@
     "Recipe": "Pie",
     "Ingredients": "50 fruit, 1 Flour",
     "Where to learn": "Loures library on a bookcase. Click bookcase next to 2,9.",
-    "Benefits": "Acorn: +500MP\r\nApple: +20%HP\r\nCherry: +10%MP, +7 Hit\r\nGrape: +15 Hit\r\nGreen Grape: +20% SPD\r\nStrawberry: +20% SKD\r\nTangerine: +20 MR"
+    "Benefits": "Acorn: +500MP\nApple: +20%HP\nCherry: +10%MP, +7 Hit\nGrape: +15 Hit\nGreen Grape: +20% SPD\nStrawberry: +20% SKD\nTangerine: +20 MR"
   },
   {
     "Recipe": "Steak Meal",
@@ -37,14 +37,62 @@
   },
   {
     "Recipe": "Hot Chocolate",
-    "Ingredients": "",
+    "Ingredients": "1 Sugar, 5 Ice",
     "Where to learn": "Complete the quest:",
-    "Benefits": ".+6% HP Regen, +3%MP Regen"
+    "Benefits": "+6% HP Regen, +3%MP Regen"
   },
   {
     "Recipe": "Mango Fish Dish",
     "Ingredients": "",
     "Where to learn": "Only available during Paradise Event",
     "Benefits": "+10%HP,+10%MP,+5HIT,+10DMG,-2AC"
+  },
+  {
+    "Recipe": "Peppered Skewers",
+    "Ingredients": "2 Raw Meat, 3 Chili Peppers, 3 Banana Peppers, 1 Garlic",
+    "Where to learn": "Obsidra",
+    "Benefits": "+3% Lifesteal, -6 AC"
+  },
+  {
+    "Recipe": "Scholar's Feast",
+    "Ingredients": "30 fruit, 1 Cheese, 1 Sugar, 1 Lobster Tail",
+    "Where to learn": "-",
+    "Benefits": "+10% Ability Points on kills (Stacks with Potent and Infused Knowledge - Lasts 30 mins)"
+  },
+  {
+    "Recipe": "Gilded Roast",
+    "Ingredients": "3 raw meat, 10 carrots, 10 bell peppers, 1 marinade, and 1 salt",
+    "Where to learn": "Gilded Roast Recipe",
+    "Benefits": "+15% Gold from kills (covers whole group).  Stacks with Drop Boost."
+  },
+  {
+    "Recipe": "Artisan's Brew",
+    "Ingredients": "10 Elderberries, 5 Walnuts, 1 Ice and 1 Sugar",
+    "Where to learn": "Artisan's Brew Recipe",
+    "Benefits": "+5% Crafting success (Stacks with Miracle)"
+  },
+  {
+    "Recipe": "Garden Medley",
+    "Ingredients": "10 cabbage, 10 broccoli, 10 green beans, 10 radish and 1 salt",
+    "Where to learn": "Garden Medley Recipe",
+    "Benefits": "Class Resource gained per event increased"
+  },
+  {
+    "Recipe": "Cotton Candy",
+    "Ingredients": "1 Cotton, 2 Sugar",
+    "Where to learn": "Suomi Theatre (Halloween vendor)",
+    "Benefits": "+3% Mana regen"
+  },
+  {
+    "Recipe": "Hot Dog",
+    "Ingredients": "2 Raw Meat, 1 Flour",
+    "Where to learn": "Suomi Theatre (Halloween vendor)",
+    "Benefits": "+6 Health Regen"
+  },
+  {
+    "Recipe": "Popcorn",
+    "Ingredients": "15 Corn, 1 Salt",
+    "Where to learn": "Suomi Theatre (Halloween vendor)",
+    "Benefits": "+5% Exp on kills"
   }
 ]

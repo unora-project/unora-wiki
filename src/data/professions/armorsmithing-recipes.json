@@ -4,846 +4,1311 @@
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "4",
-    "Materials": "5 Linen, 1 Raw Ruby"
+    "Materials": "5 Linen, 1 Raw Ruby",
+    "Rank": "Beginner"
   },
   {
     "Name": "Sea Belt",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "4",
-    "Materials": "5 Linen, 1 Raw Sapphire"
+    "Materials": "5 Linen, 1 Raw Sapphire",
+    "Rank": "Beginner"
   },
   {
     "Name": "Earth Belt",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "4",
-    "Materials": "5 Linen, 1 Raw Beryl"
+    "Materials": "5 Linen, 1 Raw Beryl",
+    "Rank": "Beginner"
   },
   {
     "Name": "Wind Belt",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "4",
-    "Materials": "5 Linen, 1 Raw Emerald"
+    "Materials": "5 Linen, 1 Raw Emerald",
+    "Rank": "Beginner"
   },
   {
     "Name": "Scout Leather",
     "Class": "Rogue",
     "Gender": "Male",
     "Level": "8",
-    "Materials": "3 Fine Linen"
+    "Materials": "3 Fine Linen",
+    "Rank": "Beginner"
   },
   {
     "Name": "Cotte",
     "Class": "Rogue",
     "Gender": "Female",
     "Level": "8",
-    "Materials": "3 Fine Linen"
+    "Materials": "3 Fine Linen",
+    "Rank": "Beginner"
   },
   {
     "Name": "Gardcorp",
     "Class": "Wizard",
     "Gender": "Male",
     "Level": "8",
-    "Materials": "3 Fine Linen"
+    "Materials": "3 Fine Linen",
+    "Rank": "Beginner"
   },
   {
     "Name": "Magi Skirt",
     "Class": "Wizard",
     "Gender": "Female",
     "Level": "8",
-    "Materials": "3 Fine Linen"
+    "Materials": "3 Fine Linen",
+    "Rank": "Beginner"
   },
   {
     "Name": "Cowl",
     "Class": "Priest",
     "Gender": "Male",
     "Level": "8",
-    "Materials": "3 Fine Linen"
+    "Materials": "3 Fine Linen",
+    "Rank": "Beginner"
   },
   {
     "Name": "Gorget Gown",
     "Class": "Priest",
     "Gender": "Female",
     "Level": "8",
-    "Materials": "3 Fine Linen"
+    "Materials": "3 Fine Linen",
+    "Rank": "Beginner"
   },
   {
     "Name": "Dobok",
     "Class": "Monk",
     "Gender": "Male",
     "Level": "8",
-    "Materials": "3 Fine Linen"
+    "Materials": "3 Fine Linen",
+    "Rank": "Beginner"
   },
   {
     "Name": "Earth Bodice",
     "Class": "Monk",
     "Gender": "Female",
     "Level": "8",
-    "Materials": "3 Fine Linen"
+    "Materials": "3 Fine Linen",
+    "Rank": "Beginner"
   },
   {
     "Name": "Leather Tunic",
     "Class": "Warrior",
     "Gender": "Male",
     "Level": "8",
-    "Materials": "3 Fine Linen"
+    "Materials": "3 Fine Linen",
+    "Rank": "Beginner"
   },
   {
     "Name": "Leather Bliaut",
     "Class": "Warrior",
     "Gender": "Female",
     "Level": "8",
-    "Materials": "3 Fine Linen"
+    "Materials": "3 Fine Linen",
+    "Rank": "Beginner"
   },
   {
     "Name": "Leather Gauntlet",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "9",
-    "Materials": "8 Linen"
+    "Materials": "8 Linen",
+    "Rank": "Beginner"
   },
   {
     "Name": "Leather Beryl Gauntlet",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "11",
-    "Materials": "2 Exquisite Linen, 1 Pristine Beryl"
+    "Materials": "2 Exquisite Linen, 1 Pristine Beryl",
+    "Rank": "Beginner"
   },
   {
     "Name": "Leather Ruby Gauntlet",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "11",
-    "Materials": "2 Exquisite Linen, 1 Pristine Ruby"
+    "Materials": "2 Exquisite Linen, 1 Pristine Ruby",
+    "Rank": "Beginner"
   },
   {
     "Name": "Leather Sapphire Gauntlet",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "11",
-    "Materials": "2 Exquisite Linen, 1 Pristine Sapphire"
+    "Materials": "2 Exquisite Linen, 1 Pristine Sapphire",
+    "Rank": "Beginner"
   },
   {
     "Name": "Leather Emerald Gauntlet",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "11",
-    "Materials": "2 Exquisite Linen, 1 Pristine Emerald"
+    "Materials": "2 Exquisite Linen, 1 Pristine Emerald",
+    "Rank": "Beginner"
   },
   {
     "Name": "Leather Heartstone Gauntlet",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "11",
-    "Materials": "2 Exquisite Linen, 1 Pristine Heartstone"
+    "Materials": "2 Exquisite Linen, 1 Pristine Heartstone",
+    "Rank": "Beginner"
   },
   {
     "Name": "Fire Bronze Belt",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "20",
-    "Materials": "2 Exquisite Linen, 1 Polished Bronze Bar, 2 Flawed Ruby"
+    "Materials": "2 Exquisite Linen, 1 Polished Bronze Bar, 2 Flawed Ruby",
+    "Rank": "Beginner"
   },
   {
     "Name": "Sea Bronze Belt",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "20",
-    "Materials": "2 Exquisite Linen, 1 Polished Bronze Bar, 2 Flawed Sapphire"
+    "Materials": "2 Exquisite Linen, 1 Polished Bronze Bar, 2 Flawed Sapphire",
+    "Rank": "Beginner"
   },
   {
     "Name": "Earth Bronze Belt",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "20",
-    "Materials": "2 Exquisite Linen, 1 Polished Bronze Bar, 2 Flawed Beryl"
+    "Materials": "2 Exquisite Linen, 1 Polished Bronze Bar, 2 Flawed Beryl",
+    "Rank": "Beginner"
   },
   {
     "Name": "Wind Bronze Belt",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "20",
-    "Materials": "2 Exquisite Linen, 1 Polished Bronze Bar, 2 Flawed Emerald"
+    "Materials": "2 Exquisite Linen, 1 Polished Bronze Bar, 2 Flawed Emerald",
+    "Rank": "Beginner"
   },
   {
     "Name": "Dwarvish Leather",
     "Class": "Rogue",
     "Gender": "Male",
     "Level": "26",
-    "Materials": "2 Exquisite Linen"
+    "Materials": "2 Exquisite Linen",
+    "Rank": "Beginner"
   },
   {
     "Name": "Brigandine",
     "Class": "Rogue",
     "Gender": "Female",
     "Level": "26",
-    "Materials": "2 Exquisite Linen"
+    "Materials": "2 Exquisite Linen",
+    "Rank": "Beginner"
   },
   {
     "Name": "Journeyman",
     "Class": "Wizard",
     "Gender": "Male",
     "Level": "26",
-    "Materials": "2 Exquisite Linen"
+    "Materials": "2 Exquisite Linen",
+    "Rank": "Beginner"
   },
   {
     "Name": "Benusta",
     "Class": "Wizard",
     "Gender": "Female",
     "Level": "26",
-    "Materials": "2 Exquisite Linen"
+    "Materials": "2 Exquisite Linen",
+    "Rank": "Beginner"
   },
   {
     "Name": "Galuchat Coat",
     "Class": "Priest",
     "Gender": "Male",
     "Level": "26",
-    "Materials": "2 Exquisite Linen"
+    "Materials": "2 Exquisite Linen",
+    "Rank": "Beginner"
   },
   {
     "Name": "Mystic Gown",
     "Class": "Priest",
     "Gender": "Female",
     "Level": "26",
-    "Materials": "2 Exquisite Linen"
+    "Materials": "2 Exquisite Linen",
+    "Rank": "Beginner"
   },
   {
     "Name": "Culotte",
     "Class": "Monk",
     "Gender": "Male",
     "Level": "26",
-    "Materials": "2 Exquisite Linen"
+    "Materials": "2 Exquisite Linen",
+    "Rank": "Beginner"
   },
   {
     "Name": "Lotus Bodice",
     "Class": "Monk",
     "Gender": "Female",
     "Level": "26",
-    "Materials": "2 Exquisite Linen"
+    "Materials": "2 Exquisite Linen",
+    "Rank": "Beginner"
   },
   {
     "Name": "Lorica",
     "Class": "Warrior",
     "Gender": "Male",
     "Level": "26",
-    "Materials": "2 Exquisite Linen"
+    "Materials": "2 Exquisite Linen",
+    "Rank": "Beginner"
   },
   {
     "Name": "Cuirass",
     "Class": "Warrior",
     "Gender": "Female",
     "Level": "26",
-    "Materials": "2 Exquisite Linen"
+    "Materials": "2 Exquisite Linen",
+    "Rank": "Beginner"
   },
   {
     "Name": "Bronze Beryl Gauntlet",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "26",
-    "Materials": "1 Exquisite Linen, 1 Polished Bronze Bar, 1 Pristine Beryl"
+    "Materials": "1 Exquisite Linen, 1 Polished Bronze Bar, 1 Pristine Beryl",
+    "Rank": "Beginner"
   },
   {
     "Name": "Bronze Ruby Gauntlet",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "26",
-    "Materials": "1 Exquisite Linen, 1 Polished Bronze Bar, 1 Pristine Ruby"
+    "Materials": "1 Exquisite Linen, 1 Polished Bronze Bar, 1 Pristine Ruby",
+    "Rank": "Beginner"
   },
   {
     "Name": "Bronze Sapphire Gauntlet",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "26",
-    "Materials": "1 Exquisite Linen, 1 Polished Bronze Bar, 1 Pristine Sapphire"
+    "Materials": "1 Exquisite Linen, 1 Polished Bronze Bar, 1 Pristine Sapphire",
+    "Rank": "Beginner"
   },
   {
     "Name": "Bronze Emerald Gauntlet",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "26",
-    "Materials": "1 Exquisite Linen, 1 Polished Bronze Bar, 1 Pristine Emerald"
+    "Materials": "1 Exquisite Linen, 1 Polished Bronze Bar, 1 Pristine Emerald",
+    "Rank": "Beginner"
   },
   {
     "Name": "Bronze Heartstone Gauntlet",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "26",
-    "Materials": "1 Exquisite Linen, 1 Polished Bronze Bar, 1 Pristine Heartstone"
+    "Materials": "1 Exquisite Linen, 1 Polished Bronze Bar, 1 Pristine Heartstone",
+    "Rank": "Beginner"
   },
   {
     "Name": "Dark Bronze Belt",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "30",
-    "Materials": "2 Exquisite Linen, 1 Polished Bronze Bar, 2 Flawed Heartstone"
+    "Materials": "2 Exquisite Linen, 1 Polished Bronze Bar, 2 Flawed Heartstone",
+    "Rank": "Beginner"
   },
   {
     "Name": "Light Bronze Belt",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "30",
-    "Materials": "2 Exquisite Linen, 1 Polished Bronze Bar, 2 Flawed Heartstone"
+    "Materials": "2 Exquisite Linen, 1 Polished Bronze Bar, 2 Flawed Heartstone",
+    "Rank": "Beginner"
   },
   {
     "Name": "Fire Iron Belt",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "41",
-    "Materials": "2 Exquisite Cotton, 1 Polished Iron Bar, 2 Uncut Ruby"
+    "Materials": "2 Exquisite Cotton, 1 Polished Iron Bar, 2 Uncut Ruby",
+    "Rank": "Beginner"
   },
   {
     "Name": "Sea Iron Belt",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "41",
-    "Materials": "2 Exquisite Cotton, 1 Polished Iron Bar, 2 Uncut Sapphire"
+    "Materials": "2 Exquisite Cotton, 1 Polished Iron Bar, 2 Uncut Sapphire",
+    "Rank": "Beginner"
   },
   {
     "Name": "Earth Iron Belt",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "41",
-    "Materials": "2 Exquisite Cotton, 1 Polished Iron Bar, 2 Uncut Beryl"
+    "Materials": "2 Exquisite Cotton, 1 Polished Iron Bar, 2 Uncut Beryl",
+    "Rank": "Beginner"
   },
   {
     "Name": "Wind Iron Belt",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "41",
-    "Materials": "2 Exquisite Cotton, 1 Polished Iron Bar, 2 Uncut Emerald"
+    "Materials": "2 Exquisite Cotton, 1 Polished Iron Bar, 2 Uncut Emerald",
+    "Rank": "Beginner"
   },
   {
     "Name": "Dark Iron Belt",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "41",
-    "Materials": "2 Exquisite Cotton, 1 Polished Iron Bar, 2 Uncut Heartstone"
+    "Materials": "2 Exquisite Cotton, 1 Polished Iron Bar, 2 Uncut Heartstone",
+    "Rank": "Beginner"
   },
   {
     "Name": "Light Iron Belt",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "41",
-    "Materials": "2 Exquisite Cotton, 1 Polished Iron Bar, 2 Uncut Heartstone"
+    "Materials": "2 Exquisite Cotton, 1 Polished Iron Bar, 2 Uncut Heartstone",
+    "Rank": "Beginner"
   },
   {
     "Name": "Iron Beryl Gauntlet",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "41",
-    "Materials": "2 Exquisite Cotton, 1 Polished Iron Bar, 1 Pristine Beryl"
+    "Materials": "2 Exquisite Cotton, 1 Polished Iron Bar, 1 Pristine Beryl",
+    "Rank": "Beginner"
   },
   {
     "Name": "Iron Ruby Gauntlet",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "41",
-    "Materials": "2 Exquisite Cotton, 1 Polished Iron Bar, 1 Pristine Ruby"
+    "Materials": "2 Exquisite Cotton, 1 Polished Iron Bar, 1 Pristine Ruby",
+    "Rank": "Beginner"
   },
   {
     "Name": "Iron Sapphire Gauntlet",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "41",
-    "Materials": "2 Exquisite Cotton, 1 Polished Iron Bar, 1 Pristine Sapphire"
+    "Materials": "2 Exquisite Cotton, 1 Polished Iron Bar, 1 Pristine Sapphire",
+    "Rank": "Beginner"
   },
   {
     "Name": "Iron Emerald Gauntlet",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "41",
-    "Materials": "2 Exquisite Cotton, 1 Polished Iron Bar, 1 Pristine Emerald"
+    "Materials": "2 Exquisite Cotton, 1 Polished Iron Bar, 1 Pristine Emerald",
+    "Rank": "Beginner"
   },
   {
     "Name": "Iron Heartstone Gauntlet",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "41",
-    "Materials": "2 Exquisite Cotton, 1 Polished Iron Bar, 1 Pristine Heartstone"
+    "Materials": "2 Exquisite Cotton, 1 Polished Iron Bar, 1 Pristine Heartstone",
+    "Rank": "Beginner"
   },
   {
     "Name": "Paluten",
     "Class": "Rogue",
     "Gender": "Male",
     "Level": "56",
-    "Materials": "3 Exquisite Cotton"
+    "Materials": "3 Exquisite Cotton",
+    "Rank": "Beginner"
   },
   {
     "Name": "Corsette",
     "Class": "Rogue",
     "Gender": "Female",
     "Level": "56",
-    "Materials": "3 Exquisite Cotton"
+    "Materials": "3 Exquisite Cotton",
+    "Rank": "Beginner"
   },
   {
     "Name": "Lorum",
     "Class": "Wizard",
     "Gender": "Male",
     "Level": "56",
-    "Materials": "3 Exquisite Cotton"
+    "Materials": "3 Exquisite Cotton",
+    "Rank": "Beginner"
   },
   {
     "Name": "Stoller",
     "Class": "Wizard",
     "Gender": "Female",
     "Level": "56",
-    "Materials": "3 Exquisite Cotton"
+    "Materials": "3 Exquisite Cotton",
+    "Rank": "Beginner"
   },
   {
     "Name": "Mantle",
     "Class": "Priest",
     "Gender": "Male",
     "Level": "56",
-    "Materials": "3 Exquisite Cotton"
+    "Materials": "3 Exquisite Cotton",
+    "Rank": "Beginner"
   },
   {
     "Name": "Elle",
     "Class": "Priest",
     "Gender": "Female",
     "Level": "56",
-    "Materials": "3 Exquisite Cotton"
+    "Materials": "3 Exquisite Cotton",
+    "Rank": "Beginner"
   },
   {
     "Name": "Earth Garb",
     "Class": "Monk",
     "Gender": "Male",
     "Level": "56",
-    "Materials": "3 Exquisite Cotton"
+    "Materials": "3 Exquisite Cotton",
+    "Rank": "Beginner"
   },
   {
     "Name": "Moon Bodice",
     "Class": "Monk",
     "Gender": "Female",
     "Level": "56",
-    "Materials": "3 Exquisite Cotton"
+    "Materials": "3 Exquisite Cotton",
+    "Rank": "Beginner"
   },
   {
     "Name": "Kasmanium Armor",
     "Class": "Warrior",
     "Gender": "Male",
     "Level": "56",
-    "Materials": "3 Exquisite Cotton"
+    "Materials": "3 Exquisite Cotton",
+    "Rank": "Beginner"
   },
   {
     "Name": "Kasmanium Hauberk",
     "Class": "Warrior",
     "Gender": "Female",
     "Level": "56",
-    "Materials": "3 Exquisite Cotton"
+    "Materials": "3 Exquisite Cotton",
+    "Rank": "Beginner"
   },
   {
     "Name": "Fire Mythril Braid Belt",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "71",
-    "Materials": "2 Exquisite Wool, 1 Polished Mythril Bar, 2 Pristine Ruby"
+    "Materials": "2 Exquisite Wool, 1 Polished Mythril Bar, 2 Pristine Ruby",
+    "Rank": "Beginner"
   },
   {
     "Name": "Sea Mythril Braid Belt",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "71",
-    "Materials": "2 Exquisite Wool, 1 Polished Mythril Bar, 2 Pristine Sapphire"
+    "Materials": "2 Exquisite Wool, 1 Polished Mythril Bar, 2 Pristine Sapphire",
+    "Rank": "Beginner"
   },
   {
     "Name": "Earth Mythril Braid Belt",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "71",
-    "Materials": "2 Exquisite Wool, 1 Polished Mythril Bar, 2 Pristine Beryl"
+    "Materials": "2 Exquisite Wool, 1 Polished Mythril Bar, 2 Pristine Beryl",
+    "Rank": "Beginner"
   },
   {
     "Name": "Wind Mythril Braid Belt",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "71",
-    "Materials": "2 Exquisite Wool, 1 Polished Mythril Bar, 2 Pristine Emerald"
+    "Materials": "2 Exquisite Wool, 1 Polished Mythril Bar, 2 Pristine Emerald",
+    "Rank": "Beginner"
   },
   {
     "Name": "Dark Mythril Braid Belt",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "71",
-    "Materials": "2 Exquisite Wool, 1 Polished Mythril Bar, 2 Pristine Heartstone"
+    "Materials": "2 Exquisite Wool, 1 Polished Mythril Bar, 2 Pristine Heartstone",
+    "Rank": "Beginner"
   },
   {
     "Name": "Light Mythril Braid Belt",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "71",
-    "Materials": "2 Exquisite Wool, 1 Polished Mythril Bar, 2 Pristine Heartstone"
+    "Materials": "2 Exquisite Wool, 1 Polished Mythril Bar, 2 Pristine Heartstone",
+    "Rank": "Beginner"
   },
   {
     "Name": "Mythril Beryl Gauntlet",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "71",
-    "Materials": "2 Exquisite Wool, 1 Polished Mythril Bar, 1 Pristine Beryl"
+    "Materials": "2 Exquisite Wool, 1 Polished Mythril Bar, 1 Pristine Beryl",
+    "Rank": "Beginner"
   },
   {
     "Name": "Mythril Ruby Gauntlet",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "71",
-    "Materials": "2 Exquisite Wool, 1 Polished Mythril Bar, 1 Pristine Ruby"
+    "Materials": "2 Exquisite Wool, 1 Polished Mythril Bar, 1 Pristine Ruby",
+    "Rank": "Beginner"
   },
   {
     "Name": "Mythril Sapphire Gauntlet",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "71",
-    "Materials": "2 Exquisite Wool, 1 Polished Mythril Bar, 1 Pristine Sapphire"
+    "Materials": "2 Exquisite Wool, 1 Polished Mythril Bar, 1 Pristine Sapphire",
+    "Rank": "Beginner"
   },
   {
     "Name": "Mythril Emerald Gauntlet",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "71",
-    "Materials": "2 Exquisite Wool, 1 Polished Mythril Bar, 1 Pristine Emerald"
+    "Materials": "2 Exquisite Wool, 1 Polished Mythril Bar, 1 Pristine Emerald",
+    "Rank": "Beginner"
   },
   {
     "Name": "Mythril Heartstone Gauntlet",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "71",
-    "Materials": "2 Exquisite Wool, 1 Polished Mythril Bar, 1 Pristine Heartstone"
+    "Materials": "2 Exquisite Wool, 1 Polished Mythril Bar, 1 Pristine Heartstone",
+    "Rank": "Beginner"
   },
   {
     "Name": "Keaton",
     "Class": "Rogue",
     "Gender": "Male",
     "Level": "86",
-    "Materials": "4 Exquisite Wool"
+    "Materials": "4 Exquisite Wool",
+    "Rank": "Beginner"
   },
   {
     "Name": "Pebble Rose",
     "Class": "Rogue",
     "Gender": "Female",
     "Level": "86",
-    "Materials": "4 Exquisite Wool"
+    "Materials": "4 Exquisite Wool",
+    "Rank": "Beginner"
   },
   {
     "Name": "Mane",
     "Class": "Wizard",
     "Gender": "Male",
     "Level": "86",
-    "Materials": "4 Exquisite Wool"
+    "Materials": "4 Exquisite Wool",
+    "Rank": "Beginner"
   },
   {
     "Name": "Clymouth",
     "Class": "Wizard",
     "Gender": "Female",
     "Level": "86",
-    "Materials": "4 Exquisite Wool"
+    "Materials": "4 Exquisite Wool",
+    "Rank": "Beginner"
   },
   {
     "Name": "Hierophant",
     "Class": "Priest",
     "Gender": "Male",
     "Level": "86",
-    "Materials": "4 Exquisite Wool"
+    "Materials": "4 Exquisite Wool",
+    "Rank": "Beginner"
   },
   {
     "Name": "Dolman",
     "Class": "Priest",
     "Gender": "Female",
     "Level": "86",
-    "Materials": "4 Exquisite Wool"
+    "Materials": "4 Exquisite Wool",
+    "Rank": "Beginner"
   },
   {
     "Name": "Wind Garb",
     "Class": "Monk",
     "Gender": "Male",
     "Level": "86",
-    "Materials": "4 Exquisite Wool"
+    "Materials": "4 Exquisite Wool",
+    "Rank": "Beginner"
   },
   {
     "Name": "Lightning Garb",
     "Class": "Monk",
     "Gender": "Female",
     "Level": "86",
-    "Materials": "4 Exquisite Wool"
+    "Materials": "4 Exquisite Wool",
+    "Rank": "Beginner"
   },
   {
     "Name": "Iplet Mail",
     "Class": "Warrior",
     "Gender": "Male",
     "Level": "86",
-    "Materials": "4 Exquisite Wool"
+    "Materials": "4 Exquisite Wool",
+    "Rank": "Beginner"
   },
   {
     "Name": "Phoenix Mail",
     "Class": "Warrior",
     "Gender": "Female",
     "Level": "86",
-    "Materials": "4 Exquisite Wool"
+    "Materials": "4 Exquisite Wool",
+    "Rank": "Beginner"
   },
   {
     "Name": "Hy-Brasyl Beryl Gauntlet",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "97",
-    "Materials": "3 Exquisite Silk, 2 Polished Hy-Brasyl Bar, 2 Pristine Beryl"
+    "Materials": "3 Exquisite Silk, 2 Polished Hy-Brasyl Bar, 2 Pristine Beryl",
+    "Rank": "Beginner"
   },
   {
     "Name": "Hy-Brasyl Ruby Gauntlet",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "97",
-    "Materials": "3 Exquisite Silk, 2 Polished Hy-Brasyl Bar, 2 Pristine Ruby"
+    "Materials": "3 Exquisite Silk, 2 Polished Hy-Brasyl Bar, 2 Pristine Ruby",
+    "Rank": "Beginner"
   },
   {
     "Name": "Hy-Brasyl Sapphire Gauntlet",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "97",
-    "Materials": "3 Exquisite Silk, 2 Polished Hy-Brasyl Bar, 2 Pristine Sapphire"
+    "Materials": "3 Exquisite Silk, 2 Polished Hy-Brasyl Bar, 2 Pristine Sapphire",
+    "Rank": "Beginner"
   },
   {
     "Name": "Hy-Brasyl Emerald Gauntlet",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "97",
-    "Materials": "3 Exquisite Silk, 2 Polished Hy-Brasyl Bar, 2 Pristine Emerald"
+    "Materials": "3 Exquisite Silk, 2 Polished Hy-Brasyl Bar, 2 Pristine Emerald",
+    "Rank": "Beginner"
   },
   {
     "Name": "Hy-Brasyl Heartstone Gauntlet",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "97",
-    "Materials": "3 Exquisite Silk, 2 Polished Hy-Brasyl Bar, 2 Pristine Heartstone"
+    "Materials": "3 Exquisite Silk, 2 Polished Hy-Brasyl Bar, 2 Pristine Heartstone",
+    "Rank": "Beginner"
   },
   {
     "Name": "Bardocle",
     "Class": "Rogue",
     "Gender": "Male",
     "Level": "99",
-    "Materials": "5 Exquisite Silk"
+    "Materials": "5 Exquisite Silk",
+    "Rank": "Beginner"
   },
   {
     "Name": "Kagum",
     "Class": "Rogue",
     "Gender": "Female",
     "Level": "99",
-    "Materials": "5 Exquisite Silk"
+    "Materials": "5 Exquisite Silk",
+    "Rank": "Beginner"
   },
   {
     "Name": "Duin-Uasal",
     "Class": "Wizard",
     "Gender": "Male",
     "Level": "99",
-    "Materials": "5 Exquisite Silk"
+    "Materials": "5 Exquisite Silk",
+    "Rank": "Beginner"
   },
   {
     "Name": "Clamyth",
     "Class": "Wizard",
     "Gender": "Female",
     "Level": "99",
-    "Materials": "5 Exquisite Silk"
+    "Materials": "5 Exquisite Silk",
+    "Rank": "Beginner"
   },
   {
     "Name": "Dalmatica",
     "Class": "Priest",
     "Gender": "Male",
     "Level": "99",
-    "Materials": "5 Exquisite Silk"
+    "Materials": "5 Exquisite Silk",
+    "Rank": "Beginner"
   },
   {
     "Name": "Bansagart",
     "Class": "Priest",
     "Gender": "Female",
     "Level": "99",
-    "Materials": "5 Exquisite Silk"
+    "Materials": "5 Exquisite Silk",
+    "Rank": "Beginner"
   },
   {
     "Name": "Mountain Garb",
     "Class": "Monk",
     "Gender": "Male",
     "Level": "99",
-    "Materials": "5 Exquisite Silk"
+    "Materials": "5 Exquisite Silk",
+    "Rank": "Beginner"
   },
   {
     "Name": "Sea Garb",
     "Class": "Monk",
     "Gender": "Female",
     "Level": "99",
-    "Materials": "5 Exquisite Silk"
+    "Materials": "5 Exquisite Silk",
+    "Rank": "Beginner"
   },
   {
     "Name": "Hy-Brasyl Plate",
     "Class": "Warrior",
     "Gender": "Male",
     "Level": "99",
-    "Materials": "5 Exquisite Silk"
+    "Materials": "5 Exquisite Silk",
+    "Rank": "Beginner"
   },
   {
     "Name": "Hy-Brasyl Armor",
     "Class": "Warrior",
     "Gender": "Female",
     "Level": "99",
-    "Materials": "5 Exquisite Silk"
+    "Materials": "5 Exquisite Silk",
+    "Rank": "Beginner"
   },
   {
     "Name": "Refining Kit",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "Master",
-    "Materials": "25 Exquisite Hemp, 1 Strange Stone"
+    "Materials": "25 Exquisite Hemp, 1 Strange Stone",
+    "Rank": "Beginner"
   },
   {
     "Name": "Fire Crimsonite Belt",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "Master",
-    "Materials": "4 Exquisite Hemp, 1 Polished Crimsonite Bar, 7 Pristine Ruby"
+    "Materials": "4 Exquisite Hemp, 1 Polished Crimsonite Bar, 7 Pristine Ruby",
+    "Rank": "Beginner"
   },
   {
     "Name": "Sea Crimsonite Belt",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "Master",
-    "Materials": "4 Exquisite Hemp, 1 Polished Crimsonite Bar, 7 Pristine Sapphire"
+    "Materials": "4 Exquisite Hemp, 1 Polished Crimsonite Bar, 7 Pristine Sapphire",
+    "Rank": "Beginner"
   },
   {
     "Name": "Earth Crimsonite Belt",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "Master",
-    "Materials": "4 Exquisite Hemp, 1 Polished Crimsonite Bar, 7 Pristine Beryl"
+    "Materials": "4 Exquisite Hemp, 1 Polished Crimsonite Bar, 7 Pristine Beryl",
+    "Rank": "Beginner"
   },
   {
     "Name": "Wind Crimsonite Belt",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "Master",
-    "Materials": "4 Exquisite Hemp, 1 Polished Crimsonite Bar, 7 Pristine Emerald"
+    "Materials": "4 Exquisite Hemp, 1 Polished Crimsonite Bar, 7 Pristine Emerald",
+    "Rank": "Beginner"
   },
   {
     "Name": "Dark Crimsonite Belt",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "Master",
-    "Materials": "4 Exquisite Hemp, 1 Polished Crimsonite Bar, 7 Pristine Heartstone"
+    "Materials": "4 Exquisite Hemp, 1 Polished Crimsonite Bar, 7 Pristine Heartstone",
+    "Rank": "Beginner"
   },
   {
     "Name": "Light Crimsonite Belt",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "Master",
-    "Materials": "4 Exquisite Hemp, 1 Polished Crimsonite Bar, 7 Pristine Heartstone"
+    "Materials": "4 Exquisite Hemp, 1 Polished Crimsonite Bar, 7 Pristine Heartstone",
+    "Rank": "Beginner"
   },
   {
     "Name": "Fire Azurium Belt",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "Master",
-    "Materials": "4 Exquisite Hemp, 1 Polished Azurium Bar, 7 Pristine Ruby"
+    "Materials": "4 Exquisite Hemp, 1 Polished Azurium Bar, 7 Pristine Ruby",
+    "Rank": "Beginner"
   },
   {
     "Name": "Sea Azurium Belt",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "Master",
-    "Materials": "4 Exquisite Hemp, 1 Polished Azurium Bar, 7 Pristine Sapphire"
+    "Materials": "4 Exquisite Hemp, 1 Polished Azurium Bar, 7 Pristine Sapphire",
+    "Rank": "Beginner"
   },
   {
     "Name": "Earth Azurium Belt",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "Master",
-    "Materials": "4 Exquisite Hemp, 1 Polished Azurium Bar, 7 Pristine Beryl"
+    "Materials": "4 Exquisite Hemp, 1 Polished Azurium Bar, 7 Pristine Beryl",
+    "Rank": "Beginner"
   },
   {
     "Name": "Wind Azurium Belt",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "Master",
-    "Materials": "4 Exquisite Hemp, 1 Polished Azurium Bar, 7 Pristine Emerald"
+    "Materials": "4 Exquisite Hemp, 1 Polished Azurium Bar, 7 Pristine Emerald",
+    "Rank": "Beginner"
   },
   {
     "Name": "Dark Azurium Belt",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "Master",
-    "Materials": "4 Exquisite Hemp, 1 Polished Azurium Bar, 7 Pristine Heartstone"
+    "Materials": "4 Exquisite Hemp, 1 Polished Azurium Bar, 7 Pristine Heartstone",
+    "Rank": "Beginner"
   },
   {
     "Name": "Light Azurium Belt",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "Master",
-    "Materials": "4 Exquisite Hemp, 1 Polished Azurium Bar, 7 Pristine Heartstone"
+    "Materials": "4 Exquisite Hemp, 1 Polished Azurium Bar, 7 Pristine Heartstone",
+    "Rank": "Beginner"
   },
   {
     "Name": "Crimsonite Beryl Gauntlet",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "Master",
-    "Materials": "4 Exquisite Hemp, 3 Polished Crimsonite Bar, 3 Pristine Beryl"
+    "Materials": "4 Exquisite Hemp, 3 Polished Crimsonite Bar, 3 Pristine Beryl",
+    "Rank": "Beginner"
   },
   {
     "Name": "Crimsonite Ruby Gauntlet",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "Master",
-    "Materials": "4 Exquisite Hemp, 3 Polished Crimsonite Bar, 3 Pristine Ruby"
+    "Materials": "4 Exquisite Hemp, 3 Polished Crimsonite Bar, 3 Pristine Ruby",
+    "Rank": "Beginner"
   },
   {
     "Name": "Crimsonite Sapphire Gauntlet",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "Master",
-    "Materials": "4 Exquisite Hemp, 3 Polished Crimsonite Bar, 3 Pristine Sapphire"
+    "Materials": "4 Exquisite Hemp, 3 Polished Crimsonite Bar, 3 Pristine Sapphire",
+    "Rank": "Beginner"
   },
   {
     "Name": "Crimsonite Emerald Gauntlet",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "Master",
-    "Materials": "4 Exquisite Hemp, 3 Polished Crimsonite Bar, 3 Pristine Emerald"
+    "Materials": "4 Exquisite Hemp, 3 Polished Crimsonite Bar, 3 Pristine Emerald",
+    "Rank": "Beginner"
   },
   {
     "Name": "Crimsonite Heartstone Gauntlet",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "Master",
-    "Materials": "4 Exquisite Hemp, 3 Polished Crimsonite Bar, 3 Pristine Heartstone"
+    "Materials": "4 Exquisite Hemp, 3 Polished Crimsonite Bar, 3 Pristine Heartstone",
+    "Rank": "Beginner"
   },
   {
     "Name": "Azurium Beryl Gauntlet",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "Master",
-    "Materials": "4 Exquisite Hemp, 3 Polished Azurium Bar, 3 Pristine Beryl"
+    "Materials": "4 Exquisite Hemp, 3 Polished Azurium Bar, 3 Pristine Beryl",
+    "Rank": "Beginner"
   },
   {
     "Name": "Azurium Ruby Gauntlet",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "Master",
-    "Materials": "4 Exquisite Hemp, 3 Polished Azurium Bar, 3 Pristine Ruby"
+    "Materials": "4 Exquisite Hemp, 3 Polished Azurium Bar, 3 Pristine Ruby",
+    "Rank": "Beginner"
   },
   {
     "Name": "Azurium Sapphire Gauntlet",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "Master",
-    "Materials": "4 Exquisite Hemp, 3 Polished Azurium Bar, 3 Pristine Sapphire"
+    "Materials": "4 Exquisite Hemp, 3 Polished Azurium Bar, 3 Pristine Sapphire",
+    "Rank": "Beginner"
   },
   {
     "Name": "Azurium Emerald Gauntlet",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "Master",
-    "Materials": "4 Exquisite Hemp, 3 Polished Azurium Bar, 3 Pristine Emerald"
+    "Materials": "4 Exquisite Hemp, 3 Polished Azurium Bar, 3 Pristine Emerald",
+    "Rank": "Beginner"
   },
   {
     "Name": "Azurium Heartstone Gauntlet",
     "Class": "Peasant",
     "Gender": "Unisex",
     "Level": "Master",
-    "Materials": "4 Exquisite Hemp, 3 Polished Azurium Bar, 3 Pristine Heartstone"
+    "Materials": "4 Exquisite Hemp, 3 Polished Azurium Bar, 3 Pristine Heartstone",
+    "Rank": "Beginner"
+  },
+  {
+    "Name": "Refined Incarnate Aiquil",
+    "Class": "Arcanist",
+    "Gender": "Male",
+    "Level": "Ab 10",
+    "Materials": "1 Incarnate Aiquil, 5 Exquisite Ramie",
+    "Rank": "Expert"
+  },
+  {
+    "Name": "Refined Primordial Aiquil",
+    "Class": "Elementalist",
+    "Gender": "Male",
+    "Level": "Ab 10",
+    "Materials": "1 Primordial Aiquil, 5 Exquisite Ramie",
+    "Rank": "Expert"
+  },
+  {
+    "Name": "Refined Incarnate Aiquilon",
+    "Class": "Arcanist",
+    "Gender": "Female",
+    "Level": "Ab 10",
+    "Materials": "1 Incarnate Aiquilon, 5 Exquisite Ramie",
+    "Rank": "Expert"
+  },
+  {
+    "Name": "Refined Festering Rotward Garb",
+    "Class": "Plague Doctor",
+    "Gender": "Male",
+    "Level": "Ab 10",
+    "Materials": "1 Festering Rotward Garb, 3 Exquisite Ramie",
+    "Rank": "Expert"
+  },
+  {
+    "Name": "Refined Festering Rotward Gown",
+    "Class": "Plague Doctor",
+    "Gender": "Female",
+    "Level": "Ab 10",
+    "Materials": "1 Festering Rotward Gown, 3 Exquisite Ramie",
+    "Rank": "Expert"
+  },
+  {
+    "Name": "Refined Deadeye Kano",
+    "Class": "Archer",
+    "Gender": "Male",
+    "Level": "Ab 10",
+    "Materials": "1 Deadeye Kano, 5 Exquisite Ramie",
+    "Rank": "Expert"
+  },
+  {
+    "Name": "Refined Merciless Kano",
+    "Class": "Assassin",
+    "Gender": "Male",
+    "Level": "Ab 10",
+    "Materials": "1 Merciless Kano, 5 Exquisite Ramie",
+    "Rank": "Expert"
+  },
+  {
+    "Name": "Refined Deadeye Kanon",
+    "Class": "Archer",
+    "Gender": "Female",
+    "Level": "Ab 10",
+    "Materials": "1 Deadeye Kanon, 3 Exquisite Ramie",
+    "Rank": "Expert"
+  },
+  {
+    "Name": "Refined Ascetic Soron",
+    "Class": "Adept",
+    "Gender": "Male",
+    "Level": "Ab 10",
+    "Materials": "1 Ascetic Soron, 3 Exquisite Ramie",
+    "Rank": "Expert"
+  },
+  {
+    "Name": "Refined Verdant Soron",
+    "Class": "Druid",
+    "Gender": "Male",
+    "Level": "Ab 10",
+    "Materials": "1 Verdant Soron, 3 Exquisite Ramie",
+    "Rank": "Expert"
+  },
+  {
+    "Name": "Refined Ascetic Soroni",
+    "Class": "Adept",
+    "Gender": "Female",
+    "Level": "Ab 10",
+    "Materials": "1 Ascetic Soroni, 3 Exquisite Ramie",
+    "Rank": "Expert"
+  },
+  {
+    "Name": "Refined Verdant Soroni",
+    "Class": "Druid",
+    "Gender": "Female",
+    "Level": "Ab 10",
+    "Materials": "1 Verdant Soroni, 3 Exquisite Ramie",
+    "Rank": "Expert"
+  },
+  {
+    "Name": "Refined Defiant Tarsil",
+    "Class": "Warlord",
+    "Gender": "Male",
+    "Level": "Ab 10",
+    "Materials": "1 Defiant Tarsil, 3 Exquisite Ramie",
+    "Rank": "Expert"
+  },
+  {
+    "Name": "Refined Wreckless Tarsil",
+    "Class": "Berserker",
+    "Gender": "Male",
+    "Level": "Ab 10",
+    "Materials": "1 Wreckless Tarsil, 3 Exquisite Ramie",
+    "Rank": "Expert"
+  },
+  {
+    "Name": "Refined Defiant Tarsilan",
+    "Class": "Warlord",
+    "Gender": "Female",
+    "Level": "Ab 10",
+    "Materials": "1 Defiant Tarsilan, 3 Exquisite Ramie",
+    "Rank": "Expert"
+  },
+  {
+    "Name": "Refined Wreckless Tarsilan",
+    "Class": "Berserker",
+    "Gender": "Female",
+    "Level": "Ab 10",
+    "Materials": "1 Wreckless Tarsilan, 3 Exquisite Ramie",
+    "Rank": "Expert"
+  },
+  {
+    "Name": "Refined Resonant Yaina",
+    "Class": "Bard",
+    "Gender": "Male",
+    "Level": "Ab 10",
+    "Materials": "1 Resonant Yaina, 3 Exquisite Ramie",
+    "Rank": "Expert"
+  },
+  {
+    "Name": "Refined Resonant Vainar",
+    "Class": "Bard",
+    "Gender": "Female",
+    "Level": "Ab 10",
+    "Materials": "1 Resonant Vainar, 3 Exquisite Ramie",
+    "Rank": "Expert"
+  },
+  {
+    "Name": "Refined Resonant Vaina",
+    "Class": "Bard",
+    "Gender": "Male",
+    "Level": "Ab 10",
+    "Materials": "1 Resonant Vaina, 3 Exquisite Ramie",
+    "Rank": "Expert"
+  },
+  {
+    "Name": "Dark Aerium Belt",
+    "Class": "-",
+    "Gender": "Unisex",
+    "Level": "Ab 1",
+    "Materials": "1 Polished Aerium Bar, 4 Exquisite Ramie, 7 Pristine Heartstone",
+    "Rank": "Expert"
+  },
+  {
+    "Name": "Earth Aerium Belt",
+    "Class": "-",
+    "Gender": "Unisex",
+    "Level": "Ab 1",
+    "Materials": "1 Polished Aerium Bar, 4 Exquisite Ramie, 7 Pristine Beryl",
+    "Rank": "Expert"
+  },
+  {
+    "Name": "Fire Aerium Belt",
+    "Class": "-",
+    "Gender": "Unisex",
+    "Level": "Ab 1",
+    "Materials": "1 Polished Aerium Bar, 4 Exquisite Ramie, 7 Pristine Ruby",
+    "Rank": "Expert"
+  },
+  {
+    "Name": "Light Aerium Belt",
+    "Class": "-",
+    "Gender": "Unisex",
+    "Level": "Ab 1",
+    "Materials": "1 Polished Aerium Bar, 4 Exquisite Ramie, 7 Pristine Hearstone",
+    "Rank": "Expert"
+  },
+  {
+    "Name": "Sea Aerium Belt",
+    "Class": "-",
+    "Gender": "Unisex",
+    "Level": "Ab 1",
+    "Materials": "1 Polished Aerium Bar, 4 Exquisite Ramie, 7 Pristine Sapphire",
+    "Rank": "Expert"
+  },
+  {
+    "Name": "Wind Aerium Belt",
+    "Class": "-",
+    "Gender": "Unisex",
+    "Level": "Ab 1",
+    "Materials": "1 Polished Aerium Bar, 4 Exquisite Ramie, 7 Pristine Emerald",
+    "Rank": "Expert"
+  },
+  {
+    "Name": "Dark Emberite Belt",
+    "Class": "-",
+    "Gender": "Unisex",
+    "Level": "Ab 1",
+    "Materials": "1 Polished Emberite Bar, 4 Exquisite Ramie, 7 Pristine Hearstone",
+    "Rank": "Expert"
+  },
+  {
+    "Name": "Earth Emberite Belt",
+    "Class": "-",
+    "Gender": "Unisex",
+    "Level": "Ab 1",
+    "Materials": "1 Polished Emberite Bar, 4 Exquisite Ramie, 7 Pristine Beryl",
+    "Rank": "Expert"
+  },
+  {
+    "Name": "Fire Emberite Belt",
+    "Class": "-",
+    "Gender": "Unisex",
+    "Level": "Ab 1",
+    "Materials": "1 Polished Emberite Bar, 4 Exquisite Ramie, 7 Pristine Ruby",
+    "Rank": "Expert"
+  },
+  {
+    "Name": "Light Emberite Belt",
+    "Class": "-",
+    "Gender": "Unisex",
+    "Level": "Ab 1",
+    "Materials": "1 Polished Emberite Bar, 4 Exquisite Ramie, 7 Pristine Heartstone",
+    "Rank": "Expert"
+  },
+  {
+    "Name": "Sea emberite Belt",
+    "Class": "-",
+    "Gender": "Unisex",
+    "Level": "Ab 1",
+    "Materials": "1 Polished Emberite Bar, 4 Exquisite Ramie, 7 Pristine Sapphire",
+    "Rank": "Expert"
+  },
+  {
+    "Name": "Wind Emberite Belt",
+    "Class": "-",
+    "Gender": "Unisex",
+    "Level": "Ab 1",
+    "Materials": "1 Polished Emberite Bar, 4 Exquisite Ramie, 7 Pristine Emerald",
+    "Rank": "Expert"
+  },
+  {
+    "Name": "Earth Hydrillium Belt",
+    "Class": "-",
+    "Gender": "Unisex",
+    "Level": "Ab 1",
+    "Materials": "1 Polished Hydrillium Bar, 4 Exquisite Ramie, 7 Pristine Beryl",
+    "Rank": "Expert"
+  },
+  {
+    "Name": "Fire Hydrillium Belt",
+    "Class": "-",
+    "Gender": "Unisex",
+    "Level": "Ab 1",
+    "Materials": "1 Polished Hydrillium Bar, 4 Exquisite Ramie, 7 Pristine Ruby",
+    "Rank": "Expert"
+  },
+  {
+    "Name": "Dark Hydrillium Belt",
+    "Class": "-",
+    "Gender": "Unisex",
+    "Level": "Ab 1",
+    "Materials": "1 Polished Hydrillium Bar, 4 Exquisite Ramie, 7 Pristine Heartsone",
+    "Rank": "Expert"
+  },
+  {
+    "Name": "Light Hydrillium Belt",
+    "Class": "-",
+    "Gender": "Unisex",
+    "Level": "Ab 1",
+    "Materials": "1 Polished Hydrillium Bar, 4 Exquisite Ramie, 7 Pristine Heartstone",
+    "Rank": "Expert"
+  },
+  {
+    "Name": "Sea Hydrillium Belt",
+    "Class": "-",
+    "Gender": "Unisex",
+    "Level": "Ab 1",
+    "Materials": "1 Polished Hydrillium Bar, 4 Exquisite Ramie, 7 Pristine Sapphire",
+    "Rank": "Expert"
+  },
+  {
+    "Name": "Wind Hydrillium Belt",
+    "Class": "-",
+    "Gender": "Unisex",
+    "Level": "Ab 1",
+    "Materials": "1 Polished Hydrillium Bar, 4 Exquisite Ramie, 7 Pristine Emerald",
+    "Rank": "Expert"
+  },
+  {
+    "Name": "Wind Petrimite Belt",
+    "Class": "-",
+    "Gender": "Unisex",
+    "Level": "Ab 1",
+    "Materials": "1 Polished Petrimite Bar, 4 Exquisite Ramie, 7 Pristine Emerald",
+    "Rank": "Expert"
+  },
+  {
+    "Name": "Fire Petrimite Belt",
+    "Class": "-",
+    "Gender": "Unisex",
+    "Level": "Ab 1",
+    "Materials": "1 Polished Petrimite Bar, 4 Exquisite Ramie, 7 Pristine Ruby",
+    "Rank": "Expert"
+  },
+  {
+    "Name": "Earth Petrimite Belt",
+    "Class": "-",
+    "Gender": "Unisex",
+    "Level": "Ab 1",
+    "Materials": "1 Polished Petrimite Bar, 4 Exquisite Ramie, 7 Pristine Beryl",
+    "Rank": "Expert"
+  },
+  {
+    "Name": "Sea Petrimite Belt",
+    "Class": "-",
+    "Gender": "Unisex",
+    "Level": "Ab 1",
+    "Materials": "1 Polished Petrimite Bar, 4 Exquisite Ramie, 7 Pristine Sapphire",
+    "Rank": "Expert"
+  },
+  {
+    "Name": "Light Petrimite Belt",
+    "Class": "-",
+    "Gender": "Unisex",
+    "Level": "Ab 1",
+    "Materials": "1 Polished Petrimite Bar, 4 Exquisite Ramie, 7 Pristine Hearstone",
+    "Rank": "Expert"
+  },
+  {
+    "Name": "Dak Petrimite Belt",
+    "Class": "-",
+    "Gender": "Unisex",
+    "Level": "Ab 1",
+    "Materials": "1 Polished Petrimite Bar, 4 Exquisite Ramie, 7 Pristine Heartsone",
+    "Rank": "Expert"
   }
 ]

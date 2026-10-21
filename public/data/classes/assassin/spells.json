@@ -1,0 +1,54 @@
+[
+  {
+    "name": "Deadfall Array 1",
+    "class": "Assassin",
+    "element": "",
+    "levelRequirement": "Ab 1",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Becoming Assassin",
+    "description": "Lays 5 pitfall traps (1 on you, and 1 in each direction beside you).  Each deals massive pure damage to the first target to step on it.   Damage scales with the enemy's health up to a limit.",
+    "image": "/images/abilities/Deadfall Array 1.png"
+  },
+  {
+    "name": "Death Mark 1",
+    "class": "Assassin",
+    "element": "",
+    "levelRequirement": "Ab 8",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "1,000,000",
+    "itemRequirements": "Scravelmaw Head (1)",
+    "prerequisites": "-",
+    "learningLocation": "Tarlok (Noam)",
+    "description": "Names an enemy for death for 10s.  All damage against target increases by 10%.  Costs 20 malice and returns 15 if the target dies while marked.",
+    "image": "/images/abilities/Death Mark 1.png"
+  },
+  {
+    "name": "Shadow Step 1",
+    "class": "Assassin",
+    "element": "",
+    "levelRequirement": "Ab 12",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "1,250,000",
+    "itemRequirements": "Scravelmaw Mandible (1)",
+    "prerequisites": "-",
+    "learningLocation": "Tarlok (Noam)",
+    "description": "Step through the dark to any creative within 5 tiles, landing at their back.  If there's no free location, it will not cast.  Costs 20 malice and works on both enemies and allies.",
+    "image": "/images/abilities/Shadow Step 1.png"
+  },
+  {
+    "name": "Shadowlurk 1",
+    "class": "Assassin",
+    "element": "",
+    "levelRequirement": "Ab 1",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Becoming Assassin",
+    "description": "Shrouds you in darkness for 5s.  Clears all threat and negative effects.",
+    "image": "/images/abilities/Shadowlurk 1.png"
+  }
+]

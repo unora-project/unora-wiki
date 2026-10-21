@@ -1,5 +1,98 @@
 [
   {
+    "town": "abel",
+    "name": "Aricin",
+    "type": "Guild Registrar",
+    "coordinates": "13,45"
+  },
+  {
+    "town": "abel",
+    "name": "Arnljot",
+    "type": "Sells Armor",
+    "coordinates": "24,9"
+  },
+  {
+    "town": "abel",
+    "name": "Aud",
+    "type": "Restaurant",
+    "coordinates": "7,51"
+  },
+  {
+    "town": "abel",
+    "name": "Bodil",
+    "type": "Skill Master",
+    "coordinates": "44,50"
+  },
+  {
+    "town": "abel",
+    "name": "Egil",
+    "type": "Sells Potions",
+    "coordinates": "44,11"
+  },
+  {
+    "town": "abel",
+    "name": "Frida",
+    "type": "Bartender",
+    "coordinates": "13,45"
+  },
+  {
+    "town": "abel",
+    "name": "Hauk",
+    "type": "Misc",
+    "coordinates": "12,32",
+    "quest": null
+  },
+  {
+    "town": "abel",
+    "name": "Kamel",
+    "type": "Fish Supplies",
+    "coordinates": "27,46"
+  },
+  {
+    "town": "abel",
+    "name": "Lamont",
+    "type": "Bank",
+    "coordinates": "14,9"
+  },
+  {
+    "town": "abel",
+    "name": "Runa",
+    "type": "Inn",
+    "coordinates": "59,39",
+    "quests": [
+      {
+        "name": "Decorating the Inn",
+        "path": "/quests/side/decorating_the_inn"
+      }
+    ]
+  },
+  {
+    "town": "abel",
+    "name": "Steinar",
+    "type": "Sells Armor",
+    "coordinates": "61,12"
+  },
+  {
+    "town": "abel",
+    "name": "Vidar",
+    "type": "Sells Weapons",
+    "coordinates": "55,18"
+  },
+  {
+    "town": "asilon",
+    "name": "Akum",
+    "type": "Sells Weapons",
+    "coordinates": "22,37",
+    "quest": []
+  },
+  {
+    "town": "asilon",
+    "name": "Juwerl",
+    "type": "Sells Weapons",
+    "coordinates": "23,37",
+    "quest": []
+  },
+  {
     "town": "mileth",
     "name": "Aingeal",
     "type": "Bartender",
@@ -9,13 +102,20 @@
     "town": "mileth",
     "name": "Berteli",
     "type": "White Magic Master",
-    "coordinates": "10,53"
+    "coordinates": "10,53",
+    "quests": [
+      {
+        "name": "Holy Research",
+        "path": "/quests/circle_1/holy_research"
+      }
+    ]
   },
   {
     "town": "mileth",
     "name": "Callo",
     "type": "Sells Weapons",
-    "coordinates": "5,38"
+    "coordinates": "5,38",
+    "quest": []
   },
   {
     "town": "mileth",
@@ -27,13 +127,25 @@
     "town": "mileth",
     "name": "Dar",
     "type": "Dark Magic Master",
-    "coordinates": "10,53"
+    "coordinates": "10,53",
+    "quests": [
+      {
+        "name": "Dark Research",
+        "path": "/quests/circle_1/dark_research"
+      }
+    ]
   },
   {
     "town": "mileth",
     "name": "Elganjo",
     "type": "Combat Master",
-    "coordinates": "6,11"
+    "coordinates": "6,11",
+    "quests": [
+      {
+        "name": "Crude Leather",
+        "path": "/quests/side/crude_leather"
+      }
+    ]
   },
   {
     "town": "mileth",
@@ -69,19 +181,37 @@
     "town": "mileth",
     "name": "Riona",
     "type": "Inn",
-    "coordinates": "19,13"
+    "coordinates": "19,13",
+    "quests": [
+      {
+        "name": "Tutorial",
+        "path": "/quests/circle_1/tutorial"
+      }
+    ]
   },
   {
     "town": "mileth",
     "name": "Skarn",
-    "type": "Mileth Crypt Quest Giver",
-    "coordinates": "58,25"
+    "type": "Quest Giver",
+    "coordinates": "58,25",
+    "quests": [
+      {
+        "name": "Slayer of the Crypt",
+        "path": "/quests/slayers/slayer_of_the_crypt"
+      }
+    ]
   },
   {
     "town": "mileth",
     "name": "Teague",
     "type": "Quest Giver",
-    "coordinates": "42,5"
+    "coordinates": "42,5",
+    "quests": [
+      {
+        "name": "Terror of the Crypt",
+        "path": "/quests/circle_1/terror_of_the_crypt"
+      }
+    ]
   },
   {
     "town": "mileth",
@@ -96,75 +226,380 @@
     "coordinates": "35,28"
   },
   {
-    "town": "abel",
-    "name": "Steinar",
-    "type": "Sells Armor",
-    "coordinates": "61,12"
-  },
-  {
-    "town": "abel",
-    "name": "Vidar",
+    "town": "piet",
+    "name": "Gunnar",
     "type": "Sells Weapons",
-    "coordinates": "55,18"
+    "coordinates": "49,29"
   },
   {
-    "town": "abel",
-    "name": "Runa",
-    "type": "Inn",
-    "coordinates": "59,39"
+    "town": "piet",
+    "name": "Mathis",
+    "type": "Alchemy Master",
+    "coordinates": "18,35",
+    "quest": []
   },
   {
-    "town": "abel",
-    "name": "Bodil",
-    "type": "Skill Master",
+    "town": "piet",
+    "name": "Paracelsus",
+    "type": "Monster Extract",
+    "coordinates": "18,35"
+  },
+  {
+    "town": "piet",
+    "name": "Alleen",
+    "type": "Restaurant",
+    "coordinates": "11,50"
+  },
+  {
+    "town": "piet",
+    "name": "Appie",
+    "type": "Magic Shop",
     "coordinates": "44,50"
   },
   {
-    "town": "abel",
-    "name": "Kamel",
-    "type": "Fish Supplies",
-    "coordinates": "27,46"
+    "town": "piet",
+    "name": "Jilt",
+    "type": "Bank/Sells Armor",
+    "coordinates": "51,14"
   },
   {
-    "town": "abel",
-    "name": "Aricin",
-    "type": "Guild Registrar",
-    "coordinates": "13,45"
-  },
-  {
-    "town": "abel",
-    "name": "Frida",
-    "type": "Bartender",
-    "coordinates": "13,45"
-  },
-  {
-    "town": "abel",
-    "name": "Aud",
-    "type": "Restaurant",
-    "coordinates": "7,51"
-  },
-  {
-    "town": "abel",
-    "name": "Hauk",
-    "type": "Null",
-    "coordinates": "12,32"
-  },
-  {
-    "town": "abel",
-    "name": "Lamont",
-    "type": "Bank",
-    "coordinates": "14,9"
-  },
-  {
-    "town": "abel",
-    "name": "Arnljot",
+    "town": "piet",
+    "name": "Leo",
     "type": "Sells Armor",
-    "coordinates": "24,9"
+    "coordinates": "56,22"
   },
   {
-    "town": "abel",
-    "name": "Egil",
+    "town": "piet",
+    "name": "Lia",
+    "type": "Bartender",
+    "coordinates": "18,43"
+  },
+  {
+    "town": "piet",
+    "name": "Luna",
+    "type": "Plant Trader",
+    "coordinates": "18,35"
+  },
+  {
+    "town": "piet",
+    "name": "Narve",
+    "type": "Priestess",
+    "coordinates": "30,55"
+  },
+  {
+    "town": "piet",
+    "name": "Saskie",
+    "type": "Inn",
+    "coordinates": "39,14"
+  },
+  {
+    "town": "piet",
+    "name": "Toby",
+    "type": "Null",
+    "coordinates": "30,12"
+  },
+  {
+    "town": "rucesion",
+    "name": "Angelo",
+    "type": "Misc",
+    "coordinates": "52,12",
+    "quest": null
+  },
+  {
+    "town": "rucesion",
+    "name": "Antonio",
+    "type": "Bank",
+    "coordinates": "52,12",
+    "quest": {
+      "name": "*Antonio's Vault Squeaks*",
+      "path": "/quests/side/antonios_vault_squeaks"
+    }
+  },
+  {
+    "town": "rucesion",
+    "name": "Baltasar",
+    "type": "Skill Master",
+    "coordinates": "13,34",
+    "quest": []
+  },
+  {
+    "town": "rucesion",
+    "name": "Carlos",
+    "type": "Sells Armor",
+    "coordinates": "48,28",
+    "quest": null
+  },
+  {
+    "town": "rucesion",
+    "name": "Celestia",
+    "type": "Jewelcrafting Master",
+    "coordinates": "20,10",
+    "quest": null
+  },
+  {
+    "town": "rucesion",
+    "name": "Ereno",
+    "type": "Marriage",
+    "coordinates": "9,11",
+    "quest": []
+  },
+  {
+    "town": "rucesion",
+    "name": "Marcelo",
+    "type": "Sells Weapons",
+    "coordinates": "42,34",
+    "quest": null
+  },
+  {
+    "town": "rucesion",
+    "name": "Maria",
+    "type": "Inn",
+    "coordinates": "51,42",
+    "quests": [
+      {
+        "name": "Pretty Flower",
+        "path": "/quests/side/pretty_flower"
+      },
+      {
+        "name": "Queen Octopus",
+        "path": "/quests/circle_3/queen_octopus"
+      }
+    ]
+  },
+  {
+    "town": "rucesion",
+    "name": "Nyx",
+    "type": "Sells Armor",
+    "coordinates": "32,19",
+    "quest": null
+  },
+  {
+    "town": "rucesion",
+    "name": "Pluto",
+    "type": "Sells Armor",
+    "coordinates": "17,24",
+    "quest": []
+  },
+  {
+    "town": "rucesion",
+    "name": "Wureen",
+    "type": "Misc",
+    "coordinates": "32,19",
+    "quest": null
+  },
+  {
+    "town": "suomi",
+    "name": "Alvar",
+    "type": "Misc",
+    "coordinates": "62,41",
+    "quest": null
+  },
+  {
+    "town": "suomi",
+    "name": "Berg",
+    "type": "Combat Master",
+    "coordinates": "71,81",
+    "quest": null
+  },
+  {
+    "town": "suomi",
+    "name": "Bertil",
+    "type": "White Magic Master",
+    "coordinates": "16,86",
+    "quests": [
+      {
+        "name": "Red Potion",
+        "path": "/quests/side/red_potion"
+      }
+    ]
+  },
+  {
+    "town": "suomi",
+    "name": "Eeva",
+    "type": "Inn",
+    "coordinates": "32,55",
+    "quest": null
+  },
+  {
+    "town": "suomi",
+    "name": "Fisk",
+    "type": "Skill Master",
+    "coordinates": "12,18",
+    "quests": [
+      {
+        "name": "Fisk's Secret",
+        "path": "/quests/circle_2/fisks_secret"
+      }
+    ]
+  },
+  {
+    "town": "suomi",
+    "name": "Goran",
+    "type": "Forage Supplies",
+    "coordinates": "16,72",
+    "quests": null
+  },
+  {
+    "town": "suomi",
+    "name": "Gudny",
+    "type": "Restaurant",
+    "coordinates": "74,22",
+    "quests": null
+  },
+  {
+    "town": "suomi",
+    "name": "Hadrian",
+    "type": "Dark Magic Master",
+    "coordinates": "79,74",
+    "quests": null
+  },
+  {
+    "town": "suomi",
+    "name": "Thulin",
+    "type": "Misc",
+    "coordinates": "13,30",
+    "quests": null
+  },
+  {
+    "town": "suomi",
+    "name": "Torbjorn",
+    "type": "Sells Weapons",
+    "coordinates": "11,55",
+    "quests": null
+  },
+  {
+    "town": "suomi",
+    "name": "Valdemar",
+    "type": "Sells Armor",
+    "coordinates": "19,48",
+    "quests": null
+  },
+  {
+    "town": "suomi",
+    "name": "Viveka",
+    "type": "Bartender",
+    "coordinates": "82,15",
+    "quests": [
+      {
+        "name": "Suomi Tavern",
+        "path": "/quests/side/suomi_tavern"
+      }
+    ]
+  },
+  {
+    "town": "tagor",
+    "name": "Areini",
+    "type": "Sells Pets",
+    "coordinates": "17,45",
+    "quest": []
+  },
+  {
+    "town": "tagor",
+    "name": "Aurel",
+    "type": "Church (Marriage/Divorce)",
+    "coordinates": "66,30",
+    "quest": []
+  },
+  {
+    "town": "tagor",
+    "name": "Cecil",
+    "type": "Bank",
+    "coordinates": "11,33",
+    "quest": []
+  },
+  {
+    "town": "tagor",
+    "name": "Dorina",
+    "type": "Inn",
+    "coordinates": "40,51",
+    "quest": []
+  },
+  {
+    "town": "tagor",
+    "name": "Matei",
     "type": "Sells Potions",
-    "coordinates": "44,11"
+    "coordinates": "32,39",
+    "quest": []
+  },
+  {
+    "town": "tagor",
+    "name": "Matilda",
+    "type": "Bartender",
+    "coordinates": "90,8",
+    "quest": []
+  },
+  {
+    "town": "tagor",
+    "name": "Rosie",
+    "type": "Restaurant",
+    "coordinates": "84,15",
+    "quest": []
+  },
+  {
+    "town": "tagor",
+    "name": "Thorin",
+    "type": "Weaponsmithing Master",
+    "coordinates": "28,77",
+    "quest": []
+  },
+  {
+    "town": "undine",
+    "name": "Alexios",
+    "type": "Sells Armor",
+    "coordinates": "83,76"
+  },
+  {
+    "town": "undine",
+    "name": "Arira",
+    "type": "Essence Trader",
+    "coordinates": "45,39"
+  },
+  {
+    "town": "undine",
+    "name": "Avel",
+    "type": "Sells Weapons",
+    "coordinates": "76,83"
+  },
+  {
+    "town": "undine",
+    "name": "Ayumi",
+    "type": "Bank",
+    "coordinates": "86,17",
+    "quests": [
+      {
+        "name": "Purple Whopper Scales",
+        "path": "/quests/side/purple_whopper_scales"
+      }
+    ]
+  },
+  {
+    "town": "undine",
+    "name": "Camara",
+    "type": "Restaurant",
+    "coordinates": "12,84"
+  },
+  {
+    "town": "undine",
+    "name": "Chloe",
+    "type": "Bartender",
+    "coordinates": "19,77"
+  },
+  {
+    "town": "undine",
+    "name": "Elara",
+    "type": "Enchanting Master",
+    "coordinates": "45,39"
+  },
+  {
+    "town": "undine",
+    "name": "Hali",
+    "type": "Sells Armor",
+    "coordinates": "13,32"
+  },
+  {
+    "town": "undine",
+    "name": "Kiril",
+    "type": "Dark Magic Master",
+    "coordinates": "16,12"
   }
 ]

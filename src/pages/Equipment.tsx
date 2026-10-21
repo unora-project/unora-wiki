@@ -184,7 +184,8 @@ const SORT_LABELS: Record<string, string> = {
 const LOWEST_FIRST = new Set(['ac'])
 
 const PAGE_SIZE = 40
-const CARD_GRID = 'grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5'
+// Cards never get narrower than 320px; the row drops a card instead (max 5 per row).
+const CARD_GRID = 'grid gap-4 grid-cols-[repeat(auto-fill,minmax(min(100%,max(320px,calc((100%_-_4rem)/5))),1fr))]'
 const controlLabelCls = 'text-xs font-medium uppercase tracking-wider text-parchment-500 dark:text-parchment-600'
 const selectCls =
   'rounded-lg border border-parchment-300 bg-parchment-100 px-3 py-1.5 text-xs font-medium text-parchment-700 dark:border-ash/20 dark:bg-obsidian dark:text-ash'

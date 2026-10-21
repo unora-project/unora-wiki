@@ -530,5 +530,12 @@
     "Level": "100",
     "Extract": "Superior",
     "Amount": "2"
+  },
+  {
+    "Monster Part": "Ice Skeleton Skull",
+    "Area": "Mount Giragan Cave",
+    "Level": "99",
+    "Extract": "Superior",
+    "Amount": "1"
   }
 ]

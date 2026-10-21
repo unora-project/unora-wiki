@@ -1,0 +1,93 @@
+[
+  {
+    "name": "Bladestorm 1",
+    "class": "Warlord",
+    "levelRequirement": "Ab 1",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Becoming Warlord",
+    "description": "A storm of slashes that cascades outward, striking the enemies within 3 tiles."
+  },
+  {
+    "name": "Bravado",
+    "class": "Warlord",
+    "element": "",
+    "levelRequirement": "Ab 1",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Becoming Warlord",
+    "description": "A finisher that instantly kills normal enemies (15%> hp).  Kill restores 30% of your health and 15% of team's.  Also restores 7.5% mana to group. Otherwise deals damage based on STR and 6.7% of max health  Instant kills reduce cooldown by half."
+  },
+  {
+    "name": "Challenge 1",
+    "class": "Warlord",
+    "element": "",
+    "levelRequirement": "Ab 12",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "1,000,000",
+    "itemRequirements": "Ant Chitin (3)",
+    "prerequisites": "-",
+    "learningLocation": "Tarlok (Noam)",
+    "description": "Taunts every enemy within 3 tiles for a few seconds."
+  },
+  {
+    "name": "Glory",
+    "class": "Warlord",
+    "element": "",
+    "levelRequirement": "Ab 1",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Becoming Warlord",
+    "description": "A finisher that instantly kills normal enemies (20%> hp).  Kill restores 40% of your health and 20% of team's. Otherwise deals damage based on STR and 9% of max health. Also restores 10% mana to group.  Instant kills reduce cooldown by half.  Pure only."
+  },
+  {
+    "name": "Rout 1",
+    "class": "Warlord",
+    "levelRequirement": "Ab 3",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "750,000",
+    "itemRequirements": "Terraclod Clump (2)",
+    "prerequisites": "-",
+    "learningLocation": "Tarlok (Noam)",
+    "description": "A sweeping blow that strikes the enemies directly beside you.  It costs no health."
+  },
+  {
+    "name": "Sever 1",
+    "class": "Warlord",
+    "levelRequirement": "Ab 1",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Becoming Warlord",
+    "description": "An attack that strikes enemies up to 4 tiles in front of you, stopping at walls.  Damage scales with your health."
+  },
+  {
+    "name": "Shockwave 1",
+    "class": "Warlord",
+    "levelRequirement": "Ab 1",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Becoming Warlord",
+    "description": "An attack that cascades outward in a cone, dealing massive damage to enemies up to 4 tiles in front of you."
+  },
+  {
+    "name": "Vanguard Sweep 1",
+    "class": "Warlord",
+    "levelRequirement": "Ab 1",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Becoming Warlord",
+    "description": "An assail that sweeps enemies directly beside you, but not diagonally."
+  }
+]

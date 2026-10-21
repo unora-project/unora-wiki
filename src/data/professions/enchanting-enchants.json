@@ -326,34 +326,62 @@
     "Effects": "+6 DMG +30 Flat Skill DMG -1% MR",
     "Rank": "Expert",
     "Name": "Sinister",
-    "Level": "99"
+    "Level": "Ab 1"
   },
   {
     "Enchant": "Zephyra's Power",
     "Effects": "+5% MR -2 Hit -4 DMG",
     "Rank": "Expert",
     "Name": "Gleaming",
-    "Level": "99"
+    "Level": "Ab 1"
   },
   {
     "Enchant": "Ignatar's Deficit",
     "Effects": "+5% Skill DMG +18 Flat Skill DMG +1 AC -1% MR",
     "Rank": "Expert",
     "Name": "Infernal",
-    "Level": "99"
+    "Level": "Ab 1"
   },
   {
     "Enchant": "Geolith's Barrier",
     "Effects": "+400 HP +2 DMG +2% ATK Speed +1% Skill DMG +18 Flat Skill DMG",
     "Rank": "Expert",
     "Name": "Primal",
-    "Level": "99"
+    "Level": "Ab 1"
   },
   {
     "Enchant": "Miraelis' Roots",
     "Effects": "+4% Spell DMG +30 Flat Spell DMG +1 AC -1% MR",
     "Rank": "Expert",
     "Name": "Thick",
-    "Level": "99"
+    "Level": "Ab 1"
+  },
+  {
+    "Enchant": "Geolith's Bedrock",
+    "Effects": "+500 Hp, +3 DMG, +2% Atk Spd, +2% Skill DMG, +22 Flat Skill Damage",
+    "Rank": "Master",
+    "Name": "Adamant",
+    "Level": "Ab 20"
+  },
+  {
+    "Enchant": "Serendael's Gambit",
+    "Effects": "+6 Hit, +2 DMG, +1% Spell DMG, -1 MR",
+    "Rank": "Master",
+    "Name": "Fateful",
+    "Level": "Ab 20"
+  },
+  {
+    "Enchant": "Skandara's Conquest",
+    "Effects": "+7 DMG, +36 Flat Skill DMG, -1 MR",
+    "Rank": "Master",
+    "Name": "Relentless",
+    "Level": "Ab 20"
+  },
+  {
+    "Enchant": "Aquaedon's Depths",
+    "Effects": "+275 MP, +3% Spell DMG, +32 Flat  Spell DMG",
+    "Rank": "Master",
+    "Name": "Fathomless",
+    "Level": "Ab 20"
   }
 ]
