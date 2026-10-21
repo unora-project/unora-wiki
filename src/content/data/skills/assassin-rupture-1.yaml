@@ -1,0 +1,11 @@
+name: Rupture 1
+class: Assassin
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Assassin
+description: Deals enormous damage to the enemy directly in front of you, and applies Bleed.  Pure only.
+image: /images/abilities/Rupture.png
