@@ -4,7 +4,7 @@ element: ''
 levelRequirement: Ab 12
 statRequirements: 3/3/3/3/3
 goldRequired: '1,500,000'
-itemRequirements: Scravelman Head (1), Vulture Feather (5)
+itemRequirements: Scravelmaw Head (1), Vulture Feather (5)
 prerequisites: '-'
 learningLocation: Peytri (Noam)
 description: Teleports you anywhere within your sight up to 7 tiles away, so long as no walls block the path.
