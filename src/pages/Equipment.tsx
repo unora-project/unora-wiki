@@ -6,6 +6,7 @@ import { ChevronRight, Gem, Shield, Swords, type LucideIcon } from 'lucide-react
 import { DataTable } from '@/components/tables/DataTable'
 import equipmentUrl from '@/data/equipment/all.json?url'
 import jewelRecipesUrl from '@/data/professions/jewelcrafting-recipes.json?url'
+import armorRecipesUrl from '@/data/professions/armorsmithing-recipes.json?url'
 
 interface EquipmentItem {
   name: string
@@ -308,7 +309,8 @@ function loadWeaponRecipes(): Promise<Map<string, WeaponRecipeRow>> {
   return weaponRecipePromise
 }
 
-// Jewelcrafting recipes, looked up by item name (case and spacing ignored).
+// Jewelcrafting and armorsmithing recipes (belts are armorsmithing), looked up by item name
+// (case and spacing ignored).
 const JEWEL_CATEGORIES = new Set(['belt', 'necklace', 'earring', 'ring'])
 const recipeKey = (name: string) => name.trim().toLowerCase().replace(/\s+/g, ' ')
 
@@ -316,10 +318,20 @@ let jewelRecipePromise: Promise<Map<string, JewelRecipeRow>> | null = null
 
 function loadJewelRecipes(): Promise<Map<string, JewelRecipeRow>> {
   if (!jewelRecipePromise) {
-    jewelRecipePromise = fetch(jewelRecipesUrl)
-      .then((r) => (r.ok ? (r.json() as Promise<JewelRecipeRow[]>) : []))
-      .then((rows) => new Map(rows.filter((r) => r.Name).map((r) => [recipeKey(r.Name), r])))
-      .catch(() => new Map())
+    const load = (url: string) =>
+      fetch(url)
+        .then((r) => (r.ok ? (r.json() as Promise<JewelRecipeRow[]>) : []))
+        .catch(() => [] as JewelRecipeRow[])
+    jewelRecipePromise = Promise.all([load(jewelRecipesUrl), load(armorRecipesUrl)]).then(([jewel, armor]) => {
+      const map = new Map<string, JewelRecipeRow>()
+      // Jewelcrafting first; armorsmithing only fills names it doesn't already have.
+      for (const r of [...jewel, ...armor]) {
+        if (!r.Name) continue
+        const k = recipeKey(r.Name)
+        if (!map.has(k)) map.set(k, r)
+      }
+      return map
+    })
   }
   return jewelRecipePromise
 }
