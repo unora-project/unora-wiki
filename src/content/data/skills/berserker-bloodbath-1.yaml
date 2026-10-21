@@ -1,0 +1,11 @@
+name: Bloodbath 1
+class: Berserker
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Berserker
+description: Basic attack that swings in all directions.
+image: /images/abilities/Bloodbath 1.png
