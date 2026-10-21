@@ -1,0 +1,11 @@
+name: Overcharge
+class: Arcanist
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Arcanist
+description: For 20s your maximum mana raises by 25%, and everything that draws on it strikes for more.  When it ends, any mana above your normal maximum is lost.
+image: /images/abilities/Overcharge.png
