@@ -1,0 +1,11 @@
+name: Carnage 1
+class: Berserker
+element: ''
+levelRequirement: Ab 12
+statRequirements: 3/3/3/3/3
+goldRequired: '1,000,000'
+itemRequirements: Ant Chitin (3)
+prerequisites: '-'
+learningLocation: Tarlok (Noam)
+description: Wide swing that widens by one tile for each rank of rage you hold, and strikes harder for each enemy pressed against you.  Costs 6% of your maximum health.
+image: /images/abilities/Carnage 1.png
