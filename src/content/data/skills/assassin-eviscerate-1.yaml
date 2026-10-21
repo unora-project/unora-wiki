@@ -1,0 +1,11 @@
+name: Eviscerate 1
+class: Assassin
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Assassin
+description: Vicious finisher that deals massive damage.
+image: ''
