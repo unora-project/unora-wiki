@@ -1,7 +1,7 @@
 import { Link, useParams } from 'react-router'
 import { useState, useMemo, useEffect, useRef } from 'react'
 import { createPortal } from 'react-dom'
-import { createColumnHelper } from '@tanstack/react-table'
+import { createColumnHelper, type ColumnDef } from '@tanstack/react-table'
 import { DataTable, compareLevels } from '@/components/tables/DataTable'
 import { PageHeader } from '@/components/ui/PageHeader'
 import classInfo from '@/data/metadata/classes.json'
@@ -316,16 +316,14 @@ function ViewToggle({
       >
         Reset Hidden{hiddenCount > 0 ? ` (${hiddenCount})` : ''}
       </button>
-      {value === 'cards' && (
-        <button
-          type="button"
-          onClick={onTogglePlan}
-          title="Pick skills and spells to total up the gold and items you need"
-          className={pillCls(planOpen)}
-        >
-          Build Plan{planCount > 0 ? ` (${planCount})` : ''}
-        </button>
-      )}
+      <button
+        type="button"
+        onClick={onTogglePlan}
+        title="Pick skills and spells to total up the gold and items you need"
+        className={pillCls(planOpen)}
+      >
+        Build Plan{planCount > 0 ? ` (${planCount})` : ''}
+      </button>
     </div>
   )
 }
@@ -561,6 +559,60 @@ function SkillSpellCard({
   )
 }
 
+// ---- List view with a Plan checkbox column ---------------------------------
+
+function SkillSpellList({
+  data,
+  kind,
+  withElementColumn,
+  searchPlaceholder,
+  planOpen,
+  selectedKeys,
+  onToggle,
+}: {
+  data: SkillSpell[]
+  kind: 'skills' | 'spells'
+  withElementColumn: boolean
+  searchPlaceholder: string
+  planOpen: boolean
+  selectedKeys: Set<string>
+  onToggle: (item: SkillSpell) => void
+}) {
+  const toggleRef = useRef(onToggle)
+  toggleRef.current = onToggle
+  // Rebuild the columns only when the selection actually changes.
+  const selSig = [...selectedKeys].join('\n')
+
+  const columns = useMemo(() => {
+    const base = (withElementColumn ? skillColumnsWithElement : skillColumns) as ColumnDef<SkillSpell, any>[]
+    if (!planOpen) return base
+    const sel = new Set(selSig ? selSig.split('\n') : [])
+    const planColumn = skillColumnHelper.display({
+      id: 'plan',
+      header: 'Plan',
+      cell: ({ row }) => (
+        <input
+          type="checkbox"
+          checked={sel.has(itemKey(kind, row.original.name))}
+          onChange={() => toggleRef.current(row.original)}
+          aria-label={`Add ${row.original.name} to build plan`}
+          className="h-4 w-4 rounded border-ash/40 accent-gilt"
+        />
+      ),
+    }) as ColumnDef<SkillSpell, any>
+    return [planColumn, ...base]
+  }, [planOpen, selSig, withElementColumn, kind])
+
+  return (
+    <DataTable
+      data={data}
+      columns={columns}
+      searchPlaceholder={searchPlaceholder}
+      initialSorting={[{ id: 'levelRequirement', desc: false }]}
+    />
+  )
+}
+
 // ---- Hidden cards ----------------------------------------------------------
 
 function HiddenSection({
@@ -738,7 +790,7 @@ function BuildPlanPanel({
       <div className="min-h-0 flex-1 space-y-3 overflow-y-auto p-3 text-sm">
         {entries.length === 0 ? (
           <p className="text-parchment-500 dark:text-parchment-600">
-            Click skill or spell cards to add them. Your picks are saved for this class.
+            Click skill or spell cards (or tick the Plan box in List view) to add them. Your picks are saved for this class.
           </p>
         ) : (
           <>
@@ -1040,12 +1092,15 @@ export function ClassDetail() {
           onHide={(item) => hideItem(kind, item)}
         />
       ) : (
-        <DataTable
+        <SkillSpellList
           key={`list-${id}`}
           data={data}
-          columns={withElementColumn ? skillColumnsWithElement : skillColumns}
+          kind={kind}
+          withElementColumn={withElementColumn}
           searchPlaceholder={searchPlaceholder}
-          initialSorting={[{ id: 'levelRequirement', desc: false }]}
+          planOpen={planOpen}
+          selectedKeys={selectedKeys}
+          onToggle={(item) => toggleSelect(kind, item)}
         />
       )
 
