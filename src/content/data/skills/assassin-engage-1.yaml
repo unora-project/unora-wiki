@@ -1,0 +1,11 @@
+name: Engage 1
+class: Assassin
+element: ''
+levelRequirement: Ab 3
+statRequirements: 3/3/3/3/3
+goldRequired: '750,000'
+itemRequirements: Vulture Feather (3)
+prerequisites: '-'
+learningLocation: Tarlok (Noam)
+description: Charge forward 2 tiles.  Deals no damage, and does not break hide.
+image: /images/abilities/Engage.png
