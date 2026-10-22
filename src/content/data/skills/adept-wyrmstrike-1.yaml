@@ -1,0 +1,11 @@
+name: Wyrmstrike 1
+class: Adept
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Adept
+description: Strike enemies in a cone up to 5 tiles in front of you dealing the element of your necklace.  Scales with your maximum health.  Pure Only.
+image: /images/abilities/Wyrmstrike 1.png
