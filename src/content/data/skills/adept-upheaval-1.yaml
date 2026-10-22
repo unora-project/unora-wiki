@@ -7,5 +7,5 @@ goldRequired: '-'
 itemRequirements: '-'
 prerequisites: '-'
 learningLocation: Becoming Adept
-description: 'Position your targets, that changes when you shift your stance; Fire/Earth/Water: Pulls enemies in towards you; Lightning: Shoves them off of you.  Scales with your maximum health.'
+description: 'Position your targets, that changes when you shift your stance; Fire/Earth: Pulls enemies in towards you; Water: Pulls enemies in towards you and restores mana; Lightning: Shoves them off of you.  Scales with your maximum health.'
 image: /images/abilities/Upheaval 1.png
