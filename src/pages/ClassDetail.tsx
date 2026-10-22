@@ -77,7 +77,6 @@ const EL = '(?:Fire|Earth|Water|Lightning|Tide|Storm|Neutral)'
 const SEP = '(?:[\\s\\u00a0]*[\\/,&+][\\s\\u00a0]*|[\\s\\u00a0]+and[\\s\\u00a0]+)'
 const LABEL = `${EL}(?:${SEP}${EL})*[\\s\\u00a0]*:`
 const LABEL_COUNT_RE = new RegExp(`\\b${LABEL}`, 'g')
-const LABEL_SPLIT_RE = new RegExp(`(?=\\b${LABEL})`)
 const LABEL_START_RE = new RegExp(`^(${EL}(?:${SEP}${EL})*)[\\s\\u00a0]*:[\\s\\u00a0]*([\\s\\S]*)$`)
 const EL_WORD_RE = /(Fire|Earth|Water|Lightning|Tide|Storm|Neutral)/
 
@@ -114,7 +113,13 @@ function renderDescription(text: string): ReactNode {
   const labels = text.match(LABEL_COUNT_RE)
   if (!labels || labels.length < 2) return highlightPure(text)
 
-  const parts = text.split(LABEL_SPLIT_RE).filter((x) => x.trim())
+  // Cut at the start of each whole label (so "Fire/Earth/Water:" stays in one piece).
+  const cuts = [...text.matchAll(LABEL_COUNT_RE)].map((m) => m.index as number)
+  const bounds = [0, ...cuts.filter((c) => c > 0), text.length]
+  const parts = bounds
+    .slice(0, -1)
+    .map((start, i) => text.slice(start, bounds[i + 1]))
+    .filter((x) => x.trim())
   const lastBody = (parts[parts.length - 1].match(LABEL_START_RE)?.[2] ?? '').trim()
   const hasTail = /^.*?\.\s+\S/.test(lastBody)
   let tail = ''
