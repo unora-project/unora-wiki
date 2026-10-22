@@ -1,0 +1,11 @@
+name: Upheaval 1
+class: Adept
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Adept
+description: 'Position your targets, that changes when you shift your stance; Fire/Earth/Water: Pulls enemies in towards you; Lightning: Shoves them off of you.  Scales with your maximum health.'
+image: /images/abilities/Upheaval 1.png
