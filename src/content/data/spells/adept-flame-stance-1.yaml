@@ -1,0 +1,11 @@
+name: Flame Stance 1
+class: Adept
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Adept
+description: Builds stacks every 30s, up to 3 stacks.  Depending on your stacks, Reserve 10%/15%/20% of your maximum health and gain 20%/30%/40% more skill/spell damage, 50/100/150 flat damage, and 10%/15%/20% attack speed.  There is a 2 minute commitment before you can shift to another stance.
+image: /images/abilities/Flame Stance 1.png
