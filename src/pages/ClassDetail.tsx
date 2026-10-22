@@ -93,6 +93,16 @@ function ElementLabel({ label }: { label: string }) {
   )
 }
 
+// List view: keep the text in its original order and run-on, only colouring the labels.
+function renderDescriptionInline(text: string): ReactNode {
+  const labels = text.match(LABEL_COUNT_RE)
+  if (!labels || labels.length < 2) return highlightPure(text)
+  const pieces = text.split(new RegExp(`(\\b${LABEL})`))
+  return pieces.map((p, i) =>
+    i % 2 === 1 ? <ElementLabel key={i} label={p.slice(0, -1)} /> : <span key={i}>{highlightPure(p)}</span>
+  )
+}
+
 function renderDescription(text: string): ReactNode {
   const labels = text.match(LABEL_COUNT_RE)
   if (!labels || labels.length < 2) return highlightPure(text)
@@ -143,7 +153,7 @@ function renderDescription(text: string): ReactNode {
 
 const descriptionCell = (info: { getValue: () => unknown }) => {
   const v = info.getValue()
-  return v == null ? null : renderDescription(String(v))
+  return v == null ? null : renderDescriptionInline(String(v))
 }
 
 const textCell = (info: { getValue: () => unknown }) => {
