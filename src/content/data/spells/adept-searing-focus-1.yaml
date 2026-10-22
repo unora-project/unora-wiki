@@ -1,0 +1,11 @@
+name: Searing Focus 1
+class: Adept
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Adept
+description: A meditation that lasts for 8 minutes.  Increases natural health regeneration by 5% of your maximum health, and raises your assail and skill damage by 1.5% for every 20 CON.  Casting again will refresh the cooldown, and it will stack with Hot Chocolate and Ice Cold.
+image: /images/abilities/Searing Focus 1.png
