@@ -1,0 +1,11 @@
+name: Sweeping Palm 1
+class: Adept
+element: ''
+levelRequirement: AB 3
+statRequirements: 3/3/3/3/3
+goldRequired: '750,000'
+itemRequirements: Hyena Fang (2)
+prerequisites: '-'
+learningLocation: Tarlok (Noam)
+description: 'Sweeps the enemies adjacent to you, shifting with your stance; Fire: Sets them burning, Earth: Strikes all enemies adjacent; Water: Strikes all enemies adjacent; Lightning: Reaches further, and deals more with open space around targets.  Scales with your maximum health.'
+image: /images/abilities/Sweeping Palm 1.png
