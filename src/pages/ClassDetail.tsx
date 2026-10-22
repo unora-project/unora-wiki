@@ -1,5 +1,5 @@
 import { Link, useParams } from 'react-router'
-import { useState, useMemo, useEffect, useRef } from 'react'
+import { useState, useMemo, useEffect, useRef, type ReactNode } from 'react'
 import { createPortal } from 'react-dom'
 import { createColumnHelper, type ColumnDef } from '@tanstack/react-table'
 import { DataTable, compareLevels } from '@/components/tables/DataTable'
@@ -57,6 +57,95 @@ function highlightPure(text: string, className = 'text-pink-500 dark:text-pink-4
   )
 }
 
+// Descriptions like "...; Fire: Sets them burning, Earth: Strikes all enemies adjacent; Water: ...;
+// Lightning: ..." get each element on its own line with the element word coloured.
+// Only descriptions that name two or more elements are changed.
+const ELEMENT_TEXT: Record<string, string> = {
+  Fire: 'text-red-500 dark:text-red-400',
+  Earth: 'text-amber-700 dark:text-[#c08a4a]',
+  Water: 'text-blue-600 dark:text-blue-400',
+  Lightning: 'text-purple-600 dark:text-purple-400',
+  Neutral: 'text-slate-500 dark:text-slate-300',
+}
+// Tide / Storm are the Water / Lightning stances under their other names.
+ELEMENT_TEXT.Tide = ELEMENT_TEXT.Water
+ELEMENT_TEXT.Storm = ELEMENT_TEXT.Lightning
+
+const EL = '(?:Fire|Earth|Water|Lightning|Tide|Storm|Neutral)'
+// A label is one element or several joined by "/", e.g. "Fire/Earth/Water:"
+const LABEL = `${EL}(?:\\s*\\/\\s*${EL})*:`
+const LABEL_COUNT_RE = new RegExp(`\\b${LABEL}`, 'g')
+const LABEL_SPLIT_RE = new RegExp(`(?=\\b${LABEL})`)
+const LABEL_START_RE = new RegExp(`^(${EL}(?:\\s*\\/\\s*${EL})*):\\s*([\\s\\S]*)$`)
+
+function ElementLabel({ label }: { label: string }) {
+  const words = label.split(/\s*\/\s*/)
+  return (
+    <span className="font-semibold">
+      {words.map((w, i) => (
+        <span key={i}>
+          {i > 0 && '/'}
+          <span className={ELEMENT_TEXT[w]}>{w}</span>
+        </span>
+      ))}
+      :
+    </span>
+  )
+}
+
+function renderDescription(text: string): ReactNode {
+  const labels = text.match(LABEL_COUNT_RE)
+  if (!labels || labels.length < 2) return highlightPure(text)
+
+  const parts = text.split(LABEL_SPLIT_RE).filter((x) => x.trim())
+  const lastBody = (parts[parts.length - 1].match(LABEL_START_RE)?.[2] ?? '').trim()
+  const hasTail = /^.*?\.\s+\S/.test(lastBody)
+  let tail = ''
+  const nodes = parts.map((part, i) => {
+    const m = part.match(LABEL_START_RE)
+    if (!m) {
+      // Text before the first element, e.g. "Sweeps the enemies ... your stance;"
+      const intro = part.trim().replace(/\s*[;,]\s*$/, hasTail ? '.' : ':')
+      return (
+        <span key={i} className="block">
+          {highlightPure(intro)}
+        </span>
+      )
+    }
+    let body = m[2].trim().replace(/\s*[;,]\s*$/, '')
+    if (i === parts.length - 1) {
+      // Anything after the last element's first sentence applies to the whole skill.
+      const split = body.match(/^(.*?\.)\s+([\s\S]+)$/)
+      if (split) {
+        body = split[1]
+        tail = split[2]
+      }
+    }
+    return (
+      <span key={i} className="mt-1.5 block">
+        <ElementLabel label={m[1]} /> {highlightPure(body)}
+      </span>
+    )
+  })
+  if (tail) {
+    // Skill-wide sentence goes right after the intro, before the element lines.
+    const hasIntro = !LABEL_START_RE.test(parts[0])
+    nodes.splice(
+      hasIntro ? 1 : 0,
+      0,
+      <span key="tail" className="mt-1.5 block">
+        {highlightPure(tail)}
+      </span>
+    )
+  }
+  return nodes
+}
+
+const descriptionCell = (info: { getValue: () => unknown }) => {
+  const v = info.getValue()
+  return v == null ? null : renderDescription(String(v))
+}
+
 const textCell = (info: { getValue: () => unknown }) => {
   const v = info.getValue()
   return v == null ? null : highlightPure(String(v))
@@ -70,7 +159,7 @@ const skillColumns = [
   skillColumnHelper.accessor('itemRequirements', { header: 'Items', cell: textCell }),
   skillColumnHelper.accessor('prerequisites', { header: 'Prereqs', cell: textCell }),
   skillColumnHelper.accessor('learningLocation', { header: 'Location', cell: textCell }),
-  skillColumnHelper.accessor('description', { header: 'Description', cell: textCell }),
+  skillColumnHelper.accessor('description', { header: 'Description', cell: descriptionCell }),
 ]
 
 function normalizeElement(raw: unknown): string {
@@ -551,7 +640,7 @@ function SkillSpellCard({
       {hasText(descriptionText) && (
         <div className="mt-3 flex flex-1 flex-col border-t border-parchment-300 pt-3 dark:border-ash/20">
           <p className="my-auto text-center font-ui text-base leading-relaxed text-parchment-800 dark:text-ivory">
-            {descriptionText}
+            {renderDescription(descriptionText)}
           </p>
         </div>
       )}
