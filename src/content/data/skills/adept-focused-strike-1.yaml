@@ -7,5 +7,5 @@ goldRequired: '-'
 itemRequirements: '-'
 prerequisites: '-'
 learningLocation: Becoming Adept
-description: 'Single strike that changes based on stance; Fire: Sets the target on fire; Earth: Casts Beag Suain; Water: Regenerates mana; Lightning: Exposes the enemy to take 30% more damage from the next skill or spell.  Also scales with your maximum health.'
+description: 'Single strike that changes based on stance; Fire: Sets the target on fire; Earth: Casts Beag Suain; Water: Restores mana; Lightning: Exposes the enemy to take 30% more damage from the next skill or spell.  Also scales with your maximum health.'
 image: /images/abilities/Focused Strike 1.png
