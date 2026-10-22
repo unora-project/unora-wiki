@@ -1,0 +1,11 @@
+name: Perfect Balance 1
+class: Adept
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Adept
+description: For 30s gain max stacks for whichever stance you're currently in.  Cannot be used without a stance.  Pure Only.
+image: /images/abilities/Perfect Balance 1.png
