@@ -1,0 +1,11 @@
+name: Severed Breath
+class: Adept
+element: ''
+levelRequirement: Ab 12
+statRequirements: 3/3/3/3/3
+goldRequired: '1,000,000'
+itemRequirements: Ant Chitin (3)
+prerequisites: '-'
+learningLocation: Tarlok (Noam)
+description: Spends 2/3 of your current health to strike every enemy directly in front of you for 1/3 of it (Wont be reduced by armour, aite, etc and reflect wont return).  Skill damage bonuses do not affect the damage.
+image: /images/abilities/Severed Breath.png
