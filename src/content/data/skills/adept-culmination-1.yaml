@@ -1,0 +1,11 @@
+name: Culmination 1
+class: Adept
+element: ''
+levelRequirement: Ab 8
+statRequirements: 3/3/3/3/3
+goldRequired: '1,000,000'
+itemRequirements: Red Blob Core (5)
+prerequisites: '-'
+learningLocation: Tarlok (Noam)
+description: Expends all stacks in a single blow.  Deals more damage based on the amount of stacks used, and will return you back to 1.  Remains in stance after use.  Scales off your maximum health.  Pure Only.
+image: /images/abilities/Consummation 1.png
