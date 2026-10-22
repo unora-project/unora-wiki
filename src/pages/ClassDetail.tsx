@@ -72,22 +72,29 @@ ELEMENT_TEXT.Tide = ELEMENT_TEXT.Water
 ELEMENT_TEXT.Storm = ELEMENT_TEXT.Lightning
 
 const EL = '(?:Fire|Earth|Water|Lightning|Tide|Storm|Neutral)'
-// A label is one element or several joined by "/", e.g. "Fire/Earth/Water:"
-const LABEL = `${EL}(?:\\s*\\/\\s*${EL})*:`
+// A label is one element or several joined by "/", ",", "&", "+" or "and"
+// (e.g. "Fire/Earth/Water:", "Fire, Earth & Water:").
+const SEP = '(?:[\\s\\u00a0]*[\\/,&+][\\s\\u00a0]*|[\\s\\u00a0]+and[\\s\\u00a0]+)'
+const LABEL = `${EL}(?:${SEP}${EL})*[\\s\\u00a0]*:`
 const LABEL_COUNT_RE = new RegExp(`\\b${LABEL}`, 'g')
 const LABEL_SPLIT_RE = new RegExp(`(?=\\b${LABEL})`)
-const LABEL_START_RE = new RegExp(`^(${EL}(?:\\s*\\/\\s*${EL})*):\\s*([\\s\\S]*)$`)
+const LABEL_START_RE = new RegExp(`^(${EL}(?:${SEP}${EL})*)[\\s\\u00a0]*:[\\s\\u00a0]*([\\s\\S]*)$`)
+const EL_WORD_RE = /(Fire|Earth|Water|Lightning|Tide|Storm|Neutral)/
 
+// Every element word in the label gets its own colour; the separators stay plain.
 function ElementLabel({ label }: { label: string }) {
-  const words = label.split(/\s*\/\s*/)
+  const bits = label.replace(/[\s\u00a0]*:$/, '').split(EL_WORD_RE)
   return (
-    <span className="font-semibold">
-      {words.map((w, i) => (
-        <span key={i}>
-          {i > 0 && '/'}
-          <span className={ELEMENT_TEXT[w]}>{w}</span>
-        </span>
-      ))}
+    <span className="whitespace-nowrap font-semibold">
+      {bits.map((w, i) =>
+        ELEMENT_TEXT[w] ? (
+          <span key={i} className={ELEMENT_TEXT[w]}>
+            {w}
+          </span>
+        ) : (
+          <span key={i}>{w}</span>
+        )
+      )}
       :
     </span>
   )
@@ -99,7 +106,7 @@ function renderDescriptionInline(text: string): ReactNode {
   if (!labels || labels.length < 2) return highlightPure(text)
   const pieces = text.split(new RegExp(`(\\b${LABEL})`))
   return pieces.map((p, i) =>
-    i % 2 === 1 ? <ElementLabel key={i} label={p.slice(0, -1)} /> : <span key={i}>{highlightPure(p)}</span>
+    i % 2 === 1 ? <ElementLabel key={i} label={p} /> : <span key={i}>{highlightPure(p)}</span>
   )
 }
 
