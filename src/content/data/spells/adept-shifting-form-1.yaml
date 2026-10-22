@@ -1,0 +1,11 @@
+name: Shifting Form 1
+class: Adept
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Adept
+description: Breaks your current stance, allowing you to shift to another stance early.  Cannot be used while not in a stance.
+image: /images/abilities/Shifting Form 1.png
