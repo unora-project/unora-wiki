@@ -1,0 +1,11 @@
+name: Adaption 1
+class: Adept
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Adept
+description: For 30s lowers your AC by 1 and raises MR by 1 for every 2 enemies within 2 tiles, up to 13.  While in an elemental stance, deal 30% more damage.
+image: /images/abilities/Adaption 1.png
