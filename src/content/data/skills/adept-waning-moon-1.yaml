@@ -1,0 +1,11 @@
+name: Waning Moon 1
+class: Adept
+element: ''
+levelRequirement: Ab 1
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Adept
+description: Deals massive non-elemental damage to the enemy directly in front of you.  Scales with your CON and maximum health.
+image: /images/abilities/Blood Moon 1.png
