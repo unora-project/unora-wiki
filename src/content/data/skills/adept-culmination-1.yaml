@@ -7,5 +7,5 @@ goldRequired: '1,000,000'
 itemRequirements: Red Blob Core (5)
 prerequisites: '-'
 learningLocation: Tarlok (Noam)
-description: Expends all stacks in a single blow.  Deals more damage based on the amount of stacks used, and will return you back to 1.  Remains in stance after use.  Scales off your maximum health.  Pure Only.
+description: "Expends all stacks in a single blow.  Deals more damage based on the amount of stacks used, your current stance, and will return you back to 1.  Remains in stance after use.  Scales off your maximum health. Fire: Explodes Burn effect for extra damage; Earth: Beag Suain (more damage the more the mobs are tightly packed on you); Water: Restores mana; Lightning: Attacks every tile adjacent (more damage if there's empty space behind targets).  Pure Only."
 image: /images/abilities/Consummation 1.png
