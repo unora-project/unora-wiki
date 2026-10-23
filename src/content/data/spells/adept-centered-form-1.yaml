@@ -7,5 +7,5 @@ goldRequired: '1,000,000'
 itemRequirements: Fox Ribs (3), Red Blob Core (1)
 prerequisites: '-'
 learningLocation: Tarlok (Noam)
-description: 'For 8s gain composure that shifts depending on your stance; Fire: Deal more damage based on stacks; Earth: Reflect more damage based on stacks; Water: Remove 1 negative effect and 500 mana + 10% of maximum mana return; Lightning: Charges away, can reach further depending on stacks.  Cannot be used without a stance.'
+description: 'For 8s gain composure that shifts depending on your stance; Fire: Deal more damage based on your missing health; Earth: Gain 100% Reflect for the full 8s; Water: Remove 1 negative effect and 500 mana + 10% of maximum mana return; Lightning: Charges away for 4/5/6 blocks depending on stacks.  Cannot be used without a stance.'
 image: /images/abilities/Centered Form 1.png
