@@ -7,5 +7,5 @@ goldRequired: '-'
 itemRequirements: '-'
 prerequisites: '-'
 learningLocation: Becoming Adept
-description: For 30s lowers your AC by 1 and raises MR by 1 for every 2 enemies within 2 tiles, up to 13.  While in an elemental stance, deal 30% more damage.
+description: For 30s lowers your AC by 1 and raises MR by 1 for every 2 enemies within 2 tiles, up to 13.  If your necklace element matches your stance element, deal 30% more damage.
 image: /images/abilities/Adaption 1.png
