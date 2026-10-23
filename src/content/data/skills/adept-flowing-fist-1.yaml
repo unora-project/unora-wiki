@@ -7,5 +7,5 @@ goldRequired: '-'
 itemRequirements: '-'
 prerequisites: '-'
 learningLocation: Becoming Adept
-description: "Adept's assail that changes based on stance; Fire: Front and Sides; Earth: Front and sides; Water: Front and Sides returning mana on each blow; Lightning: Attacks on all 4 sides; Neutral: normal assail to front and sides.  Scales with your maximum health."
+description: "Adept's assail that changes based on stance; Fire: Directly in front; Earth: Front and sides; Water: Front and Sides returning mana on each blow; Lightning: Attacks on all 4 sides; Neutral: normal assail to front and sides.  Scales with your maximum health."
 image: /images/abilities/Flowing Fist 1.png
