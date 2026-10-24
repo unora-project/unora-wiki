@@ -7,6 +7,7 @@ import { DataTable } from '@/components/tables/DataTable'
 import equipmentUrl from '@/data/equipment/all.json?url'
 import jewelRecipesUrl from '@/data/professions/jewelcrafting-recipes.json?url'
 import armorRecipesUrl from '@/data/professions/armorsmithing-recipes.json?url'
+import enchantsUrl from '@/data/professions/enchanting-enchants.json?url'
 
 interface EquipmentItem {
   name: string
@@ -730,29 +731,210 @@ function EquipmentCard({
   )
 }
 
+// ── Enchants (from the Enchanting tab data) ──
+
+interface EnchantRow {
+  Enchant?: string
+  Effects?: string
+  Rank?: string
+  Name?: string
+  Level?: string
+}
+
+interface Enchant {
+  id: string
+  name: string
+  rank: string
+  effects: string
+}
+
+// Highest rank first, which is the order the dropdown lists them in.
+const ENCHANT_RANKS = ['Master', 'Expert', 'Advanced', 'Adept', 'Artisan', 'Initiate', 'Basic', 'Beginner']
+
+let enchantPromise: Promise<Enchant[]> | null = null
+
+function loadEnchants(): Promise<Enchant[]> {
+  if (!enchantPromise) {
+    enchantPromise = fetch(enchantsUrl)
+      .then((r) => (r.ok ? (r.json() as Promise<EnchantRow[]>) : []))
+      .catch(() => [] as EnchantRow[])
+      .then((rows) => {
+        const list: Enchant[] = []
+        rows.forEach((r, i) => {
+          const name = (r.Name ?? '').trim()
+          if (!name) return
+          const rankRaw = (r.Rank ?? '').trim()
+          const rank = ENCHANT_RANKS.find((x) => x.toLowerCase() === rankRaw.toLowerCase()) ?? (rankRaw || 'Other')
+          list.push({ id: String(i), name, rank, effects: (r.Effects ?? '').trim() })
+        })
+        return list
+      })
+  }
+  return enchantPromise
+}
+
+// Master -> Beginner, each rank sorted by name. Unknown ranks go last.
+function groupEnchants(list: Enchant[]): { rank: string; items: Enchant[] }[] {
+  const byRank = new Map<string, Enchant[]>()
+  for (const e of list) {
+    const bucket = byRank.get(e.rank)
+    if (bucket) bucket.push(e)
+    else byRank.set(e.rank, [e])
+  }
+  const order = [...ENCHANT_RANKS, ...[...byRank.keys()].filter((k) => !ENCHANT_RANKS.includes(k))]
+  return order
+    .filter((r) => byRank.has(r))
+    .map((rank) => ({
+      rank,
+      items: byRank.get(rank)!.slice().sort((a, b) => a.name.localeCompare(b.name)),
+    }))
+}
+
+interface StatTarget {
+  kind: 'stat' | 'pct'
+  key: string
+}
+
+// Turns the wording used in the enchant effects ("Flat Skill DMG", "Atk Spd", "ATK Speed",
+// "Flat Skill Damage", ...) into the stat it changes. Returns null when it isn't recognised.
+function enchantTarget(rawLabel: string): StatTarget | null {
+  const l = rawLabel
+    .toLowerCase()
+    .replace(/[^a-z ]/g, ' ')
+    .replace(/\bdamage\b/g, 'dmg')
+    .replace(/\bspeed\b/g, 'spd')
+    .replace(/\battack\b/g, 'atk')
+    .replace(/\s+/g, ' ')
+    .trim()
+  if (/^(hp|mp|ac|mr|str|int|wis|con|dex|dmg|hit)$/.test(l)) return { kind: 'stat', key: l }
+  if (/^(atk spd|as)$/.test(l)) return { kind: 'pct', key: 'attackSpeed' }
+  let m = l.match(/^(flat )?skill dmg$/)
+  if (m) return { kind: 'pct', key: m[1] ? 'skillDamage' : 'skillDamagePercent' }
+  m = l.match(/^(flat )?spell dmg$/)
+  if (m) return { kind: 'pct', key: m[1] ? 'spellDamage' : 'spellDamagePercent' }
+  m = l.match(/^(flat )?(heal|heal bonus|healing)$/)
+  if (m) return { kind: 'pct', key: m[1] ? 'flatHealBonus' : 'healBonusPercent' }
+  if (/^(cdr|cooldown reduction|cooldown)$/.test(l)) return { kind: 'pct', key: 'cooldownReduction' }
+  return null
+}
+
+// "+3 DMG +20 Flat Skill DMG -1% MR", "+1% ATK Speed, +1 DMG", "+1% Skill DMG + 6 Flat Skill DMG"
+// all work: pieces are split at commas and before every +/- number.
+function parseEffects(effects: string): { deltas: { target: StatTarget; amount: number }[]; unknown: string[] } {
+  const text = effects.replace(/[−–—]/g, '-')
+  const tokens = text
+    .split(/\s*,\s*|\s+(?=[+-]\s*\d)/)
+    .map((t) => t.trim())
+    .filter(Boolean)
+  const deltas: { target: StatTarget; amount: number }[] = []
+  const unknown: string[] = []
+  for (const tok of tokens) {
+    const m = tok.match(/^([+-])?\s*(\d+(?:\.\d+)?)\s*%?\s*(.+)$/)
+    const target = m ? enchantTarget(m[3]) : null
+    if (!m || !target) {
+      unknown.push(tok)
+      continue
+    }
+    deltas.push({ target, amount: (m[1] === '-' ? -1 : 1) * parseFloat(m[2]) })
+  }
+  return { deltas, unknown }
+}
+
+const COMPARE_ROWS: { kind: 'stat' | 'pct'; key: string; label: string }[] = [
+  ...Object.entries(statLabels).map(([key, label]) => ({ kind: 'stat' as const, key, label })),
+  ...Object.entries(percentLabels).map(([key, label]) => ({ kind: 'pct' as const, key, label })),
+]
+
+// One item's stats with an optional enchant added on top. `changed` holds the
+// amount each stat moved so the table can flag it.
+function resolveColumn(item: DisplayRow, enchant: Enchant | undefined) {
+  const parsed = enchant ? parseEffects(enchant.effects) : null
+  const add = new Map<string, number>()
+  parsed?.deltas.forEach(({ target, amount }) => {
+    const k = `${target.kind}:${target.key}`
+    add.set(k, (add.get(k) ?? 0) + amount)
+  })
+  const values = new Map<string, number | null>()
+  const changed = new Map<string, number>()
+  for (const row of COMPARE_ROWS) {
+    const base = (row.kind === 'stat' ? item.stats[row.key] : item.percentages[row.key]) ?? null
+    const d = add.get(`${row.kind}:${row.key}`)
+    if (d !== undefined && d !== 0) {
+      values.set(row.label, Math.round(((base ?? 0) + d) * 100) / 100)
+      changed.set(row.label, d)
+    } else {
+      values.set(row.label, base)
+    }
+  }
+  return { values, changed, unknown: parsed?.unknown ?? [] }
+}
+
 // Stats where a LOWER number is the better one (shown green in Compare).
 const LOWER_IS_BETTER = new Set(['AC'])
 
+const CELL_NEUTRAL = 'bg-parchment-100 text-parchment-800 dark:bg-ink dark:text-ivory/90'
+const CELL_BEST = 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300'
+const CELL_WORST = 'bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300'
+
 function CompareBar({
   items,
+  enchants,
+  onRemove,
   onClear,
   onClose,
 }: {
   items: DisplayRow[]
+  enchants: Enchant[]
+  onRemove: (item: DisplayRow) => void
   onClear: () => void
   onClose: () => void
 }) {
-  const [a, b] = items
   const [pos, setPos] = useState<{ top: number; left: number } | null>(null)
+  // null = the window sizes itself to fit everything; set once the user drags the resize corner.
   const [size, setSize] = useState<{ width: number; height: number } | null>(null)
+  const [picked, setPicked] = useState<Record<string, string>>({})
   const dragRef = useRef<{ startX: number; startY: number; origTop: number; origLeft: number } | null>(null)
   const panelRef = useRef<HTMLDivElement>(null)
+  const resizingRef = useRef(false)
 
   useEffect(() => {
     if (pos !== null) return
-    const width = 460
-    setPos({ top: 80, left: Math.max(16, window.innerWidth - width - 24) })
+    setPos({ top: 80, left: Math.max(16, window.innerWidth - 480) })
   }, [pos])
+
+  // Keep the window on screen when its size changes (more items, a window resize, ...).
+  const placed = pos !== null
+  useEffect(() => {
+    const el = panelRef.current
+    if (!el) return
+    const clamp = () =>
+      setPos((p) => {
+        if (!p) return p
+        const left = Math.max(8, Math.min(p.left, window.innerWidth - el.offsetWidth - 8))
+        const top = Math.max(8, Math.min(p.top, window.innerHeight - el.offsetHeight - 8))
+        return left === p.left && top === p.top ? p : { top, left }
+      })
+    const ro = new ResizeObserver(clamp)
+    ro.observe(el)
+    window.addEventListener('resize', clamp)
+    clamp()
+    return () => {
+      ro.disconnect()
+      window.removeEventListener('resize', clamp)
+    }
+  }, [placed])
+
+  // Only a drag that starts on the bottom-right resize corner counts as a manual resize.
+  useEffect(() => {
+    const up = () => {
+      if (!resizingRef.current) return
+      resizingRef.current = false
+      const el = panelRef.current
+      if (el) setSize({ width: el.offsetWidth, height: el.offsetHeight })
+    }
+    window.addEventListener('mouseup', up)
+    return () => window.removeEventListener('mouseup', up)
+  }, [])
 
   const handlePointerDown = (e: React.PointerEvent) => {
     if (!pos) return
@@ -776,123 +958,198 @@ function CompareBar({
     dragRef.current = null
   }
 
-  const rows = useMemo(() => {
-    const keys = new Set<string>()
-    if (a) Object.keys(a.stats).forEach((k) => keys.add(k))
-    if (b) Object.keys(b.stats).forEach((k) => keys.add(k))
-    const pctKeys = new Set<string>()
-    if (a) Object.keys(a.percentages).forEach((k) => pctKeys.add(k))
-    if (b) Object.keys(b.percentages).forEach((k) => pctKeys.add(k))
+  const groups = useMemo(() => groupEnchants(enchants), [enchants])
+  const enchantById = useMemo(() => new Map(enchants.map((e) => [e.id, e])), [enchants])
 
-    const statRows = Array.from(keys)
-      .filter((k) => statLabels[k])
-      .map((k) => ({ label: statLabels[k], va: a?.stats[k] ?? null, vb: b?.stats[k] ?? null }))
-    const pctRows = Array.from(pctKeys)
-      .filter((k) => percentLabels[k])
-      .map((k) => ({ label: percentLabels[k], va: a?.percentages[k] ?? null, vb: b?.percentages[k] ?? null }))
+  const cols = useMemo(
+    () =>
+      items.map((item) => {
+        const key = compareKey(item)
+        const enchant = enchantById.get(picked[key] ?? '')
+        return { key, item, enchant, ...resolveColumn(item, enchant) }
+      }),
+    [items, picked, enchantById]
+  )
 
-    return [...statRows, ...pctRows].filter((r) => r.va !== null || r.vb !== null)
-  }, [a, b])
+  const rows = useMemo(
+    () =>
+      COMPARE_ROWS.map((r) => ({ label: r.label, vals: cols.map((c) => c.values.get(r.label) ?? null) })).filter((r) =>
+        r.vals.some((v) => v !== null)
+      ),
+    [cols]
+  )
 
-  const cellClass = (value: number | null, other: number | null, isBetter: (v: number, o: number) => boolean) => {
-    const v = value ?? 0
-    const o = other ?? 0
-    if (v === o) {
-      return 'bg-parchment-100 text-parchment-800 dark:bg-ink dark:text-ivory/90'
-    }
-    return isBetter(v, o)
-      ? 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300'
-      : 'bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300'
+  // Best value in a row is green, worst is red, anything between stays neutral.
+  const cellClass = (label: string, v: number | null, vals: (number | null)[]) => {
+    const nums = vals.map((x) => x ?? 0)
+    const max = Math.max(...nums)
+    const min = Math.min(...nums)
+    if (max === min) return CELL_NEUTRAL
+    const lowerBetter = LOWER_IS_BETTER.has(label)
+    const best = lowerBetter ? min : max
+    const worst = lowerBetter ? max : min
+    const n = v ?? 0
+    if (n === best) return CELL_BEST
+    if (n === worst) return CELL_WORST
+    return CELL_NEUTRAL
   }
 
   if (!pos) return null
 
+  const headBtn =
+    'rounded border border-parchment-300 px-2 py-1 text-xs font-medium text-parchment-600 hover:border-gilt hover:text-gilt dark:border-ash/20 dark:text-ash'
+  const boxCls =
+    'rounded-lg border border-parchment-300 bg-parchment-100 dark:border-ash/10 dark:bg-ink'
+  const n = cols.length
+
   return createPortal(
     <div
       ref={panelRef}
-      className="fixed z-[100] flex min-w-[340px] min-h-[280px] max-w-[calc(100vw-32px)] max-h-[calc(100vh-32px)] flex-col resize overflow-hidden rounded-lg border border-parchment-300 bg-parchment-50 shadow-[0_8px_30px_rgba(0,0,0,0.3)] dark:border-ash/20 dark:bg-obsidian"
+      className="fixed z-[100] flex min-h-[200px] min-w-[320px] max-h-[calc(100vh-16px)] max-w-[calc(100vw-16px)] flex-col resize overflow-hidden rounded-lg border border-parchment-300 bg-parchment-50 shadow-[0_8px_30px_rgba(0,0,0,0.3)] dark:border-ash/20 dark:bg-obsidian"
       style={{
         top: pos.top,
         left: pos.left,
-        width: size?.width ?? 460,
-        height: size?.height ?? 500,
+        width: size ? size.width : 'max-content',
+        height: size ? size.height : 'auto',
       }}
-      onMouseUp={() => {
-        if (panelRef.current) {
-          setSize({ width: panelRef.current.offsetWidth, height: panelRef.current.offsetHeight })
-        }
+      onMouseDown={(e) => {
+        const el = panelRef.current
+        if (!el) return
+        const r = el.getBoundingClientRect()
+        resizingRef.current = e.clientX > r.right - 22 && e.clientY > r.bottom - 22
       }}
     >
       <div
         onPointerDown={handlePointerDown}
         onPointerMove={handlePointerMove}
         onPointerUp={handlePointerUp}
-        className="flex shrink-0 cursor-move items-center justify-between rounded-t-lg border-b border-parchment-300 bg-parchment-100 px-3 py-2 dark:border-ash/20 dark:bg-ink"
+        className="flex shrink-0 cursor-move items-center justify-between gap-6 rounded-t-lg border-b border-parchment-300 bg-parchment-100 px-3 py-2 dark:border-ash/20 dark:bg-ink"
       >
-        <h3 className="select-none font-heading text-sm font-semibold text-gilt">Compare Equipment</h3>
+        <h3 className="select-none whitespace-nowrap font-heading text-sm font-semibold text-gilt">Compare Equipment</h3>
         <div className="flex items-center gap-2">
+          {size && (
+            <button onClick={() => setSize(null)} className={headBtn} title="Resize the window to fit everything">
+              Auto-fit
+            </button>
+          )}
           <button
-            onClick={onClear}
-            className="rounded border border-parchment-300 px-2 py-1 text-xs font-medium text-parchment-600 hover:border-gilt hover:text-gilt dark:border-ash/20 dark:text-ash"
+            onClick={() => {
+              setPicked({})
+              onClear()
+            }}
+            className={headBtn}
           >
             Clear
           </button>
-          <button
-            onClick={onClose}
-            className="rounded border border-parchment-300 px-2 py-1 text-xs font-medium text-parchment-600 hover:border-gilt hover:text-gilt dark:border-ash/20 dark:text-ash"
-          >
+          <button onClick={onClose} className={headBtn}>
             Close
           </button>
         </div>
       </div>
 
-      <div className="flex min-h-0 flex-1 flex-col p-3">
-        <div className="mb-3 grid shrink-0 grid-cols-2 gap-2">
-          <div className="rounded-lg border border-parchment-300 bg-parchment-100 px-3 py-2 dark:border-ash/10 dark:bg-ink">
-            <p className="text-[10px] font-semibold uppercase tracking-wider text-parchment-500 dark:text-parchment-600">Item 1</p>
-            <p className="truncate font-heading text-sm font-semibold text-gilt">{a ? a.name : 'Select an item'}</p>
-            {a && <p className="text-xs text-parchment-500 dark:text-parchment-600">Level {a.level ?? '-'}</p>}
-          </div>
-          <div className="rounded-lg border border-parchment-300 bg-parchment-100 px-3 py-2 dark:border-ash/10 dark:bg-ink">
-            <p className="text-[10px] font-semibold uppercase tracking-wider text-parchment-500 dark:text-parchment-600">Item 2</p>
-            <p className="truncate font-heading text-sm font-semibold text-gilt">{b ? b.name : 'Select an item'}</p>
-            {b && <p className="text-xs text-parchment-500 dark:text-parchment-600">Level {b.level ?? '-'}</p>}
-          </div>
-        </div>
-
-        {rows.length === 0 ? (
-          <p className="text-sm text-parchment-500 dark:text-parchment-600">
-            Select two items (use the Compare checkbox) to see stat differences.
+      <div className="min-h-0 flex-1 overflow-auto p-3">
+        {n === 0 ? (
+          <p className="whitespace-nowrap text-sm text-parchment-500 dark:text-parchment-600">
+            Tick the Compare box on as many items as you like to compare their stats.
           </p>
         ) : (
-          <div className="min-h-0 flex-1 overflow-y-auto rounded-lg border border-parchment-300 dark:border-ash/20">
-            <table className="w-full text-sm">
-              <thead className="sticky top-0 bg-parchment-200 dark:bg-ink">
-                <tr>
-                  <th className="px-3 py-1.5 text-left text-xs font-semibold uppercase tracking-wider text-parchment-600 dark:text-parchment-400">Stat</th>
-                  <th className="px-3 py-1.5 text-right text-xs font-semibold uppercase tracking-wider text-parchment-600 dark:text-parchment-400">Item 1</th>
-                  <th className="px-3 py-1.5 text-right text-xs font-semibold uppercase tracking-wider text-parchment-600 dark:text-parchment-400">Item 2</th>
-                </tr>
-              </thead>
-              <tbody>
-                {rows.map((r, i) => {
-                  const better = LOWER_IS_BETTER.has(r.label)
-                    ? (v: number, o: number) => v < o
-                    : (v: number, o: number) => v > o
-                  return (
-                    <tr key={r.label} className={i % 2 ? 'bg-parchment-100/50 dark:bg-ink/20' : ''}>
-                      <td className="px-3 py-1.5 font-medium text-parchment-600 dark:text-parchment-400">{r.label}</td>
-                      <td className={`px-3 py-1.5 text-right font-semibold ${cellClass(r.va, r.vb, better)}`}>
-                        {r.va ?? '-'}
-                      </td>
-                      <td className={`px-3 py-1.5 text-right font-semibold ${cellClass(r.vb, r.va, better)}`}>
-                        {r.vb ?? '-'}
-                      </td>
-                    </tr>
-                  )
-                })}
-              </tbody>
-            </table>
+          <div className="grid" style={{ gridTemplateColumns: `88px repeat(${n}, minmax(150px, max-content))` }}>
+            {/* Item names */}
+            <div />
+            {cols.map((c, i) => (
+              <div key={c.key} className="px-1 pb-2">
+                <div className={`relative px-3 py-2 ${boxCls}`}>
+                  <p className="text-[10px] font-semibold uppercase tracking-wider text-parchment-500 dark:text-parchment-600">
+                    Item {i + 1}
+                  </p>
+                  <p className="whitespace-nowrap pr-4 font-heading text-sm font-semibold text-gilt">{c.item.name}</p>
+                  <p className="text-xs text-parchment-500 dark:text-parchment-600">Level {c.item.level ?? '-'}</p>
+                  <button
+                    type="button"
+                    onClick={() => onRemove(c.item)}
+                    aria-label={`Remove ${c.item.name} from compare`}
+                    title="Remove from compare"
+                    className="absolute right-1.5 top-1 rounded px-1 text-xs text-parchment-500 hover:text-gilt dark:text-ash"
+                  >
+                    ✕
+                  </button>
+                </div>
+              </div>
+            ))}
+
+            {/* Enchant pickers */}
+            <div className="flex items-start pt-2 text-[10px] font-semibold uppercase tracking-wider text-parchment-500 dark:text-parchment-600">
+              Enchant
+            </div>
+            {cols.map((c) => (
+              <div key={c.key} className="min-w-0 px-1 pb-3">
+                <select
+                  value={picked[c.key] ?? ''}
+                  onChange={(e) => setPicked((p) => ({ ...p, [c.key]: e.target.value }))}
+                  aria-label={`Enchant for ${c.item.name}`}
+                  className="w-full rounded-lg border border-parchment-300 bg-parchment-100 px-2 py-1.5 text-sm text-parchment-800 outline-none focus:border-gilt dark:border-ash/20 dark:bg-ink dark:text-ivory dark:[color-scheme:dark]"
+                >
+                  <option value="">{' '}</option>
+                  {groups.map((g) => (
+                    <optgroup key={g.rank} label={g.rank}>
+                      {g.items.map((e) => (
+                        <option key={e.id} value={e.id}>
+                          {e.name}
+                        </option>
+                      ))}
+                    </optgroup>
+                  ))}
+                </select>
+                {c.enchant && (
+                  // width 0 + min-width 100% keeps long effect text from stretching the column
+                  <p
+                    className="mt-1 text-[11px] leading-snug text-parchment-500 dark:text-parchment-600"
+                    style={{ width: 0, minWidth: '100%' }}
+                  >
+                    {c.enchant.effects}
+                    {c.unknown.length > 0 && (
+                      <span className="text-amber-600 dark:text-amber-300"> (not counted: {c.unknown.join(', ')})</span>
+                    )}
+                  </p>
+                )}
+              </div>
+            ))}
+
+            {/* Stats */}
+            {rows.length === 0 ? (
+              <p className="col-span-full text-sm text-parchment-500 dark:text-parchment-600">No stats to compare.</p>
+            ) : (
+              rows.map((r, i) => (
+                <div key={r.label} className="contents">
+                  <div
+                    className={`px-3 py-1.5 text-sm font-medium text-parchment-600 dark:text-parchment-400 ${
+                      i % 2 ? 'bg-parchment-100/50 dark:bg-ink/20' : ''
+                    }`}
+                  >
+                    {r.label}
+                  </div>
+                  {cols.map((c, ci) => {
+                    const delta = c.changed.get(r.label)
+                    return (
+                      <div
+                        key={c.key}
+                        className={`px-3 py-1.5 text-right text-sm font-semibold ${cellClass(r.label, r.vals[ci], r.vals)}`}
+                      >
+                        {delta !== undefined && (
+                          <span
+                            className="mr-1.5 inline-block text-amber-600 dark:text-amber-300"
+                            title={`${delta > 0 ? '+' : ''}${delta} from ${c.enchant?.name ?? 'enchant'}`}
+                          >
+                            {delta > 0 ? '▲' : '▼'}
+                          </span>
+                        )}
+                        {r.vals[ci] ?? '-'}
+                      </div>
+                    )
+                  })}
+                </div>
+              ))
+            )}
           </div>
         )}
       </div>
@@ -977,6 +1234,7 @@ export function Equipment() {
   const [jewelRecipes, setJewelRecipes] = useState<Map<string, JewelRecipeRow>>(new Map())
   const [compareMode, setCompareMode] = useState(false)
   const [compareItems, setCompareItems] = useState<DisplayRow[]>([])
+  const [enchants, setEnchants] = useState<Enchant[]>([])
   const [sortKey, setSortKey] = useState('level')
   const [sortDir, setSortDir] = useState<'asc' | 'desc'>('asc')
   const [cardQuery, setCardQuery] = useState('')
@@ -1030,6 +1288,16 @@ export function Equipment() {
     })
     return () => { alive = false }
   }, [])
+
+  // Enchant list for the Compare window; only fetched once Compare is opened.
+  useEffect(() => {
+    if (!compareMode) return
+    let alive = true
+    loadEnchants().then((list) => {
+      if (alive) setEnchants(list)
+    })
+    return () => { alive = false }
+  }, [compareMode])
 
   // Start the card list over from the top whenever the view of it changes.
   useEffect(() => {
@@ -1117,7 +1385,6 @@ export function Equipment() {
       const key = compareKey(item)
       const exists = prev.find((p) => compareKey(p) === key)
       if (exists) return prev.filter((p) => compareKey(p) !== key)
-      if (prev.length >= 2) return [prev[1], item]
       return [...prev, item]
     })
   }
@@ -1471,6 +1738,8 @@ export function Equipment() {
       {compareMode && (
         <CompareBar
           items={compareItems}
+          enchants={enchants}
+          onRemove={toggleCompare}
           onClear={() => setCompareItems([])}
           onClose={() => {
             setCompareMode(false)
