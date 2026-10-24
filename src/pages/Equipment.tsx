@@ -416,6 +416,14 @@ function RecipeTag({ materials }: { materials: string }) {
 }
 
 // Includes class and gender so same-named items for different classes don't select together.
+// One slot in the Compare window. The same item can sit in several slots (each with its own enchant).
+interface CompareEntry {
+  uid: string
+  item: DisplayRow
+}
+let compareUidCounter = 0
+const newCompareUid = () => `c${++compareUidCounter}`
+
 function compareKey(item: DisplayRow): string {
   return `${item.category}|${item.class ?? ''}|${item.gender ?? ''}|${item.name}|${item._selectedTier}`
 }
@@ -880,12 +888,14 @@ function CompareBar({
   items,
   enchants,
   onRemove,
+  onDuplicate,
   onClear,
   onClose,
 }: {
-  items: DisplayRow[]
+  items: CompareEntry[]
   enchants: Enchant[]
-  onRemove: (item: DisplayRow) => void
+  onRemove: (uid: string) => void
+  onDuplicate: (uid: string) => void
   onClear: () => void
   onClose: () => void
 }) {
@@ -963,8 +973,7 @@ function CompareBar({
 
   const cols = useMemo(
     () =>
-      items.map((item) => {
-        const key = compareKey(item)
+      items.map(({ uid: key, item }) => {
         const enchant = enchantById.get(picked[key] ?? '')
         return { key, item, enchant, ...resolveColumn(item, enchant) }
       }),
@@ -1066,7 +1075,15 @@ function CompareBar({
                   <p className="text-xs text-parchment-500 dark:text-parchment-600">Level {c.item.level ?? '-'}</p>
                   <button
                     type="button"
-                    onClick={() => onRemove(c.item)}
+                    onClick={() => onDuplicate(c.key)}
+                    title="Add another copy of this item, to compare it with a different enchant"
+                    className="absolute bottom-1.5 right-1.5 rounded border border-parchment-300 px-1.5 text-[10px] font-medium text-parchment-600 hover:border-gilt hover:text-gilt dark:border-ash/20 dark:text-ash"
+                  >
+                    + Copy
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => onRemove(c.key)}
                     aria-label={`Remove ${c.item.name} from compare`}
                     title="Remove from compare"
                     className="absolute right-1.5 top-1 rounded px-1 text-xs text-parchment-500 hover:text-gilt dark:text-ash"
@@ -1233,7 +1250,7 @@ export function Equipment() {
   const [weaponRecipes, setWeaponRecipes] = useState<Map<string, WeaponRecipeRow>>(new Map())
   const [jewelRecipes, setJewelRecipes] = useState<Map<string, JewelRecipeRow>>(new Map())
   const [compareMode, setCompareMode] = useState(false)
-  const [compareItems, setCompareItems] = useState<DisplayRow[]>([])
+  const [compareItems, setCompareItems] = useState<CompareEntry[]>([])
   const [enchants, setEnchants] = useState<Enchant[]>([])
   const [sortKey, setSortKey] = useState('level')
   const [sortDir, setSortDir] = useState<'asc' | 'desc'>('asc')
@@ -1383,11 +1400,20 @@ export function Equipment() {
   const toggleCompare = (item: DisplayRow) => {
     setCompareItems((prev) => {
       const key = compareKey(item)
-      const exists = prev.find((p) => compareKey(p) === key)
-      if (exists) return prev.filter((p) => compareKey(p) !== key)
-      return [...prev, item]
+      // Ticking an already-selected item removes it (and any copies of it).
+      if (prev.some((p) => compareKey(p.item) === key)) return prev.filter((p) => compareKey(p.item) !== key)
+      return [...prev, { uid: newCompareUid(), item }]
     })
   }
+
+  const removeCompareEntry = (uid: string) => setCompareItems((prev) => prev.filter((p) => p.uid !== uid))
+
+  const duplicateCompareEntry = (uid: string) =>
+    setCompareItems((prev) => {
+      const i = prev.findIndex((p) => p.uid === uid)
+      if (i < 0) return prev
+      return [...prev.slice(0, i + 1), { uid: newCompareUid(), item: prev[i].item }, ...prev.slice(i + 1)]
+    })
 
     // Clicking a stat sorts by it; clicking it again reverses the order.
   const handleSort = (key: string) => {
@@ -1419,7 +1445,7 @@ export function Equipment() {
       seller={shopIndex.get(row.name)}
       recipeText={recipeTextFor(row, weaponRecipes, jewelRecipes)}
       compareMode={compareMode}
-      checked={compareItems.some((p) => compareKey(p) === compareKey(row))}
+      checked={compareItems.some((p) => compareKey(p.item) === compareKey(row))}
       onToggleCompare={toggleCompare}
       sortKey={sortKey}
       sortDir={sortDir}
@@ -1447,7 +1473,7 @@ export function Equipment() {
           header: 'Compare',
           cell: ({ row }) => {
             const item = row.original
-            const checked = compareItems.some((p) => compareKey(p) === compareKey(item))
+            const checked = compareItems.some((p) => compareKey(p.item) === compareKey(item))
             return (
               <input
                 type="checkbox"
@@ -1739,7 +1765,8 @@ export function Equipment() {
         <CompareBar
           items={compareItems}
           enchants={enchants}
-          onRemove={toggleCompare}
+          onRemove={removeCompareEntry}
+          onDuplicate={duplicateCompareEntry}
           onClear={() => setCompareItems([])}
           onClose={() => {
             setCompareMode(false)
