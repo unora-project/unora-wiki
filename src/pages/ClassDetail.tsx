@@ -1171,12 +1171,18 @@ export function ClassDetail() {
   const planOpen = !!planOpenMap[currentSub]
   const doneMaterials = new Set(doneMap[currentSub] ?? [])
 
-  const hideItem = (kind: 'skills' | 'spells', item: SkillSpell) =>
+  const hideItem = (kind: 'skills' | 'spells', item: SkillSpell) => {
+    const key = itemKey(kind, item.name)
     setHiddenMap((prev) => {
-      const key = itemKey(kind, item.name)
       const cur = prev[currentSub] ?? []
       return cur.includes(key) ? prev : { ...prev, [currentSub]: [...cur, key] }
     })
+    // A hidden skill/spell also leaves the Build Plan.
+    setPlanMap((prev) => {
+      const cur = prev[currentSub] ?? []
+      return cur.includes(key) ? { ...prev, [currentSub]: cur.filter((k) => k !== key) } : prev
+    })
+  }
   const showItem = (kind: 'skills' | 'spells', item: SkillSpell) =>
     setHiddenMap((prev) => ({
       ...prev,
