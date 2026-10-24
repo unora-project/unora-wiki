@@ -790,12 +790,17 @@ function parseItems(v?: string): { name: string; qty: number }[] {
 function BuildPlanPanel({
   title,
   entries,
+  done,
+  onToggleDone,
   onRemove,
   onClear,
   onClose,
 }: {
   title: string
   entries: PlanEntry[]
+  // Materials (lower-case names) the person has already collected.
+  done: Set<string>
+  onToggleDone: (materialKey: string) => void
   onRemove: (key: string) => void
   onClear: () => void
   onClose: () => void
@@ -807,7 +812,7 @@ function BuildPlanPanel({
 
   useEffect(() => {
     if (pos !== null) return
-    const width = 380
+    const width = 640
     setPos({ top: 96, left: Math.max(16, window.innerWidth - width - 24) })
   }, [pos])
 
@@ -820,7 +825,7 @@ function BuildPlanPanel({
   const handlePointerMove = (e: React.PointerEvent) => {
     if (!dragRef.current) return
     const { startX, startY, origTop, origLeft } = dragRef.current
-    const panelWidth = panelRef.current?.offsetWidth ?? 380
+    const panelWidth = panelRef.current?.offsetWidth ?? 640
     const panelHeight = panelRef.current?.offsetHeight ?? 460
     const newLeft = Math.max(8, Math.min(origLeft + (e.clientX - startX), window.innerWidth - panelWidth - 8))
     const newTop = Math.max(8, Math.min(origTop + (e.clientY - startY), window.innerHeight - panelHeight - 8))
@@ -865,7 +870,7 @@ function BuildPlanPanel({
     <div
       ref={panelRef}
       className="fixed z-[100] flex min-h-[260px] min-w-[300px] max-h-[calc(100vh-32px)] max-w-[calc(100vw-32px)] resize flex-col overflow-hidden rounded-lg border border-parchment-300 bg-parchment-50 shadow-[0_8px_30px_rgba(0,0,0,0.3)] dark:border-ash/20 dark:bg-obsidian"
-      style={{ top: pos.top, left: pos.left, width: size?.width ?? 380, height: size?.height ?? 460 }}
+      style={{ top: pos.top, left: pos.left, width: size?.width ?? 640, height: size?.height ?? 460 }}
       onMouseUp={() => {
         if (panelRef.current) {
           setSize({ width: panelRef.current.offsetWidth, height: panelRef.current.offsetHeight })
@@ -905,49 +910,77 @@ function BuildPlanPanel({
           </p>
         ) : (
           <>
-            <div className="rounded-lg border border-parchment-300 bg-parchment-100 p-3 dark:border-ash/10 dark:bg-ink">
-              <p className="text-[10px] font-semibold uppercase tracking-wider text-parchment-500 dark:text-parchment-600">
-                Total needed
-              </p>
-              <div className="mt-1 flex items-baseline justify-between">
-                <span className="text-xs font-semibold uppercase tracking-wider text-ash">Gold</span>
-                <span className="text-lg font-bold text-gilt">{totals.gold.toLocaleString('en-US')}</span>
-              </div>
-              {totals.items.length > 0 && (
-                <ul className="mt-2 space-y-0.5 border-t border-parchment-300 pt-2 dark:border-ash/20">
-                  {totals.items.map((it) => (
-                    <li key={it.name} className="flex justify-between gap-3">
-                      <span className="text-parchment-800 dark:text-ivory">{it.name}</span>
-                      <span className="font-semibold text-gilt">{it.qty}</span>
-                    </li>
-                  ))}
+            <div className="flex flex-wrap items-start gap-3">
+              {/* Selected skills / spells (left) */}
+              <div className="min-w-[220px] flex-1">
+                <p className="mb-1 text-[10px] font-semibold uppercase tracking-wider text-parchment-500 dark:text-parchment-600">
+                  Selected ({entries.length})
+                </p>
+                <ul className="divide-y divide-parchment-300 rounded-lg border border-parchment-300 dark:divide-ash/10 dark:border-ash/20">
+                  {sorted.map((e) => {
+                    const g = parseGold(e.item.goldRequired)
+                    const mats = parseItems(e.item.itemRequirements)
+                    // Crossed out once every material it needs has been ticked off.
+                    const complete = mats.length > 0 && mats.every((m) => done.has(m.name.toLowerCase()))
+                    return (
+                      <li key={e.key} className="flex items-center gap-2 px-3 py-1.5">
+                        <span
+                          className={`min-w-0 flex-1 truncate text-parchment-800 dark:text-ivory ${
+                            complete ? 'line-through opacity-50' : ''
+                          }`}
+                        >
+                          {e.item.name}
+                        </span>
+                        {g > 0 && <span className="shrink-0 text-xs text-ash">{g.toLocaleString('en-US')} g</span>}
+                        <button
+                          type="button"
+                          onClick={() => onRemove(e.key)}
+                          title="Remove from plan"
+                          className="shrink-0 rounded p-0.5 text-ash hover:text-gilt"
+                        >
+                          <X size={14} />
+                        </button>
+                      </li>
+                    )
+                  })}
                 </ul>
-              )}
-            </div>
+              </div>
 
-            <div>
-              <p className="mb-1 text-[10px] font-semibold uppercase tracking-wider text-parchment-500 dark:text-parchment-600">
-                Selected ({entries.length})
-              </p>
-              <ul className="divide-y divide-parchment-300 rounded-lg border border-parchment-300 dark:divide-ash/10 dark:border-ash/20">
-                {sorted.map((e) => {
-                  const g = parseGold(e.item.goldRequired)
-                  return (
-                    <li key={e.key} className="flex items-center gap-2 px-3 py-1.5">
-                      <span className="min-w-0 flex-1 truncate text-parchment-800 dark:text-ivory">{e.item.name}</span>
-                      {g > 0 && <span className="shrink-0 text-xs text-ash">{g.toLocaleString('en-US')} g</span>}
-                      <button
-                        type="button"
-                        onClick={() => onRemove(e.key)}
-                        title="Remove from plan"
-                        className="shrink-0 rounded p-0.5 text-ash hover:text-gilt"
-                      >
-                        <X size={14} />
-                      </button>
-                    </li>
-                  )
-                })}
-              </ul>
+              {/* Totals (right) */}
+              <div className="w-fit min-w-[200px] shrink-0 rounded-lg border border-parchment-300 bg-parchment-100 p-3 dark:border-ash/10 dark:bg-ink">
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-parchment-500 dark:text-parchment-600">
+                  Total needed
+                </p>
+                <div className="mt-1 flex items-baseline justify-between gap-6">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-ash">Gold</span>
+                  <span className="text-lg font-bold text-gilt">{totals.gold.toLocaleString('en-US')}</span>
+                </div>
+                {totals.items.length > 0 && (
+                  <ul className="mt-2 grid grid-cols-[auto_auto_auto] items-center gap-x-2 gap-y-0.5 border-t border-parchment-300 pt-2 dark:border-ash/20">
+                    {totals.items.map((it) => {
+                      const k = it.name.toLowerCase()
+                      const got = done.has(k)
+                      return (
+                        <li key={it.name} className="contents">
+                          <input
+                            type="checkbox"
+                            checked={got}
+                            onChange={() => onToggleDone(k)}
+                            aria-label={`Got ${it.name}`}
+                            className="h-3.5 w-3.5 cursor-pointer accent-gilt"
+                          />
+                          <span className={`text-parchment-800 dark:text-ivory ${got ? 'line-through opacity-50' : ''}`}>
+                            {it.name}
+                          </span>
+                          <span className={`text-right font-semibold text-gilt ${got ? 'line-through opacity-50' : ''}`}>
+                            {it.qty}
+                          </span>
+                        </li>
+                      )
+                    })}
+                  </ul>
+                )}
+              </div>
             </div>
           </>
         )}
@@ -1057,6 +1090,7 @@ export function ClassDetail() {
   const [hiddenMap, setHiddenMap] = usePersistentState<Record<string, string[]>>('abilityHidden.v1', {})
   const [planMap, setPlanMap] = usePersistentState<Record<string, string[]>>('abilityPlan.v1', {})
   const [planOpenMap, setPlanOpenMap] = usePersistentState<Record<string, boolean>>('abilityPlanOpen.v1', {})
+  const [doneMap, setDoneMap] = usePersistentState<Record<string, string[]>>('abilityPlanDone.v1', {})
 
   useEffect(() => {
     setActiveSub('')
@@ -1135,6 +1169,7 @@ export function ClassDetail() {
   const hiddenKeys = new Set(hiddenMap[currentSub] ?? [])
   const selectedKeys = new Set(planMap[currentSub] ?? [])
   const planOpen = !!planOpenMap[currentSub]
+  const doneMaterials = new Set(doneMap[currentSub] ?? [])
 
   const hideItem = (kind: 'skills' | 'spells', item: SkillSpell) =>
     setHiddenMap((prev) => {
@@ -1149,15 +1184,34 @@ export function ClassDetail() {
     }))
   const resetHidden = () => setHiddenMap((prev) => ({ ...prev, [currentSub]: [] }))
 
-  const toggleSelect = (kind: 'skills' | 'spells', item: SkillSpell) =>
+  const toggleSelect = (kind: 'skills' | 'spells', item: SkillSpell) => {
+    const key = itemKey(kind, item.name)
+    // Adding a skill/spell that needs a material already ticked off un-ticks it again.
+    if (!(planMap[currentSub] ?? []).includes(key)) {
+      const needed = new Set(parseItems(item.itemRequirements).map((m) => m.name.toLowerCase()))
+      if (needed.size > 0) {
+        setDoneMap((prev) => {
+          const cur = prev[currentSub] ?? []
+          return cur.some((m) => needed.has(m)) ? { ...prev, [currentSub]: cur.filter((m) => !needed.has(m)) } : prev
+        })
+      }
+    }
     setPlanMap((prev) => {
-      const key = itemKey(kind, item.name)
       const cur = prev[currentSub] ?? []
       return { ...prev, [currentSub]: cur.includes(key) ? cur.filter((k) => k !== key) : [...cur, key] }
     })
+  }
+  const toggleDone = (materialKey: string) =>
+    setDoneMap((prev) => {
+      const cur = prev[currentSub] ?? []
+      return { ...prev, [currentSub]: cur.includes(materialKey) ? cur.filter((m) => m !== materialKey) : [...cur, materialKey] }
+    })
   const removeFromPlan = (key: string) =>
     setPlanMap((prev) => ({ ...prev, [currentSub]: (prev[currentSub] ?? []).filter((k) => k !== key) }))
-  const clearPlan = () => setPlanMap((prev) => ({ ...prev, [currentSub]: [] }))
+  const clearPlan = () => {
+    setPlanMap((prev) => ({ ...prev, [currentSub]: [] }))
+    setDoneMap((prev) => ({ ...prev, [currentSub]: [] }))
+  }
   const setPlanOpen = (open: boolean) => setPlanOpenMap((prev) => ({ ...prev, [currentSub]: open }))
 
   const planEntries: PlanEntry[] = (planMap[currentSub] ?? []).flatMap((key) => {
@@ -1414,6 +1468,8 @@ export function ClassDetail() {
         <BuildPlanPanel
           title={classLabel(currentSub)}
           entries={planEntries}
+          done={doneMaterials}
+          onToggleDone={toggleDone}
           onRemove={removeFromPlan}
           onClear={clearPlan}
           onClose={() => setPlanOpen(false)}
