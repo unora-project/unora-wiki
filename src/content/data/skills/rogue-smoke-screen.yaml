@@ -1,10 +1,11 @@
-name: "Smoke Screen"
+name: Smoke Screen
+class: rogue
+element: ''
+levelRequirement: '60'
+statRequirements: 10/5/5/5/16
+goldRequired: '25,000'
+itemRequirements: Light Shield (1)
+prerequisites: Throw Smokebomb (100)
+learningLocation: Rucesion Special Skills Master
+description: Applies Dall to all enemies within 4 tiles.
 image: /images/abilities/Smoke%20Screen.png
-class: "rogue"
-levelRequirement: "60"
-statRequirements: "10/5/5/5/16"
-goldRequired: "25,000"
-itemRequirements: "Light Shield (1)"
-prerequisites: "Throw Smokebomb (100)"
-learningLocation: "Rucesion Special Skills Master"
-description: "Dalls all enemies within 4 spaces."
