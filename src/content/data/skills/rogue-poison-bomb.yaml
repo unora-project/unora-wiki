@@ -1,10 +1,11 @@
-name: "Poison Bomb"
+name: Poison Bomb
+class: rogue
+element: ''
+levelRequirement: '41'
+statRequirements: 20/10/10/12/38
+goldRequired: '25,000'
+itemRequirements: Hobgoblin's Skull (2), Moon Dagger (1)
+prerequisites: '-'
+learningLocation: Suomi Special Skills Master
+description: Throw a bomb that hits all enemies within 3 tiles.  Applies Poison.
 image: /images/abilities/Poison%20Bomb.png
-class: "rogue"
-levelRequirement: "41"
-statRequirements: "20/10/10/12/38"
-goldRequired: "25,000"
-itemRequirements: "Hobgoblin's Skull (2), Moon Dagger (1)"
-prerequisites: "-"
-learningLocation: "Suomi Special Skills Master"
-description: "Allows the rogue to throw a poison bomb that poisons enemies nearby."
