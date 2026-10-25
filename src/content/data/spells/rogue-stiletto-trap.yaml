@@ -1,10 +1,11 @@
-name: "Stiletto Trap"
+name: Stiletto Trap
+class: rogue
+element: ''
+levelRequirement: '11'
+statRequirements: 5/5/3/3/11
+goldRequired: '5,000'
+itemRequirements: Center Dagger (1), Bat's Wing (1)
+prerequisites: Needle Trap (100)
+learningLocation: Mileth Special Skills Master
+description: Lay a trap under yourself, dealing damage that scales with the enemy's health to the first target to hit it.
 image: /images/abilities/Stiletto%20Trap.png
-class: "rogue"
-levelRequirement: "11"
-statRequirements: "5/5/3/3/11"
-goldRequired: "5,000"
-itemRequirements: "Center Dagger (1), Bat's Wing (1)"
-prerequisites: "Needle Trap (100)"
-learningLocation: "Mileth Special Skills Master"
-description: "Lays a trap that deals a small amount of pure damage."
