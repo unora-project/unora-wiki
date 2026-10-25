@@ -1,10 +1,11 @@
-name: "Midnight Slash"
+name: Midnight Slash
+class: rogue
+element: ''
+levelRequirement: Master
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: Barrage (100)
+learningLocation: Master
+description: A basic attack that strikes up to 3 tiles in front of you.
 image: /images/abilities/Midnight%20Slash.png
-class: "rogue"
-levelRequirement: "Master"
-statRequirements: "3/3/3/3/3"
-goldRequired: "-"
-itemRequirements: "-"
-prerequisites: "Barrage (100)"
-learningLocation: "Master"
-description: "Master Rogue assail."
