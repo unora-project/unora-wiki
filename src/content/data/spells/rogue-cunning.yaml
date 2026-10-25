@@ -1,11 +1,11 @@
-name: "Cunning"
+name: Cunning
+class: rogue
+element: ''
+levelRequirement: Master
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Tauren
+description: Raises your damage for each cast.  Each cast costs more mana, and lasts a shorter time.
 image: /images/abilities/Cunning.png
-class: "rogue"
-levelRequirement: "Master"
-statRequirements: "3/3/3/3/3"
-goldRequired: "-"
-itemRequirements: "-"
-prerequisites: "-"
-learningLocation: "Tauren"
-description: >-
-  Rogue channels their inner cunning, increasing attack damage while sacrificing mana.
