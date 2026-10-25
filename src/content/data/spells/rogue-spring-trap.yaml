@@ -1,10 +1,11 @@
-name: "Spring Trap"
+name: Spring Trap
+class: rogue
+element: ''
+levelRequirement: '60'
+statRequirements: 30/10/5/22/42
+goldRequired: '10,000'
+itemRequirements: Light Secret (1), Wisp's Core (2)
+prerequisites: Coiled Bolt Trap (100)
+learningLocation: Suomi Special Skills Master
+description: Lay a trap under yourself, dealing damage that scales with the enemy's health to the first target to hit it.
 image: /images/abilities/Spring%20Trap.png
-class: "rogue"
-levelRequirement: "60"
-statRequirements: "30/10/5/22/42"
-goldRequired: "10,000"
-itemRequirements: "Light Secret (1), Wisp's Core (2)"
-prerequisites: "Coiled Bolt Trap (100)"
-learningLocation: "Suomi Special Skills Master"
-description: "Lays a trap that deals a huge amount of pure damage."
