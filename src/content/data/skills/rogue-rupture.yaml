@@ -1,10 +1,11 @@
-name: "Rupture"
+name: Rupture
+class: rogue
+element: ''
+levelRequirement: Master (Pure)
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Tauren
+description: Applies Bleed to your target.  Pure Only.
 image: /images/abilities/Rupture.png
-class: "rogue"
-levelRequirement: "Master (Pure)"
-statRequirements: "3/3/3/3/3"
-goldRequired: "-"
-itemRequirements: "-"
-prerequisites: "-"
-learningLocation: "Tauren"
-description: "Causes the target to bleed. Pure only."
