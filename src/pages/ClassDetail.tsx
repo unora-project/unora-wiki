@@ -836,15 +836,26 @@ function BuildPlanPanel({
     dragRef.current = null
   }
 
-  const sorted = useMemo(
-    () =>
-      [...entries].sort(
-        (a, b) =>
-          levelSortKey(a.item.levelRequirement) - levelSortKey(b.item.levelRequirement) ||
-          a.item.name.localeCompare(b.item.name, undefined, { numeric: true })
-      ),
-    [entries]
-  )
+  // Grouped by where each skill/spell is learned (A-Z, unknown last), then by level.
+  const grouped = useMemo(() => {
+    const byLoc = new Map<string, PlanEntry[]>()
+    for (const e of entries) {
+      const loc = hasText(e.item.learningLocation) ? e.item.learningLocation.trim() : ''
+      const bucket = byLoc.get(loc)
+      if (bucket) bucket.push(e)
+      else byLoc.set(loc, [e])
+    }
+    return [...byLoc.entries()]
+      .sort(([a], [b]) => (a === '' ? 1 : b === '' ? -1 : a.localeCompare(b, undefined, { sensitivity: 'base' })))
+      .map(([location, list]) => ({
+        location: location || 'Location unknown',
+        list: [...list].sort(
+          (a, b) =>
+            levelSortKey(a.item.levelRequirement) - levelSortKey(b.item.levelRequirement) ||
+            a.item.name.localeCompare(b.item.name, undefined, { numeric: true })
+        ),
+      }))
+  }, [entries])
 
   const totals = useMemo(() => {
     let gold = 0
@@ -916,34 +927,43 @@ function BuildPlanPanel({
                 <p className="mb-1 text-[10px] font-semibold uppercase tracking-wider text-parchment-500 dark:text-parchment-600">
                   Selected ({entries.length})
                 </p>
-                <ul className="divide-y divide-parchment-300 rounded-lg border border-parchment-300 dark:divide-ash/10 dark:border-ash/20">
-                  {sorted.map((e) => {
-                    const g = parseGold(e.item.goldRequired)
-                    const mats = parseItems(e.item.itemRequirements)
-                    // Crossed out once every material it needs has been ticked off.
-                    const complete = mats.length > 0 && mats.every((m) => done.has(m.name.toLowerCase()))
-                    return (
-                      <li key={e.key} className="flex items-center gap-2 px-3 py-1.5">
-                        <span
-                          className={`min-w-0 flex-1 truncate text-parchment-800 dark:text-ivory ${
-                            complete ? 'line-through opacity-50' : ''
-                          }`}
-                        >
-                          {e.item.name}
-                        </span>
-                        {g > 0 && <span className="shrink-0 text-xs text-ash">{g.toLocaleString('en-US')} g</span>}
-                        <button
-                          type="button"
-                          onClick={() => onRemove(e.key)}
-                          title="Remove from plan"
-                          className="shrink-0 rounded p-0.5 text-ash hover:text-gilt"
-                        >
-                          <X size={14} />
-                        </button>
-                      </li>
-                    )
-                  })}
-                </ul>
+                <div className="space-y-2">
+                  {grouped.map((grp) => (
+                    <div key={grp.location}>
+                      <p className="mb-0.5 px-1 text-[11px] font-semibold uppercase tracking-wider text-gilt">
+                        {grp.location}
+                      </p>
+                      <ul className="divide-y divide-parchment-300 rounded-lg border border-parchment-300 dark:divide-ash/10 dark:border-ash/20">
+                        {grp.list.map((e) => {
+                          const g = parseGold(e.item.goldRequired)
+                          const mats = parseItems(e.item.itemRequirements)
+                          // Crossed out once every material it needs has been ticked off.
+                          const complete = mats.length > 0 && mats.every((m) => done.has(m.name.toLowerCase()))
+                          return (
+                            <li key={e.key} className="flex items-center gap-2 px-3 py-1.5">
+                              <span
+                                className={`min-w-0 flex-1 truncate text-parchment-800 dark:text-ivory ${
+                                  complete ? 'line-through opacity-50' : ''
+                                }`}
+                              >
+                                {e.item.name}
+                              </span>
+                              {g > 0 && <span className="shrink-0 text-xs text-ash">{g.toLocaleString('en-US')} g</span>}
+                              <button
+                                type="button"
+                                onClick={() => onRemove(e.key)}
+                                title="Remove from plan"
+                                className="shrink-0 rounded p-0.5 text-ash hover:text-gilt"
+                              >
+                                <X size={14} />
+                              </button>
+                            </li>
+                          )
+                        })}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
               </div>
 
               {/* Totals (right) */}
