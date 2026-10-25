@@ -1,10 +1,11 @@
-name: "Bolt Trap"
+name: Bolt Trap
+class: rogue
+element: ''
+levelRequirement: '21'
+statRequirements: 15/6/3/9/22
+goldRequired: '5,000'
+itemRequirements: Blossom Secret (1), Scorpion's Sting (2)
+prerequisites: Stiletto Trap (100)
+learningLocation: Mileth Special Skills Master
+description: Lay a trap under yourself, dealing damage that scales with the enemy's health to the first target to hit it.
 image: /images/abilities/Bolt%20Trap.png
-class: "rogue"
-levelRequirement: "21"
-statRequirements: "15/6/3/9/22"
-goldRequired: "5,000"
-itemRequirements: "Blossom Secret (1), Scorpion's Sting (2)"
-prerequisites: "Stiletto Trap (100)"
-learningLocation: "Mileth Special Skills Master"
-description: "Lays a trap that deals a fair amount of pure damage."
