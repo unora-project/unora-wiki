@@ -1,10 +1,11 @@
-name: "Needle Trap"
+name: Needle Trap
+class: rogue
+element: ''
+levelRequirement: '5'
+statRequirements: 3/3/3/3/5
+goldRequired: '500'
+itemRequirements: Snow Dagger (1)
+prerequisites: '-'
+learningLocation: Mileth Special Skills Master
+description: Lay a trap under yourself, dealing damage that scales with the enemy's health to the first target to hit it.
 image: /images/abilities/Needle%20Trap.png
-class: "rogue"
-levelRequirement: "5"
-statRequirements: "3/3/3/3/5"
-goldRequired: "500"
-itemRequirements: "Snow Dagger (1)"
-prerequisites: "-"
-learningLocation: "Mileth Special Skills Master"
-description: "Lays a trap that deals a very small amount of pure damage."
