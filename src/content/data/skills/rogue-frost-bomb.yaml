@@ -1,10 +1,11 @@
-name: "Frost Bomb"
+name: Frost Bomb
+class: rogue
+element: ''
+levelRequirement: Master
+statRequirements: 90/35/25/30/135
+goldRequired: '750,000'
+itemRequirements: Ice Elemental Flame (5)
+prerequisites: '-'
+learningLocation: Rucesion Special Skills Master
+description: Applies Suain to all enemies within 4 tiles.
 image: /images/abilities/Frost%20Bomb.png
-class: "rogue"
-levelRequirement: "Master"
-statRequirements: "90/35/25/30/135"
-goldRequired: "750,000"
-itemRequirements: "Ice Elemental Flame (5)"
-prerequisites: "-"
-learningLocation: "Rucesion Special Skills Master"
-description: "Suains all monsters within 4 spaces."
