@@ -1,10 +1,11 @@
-name: "Hide Group"
+name: Hide Group
+class: rogue
+element: ''
+levelRequirement: Master (Pure)
+statRequirements: 50/45/20/35/110
+goldRequired: '750,000'
+itemRequirements: Ice Skeleton Skull (5)
+prerequisites: '-'
+learningLocation: Rucesion Skills Master
+description: Hides you and your group within 13 tiles for 2 minutes.  Pure Only.
 image: /images/abilities/Hide%20Group.png
-class: "rogue"
-levelRequirement: "Master (Pure)"
-statRequirements: "50/45/20/35/110"
-goldRequired: "750,000"
-itemRequirements: "Ice Skeleton Skull (5)"
-prerequisites: "-"
-learningLocation: "Rucesion Skills Master"
-description: "Hides nearby group members. Pure Only."
