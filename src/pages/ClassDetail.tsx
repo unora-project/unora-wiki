@@ -809,12 +809,46 @@ function BuildPlanPanel({
   const [size, setSize] = useState<{ width: number; height: number } | null>(null)
   const dragRef = useRef<{ startX: number; startY: number; origTop: number; origLeft: number } | null>(null)
   const panelRef = useRef<HTMLDivElement>(null)
+  const resizingRef = useRef(false)
 
   useEffect(() => {
     if (pos !== null) return
-    const width = 640
-    setPos({ top: 96, left: Math.max(16, window.innerWidth - width - 24) })
+    setPos({ top: 96, left: Math.max(16, window.innerWidth - 520) })
   }, [pos])
+
+  // Keep the window on screen as it resizes itself (items added, window resized, ...).
+  const placed = pos !== null
+  useEffect(() => {
+    const el = panelRef.current
+    if (!el) return
+    const clamp = () =>
+      setPos((p) => {
+        if (!p) return p
+        const left = Math.max(8, Math.min(p.left, window.innerWidth - el.offsetWidth - 8))
+        const top = Math.max(8, Math.min(p.top, window.innerHeight - el.offsetHeight - 8))
+        return left === p.left && top === p.top ? p : { top, left }
+      })
+    const ro = new ResizeObserver(clamp)
+    ro.observe(el)
+    window.addEventListener('resize', clamp)
+    clamp()
+    return () => {
+      ro.disconnect()
+      window.removeEventListener('resize', clamp)
+    }
+  }, [placed])
+
+  // Only a drag that starts on the bottom-right resize corner counts as a manual resize.
+  useEffect(() => {
+    const up = () => {
+      if (!resizingRef.current) return
+      resizingRef.current = false
+      const el = panelRef.current
+      if (el) setSize({ width: el.offsetWidth, height: el.offsetHeight })
+    }
+    window.addEventListener('mouseup', up)
+    return () => window.removeEventListener('mouseup', up)
+  }, [])
 
   const handlePointerDown = (e: React.PointerEvent) => {
     if (!pos) return
@@ -825,7 +859,7 @@ function BuildPlanPanel({
   const handlePointerMove = (e: React.PointerEvent) => {
     if (!dragRef.current) return
     const { startX, startY, origTop, origLeft } = dragRef.current
-    const panelWidth = panelRef.current?.offsetWidth ?? 640
+    const panelWidth = panelRef.current?.offsetWidth ?? 520
     const panelHeight = panelRef.current?.offsetHeight ?? 460
     const newLeft = Math.max(8, Math.min(origLeft + (e.clientX - startX), window.innerWidth - panelWidth - 8))
     const newTop = Math.max(8, Math.min(origTop + (e.clientY - startY), window.innerHeight - panelHeight - 8))
@@ -880,12 +914,18 @@ function BuildPlanPanel({
   return createPortal(
     <div
       ref={panelRef}
-      className="fixed z-[100] flex min-h-[260px] min-w-[300px] max-h-[calc(100vh-32px)] max-w-[calc(100vw-32px)] resize flex-col overflow-hidden rounded-lg border border-parchment-300 bg-parchment-50 shadow-[0_8px_30px_rgba(0,0,0,0.3)] dark:border-ash/20 dark:bg-obsidian"
-      style={{ top: pos.top, left: pos.left, width: size?.width ?? 640, height: size?.height ?? 460 }}
-      onMouseUp={() => {
-        if (panelRef.current) {
-          setSize({ width: panelRef.current.offsetWidth, height: panelRef.current.offsetHeight })
-        }
+      className="fixed z-[100] flex min-h-[160px] min-w-[300px] max-h-[calc(100vh-32px)] max-w-[calc(100vw-32px)] resize flex-col overflow-hidden rounded-lg border border-parchment-300 bg-parchment-50 shadow-[0_8px_30px_rgba(0,0,0,0.3)] dark:border-ash/20 dark:bg-obsidian"
+      style={{
+        top: pos.top,
+        left: pos.left,
+        width: size ? size.width : 'max-content',
+        height: size ? size.height : 'auto',
+      }}
+      onMouseDown={(e) => {
+        const el = panelRef.current
+        if (!el) return
+        const r = el.getBoundingClientRect()
+        resizingRef.current = e.clientX > r.right - 22 && e.clientY > r.bottom - 22
       }}
     >
       <div
@@ -898,6 +938,15 @@ function BuildPlanPanel({
           <ClipboardList size={15} /> Build Plan: {title}
         </h3>
         <div className="flex items-center gap-2">
+          {size && (
+            <button
+              onClick={() => setSize(null)}
+              title="Resize the window to fit everything"
+              className="rounded border border-parchment-300 px-2 py-1 text-xs font-medium text-parchment-600 hover:border-gilt hover:text-gilt dark:border-ash/20 dark:text-ash"
+            >
+              Auto-fit
+            </button>
+          )}
           <button
             onClick={onClear}
             disabled={entries.length === 0}
@@ -916,14 +965,14 @@ function BuildPlanPanel({
 
       <div className="min-h-0 flex-1 space-y-3 overflow-y-auto p-3 text-sm">
         {entries.length === 0 ? (
-          <p className="text-parchment-500 dark:text-parchment-600">
+          <p className="w-64 text-parchment-500 dark:text-parchment-600">
             Click skill or spell cards (or tick the Plan box in List view) to add them. Your picks are saved for this class.
           </p>
         ) : (
           <>
             <div className="flex flex-wrap items-start gap-3">
               {/* Selected skills / spells (left) */}
-              <div className="min-w-[220px] flex-1">
+              <div className="w-fit min-w-[200px] shrink-0">
                 <p className="mb-1 text-[10px] font-semibold uppercase tracking-wider text-parchment-500 dark:text-parchment-600">
                   Selected ({entries.length})
                 </p>
@@ -940,9 +989,9 @@ function BuildPlanPanel({
                           // Crossed out once every material it needs has been ticked off.
                           const complete = mats.length > 0 && mats.every((m) => done.has(m.name.toLowerCase()))
                           return (
-                            <li key={e.key} className="flex items-center gap-2 px-3 py-1.5">
+                            <li key={e.key} className="flex items-center gap-3 px-3 py-1.5">
                               <span
-                                className={`min-w-0 flex-1 truncate text-parchment-800 dark:text-ivory ${
+                                className={`min-w-0 flex-1 whitespace-nowrap text-parchment-800 dark:text-ivory ${
                                   complete ? 'line-through opacity-50' : ''
                                 }`}
                               >
