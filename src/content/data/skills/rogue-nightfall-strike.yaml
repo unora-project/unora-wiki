@@ -1,10 +1,11 @@
-name: "Nightfall Strike"
+name: Nightfall Strike
+class: rogue
+element: ''
+levelRequirement: Master
+statRequirements: 90/20/15/45/130
+goldRequired: '500,000'
+itemRequirements: Direwolf Lock (5)
+prerequisites: '-'
+learningLocation: Suomi Special Skills Master
+description: Instantly kills an enemy below 20% health.  A successful execute will reduce the cooldown by half.  Otherwise deals damage based on your DEX and 3% of your maximum health.
 image: /images/abilities/Nightfall%20Strike.png
-class: "rogue"
-levelRequirement: "Master"
-statRequirements: "90/20/15/45/130"
-goldRequired: "500,000"
-itemRequirements: "Direwolf Lock (5)"
-prerequisites: "-"
-learningLocation: "Suomi Special Skills Master"
-description: "Executes an enemy below 20% health. Does not work on bosses."
