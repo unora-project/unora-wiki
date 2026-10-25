@@ -1,11 +1,11 @@
-name: "Shadow Figure"
+name: Shadow Figure
+class: rogue
+element: ''
+levelRequirement: Master (Pure)
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Master
+description: Slip behind the enemy directly in front of you and strikes them.  Pure Only.
 image: /images/abilities/Shadow%20Figure.png
-class: "rogue"
-levelRequirement: "Master (Pure)"
-statRequirements: "3/3/3/3/3"
-goldRequired: "-"
-itemRequirements: "-"
-prerequisites: "-"
-learningLocation: "Master"
-description: >-
-  Allows the Rogue to obtain and keep a tactical advantage on an enemy. Pure only. Replaces Backstab.
