@@ -1,10 +1,11 @@
-name: "Sap Needle"
+name: Sap Needle
+class: rogue
+element: ''
+levelRequirement: '20'
+statRequirements: 6/7/11/5/19
+goldRequired: '10,000'
+itemRequirements: Raw Sapphire (3), Padded Gauntlet (1)
+prerequisites: '-'
+learningLocation: Mileth Special Skills Master
+description: Steals 10% mana from your target, restoring up to 20% mana for you and nearby allies.
 image: /images/abilities/Sap%20Needle.png
-class: "rogue"
-levelRequirement: "20"
-statRequirements: "6/7/11/5/19"
-goldRequired: "10,000"
-itemRequirements: "Raw Sapphire (3), Padded Gauntlet (1)"
-prerequisites: "-"
-learningLocation: "Mileth Special Skills Master"
-description: "Steals 10% mana from target. Restore up to 20% mana to group members."
