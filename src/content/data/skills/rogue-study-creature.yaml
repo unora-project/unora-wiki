@@ -1,10 +1,11 @@
-name: "Study Creature"
+name: Study Creature
+class: rogue
+element: ''
+levelRequirement: '6'
+statRequirements: 3/5/4/3/5
+goldRequired: '1,000'
+itemRequirements: Mantis Eye (1)
+prerequisites: '-'
+learningLocation: Suomi Special Skills Master
+description: Study the first enemy up to 3 tiles directly in front of you, revealing their level, health, AC, mana and elements.  Nearby group members will also see a summary.
 image: /images/abilities/Study%20Creature.png
-class: "rogue"
-levelRequirement: "6"
-statRequirements: "3/5/4/3/5"
-goldRequired: "1,000"
-itemRequirements: "Mantis Eye (1)"
-prerequisites: "-"
-learningLocation: "Suomi Special Skills Master"
-description: "Allows the Rogue to study a creature's attributes."
