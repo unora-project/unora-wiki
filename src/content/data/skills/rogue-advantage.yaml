@@ -1,0 +1,11 @@
+name: Advantage
+class: Rogue
+element: ''
+levelRequirement: '1'
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Becoming Rogue
+description: Passively increases damage dealt by 50% when striking from the side or behind.
+image: /images/abilities/Advantage.png
