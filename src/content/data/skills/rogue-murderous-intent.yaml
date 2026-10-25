@@ -1,10 +1,11 @@
-name: "Murderous Intent"
+name: Murderous Intent
+class: rogue
+element: ''
+levelRequirement: Master
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Master Dungeon
+description: Applies Intimidate to an enemy directly in front of you.
 image: /images/abilities/Murderous%20Intent.png
-class: "rogue"
-levelRequirement: "Master"
-statRequirements: "3/3/3/3/3"
-goldRequired: "-"
-itemRequirements: "-"
-prerequisites: "-"
-learningLocation: "Master Dungeon"
-description: "Intimidates an enemy directly in front of you."
