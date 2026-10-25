@@ -1,10 +1,11 @@
-name: "Maiden Trap"
+name: Maiden Trap
+class: rogue
+element: ''
+levelRequirement: '90'
+statRequirements: 38/12/5/22/55
+goldRequired: '75,000'
+itemRequirements: Lotus Dagger (2), Gruesomefly's Wing (2)
+prerequisites: Spring Trap (100)
+learningLocation: Suomi Special Skills Master
+description: Lay a trap under yourself, dealing damage that scales with the enemy's health to the first target to hit it.
 image: /images/abilities/Maiden%20Trap.png
-class: "rogue"
-levelRequirement: "90"
-statRequirements: "38/12/5/22/55"
-goldRequired: "75,000"
-itemRequirements: "Lotus Dagger (2), Gruesomefly's Wing (2)"
-prerequisites: "Spring Trap (100)"
-learningLocation: "Suomi Special Skills Master"
-description: "Lays a trap that deals a massive amount of pure damage."
