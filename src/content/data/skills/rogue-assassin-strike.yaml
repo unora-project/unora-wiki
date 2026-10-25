@@ -1,11 +1,11 @@
-name: "Assassin Strike"
+name: Assassin Strike
+class: rogue
+element: ''
+levelRequirement: Master
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Master
+description: Strikes an enemy directly in front of you, dealing increased damage while in true hide.  Has a 25% chance to instantly kill if they are not wary of you.  Damage scales with Vitality.
 image: /images/abilities/Assassin%20Strike.png
-class: "rogue"
-levelRequirement: "Master"
-statRequirements: "3/3/3/3/3"
-goldRequired: "-"
-itemRequirements: "-"
-prerequisites: "-"
-learningLocation: "Master"
-description: >-
-  Deals massive damage to a target based on your vitality. Chance to instantly kill normal monsters.
