@@ -1,10 +1,11 @@
-name: "Concentration"
+name: Concentration
+class: rogue
+element: ''
+levelRequirement: Master (Pure)
+statRequirements: 80/50/50/50/180
+goldRequired: '500,000'
+itemRequirements: Ruidhtear Toe (3)
+prerequisites: Focus (100)
+learningLocation: Rucesion Special Skills Master
+description: Increases your skill damage and reduces skill cooldowns for 10s.  Scales with your DEX.  Pure Only.
 image: /images/abilities/Concentration.png
-class: "rogue"
-levelRequirement: "Master (Pure)"
-statRequirements: "80/50/50/50/180"
-goldRequired: "500,000"
-itemRequirements: "Ruidhtear Toe (3)"
-prerequisites: "Focus (100)"
-learningLocation: "Rucesion Special Skills Master"
-description: "Increases damage and cdr based on your dexterity. Upgrades Focus. Pure Only."
