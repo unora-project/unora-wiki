@@ -1,10 +1,11 @@
-name: "Vanish"
+name: Vanish
+class: rogue
+element: ''
+levelRequirement: Master
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Master Dungeon
+description: Shroud yourself, hiding you from everything for 5s and wiping aggro from all nearby monsters.
 image: /images/abilities/Vanish.png
-class: "rogue"
-levelRequirement: "Master"
-statRequirements: "3/3/3/3/3"
-goldRequired: "-"
-itemRequirements: "-"
-prerequisites: "-"
-learningLocation: "Master Dungeon"
-description: "Shrouds you in darkness, hiding you from everything."
