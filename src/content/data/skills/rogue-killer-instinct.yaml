@@ -1,10 +1,11 @@
-name: "Killer Instinct"
+name: Killer Instinct
+class: rogue
+element: ''
+levelRequirement: Master
+statRequirements: 75/60/40/40/120
+goldRequired: '100,000'
+itemRequirements: Grim Succubus's Hair (3)
+prerequisites: '-'
+learningLocation: Suomi Special Skills Master
+description: Reveal the defensive element of all enemies within 3 tiles of you.
 image: /images/abilities/Killer%20Instinct.png
-class: "rogue"
-levelRequirement: "Master"
-statRequirements: "75/60/40/40/120"
-goldRequired: "100,000"
-itemRequirements: "Grim Succubus's Hair (3)"
-prerequisites: "-"
-learningLocation: "Suomi Special Skills Master"
-description: "Allows the Rogue to study multiple creature's defense."
