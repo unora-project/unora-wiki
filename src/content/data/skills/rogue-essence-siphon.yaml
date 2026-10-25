@@ -1,11 +1,11 @@
-name: "Essence Siphon"
+name: Essence Siphon
+class: rogue
+element: ''
+levelRequirement: Master
+statRequirements: 130/65/75/60/215
+goldRequired: '1,000,000'
+itemRequirements: Porboss Claw (3)
+prerequisites: Sap Needle (100)
+learningLocation: Suomi Special Skills Master
+description: Siphon 10% of the mana from the first target up to 3 tiles directly in front of you.  Restores 20% mana to nearby group members and deals damage equal to the mana stolen.
 image: /images/abilities/Essence%20Siphon.png
-class: "rogue"
-levelRequirement: "Master"
-statRequirements: "130/65/75/60/215"
-goldRequired: "1,000,000"
-itemRequirements: "Porboss Claw (3)"
-prerequisites: "Sap Needle (100)"
-learningLocation: "Suomi Special Skills Master"
-description: >-
-  Steals 10% mana from target. Restores up to 20% mana to group members. Deals damage equal to self restored mana.
