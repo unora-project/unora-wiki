@@ -1,10 +1,11 @@
-name: "Throw Smokebomb"
+name: Throw Smokebomb
+class: rogue
+element: ''
+levelRequirement: '9'
+statRequirements: 5/4/3/3/11
+goldRequired: '2,000'
+itemRequirements: Spider's Silk (1)
+prerequisites: '-'
+learningLocation: Mileth Special Skills Master
+description: Applies Dall to all enemies within 3 tiles.
 image: /images/abilities/Throw%20Smokebomb.png
-class: "rogue"
-levelRequirement: "9"
-statRequirements: "5/4/3/3/11"
-goldRequired: "2,000"
-itemRequirements: "Spider's Silk (1)"
-prerequisites: "-"
-learningLocation: "Mileth Special Skills Master"
-description: "Dalls all enemies within 3 spaces."
