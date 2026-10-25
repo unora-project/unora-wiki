@@ -8,6 +8,7 @@ import equipmentUrl from '@/data/equipment/all.json?url'
 import jewelRecipesUrl from '@/data/professions/jewelcrafting-recipes.json?url'
 import armorRecipesUrl from '@/data/professions/armorsmithing-recipes.json?url'
 import enchantsUrl from '@/data/professions/enchanting-enchants.json?url'
+import huntingAreasUrl from '@/data/metadata/hunting-areas.json?url'
 
 interface EquipmentItem {
   name: string
@@ -276,24 +277,54 @@ function loadEquipment(): Promise<EquipmentItem[]> {
   return equipmentPromise
 }
 
-let shopIndexPromise: Promise<Map<string, { npc: string; town: string }>> | null = null
+// Where an item can be bought: a town NPC (links to the town) or a hunting-area shop
+// such as the Mythic token shop (links to that hunting page).
+interface Seller {
+  npc: string
+  town: string
+  href?: string
+  cost?: string
+}
 
-function loadShopIndex(): Promise<Map<string, { npc: string; town: string }>> {
+interface AreaShop {
+  npc: string
+  currency?: string
+  items?: { name: string; tab?: string; cost?: number | string }[]
+}
+
+let shopIndexPromise: Promise<Map<string, Seller>> | null = null
+
+function loadShopIndex(): Promise<Map<string, Seller>> {
   if (!shopIndexPromise) {
-    shopIndexPromise = fetch(`${import.meta.env.BASE_URL}data/shops.json`)
+    const townShops = fetch(`${import.meta.env.BASE_URL}data/shops.json`)
       .then((r) => (r.ok ? (r.json() as Promise<ShopEntry[]>) : []))
-      .then((shops) => {
-        const index = new Map<string, { npc: string; town: string }>()
-        for (const shop of shops) {
-          for (const item of shop.items) {
-            if (!index.has(item.name)) {
-              index.set(item.name, { npc: shop.npc, town: shop.town })
-            }
+      .catch(() => [] as ShopEntry[])
+    // Hunting areas (src/content/metadata/hunting/areas/*.yaml) can list their own shops,
+    // e.g. mythic.yaml. They are rebuilt with the rest of the content, so this stays current.
+    const areaShops = fetch(huntingAreasUrl)
+      .then((r) => (r.ok ? (r.json() as Promise<Record<string, { shops?: AreaShop[] }>>) : {}))
+      .catch(() => ({}) as Record<string, { shops?: AreaShop[] }>)
+    shopIndexPromise = Promise.all([townShops, areaShops]).then(([shops, areas]) => {
+      const index = new Map<string, Seller>()
+      for (const shop of shops) {
+        for (const item of shop.items) {
+          if (!index.has(item.name)) {
+            index.set(item.name, { npc: shop.npc, town: shop.town })
           }
         }
-        return index
-      })
-      .catch(() => new Map())
+      }
+      // Town NPCs win if an item is sold in both places.
+      for (const [slug, area] of Object.entries(areas)) {
+        for (const shop of area?.shops ?? []) {
+          for (const item of shop.items ?? []) {
+            if (!item.name || index.has(item.name)) continue
+            const cost = item.cost !== undefined && item.cost !== '' ? `${item.cost} ${shop.currency ?? ''}`.trim() : undefined
+            index.set(item.name, { npc: shop.npc, town: slug, href: `/hunting/${slug}`, cost })
+          }
+        }
+      }
+      return index
+    })
   }
   return shopIndexPromise
 }
@@ -543,7 +574,7 @@ function EquipmentCard({
   highlight = false,
 }: {
   item: DisplayRow
-  seller?: { npc: string; town: string }
+  seller?: Seller
   recipeText: string | null
   compareMode: boolean
   checked: boolean
@@ -726,7 +757,7 @@ function EquipmentCard({
                   </Link>
                 )}
                 {seller && (
-                  <Link to={`/towns/${seller.town}`} className={linkCls}>
+                  <Link to={seller.href ?? `/towns/${seller.town}`} className={linkCls} title={seller.cost}>
                     Sold by {seller.npc}
                   </Link>
                 )}
@@ -1246,7 +1277,7 @@ export function Equipment() {
   const [expandedGroups, setExpandedGroups] = useState<Record<string, boolean>>({})
   const [openGroup, setOpenGroup] = useState<string | null>(null)
   const [textSize, setTextSize] = useState<'normal' | 'large'>('normal')
-  const [shopIndex, setShopIndex] = useState<Map<string, { npc: string; town: string }>>(new Map())
+  const [shopIndex, setShopIndex] = useState<Map<string, Seller>>(new Map())
   const [weaponRecipes, setWeaponRecipes] = useState<Map<string, WeaponRecipeRow>>(new Map())
   const [jewelRecipes, setJewelRecipes] = useState<Map<string, JewelRecipeRow>>(new Map())
   const [compareMode, setCompareMode] = useState(false)
@@ -1553,7 +1584,8 @@ export function Equipment() {
               )}
               {seller && (
                 <Link
-                  to={`/towns/${seller.town}`}
+                  to={seller.href ?? `/towns/${seller.town}`}
+                  title={seller.cost}
                   className={`${soldByTextClass} underline decoration-gilt/60 hover:decoration-gilt`}
                 >
                   Sold by {seller.npc}
