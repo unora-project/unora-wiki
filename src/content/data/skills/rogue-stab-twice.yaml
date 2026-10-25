@@ -1,10 +1,11 @@
-name: "Stab Twice"
+name: Stab Twice
+class: rogue
+element: ''
+levelRequirement: Master
+statRequirements: 50/18/11/28/88
+goldRequired: '100,000'
+itemRequirements: Strap Gauntlet (2)
+prerequisites: '-'
+learningLocation: Suomi Special Skills Master
+description: Deals massive damage to the target directly in front of you.
 image: /images/abilities/Stab%20Twice.png
-class: "rogue"
-levelRequirement: "Master"
-statRequirements: "50/18/11/28/88"
-goldRequired: "100,000"
-itemRequirements: "Strap Gauntlet (2)"
-prerequisites: "-"
-learningLocation: "Suomi Special Skills Master"
-description: "Deals moderate damage to the enemy in front of you."
