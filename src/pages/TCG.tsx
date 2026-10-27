@@ -4,7 +4,7 @@ import { PageHeader } from '@/components/ui/PageHeader'
 import { Link } from 'react-router'
 
 // Import TCG markdown at build time
-const tcgModules = import.meta.glob<string>('@/content/tcg/*.md', {
+const tcgModules = import.meta.glob<string>('@/pages/tcg/*.md', {
   query: '?raw',
   import: 'default',
   eager: true,
