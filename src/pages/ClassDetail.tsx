@@ -8,7 +8,7 @@ import classInfo from '@/data/metadata/classes.json'
 import { CLASS_FAMILIES, classLabel } from '@/lib/class-families'
 import { ChevronDown, ClipboardList, Eye, EyeOff, Sparkles, Swords, X } from 'lucide-react'
 
-interface SkillSpell {
+export interface SkillSpell {
   name: string
   class: string
   element?: string
@@ -238,7 +238,7 @@ const dugonColumns = [
 const classShardCache = new Map<string, Shard>()
 const dugonCache = new Map<string, Dugon[]>()
 
-async function loadClassShard(slug: string): Promise<Shard> {
+export async function loadClassShard(slug: string): Promise<Shard> {
   const cached = classShardCache.get(slug)
   if (cached) return cached
   const base = import.meta.env.BASE_URL + 'data/classes/' + slug
@@ -324,11 +324,11 @@ function ElementTabs({
   )
 }
 
-const hasText = (v: unknown): v is string =>
+export const hasText = (v: unknown): v is string =>
   typeof v === 'string' && v.trim() !== '' && v.trim() !== '-'
 
 // One sortable number per level: 1-99, then Master, Grandmaster, then Ab #.
-function levelSortKey(raw: unknown): number {
+export function levelSortKey(raw: unknown): number {
   const s = String(raw ?? '').trim()
   if (!s || s === '-') return Number.MAX_SAFE_INTEGER
   const n = s.match(/\d+/)
@@ -346,7 +346,7 @@ function cardImageSrc(image?: string): string | null {
 }
 
 // Stat colors follow the UNORA logo: U (red), N (blue), O (green), R (cream), A (purple).
-const STAT_STYLES = [
+export const STAT_STYLES = [
   { label: 'STR', cls: 'text-ignis' },
   { label: 'INT', cls: 'text-tide' },
   { label: 'WIS', cls: 'text-verdant' },
@@ -443,7 +443,7 @@ function ViewToggle({
 const CARD_GRID = 'grid gap-4 grid-cols-[repeat(auto-fill,minmax(min(100%,max(320px,calc((100%_-_4rem)/5))),1fr))]'
 
 // Remembers a value in localStorage so it survives page reloads.
-function usePersistentState<T>(key: string, initial: T) {
+export function usePersistentState<T>(key: string, initial: T) {
   const [value, setValue] = useState<T>(() => {
     try {
       const raw = localStorage.getItem(key)
@@ -764,20 +764,34 @@ function HiddenSection({
 
 // ---- Build Plan ------------------------------------------------------------
 
-interface PlanEntry {
+export interface PlanEntry {
   key: string
   kind: 'skills' | 'spells'
   item: SkillSpell
 }
 
-function parseGold(v?: string): number {
+export function parseGold(v?: string): number {
   if (!hasText(v)) return 0
   const n = parseInt(v.replace(/[^0-9]/g, ''), 10)
   return Number.isFinite(n) ? n : 0
 }
 
+// Highest STR/INT/WIS/CON/DEX needed across the selected skills/spells ("5/5/5/5/5" order, same as the cards).
+export function maxStats(entries: { item: { statRequirements: string } }[]): number[] {
+  const out = [0, 0, 0, 0, 0]
+  for (const { item } of entries) {
+    if (!hasText(item.statRequirements)) continue
+    const parts = item.statRequirements.split('/').map((s) => parseInt(s.replace(/[^0-9]/g, ''), 10))
+    if (parts.length !== 5) continue
+    parts.forEach((n, i) => {
+      if (Number.isFinite(n) && n > out[i]) out[i] = n
+    })
+  }
+  return out
+}
+
 // "Wolf Teeth (2), Raw Bronze (5), Fur" -> [{Wolf Teeth, 2}, {Raw Bronze, 5}, {Fur, 1}]
-function parseItems(v?: string): { name: string; qty: number }[] {
+export function parseItems(v?: string): { name: string; qty: number }[] {
   if (!hasText(v)) return []
   return splitList(v)
     .map((entry) => {
@@ -785,6 +799,26 @@ function parseItems(v?: string): { name: string; qty: number }[] {
       return m ? { name: m[1].trim(), qty: parseInt(m[2], 10) } : { name: entry.trim(), qty: 1 }
     })
     .filter((e) => e.name)
+}
+
+export function MaxStatsRow({ entries }: { entries: PlanEntry[] }) {
+  const m = maxStats(entries)
+  if (m.every((n) => n === 0)) return null
+  return (
+    <div className="mt-2 border-t border-parchment-300 pt-2 dark:border-ash/20">
+      <p className="text-[10px] font-semibold uppercase tracking-wider text-parchment-500 dark:text-parchment-600">
+        Max stats needed
+      </p>
+      <div className="mt-1 grid grid-cols-5 gap-2 text-center">
+        {STAT_STYLES.map((st, i) => (
+          <div key={st.label} className={st.cls}>
+            <p className="text-[10px] font-semibold uppercase tracking-wider">{st.label}</p>
+            <p className="text-base font-bold leading-tight">{m[i] || '-'}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
 }
 
 function BuildPlanPanel({
@@ -1024,6 +1058,7 @@ function BuildPlanPanel({
                   <span className="text-xs font-semibold uppercase tracking-wider text-ash">Gold</span>
                   <span className="text-lg font-bold text-gilt">{totals.gold.toLocaleString('en-US')}</span>
                 </div>
+                <MaxStatsRow entries={entries} />
                 {totals.items.length > 0 && (
                   <ul className="mt-2 grid grid-cols-[auto_auto_auto] items-center gap-x-2 gap-y-0.5 border-t border-parchment-300 pt-2 dark:border-ash/20">
                     {totals.items.map((it) => {

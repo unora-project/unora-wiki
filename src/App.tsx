@@ -4,6 +4,7 @@ import { Layout } from '@/components/layout/Layout'
 import { Home } from '@/pages/Home'
 
 const Equipment = lazy(() => import('@/pages/Equipment').then((m) => ({ default: m.Equipment })))
+const BuildPlanner = lazy(() => import('@/pages/BuildPlanner').then((m) => ({ default: m.BuildPlanner })))
 const Classes = lazy(() => import('@/pages/Classes').then((m) => ({ default: m.Classes })))
 const ClassDetail = lazy(() => import('@/pages/ClassDetail').then((m) => ({ default: m.ClassDetail })))
 const Professions = lazy(() => import('@/pages/Professions').then((m) => ({ default: m.Professions })))
@@ -84,6 +85,9 @@ function LazyRoutes() {
       {/* Classes */}
       <Route path="classes" element={<Classes />} />
       <Route path="classes/:className" element={<ClassDetail />} />
+
+      {/* Build Planner (saved plans, one class at a time) */}
+      <Route path="planner" element={<BuildPlanner />} />
 
       {/* Equipment */}
       <Route path="equipment" element={<Equipment />} />

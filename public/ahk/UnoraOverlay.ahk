@@ -10,7 +10,7 @@ Persistent()
 
 ; ───────────────────────── Constants ─────────────────────────
 
-VERSION := "1.0.0"
+VERSION := "1.1.0"
 APP_NAME := "Unora Overlay"
 UPDATE_BASE := "https://www.unora.wiki/ahk/"   ; version.txt + UnoraOverlay.ahk are hosted here
 SITE_BASE := "https://www.unora.wiki/#"        ; the site uses #/ routes
@@ -26,7 +26,7 @@ ROUTES := Map(
     "Items", "/equipment",
     "Quests", "/quests",
     "Professions", "/professions",
-    "Planner", "/classes"   ; replaced by the standalone planner page in a later version
+    "Planner", "/planner"
 )
 
 DEFAULTS := Map(
@@ -229,11 +229,17 @@ BuildMain() {
 BuildToolbar() {
     global TbItems, PinCtrl
     th := Theme()
-    for it in TbItems
-        it.ctl.Destroy()
-    TbItems := []
     MainGui.BackColor := th.panel
     SetDarkTitle(MainGui.Hwnd, th.dark)
+    if (TbItems.Length) {
+        ; Already built: just recolour the existing buttons (controls cannot be destroyed in v2).
+        for it in TbItems {
+            it.ctl.Opt("Background" th.btn)
+            it.ctl.SetFont("c" th.btnText)
+            it.ctl.Redraw()
+        }
+        return
+    }
     AddTb("Back", 50, "L", NavBack)
     AddTb("Forward", 64, "L", NavForward)
     AddTb("Reload", 58, "L", NavReload)
@@ -536,7 +542,7 @@ Classes - skills and spells for every class, with the Build Plan window.
 Items - all equipment, with item comparison and enchants.
 Quests - quest guides.
 Professions - recipes and tables for each profession.
-Build Planner - jump straight to planning what to learn.
+Build Planner - your saved build plan, with a drop-down to switch class.
 
 The wiki opens in its own window so you can keep playing. Close it with its X (it is only hidden), or press the Show/hide key.
 Click the ? on any page for help with that page.
@@ -550,6 +556,17 @@ Choose a class, then use the Skills and Spells tabs. Switch between Cards and Li
 Hide - on a card, removes skills you no longer want to see. They wait in a drop-down at the bottom, and Reset Hidden brings them all back.
 
 Build Plan - opens a floating plan. Click cards (or tick the Plan box in List view) to add them. The plan groups them by where you learn them, totals the gold and materials, and lets you tick off materials as you collect them. It remembers your picks for each class, even after closing the overlay.
+)"}
+    if RegExMatch(path, "^/planner")
+        return {title: "Build Planner", body: "
+(
+Shows only your saved build plan. Use the drop-down at the top to switch class - it lists just the classes that have a plan.
+
+Selected (left) - your skills and spells, grouped by where you learn them.
+Total needed (right) - the gold, the highest STR / INT / WIS / CON / DEX you need for everything selected, and the materials. Tick a material when you have it; skills whose materials are all ticked get crossed out.
+X - removes a skill or spell from the plan.
+
+To add or change picks, open the class (Menu > Classes) and press Build Plan there.
 )"}
     if RegExMatch(path, "^/equipment")
         return {title: "Items", body: "
