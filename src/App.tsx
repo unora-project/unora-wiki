@@ -27,7 +27,7 @@ const HpMpOptimizer = lazy(() => import('@/pages/calculators/HpMpOptimizer').the
 const StatCalculator = lazy(() => import('@/pages/calculators/StatCalculator').then((m) => ({ default: m.StatCalculator })))
 const Glossary = lazy(() => import('@/pages/Glossary').then((m) => ({ default: m.Glossary })))
 const GettingStarted = lazy(() => import('@/pages/GettingStarted').then((m) => ({ default: m.GettingStarted })))
-const HowToPlayTCG = lazy(() => import('@/pages/tcg/starting_guide.md').then((m) => ({ default: m.starting_guide.md })))
+const TCG = lazy(() => import('@/pages/tcg/TCG').then((m) => ({ default: m.TCG })))
 const Changelog = lazy(() => import('@/pages/Changelog').then((m) => ({ default: m.Changelog })))
 const AdminEditor = lazy(() => import('@/pages/AdminEditor').then((m) => ({ default: m.AdminEditor })))
 const AdminSettings = lazy(() => import('@/pages/AdminSettings').then((m) => ({ default: m.AdminSettings })))
