@@ -122,6 +122,10 @@ function LazyRoutes() {
       <Route path="calculators/optimizer" element={<HpMpOptimizer />} />
       <Route path="calculators/stats" element={<StatCalculator />} />
 
+      {/* TCG */}
+      <Route path="tcg" element={<TCGIndex />} />
+      <Route path="tcg/:slug" element={<TCGDetail />} />
+
       {/* Reference */}
       <Route path="glossary" element={<Glossary />} />
       <Route path="getting-started" element={<GettingStarted />} />
