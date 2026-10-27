@@ -1,0 +1,2 @@
+version=1.0.0
+- First release: menu, wiki window, keybind and theme options, built-in help and update check.
