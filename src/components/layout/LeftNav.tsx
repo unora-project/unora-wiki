@@ -129,6 +129,7 @@ const sections: NavSection[] = [
       { to: '/tcg/starting_guide.md', label: 'Unora Card Battle TCG', icon: Sparkles, children: [
         { to: '/tcg/starting_guide.md', label: How to Play },
         { to: '/tcg/starting_guide.md', label: Card Gallery },
+      ]},
     ],
   },
   {
