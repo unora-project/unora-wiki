@@ -10,7 +10,7 @@ Persistent()
 
 ; ───────────────────────── Constants ─────────────────────────
 
-VERSION := "1.1.0"
+VERSION := "1.2.0"
 APP_NAME := "Unora Overlay"
 UPDATE_BASE := "https://www.unora.wiki/ahk/"   ; version.txt + UnoraOverlay.ahk are hosted here
 SITE_BASE := "https://www.unora.wiki/#"        ; the site uses #/ routes
@@ -26,7 +26,8 @@ ROUTES := Map(
     "Items", "/equipment",
     "Quests", "/quests",
     "Professions", "/professions",
-    "Planner", "/planner"
+    "Planner", "/planner",
+    "PlannerMini", "/planner-mini"
 )
 
 DEFAULTS := Map(
@@ -40,6 +41,10 @@ DEFAULTS := Map(
     "WinY", "",
     "WinW", "1000",
     "WinH", "720",
+    "MiniX", "",
+    "MiniY", "",
+    "MiniW", "460",
+    "MiniH", "560",
     "BaseUrl", SITE_BASE
 )
 
@@ -81,6 +86,11 @@ Wv := 0                ; CoreWebView2
 WvEvents := []         ; keeps the WebView2 event registrations alive
 WvBusy := false        ; true while the browser is still starting up
 TbItems := []
+MiniGui := 0           ; the small Build Planner window
+MiniC := 0
+MiniWv := 0
+MiniEvents := []
+MiniBusy := false
 PinCtrl := 0
 MenuGui := 0
 OptGui := 0
@@ -188,6 +198,7 @@ SetupTray() {
 
 OnAppExit(*) {
     SaveGeometry()
+    SaveMiniGeometry()
     SaveConfig()
 }
 
@@ -341,6 +352,11 @@ SaveGeometry() {
 }
 
 ApplyWindowSettings() {
+    if MiniGui {
+        WinSetAlwaysOnTop((Settings["AlwaysOnTop"] = "1") ? 1 : 0, MiniGui)
+        MiniGui.BackColor := Theme().bg
+        SetDarkTitle(MiniGui.Hwnd, Theme().dark)
+    }
     if !MainGui
         return
     onTop := (Settings["AlwaysOnTop"] = "1")
@@ -425,8 +441,111 @@ NavTo(route) {
         Wv.Navigate(Settings["BaseUrl"] route)
 }
 
+; The planner key / button: a small always-visible window with just your plan.
 OpenPlanner(*) {
-    NavTo(ROUTES["Planner"])
+    if IsMiniVisible()
+        HideMini()
+    else
+        ShowMini()
+}
+
+; ───────────────────────── Mini Build Planner window ─────────────────────────
+; A second, compact window that shows only the build plan (class drop-down, plan,
+; totals, and a box to add skills/spells by name). It shares the main window's
+; browser storage, so it always shows your saved picks.
+
+BuildMini() {
+    global MiniGui
+    MiniGui := Gui("+Resize +MinSize320x260", "Unora Build Planner")
+    MiniGui.MarginX := 0
+    MiniGui.MarginY := 0
+    MiniGui.BackColor := Theme().bg
+    SetDarkTitle(MiniGui.Hwnd, Theme().dark)
+    MiniGui.OnEvent("Size", OnMiniSize)
+    MiniGui.OnEvent("Close", OnMiniClose)
+}
+
+IsMiniVisible() {
+    return MiniGui && DllCall("IsWindowVisible", "ptr", MiniGui.Hwnd)
+}
+
+ShowMini() {
+    if !MiniGui
+        BuildMini()
+    SetDarkTitle(MiniGui.Hwnd, Theme().dark)
+    w := Settings["MiniW"]
+    h := Settings["MiniH"]
+    opts := "w" w " h" h
+    x := Settings["MiniX"]
+    y := Settings["MiniY"]
+    if (IsInteger(x) && IsInteger(y) && x > -(w - 100) && y > -20 && x < A_ScreenWidth - 100 && y < A_ScreenHeight - 100)
+        opts := "x" x " y" y " " opts
+    MiniGui.Show(opts)
+    WinSetAlwaysOnTop((Settings["AlwaysOnTop"] = "1") ? 1 : 0, MiniGui)
+    EnsureMini()
+}
+
+HideMini() {
+    SaveMiniGeometry()
+    if MiniGui
+        MiniGui.Hide()
+}
+
+OnMiniClose(*) {
+    HideMini()
+    return true
+}
+
+OnMiniSize(g, minMax, w, h) {
+    if (minMax = -1)
+        return
+    if MiniC {
+        try MiniC.Fill()
+    }
+}
+
+SaveMiniGeometry() {
+    if !IsMiniVisible()
+        return
+    try {
+        if (WinGetMinMax(MiniGui) != 0)
+            return
+        WinGetPos(&x, &y, , , MiniGui)
+        MiniGui.GetClientPos(, , &w, &h)
+        Settings["MiniX"] := x
+        Settings["MiniY"] := y
+        Settings["MiniW"] := w
+        Settings["MiniH"] := h
+    }
+}
+
+EnsureMini() {
+    global MiniC, MiniWv, MiniEvents, MiniBusy
+    if MiniC {
+        ; Already running: refresh so it picks up anything changed elsewhere.
+        try MiniWv.Reload()
+        return true
+    }
+    if MiniBusy
+        return false
+    MiniBusy := true
+    try {
+        DirCreate(PROFILE_DIR)
+        MiniC := WebView2.CreateControllerAsync(MiniGui.Hwnd, 0, PROFILE_DIR).await2()
+        MiniWv := MiniC.CoreWebView2
+    } catch as e {
+        MiniC := 0
+        MiniWv := 0
+        MiniBusy := false
+        MsgBox("The Build Planner window could not start the embedded browser.`n`nDetails: " e.Message, APP_NAME, "Icon!")
+        return false
+    }
+    try MiniWv.Settings.IsStatusBarEnabled := false
+    MiniEvents := [MiniWv.NewWindowRequested(OnNewWindow)]
+    try MiniC.Fill()
+    MiniWv.Navigate(Settings["BaseUrl"] ROUTES["PlannerMini"])
+    MiniBusy := false
+    return true
 }
 
 NavBack(*) {
@@ -490,7 +609,10 @@ CloseMenu() {
 
 MenuPick(name) {
     CloseMenu()
-    NavTo(ROUTES[name])
+    if (name = "Planner")
+        ShowMini()
+    else
+        NavTo(ROUTES[name])
 }
 
 ; ───────────────────────── Help ( ? ) ─────────────────────────
@@ -542,7 +664,7 @@ Classes - skills and spells for every class, with the Build Plan window.
 Items - all equipment, with item comparison and enchants.
 Quests - quest guides.
 Professions - recipes and tables for each profession.
-Build Planner - your saved build plan, with a drop-down to switch class.
+Build Planner - a small window with just your build plan. Type a skill or spell name to add it.
 
 The wiki opens in its own window so you can keep playing. Close it with its X (it is only hidden), or press the Show/hide key.
 Click the ? on any page for help with that page.

@@ -43,6 +43,9 @@ const typedClassInfo = classInfo as Record<string, {
   statCaps: { progression: string; str: number; int: number; wis: number; con: number; dex: number }[]
 }>
 
+// Every class slug on the site (the same data this page already uses).
+export const CLASS_INFO_SLUGS: string[] = Object.keys(typedClassInfo)
+
 const skillColumnHelper = createColumnHelper<SkillSpell>()
 
 function highlightPure(text: string, className = 'text-pink-500 dark:text-pink-400') {
@@ -459,6 +462,19 @@ export function usePersistentState<T>(key: string, initial: T) {
       /* ignore */
     }
   }, [key, value])
+  // Another tab/window (e.g. the overlay's mini planner) changed it: pick the new value up.
+  useEffect(() => {
+    const onStorage = (e: StorageEvent) => {
+      if (e.key !== key || e.newValue == null) return
+      try {
+        setValue(JSON.parse(e.newValue) as T)
+      } catch {
+        /* ignore */
+      }
+    }
+    window.addEventListener('storage', onStorage)
+    return () => window.removeEventListener('storage', onStorage)
+  }, [key])
   return [value, setValue] as const
 }
 

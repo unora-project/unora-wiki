@@ -5,6 +5,7 @@ import { Home } from '@/pages/Home'
 
 const Equipment = lazy(() => import('@/pages/Equipment').then((m) => ({ default: m.Equipment })))
 const BuildPlanner = lazy(() => import('@/pages/BuildPlanner').then((m) => ({ default: m.BuildPlanner })))
+const BuildPlannerMini = lazy(() => import('@/pages/BuildPlanner').then((m) => ({ default: m.BuildPlannerMini })))
 const Classes = lazy(() => import('@/pages/Classes').then((m) => ({ default: m.Classes })))
 const ClassDetail = lazy(() => import('@/pages/ClassDetail').then((m) => ({ default: m.ClassDetail })))
 const Professions = lazy(() => import('@/pages/Professions').then((m) => ({ default: m.Professions })))
@@ -51,6 +52,15 @@ export default function App() {
         element={
           <Suspense fallback={<RouteFallback />}>
             <AdminEditor />
+          </Suspense>
+        }
+      />
+      {/* Bare mini planner for the AutoHotkey overlay — no Layout chrome */}
+      <Route
+        path="planner-mini"
+        element={
+          <Suspense fallback={<RouteFallback />}>
+            <BuildPlannerMini />
           </Suspense>
         }
       />
