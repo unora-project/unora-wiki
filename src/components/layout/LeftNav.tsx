@@ -126,14 +126,13 @@ const sections: NavSection[] = [
         { to: '/religion/theselene', label: 'Theselene' },
       ]},
       { to: '/lore', label: 'Lore', icon: BookOpen },
-      { to: '/tcg.tsx', label: 'Unora Card Battle TCG', icon: Sparkles, children: [
-        { to: '/tcg/how_to_play.md', label: 'How to Play' },
+      { to: '/tcg', label: 'TCG', icon: Sparkles, children: [
+        { to: '/tcg/how_to_play', label: 'How to Play' },
         { to: '/tcg/card_gallery', label: 'Card Gallery' },
-    ]},
-
       ]},
     ],
-  },
+   },
+
   {
     label: 'Tools',
     sublabel: 'Utilities',
