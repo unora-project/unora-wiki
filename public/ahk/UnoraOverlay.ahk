@@ -10,7 +10,7 @@ Persistent()
 
 ; ───────────────────────── Constants ─────────────────────────
 
-VERSION := "1.4.1"
+VERSION := "1.4.2"
 APP_NAME := "Unora Overlay"
 UPDATE_BASE := "https://www.unora.wiki/ahk/"   ; version.txt + UnoraOverlay.ahk are hosted here
 SITE_BASE := "https://www.unora.wiki/#"        ; the site uses #/ routes
@@ -89,6 +89,7 @@ Wv := 0                ; CoreWebView2
 WvEvents := []         ; keeps the WebView2 event registrations alive
 WvBusy := false        ; true while the browser is still starting up
 TbItems := []
+FadeBusy := false
 FadeLevels := Map()    ; last transparency applied per window, to avoid needless calls
 MiniGui := 0           ; the small Build Planner window
 MiniC := 0
@@ -443,6 +444,15 @@ ApplyWindowSettings() {
 ; "Fade when not in use": a window is fully solid while the mouse is over it or it is the
 ; active window, and fades to the Options level otherwise (so the game shows through).
 FadeTick(force := false) {
+    global FadeLevels, FadeBusy
+    if FadeBusy
+        return
+    FadeBusy := true
+    try FadeApply(force)
+    FadeBusy := false
+}
+
+FadeApply(force) {
     global FadeLevels
     if force
         FadeLevels := Map()
@@ -901,11 +911,22 @@ ResetKeys(hk) {
 }
 
 SaveOptions(g, hk, ddlTheme, sldOpacity, ddlZoom, zoomVals, cbTop, cbUpd, cbAuto) {
+    global OptGui
+    if (g != OptGui) {
+        ; This Options window was replaced by a newer one; its controls are gone.
+        try g.Destroy()
+        return
+    }
     keys := Map()
     seen := Map()
     seen.CaseSense := "Off"
     for a in ACTIONS {
-        k := hk[a.id].Value
+        try {
+            k := hk[a.id].Value
+        } catch {
+            MsgBox("The Options window was closed while saving. Please open Options again and retry.", APP_NAME, "Icon!")
+            return
+        }
         keys[a.id] := k
         if (k = "")
             continue
