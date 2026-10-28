@@ -74,12 +74,6 @@ export function TCGDetail() {
     return (
       <div className="py-20 text-center">
         <h1 className="font-heading text-2xl text-gilt">TCG entry not found</h1>
-
-        
-    
-          <MarkdownPage
-            content={resolveTCGImages(content.replace(/^#\s+.+$/m, '').trimStart())}
-          />
       </div>
     )
   }
@@ -98,7 +92,7 @@ export function TCGDetail() {
           { label: title },
         ]}
       />
-      <MarkdownPage content={content.replace(/^#\s+.+$/m, '').trimStart()} />
+      <MarkdownPage content={resolveTCGImages(content.replace(/^#\s+.+$/m, '').trimStart())} />
     </div>
   )
 }
