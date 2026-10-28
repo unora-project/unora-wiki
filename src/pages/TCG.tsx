@@ -75,11 +75,12 @@ export function TCGDetail() {
       <div className="py-20 text-center">
         <h1 className="font-heading text-2xl text-gilt">TCG entry not found</h1>
 
-        <MarkdownPage
+        
+    )
+          <MarkdownPage
             content={resolveTCGImages(content.replace(/^#\s+.+$/m, '').trimStart())}
           />
       </div>
-    )
   }
 
   const titleMatch = content.match(/^#\s+(.+)$/m)
