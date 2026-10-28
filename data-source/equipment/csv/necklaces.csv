@@ -1,6 +1,6 @@
 Name,LOC,LVL,WGT,HP,MP,AC,MR,STR,INT,WIS,CON,DEX,DMG,HIT,AS%,SKD,SKD%,SPD,SPD%,FHB,HB%,CDR%,Value,Set
-Forsaken Dark Necklace,-,-,1,1500,-,-,-,-1,-,-,-1,-1,-,-,-,-,3,-,-,-,-,2,-,-
-Sacred Light Necklace,-,-,1,500,500,-,-,-,-1,-1,-1,-,-,12,-,-,-,-,3,-,3,2,-,-
+Forsaken Dark Necklace,-,-,1,1500,-,-,-,-1,-,-,-1,-1,-,-,-,-,3,-,-,-,-,2,-,Forsaken
+Sacred Light Necklace,-,-,1,500,500,-,-,-,-1,-1,-1,-,-,12,-,-,-,-,3,-,3,2,-,Sacred
 Azurium Dark Necklace,-,-,1,-,500,-,-,-,1,1,1,-,-,8,-,-,-,-,2,-,2,-,-,-
 Azurium Earth Necklace,-,-,1,-,500,-,-,-,1,1,1,-,-,8,-,-,-,-,2,-,2,-,-,-
 Azurium Fire Necklace,-,-,1,-,500,-,-,-,1,1,1,-,-,8,-,-,-,-,2,-,2,-,-,-
@@ -47,4 +47,4 @@ Star Fire Necklace,-,97,1,-,-,-,-,-,-,-,-,-,-,6,12,-,-,-,-,-,-,-,-,-
 Star Sea Necklace,-,97,1,-,-,-,-,-,-,-,-,-,-,6,12,-,-,-,-,-,-,-,-,-
 Star Wind Necklace,-,97,1,-,-,-,-,-,-,-,-,-,-,6,12,-,-,-,-,-,-,-,-,-
 Aerium Light Necklace,Jewelcrafting,Ab 1,1,1000,500,-,5,1,1,1,1,1,-,8,16,-,2,-,2,-,2,1,-,-
-Stormcrest Necklace,Asilon Chests,Ab 10,1,1300,700,-2,2,2,2,1,1,2,2,9,16,-,3,-,3,-,2,1,-,-
+Stormcrest Necklace,Asilon Chests,Ab 10,1,1300,700,-2,2,2,2,1,1,2,2,9,16,-,3,-,3,-,2,1,-,Stormcrest

@@ -1,5 +1,5 @@
 Name,LOC,LVL,WGT,HP,MP,AC,MR,STR,INT,WIS,CON,DEX,DMG,HIT,AS%,SKD,SKD%,SPD,SPD%,FHB,HB%,CDR%,Value,Set
-Forsaken Belt,-,99,1,800,400,-3,15,-3,-,-,-3,-3,8,-,-,-,-,-,-,-,-,2,-,-
+Forsaken Belt,-,99,1,800,400,-3,15,-3,-,-,-3,-3,8,-,-,-,-,-,-,-,-,2,-,Forsaken
 Dark Azurium Belt,Armorsmithing,Master,1,-,600,-1,10,-,1,1,1,-,-,-,-,-,-,-,-,-,-,-,-,-
 Earth Azurium Belt,Armorsmithing,Master,1,-,600,-1,10,-,1,1,1,-,-,-,-,-,-,-,-,-,-,-,-,-
 Fire Azurium Belt,Armorsmithing,Master,1,-,600,-1,10,-,1,1,1,-,-,-,-,-,-,-,-,-,-,-,-,-
