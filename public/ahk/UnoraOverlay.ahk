@@ -10,7 +10,7 @@ Persistent()
 
 ; ───────────────────────── Constants ─────────────────────────
 
-VERSION := "1.4.0"
+VERSION := "1.4.1"
 APP_NAME := "Unora Overlay"
 UPDATE_BASE := "https://www.unora.wiki/ahk/"   ; version.txt + UnoraOverlay.ahk are hosted here
 SITE_BASE := "https://www.unora.wiki/#"        ; the site uses #/ routes
@@ -89,6 +89,7 @@ Wv := 0                ; CoreWebView2
 WvEvents := []         ; keeps the WebView2 event registrations alive
 WvBusy := false        ; true while the browser is still starting up
 TbItems := []
+FadeLevels := Map()    ; last transparency applied per window, to avoid needless calls
 MiniGui := 0           ; the small Build Planner window
 MiniC := 0
 MiniWv := 0
@@ -441,8 +442,6 @@ ApplyWindowSettings() {
 
 ; "Fade when not in use": a window is fully solid while the mouse is over it or it is the
 ; active window, and fades to the Options level otherwise (so the game shows through).
-FadeLevels := Map()    ; last transparency applied per window, to avoid needless calls
-
 FadeTick(force := false) {
     global FadeLevels
     if force
