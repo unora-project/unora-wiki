@@ -1,3 +1,4 @@
-version=1.4.3
-- Opening Options with its keybind no longer types into the first key box.
-- Fixes crashes and warnings from version 1.4.0.
+version=1.7.0
+- New Stat Calculator in the menu, in its own small window (Ctrl+Alt+S, changeable in Options).
+- Menu Tools: Build Planner, HP/MP Calculator, Stat Calculator.
+- Build Planner, HP/MP Calculator and Stat Calculator windows have a ? help button.

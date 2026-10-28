@@ -1,3 +1,5 @@
+import { SET_NAMES } from '@/lib/set-bonuses'
+
 export type RecipeTab = 'jewelcrafting' | 'armorsmithing' | 'weaponsmithing'
 export type GenericTab =
   | 'alchemy-recipes'
@@ -171,7 +173,13 @@ export const CLASS_GROUPS = [
   },
 ] as const
 export const GENDERS = ['Unisex', 'Male', 'Female'] as const
-export const SET_BONUSES = ['', 'Dragon Scale', 'Dark Aisling', 'Forsaken', 'Sacred'] as const
+// The sets that have bonus data (src/data/metadata/set-bonuses.json) are listed automatically.
+// Dragon Scale and Dark Aisling stay in the list so items already using them keep their value.
+const LEGACY_SETS = ['Dragon Scale', 'Dark Aisling']
+export const SET_BONUSES: readonly string[] = [
+  '',
+  ...Array.from(new Set([...LEGACY_SETS, ...SET_NAMES])),
+]
 
 export const FIELD_TO_CSV_HEADER: Record<string, string> = {
   item_name: 'Name',

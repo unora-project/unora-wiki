@@ -25,6 +25,8 @@ const LoreIndex = lazy(() => import('@/pages/Lore').then((m) => ({ default: m.Lo
 const LoreDetail = lazy(() => import('@/pages/Lore').then((m) => ({ default: m.LoreDetail })))
 const PatchNotes = lazy(() => import('@/pages/PatchNotes').then((m) => ({ default: m.PatchNotes })))
 const HpMpCalculator = lazy(() => import('@/pages/calculators/HpMpCalculator').then((m) => ({ default: m.HpMpCalculator })))
+const HpMpCalculatorMini = lazy(() => import('@/pages/calculators/HpMpCalculator').then((m) => ({ default: m.HpMpCalculatorMini })))
+const StatCalculatorMini = lazy(() => import('@/pages/calculators/StatCalculator').then((m) => ({ default: m.StatCalculatorMini })))
 const HpMpOptimizer = lazy(() => import('@/pages/calculators/HpMpOptimizer').then((m) => ({ default: m.HpMpOptimizer })))
 const StatCalculator = lazy(() => import('@/pages/calculators/StatCalculator').then((m) => ({ default: m.StatCalculator })))
 const Glossary = lazy(() => import('@/pages/Glossary').then((m) => ({ default: m.Glossary })))
@@ -61,6 +63,23 @@ export default function App() {
         element={
           <Suspense fallback={<RouteFallback />}>
             <BuildPlannerMini />
+          </Suspense>
+        }
+      />
+      {/* Bare HP/MP calculator for the AutoHotkey overlay */}
+      <Route
+        path="hpmp-mini"
+        element={
+          <Suspense fallback={<RouteFallback />}>
+            <HpMpCalculatorMini />
+          </Suspense>
+        }
+      />
+      <Route
+        path="stats-mini"
+        element={
+          <Suspense fallback={<RouteFallback />}>
+            <StatCalculatorMini />
           </Suspense>
         }
       />

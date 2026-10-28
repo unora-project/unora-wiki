@@ -1,6 +1,7 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { Search, X } from 'lucide-react'
 import { CLASS_FAMILIES, classLabel } from '@/lib/class-families'
+import { readGameText } from '@/lib/game-glyphs'
 import {
   CLASS_INFO_SLUGS,
   hasText,
@@ -41,6 +42,60 @@ export function BuildPlannerMini() {
   )
 }
 
+// ---- Matching text read from the game screen (by the AutoHotkey overlay) to a skill/spell ----
+
+// Letters and digits only; "?" (a character the game-font reader did not know) is kept as a wildcard.
+const normName = (t: string) => t.toLowerCase().replace(/[^a-z0-9?]+/g, '')
+
+function editDistance(a: string, b: string): number {
+  const m = a.length
+  const n = b.length
+  if (m === 0) return n
+  if (n === 0) return m
+  let prev = Array.from({ length: n + 1 }, (_, j) => j)
+  for (let i = 1; i <= m; i++) {
+    const cur = [i]
+    for (let j = 1; j <= n; j++) {
+      const same = a[i - 1] === b[j - 1] || a[i - 1] === '?' || b[j - 1] === '?'
+      cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (same ? 0 : 1))
+    }
+    prev = cur
+  }
+  return prev[n]
+}
+
+// 1 = identical, 0 = nothing alike. A name found inside a longer line scores 0.96.
+function nameScore(line: string, name: string): number {
+  const a = normName(line)
+  const b = normName(name)
+  if (a.length < 3 || b.length < 3) return 0
+  if (b.length >= 5 && !a.includes('?') && a.includes(b)) return 0.96
+  return 1 - editDistance(a, b) / Math.max(a.length, b.length)
+}
+
+type ScreenLine = { text: string; dist: number }
+type Found = { slug: string; kind: 'skills' | 'spells'; item: SkillSpell; score: number; dist: number }
+
+function bestInShard(
+  slug: string,
+  shard: { skills: SkillSpell[]; spells: SkillSpell[] },
+  lines: ScreenLine[]
+): Found | null {
+  let best: Found | null = null
+  for (const line of lines) {
+    for (const kind of ['skills', 'spells'] as const) {
+      for (const item of shard[kind]) {
+        const score = nameScore(line.text, item.name)
+        if (score < 0.6) continue
+        if (!best || score > best.score + 0.02 || (Math.abs(score - best.score) <= 0.02 && line.dist < best.dist)) {
+          best = { slug, kind, item, score, dist: line.dist }
+        }
+      }
+    }
+  }
+  return best
+}
+
 function PlannerView({ mini }: { mini: boolean }) {
   const [planMap, setPlanMap] = usePersistentState<Record<string, string[]>>('abilityPlan.v1', {})
   const [doneMap, setDoneMap] = usePersistentState<Record<string, string[]>>('abilityPlanDone.v1', {})
@@ -48,6 +103,8 @@ function PlannerView({ mini }: { mini: boolean }) {
   const [hiddenMap] = usePersistentState<Record<string, string[]>>('abilityHidden.v1', {})
   const [shard, setShard] = useState<{ skills: SkillSpell[]; spells: SkillSpell[] } | null>(null)
   const [query, setQuery] = useState('')
+  const [flash, setFlash] = useState('')
+  const apiRef = useRef<{ addFromLines: (lines: ScreenLine[]) => Promise<string> } | null>(null)
 
   // Only classes that actually have something planned.
   const classes = useMemo(
@@ -145,6 +202,126 @@ function PlannerView({ mini }: { mini: boolean }) {
     })
     setQuery('')
   }
+
+  const addFromLines = async (lines: ScreenLine[]): Promise<string> => {
+    const clean = lines.filter((l) => l && typeof l.text === 'string' && l.text.trim().length >= 3)
+    if (clean.length === 0) return 'No text found under the mouse.'
+    // Nearest text to the mouse first: the first line that matches a skill/spell wins.
+    const ordered = [...clean].sort((p, q) => p.dist - q.dist)
+    let found: Found | null = null
+    if (shard) {
+      for (const line of ordered) {
+        const f = bestInShard(current, shard, [line])
+        if (f && f.score >= 0.8) {
+          found = f
+          break
+        }
+      }
+    }
+    if (!found) {
+      // Not in this class: look through the other classes too.
+      const others = ALL_CLASS_SLUGS.filter((sl) => sl !== current)
+      const shards = await Promise.all(others.map((sl) => loadClassShard(sl)))
+      for (const line of ordered) {
+        let best: Found | null = null
+        others.forEach((sl, i) => {
+          const f = bestInShard(sl, shards[i], [line])
+          if (f && (!best || f.score > best.score)) best = f
+        })
+        const b = best as Found | null
+        if (b && b.score >= 0.85) {
+          found = b
+          break
+        }
+      }
+    }
+    if (!found) {
+      const seen = ordered.map((l) => l.text.trim()).slice(0, 3).join(' / ')
+      return `No skill or spell matched "${seen}". Point at the skill's name.`
+    }
+    const { slug, kind, item } = found
+    const key = `${kind}|${item.name}`
+    if ((planMap[slug] ?? []).includes(key)) return `${item.name} is already in your ${classLabel(slug)} plan.`
+    if ((hiddenMap[slug] ?? []).includes(key)) return `${item.name} is hidden for ${classLabel(slug)}. Show it on the class page first.`
+    const needed = new Set(parseItems(item.itemRequirements).map((x) => x.name.toLowerCase()))
+    if (needed.size > 0) {
+      setDoneMap((prev) => {
+        const cur = prev[slug] ?? []
+        return cur.some((x) => needed.has(x)) ? { ...prev, [slug]: cur.filter((x) => !needed.has(x)) } : prev
+      })
+    }
+    setPlanMap((prev) => {
+      const cur = prev[slug] ?? []
+      return cur.includes(key) ? prev : { ...prev, [slug]: [...cur, key] }
+    })
+    setLastClass(slug)
+    return `Added ${item.name} (${classLabel(slug)})`
+  }
+  apiRef.current = { addFromLines }
+
+  // The AutoHotkey overlay calls this after reading a skill name from the game screen.
+  useEffect(() => {
+    if (!mini) return
+    const w = window as unknown as {
+      unoraAddFromText?: (lines: ScreenLine[]) => void
+      unoraAddFromImage?: (dataUrl: string, cx: number, cy: number) => void
+      chrome?: { webview?: { postMessage: (m: string) => void } }
+    }
+    const tell = (m: string) => {
+      setFlash(m)
+      try {
+        w.chrome?.webview?.postMessage(m)
+      } catch {
+        /* not running inside the overlay */
+      }
+    }
+    // Preferred: the overlay sends a small screenshot piece and where the mouse was inside it.
+    w.unoraAddFromImage = (dataUrl, cx, cy) => {
+      const img = new Image()
+      img.onload = () => {
+        try {
+          const c = document.createElement('canvas')
+          c.width = img.width
+          c.height = img.height
+          const g = c.getContext('2d', { willReadFrequently: true })
+          if (!g) return tell('Could not read the screenshot.')
+          g.drawImage(img, 0, 0)
+          const { scale, runs } = readGameText(g.getImageData(0, 0, c.width, c.height))
+          if (scale === 0 || runs.length === 0) {
+            return tell(
+              'Could not read any game text there. Point at the skill name, and set the game window to a whole-number size (like 1280x960).'
+            )
+          }
+          const lines = runs.map((r) => ({
+            text: r.text,
+            dist: Math.hypot(Math.max(r.x0 - cx, 0, cx - r.x1), Math.max(r.y0 - cy, 0, cy - r.y1)),
+          }))
+          apiRef.current?.addFromLines(lines).then(tell, () => tell('Could not add that skill.'))
+        } catch {
+          tell('Could not read the screenshot.')
+        }
+      }
+      img.onerror = () => tell('Could not read the screenshot.')
+      img.src = dataUrl
+    }
+    w.unoraAddFromText = (lines) => {
+      apiRef.current?.addFromLines(lines).then(tell, () => tell('Could not add that skill.'))
+    }
+    try {
+      w.chrome?.webview?.postMessage('ready')
+    } catch {
+      /* ignore */
+    }
+    return () => {
+      delete w.unoraAddFromText
+      delete w.unoraAddFromImage
+    }
+  }, [mini])
+  useEffect(() => {
+    if (!flash) return
+    const t = setTimeout(() => setFlash(''), 4000)
+    return () => clearTimeout(t)
+  }, [flash])
 
   const remove = (key: string) =>
     setPlanMap((prev) => ({ ...prev, [current]: (prev[current] ?? []).filter((k) => k !== key) }))
@@ -286,6 +463,10 @@ function PlannerView({ mini }: { mini: boolean }) {
             </ul>
           )}
         </div>
+      )}
+
+      {mini && flash && (
+        <p className="mb-2 rounded-lg border border-gilt/40 bg-gilt/10 px-3 py-1.5 text-xs text-gilt">{flash}</p>
       )}
 
       {mini && shard && entries.length === 0 && (

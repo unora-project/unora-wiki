@@ -9,6 +9,7 @@ import jewelRecipesUrl from '@/data/professions/jewelcrafting-recipes.json?url'
 import armorRecipesUrl from '@/data/professions/armorsmithing-recipes.json?url'
 import enchantsUrl from '@/data/professions/enchanting-enchants.json?url'
 import huntingAreasUrl from '@/data/metadata/hunting-areas.json?url'
+import { setInfoFor, fmtSigned, type SetInfo, type SetStep } from '@/lib/set-bonuses'
 
 interface EquipmentItem {
   name: string
@@ -21,6 +22,10 @@ interface EquipmentItem {
   gender: string | null
   stats: Record<string, number | null>
   percentages: Record<string, number | null>
+  // Name of the item's set (from the CMS "Set Bonus" drop-down). Looked up in set-bonuses.json.
+  set?: string | null
+  setBonus?: string | null
+  set_bonus?: string | null
 }
 
 interface DisplayRow extends EquipmentItem {
@@ -446,6 +451,72 @@ function RecipeTag({ materials }: { materials: string }) {
   )
 }
 
+
+// The colour for everything to do with sets ([SET] tag, tooltip headings, Compare arrows).
+// Different from [RECIPE] (green), the enchant arrows (amber) and the best/worst cells.
+const SET_TEXT = 'text-violet-600 dark:text-violet-400'
+
+function SetTag({ info }: { info: SetInfo }) {
+  const [hovered, setHovered] = useState(false)
+  const [coords, setCoords] = useState<{ top: number; left: number; below: boolean } | null>(null)
+  const triggerRef = useRef<HTMLSpanElement>(null)
+
+  const handleEnter = () => {
+    const rect = triggerRef.current?.getBoundingClientRect()
+    if (rect) {
+      const tooltipWidth = 256
+      let left = rect.left + rect.width / 2 - tooltipWidth / 2
+      left = Math.max(8, Math.min(left, window.innerWidth - tooltipWidth - 8))
+      const below = rect.top < 300
+      setCoords({ top: below ? rect.bottom + 8 : rect.top - 8, left, below })
+    }
+    setHovered(true)
+  }
+
+  return (
+    <span className="relative inline-block">
+      <span
+        ref={triggerRef}
+        onMouseEnter={handleEnter}
+        onMouseLeave={() => setHovered(false)}
+        className={`ml-1 cursor-help text-xs font-semibold underline decoration-dotted ${SET_TEXT}`}
+      >
+        [SET]
+      </span>
+      {hovered && coords && createPortal(
+        <div
+          className={`fixed z-50 w-64 rounded-lg border border-parchment-300 bg-parchment-100 p-3 text-left shadow-lg dark:border-ash/20 dark:bg-ink ${
+            coords.below ? '' : '-translate-y-full'
+          }`}
+          style={{ top: coords.top, left: coords.left }}
+        >
+          <p className="font-heading text-sm font-semibold text-gilt">{info.name} Set</p>
+          <p className="mb-1.5 text-[10px] uppercase tracking-wider text-parchment-500 dark:text-parchment-600">
+            Bonus gained at each piece count ({info.pieces} pieces in the set)
+          </p>
+          {info.steps.length === 0 ? (
+            <p className="text-xs text-parchment-600 dark:text-parchment-400">Bonuses have not been added yet.</p>
+          ) : (
+            <div className="space-y-1.5">
+              {info.steps.map((st) => (
+                <div key={st.n}>
+                  <p className={`text-xs font-semibold ${SET_TEXT}`}>
+                    {st.n}/{info.pieces} pieces
+                  </p>
+                  <p className="text-xs text-parchment-700 dark:text-parchment-300">
+                    {st.lines.map((l) => `${fmtSigned(l.amount)} ${l.label}`).join(', ')}
+                  </p>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>,
+        document.body
+      )}
+    </span>
+  )
+}
+
 // Includes class and gender so same-named items for different classes don't select together.
 // One slot in the Compare window. The same item can sit in several slots (each with its own enchant).
 interface CompareEntry {
@@ -594,6 +665,7 @@ function EquipmentCard({
     item.level == null || String(item.level).trim() === '' ? null : shortLevel(String(item.level).trim())
   const location = hasText(item.location) ? item.location.trim() : null
   const hasFooter = !!location || !!seller
+  const setInfo = setInfoFor(item)
   const linkCls = 'underline decoration-gilt/60 hover:decoration-gilt'
 
   // In compare mode, a click anywhere on the card selects it, except on links
@@ -706,9 +778,10 @@ function EquipmentCard({
               {classText}
             </p>
           )}
-          {recipeText && (
+          {(recipeText || setInfo) && (
             <p className="mt-0.5">
-              <RecipeTag materials={recipeText} />
+              {recipeText && <RecipeTag materials={recipeText} />}
+              {setInfo && <SetTag info={setInfo} />}
             </p>
           )}
         </div>
@@ -886,7 +959,7 @@ const COMPARE_ROWS: { kind: 'stat' | 'pct'; key: string; label: string }[] = [
 
 // One item's stats with an optional enchant added on top. `changed` holds the
 // amount each stat moved so the table can flag it.
-function resolveColumn(item: DisplayRow, enchant: Enchant | undefined) {
+function resolveColumn(item: DisplayRow, enchant: Enchant | undefined, setStep?: SetStep) {
   const parsed = enchant ? parseEffects(enchant.effects) : null
   const add = new Map<string, number>()
   parsed?.deltas.forEach(({ target, amount }) => {
@@ -895,17 +968,23 @@ function resolveColumn(item: DisplayRow, enchant: Enchant | undefined) {
   })
   const values = new Map<string, number | null>()
   const changed = new Map<string, number>()
+  const setChanged = new Map<string, number>()
   for (const row of COMPARE_ROWS) {
     const base = (row.kind === 'stat' ? item.stats[row.key] : item.percentages[row.key]) ?? null
     const d = add.get(`${row.kind}:${row.key}`)
+    const sd = setStep?.add.get(`${row.kind}:${row.key}`)
+    let value = base
     if (d !== undefined && d !== 0) {
-      values.set(row.label, Math.round(((base ?? 0) + d) * 100) / 100)
+      value = Math.round(((value ?? 0) + d) * 100) / 100
       changed.set(row.label, d)
-    } else {
-      values.set(row.label, base)
     }
+    if (sd !== undefined && sd !== 0) {
+      value = Math.round(((value ?? 0) + sd) * 100) / 100
+      setChanged.set(row.label, sd)
+    }
+    values.set(row.label, value)
   }
-  return { values, changed, unknown: parsed?.unknown ?? [] }
+  return { values, changed, setChanged, unknown: parsed?.unknown ?? [] }
 }
 
 // Stats where a LOWER number is the better one (shown green in Compare).
@@ -934,6 +1013,8 @@ function CompareBar({
   // null = the window sizes itself to fit everything; set once the user drags the resize corner.
   const [size, setSize] = useState<{ width: number; height: number } | null>(null)
   const [picked, setPicked] = useState<Record<string, string>>({})
+  // Which set piece each compare slot is ("2", "3", ...), by slot.
+  const [pieceOf, setPieceOf] = useState<Record<string, string>>({})
   const dragRef = useRef<{ startX: number; startY: number; origTop: number; origLeft: number } | null>(null)
   const panelRef = useRef<HTMLDivElement>(null)
   const resizingRef = useRef(false)
@@ -1006,9 +1087,11 @@ function CompareBar({
     () =>
       items.map(({ uid: key, item }) => {
         const enchant = enchantById.get(picked[key] ?? '')
-        return { key, item, enchant, ...resolveColumn(item, enchant) }
+        const setInfo = setInfoFor(item)
+        const setStep = setInfo?.steps.find((st) => String(st.n) === pieceOf[key])
+        return { key, item, enchant, setInfo, setStep, ...resolveColumn(item, enchant, setStep) }
       }),
-    [items, picked, enchantById]
+    [items, picked, pieceOf, enchantById]
   )
 
   const rows = useMemo(
@@ -1075,6 +1158,7 @@ function CompareBar({
           <button
             onClick={() => {
               setPicked({})
+              setPieceOf({})
               onClear()
             }}
             className={headBtn}
@@ -1107,7 +1191,7 @@ function CompareBar({
                   <button
                     type="button"
                     onClick={() => onDuplicate(c.key)}
-                    title="Add another copy of this item, to compare it with a different enchant"
+                    title="Add another copy of this item, to compare it with a different enchant or set piece"
                     className="absolute bottom-1.5 right-1.5 rounded border border-parchment-300 px-1.5 text-[10px] font-medium text-parchment-600 hover:border-gilt hover:text-gilt dark:border-ash/20 dark:text-ash"
                   >
                     + Copy
@@ -1163,6 +1247,47 @@ function CompareBar({
               </div>
             ))}
 
+            {/* Set piece pickers: only when at least one item belongs to a set */}
+            {cols.some((c) => c.setInfo) && (
+              <>
+                <div
+                  className={`flex items-start pt-2 text-[10px] font-semibold uppercase tracking-wider ${SET_TEXT}`}
+                  title="Which piece of its set this item is. Adds only what that piece gives on top of the previous one."
+                >
+                  Set piece
+                </div>
+                {cols.map((c) => (
+                  <div key={c.key} className="min-w-0 px-1 pb-3">
+                    {c.setInfo && (
+                      <>
+                        <select
+                          value={pieceOf[c.key] ?? ''}
+                          onChange={(e) => setPieceOf((p) => ({ ...p, [c.key]: e.target.value }))}
+                          aria-label={`Set piece for ${c.item.name}`}
+                          className="w-full rounded-lg border border-parchment-300 bg-parchment-100 px-2 py-1.5 text-sm text-parchment-800 outline-none focus:border-gilt dark:border-ash/20 dark:bg-ink dark:text-ivory dark:[color-scheme:dark]"
+                        >
+                          <option value="">{' '}</option>
+                          {c.setInfo.steps.map((st) => (
+                            <option key={st.n} value={String(st.n)}>
+                              {c.setInfo!.name} {st.n}/{c.setInfo!.pieces}
+                            </option>
+                          ))}
+                        </select>
+                        {c.setStep && (
+                          <p
+                            className={`mt-1 text-[11px] leading-snug ${SET_TEXT}`}
+                            style={{ width: 0, minWidth: '100%' }}
+                          >
+                            {c.setStep.lines.map((l) => `${fmtSigned(l.amount)} ${l.label}`).join(', ')}
+                          </p>
+                        )}
+                      </>
+                    )}
+                  </div>
+                ))}
+              </>
+            )}
+
             {/* Stats */}
             {rows.length === 0 ? (
               <p className="col-span-full text-sm text-parchment-500 dark:text-parchment-600">No stats to compare.</p>
@@ -1178,6 +1303,7 @@ function CompareBar({
                   </div>
                   {cols.map((c, ci) => {
                     const delta = c.changed.get(r.label)
+                    const setDelta = c.setChanged.get(r.label)
                     return (
                       <div
                         key={c.key}
@@ -1189,6 +1315,14 @@ function CompareBar({
                             title={`${delta > 0 ? '+' : ''}${delta} from ${c.enchant?.name ?? 'enchant'}`}
                           >
                             {delta > 0 ? '▲' : '▼'}
+                          </span>
+                        )}
+                        {setDelta !== undefined && (
+                          <span
+                            className={`mr-1.5 inline-block ${SET_TEXT}`}
+                            title={`${setDelta > 0 ? '+' : ''}${setDelta} from ${c.setInfo?.name ?? 'set'} ${c.setStep?.n ?? ''}/${c.setInfo?.pieces ?? ''}`}
+                          >
+                            {setDelta > 0 ? '▲' : '▼'}
                           </span>
                         )}
                         {r.vals[ci] ?? '-'}
@@ -1556,10 +1690,12 @@ export function Equipment() {
         cell: ({ row }) => {
           const item = row.original
           const recipeText = recipeTextFor(item, weaponRecipes, jewelRecipes)
+          const setInfo = setInfoFor(item)
           return (
             <span className={item._isVariant ? 'text-parchment-600 dark:text-ivory/70' : ''}>
               {item.name}
               {recipeText && <RecipeTag materials={recipeText} />}
+              {setInfo && <SetTag info={setInfo} />}
             </span>
           )
         },

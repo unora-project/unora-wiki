@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { PageHeader } from '@/components/ui/PageHeader'
 
 const statCaps: Record<string, Record<string, Record<string, number>>> = {
@@ -58,6 +58,26 @@ function experienceForStat(current: number, max: number): number {
 }
 
 export function StatCalculator() {
+  return <StatView mini={false} />
+}
+
+// Compact version for the AutoHotkey overlay: just the calculator (no page header).
+export function StatCalculatorMini() {
+  useEffect(() => {
+    const prev = document.body.style.background
+    document.body.style.background = '#0a0a0d'
+    return () => {
+      document.body.style.background = prev
+    }
+  }, [])
+  return (
+    <div className="dark min-h-screen bg-obsidian p-3 text-ivory">
+      <StatView mini />
+    </div>
+  )
+}
+
+function StatView({ mini }: { mini: boolean }) {
   const [selectedClass, setSelectedClass] = useState('')
   const [progression, setProgression] = useState('Pre-Master')
   const [stats, setStats] = useState({ STR: 1, INT: 1, WIS: 1, CON: 1, DEX: 1 })
@@ -99,18 +119,20 @@ export function StatCalculator() {
 
   return (
     <div>
-      <PageHeader
-        title="Stat Calculator"
-        description="Calculate how much experience is needed to max your stats."
-        accent="verdant"
-        breadcrumbs={[
-          { label: 'Home', to: '/' },
-          { label: 'Calculators' },
-          { label: 'Stats' },
-        ]}
-      />
+      {!mini && (
+        <PageHeader
+          title="Stat Calculator"
+          description="Calculate how much experience is needed to max your stats."
+          accent="verdant"
+          breadcrumbs={[
+            { label: 'Home', to: '/' },
+            { label: 'Calculators' },
+            { label: 'Stats' },
+          ]}
+        />
+      )}
 
-      <div className="max-w-2xl space-y-6">
+      <div className={`space-y-6 ${mini ? 'w-full' : 'max-w-2xl'}`}>
         {/* Class & Progression */}
         <div className="flex flex-wrap items-center gap-4">
           <div>

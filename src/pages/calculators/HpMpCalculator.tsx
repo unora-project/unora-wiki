@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { PageHeader } from '@/components/ui/PageHeader'
 
 type TabId = 'exp-between' | 'max-raise'
@@ -12,6 +12,8 @@ function formatNumber(num: number): string {
   return num.toLocaleString()
 }
 
+// Each raise costs 500 exp for every point of the base you have BEFORE the raise
+// (e.g. HP 58,074 -> 58,124 costs 58,074 x 500 = 29,037,000), not the new base.
 function calculateExp(startBase: number, endBase: number, increment: number): number | null {
   if (isNaN(startBase) || isNaN(endBase) || startBase >= endBase) return null
   const diff = endBase - startBase
@@ -20,8 +22,8 @@ function calculateExp(startBase: number, endBase: number, increment: number): nu
   let total = 0
   const steps = diff / increment
   for (let step = 1; step <= steps; step++) {
-    const current = startBase + increment * step
-    total += current * 500
+    const before = startBase + increment * (step - 1)
+    total += before * 500
   }
   return total
 }
@@ -35,11 +37,11 @@ function maxRaiseFromExp(
   if (currentBase < 0 || availableExp < 0) return null
   let point = currentBase
   let exp = availableExp
-  let nextCost = (point + increment) * 500
+  let nextCost = point * 500
   while (exp - nextCost >= 0) {
     point += increment
     exp -= nextCost
-    nextCost = (point + increment) * 500
+    nextCost = point * 500
   }
   return { newBase: point, leftoverExp: exp }
 }
@@ -57,6 +59,26 @@ const TABLE_HEAD_CELL =
   'px-4 py-2.5 text-left text-xs font-semibold uppercase tracking-wider text-parchment-600 dark:text-parchment-400'
 
 export function HpMpCalculator() {
+  return <HpMpView mini={false} />
+}
+
+// Compact version for the AutoHotkey overlay: just the calculator (tabs, inputs, result).
+export function HpMpCalculatorMini() {
+  useEffect(() => {
+    const prev = document.body.style.background
+    document.body.style.background = '#0a0a0d'
+    return () => {
+      document.body.style.background = prev
+    }
+  }, [])
+  return (
+    <div className="dark min-h-screen bg-obsidian p-3 text-ivory">
+      <HpMpView mini />
+    </div>
+  )
+}
+
+function HpMpView({ mini }: { mini: boolean }) {
   const [activeTab, setActiveTab] = useState<TabId>('exp-between')
 
   // Calc1: max raise from exp pool
@@ -136,22 +158,26 @@ export function HpMpCalculator() {
 
   return (
     <div>
-      <PageHeader
-        title="HP/MP Calculator"
-        description="Experience math for raising HP/MP base values."
-        accent="ignis"
-        breadcrumbs={[
-          { label: 'Home', to: '/' },
-          { label: 'Calculators' },
-          { label: 'HP/MP' },
-        ]}
-      />
+      {!mini && (
+        <>
+          <PageHeader
+            title="HP/MP Calculator"
+            description="Experience math for raising HP/MP base values."
+            accent="ignis"
+            breadcrumbs={[
+              { label: 'Home', to: '/' },
+              { label: 'Calculators' },
+              { label: 'HP/MP' },
+            ]}
+          />
 
-      <div className="mb-4 rounded-lg border-l-4 border-gilt bg-gilt/10 p-4 dark:bg-gilt/5">
-        <p className="text-sm text-parchment-700 dark:text-parchment-300">
-          HP is added in increments of <strong>50</strong>. MP is added in increments of <strong>25</strong>.
-        </p>
-      </div>
+          <div className="mb-4 rounded-lg border-l-4 border-gilt bg-gilt/10 p-4 dark:bg-gilt/5">
+            <p className="text-sm text-parchment-700 dark:text-parchment-300">
+              HP is added in increments of <strong>50</strong>. MP is added in increments of <strong>25</strong>.
+            </p>
+          </div>
+        </>
+      )}
 
       {/* Tabs */}
       <div className="mb-6 flex gap-1 border-b border-parchment-300 dark:border-ash/20">
@@ -173,7 +199,7 @@ export function HpMpCalculator() {
         ))}
       </div>
 
-      <div className="max-w-2xl">
+      <div className={mini ? 'w-full' : 'max-w-2xl'}>
         {activeTab === 'exp-between' && (
           <section>
             <p className="mb-3 text-sm text-parchment-600 dark:text-parchment-400">
