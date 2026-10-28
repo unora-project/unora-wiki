@@ -10,7 +10,7 @@ Persistent()
 
 ; ───────────────────────── Constants ─────────────────────────
 
-VERSION := "1.4.2"
+VERSION := "1.4.3"
 APP_NAME := "Unora Overlay"
 UPDATE_BASE := "https://www.unora.wiki/ahk/"   ; version.txt + UnoraOverlay.ahk are hosted here
 SITE_BASE := "https://www.unora.wiki/#"        ; the site uses #/ routes
@@ -841,6 +841,15 @@ Back, Forward and Reload work like a browser. Pin keeps this window on top of th
 
 ShowOptions(*) {
     global OptGui
+    ; Opened with a keybind? Wait for its keys to be let go, or the first key box would record them.
+    for k in ["Ctrl", "Alt", "Shift", "LWin", "RWin"]
+        KeyWait(k, "T1")
+    if (A_ThisHotkey != "") {
+        mainKey := RegExReplace(A_ThisHotkey, "^[~*$<>^!+#]+")
+        if (mainKey != "") {
+            try KeyWait(mainKey, "T1")
+        }
+    }
     try OptGui.Destroy()
     th := Theme()
     g := Gui("+AlwaysOnTop", APP_NAME " - Options")
@@ -902,6 +911,8 @@ ShowOptions(*) {
     MakeButton(g, "Reset keys", "x+8 yp w120 h32", (*) => ResetKeys(hk), th)
 
     g.OnEvent("Escape", (*) => g.Destroy())
+    ; Start on a harmless checkbox, not on the first key box, so stray keys never change a keybind.
+    cbTop.Focus()
     g.Show()
 }
 
