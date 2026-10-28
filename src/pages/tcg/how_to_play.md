@@ -19,7 +19,7 @@ Each card has a name in the top left, a mana cost in the top right, a card type 
 
 Creature cards also have a power value in the bottom left and a toughness value in the bottom right.
 
-![how2read](./how2read.png)
+![How to read a card](./how2read.png)
 
 A colored square indicates a mana of a chosen element. Red being Fire, blue being Water, green being Wind, and brown being Earth.
 
