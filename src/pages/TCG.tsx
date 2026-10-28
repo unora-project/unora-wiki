@@ -4,11 +4,25 @@ import { PageHeader } from '@/components/ui/PageHeader'
 import { Link } from 'react-router'
 
 // Import TCG markdown at build time
-const tcgModules = import.meta.glob<string>('@/pages/tcg/*.md', {
-  query: '?raw',
-  import: 'default',
-  eager: true,
-})
+    const tcgModules = import.meta.glob<string>('@/pages/tcg/*.md', {
+      query: '?raw',
+      import: 'default',
+      eager: true,
+    })
+
+    // Import TCG images at build time so Vite bundles them and gives us their public URLs
+    const tcgImages = import.meta.glob<string>('@/pages/tcg/**/*.{png,jpg,jpeg,webp,avif}', {
+      query: '?url',
+      import: 'default',
+      eager: true,
+    })
+
+    function resolveTCGImages(markdown: string): string {
+      return markdown.replace(/!\[([^\]]*)\]\(\.\/([^)]+)\)/g, (match, alt, relPath) => {
+        const key = Object.keys(tcgImages).find((k) => k.endsWith(`/tcg/${relPath}`))
+        return key ? `![${alt}](${tcgImages[key]})` : match
+      })
+    }
 
 function getTCGContent(slug: string): string | null {
   const key = Object.keys(tcgModules).find((k) => k.includes(`/${slug}.md`))
@@ -60,6 +74,10 @@ export function TCGDetail() {
     return (
       <div className="py-20 text-center">
         <h1 className="font-heading text-2xl text-gilt">TCG entry not found</h1>
+
+        <MarkdownPage
+            content={resolveTCGImages(content.replace(/^#\s+.+$/m, '').trimStart())}
+          />
       </div>
     )
   }
