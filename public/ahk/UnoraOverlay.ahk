@@ -10,13 +10,14 @@ Persistent()
 
 ; ───────────────────────── Constants ─────────────────────────
 
-VERSION := "1.2.0"
+VERSION := "1.4.0"
 APP_NAME := "Unora Overlay"
 UPDATE_BASE := "https://www.unora.wiki/ahk/"   ; version.txt + UnoraOverlay.ahk are hosted here
 SITE_BASE := "https://www.unora.wiki/#"        ; the site uses #/ routes
 SETTINGS_FILE := A_ScriptDir "\settings.cfg"
 KEYBINDS_FILE := A_ScriptDir "\keybinds.cfg"
 PROFILE_DIR := A_ScriptDir "\data\WebView2"    ; the overlay's own browser storage (remembers planner picks)
+ICON_FILE := A_ScriptDir "\UnoraOverlay.ico"   ; tray / taskbar icon (optional file)
 TB_H := 38                                      ; toolbar height
 
 ; Page paths on the site. If a page ever moves, change it here.
@@ -36,6 +37,8 @@ DEFAULTS := Map(
     "Opacity", "100",
     "Zoom", "100",
     "CheckUpdates", "1",
+    "AutoLaunch", "0",                       ; 1 = wait quietly and start when the game launcher opens
+    "GameProcess", "Chaos Launcher.exe",     ; program(s) that wake the overlay (separate several with commas)
     "SkippedVersion", "",
     "WinX", "",
     "WinY", "",
@@ -102,18 +105,72 @@ FirstRun := !FileExist(SETTINGS_FILE)
 ; ───────────────────────── Start-up ─────────────────────────
 
 LoadConfig()
-RegisterHotkeys()
 SetupTray()
 OnExit(OnAppExit)
-
-if FirstRun {
-    SaveConfig()
-    ShowMenu()
-    TrayTip("Press " PrettyKey(Keybinds["Menu"]) " any time to open the menu.", APP_NAME " is running")
+if FileExist(ICON_FILE) {
+    try TraySetIcon(ICON_FILE)
 }
-if (Settings["CheckUpdates"] = "1")
-    SetTimer(() => CheckForUpdates(false), -4000)
+if (Settings["AutoLaunch"] = "1")
+    ApplyAutoLaunch()
+SetTimer(FadeTick, 150)
+
+Watching := false
+for arg in A_Args
+    if (arg = "/watch")
+        Watching := true
+
+if (Watching && Settings["AutoLaunch"] = "1" && !GameRunning()) {
+    ; Started with Windows: wait quietly in the tray until the game launcher opens.
+    A_IconTip := APP_NAME " - waiting for " Settings["GameProcess"]
+    SetTimer(WatchForGame, 3000)
+} else
+    StartOverlay()
 return
+
+StartOverlay() {
+    RegisterHotkeys()
+    if FirstRun {
+        SaveConfig()
+        ShowMenu()
+        TrayTip("Press " PrettyKey(Keybinds["Menu"]) " any time to open the menu.", APP_NAME " is running")
+    }
+    if (Settings["CheckUpdates"] = "1")
+        SetTimer(() => CheckForUpdates(false), -4000)
+}
+
+; True while the game launcher (or any program listed in GameProcess) is running.
+GameRunning() {
+    for name in StrSplit(Settings["GameProcess"], ",") {
+        name := Trim(name)
+        if (name != "" && ProcessExist(name))
+            return true
+    }
+    return false
+}
+
+WatchForGame() {
+    if !GameRunning()
+        return
+    SetTimer(WatchForGame, 0)
+    A_IconTip := APP_NAME " " VERSION
+    StartOverlay()
+    TrayTip("Press " PrettyKey(Keybinds["Menu"]) " for the menu.", APP_NAME " is ready")
+}
+
+; Adds / removes the Windows start-up shortcut that starts the overlay in "wait for the game" mode.
+ApplyAutoLaunch() {
+    link := A_Startup "\Unora Overlay.lnk"
+    try {
+        if (Settings["AutoLaunch"] = "1") {
+            args := '"' A_ScriptFullPath '" /watch'
+            if FileExist(ICON_FILE)
+                FileCreateShortcut(A_AhkPath, link, A_ScriptDir, args, APP_NAME, ICON_FILE)
+            else
+                FileCreateShortcut(A_AhkPath, link, A_ScriptDir, args, APP_NAME)
+        } else if FileExist(link)
+            FileDelete(link)
+    }
+}
 
 ; ───────────────────────── Settings files ─────────────────────────
 
@@ -196,10 +253,27 @@ SetupTray() {
     A_IconTip := APP_NAME " " VERSION
 }
 
-OnAppExit(*) {
+OnAppExit(reason := "", *) {
     SaveGeometry()
     SaveMiniGeometry()
     SaveConfig()
+    CloseWebViews()
+    ; Skip AutoHotkey's own clean-up, which can free the browser objects in the wrong order and crash.
+    if (reason != "Reload")
+        DllCall("ExitProcess", "uint", 0)
+}
+
+; Shut the embedded browsers down in a safe order: event handlers first, then the controllers.
+CloseWebViews() {
+    global WvC, Wv, WvEvents, MiniC, MiniWv, MiniEvents
+    try WvEvents := []
+    try MiniEvents := []
+    try WvC.Close()
+    try MiniC.Close()
+    WvC := 0
+    Wv := 0
+    MiniC := 0
+    MiniWv := 0
 }
 
 ; ───────────────────────── Small GUI helpers ─────────────────────────
@@ -361,12 +435,38 @@ ApplyWindowSettings() {
         return
     onTop := (Settings["AlwaysOnTop"] = "1")
     WinSetAlwaysOnTop(onTop ? 1 : 0, MainGui)
-    op := Integer(Settings["Opacity"])
-    if (op >= 100)
-        WinSetTransparent("Off", MainGui)
-    else
-        WinSetTransparent(Round(op * 2.55), MainGui)
+    FadeTick(true)
     UpdatePinLabel()
+}
+
+; "Fade when not in use": a window is fully solid while the mouse is over it or it is the
+; active window, and fades to the Options level otherwise (so the game shows through).
+FadeLevels := Map()    ; last transparency applied per window, to avoid needless calls
+
+FadeTick(force := false) {
+    global FadeLevels
+    if force
+        FadeLevels := Map()
+    op := Integer(Settings["Opacity"])
+    MouseGetPos(, , &under)
+    for g in [MainGui, MiniGui] {
+        if !g
+            continue
+        hwnd := g.Hwnd
+        if !DllCall("IsWindowVisible", "ptr", hwnd)
+            continue
+        solid := (op >= 100) || (under = hwnd) || WinActive("ahk_id " hwnd)
+        level := solid ? 255 : Round(op * 2.55)
+        if (FadeLevels.Has(hwnd) && FadeLevels[hwnd] = level)
+            continue
+        FadeLevels[hwnd] := level
+        try {
+            if (level >= 255)
+                WinSetTransparent("Off", "ahk_id " hwnd)
+            else
+                WinSetTransparent(level, "ahk_id " hwnd)
+        }
+    }
 }
 
 UpdatePinLabel() {
@@ -482,6 +582,7 @@ ShowMini() {
         opts := "x" x " y" y " " opts
     MiniGui.Show(opts)
     WinSetAlwaysOnTop((Settings["AlwaysOnTop"] = "1") ? 1 : 0, MiniGui)
+    FadeTick(true)
     EnsureMini()
 }
 
@@ -760,7 +861,7 @@ ShowOptions(*) {
         if (name = Settings["Theme"])
             idx := i
     ddlTheme := g.AddDropDownList("x+8 yp w200 Choose" idx, THEME_LABELS)
-    g.AddText("xm y+8 w250 h24 +0x200", "Window opacity")
+    g.AddText("xm y+8 w250 h24 +0x200", "Fade when not in use (100 = off)")
     sldOpacity := g.AddSlider("x+8 yp w200 h24 Range40-100 TickInterval10 ToolTip", Integer(Settings["Opacity"]))
     zoomVals := [80, 90, 100, 110, 125, 150]
     zoomLabels := ["80%", "90%", "100%", "110%", "125%", "150%"]
@@ -775,13 +876,19 @@ ShowOptions(*) {
     topOpt := (Settings["AlwaysOnTop"] = "1") ? "Checked" : ""
     cbTop := g.AddCheckbox("xm y+8 " topOpt, "Keep the wiki window on top of the game")
 
+    Section(g, "Game", th)
+    autoOpt := (Settings["AutoLaunch"] = "1") ? "Checked" : ""
+    cbAuto := g.AddCheckbox("xm y+8 " autoOpt, "Start automatically when " Settings["GameProcess"] " opens")
+    an := g.AddText("xm y+4 w480 c" th.muted, "Waits quietly in the tray after Windows starts. Change the program name in settings.cfg (GameProcess).")
+    an.SetFont("s8 c" th.muted)
+
     Section(g, "Updates", th)
     updOpt := (Settings["CheckUpdates"] = "1") ? "Checked" : ""
     cbUpd := g.AddCheckbox("xm y+8 " updOpt, "Check for a new version when the overlay starts")
     g.AddText("xm y+8 w300 h26 +0x200", "Installed version: " VERSION)
     MakeButton(g, "Check now", "x+8 yp w120 h26", (*) => CheckForUpdates(true), th)
 
-    MakeButton(g, "Save", "xm y+22 w110 h32", (*) => SaveOptions(g, hk, ddlTheme, sldOpacity, ddlZoom, zoomVals, cbTop, cbUpd), th)
+    MakeButton(g, "Save", "xm y+22 w110 h32", (*) => SaveOptions(g, hk, ddlTheme, sldOpacity, ddlZoom, zoomVals, cbTop, cbUpd, cbAuto), th)
     MakeButton(g, "Cancel", "x+8 yp w110 h32", (*) => g.Destroy(), th)
     MakeButton(g, "Reset keys", "x+8 yp w120 h32", (*) => ResetKeys(hk), th)
 
@@ -794,7 +901,7 @@ ResetKeys(hk) {
         hk[a.id].Value := a.key
 }
 
-SaveOptions(g, hk, ddlTheme, sldOpacity, ddlZoom, zoomVals, cbTop, cbUpd) {
+SaveOptions(g, hk, ddlTheme, sldOpacity, ddlZoom, zoomVals, cbTop, cbUpd, cbAuto) {
     keys := Map()
     seen := Map()
     seen.CaseSense := "Off"
@@ -820,6 +927,8 @@ SaveOptions(g, hk, ddlTheme, sldOpacity, ddlZoom, zoomVals, cbTop, cbUpd) {
         Settings["Zoom"] := zoomVals[zi]
     Settings["AlwaysOnTop"] := cbTop.Value ? "1" : "0"
     Settings["CheckUpdates"] := cbUpd.Value ? "1" : "0"
+    Settings["AutoLaunch"] := cbAuto.Value ? "1" : "0"
+    ApplyAutoLaunch()
     SaveConfig()
     RegisterHotkeys()
     ApplyTheme()
@@ -854,7 +963,7 @@ CheckForUpdates(manual := false) {
     latest := info["version"]
     if (VerCompare(latest, VERSION) <= 0) {
         if manual
-            MsgBox("You have the newest version (" VERSION ").", APP_NAME, "Iconi")
+            MsgBox("You have the newest version (" VERSION ").`n`nThe update server currently lists version " latest ".", APP_NAME, "Iconi")
         return
     }
     if (!manual && Settings["SkippedVersion"] = latest)
