@@ -1,6 +1,7 @@
 [
   {
     "name": "Delirium 1",
+    "image": "/images/abilities/Delirium%201.png",
     "class": "Plague Doctor",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -13,6 +14,7 @@
   },
   {
     "name": "Gangrene 1",
+    "image": "/images/abilities/Gangrene%201.png",
     "class": "Plague Doctor",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -25,6 +27,7 @@
   },
   {
     "name": "Inoculation 1",
+    "image": "/images/abilities/Inoculation%201.png",
     "class": "Plague Doctor",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -37,6 +40,7 @@
   },
   {
     "name": "Lance the Bubo 1",
+    "image": "/images/abilities/Lance%20the%20Bubo%201.png",
     "class": "Plague Doctor",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -49,6 +53,7 @@
   },
   {
     "name": "Leech Jar 1",
+    "image": "/images/abilities/Leech%20Jar%201.png",
     "class": "Plague Doctor",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -61,6 +66,7 @@
   },
   {
     "name": "Pestilence 1",
+    "image": "/images/abilities/Pestilence%201.png",
     "class": "Plague Doctor",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -73,6 +79,7 @@
   },
   {
     "name": "Plague Cloud 1",
+    "image": "/images/abilities/Plague%20Cloud%201.png",
     "class": "Plague Doctor",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -85,6 +92,7 @@
   },
   {
     "name": "Quarantine 1",
+    "image": "/images/abilities/Quarantine%201.png",
     "class": "Plague Doctor",
     "element": "",
     "levelRequirement": "Ab 12",
@@ -97,6 +105,7 @@
   },
   {
     "name": "Transfusion 1",
+    "image": "/images/abilities/Transfusion%201.png",
     "class": "Plague Doctor",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -109,6 +118,7 @@
   },
   {
     "name": "Triage 1",
+    "image": "/images/abilities/Triage%201.png",
     "class": "Plague Doctor",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -121,6 +131,7 @@
   },
   {
     "name": "Virulent Plague Cloud",
+    "image": "/images/abilities/Virulent%20Plague%20Cloud%201.png",
     "class": "Plague Doctor",
     "element": "",
     "levelRequirement": "Ab 1",

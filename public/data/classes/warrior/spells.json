@@ -1,6 +1,7 @@
 [
   {
     "name": "Battle Cry",
+    "image": "/images/abilities/Battle%20Cry.png",
     "class": "warrior",
     "levelRequirement": "11",
     "statRequirements": "5/3/3/9/4",
@@ -12,6 +13,7 @@
   },
   {
     "name": "Battle Frenzy",
+    "image": "/images/abilities/Battle%20Frenzy.png",
     "class": "warrior",
     "levelRequirement": "Master (Pure)",
     "statRequirements": "3/3/3/3/3",
@@ -23,6 +25,7 @@
   },
   {
     "name": "Fury",
+    "image": "/images/abilities/Fury.png",
     "class": "warrior",
     "levelRequirement": "Master",
     "statRequirements": "3/3/3/3/3",
@@ -34,6 +37,7 @@
   },
   {
     "name": "Inferno",
+    "image": "/images/abilities/Inferno.png",
     "class": "warrior",
     "levelRequirement": "Master (Pure)",
     "statRequirements": "3/3/3/3/3",
@@ -45,6 +49,7 @@
   },
   {
     "name": "War Cry",
+    "image": "/images/abilities/War%20Cry.png",
     "class": "warrior",
     "levelRequirement": "50",
     "statRequirements": "35/3/6/15/25",
@@ -56,6 +61,7 @@
   },
   {
     "name": "Whirlwind",
+    "image": "/images/abilities/Whirlwind.png",
     "class": "warrior",
     "levelRequirement": "60",
     "statRequirements": "52/15/7/33/27",
@@ -67,6 +73,7 @@
   },
   {
     "name": "Wrath",
+    "image": "/images/abilities/Wrath.png",
     "class": "warrior",
     "levelRequirement": "11",
     "statRequirements": "5/3/5/5/5",

@@ -1,6 +1,7 @@
 [
   {
     "name": "Adaptive Skin",
+    "image": "/images/abilities/Adaptive%20Skin.png",
     "class": "monk",
     "levelRequirement": "Master",
     "statRequirements": "3/3/3/3/3",
@@ -12,6 +13,7 @@
   },
   {
     "name": "ao dall",
+    "image": "/images/abilities/ao%20dall.png",
     "class": "monk",
     "levelRequirement": "41",
     "statRequirements": "3/10/12/25/5",
@@ -23,6 +25,7 @@
   },
   {
     "name": "ao poison",
+    "image": "/images/abilities/ao%20poison.png",
     "class": "monk",
     "levelRequirement": "21",
     "statRequirements": "3/8/9/15/3",
@@ -34,6 +37,7 @@
   },
   {
     "name": "Cat's Hearing",
+    "image": "/images/abilities/Cat's%20Hearing.png",
     "class": "monk",
     "levelRequirement": "80",
     "statRequirements": "35/15/12/60/35",
@@ -45,6 +49,7 @@
   },
   {
     "name": "Cure Ailments",
+    "image": "/images/abilities/Cure%20Ailments.png",
     "class": "monk",
     "levelRequirement": "Master",
     "statRequirements": "3/3/3/3/3",
@@ -56,6 +61,7 @@
   },
   {
     "name": "Dodge",
+    "image": "/images/abilities/Dodge.png",
     "class": "monk",
     "levelRequirement": "5",
     "statRequirements": "5/3/3/8/3",
@@ -67,6 +73,7 @@
   },
   {
     "name": "Earthen Stance",
+    "image": "/images/abilities/Earthen%20Stance.png",
     "class": "monk",
     "levelRequirement": "60",
     "statRequirements": "25/5/5/44/16",
@@ -78,6 +85,7 @@
   },
   {
     "name": "Evasion",
+    "image": "/images/abilities/Evasion.png",
     "class": "monk",
     "levelRequirement": "Master (Pure)",
     "statRequirements": "3/3/3/3/3",
@@ -89,6 +97,7 @@
   },
   {
     "name": "Flame Stance",
+    "image": "/images/abilities/Flame%20Stance.png",
     "class": "monk",
     "levelRequirement": "Master",
     "statRequirements": "180/25/30/110/50",
@@ -100,6 +109,7 @@
   },
   {
     "name": "Gentle Touch",
+    "image": "/images/abilities/Gentle%20Touch.png",
     "class": "monk",
     "levelRequirement": "22",
     "statRequirements": "3/3/13/19/4",
@@ -111,6 +121,7 @@
   },
   {
     "name": "Goad",
+    "image": "/images/abilities/Goad.png",
     "class": "monk",
     "levelRequirement": "15",
     "statRequirements": "7/3/8/15/8",
@@ -122,6 +133,7 @@
   },
   {
     "name": "Howl",
+    "image": "/images/abilities/Howl.png",
     "class": "monk",
     "levelRequirement": "41",
     "statRequirements": "23/3/12/38/10",
@@ -133,6 +145,7 @@
   },
   {
     "name": "Inner Fire",
+    "image": "/images/abilities/Inner%20Fire.png",
     "class": "monk",
     "levelRequirement": "11",
     "statRequirements": "3/3/8/9/3",
@@ -144,6 +157,7 @@
   },
   {
     "name": "Last Stand",
+    "image": "/images/abilities/Last%20Stand.png",
     "class": "monk",
     "levelRequirement": "40",
     "statRequirements": "23/5/8/36/17",
@@ -155,6 +169,7 @@
   },
   {
     "name": "Lightning Stance",
+    "image": "/images/abilities/Lightning%20Stance.png",
     "class": "monk",
     "levelRequirement": "Master",
     "statRequirements": "95/40/31/160/55",
@@ -166,6 +181,7 @@
   },
   {
     "name": "Mist Stance",
+    "image": "/images/abilities/Mist%20Stance.png",
     "class": "monk",
     "levelRequirement": "60",
     "statRequirements": "19/8/15/40/15",
@@ -177,6 +193,7 @@
   },
   {
     "name": "Phoenix Grasp",
+    "image": "/images/abilities/Phoenix%20Grasp.png",
     "class": "monk",
     "levelRequirement": "Master",
     "statRequirements": "3/3/3/3/3",
@@ -188,6 +205,7 @@
   },
   {
     "name": "Roar",
+    "image": "/images/abilities/Roar.png",
     "class": "monk",
     "levelRequirement": "Master",
     "statRequirements": "3/3/3/3/3",
@@ -199,6 +217,7 @@
   },
   {
     "name": "Rock Stance",
+    "image": "/images/abilities/Rock%20Stance.png",
     "class": "monk",
     "levelRequirement": "Master",
     "statRequirements": "115/25/30/180/65",
@@ -210,6 +229,7 @@
   },
   {
     "name": "Smoke Stance",
+    "image": "/images/abilities/Smoke%20Stance.png",
     "class": "monk",
     "levelRequirement": "60",
     "statRequirements": "24/6/6/38/24",
@@ -221,6 +241,7 @@
   },
   {
     "name": "Taunt",
+    "image": "/images/abilities/Taunt.png",
     "class": "monk",
     "levelRequirement": "3",
     "statRequirements": "3/3/3/3/3",
@@ -232,6 +253,7 @@
   },
   {
     "name": "Thunder Stance",
+    "image": "/images/abilities/Thunder%20Stance.png",
     "class": "monk",
     "levelRequirement": "60",
     "statRequirements": "24/5/5/51/15",
@@ -243,6 +265,7 @@
   },
   {
     "name": "Tide Stance",
+    "image": "/images/abilities/Tide%20Stance.png",
     "class": "monk",
     "levelRequirement": "Master",
     "statRequirements": "100/50/50/175/75",

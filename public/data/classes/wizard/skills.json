@@ -1,6 +1,7 @@
 [
   {
     "name": "Assail",
+    "image": "/images/abilities/Assail.png",
     "class": "wizard",
     "levelRequirement": "1",
     "statRequirements": "3/3/3/3/3",
@@ -12,6 +13,7 @@
   },
   {
     "name": "Energy Bolt",
+    "image": "/images/abilities/Energy%20Bolt.png",
     "class": "wizard",
     "levelRequirement": "1",
     "statRequirements": "3/3/3/3/3",
@@ -23,6 +25,7 @@
   },
   {
     "name": "Inspect",
+    "image": "/images/abilities/Inspect.png",
     "class": "wizard",
     "levelRequirement": "3",
     "statRequirements": "3/5/5/3/3",
@@ -34,6 +37,7 @@
   },
   {
     "name": "nis",
+    "image": "/images/abilities/nis.png",
     "class": "wizard",
     "levelRequirement": "3",
     "statRequirements": "3/5/5/3/3",
@@ -45,6 +49,7 @@
   },
   {
     "name": "Rumination",
+    "image": "/images/abilities/Rumination.png",
     "class": "wizard",
     "levelRequirement": "11",
     "statRequirements": "3/10/10/5/3",
@@ -56,6 +61,7 @@
   },
   {
     "name": "Throw",
+    "image": "/images/abilities/Throw.png",
     "class": "wizard",
     "levelRequirement": "50",
     "statRequirements": "5/9/5/3/3",
@@ -67,6 +73,7 @@
   },
   {
     "name": "Uninterrupted Channeling",
+    "image": "/images/abilities/Uninterrupted%20Channeling.png",
     "class": "wizard",
     "levelRequirement": "Master",
     "statRequirements": "3/3/3/3/3",

@@ -1,6 +1,7 @@
 [
   {
     "name": "Air Punch",
+    "image": "/images/abilities/Air%20Punch.png",
     "class": "monk",
     "levelRequirement": "11",
     "statRequirements": "8/3/3/13/9",
@@ -12,6 +13,7 @@
   },
   {
     "name": "Ambush",
+    "image": "/images/abilities/Ambush.png",
     "class": "monk",
     "levelRequirement": "11",
     "statRequirements": "6/3/3/11/10",
@@ -23,6 +25,7 @@
   },
   {
     "name": "Assail",
+    "image": "/images/abilities/Assail.png",
     "class": "monk",
     "levelRequirement": "1",
     "statRequirements": "3/3/3/3/3",
@@ -34,6 +37,7 @@
   },
   {
     "name": "Battlefield Sweep",
+    "image": "/images/abilities/Battlefield%20Sweep.png",
     "class": "monk",
     "levelRequirement": "Master (Pure)",
     "statRequirements": "150/40/40/215/100",
@@ -45,6 +49,7 @@
   },
   {
     "name": "Chaos Fist",
+    "image": "/images/abilities/Chaos%20Fist.png",
     "class": "monk",
     "levelRequirement": "Master (Pure)",
     "statRequirements": "95/25/3/120/35",
@@ -56,6 +61,7 @@
   },
   {
     "name": "Claw Fist",
+    "image": "/images/abilities/Claw%20Fist.png",
     "class": "monk",
     "levelRequirement": "50",
     "statRequirements": "24/14/3/32/18",
@@ -67,6 +73,7 @@
   },
   {
     "name": "Cloudfist",
+    "image": "/images/abilities/Cloudfist.png",
     "class": "monk",
     "levelRequirement": "Master",
     "statRequirements": "75/25/20/125/40",
@@ -78,6 +85,7 @@
   },
   {
     "name": "Crimson Moon",
+    "image": "/images/abilities/Crimson%20Moon.png",
     "class": "monk",
     "levelRequirement": "Master",
     "statRequirements": "120/25/20/150/100",
@@ -89,6 +97,7 @@
   },
   {
     "name": "Double Punch",
+    "image": "/images/abilities/Double%20Punch.png",
     "class": "monk",
     "levelRequirement": "20",
     "statRequirements": "13/3/3/19/9",
@@ -100,6 +109,7 @@
   },
   {
     "name": "Dragon Breath",
+    "image": "/images/abilities/Dragon%20Breath.png",
     "class": "monk",
     "levelRequirement": "71",
     "statRequirements": "46/9/9/50/20",
@@ -111,6 +121,7 @@
   },
   {
     "name": "Dragon Strike",
+    "image": "/images/abilities/Dragon%20Strike.png",
     "class": "monk",
     "levelRequirement": "Master (Pure)",
     "statRequirements": "80/25/20/120/60",
@@ -122,6 +133,7 @@
   },
   {
     "name": "Eagle Strike",
+    "image": "/images/abilities/Eagle%20Strike.png",
     "class": "monk",
     "levelRequirement": "44",
     "statRequirements": "20/13/5/33/9",
@@ -133,6 +145,7 @@
   },
   {
     "name": "Earth Punch",
+    "image": "/images/abilities/Earth%20Punch.png",
     "class": "monk",
     "levelRequirement": "11",
     "statRequirements": "9/3/3/16/6",
@@ -144,6 +157,7 @@
   },
   {
     "name": "Fire Punch",
+    "image": "/images/abilities/Fire%20Punch.png",
     "class": "monk",
     "levelRequirement": "11",
     "statRequirements": "13/3/3/13/7",
@@ -155,6 +169,7 @@
   },
   {
     "name": "Flurry of Blows",
+    "image": "/images/abilities/Flurry%20of%20Blows.png",
     "class": "monk",
     "levelRequirement": "Master",
     "statRequirements": "80/10/10/100/40",
@@ -166,6 +181,7 @@
   },
   {
     "name": "High Kick",
+    "image": "/images/abilities/High%20Kick.png",
     "class": "monk",
     "levelRequirement": "9",
     "statRequirements": "7/3/3/9/4",
@@ -177,6 +193,7 @@
   },
   {
     "name": "Inspect",
+    "image": "/images/abilities/Inspect.png",
     "class": "monk",
     "levelRequirement": "3",
     "statRequirements": "3/5/5/3/3",
@@ -188,6 +205,7 @@
   },
   {
     "name": "Kick",
+    "image": "/images/abilities/Kick.png",
     "class": "monk",
     "levelRequirement": "3",
     "statRequirements": "3/3/3/3/3",
@@ -199,6 +217,7 @@
   },
   {
     "name": "Leverage Kick",
+    "image": "/images/abilities/Leverage%20Kick.png",
     "class": "monk",
     "levelRequirement": "Master",
     "statRequirements": "3/3/3/3/3",
@@ -210,6 +229,7 @@
   },
   {
     "name": "Look",
+    "image": "/images/abilities/Look.png",
     "class": "monk",
     "levelRequirement": "3",
     "statRequirements": "3/5/5/3/3",
@@ -221,6 +241,7 @@
   },
   {
     "name": "Mantis Kick",
+    "image": "/images/abilities/Mantis%20Kick.png",
     "class": "monk",
     "levelRequirement": "41",
     "statRequirements": "27/7/7/35/11",
@@ -232,6 +253,7 @@
   },
   {
     "name": "Molten Strike",
+    "image": "/images/abilities/Molten%20Strike.png",
     "class": "monk",
     "levelRequirement": "Master",
     "statRequirements": "60/15/10/140/50",
@@ -243,6 +265,7 @@
   },
   {
     "name": "nis",
+    "image": "/images/abilities/nis.png",
     "class": "monk",
     "levelRequirement": "3",
     "statRequirements": "3/5/5/3/3",
@@ -254,6 +277,7 @@
   },
   {
     "name": "Phoenix Strike",
+    "image": "/images/abilities/Phoenix%20Strike.png",
     "class": "monk",
     "levelRequirement": "88",
     "statRequirements": "45/14/8/59/29",
@@ -265,6 +289,7 @@
   },
   {
     "name": "Poison Punch",
+    "image": "/images/abilities/Poison%20Punch.png",
     "class": "monk",
     "levelRequirement": "11",
     "statRequirements": "6/9/5/11/10",
@@ -276,6 +301,7 @@
   },
   {
     "name": "Punch",
+    "image": "/images/abilities/Punch.png",
     "class": "monk",
     "levelRequirement": "1",
     "statRequirements": "3/3/3/3/3",
@@ -287,6 +313,7 @@
   },
   {
     "name": "Rapid Punch",
+    "image": "/images/abilities/Rapid%20Punch.png",
     "class": "monk",
     "levelRequirement": "71",
     "statRequirements": "49/11/11/56/27",
@@ -298,6 +325,7 @@
   },
   {
     "name": "Relentless Draw",
+    "image": "/images/abilities/Relentless%20Draw.png",
     "class": "monk",
     "levelRequirement": "Master",
     "statRequirements": "100/25/20/150/70",
@@ -309,6 +337,7 @@
   },
   {
     "name": "Roundhouse Kick",
+    "image": "/images/abilities/Roundhouse%20Kick.png",
     "class": "monk",
     "levelRequirement": "33",
     "statRequirements": "14/6/4/31/15",
@@ -320,6 +349,7 @@
   },
   {
     "name": "Seismic Kick",
+    "image": "/images/abilities/Seismic%20Kick.png",
     "class": "monk",
     "levelRequirement": "71",
     "statRequirements": "40/7/7/59/20",
@@ -331,6 +361,7 @@
   },
   {
     "name": "Seismic Slam",
+    "image": "/images/abilities/Seismic%20Slam.png",
     "class": "monk",
     "levelRequirement": "Master",
     "statRequirements": "80/15/10/135/60",
@@ -342,6 +373,7 @@
   },
   {
     "name": "Soulful Touch",
+    "image": "/images/abilities/Soulful%20Touch.png",
     "class": "monk",
     "levelRequirement": "Master",
     "statRequirements": "3/3/3/3/3",
@@ -353,6 +385,7 @@
   },
   {
     "name": "Tempest Kick",
+    "image": "/images/abilities/Tempest%20Kick.png",
     "class": "monk",
     "levelRequirement": "71",
     "statRequirements": "27/9/9/53/39",
@@ -364,6 +397,7 @@
   },
   {
     "name": "Throw",
+    "image": "/images/abilities/Throw.png",
     "class": "monk",
     "levelRequirement": "50",
     "statRequirements": "5/9/5/3/3",
@@ -375,6 +409,7 @@
   },
   {
     "name": "Tsunami Kick",
+    "image": "/images/abilities/Tsunami%20Kick.png",
     "class": "monk",
     "levelRequirement": "71",
     "statRequirements": "29/21/12/49/26",
@@ -386,6 +421,7 @@
   },
   {
     "name": "Water Punch",
+    "image": "/images/abilities/Water%20Punch.png",
     "class": "monk",
     "levelRequirement": "11",
     "statRequirements": "9/7/5/12/7",
@@ -397,6 +433,7 @@
   },
   {
     "name": "Wavebreaker",
+    "image": "/images/abilities/Wavebreaker.png",
     "class": "monk",
     "levelRequirement": "Master",
     "statRequirements": "80/50/50/150/80",
@@ -408,6 +445,7 @@
   },
   {
     "name": "Wolf Fang Fist",
+    "image": "/images/abilities/Wolf%20Fang%20Fist.png",
     "class": "monk",
     "levelRequirement": "77",
     "statRequirements": "58/24/11/33/25",

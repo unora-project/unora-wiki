@@ -10,7 +10,7 @@
     "prerequisites": "-",
     "learningLocation": "Becoming Berserker",
     "description": "Basic attack that swings in all directions.",
-    "image": "/images/abilities/Bloodbath 1.png"
+    "image": "/images/abilities/Bloodbath%201.png"
   },
   {
     "name": "Bloodwave 1",
@@ -23,7 +23,7 @@
     "prerequisites": "-",
     "learningLocation": "Becoming Berserker",
     "description": "Cascading wave torn out of your own blood striking everything in a cone three tiles ahead.  Costs 8% of your maximum health.",
-    "image": "/images/abilities/Bloodwave 1.png"
+    "image": "/images/abilities/Bloodwave%201.png"
   },
   {
     "name": "Carnage 1",
@@ -36,7 +36,7 @@
     "prerequisites": "-",
     "learningLocation": "Tarlok (Noam)",
     "description": "Wide swing that widens by one tile for each rank of rage you hold, and strikes harder for each enemy pressed against you.  Costs 6% of your maximum health.",
-    "image": "/images/abilities/Carnage 1.png"
+    "image": "/images/abilities/Carnage%201.png"
   },
   {
     "name": "Crimson Bloodbath 1",
@@ -49,7 +49,7 @@
     "prerequisites": "-",
     "learningLocation": "Becoming Berserker",
     "description": "Basic attack that strikes in every direction.  Pure Only.",
-    "image": "/images/abilities/Crimson Bloodbath 1.png"
+    "image": "/images/abilities/Crimson%20Bloodbath%201.png"
   },
   {
     "name": "Cyclone Blade 1",
@@ -62,7 +62,7 @@
     "prerequisites": "-",
     "learningLocation": "Becoming Berserker",
     "description": "Vortex of blades that cascades inward from 3 tiles away.  Pulls every enemy, roots and shreds them.",
-    "image": "/images/abilities/Cyclone Blade 1.png"
+    "image": "/images/abilities/Cyclone%20Blade%201.png"
   },
   {
     "name": "Duneswipe 1",
@@ -75,7 +75,7 @@
     "prerequisites": "-",
     "learningLocation": "Tarlok (Noam)",
     "description": "Sweeping strike that hits all tiles directly beside you.  Costs 4% of your maximum health.",
-    "image": "/images/abilities/Duneswipe 1.png"
+    "image": "/images/abilities/Duneswipe%201.png"
   },
   {
     "name": "Rend 1",
@@ -88,7 +88,7 @@
     "prerequisites": "-",
     "learningLocation": "Becoming Berserker",
     "description": "Strikes every enemy in a line up to 4 tiles away.  Costs 5% of your maximum health.",
-    "image": "/images/abilities/Rend 1.png"
+    "image": "/images/abilities/Rend%201.png"
   },
   {
     "name": "Strikedown 1",
@@ -101,7 +101,7 @@
     "prerequisites": "-",
     "learningLocation": "Tarlok (Noam)",
     "description": "Strike in a line up to 3 tiles in front of you.  Costs 4% of your maximum health.",
-    "image": "/images/abilities/Strikedown 1.png"
+    "image": "/images/abilities/Strikedown%201.png"
   },
   {
     "name": "Tempest Cyclone Blade",
@@ -114,7 +114,7 @@
     "prerequisites": "-",
     "learningLocation": "Becoming Berserker",
     "description": "Vortex of blades that cascades inward from 3 tiles away.  Pulls every enemy, roots and shreds them.  Pure Only.",
-    "image": "/images/abilities/Tempest Cyclone Blade 1.png"
+    "image": "/images/abilities/Tempest%20Cyclone%20Blade%201.png"
   },
   {
     "name": "Unleash Rage 1",
@@ -127,6 +127,6 @@
     "prerequisites": "-",
     "learningLocation": "Tarlok (Noam)",
     "description": "Empty your rage into everything around you, dealing more damage and increased range based on rage spent.  Also strikes harder for each enemy pressed up against you.",
-    "image": "/images/abilities/Unleash Rage.png"
+    "image": "/images/abilities/Unleash%20Rage.png"
   }
 ]

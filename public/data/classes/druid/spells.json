@@ -1,6 +1,7 @@
 [
   {
     "name": "Ancient Grove 1",
+    "image": "/images/abilities/Ancient%20Grove%201.png",
     "class": "Druid",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -13,6 +14,7 @@
   },
   {
     "name": "Ashen Pull 1",
+    "image": "/images/abilities/Ashen%20Pull%201.png",
     "class": "Druid",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -25,6 +27,7 @@
   },
   {
     "name": "Barkskin",
+    "image": "/images/abilities/Barkskin%201.png",
     "class": "Druid",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -37,6 +40,7 @@
   },
   {
     "name": "Briarcoat 1",
+    "image": "/images/abilities/Briarcoat%201.png",
     "class": "Druid",
     "element": "",
     "levelRequirement": "Ab 3",
@@ -49,6 +53,7 @@
   },
   {
     "name": "Cleansing Rain 1",
+    "image": "/images/abilities/Cleansing%20Rain%201.png",
     "class": "Druid",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -61,6 +66,7 @@
   },
   {
     "name": "Defiance of Heaven",
+    "image": "/images/abilities/Defiance%20of%20Heaven%201.png",
     "class": "Druid",
     "element": "",
     "levelRequirement": "Ab 12",
@@ -73,6 +79,7 @@
   },
   {
     "name": "Heart of the Grove 1",
+    "image": "/images/abilities/Heart%20of%20the%20Grove%201.png",
     "class": "Druid",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -85,6 +92,7 @@
   },
   {
     "name": "Seething Hatred 1",
+    "image": "/images/abilities/Seething%20Hatred%201.png",
     "class": "Druid",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -97,6 +105,7 @@
   },
   {
     "name": "Serene Touch 1",
+    "image": "/images/abilities/Serene%20Touch%201.png",
     "class": "Druid",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -109,6 +118,7 @@
   },
   {
     "name": "Thornbound 1",
+    "image": "/images/abilities/Thornbound%201.png",
     "class": "Druid",
     "element": "",
     "levelRequirement": "Ab 10",
@@ -121,6 +131,7 @@
   },
   {
     "name": "Verdant Grove 1",
+    "image": "/images/abilities/Verdant%20Grove%201.png",
     "class": "Druid",
     "element": "",
     "levelRequirement": "Ab 1",

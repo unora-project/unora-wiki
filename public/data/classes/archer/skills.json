@@ -1,6 +1,7 @@
 [
   {
     "name": "Arrow Shot 1",
+    "image": "/images/abilities/Arrow%20Shot%201.png",
     "class": "Archer",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -25,6 +26,7 @@
   },
   {
     "name": "Disengage 1",
+    "image": "/images/abilities/Disengage%201.png",
     "class": "Archer",
     "element": "",
     "levelRequirement": "Ab 5",
@@ -37,6 +39,7 @@
   },
   {
     "name": "Elemental Sight 1",
+    "image": "/images/abilities/Elemental%20Sight%201.png",
     "class": "Archer",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -49,6 +52,7 @@
   },
   {
     "name": "Fading Shot 1",
+    "image": "/images/abilities/Fading%20Shot%201.png",
     "class": "Archer",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -61,6 +65,7 @@
   },
   {
     "name": "Ghost Step 1",
+    "image": "/images/abilities/Ghost%20Step%201.png",
     "class": "Archer",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -73,6 +78,7 @@
   },
   {
     "name": "Hunter's Mark 1",
+    "image": "/images/abilities/Hunter's%20Mark%201.png",
     "class": "Archer",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -85,6 +91,7 @@
   },
   {
     "name": "Killing Shot 1",
+    "image": "/images/abilities/Killing%20Shot%201.png",
     "class": "Archer",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -97,6 +104,7 @@
   },
   {
     "name": "Sidestep 1",
+    "image": "/images/abilities/Sidestep%201.png",
     "class": "Archer",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -109,6 +117,7 @@
   },
   {
     "name": "Siphoning Shot 1",
+    "image": "/images/abilities/Siphoning%20Shot%201.png",
     "class": "Archer",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -121,6 +130,7 @@
   },
   {
     "name": "Snipe 1",
+    "image": "/images/abilities/Snipe%201.png",
     "class": "Archer",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -133,6 +143,7 @@
   },
   {
     "name": "Splitting Shot 1",
+    "image": "/images/abilities/Splitting%20Shot%201.png",
     "class": "Archer",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -145,6 +156,7 @@
   },
   {
     "name": "Steady Aim 1",
+    "image": "/images/abilities/Steady%20Aim%201.png",
     "class": "Archer",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -157,6 +169,7 @@
   },
   {
     "name": "Triple Shot 1",
+    "image": "/images/abilities/Triple%20Shot%201.png",
     "class": "Archer",
     "element": "",
     "levelRequirement": "Ab 1",

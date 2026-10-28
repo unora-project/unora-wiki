@@ -1,6 +1,7 @@
 [
   {
     "name": "ao ard cradh",
+    "image": "/images/abilities/ao%20ard%20cradh.png",
     "class": "priest",
     "levelRequirement": "81",
     "statRequirements": "3/48/78/6/3",
@@ -12,6 +13,7 @@
   },
   {
     "name": "ao beag cradh",
+    "image": "/images/abilities/ao%20beag%20cradh.png",
     "class": "priest",
     "levelRequirement": "11",
     "statRequirements": "3/4/11/3/3",
@@ -23,6 +25,7 @@
   },
   {
     "name": "ao cradh",
+    "image": "/images/abilities/ao%20cradh.png",
     "class": "priest",
     "levelRequirement": "20",
     "statRequirements": "3/10/30/3/3",
@@ -34,6 +37,7 @@
   },
   {
     "name": "ao dall",
+    "image": "/images/abilities/ao%20dall.png",
     "class": "priest",
     "levelRequirement": "11",
     "statRequirements": "3/15/20/7/5",
@@ -45,6 +49,7 @@
   },
   {
     "name": "ao dia cradh",
+    "image": "/images/abilities/ao%20dia%20cradh.png",
     "class": "priest",
     "levelRequirement": "Master (Light)",
     "statRequirements": "3/3/3/3/3",
@@ -56,6 +61,7 @@
   },
   {
     "name": "ao mor cradh",
+    "image": "/images/abilities/ao%20mor%20cradh.png",
     "class": "priest",
     "levelRequirement": "60",
     "statRequirements": "3/20/60/3/3",
@@ -67,6 +73,7 @@
   },
   {
     "name": "ao poison",
+    "image": "/images/abilities/ao%20poison.png",
     "class": "priest",
     "levelRequirement": "11",
     "statRequirements": "3/5/11/3/3",
@@ -78,6 +85,7 @@
   },
   {
     "name": "ao suain",
+    "image": "/images/abilities/ao%20suain.png",
     "class": "priest",
     "levelRequirement": "71",
     "statRequirements": "5/38/70/13/5",
@@ -89,6 +97,7 @@
   },
   {
     "name": "ard ioc",
+    "image": "/images/abilities/ard%20ioc.png",
     "class": "priest",
     "levelRequirement": "80",
     "statRequirements": "3/36/74/3/3",
@@ -100,6 +109,7 @@
   },
   {
     "name": "ard naomh aite",
+    "image": "/images/abilities/ard%20naomh%20aite.png",
     "class": "priest",
     "levelRequirement": "60",
     "statRequirements": "5/40/55/20/6",
@@ -111,6 +121,7 @@
   },
   {
     "name": "armachd",
+    "image": "/images/abilities/armachd.png",
     "class": "priest",
     "levelRequirement": "5",
     "statRequirements": "3/5/7/4/3",
@@ -122,6 +133,7 @@
   },
   {
     "name": "Aura of Blessing",
+    "image": "/images/abilities/Aura%20of%20Blessing.png",
     "class": "priest",
     "levelRequirement": "Master (Light)",
     "statRequirements": "3/3/3/3/3",
@@ -133,6 +145,7 @@
   },
   {
     "name": "Aura of Torment",
+    "image": "/images/abilities/Aura%20of%20Torment.png",
     "class": "priest",
     "levelRequirement": "Master (Dark)",
     "statRequirements": "3/3/3/3/3",
@@ -144,6 +157,7 @@
   },
   {
     "name": "beag ioc comlha",
+    "image": "/images/abilities/beag%20ioc%20comlha.png",
     "class": "priest",
     "levelRequirement": "11",
     "statRequirements": "3/3/10/3/3",
@@ -155,6 +169,7 @@
   },
   {
     "name": "beag ioc",
+    "image": "/images/abilities/beag%20ioc.png",
     "class": "priest",
     "levelRequirement": "3",
     "statRequirements": "3/3/5/3/3",
@@ -166,6 +181,7 @@
   },
   {
     "name": "beag naomh aite",
+    "image": "/images/abilities/beag%20naomh%20aite.png",
     "class": "priest",
     "levelRequirement": "5",
     "statRequirements": "3/3/5/3/3",
@@ -177,6 +193,7 @@
   },
   {
     "name": "beag pramh",
+    "image": "/images/abilities/beag%20pramh.png",
     "class": "priest",
     "levelRequirement": "90",
     "statRequirements": "3/64/58/10/15",
@@ -188,6 +205,7 @@
   },
   {
     "name": "beannaich",
+    "image": "/images/abilities/beannaich.png",
     "class": "priest",
     "levelRequirement": "5",
     "statRequirements": "3/4/5/3/3",
@@ -199,6 +217,7 @@
   },
   {
     "name": "beothaich",
+    "image": "/images/abilities/beothaich.png",
     "class": "priest",
     "levelRequirement": "3",
     "statRequirements": "3/3/5/3/3",
@@ -210,6 +229,7 @@
   },
   {
     "name": "Bind",
+    "image": "/images/abilities/Bind.png",
     "class": "priest",
     "levelRequirement": "Master (Dark)",
     "statRequirements": "3/3/3/3/3",
@@ -221,6 +241,7 @@
   },
   {
     "name": "Dachaidh",
+    "image": "/images/abilities/Dachaidh.png",
     "class": "priest",
     "levelRequirement": "41",
     "statRequirements": "3/30/48/5/3",
@@ -232,6 +253,7 @@
   },
   {
     "name": "Dark Storm",
+    "image": "/images/abilities/Dark%20Storm.png",
     "class": "priest",
     "levelRequirement": "Master (Pure Dark)",
     "statRequirements": "5/90/132/10/15",
@@ -243,6 +265,7 @@
   },
   {
     "name": "Deo Lamh",
+    "image": "/images/abilities/Deo%20Lamh.png",
     "class": "priest",
     "levelRequirement": "Master (Light)",
     "statRequirements": "3/3/3/3/3",
@@ -254,6 +277,7 @@
   },
   {
     "name": "Deo Searg Meall",
+    "image": "/images/abilities/Deo%20Searg%20Meall.png",
     "class": "priest",
     "levelRequirement": "Master (Light)",
     "statRequirements": "25/150/180/30/20",
@@ -265,6 +289,7 @@
   },
   {
     "name": "Deo Searg",
+    "image": "/images/abilities/Deo%20Searg.png",
     "class": "priest",
     "levelRequirement": "Master (Light)",
     "statRequirements": "20/120/135/5/5",
@@ -276,6 +301,7 @@
   },
   {
     "name": "dinarcoli",
+    "image": "/images/abilities/dinarcoli.png",
     "class": "priest",
     "levelRequirement": "71",
     "statRequirements": "5/35/60/15/5",
@@ -287,6 +313,7 @@
   },
   {
     "name": "fas deireas",
+    "image": "/images/abilities/fas%20deireas.png",
     "class": "priest",
     "levelRequirement": "8",
     "statRequirements": "3/6/10/3/3",
@@ -298,6 +325,7 @@
   },
   {
     "name": "Heal Aura",
+    "image": "/images/abilities/Heal%20Aura.png",
     "class": "priest",
     "levelRequirement": "Master (Pure Light)",
     "statRequirements": "7/85/135/30/18",
@@ -309,6 +337,7 @@
   },
   {
     "name": "ioc comlha",
+    "image": "/images/abilities/ioc%20comlha.png",
     "class": "priest",
     "levelRequirement": "30",
     "statRequirements": "3/5/25/3/3",
@@ -320,6 +349,7 @@
   },
   {
     "name": "ioc",
+    "image": "/images/abilities/ioc.png",
     "class": "priest",
     "levelRequirement": "16",
     "statRequirements": "3/4/15/3/3",
@@ -331,6 +361,7 @@
   },
   {
     "name": "Miasma",
+    "image": "/images/abilities/Miasma.png",
     "class": "priest",
     "levelRequirement": "Master (Dark)",
     "statRequirements": "3/3/3/3/3",
@@ -342,6 +373,7 @@
   },
   {
     "name": "mor beannaich",
+    "image": "/images/abilities/mor%20beannaich.png",
     "class": "priest",
     "levelRequirement": "41",
     "statRequirements": "5/20/35/5/9",
@@ -353,6 +385,7 @@
   },
   {
     "name": "mor fas deireas",
+    "image": "/images/abilities/mor%20fas%20deireas.png",
     "class": "priest",
     "levelRequirement": "50",
     "statRequirements": "10/26/40/8/8",
@@ -364,6 +397,7 @@
   },
   {
     "name": "mor ioc comlha",
+    "image": "/images/abilities/mor%20ioc%20comlha.png",
     "class": "priest",
     "levelRequirement": "56",
     "statRequirements": "3/30/58/8/3",
@@ -375,6 +409,7 @@
   },
   {
     "name": "mor ioc",
+    "image": "/images/abilities/mor%20ioc.png",
     "class": "priest",
     "levelRequirement": "41",
     "statRequirements": "3/16/38/3/3",
@@ -386,6 +421,7 @@
   },
   {
     "name": "mor naomh aite",
+    "image": "/images/abilities/mor%20naomh%20aite.png",
     "class": "priest",
     "levelRequirement": "41",
     "statRequirements": "3/25/42/10/5",
@@ -397,6 +433,7 @@
   },
   {
     "name": "Motivate",
+    "image": "/images/abilities/Motivate.png",
     "class": "priest",
     "levelRequirement": "30",
     "statRequirements": "5/20/30/8/6",
@@ -408,6 +445,7 @@
   },
   {
     "name": "naomh aite",
+    "image": "/images/abilities/naomh%20aite.png",
     "class": "priest",
     "levelRequirement": "21",
     "statRequirements": "3/12/18/6/3",
@@ -419,6 +457,7 @@
   },
   {
     "name": "nuadhaich",
+    "image": "/images/abilities/nuadhaich.png",
     "class": "priest",
     "levelRequirement": "Master",
     "statRequirements": "6/75/110/21/5",
@@ -430,6 +469,7 @@
   },
   {
     "name": "poison",
+    "image": "/images/abilities/poison.png",
     "class": "priest",
     "levelRequirement": "20",
     "statRequirements": "3/16/15/3/5",
@@ -441,6 +481,7 @@
   },
   {
     "name": "pramh",
+    "image": "/images/abilities/pramh.png",
     "class": "priest",
     "levelRequirement": "Master",
     "statRequirements": "3/3/3/3/3",
@@ -452,6 +493,7 @@
   },
   {
     "name": "Prevent Affliction",
+    "image": "/images/abilities/Prevent%20Affliction.png",
     "class": "priest",
     "levelRequirement": "80",
     "statRequirements": "7/56/68/7/7",
@@ -463,6 +505,7 @@
   },
   {
     "name": "Quake",
+    "image": "/images/abilities/Quake.png",
     "class": "priest",
     "levelRequirement": "30",
     "statRequirements": "3/25/25/8/6",
@@ -474,6 +517,7 @@
   },
   {
     "name": "Regeneration",
+    "image": "/images/abilities/Regeneration.png",
     "class": "priest",
     "levelRequirement": "Master (Light)",
     "statRequirements": "3/3/3/3/3",
@@ -485,6 +529,7 @@
   },
   {
     "name": "Resurrect",
+    "image": "/images/abilities/Resurrect.png",
     "class": "priest",
     "levelRequirement": "Master (Pure)",
     "statRequirements": "3/3/3/3/3",
@@ -496,6 +541,7 @@
   },
   {
     "name": "Revive",
+    "image": "/images/abilities/Revive.png",
     "class": "priest",
     "levelRequirement": "41",
     "statRequirements": "3/22/40/5/5",
@@ -507,6 +553,7 @@
   },
   {
     "name": "Self Revive",
+    "image": "/images/abilities/Self%20Revive.png",
     "class": "priest",
     "levelRequirement": "41",
     "statRequirements": "3/22/40/18/3",
@@ -518,6 +565,7 @@
   },
   {
     "name": "Shadow Pact",
+    "image": "/images/abilities/Shadow%20Pact.png",
     "class": "priest",
     "levelRequirement": "Master (Dark)",
     "statRequirements": "3/3/3/3/3",
@@ -529,6 +577,7 @@
   },
   {
     "name": "Spark",
+    "image": "/images/abilities/Spark.png",
     "class": "priest",
     "levelRequirement": "3",
     "statRequirements": "3/3/3/3/3",
@@ -540,6 +589,7 @@
   },
   {
     "name": "Strioch Bais Meall",
+    "image": "/images/abilities/Strioch%20Bais%20Meall.png",
     "class": "priest",
     "levelRequirement": "Master (Dark)",
     "statRequirements": "30/120/180/25/15",
@@ -551,6 +601,7 @@
   },
   {
     "name": "Strioch Bais",
+    "image": "/images/abilities/Strioch%20Bais.png",
     "class": "priest",
     "levelRequirement": "Master (Dark)",
     "statRequirements": "15/90/120/12/8",
@@ -562,6 +613,7 @@
   },
   {
     "name": "suain",
+    "image": "/images/abilities/suain.png",
     "class": "priest",
     "levelRequirement": "71",
     "statRequirements": "12/46/60/5/9",
@@ -573,6 +625,7 @@
   },
   {
     "name": "Void Jolt",
+    "image": "/images/abilities/Void%20Jolt.png",
     "class": "priest",
     "levelRequirement": "Master (Dark)",
     "statRequirements": "3/3/3/3/3",
@@ -584,6 +637,7 @@
   },
   {
     "name": "Vortex",
+    "image": "/images/abilities/Vortex.png",
     "class": "priest",
     "levelRequirement": "Master",
     "statRequirements": "3/3/3/3/3",
@@ -595,6 +649,7 @@
   },
   {
     "name": "Zap",
+    "image": "/images/abilities/Zap.png",
     "class": "priest",
     "levelRequirement": "11",
     "statRequirements": "3/12/8/4/3",

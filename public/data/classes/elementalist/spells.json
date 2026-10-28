@@ -1,6 +1,7 @@
 [
   {
     "name": "Blink",
+    "image": "/images/abilities/Blink.png",
     "class": "Elementalist",
     "element": "",
     "levelRequirement": "Ab 12",
@@ -13,6 +14,7 @@
   },
   {
     "name": "Bubble Shield 1",
+    "image": "/images/abilities/Bubble%20Shield%201.png",
     "class": "Elementalist",
     "element": "Water",
     "levelRequirement": "Ab 1",
@@ -25,6 +27,7 @@
   },
   {
     "name": "Call Lightning 1",
+    "image": "/images/abilities/Call%20Lightning%201.png",
     "class": "Elementalist",
     "element": "Wind",
     "levelRequirement": "Ab 1",
@@ -37,6 +40,7 @@
   },
   {
     "name": "Cloudburst 1",
+    "image": "/images/abilities/Cloudburst%201.png",
     "class": "Elementalist",
     "element": "Water",
     "levelRequirement": "Ab 1",
@@ -49,6 +53,7 @@
   },
   {
     "name": "Cyclone 1",
+    "image": "/images/abilities/Cyclone%201.png",
     "class": "Elementalist",
     "element": "Wind",
     "levelRequirement": "Ab 1",
@@ -61,6 +66,7 @@
   },
   {
     "name": "Earth Barrier 1",
+    "image": "/images/abilities/Earth%20Barrier%201.png",
     "class": "Elementalist",
     "element": "Earth",
     "levelRequirement": "Ab 1",
@@ -73,6 +79,7 @@
   },
   {
     "name": "Ember Ward 1",
+    "image": "/images/abilities/Ember%20Ward%201.png",
     "class": "Elementalist",
     "element": "Fire",
     "levelRequirement": "Ab 1",
@@ -85,6 +92,7 @@
   },
   {
     "name": "Fire Wall 1",
+    "image": "/images/abilities/Fire%20Wall%201.png",
     "class": "Elementalist",
     "element": "Fire",
     "levelRequirement": "Ab 1",
@@ -97,6 +105,7 @@
   },
   {
     "name": "Galeform 1",
+    "image": "/images/abilities/Galeform%201.png",
     "class": "Elementalist",
     "element": "Wind",
     "levelRequirement": "Ab 1",
@@ -109,6 +118,7 @@
   },
   {
     "name": "Groo 1",
+    "image": "/images/abilities/Groo%201.png",
     "class": "Elementalist",
     "element": "Earth",
     "levelRequirement": "Ab 1",
@@ -121,6 +131,7 @@
   },
   {
     "name": "Ignis 1",
+    "image": "/images/abilities/Ignis%201.png",
     "class": "Elementalist",
     "element": "Fire",
     "levelRequirement": "Ab 1",
@@ -133,6 +144,7 @@
   },
   {
     "name": "Keeter 1",
+    "image": "/images/abilities/Keeter%201.png",
     "class": "Elementalist",
     "element": "Wind",
     "levelRequirement": "Ab 1",
@@ -145,6 +157,7 @@
   },
   {
     "name": "Meteor 1",
+    "image": "/images/abilities/Meteor%201.png",
     "class": "Elementalist",
     "element": "Fire",
     "levelRequirement": "Ab 1",
@@ -157,6 +170,7 @@
   },
   {
     "name": "Mud Wall 1",
+    "image": "/images/abilities/Mud%20Wall%201.png",
     "class": "Elementalist",
     "element": "Earth",
     "levelRequirement": "Ab 1",
@@ -169,6 +183,7 @@
   },
   {
     "name": "Nera 1",
+    "image": "/images/abilities/Nera%201.png",
     "class": "Elementalist",
     "element": "Water",
     "levelRequirement": "Ab 1",
@@ -181,6 +196,7 @@
   },
   {
     "name": "Proliferation 1",
+    "image": "/images/abilities/Proliferation%201.png",
     "class": "Elementalist",
     "element": "Fire",
     "levelRequirement": "Ab 1",
@@ -193,6 +209,7 @@
   },
   {
     "name": "Seismic Shift 1",
+    "image": "/images/abilities/Seismic%20Shift%201.png",
     "class": "Elementalist",
     "element": "Earth",
     "levelRequirement": "Ab 1",
@@ -205,6 +222,7 @@
   },
   {
     "name": "Static Field 1",
+    "image": "/images/abilities/Static%20Field%201.png",
     "class": "Elementalist",
     "element": "Wind",
     "levelRequirement": "Ab 1",
@@ -217,6 +235,7 @@
   },
   {
     "name": "Subsuming Sands 1",
+    "image": "/images/abilities/Subsuming%20Sands%201.png",
     "class": "Elementalist",
     "element": "Earth",
     "levelRequirement": "Ab 1",
@@ -229,6 +248,7 @@
   },
   {
     "name": "Tidal Wave 1",
+    "image": "/images/abilities/Tidal%20Wave%201.png",
     "class": "Elementalist",
     "element": "Water",
     "levelRequirement": "Ab 1",
@@ -241,6 +261,7 @@
   },
   {
     "name": "Tidewell 1",
+    "image": "/images/abilities/Tidewell%201.png",
     "class": "Elementalist",
     "element": "Water",
     "levelRequirement": "Ab 1",

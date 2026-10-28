@@ -10,7 +10,7 @@
     "prerequisites": "-",
     "learningLocation": "Becoming Assassin",
     "description": "Strikes the enemy in front of you for massive damage, increased further if you used true hide.  30% chance to instantly kill a normal monster that is not wary of you.  Damage scales with your vitality and DEX.",
-    "image": "/images/abilities/annihilate.png"
+    "image": "/images/abilities/Assassin%20Strike.png"
   },
   {
     "name": "Engage 1",
@@ -49,7 +49,7 @@
     "prerequisites": "-",
     "learningLocation": "Becoming Assassin",
     "description": "Attacks every enemy in a row for 3 tiles in front of you.",
-    "image": "/images/abilities/First Blood 1.png"
+    "image": "/images/abilities/First%20Blood%201.png"
   },
   {
     "name": "Initiative 1",
@@ -62,7 +62,7 @@
     "prerequisites": "-",
     "learningLocation": "Tarlok (Noam)",
     "description": "Charge forward 3 tiles.  Deals no damage and does not break hide.  Pure Only.",
-    "image": "/images/abilities/Initiative 1.png"
+    "image": "/images/abilities/Initiative%201.png"
   },
   {
     "name": "Killer's Edge 1",
@@ -74,8 +74,8 @@
     "itemRequirements": "-",
     "prerequisites": "-",
     "learningLocation": "Becoming Assassin",
-    "description": "Increases Advantage's bonus from from the side or behind by an addictional 15%.",
-    "image": "/images/abilities/Killer's Edge 1.png"
+    "description": "Increases Advantage's bonus from from the side or behind by an additional 15%.",
+    "image": "/images/abilities/Killer's%20Edge%201.png"
   },
   {
     "name": "Last Breath 1",
@@ -88,7 +88,7 @@
     "prerequisites": "-",
     "learningLocation": "Becoming Assassin",
     "description": "Instantly kills normal monsters below 20% health.  Deals an additional 3% for every rank of malice you hold, up to 35% at a full bar.  Successful execute keeps your malice, but if it does not execute, will spend it all.  Successful execute will halve the cooldown.  Anything that survives will take damage based on your DEX and 4.3% of your max health.",
-    "image": "/images/abilities/Last Breath 1.png"
+    "image": "/images/abilities/Last%20Breath%201.png"
   },
   {
     "name": "Puncture 1",
@@ -101,7 +101,7 @@
     "prerequisites": "-",
     "learningLocation": "Becoming Assassin",
     "description": "Thrust into the enemy directly in front of you dealing tremendous damage and applying Armor Break.",
-    "image": "/images/abilities/Puncture 1.png"
+    "image": "/images/abilities/Puncture%201.png"
   },
   {
     "name": "Rupture 1",
@@ -127,7 +127,7 @@
     "prerequisites": "-",
     "learningLocation": "Becoming Assassin",
     "description": "Slips you behind an enemy up to 3 tiles directly in front of you, leaving you facing their back.  Deals no damage, and does not break hide.  Pure Only.",
-    "image": "/images/abilities/Shadow Reach 1.png"
+    "image": "/images/abilities/Shadow%20Reach%201.png"
   },
   {
     "name": "Shadow Slip 1",
@@ -140,6 +140,6 @@
     "prerequisites": "-",
     "learningLocation": "Becoming Assassin",
     "description": "Slips you in behind an enemy directly in front of you, leaving you facing their back.  Deals no damage and does not break hide.",
-    "image": "/images/abilities/Shadow Slip 1.png"
+    "image": "/images/abilities/Shadow%20Slip%201.png"
   }
 ]

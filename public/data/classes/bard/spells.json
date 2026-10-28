@@ -1,6 +1,7 @@
 [
   {
     "name": "Ard Ioc Comlha",
+    "image": "/images/abilities/Ard%20Ioc%20Comlha.png",
     "class": "Bard",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -21,10 +22,12 @@
     "itemRequirements": "-",
     "prerequisites": "-",
     "learningLocation": "Becoming Bard",
-    "description": "Blesses you and your group within 12 tiles for 15s.  Next 5 hits each member takes will heal them.  Scales with WIS and max mana.  Damage over time does not count as a hit."
+    "description": "Blesses you and your group within 12 tiles for 15s.  Next 10 hits each member takes will heal them.  Scales with WIS and max mana.  Damage over time does not count as a hit.",
+    "image": "/images/abilities/Blessed%20Intervention%201.png"
   },
   {
     "name": "Dirge of Sorrow 1",
+    "image": "/images/abilities/Dirge%20of%20Sorrow%201.png",
     "class": "Bard",
     "element": "",
     "levelRequirement": "Ab 5",
@@ -37,6 +40,7 @@
   },
   {
     "name": "Fortissimo 1",
+    "image": "/images/abilities/Fortissimo%201.png",
     "class": "Bard",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -49,6 +53,7 @@
   },
   {
     "name": "Hymn of Judgment 1",
+    "image": "/images/abilities/Hymn%20of%20Judgment%201.png",
     "class": "Bard",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -61,6 +66,7 @@
   },
   {
     "name": "Mesmerize 1",
+    "image": "/images/abilities/Mesmerize%201.png",
     "class": "Bard",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -73,6 +79,7 @@
   },
   {
     "name": "Song of Mending 1",
+    "image": "/images/abilities/Song%20of%20Mending%201.png",
     "class": "Bard",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -93,10 +100,12 @@
     "itemRequirements": "Comodo Tongue (2), Brown Fox Fur (1)",
     "prerequisites": "-",
     "learningLocation": "Peytri (Noam)",
-    "description": "Restores 1% of the group's max mana each second, within 6 tiles.  Every 3s, removes one affliction from each member (suain, dall, cradh, miasma, poison, burn, amnesia or slow).  Drains 250 mana each second.  Only one song may play at a time (cast it again to stop).  Answer its call to build harmony which strengthens it by up to half (Harmony fades if you stop answering)."
+    "description": "Restores 1% of the group's max mana each second, within 6 tiles.  Every 3s, removes one affliction from one member (suain, dall, cradh, miasma, poison, burn, amnesia or slow).  Drains 250 mana each second.  Only one song may play at a time (cast it again to stop).  Answer its call to build harmony which strengthens it by up to half (Harmony fades if you stop answering).",
+    "image": "/images/abilities/Song%20of%20the%20Bulwark%201.png"
   },
   {
     "name": "Song of the March 1",
+    "image": "/images/abilities/Song%20of%20the%20March%201.png",
     "class": "Bard",
     "element": "",
     "levelRequirement": "Ab 1",

@@ -1,17 +1,33 @@
 [
   {
+    "name": "Advantage",
+    "class": "Rogue",
+    "element": "",
+    "levelRequirement": "1",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Becoming Rogue",
+    "description": "Passively increases damage dealt by 50% when striking from the side or behind.",
+    "image": "/images/abilities/Advantage.png"
+  },
+  {
     "name": "Amnesia",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "24",
     "statRequirements": "6/12/12/6/12",
     "goldRequired": "10,000",
     "itemRequirements": "Giant Bat's Wing (3), Raw Beryl (2)",
     "prerequisites": "-",
     "learningLocation": "Mileth Special Skills Master",
-    "description": "Removes the creature's focus."
+    "description": "A blow that removes an enemies aggro, and reapplying every second for 15s.  Bosses are immune.",
+    "image": "/images/abilities/Amnesia.png"
   },
   {
     "name": "Assail",
+    "image": "/images/abilities/Assail.png",
     "class": "rogue",
     "levelRequirement": "1",
     "statRequirements": "3/3/3/3/3",
@@ -24,16 +40,19 @@
   {
     "name": "Assassin Strike",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "Master",
     "statRequirements": "3/3/3/3/3",
     "goldRequired": "-",
     "itemRequirements": "-",
     "prerequisites": "-",
     "learningLocation": "Master",
-    "description": "Deals massive damage to a target based on your vitality. Chance to instantly kill normal monsters."
+    "description": "Strikes an enemy directly in front of you, dealing increased damage while in true hide.  Has a 25% chance to instantly kill if they are not wary of you.  Damage scales with Vitality.",
+    "image": "/images/abilities/Assassin%20Strike.png"
   },
   {
     "name": "Assault",
+    "image": "/images/abilities/Assault.png",
     "class": "rogue",
     "levelRequirement": "3",
     "statRequirements": "3/3/3/3/3",
@@ -45,6 +64,7 @@
   },
   {
     "name": "Backstab",
+    "image": "/images/abilities/Backstab.png",
     "class": "rogue",
     "levelRequirement": "35",
     "statRequirements": "16/7/7/10/35",
@@ -57,49 +77,58 @@
   {
     "name": "Barrage",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "71",
     "statRequirements": "28/10/9/24/66",
     "goldRequired": "100,000",
     "itemRequirements": "Faerie's Wing (2), Sun Dagger (1)",
     "prerequisites": "Blitz (100)",
     "learningLocation": "Suomi Special Skills Master",
-    "description": "Third assail that deals damage to enemies four spaces in front of you."
+    "description": "Basic attack that strikes the first enemy up to 3 tiles directly in front of you.",
+    "image": "/images/abilities/Barrage.png"
   },
   {
     "name": "Blitz",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "41",
     "statRequirements": "28/5/5/8/38",
     "goldRequired": "10,000",
     "itemRequirements": "Blossom Dagger (1)",
     "prerequisites": "Throw Surigum (100)",
     "learningLocation": "Mileth Special Skills Master",
-    "description": "Second assail that deals damage to enemies four spaces in front of you. Replaces Throw Surigum."
+    "description": "An assail upgrade that strikes the first enemy up to 3 tiles in front of you.",
+    "image": "/images/abilities/Blitz.png"
   },
   {
     "name": "Essence Siphon",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "Master",
     "statRequirements": "130/65/75/60/215",
     "goldRequired": "1,000,000",
     "itemRequirements": "Porboss Claw (3)",
     "prerequisites": "Sap Needle (100)",
     "learningLocation": "Suomi Special Skills Master",
-    "description": "Steals 10% mana from target. Restores up to 20% mana to group members. Deals damage equal to self restored mana."
+    "description": "Siphon 10% of the mana from the first target up to 3 tiles directly in front of you.  Restores 20% mana to nearby group members and deals damage equal to the mana stolen.",
+    "image": "/images/abilities/Essence%20Siphon.png"
   },
   {
     "name": "Frost Bomb",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "Master",
     "statRequirements": "90/35/25/30/135",
     "goldRequired": "750,000",
     "itemRequirements": "Ice Elemental Flame (5)",
     "prerequisites": "-",
     "learningLocation": "Rucesion Special Skills Master",
-    "description": "Suains all monsters within 4 spaces."
+    "description": "Applies Suain to all enemies within 4 tiles.",
+    "image": "/images/abilities/Frost%20Bomb.png"
   },
   {
     "name": "Inspect",
+    "image": "/images/abilities/Inspect.png",
     "class": "rogue",
     "levelRequirement": "3",
     "statRequirements": "3/5/5/3/3",
@@ -112,16 +141,19 @@
   {
     "name": "Killer Instinct",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "Master",
     "statRequirements": "75/60/40/40/120",
     "goldRequired": "100,000",
     "itemRequirements": "Grim Succubus's Hair (3)",
     "prerequisites": "-",
     "learningLocation": "Suomi Special Skills Master",
-    "description": "Allows the Rogue to study multiple creature's defense."
+    "description": "Reveal the defensive element of all enemies within 3 tiles of you.",
+    "image": "/images/abilities/Killer%20Instinct.png"
   },
   {
     "name": "Look",
+    "image": "/images/abilities/Look.png",
     "class": "rogue",
     "levelRequirement": "3",
     "statRequirements": "3/5/5/3/3",
@@ -134,38 +166,45 @@
   {
     "name": "Midnight Slash",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "Master",
     "statRequirements": "3/3/3/3/3",
     "goldRequired": "-",
     "itemRequirements": "-",
     "prerequisites": "Barrage (100)",
     "learningLocation": "Master",
-    "description": "Master Rogue assail."
+    "description": "A basic attack that strikes up to 3 tiles in front of you.",
+    "image": "/images/abilities/Midnight%20Slash.png"
   },
   {
     "name": "Murderous Intent",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "Master",
     "statRequirements": "3/3/3/3/3",
     "goldRequired": "-",
     "itemRequirements": "-",
     "prerequisites": "-",
     "learningLocation": "Master Dungeon",
-    "description": "Intimidates an enemy directly in front of you."
+    "description": "Applies Intimidate to an enemy directly in front of you.",
+    "image": "/images/abilities/Murderous%20Intent.png"
   },
   {
     "name": "Nightfall Strike",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "Master",
     "statRequirements": "90/20/15/45/130",
     "goldRequired": "500,000",
     "itemRequirements": "Direwolf Lock (5)",
     "prerequisites": "-",
     "learningLocation": "Suomi Special Skills Master",
-    "description": "Executes an enemy below 20% health. Does not work on bosses."
+    "description": "Instantly kills an enemy below 20% health.  A successful execute will reduce the cooldown by half.  Otherwise deals damage based on your DEX and 3% of your maximum health.",
+    "image": "/images/abilities/Nightfall%20Strike.png"
   },
   {
     "name": "nis",
+    "image": "/images/abilities/nis.png",
     "class": "rogue",
     "levelRequirement": "3",
     "statRequirements": "3/5/5/3/3",
@@ -177,6 +216,7 @@
   },
   {
     "name": "Peek",
+    "image": "/images/abilities/Peek.png",
     "class": "rogue",
     "levelRequirement": "8",
     "statRequirements": "3/8/5/3/3",
@@ -189,49 +229,58 @@
   {
     "name": "Pierce",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "16",
     "statRequirements": "8/4/4/9/20",
     "goldRequired": "20,000",
     "itemRequirements": "Goblin's Skull (2), Royal Gold Ring (1)",
     "prerequisites": "-",
     "learningLocation": "Mileth Special Skills Master",
-    "description": "Deals damage two tiles in front of you and adds AC to the target."
+    "description": "Strikes the first enemy up to 3 tiles directly in front of you.  Applies Armor Break.",
+    "image": "/images/abilities/Pierce.png"
   },
   {
     "name": "Poison Bomb",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "41",
     "statRequirements": "20/10/10/12/38",
     "goldRequired": "25,000",
     "itemRequirements": "Hobgoblin's Skull (2), Moon Dagger (1)",
     "prerequisites": "-",
     "learningLocation": "Suomi Special Skills Master",
-    "description": "Allows the rogue to throw a poison bomb that poisons enemies nearby."
+    "description": "Throw a bomb that hits all enemies within 3 tiles.  Applies Poison.",
+    "image": "/images/abilities/Poison%20Bomb.png"
   },
   {
     "name": "Rupture",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "Master (Pure)",
     "statRequirements": "3/3/3/3/3",
     "goldRequired": "-",
     "itemRequirements": "-",
     "prerequisites": "-",
     "learningLocation": "Tauren",
-    "description": "Causes the target to bleed. Pure only."
+    "description": "Applies Bleed to your target.  Pure Only.",
+    "image": "/images/abilities/Rupture.png"
   },
   {
     "name": "Sap Needle",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "20",
     "statRequirements": "6/7/11/5/19",
     "goldRequired": "10,000",
     "itemRequirements": "Raw Sapphire (3), Padded Gauntlet (1)",
     "prerequisites": "-",
     "learningLocation": "Mileth Special Skills Master",
-    "description": "Steals 10% mana from target. Restore up to 20% mana to group members."
+    "description": "Steals 10% mana from your target, restoring up to 20% mana for you and nearby allies.",
+    "image": "/images/abilities/Sap%20Needle.png"
   },
   {
     "name": "Sense",
+    "image": "/images/abilities/Sense.png",
     "class": "rogue",
     "levelRequirement": "90",
     "statRequirements": "36/11/11/24/76",
@@ -244,38 +293,45 @@
   {
     "name": "Shadow Figure",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "Master (Pure)",
     "statRequirements": "3/3/3/3/3",
     "goldRequired": "-",
     "itemRequirements": "-",
     "prerequisites": "-",
     "learningLocation": "Master",
-    "description": "Allows the Rogue to obtain and keep a tactical advantage on an enemy. Pure only. Replaces Backstab."
+    "description": "Slip behind the enemy directly in front of you and strikes them.  Pure Only.",
+    "image": "/images/abilities/Shadow%20Figure.png"
   },
   {
     "name": "Skewer",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "90",
     "statRequirements": "36/11/11/24/76",
     "goldRequired": "150,000",
     "itemRequirements": "Gruesomefly's Wing (2), Blood Dagger (1)",
     "prerequisites": "Pierce (100)",
     "learningLocation": "Mileth Special Skills Master",
-    "description": "Deals great damage three tiles in front of you and increases target AC. Replaces Pierce."
+    "description": "Strikes every enemy up to 3 tiles in front of you.  Applies Armor Break.",
+    "image": "/images/abilities/Skewer.png"
   },
   {
     "name": "Smoke Screen",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "60",
     "statRequirements": "10/5/5/5/16",
     "goldRequired": "25,000",
     "itemRequirements": "Light Shield (1)",
     "prerequisites": "Throw Smokebomb (100)",
     "learningLocation": "Rucesion Special Skills Master",
-    "description": "Dalls all enemies within 4 spaces."
+    "description": "Applies Dall to all enemies within 4 tiles.",
+    "image": "/images/abilities/Smoke%20Screen.png"
   },
   {
     "name": "Stab and Twist",
+    "image": "/images/abilities/Stab%20and%20Twist.png",
     "class": "rogue",
     "levelRequirement": "60",
     "statRequirements": "34/11/6/17/51",
@@ -288,16 +344,19 @@
   {
     "name": "Stab Twice",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "Master",
     "statRequirements": "50/18/11/28/88",
     "goldRequired": "100,000",
     "itemRequirements": "Strap Gauntlet (2)",
     "prerequisites": "-",
     "learningLocation": "Suomi Special Skills Master",
-    "description": "Deals moderate damage to the enemy in front of you."
+    "description": "Deals massive damage to the target directly in front of you.",
+    "image": "/images/abilities/Stab%20Twice.png"
   },
   {
     "name": "Stab",
+    "image": "/images/abilities/Stab.png",
     "class": "rogue",
     "levelRequirement": "3",
     "statRequirements": "3/3/3/3/3",
@@ -310,38 +369,45 @@
   {
     "name": "Study Creature",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "6",
     "statRequirements": "3/5/4/3/5",
     "goldRequired": "1,000",
     "itemRequirements": "Mantis Eye (1)",
     "prerequisites": "-",
     "learningLocation": "Suomi Special Skills Master",
-    "description": "Allows the Rogue to study a creature's attributes."
+    "description": "Study the first enemy up to 3 tiles directly in front of you, revealing their level, health, AC, mana and elements.  Nearby group members will also see a summary.",
+    "image": "/images/abilities/Study%20Creature.png"
   },
   {
     "name": "Throw Smokebomb",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "9",
     "statRequirements": "5/4/3/3/11",
     "goldRequired": "2,000",
     "itemRequirements": "Spider's Silk (1)",
     "prerequisites": "-",
     "learningLocation": "Mileth Special Skills Master",
-    "description": "Dalls all enemies within 3 spaces."
+    "description": "Applies Dall to all enemies within 3 tiles.",
+    "image": "/images/abilities/Throw%20Smokebomb.png"
   },
   {
     "name": "Throw Surigum",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "16",
     "statRequirements": "7/3/4/4/15",
     "goldRequired": "5,000",
     "itemRequirements": "Centipede's Gland (3)",
     "prerequisites": "Assault (100)",
     "learningLocation": "Mileth Special Skills Master",
-    "description": "Deals minor damage to enemies up to four spaces in front of you."
+    "description": "Deals minor damage to enemies up to 3 spaces in front of you.",
+    "image": "/images/abilities/Throw%20Surigum.png"
   },
   {
     "name": "Throw",
+    "image": "/images/abilities/Throw.png",
     "class": "rogue",
     "levelRequirement": "50",
     "statRequirements": "5/9/5/3/3",
@@ -353,6 +419,7 @@
   },
   {
     "name": "Trip",
+    "image": "/images/abilities/Trip.png",
     "class": "rogue",
     "levelRequirement": "80",
     "statRequirements": "50/20/15/25/70",

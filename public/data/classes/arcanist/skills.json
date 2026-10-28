@@ -1,0 +1,15 @@
+[
+  {
+    "name": "Sruth Spiorad",
+    "class": "Arcanist",
+    "element": "",
+    "levelRequirement": "Ab 1",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Becoming Arcanist",
+    "description": "A siphon you turn on or off.  Each second it burns 10% of your maximum health and returns half as many points of mana.  At full mana it takes nothing.  It does not break when you move and will stop before the drain will take you under 20% health.",
+    "image": "/images/abilities/Sruth Spiorad.png"
+  }
+]

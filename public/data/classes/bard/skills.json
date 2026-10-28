@@ -1,6 +1,7 @@
 [
   {
     "name": "Cadence 1",
+    "image": "/images/abilities/Cadence%201.png",
     "class": "Bard",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -21,10 +22,12 @@
     "itemRequirements": "-",
     "prerequisites": "-",
     "learningLocation": "Becoming Bard",
-    "description": "Spends harmony built by your current song to heal you and your group within 6 tiles.  Your current song then adds it's own burst; - Mending: Shields, - March: rallies on top of its own bonus for 8s, - Bulwark: Lifts every affliction it knows, - Dirge: Wails at nearby enemies.  The heal and burst scales with harmony spent (except Bulwark)."
+    "description": "Spends harmony built by your current song to heal you and your group within 6 tiles.  Your current song then adds it's own burst; - Mending: Shields, - March: rallies on top of its own bonus for 8s, - Bulwark: Lifts every affliction it knows, - Dirge: Wails at nearby enemies.  The heal and burst scales with harmony spent (except Bulwark).",
+    "image": "/images/abilities/Pierce.png"
   },
   {
     "name": "Mind Hymn 1",
+    "image": "/images/abilities/Mind%20Hymn%201.png",
     "class": "Bard",
     "element": "",
     "levelRequirement": "Ab 3",

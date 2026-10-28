@@ -1,6 +1,7 @@
 [
   {
     "name": "Thorn Strike 1",
+    "image": "/images/abilities/Thorn%20Strike%201.png",
     "class": "Ab 1",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -12,7 +13,164 @@
     "description": "Cleaves the enemies in front of you and taunting them with every swing.  Uses necklace for element."
   },
   {
+    "name": "Consummation 1",
+    "class": "Adept",
+    "element": "",
+    "levelRequirement": "Ab 8",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "1,000,000",
+    "itemRequirements": "Red Blob Core (5)",
+    "prerequisites": "-",
+    "learningLocation": "Tarlok (Noam)",
+    "description": "Expends all stacks in a single blow.  Deals more damage based on the amount of stacks used, your current stance, and will return you back to 1.  Remains in stance after use.  Scales off your maximum health. Fire: Explodes Burn effect for extra damage; Earth: Beag Suain (more damage the more the mobs are tightly packed on you); Water: Restores mana; Lightning: Attacks every tile adjacent (more damage if there's empty space behind targets).",
+    "image": "/images/abilities/Consummation 1.png"
+  },
+  {
+    "name": "Culmination 1",
+    "class": "Adept",
+    "element": "",
+    "levelRequirement": "Ab 8",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "1,000,000",
+    "itemRequirements": "Red Blob Core (5)",
+    "prerequisites": "-",
+    "learningLocation": "Tarlok (Noam)",
+    "description": "Expends all stacks in a single blow.  Deals more damage based on the amount of stacks used, your current stance, and will return you back to 1.  Remains in stance after use.  Scales off your maximum health. Fire: Explodes Burn effect for extra damage; Earth: Beag Suain (more damage the more the mobs are tightly packed on you); Water: Restores mana; Lightning: Attacks every tile adjacent (more damage if there's empty space behind targets).  Pure Only.",
+    "image": "/images/abilities/Consummation 1.png"
+  },
+  {
+    "name": "Drakestrike 1",
+    "class": "Adept",
+    "element": "",
+    "levelRequirement": "Ab 1",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Becoming Adept",
+    "description": "Strikes up to 4 tiles in front of you, using the element of your necklace.  Scales with your maximum health.",
+    "image": "/images/abilities/Drakestrike 1.png"
+  },
+  {
+    "name": "Flowing Fist 1",
+    "class": "Adept",
+    "element": "",
+    "levelRequirement": "Ab 1",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Becoming Adept",
+    "description": "Adept's assail that changes based on stance; Fire: Directly in front; Earth: Front and sides; Water: Front and Sides returning mana on each blow; Lightning: Attacks on all 4 sides; Neutral: normal assail to front and sides.  Scales with your maximum health.",
+    "image": "/images/abilities/Flowing Fist 1.png"
+  },
+  {
+    "name": "Focused Strike 1",
+    "class": "Adept",
+    "element": "",
+    "levelRequirement": "Ab 1",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Becoming Adept",
+    "description": "Single strike that changes based on stance; Fire: Sets the target on fire; Earth: Casts Beag Suain; Water: Restores mana; Lightning: Exposes the enemy to take 30% more damage from the next skill or spell.  Also scales with your maximum health.",
+    "image": "/images/abilities/Focused Strike 1.png"
+  },
+  {
+    "name": "Rising Kick 1",
+    "class": "Adept",
+    "element": "",
+    "levelRequirement": "Ab 1",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Becoming Adept",
+    "description": "The heaviest blow that changes based on your stance; Fire: Explodes Burn effect for extra damage; Earth: Beag Suain (more damage the more the mobs are tightly packed on you); Water: Restores mana; Lightning: Attacks every tile adjacent (more damage if there's empty space behind targets).  Scales with your maximum health.",
+    "image": "/images/abilities/Rising Kick 1.png"
+  },
+  {
+    "name": "Severed Breath",
+    "class": "Adept",
+    "element": "",
+    "levelRequirement": "Ab 12",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "1,000,000",
+    "itemRequirements": "Ant Chitin (3)",
+    "prerequisites": "-",
+    "learningLocation": "Tarlok (Noam)",
+    "description": "Spends 2/3 of your current health to strike every enemy directly in front of you for 1/3 of it (Wont be reduced by armour, aite, etc and reflect wont return).  Skill damage bonuses do not affect the damage.",
+    "image": "/images/abilities/Severed Breath.png"
+  },
+  {
+    "name": "Sweeping Palm 1",
+    "class": "Adept",
+    "element": "",
+    "levelRequirement": "AB 3",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "750,000",
+    "itemRequirements": "Hyena Fang (2)",
+    "prerequisites": "-",
+    "learningLocation": "Tarlok (Noam)",
+    "description": "Sweeps the enemies adjacent to you, shifting with your stance; Fire: Strikes all enemies adjacent setting them on fire, Earth: Strikes all enemies adjacent; Water: Strikes all enemies adjacent and restores mana; Lightning: Reaches further, and deals more with open space around targets.  Scales with your maximum health.",
+    "image": "/images/abilities/Sweeping Palm 1.png"
+  },
+  {
+    "name": "Upheaval 1",
+    "class": "Adept",
+    "element": "",
+    "levelRequirement": "Ab 1",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Becoming Adept",
+    "description": "Position your targets, that changes when you shift your stance; Fire/Earth: Pulls enemies in towards you; Water: Pulls enemies in towards you and restores mana; Lightning: Shoves them off of you.  Scales with your maximum health.",
+    "image": "/images/abilities/Upheaval 1.png"
+  },
+  {
+    "name": "Waning Moon 1",
+    "class": "Adept",
+    "element": "",
+    "levelRequirement": "Ab 1",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Becoming Adept",
+    "description": "Deals massive non-elemental damage to the enemy directly in front of you.  Scales with your CON and maximum health.",
+    "image": "/images/abilities/Blood Moon 1.png"
+  },
+  {
+    "name": "Wyrmstrike 1",
+    "class": "Adept",
+    "element": "",
+    "levelRequirement": "Ab 1",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Becoming Adept",
+    "description": "Strike enemies in a cone up to 5 tiles in front of you dealing the element of your necklace.  Scales with your maximum health.  Pure Only.",
+    "image": "/images/abilities/Wyrmstrike 1.png"
+  },
+  {
+    "name": "Sruth Spiorad",
+    "class": "Arcanist",
+    "element": "",
+    "levelRequirement": "Ab 1",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Becoming Arcanist",
+    "description": "A siphon you turn on or off.  Each second it burns 10% of your maximum health and returns half as many points of mana.  At full mana it takes nothing.  It does not break when you move and will stop before the drain will take you under 20% health.",
+    "image": "/images/abilities/Sruth Spiorad.png"
+  },
+  {
     "name": "Arrow Shot 1",
+    "image": "/images/abilities/Arrow%20Shot%201.png",
     "class": "Archer",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -37,6 +195,7 @@
   },
   {
     "name": "Disengage 1",
+    "image": "/images/abilities/Disengage%201.png",
     "class": "Archer",
     "element": "",
     "levelRequirement": "Ab 5",
@@ -49,6 +208,7 @@
   },
   {
     "name": "Elemental Sight 1",
+    "image": "/images/abilities/Elemental%20Sight%201.png",
     "class": "Archer",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -61,6 +221,7 @@
   },
   {
     "name": "Fading Shot 1",
+    "image": "/images/abilities/Fading%20Shot%201.png",
     "class": "Archer",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -73,6 +234,7 @@
   },
   {
     "name": "Ghost Step 1",
+    "image": "/images/abilities/Ghost%20Step%201.png",
     "class": "Archer",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -85,6 +247,7 @@
   },
   {
     "name": "Hunter's Mark 1",
+    "image": "/images/abilities/Hunter's%20Mark%201.png",
     "class": "Archer",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -97,6 +260,7 @@
   },
   {
     "name": "Killing Shot 1",
+    "image": "/images/abilities/Killing%20Shot%201.png",
     "class": "Archer",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -109,6 +273,7 @@
   },
   {
     "name": "Sidestep 1",
+    "image": "/images/abilities/Sidestep%201.png",
     "class": "Archer",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -121,6 +286,7 @@
   },
   {
     "name": "Siphoning Shot 1",
+    "image": "/images/abilities/Siphoning%20Shot%201.png",
     "class": "Archer",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -133,6 +299,7 @@
   },
   {
     "name": "Snipe 1",
+    "image": "/images/abilities/Snipe%201.png",
     "class": "Archer",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -145,6 +312,7 @@
   },
   {
     "name": "Splitting Shot 1",
+    "image": "/images/abilities/Splitting%20Shot%201.png",
     "class": "Archer",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -157,6 +325,7 @@
   },
   {
     "name": "Steady Aim 1",
+    "image": "/images/abilities/Steady%20Aim%201.png",
     "class": "Archer",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -169,6 +338,7 @@
   },
   {
     "name": "Triple Shot 1",
+    "image": "/images/abilities/Triple%20Shot%201.png",
     "class": "Archer",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -202,7 +372,7 @@
     "prerequisites": "-",
     "learningLocation": "Becoming Assassin",
     "description": "Strikes the enemy in front of you for massive damage, increased further if you used true hide.  30% chance to instantly kill a normal monster that is not wary of you.  Damage scales with your vitality and DEX.",
-    "image": "/images/abilities/annihilate.png"
+    "image": "/images/abilities/Assassin%20Strike.png"
   },
   {
     "name": "Engage 1",
@@ -241,7 +411,7 @@
     "prerequisites": "-",
     "learningLocation": "Becoming Assassin",
     "description": "Attacks every enemy in a row for 3 tiles in front of you.",
-    "image": "/images/abilities/First Blood 1.png"
+    "image": "/images/abilities/First%20Blood%201.png"
   },
   {
     "name": "Initiative 1",
@@ -254,7 +424,7 @@
     "prerequisites": "-",
     "learningLocation": "Tarlok (Noam)",
     "description": "Charge forward 3 tiles.  Deals no damage and does not break hide.  Pure Only.",
-    "image": "/images/abilities/Initiative 1.png"
+    "image": "/images/abilities/Initiative%201.png"
   },
   {
     "name": "Killer's Edge 1",
@@ -266,8 +436,8 @@
     "itemRequirements": "-",
     "prerequisites": "-",
     "learningLocation": "Becoming Assassin",
-    "description": "Increases Advantage's bonus from from the side or behind by an addictional 15%.",
-    "image": "/images/abilities/Killer's Edge 1.png"
+    "description": "Increases Advantage's bonus from from the side or behind by an additional 15%.",
+    "image": "/images/abilities/Killer's%20Edge%201.png"
   },
   {
     "name": "Last Breath 1",
@@ -280,7 +450,7 @@
     "prerequisites": "-",
     "learningLocation": "Becoming Assassin",
     "description": "Instantly kills normal monsters below 20% health.  Deals an additional 3% for every rank of malice you hold, up to 35% at a full bar.  Successful execute keeps your malice, but if it does not execute, will spend it all.  Successful execute will halve the cooldown.  Anything that survives will take damage based on your DEX and 4.3% of your max health.",
-    "image": "/images/abilities/Last Breath 1.png"
+    "image": "/images/abilities/Last%20Breath%201.png"
   },
   {
     "name": "Puncture 1",
@@ -293,7 +463,7 @@
     "prerequisites": "-",
     "learningLocation": "Becoming Assassin",
     "description": "Thrust into the enemy directly in front of you dealing tremendous damage and applying Armor Break.",
-    "image": "/images/abilities/Puncture 1.png"
+    "image": "/images/abilities/Puncture%201.png"
   },
   {
     "name": "Rupture 1",
@@ -319,7 +489,7 @@
     "prerequisites": "-",
     "learningLocation": "Becoming Assassin",
     "description": "Slips you behind an enemy up to 3 tiles directly in front of you, leaving you facing their back.  Deals no damage, and does not break hide.  Pure Only.",
-    "image": "/images/abilities/Shadow Reach 1.png"
+    "image": "/images/abilities/Shadow%20Reach%201.png"
   },
   {
     "name": "Shadow Slip 1",
@@ -332,10 +502,11 @@
     "prerequisites": "-",
     "learningLocation": "Becoming Assassin",
     "description": "Slips you in behind an enemy directly in front of you, leaving you facing their back.  Deals no damage and does not break hide.",
-    "image": "/images/abilities/Shadow Slip 1.png"
+    "image": "/images/abilities/Shadow%20Slip%201.png"
   },
   {
     "name": "Cadence 1",
+    "image": "/images/abilities/Cadence%201.png",
     "class": "Bard",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -356,10 +527,12 @@
     "itemRequirements": "-",
     "prerequisites": "-",
     "learningLocation": "Becoming Bard",
-    "description": "Spends harmony built by your current song to heal you and your group within 6 tiles.  Your current song then adds it's own burst; - Mending: Shields, - March: rallies on top of its own bonus for 8s, - Bulwark: Lifts every affliction it knows, - Dirge: Wails at nearby enemies.  The heal and burst scales with harmony spent (except Bulwark)."
+    "description": "Spends harmony built by your current song to heal you and your group within 6 tiles.  Your current song then adds it's own burst; - Mending: Shields, - March: rallies on top of its own bonus for 8s, - Bulwark: Lifts every affliction it knows, - Dirge: Wails at nearby enemies.  The heal and burst scales with harmony spent (except Bulwark).",
+    "image": "/images/abilities/Pierce.png"
   },
   {
     "name": "Mind Hymn 1",
+    "image": "/images/abilities/Mind%20Hymn%201.png",
     "class": "Bard",
     "element": "",
     "levelRequirement": "Ab 3",
@@ -381,7 +554,7 @@
     "prerequisites": "-",
     "learningLocation": "Becoming Berserker",
     "description": "Basic attack that swings in all directions.",
-    "image": "/images/abilities/Bloodbath 1.png"
+    "image": "/images/abilities/Bloodbath%201.png"
   },
   {
     "name": "Bloodwave 1",
@@ -394,7 +567,7 @@
     "prerequisites": "-",
     "learningLocation": "Becoming Berserker",
     "description": "Cascading wave torn out of your own blood striking everything in a cone three tiles ahead.  Costs 8% of your maximum health.",
-    "image": "/images/abilities/Bloodwave 1.png"
+    "image": "/images/abilities/Bloodwave%201.png"
   },
   {
     "name": "Carnage 1",
@@ -407,7 +580,7 @@
     "prerequisites": "-",
     "learningLocation": "Tarlok (Noam)",
     "description": "Wide swing that widens by one tile for each rank of rage you hold, and strikes harder for each enemy pressed against you.  Costs 6% of your maximum health.",
-    "image": "/images/abilities/Carnage 1.png"
+    "image": "/images/abilities/Carnage%201.png"
   },
   {
     "name": "Crimson Bloodbath 1",
@@ -420,7 +593,7 @@
     "prerequisites": "-",
     "learningLocation": "Becoming Berserker",
     "description": "Basic attack that strikes in every direction.  Pure Only.",
-    "image": "/images/abilities/Crimson Bloodbath 1.png"
+    "image": "/images/abilities/Crimson%20Bloodbath%201.png"
   },
   {
     "name": "Cyclone Blade 1",
@@ -433,7 +606,7 @@
     "prerequisites": "-",
     "learningLocation": "Becoming Berserker",
     "description": "Vortex of blades that cascades inward from 3 tiles away.  Pulls every enemy, roots and shreds them.",
-    "image": "/images/abilities/Cyclone Blade 1.png"
+    "image": "/images/abilities/Cyclone%20Blade%201.png"
   },
   {
     "name": "Duneswipe 1",
@@ -446,7 +619,7 @@
     "prerequisites": "-",
     "learningLocation": "Tarlok (Noam)",
     "description": "Sweeping strike that hits all tiles directly beside you.  Costs 4% of your maximum health.",
-    "image": "/images/abilities/Duneswipe 1.png"
+    "image": "/images/abilities/Duneswipe%201.png"
   },
   {
     "name": "Rend 1",
@@ -459,7 +632,7 @@
     "prerequisites": "-",
     "learningLocation": "Becoming Berserker",
     "description": "Strikes every enemy in a line up to 4 tiles away.  Costs 5% of your maximum health.",
-    "image": "/images/abilities/Rend 1.png"
+    "image": "/images/abilities/Rend%201.png"
   },
   {
     "name": "Strikedown 1",
@@ -472,7 +645,7 @@
     "prerequisites": "-",
     "learningLocation": "Tarlok (Noam)",
     "description": "Strike in a line up to 3 tiles in front of you.  Costs 4% of your maximum health.",
-    "image": "/images/abilities/Strikedown 1.png"
+    "image": "/images/abilities/Strikedown%201.png"
   },
   {
     "name": "Tempest Cyclone Blade",
@@ -485,7 +658,7 @@
     "prerequisites": "-",
     "learningLocation": "Becoming Berserker",
     "description": "Vortex of blades that cascades inward from 3 tiles away.  Pulls every enemy, roots and shreds them.  Pure Only.",
-    "image": "/images/abilities/Tempest Cyclone Blade 1.png"
+    "image": "/images/abilities/Tempest%20Cyclone%20Blade%201.png"
   },
   {
     "name": "Unleash Rage 1",
@@ -498,10 +671,11 @@
     "prerequisites": "-",
     "learningLocation": "Tarlok (Noam)",
     "description": "Empty your rage into everything around you, dealing more damage and increased range based on rage spent.  Also strikes harder for each enemy pressed up against you.",
-    "image": "/images/abilities/Unleash Rage.png"
+    "image": "/images/abilities/Unleash%20Rage.png"
   },
   {
     "name": "Bajiquan 1",
+    "image": "/images/abilities/Bajiquan%201.png",
     "class": "Druid",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -514,6 +688,7 @@
   },
   {
     "name": "Blood Moon 1",
+    "image": "/images/abilities/Blood%20Moon%201.png",
     "class": "Druid",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -526,6 +701,7 @@
   },
   {
     "name": "Bramble Rend 1",
+    "image": "/images/abilities/Bramble%20Rend%201.png",
     "class": "Druid",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -538,6 +714,7 @@
   },
   {
     "name": "Bramblestorm 1",
+    "image": "/images/abilities/Bramblestorm%201.png",
     "class": "Druid",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -550,6 +727,7 @@
   },
   {
     "name": "Heartwood Rend",
+    "image": "/images/abilities/Heartwood%20Rend.png",
     "class": "Druid",
     "element": "",
     "levelRequirement": "Ab 12",
@@ -562,6 +740,7 @@
   },
   {
     "name": "Hu Bu",
+    "image": "/images/abilities/Hu%20Bu%201.png",
     "class": "Druid",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -574,6 +753,7 @@
   },
   {
     "name": "Thornlash 1",
+    "image": "/images/abilities/Thornlash%201.png",
     "class": "Druid",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -586,6 +766,7 @@
   },
   {
     "name": "Thornwrath 1",
+    "image": "/images/abilities/Thornwrath%201.png",
     "class": "Druid",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -598,6 +779,7 @@
   },
   {
     "name": "Verdant Palm 1",
+    "image": "/images/abilities/Verdant%20Palm%201.png",
     "class": "Druid",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -610,6 +792,7 @@
   },
   {
     "name": "Warden's Burden",
+    "image": "/images/abilities/Warden's%20Burden%201.png",
     "class": "Druid",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -622,6 +805,7 @@
   },
   {
     "name": "Attune Earth 1",
+    "image": "/images/abilities/Attune%20Earth%201.png",
     "class": "Elementalist",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -634,6 +818,7 @@
   },
   {
     "name": "Attune Fire 1",
+    "image": "/images/abilities/Attune%20Fire%201.png",
     "class": "Elementalist",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -646,6 +831,7 @@
   },
   {
     "name": "Attune Water 1",
+    "image": "/images/abilities/Attune%20Water%201.png",
     "class": "Elementalist",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -658,6 +844,7 @@
   },
   {
     "name": "Attune Wind 1",
+    "image": "/images/abilities/Attune%20Wind%201.png",
     "class": "Elementalist",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -670,6 +857,7 @@
   },
   {
     "name": "Elemental Recharge",
+    "image": "/images/abilities/Elemental%20Recharge.png",
     "class": "Elementalist",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -682,6 +870,7 @@
   },
   {
     "name": "Elemental Strike 1",
+    "image": "/images/abilities/Elemental%20Strike%201.png",
     "class": "Elementalist",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -694,6 +883,7 @@
   },
   {
     "name": "Elemental Strike 2",
+    "image": "/images/abilities/Elemental%20Strike%201.png",
     "class": "Elementalist",
     "element": "",
     "levelRequirement": "Ab 20",
@@ -706,6 +896,7 @@
   },
   {
     "name": "Air Punch",
+    "image": "/images/abilities/Air%20Punch.png",
     "class": "monk",
     "levelRequirement": "11",
     "statRequirements": "8/3/3/13/9",
@@ -717,6 +908,7 @@
   },
   {
     "name": "Ambush",
+    "image": "/images/abilities/Ambush.png",
     "class": "monk",
     "levelRequirement": "11",
     "statRequirements": "6/3/3/11/10",
@@ -728,6 +920,7 @@
   },
   {
     "name": "Assail",
+    "image": "/images/abilities/Assail.png",
     "class": "monk",
     "levelRequirement": "1",
     "statRequirements": "3/3/3/3/3",
@@ -739,6 +932,7 @@
   },
   {
     "name": "Battlefield Sweep",
+    "image": "/images/abilities/Battlefield%20Sweep.png",
     "class": "monk",
     "levelRequirement": "Master (Pure)",
     "statRequirements": "150/40/40/215/100",
@@ -750,6 +944,7 @@
   },
   {
     "name": "Chaos Fist",
+    "image": "/images/abilities/Chaos%20Fist.png",
     "class": "monk",
     "levelRequirement": "Master (Pure)",
     "statRequirements": "95/25/3/120/35",
@@ -761,6 +956,7 @@
   },
   {
     "name": "Claw Fist",
+    "image": "/images/abilities/Claw%20Fist.png",
     "class": "monk",
     "levelRequirement": "50",
     "statRequirements": "24/14/3/32/18",
@@ -772,6 +968,7 @@
   },
   {
     "name": "Cloudfist",
+    "image": "/images/abilities/Cloudfist.png",
     "class": "monk",
     "levelRequirement": "Master",
     "statRequirements": "75/25/20/125/40",
@@ -783,6 +980,7 @@
   },
   {
     "name": "Crimson Moon",
+    "image": "/images/abilities/Crimson%20Moon.png",
     "class": "monk",
     "levelRequirement": "Master",
     "statRequirements": "120/25/20/150/100",
@@ -794,6 +992,7 @@
   },
   {
     "name": "Double Punch",
+    "image": "/images/abilities/Double%20Punch.png",
     "class": "monk",
     "levelRequirement": "20",
     "statRequirements": "13/3/3/19/9",
@@ -805,6 +1004,7 @@
   },
   {
     "name": "Dragon Breath",
+    "image": "/images/abilities/Dragon%20Breath.png",
     "class": "monk",
     "levelRequirement": "71",
     "statRequirements": "46/9/9/50/20",
@@ -816,6 +1016,7 @@
   },
   {
     "name": "Dragon Strike",
+    "image": "/images/abilities/Dragon%20Strike.png",
     "class": "monk",
     "levelRequirement": "Master (Pure)",
     "statRequirements": "80/25/20/120/60",
@@ -827,6 +1028,7 @@
   },
   {
     "name": "Eagle Strike",
+    "image": "/images/abilities/Eagle%20Strike.png",
     "class": "monk",
     "levelRequirement": "44",
     "statRequirements": "20/13/5/33/9",
@@ -838,6 +1040,7 @@
   },
   {
     "name": "Earth Punch",
+    "image": "/images/abilities/Earth%20Punch.png",
     "class": "monk",
     "levelRequirement": "11",
     "statRequirements": "9/3/3/16/6",
@@ -849,6 +1052,7 @@
   },
   {
     "name": "Fire Punch",
+    "image": "/images/abilities/Fire%20Punch.png",
     "class": "monk",
     "levelRequirement": "11",
     "statRequirements": "13/3/3/13/7",
@@ -860,6 +1064,7 @@
   },
   {
     "name": "Flurry of Blows",
+    "image": "/images/abilities/Flurry%20of%20Blows.png",
     "class": "monk",
     "levelRequirement": "Master",
     "statRequirements": "80/10/10/100/40",
@@ -871,6 +1076,7 @@
   },
   {
     "name": "High Kick",
+    "image": "/images/abilities/High%20Kick.png",
     "class": "monk",
     "levelRequirement": "9",
     "statRequirements": "7/3/3/9/4",
@@ -882,6 +1088,7 @@
   },
   {
     "name": "Inspect",
+    "image": "/images/abilities/Inspect.png",
     "class": "monk",
     "levelRequirement": "3",
     "statRequirements": "3/5/5/3/3",
@@ -893,6 +1100,7 @@
   },
   {
     "name": "Kick",
+    "image": "/images/abilities/Kick.png",
     "class": "monk",
     "levelRequirement": "3",
     "statRequirements": "3/3/3/3/3",
@@ -904,6 +1112,7 @@
   },
   {
     "name": "Leverage Kick",
+    "image": "/images/abilities/Leverage%20Kick.png",
     "class": "monk",
     "levelRequirement": "Master",
     "statRequirements": "3/3/3/3/3",
@@ -915,6 +1124,7 @@
   },
   {
     "name": "Look",
+    "image": "/images/abilities/Look.png",
     "class": "monk",
     "levelRequirement": "3",
     "statRequirements": "3/5/5/3/3",
@@ -926,6 +1136,7 @@
   },
   {
     "name": "Mantis Kick",
+    "image": "/images/abilities/Mantis%20Kick.png",
     "class": "monk",
     "levelRequirement": "41",
     "statRequirements": "27/7/7/35/11",
@@ -937,6 +1148,7 @@
   },
   {
     "name": "Molten Strike",
+    "image": "/images/abilities/Molten%20Strike.png",
     "class": "monk",
     "levelRequirement": "Master",
     "statRequirements": "60/15/10/140/50",
@@ -948,6 +1160,7 @@
   },
   {
     "name": "nis",
+    "image": "/images/abilities/nis.png",
     "class": "monk",
     "levelRequirement": "3",
     "statRequirements": "3/5/5/3/3",
@@ -959,6 +1172,7 @@
   },
   {
     "name": "Phoenix Strike",
+    "image": "/images/abilities/Phoenix%20Strike.png",
     "class": "monk",
     "levelRequirement": "88",
     "statRequirements": "45/14/8/59/29",
@@ -970,6 +1184,7 @@
   },
   {
     "name": "Poison Punch",
+    "image": "/images/abilities/Poison%20Punch.png",
     "class": "monk",
     "levelRequirement": "11",
     "statRequirements": "6/9/5/11/10",
@@ -981,6 +1196,7 @@
   },
   {
     "name": "Punch",
+    "image": "/images/abilities/Punch.png",
     "class": "monk",
     "levelRequirement": "1",
     "statRequirements": "3/3/3/3/3",
@@ -992,6 +1208,7 @@
   },
   {
     "name": "Rapid Punch",
+    "image": "/images/abilities/Rapid%20Punch.png",
     "class": "monk",
     "levelRequirement": "71",
     "statRequirements": "49/11/11/56/27",
@@ -1003,6 +1220,7 @@
   },
   {
     "name": "Relentless Draw",
+    "image": "/images/abilities/Relentless%20Draw.png",
     "class": "monk",
     "levelRequirement": "Master",
     "statRequirements": "100/25/20/150/70",
@@ -1014,6 +1232,7 @@
   },
   {
     "name": "Roundhouse Kick",
+    "image": "/images/abilities/Roundhouse%20Kick.png",
     "class": "monk",
     "levelRequirement": "33",
     "statRequirements": "14/6/4/31/15",
@@ -1025,6 +1244,7 @@
   },
   {
     "name": "Seismic Kick",
+    "image": "/images/abilities/Seismic%20Kick.png",
     "class": "monk",
     "levelRequirement": "71",
     "statRequirements": "40/7/7/59/20",
@@ -1036,6 +1256,7 @@
   },
   {
     "name": "Seismic Slam",
+    "image": "/images/abilities/Seismic%20Slam.png",
     "class": "monk",
     "levelRequirement": "Master",
     "statRequirements": "80/15/10/135/60",
@@ -1047,6 +1268,7 @@
   },
   {
     "name": "Soulful Touch",
+    "image": "/images/abilities/Soulful%20Touch.png",
     "class": "monk",
     "levelRequirement": "Master",
     "statRequirements": "3/3/3/3/3",
@@ -1058,6 +1280,7 @@
   },
   {
     "name": "Tempest Kick",
+    "image": "/images/abilities/Tempest%20Kick.png",
     "class": "monk",
     "levelRequirement": "71",
     "statRequirements": "27/9/9/53/39",
@@ -1069,6 +1292,7 @@
   },
   {
     "name": "Throw",
+    "image": "/images/abilities/Throw.png",
     "class": "monk",
     "levelRequirement": "50",
     "statRequirements": "5/9/5/3/3",
@@ -1080,6 +1304,7 @@
   },
   {
     "name": "Tsunami Kick",
+    "image": "/images/abilities/Tsunami%20Kick.png",
     "class": "monk",
     "levelRequirement": "71",
     "statRequirements": "29/21/12/49/26",
@@ -1091,6 +1316,7 @@
   },
   {
     "name": "Water Punch",
+    "image": "/images/abilities/Water%20Punch.png",
     "class": "monk",
     "levelRequirement": "11",
     "statRequirements": "9/7/5/12/7",
@@ -1102,6 +1328,7 @@
   },
   {
     "name": "Wavebreaker",
+    "image": "/images/abilities/Wavebreaker.png",
     "class": "monk",
     "levelRequirement": "Master",
     "statRequirements": "80/50/50/150/80",
@@ -1113,6 +1340,7 @@
   },
   {
     "name": "Wolf Fang Fist",
+    "image": "/images/abilities/Wolf%20Fang%20Fist.png",
     "class": "monk",
     "levelRequirement": "77",
     "statRequirements": "58/24/11/33/25",
@@ -1124,6 +1352,7 @@
   },
   {
     "name": "Autopsy 1",
+    "image": "/images/abilities/Autopsy%201.png",
     "class": "Plague Doctor",
     "element": "",
     "levelRequirement": "Ab 8",
@@ -1136,6 +1365,7 @@
   },
   {
     "name": "Bloodletting 1",
+    "image": "/images/abilities/Bloodletting%201.png",
     "class": "Plague Doctor",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -1148,6 +1378,7 @@
   },
   {
     "name": "Assail",
+    "image": "/images/abilities/Assail.png",
     "class": "priest",
     "levelRequirement": "1",
     "statRequirements": "3/3/3/3/3",
@@ -1159,6 +1390,7 @@
   },
   {
     "name": "Blessed Bolt",
+    "image": "/images/abilities/Blessed%20Bolt.png",
     "class": "priest",
     "levelRequirement": "1",
     "statRequirements": "3/3/3/3/3",
@@ -1170,6 +1402,7 @@
   },
   {
     "name": "Inspect",
+    "image": "/images/abilities/Inspect.png",
     "class": "priest",
     "levelRequirement": "3",
     "statRequirements": "3/5/5/3/3",
@@ -1181,6 +1414,7 @@
   },
   {
     "name": "Look",
+    "image": "/images/abilities/Look.png",
     "class": "priest",
     "levelRequirement": "3",
     "statRequirements": "3/5/5/3/3",
@@ -1192,6 +1426,7 @@
   },
   {
     "name": "nis",
+    "image": "/images/abilities/nis.png",
     "class": "priest",
     "levelRequirement": "3",
     "statRequirements": "3/5/5/3/3",
@@ -1203,6 +1438,7 @@
   },
   {
     "name": "Summon Pet",
+    "image": "/images/abilities/Summon%20Pet.png",
     "class": "priest",
     "levelRequirement": "10",
     "statRequirements": "3/6/12/5/5",
@@ -1214,6 +1450,7 @@
   },
   {
     "name": "Throw",
+    "image": "/images/abilities/Throw.png",
     "class": "priest",
     "levelRequirement": "50",
     "statRequirements": "5/9/5/3/3",
@@ -1225,6 +1462,7 @@
   },
   {
     "name": "Transfer Blood",
+    "image": "/images/abilities/Transfer%20Blood.png",
     "class": "priest",
     "levelRequirement": "11",
     "statRequirements": "3/7/12/4/3",
@@ -1235,18 +1473,34 @@
     "description": "Transfers blood from the caster to the target."
   },
   {
+    "name": "Advantage",
+    "class": "Rogue",
+    "element": "",
+    "levelRequirement": "1",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Becoming Rogue",
+    "description": "Passively increases damage dealt by 50% when striking from the side or behind.",
+    "image": "/images/abilities/Advantage.png"
+  },
+  {
     "name": "Amnesia",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "24",
     "statRequirements": "6/12/12/6/12",
     "goldRequired": "10,000",
     "itemRequirements": "Giant Bat's Wing (3), Raw Beryl (2)",
     "prerequisites": "-",
     "learningLocation": "Mileth Special Skills Master",
-    "description": "Removes the creature's focus."
+    "description": "A blow that removes an enemies aggro, and reapplying every second for 15s.  Bosses are immune.",
+    "image": "/images/abilities/Amnesia.png"
   },
   {
     "name": "Assail",
+    "image": "/images/abilities/Assail.png",
     "class": "rogue",
     "levelRequirement": "1",
     "statRequirements": "3/3/3/3/3",
@@ -1259,16 +1513,19 @@
   {
     "name": "Assassin Strike",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "Master",
     "statRequirements": "3/3/3/3/3",
     "goldRequired": "-",
     "itemRequirements": "-",
     "prerequisites": "-",
     "learningLocation": "Master",
-    "description": "Deals massive damage to a target based on your vitality. Chance to instantly kill normal monsters."
+    "description": "Strikes an enemy directly in front of you, dealing increased damage while in true hide.  Has a 25% chance to instantly kill if they are not wary of you.  Damage scales with Vitality.",
+    "image": "/images/abilities/Assassin%20Strike.png"
   },
   {
     "name": "Assault",
+    "image": "/images/abilities/Assault.png",
     "class": "rogue",
     "levelRequirement": "3",
     "statRequirements": "3/3/3/3/3",
@@ -1280,6 +1537,7 @@
   },
   {
     "name": "Backstab",
+    "image": "/images/abilities/Backstab.png",
     "class": "rogue",
     "levelRequirement": "35",
     "statRequirements": "16/7/7/10/35",
@@ -1292,49 +1550,58 @@
   {
     "name": "Barrage",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "71",
     "statRequirements": "28/10/9/24/66",
     "goldRequired": "100,000",
     "itemRequirements": "Faerie's Wing (2), Sun Dagger (1)",
     "prerequisites": "Blitz (100)",
     "learningLocation": "Suomi Special Skills Master",
-    "description": "Third assail that deals damage to enemies four spaces in front of you."
+    "description": "Basic attack that strikes the first enemy up to 3 tiles directly in front of you.",
+    "image": "/images/abilities/Barrage.png"
   },
   {
     "name": "Blitz",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "41",
     "statRequirements": "28/5/5/8/38",
     "goldRequired": "10,000",
     "itemRequirements": "Blossom Dagger (1)",
     "prerequisites": "Throw Surigum (100)",
     "learningLocation": "Mileth Special Skills Master",
-    "description": "Second assail that deals damage to enemies four spaces in front of you. Replaces Throw Surigum."
+    "description": "An assail upgrade that strikes the first enemy up to 3 tiles in front of you.",
+    "image": "/images/abilities/Blitz.png"
   },
   {
     "name": "Essence Siphon",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "Master",
     "statRequirements": "130/65/75/60/215",
     "goldRequired": "1,000,000",
     "itemRequirements": "Porboss Claw (3)",
     "prerequisites": "Sap Needle (100)",
     "learningLocation": "Suomi Special Skills Master",
-    "description": "Steals 10% mana from target. Restores up to 20% mana to group members. Deals damage equal to self restored mana."
+    "description": "Siphon 10% of the mana from the first target up to 3 tiles directly in front of you.  Restores 20% mana to nearby group members and deals damage equal to the mana stolen.",
+    "image": "/images/abilities/Essence%20Siphon.png"
   },
   {
     "name": "Frost Bomb",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "Master",
     "statRequirements": "90/35/25/30/135",
     "goldRequired": "750,000",
     "itemRequirements": "Ice Elemental Flame (5)",
     "prerequisites": "-",
     "learningLocation": "Rucesion Special Skills Master",
-    "description": "Suains all monsters within 4 spaces."
+    "description": "Applies Suain to all enemies within 4 tiles.",
+    "image": "/images/abilities/Frost%20Bomb.png"
   },
   {
     "name": "Inspect",
+    "image": "/images/abilities/Inspect.png",
     "class": "rogue",
     "levelRequirement": "3",
     "statRequirements": "3/5/5/3/3",
@@ -1347,16 +1614,19 @@
   {
     "name": "Killer Instinct",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "Master",
     "statRequirements": "75/60/40/40/120",
     "goldRequired": "100,000",
     "itemRequirements": "Grim Succubus's Hair (3)",
     "prerequisites": "-",
     "learningLocation": "Suomi Special Skills Master",
-    "description": "Allows the Rogue to study multiple creature's defense."
+    "description": "Reveal the defensive element of all enemies within 3 tiles of you.",
+    "image": "/images/abilities/Killer%20Instinct.png"
   },
   {
     "name": "Look",
+    "image": "/images/abilities/Look.png",
     "class": "rogue",
     "levelRequirement": "3",
     "statRequirements": "3/5/5/3/3",
@@ -1369,38 +1639,45 @@
   {
     "name": "Midnight Slash",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "Master",
     "statRequirements": "3/3/3/3/3",
     "goldRequired": "-",
     "itemRequirements": "-",
     "prerequisites": "Barrage (100)",
     "learningLocation": "Master",
-    "description": "Master Rogue assail."
+    "description": "A basic attack that strikes up to 3 tiles in front of you.",
+    "image": "/images/abilities/Midnight%20Slash.png"
   },
   {
     "name": "Murderous Intent",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "Master",
     "statRequirements": "3/3/3/3/3",
     "goldRequired": "-",
     "itemRequirements": "-",
     "prerequisites": "-",
     "learningLocation": "Master Dungeon",
-    "description": "Intimidates an enemy directly in front of you."
+    "description": "Applies Intimidate to an enemy directly in front of you.",
+    "image": "/images/abilities/Murderous%20Intent.png"
   },
   {
     "name": "Nightfall Strike",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "Master",
     "statRequirements": "90/20/15/45/130",
     "goldRequired": "500,000",
     "itemRequirements": "Direwolf Lock (5)",
     "prerequisites": "-",
     "learningLocation": "Suomi Special Skills Master",
-    "description": "Executes an enemy below 20% health. Does not work on bosses."
+    "description": "Instantly kills an enemy below 20% health.  A successful execute will reduce the cooldown by half.  Otherwise deals damage based on your DEX and 3% of your maximum health.",
+    "image": "/images/abilities/Nightfall%20Strike.png"
   },
   {
     "name": "nis",
+    "image": "/images/abilities/nis.png",
     "class": "rogue",
     "levelRequirement": "3",
     "statRequirements": "3/5/5/3/3",
@@ -1412,6 +1689,7 @@
   },
   {
     "name": "Peek",
+    "image": "/images/abilities/Peek.png",
     "class": "rogue",
     "levelRequirement": "8",
     "statRequirements": "3/8/5/3/3",
@@ -1424,49 +1702,58 @@
   {
     "name": "Pierce",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "16",
     "statRequirements": "8/4/4/9/20",
     "goldRequired": "20,000",
     "itemRequirements": "Goblin's Skull (2), Royal Gold Ring (1)",
     "prerequisites": "-",
     "learningLocation": "Mileth Special Skills Master",
-    "description": "Deals damage two tiles in front of you and adds AC to the target."
+    "description": "Strikes the first enemy up to 3 tiles directly in front of you.  Applies Armor Break.",
+    "image": "/images/abilities/Pierce.png"
   },
   {
     "name": "Poison Bomb",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "41",
     "statRequirements": "20/10/10/12/38",
     "goldRequired": "25,000",
     "itemRequirements": "Hobgoblin's Skull (2), Moon Dagger (1)",
     "prerequisites": "-",
     "learningLocation": "Suomi Special Skills Master",
-    "description": "Allows the rogue to throw a poison bomb that poisons enemies nearby."
+    "description": "Throw a bomb that hits all enemies within 3 tiles.  Applies Poison.",
+    "image": "/images/abilities/Poison%20Bomb.png"
   },
   {
     "name": "Rupture",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "Master (Pure)",
     "statRequirements": "3/3/3/3/3",
     "goldRequired": "-",
     "itemRequirements": "-",
     "prerequisites": "-",
     "learningLocation": "Tauren",
-    "description": "Causes the target to bleed. Pure only."
+    "description": "Applies Bleed to your target.  Pure Only.",
+    "image": "/images/abilities/Rupture.png"
   },
   {
     "name": "Sap Needle",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "20",
     "statRequirements": "6/7/11/5/19",
     "goldRequired": "10,000",
     "itemRequirements": "Raw Sapphire (3), Padded Gauntlet (1)",
     "prerequisites": "-",
     "learningLocation": "Mileth Special Skills Master",
-    "description": "Steals 10% mana from target. Restore up to 20% mana to group members."
+    "description": "Steals 10% mana from your target, restoring up to 20% mana for you and nearby allies.",
+    "image": "/images/abilities/Sap%20Needle.png"
   },
   {
     "name": "Sense",
+    "image": "/images/abilities/Sense.png",
     "class": "rogue",
     "levelRequirement": "90",
     "statRequirements": "36/11/11/24/76",
@@ -1479,38 +1766,45 @@
   {
     "name": "Shadow Figure",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "Master (Pure)",
     "statRequirements": "3/3/3/3/3",
     "goldRequired": "-",
     "itemRequirements": "-",
     "prerequisites": "-",
     "learningLocation": "Master",
-    "description": "Allows the Rogue to obtain and keep a tactical advantage on an enemy. Pure only. Replaces Backstab."
+    "description": "Slip behind the enemy directly in front of you and strikes them.  Pure Only.",
+    "image": "/images/abilities/Shadow%20Figure.png"
   },
   {
     "name": "Skewer",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "90",
     "statRequirements": "36/11/11/24/76",
     "goldRequired": "150,000",
     "itemRequirements": "Gruesomefly's Wing (2), Blood Dagger (1)",
     "prerequisites": "Pierce (100)",
     "learningLocation": "Mileth Special Skills Master",
-    "description": "Deals great damage three tiles in front of you and increases target AC. Replaces Pierce."
+    "description": "Strikes every enemy up to 3 tiles in front of you.  Applies Armor Break.",
+    "image": "/images/abilities/Skewer.png"
   },
   {
     "name": "Smoke Screen",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "60",
     "statRequirements": "10/5/5/5/16",
     "goldRequired": "25,000",
     "itemRequirements": "Light Shield (1)",
     "prerequisites": "Throw Smokebomb (100)",
     "learningLocation": "Rucesion Special Skills Master",
-    "description": "Dalls all enemies within 4 spaces."
+    "description": "Applies Dall to all enemies within 4 tiles.",
+    "image": "/images/abilities/Smoke%20Screen.png"
   },
   {
     "name": "Stab and Twist",
+    "image": "/images/abilities/Stab%20and%20Twist.png",
     "class": "rogue",
     "levelRequirement": "60",
     "statRequirements": "34/11/6/17/51",
@@ -1523,16 +1817,19 @@
   {
     "name": "Stab Twice",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "Master",
     "statRequirements": "50/18/11/28/88",
     "goldRequired": "100,000",
     "itemRequirements": "Strap Gauntlet (2)",
     "prerequisites": "-",
     "learningLocation": "Suomi Special Skills Master",
-    "description": "Deals moderate damage to the enemy in front of you."
+    "description": "Deals massive damage to the target directly in front of you.",
+    "image": "/images/abilities/Stab%20Twice.png"
   },
   {
     "name": "Stab",
+    "image": "/images/abilities/Stab.png",
     "class": "rogue",
     "levelRequirement": "3",
     "statRequirements": "3/3/3/3/3",
@@ -1545,38 +1842,45 @@
   {
     "name": "Study Creature",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "6",
     "statRequirements": "3/5/4/3/5",
     "goldRequired": "1,000",
     "itemRequirements": "Mantis Eye (1)",
     "prerequisites": "-",
     "learningLocation": "Suomi Special Skills Master",
-    "description": "Allows the Rogue to study a creature's attributes."
+    "description": "Study the first enemy up to 3 tiles directly in front of you, revealing their level, health, AC, mana and elements.  Nearby group members will also see a summary.",
+    "image": "/images/abilities/Study%20Creature.png"
   },
   {
     "name": "Throw Smokebomb",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "9",
     "statRequirements": "5/4/3/3/11",
     "goldRequired": "2,000",
     "itemRequirements": "Spider's Silk (1)",
     "prerequisites": "-",
     "learningLocation": "Mileth Special Skills Master",
-    "description": "Dalls all enemies within 3 spaces."
+    "description": "Applies Dall to all enemies within 3 tiles.",
+    "image": "/images/abilities/Throw%20Smokebomb.png"
   },
   {
     "name": "Throw Surigum",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "16",
     "statRequirements": "7/3/4/4/15",
     "goldRequired": "5,000",
     "itemRequirements": "Centipede's Gland (3)",
     "prerequisites": "Assault (100)",
     "learningLocation": "Mileth Special Skills Master",
-    "description": "Deals minor damage to enemies up to four spaces in front of you."
+    "description": "Deals minor damage to enemies up to 3 spaces in front of you.",
+    "image": "/images/abilities/Throw%20Surigum.png"
   },
   {
     "name": "Throw",
+    "image": "/images/abilities/Throw.png",
     "class": "rogue",
     "levelRequirement": "50",
     "statRequirements": "5/9/5/3/3",
@@ -1588,6 +1892,7 @@
   },
   {
     "name": "Trip",
+    "image": "/images/abilities/Trip.png",
     "class": "rogue",
     "levelRequirement": "80",
     "statRequirements": "50/20/15/25/70",
@@ -1599,6 +1904,7 @@
   },
   {
     "name": "Bladestorm 1",
+    "image": "/images/abilities/Bladestorm%201.png",
     "class": "Warlord",
     "levelRequirement": "Ab 1",
     "statRequirements": "3/3/3/3/3",
@@ -1610,6 +1916,7 @@
   },
   {
     "name": "Bravado",
+    "image": "/images/abilities/Bravado.png",
     "class": "Warlord",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -1622,6 +1929,7 @@
   },
   {
     "name": "Challenge 1",
+    "image": "/images/abilities/Challenge%201.png",
     "class": "Warlord",
     "element": "",
     "levelRequirement": "Ab 12",
@@ -1634,6 +1942,7 @@
   },
   {
     "name": "Glory",
+    "image": "/images/abilities/Glory.png",
     "class": "Warlord",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -1646,6 +1955,7 @@
   },
   {
     "name": "Rout 1",
+    "image": "/images/abilities/Rout%201.png",
     "class": "Warlord",
     "levelRequirement": "Ab 3",
     "statRequirements": "3/3/3/3/3",
@@ -1657,6 +1967,7 @@
   },
   {
     "name": "Sever 1",
+    "image": "/images/abilities/Sever%201.png",
     "class": "Warlord",
     "levelRequirement": "Ab 1",
     "statRequirements": "3/3/3/3/3",
@@ -1668,6 +1979,7 @@
   },
   {
     "name": "Shockwave 1",
+    "image": "/images/abilities/Shockwave%201.png",
     "class": "Warlord",
     "levelRequirement": "Ab 1",
     "statRequirements": "3/3/3/3/3",
@@ -1679,6 +1991,7 @@
   },
   {
     "name": "Vanguard Sweep 1",
+    "image": "/images/abilities/Vanguard%20Sweep%201.png",
     "class": "Warlord",
     "levelRequirement": "Ab 1",
     "statRequirements": "3/3/3/3/3",
@@ -1703,6 +2016,7 @@
   },
   {
     "name": "Ao Beag Suain",
+    "image": "/images/abilities/Ao%20Beag%20Suain.png",
     "class": "warrior",
     "levelRequirement": "34",
     "statRequirements": "31/9/9/25/13",
@@ -1714,6 +2028,7 @@
   },
   {
     "name": "Assail",
+    "image": "/images/abilities/Assail.png",
     "class": "warrior",
     "levelRequirement": "1",
     "statRequirements": "3/3/3/3/3",
@@ -1725,6 +2040,7 @@
   },
   {
     "name": "Beag Suain",
+    "image": "/images/abilities/Beag%20Suain.png",
     "class": "warrior",
     "levelRequirement": "33",
     "statRequirements": "30/7/7/13/24",
@@ -1736,6 +2052,7 @@
   },
   {
     "name": "Bull Rush",
+    "image": "/images/abilities/Bull%20Rush.png",
     "class": "warrior",
     "levelRequirement": "56",
     "statRequirements": "55/3/3/23/25",
@@ -1747,6 +2064,7 @@
   },
   {
     "name": "Charge",
+    "image": "/images/abilities/Charge.png",
     "class": "warrior",
     "levelRequirement": "Master",
     "statRequirements": "3/3/3/3/3",
@@ -1758,6 +2076,7 @@
   },
   {
     "name": "Cleave",
+    "image": "/images/abilities/Cleave.png",
     "class": "warrior",
     "levelRequirement": "48",
     "statRequirements": "50/3/3/20/16",
@@ -1769,6 +2088,7 @@
   },
   {
     "name": "Clobber",
+    "image": "/images/abilities/Clobber.png",
     "class": "warrior",
     "levelRequirement": "11",
     "statRequirements": "16/3/3/8/4",
@@ -1780,6 +2100,7 @@
   },
   {
     "name": "Crasher",
+    "image": "/images/abilities/Crasher.png",
     "class": "warrior",
     "levelRequirement": "50",
     "statRequirements": "50/9/9/28/20",
@@ -1791,6 +2112,7 @@
   },
   {
     "name": "Devour",
+    "image": "/images/abilities/Devour.png",
     "class": "warrior",
     "levelRequirement": "Master",
     "statRequirements": "3/3/3/3/3",
@@ -1802,6 +2124,7 @@
   },
   {
     "name": "Execute",
+    "image": "/images/abilities/Execute.png",
     "class": "warrior",
     "levelRequirement": "60",
     "statRequirements": "44/8/6/25/30",
@@ -1813,6 +2136,7 @@
   },
   {
     "name": "Flank",
+    "image": "/images/abilities/Flank.png",
     "class": "warrior",
     "levelRequirement": "30",
     "statRequirements": "30/4/4/15/17",
@@ -1824,6 +2148,7 @@
   },
   {
     "name": "Flurry",
+    "image": "/images/abilities/Flurry.png",
     "class": "warrior",
     "levelRequirement": "20",
     "statRequirements": "25/3/5/8/18",
@@ -1835,6 +2160,7 @@
   },
   {
     "name": "Ground Shattering",
+    "image": "/images/abilities/Ground%20Shattering.png",
     "class": "warrior",
     "levelRequirement": "Master",
     "statRequirements": "180/15/15/80/80",
@@ -1846,6 +2172,7 @@
   },
   {
     "name": "Ground Stomp",
+    "image": "/images/abilities/Ground%20Stomp.png",
     "class": "warrior",
     "levelRequirement": "80",
     "statRequirements": "77/8/8/27/39",
@@ -1857,6 +2184,7 @@
   },
   {
     "name": "Inspect",
+    "image": "/images/abilities/Inspect.png",
     "class": "warrior",
     "levelRequirement": "3",
     "statRequirements": "3/5/5/3/3",
@@ -1868,6 +2196,7 @@
   },
   {
     "name": "Look",
+    "image": "/images/abilities/Look.png",
     "class": "warrior",
     "levelRequirement": "3",
     "statRequirements": "3/5/5/3/3",
@@ -1888,10 +2217,11 @@
     "prerequisites": "Flurry (100)",
     "learningLocation": "Nobis House (28,27)",
     "description": "Surge of raging energy, striking all nearby enemies within a range of 3 with devastating force. Pure only.",
-    "image": "/images/abilities/madsoul.png"
+    "image": "/images/abilities/Mad%20Soul.png"
   },
   {
     "name": "nis",
+    "image": "/images/abilities/nis.png",
     "class": "warrior",
     "levelRequirement": "3",
     "statRequirements": "3/5/5/3/3",
@@ -1925,10 +2255,11 @@
     "prerequisites": "Ground Stomp (100)",
     "learningLocation": "Shamensyth",
     "description": "Paralyzes all enemies within four spaces. Pure Only.",
-    "image": "/images/abilities/PF.png"
+    "image": "/images/abilities/Paralyze%20Force.png"
   },
   {
     "name": "Pulverize",
+    "image": "/images/abilities/Pulverize.png",
     "class": "warrior",
     "levelRequirement": "71",
     "statRequirements": "72/3/3/30/23",
@@ -1940,6 +2271,7 @@
   },
   {
     "name": "Scathe",
+    "image": "/images/abilities/Scathe.png",
     "class": "warrior",
     "levelRequirement": "15",
     "statRequirements": "20/3/3/7/8",
@@ -1951,6 +2283,7 @@
   },
   {
     "name": "Sever",
+    "image": "/images/abilities/Sever%201.png",
     "class": "warrior",
     "levelRequirement": "Master",
     "statRequirements": "140/8/8/60/50",
@@ -1962,6 +2295,7 @@
   },
   {
     "name": "Shockwave",
+    "image": "/images/abilities/Shockwave%201.png",
     "class": "warrior",
     "levelRequirement": "Master",
     "statRequirements": "3/3/3/3/3",
@@ -1973,6 +2307,7 @@
   },
   {
     "name": "Slash",
+    "image": "/images/abilities/Slash.png",
     "class": "warrior",
     "levelRequirement": "3",
     "statRequirements": "3/3/3/3/3",
@@ -1984,6 +2319,7 @@
   },
   {
     "name": "Slaughter",
+    "image": "/images/abilities/Slaughter.png",
     "class": "warrior",
     "levelRequirement": "Master",
     "statRequirements": "215/50/50/150/180",
@@ -1995,6 +2331,7 @@
   },
   {
     "name": "Sneak Attack",
+    "image": "/images/abilities/Sneak%20Attack.png",
     "class": "warrior",
     "levelRequirement": "Master (Pure)",
     "statRequirements": "150/25/25/95/100",
@@ -2006,6 +2343,7 @@
   },
   {
     "name": "Strike",
+    "image": "/images/abilities/Strike.png",
     "class": "warrior",
     "levelRequirement": "1",
     "statRequirements": "3/3/3/3/3",
@@ -2017,6 +2355,7 @@
   },
   {
     "name": "Sunder",
+    "image": "/images/abilities/Sunder.png",
     "class": "warrior",
     "levelRequirement": "36",
     "statRequirements": "40/3/3/19/14",
@@ -2028,6 +2367,7 @@
   },
   {
     "name": "Tempest Blade",
+    "image": "/images/abilities/Tempest%20Blade.png",
     "class": "warrior",
     "levelRequirement": "60",
     "statRequirements": "58/3/3/22/35",
@@ -2039,6 +2379,7 @@
   },
   {
     "name": "Thrash",
+    "image": "/images/abilities/Thrash.png",
     "class": "warrior",
     "levelRequirement": "Master",
     "statRequirements": "3/3/3/3/3",
@@ -2050,6 +2391,7 @@
   },
   {
     "name": "Throw",
+    "image": "/images/abilities/Throw.png",
     "class": "warrior",
     "levelRequirement": "50",
     "statRequirements": "5/9/5/3/3",
@@ -2061,6 +2403,7 @@
   },
   {
     "name": "Two Handed Attack",
+    "image": "/images/abilities/Two%20Handed%20Attack.png",
     "class": "warrior",
     "levelRequirement": "50",
     "statRequirements": "40/3/3/34/18",
@@ -2072,6 +2415,7 @@
   },
   {
     "name": "Wallop",
+    "image": "/images/abilities/Wallop.png",
     "class": "warrior",
     "levelRequirement": "41",
     "statRequirements": "40/3/3/22/16",
@@ -2083,6 +2427,7 @@
   },
   {
     "name": "Wind Blade",
+    "image": "/images/abilities/Wind%20Blade.png",
     "class": "warrior",
     "levelRequirement": "11",
     "statRequirements": "10/3/3/5/10",
@@ -2094,6 +2439,7 @@
   },
   {
     "name": "Assail",
+    "image": "/images/abilities/Assail.png",
     "class": "wizard",
     "levelRequirement": "1",
     "statRequirements": "3/3/3/3/3",
@@ -2105,6 +2451,7 @@
   },
   {
     "name": "Energy Bolt",
+    "image": "/images/abilities/Energy%20Bolt.png",
     "class": "wizard",
     "levelRequirement": "1",
     "statRequirements": "3/3/3/3/3",
@@ -2116,6 +2463,7 @@
   },
   {
     "name": "Inspect",
+    "image": "/images/abilities/Inspect.png",
     "class": "wizard",
     "levelRequirement": "3",
     "statRequirements": "3/5/5/3/3",
@@ -2127,6 +2475,7 @@
   },
   {
     "name": "nis",
+    "image": "/images/abilities/nis.png",
     "class": "wizard",
     "levelRequirement": "3",
     "statRequirements": "3/5/5/3/3",
@@ -2138,6 +2487,7 @@
   },
   {
     "name": "Rumination",
+    "image": "/images/abilities/Rumination.png",
     "class": "wizard",
     "levelRequirement": "11",
     "statRequirements": "3/10/10/5/3",
@@ -2149,6 +2499,7 @@
   },
   {
     "name": "Throw",
+    "image": "/images/abilities/Throw.png",
     "class": "wizard",
     "levelRequirement": "50",
     "statRequirements": "5/9/5/3/3",
@@ -2160,6 +2511,7 @@
   },
   {
     "name": "Uninterrupted Channeling",
+    "image": "/images/abilities/Uninterrupted%20Channeling.png",
     "class": "wizard",
     "levelRequirement": "Master",
     "statRequirements": "3/3/3/3/3",

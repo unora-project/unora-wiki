@@ -1,6 +1,7 @@
 [
   {
     "name": "Caltrops 1",
+    "image": "/images/abilities/Caltrops%201.png",
     "class": "Archer",
     "element": "",
     "levelRequirement": "Ab 3",
@@ -25,6 +26,7 @@
   },
   {
     "name": "Marksman's Focus 1",
+    "image": "/images/abilities/Marksman's%20Focus%201.png",
     "class": "Archer",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -37,6 +39,7 @@
   },
   {
     "name": "Point Blank 1",
+    "image": "/images/abilities/Point%20Blank%201.png",
     "class": "Archer",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -49,6 +52,7 @@
   },
   {
     "name": "Shadowmeld 1",
+    "image": "/images/abilities/Shadowmeld%201.png",
     "class": "Archer",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -61,6 +65,7 @@
   },
   {
     "name": "Smoke Arrow 1",
+    "image": "/images/abilities/Smoke%20Arrow%201.png",
     "class": "Archer",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -73,6 +78,7 @@
   },
   {
     "name": "Snare Ring 1",
+    "image": "/images/abilities/Snare%20Ring%201.png",
     "class": "Archer",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -85,6 +91,7 @@
   },
   {
     "name": "Venom Arrow 1",
+    "image": "/images/abilities/Venom%20Arrow%201.png",
     "class": "Archer",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -97,6 +104,7 @@
   },
   {
     "name": "Volley 1",
+    "image": "/images/abilities/Volley%201.png",
     "class": "Archer",
     "element": "",
     "levelRequirement": "Ab 12",

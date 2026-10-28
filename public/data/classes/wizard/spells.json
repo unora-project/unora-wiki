@@ -1,6 +1,7 @@
 [
   {
     "name": "Arcane Blast",
+    "image": "/images/abilities/Arcane%20Blast.png",
     "class": "wizard",
     "levelRequirement": "71",
     "statRequirements": "5/72/38/5/5",
@@ -12,6 +13,7 @@
   },
   {
     "name": "Arcane Bolt",
+    "image": "/images/abilities/Arcane%20Bolt.png",
     "class": "wizard",
     "levelRequirement": "3",
     "statRequirements": "3/3/3/3/3",
@@ -23,6 +25,7 @@
   },
   {
     "name": "Arcane Explosion",
+    "image": "/images/abilities/Arcane%20Explosion.png",
     "class": "wizard",
     "levelRequirement": "Master",
     "statRequirements": "3/3/3/3/3",
@@ -34,6 +37,7 @@
   },
   {
     "name": "Arcane Missile",
+    "image": "/images/abilities/Arcane%20Missile.png",
     "class": "wizard",
     "levelRequirement": "21",
     "statRequirements": "3/25/17/5/5",
@@ -45,6 +49,7 @@
   },
   {
     "name": "Ard Athar Lamh",
+    "image": "/images/abilities/Ard%20Athar%20Lamh.png",
     "class": "wizard",
     "levelRequirement": "90",
     "statRequirements": "3/82/45/3/14",
@@ -56,6 +61,7 @@
   },
   {
     "name": "Ard Athar Meall",
+    "image": "/images/abilities/Ard%20Athar%20Meall.png",
     "class": "wizard",
     "levelRequirement": "Master",
     "statRequirements": "7/155/98/5/9",
@@ -67,6 +73,7 @@
   },
   {
     "name": "Ard Athar",
+    "image": "/images/abilities/Ard%20Athar.png",
     "class": "wizard",
     "levelRequirement": "80",
     "statRequirements": "5/76/44/5/20",
@@ -78,6 +85,7 @@
   },
   {
     "name": "Ard Cradh",
+    "image": "/images/abilities/Ard%20Cradh.png",
     "class": "wizard",
     "levelRequirement": "90",
     "statRequirements": "10/105/55/10/15",
@@ -89,6 +97,7 @@
   },
   {
     "name": "Ard Creag Lamh",
+    "image": "/images/abilities/Ard%20Creag%20Lamh.png",
     "class": "wizard",
     "levelRequirement": "90",
     "statRequirements": "3/88/40/19/3",
@@ -100,6 +109,7 @@
   },
   {
     "name": "Ard Creag Meall",
+    "image": "/images/abilities/Ard%20Creag%20Meall.png",
     "class": "wizard",
     "levelRequirement": "Master",
     "statRequirements": "9/130/95/15/18",
@@ -111,6 +121,7 @@
   },
   {
     "name": "Ard Creag",
+    "image": "/images/abilities/Ard%20Creag.png",
     "class": "wizard",
     "levelRequirement": "80",
     "statRequirements": "5/76/44/20/5",
@@ -122,6 +133,7 @@
   },
   {
     "name": "Ard Sal Lamh",
+    "image": "/images/abilities/Ard%20Sal%20Lamh.png",
     "class": "wizard",
     "levelRequirement": "90",
     "statRequirements": "9/94/41/9/9",
@@ -133,6 +145,7 @@
   },
   {
     "name": "Ard Sal Meall",
+    "image": "/images/abilities/Ard%20Sal%20Meall.png",
     "class": "wizard",
     "levelRequirement": "Master",
     "statRequirements": "15/145/95/10/20",
@@ -144,6 +157,7 @@
   },
   {
     "name": "Ard Sal",
+    "image": "/images/abilities/Ard%20Sal.png",
     "class": "wizard",
     "levelRequirement": "80",
     "statRequirements": "12/76/44/12/12",
@@ -155,6 +169,7 @@
   },
   {
     "name": "Ard Srad Lamh",
+    "image": "/images/abilities/Ard%20Srad%20Lamh.png",
     "class": "wizard",
     "levelRequirement": "90",
     "statRequirements": "21/72/40/3/3",
@@ -166,6 +181,7 @@
   },
   {
     "name": "Ard Srad Meall",
+    "image": "/images/abilities/Ard%20Srad%20Meall.png",
     "class": "wizard",
     "levelRequirement": "Master",
     "statRequirements": "22/125/80/15/15",
@@ -177,6 +193,7 @@
   },
   {
     "name": "Ard Srad",
+    "image": "/images/abilities/Ard%20Srad.png",
     "class": "wizard",
     "levelRequirement": "80",
     "statRequirements": "20/76/44/5/5",
@@ -188,6 +205,7 @@
   },
   {
     "name": "Athar Lamh",
+    "image": "/images/abilities/Athar%20Lamh.png",
     "class": "wizard",
     "levelRequirement": "27",
     "statRequirements": "3/23/12/3/9",
@@ -199,6 +217,7 @@
   },
   {
     "name": "Athar Meall",
+    "image": "/images/abilities/Athar%20Meall.png",
     "class": "wizard",
     "levelRequirement": "41",
     "statRequirements": "3/36/23/3/11",
@@ -210,6 +229,7 @@
   },
   {
     "name": "Athar",
+    "image": "/images/abilities/Athar.png",
     "class": "wizard",
     "levelRequirement": "11",
     "statRequirements": "3/14/7/3/5",
@@ -221,6 +241,7 @@
   },
   {
     "name": "Beag Athar Lamh",
+    "image": "/images/abilities/Beag%20Athar%20Lamh.png",
     "class": "wizard",
     "levelRequirement": "10",
     "statRequirements": "3/10/7/3/3",
@@ -232,6 +253,7 @@
   },
   {
     "name": "Beag Athar",
+    "image": "/images/abilities/Beag%20Athar.png",
     "class": "wizard",
     "levelRequirement": "3",
     "statRequirements": "3/5/3/3/3",
@@ -243,6 +265,7 @@
   },
   {
     "name": "Beag Cradh",
+    "image": "/images/abilities/Beag%20Cradh.png",
     "class": "wizard",
     "levelRequirement": "11",
     "statRequirements": "3/11/5/3/3",
@@ -254,6 +277,7 @@
   },
   {
     "name": "Beag Creag Lamh",
+    "image": "/images/abilities/Beag%20Creag%20Lamh.png",
     "class": "wizard",
     "levelRequirement": "10",
     "statRequirements": "3/10/7/3/3",
@@ -265,6 +289,7 @@
   },
   {
     "name": "Beag Creag",
+    "image": "/images/abilities/Beag%20Creag.png",
     "class": "wizard",
     "levelRequirement": "3",
     "statRequirements": "3/5/3/3/3",
@@ -276,6 +301,7 @@
   },
   {
     "name": "Beag Sal Lamh",
+    "image": "/images/abilities/Beag%20Sal%20Lamh.png",
     "class": "wizard",
     "levelRequirement": "10",
     "statRequirements": "3/18/11/3/3",
@@ -287,6 +313,7 @@
   },
   {
     "name": "Beag Sal",
+    "image": "/images/abilities/Beag%20Sal.png",
     "class": "wizard",
     "levelRequirement": "3",
     "statRequirements": "3/5/3/3/3",
@@ -298,6 +325,7 @@
   },
   {
     "name": "Beag Srad Lamh",
+    "image": "/images/abilities/Beag%20Srad%20Lamh.png",
     "class": "wizard",
     "levelRequirement": "10",
     "statRequirements": "3/18/11/3/3",
@@ -309,6 +337,7 @@
   },
   {
     "name": "Beag Srad",
+    "image": "/images/abilities/Beag%20Srad.png",
     "class": "wizard",
     "levelRequirement": "3",
     "statRequirements": "3/5/3/3/3",
@@ -320,6 +349,7 @@
   },
   {
     "name": "Call Lightning",
+    "image": "/images/abilities/Call%20Lightning%201.png",
     "class": "wizard",
     "levelRequirement": "Master",
     "statRequirements": "3/3/3/3/3",
@@ -331,6 +361,7 @@
   },
   {
     "name": "Cradh",
+    "image": "/images/abilities/Cradh.png",
     "class": "wizard",
     "levelRequirement": "30",
     "statRequirements": "3/32/15/5/6",
@@ -342,6 +373,7 @@
   },
   {
     "name": "Creag Lamh",
+    "image": "/images/abilities/Creag%20Lamh.png",
     "class": "wizard",
     "levelRequirement": "27",
     "statRequirements": "3/23/12/9/3",
@@ -353,6 +385,7 @@
   },
   {
     "name": "Creag Meall",
+    "image": "/images/abilities/Creag%20Meall.png",
     "class": "wizard",
     "levelRequirement": "41",
     "statRequirements": "3/36/23/11/3",
@@ -364,6 +397,7 @@
   },
   {
     "name": "Creag",
+    "image": "/images/abilities/Creag.png",
     "class": "wizard",
     "levelRequirement": "11",
     "statRequirements": "3/14/7/5/3",
@@ -375,6 +409,7 @@
   },
   {
     "name": "Dall",
+    "image": "/images/abilities/Dall.png",
     "class": "wizard",
     "levelRequirement": "48",
     "statRequirements": "3/42/38/10/3",
@@ -386,6 +421,7 @@
   },
   {
     "name": "Dia Cradh",
+    "image": "/images/abilities/Dia%20Cradh.png",
     "class": "wizard",
     "levelRequirement": "Master (Pure)",
     "statRequirements": "3/3/3/3/3",
@@ -397,6 +433,7 @@
   },
   {
     "name": "Expose Weakness",
+    "image": "/images/abilities/Expose%20Weakness.png",
     "class": "wizard",
     "levelRequirement": "58",
     "statRequirements": "3/52/30/12/7",
@@ -408,6 +445,7 @@
   },
   {
     "name": "Fas Spiorad",
+    "image": "/images/abilities/Fas%20Spiorad.png",
     "class": "wizard",
     "levelRequirement": "Master",
     "statRequirements": "3/3/3/3/3",
@@ -419,6 +457,7 @@
   },
   {
     "name": "Home",
+    "image": "/images/abilities/Home.png",
     "class": "wizard",
     "levelRequirement": "41",
     "statRequirements": "3/42/35/5/5",
@@ -430,6 +469,7 @@
   },
   {
     "name": "Magma Surge",
+    "image": "/images/abilities/Magma%20Surge.png",
     "class": "wizard",
     "levelRequirement": "Master (Pure)",
     "statRequirements": "25/140/90/15/15",
@@ -441,6 +481,7 @@
   },
   {
     "name": "Meteor",
+    "image": "/images/abilities/Meteor%201.png",
     "class": "wizard",
     "levelRequirement": "Master",
     "statRequirements": "3/3/3/3/3",
@@ -452,6 +493,7 @@
   },
   {
     "name": "Mor Athar Lamh",
+    "image": "/images/abilities/Mor%20Athar%20Lamh.png",
     "class": "wizard",
     "levelRequirement": "60",
     "statRequirements": "3/52/30/3/14",
@@ -463,6 +505,7 @@
   },
   {
     "name": "Mor Athar Meall",
+    "image": "/images/abilities/Mor%20Athar%20Meall.png",
     "class": "wizard",
     "levelRequirement": "71",
     "statRequirements": "3/70/41/3/16",
@@ -474,6 +517,7 @@
   },
   {
     "name": "Mor Athar",
+    "image": "/images/abilities/Mor%20Athar.png",
     "class": "wizard",
     "levelRequirement": "41",
     "statRequirements": "3/40/27/3/12",
@@ -485,6 +529,7 @@
   },
   {
     "name": "Mor Cradh",
+    "image": "/images/abilities/Mor%20Cradh.png",
     "class": "wizard",
     "levelRequirement": "60",
     "statRequirements": "5/75/38/5/5",
@@ -496,6 +541,7 @@
   },
   {
     "name": "Mor Creag Lamh",
+    "image": "/images/abilities/Mor%20Creag%20Lamh.png",
     "class": "wizard",
     "levelRequirement": "60",
     "statRequirements": "3/51/36/14/3",
@@ -507,6 +553,7 @@
   },
   {
     "name": "Mor Creag Meall",
+    "image": "/images/abilities/Mor%20Creag%20Meall.png",
     "class": "wizard",
     "levelRequirement": "71",
     "statRequirements": "3/70/41/16/3",
@@ -518,6 +565,7 @@
   },
   {
     "name": "Mor Creag",
+    "image": "/images/abilities/Mor%20Creag.png",
     "class": "wizard",
     "levelRequirement": "41",
     "statRequirements": "3/40/27/12/3",
@@ -529,6 +577,7 @@
   },
   {
     "name": "Mor Sal Lamh",
+    "image": "/images/abilities/Mor%20Sal%20Lamh.png",
     "class": "wizard",
     "levelRequirement": "60",
     "statRequirements": "9/52/30/9/9",
@@ -540,6 +589,7 @@
   },
   {
     "name": "Mor Sal Meall",
+    "image": "/images/abilities/Mor%20Sal%20Meall.png",
     "class": "wizard",
     "levelRequirement": "71",
     "statRequirements": "10/70/41/10/10",
@@ -551,6 +601,7 @@
   },
   {
     "name": "Mor Sal",
+    "image": "/images/abilities/Mor%20Sal.png",
     "class": "wizard",
     "levelRequirement": "41",
     "statRequirements": "8/40/27/8/8",
@@ -562,6 +613,7 @@
   },
   {
     "name": "Mor Srad Lamh",
+    "image": "/images/abilities/Mor%20Srad%20Lamh.png",
     "class": "wizard",
     "levelRequirement": "60",
     "statRequirements": "14/52/30/3/3",
@@ -573,6 +625,7 @@
   },
   {
     "name": "Mor Srad Meall",
+    "image": "/images/abilities/Mor%20Srad%20Meall.png",
     "class": "wizard",
     "levelRequirement": "71",
     "statRequirements": "16/70/41/3/3",
@@ -584,6 +637,7 @@
   },
   {
     "name": "Mor Srad",
+    "image": "/images/abilities/Mor%20Srad.png",
     "class": "wizard",
     "levelRequirement": "41",
     "statRequirements": "12/40/27/3/3",
@@ -595,6 +649,7 @@
   },
   {
     "name": "Sal Lamh",
+    "image": "/images/abilities/Sal%20Lamh.png",
     "class": "wizard",
     "levelRequirement": "27",
     "statRequirements": "6/23/12/6/6",
@@ -606,6 +661,7 @@
   },
   {
     "name": "Sal Meall",
+    "image": "/images/abilities/Sal%20Meall.png",
     "class": "wizard",
     "levelRequirement": "41",
     "statRequirements": "7/36/23/7/7",
@@ -617,6 +673,7 @@
   },
   {
     "name": "Sal",
+    "image": "/images/abilities/Sal.png",
     "class": "wizard",
     "levelRequirement": "11",
     "statRequirements": "4/14/7/4/4",
@@ -628,6 +685,7 @@
   },
   {
     "name": "Seismic Shift",
+    "image": "/images/abilities/Seismic%20Shift%201.png",
     "class": "wizard",
     "levelRequirement": "Master",
     "statRequirements": "3/3/3/3/3",
@@ -639,6 +697,7 @@
   },
   {
     "name": "Sight of Frailty",
+    "image": "/images/abilities/Sight%20of%20Frailty.png",
     "class": "wizard",
     "levelRequirement": "Master (Pure)",
     "statRequirements": "3/3/3/3/3",
@@ -650,6 +709,7 @@
   },
   {
     "name": "Srad Lamh",
+    "image": "/images/abilities/Srad%20Lamh.png",
     "class": "wizard",
     "levelRequirement": "27",
     "statRequirements": "9/23/12/3/3",
@@ -661,6 +721,7 @@
   },
   {
     "name": "Srad Meall",
+    "image": "/images/abilities/Srad%20Meall.png",
     "class": "wizard",
     "levelRequirement": "41",
     "statRequirements": "11/36/23/3/3",
@@ -672,6 +733,7 @@
   },
   {
     "name": "Srad",
+    "image": "/images/abilities/Srad.png",
     "class": "wizard",
     "levelRequirement": "11",
     "statRequirements": "5/14/7/3/3",
@@ -683,6 +745,7 @@
   },
   {
     "name": "Tidal Breeze",
+    "image": "/images/abilities/Tidal%20Breeze.png",
     "class": "wizard",
     "levelRequirement": "Master (Pure)",
     "statRequirements": "25/140/90/15/15",
@@ -694,6 +757,7 @@
   },
   {
     "name": "Tidal Wave",
+    "image": "/images/abilities/Tidal%20Wave%201.png",
     "class": "wizard",
     "levelRequirement": "Master",
     "statRequirements": "3/3/3/3/3",

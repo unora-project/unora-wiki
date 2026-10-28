@@ -1,6 +1,7 @@
 [
   {
     "name": "Attune Earth 1",
+    "image": "/images/abilities/Attune%20Earth%201.png",
     "class": "Elementalist",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -13,6 +14,7 @@
   },
   {
     "name": "Attune Fire 1",
+    "image": "/images/abilities/Attune%20Fire%201.png",
     "class": "Elementalist",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -25,6 +27,7 @@
   },
   {
     "name": "Attune Water 1",
+    "image": "/images/abilities/Attune%20Water%201.png",
     "class": "Elementalist",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -37,6 +40,7 @@
   },
   {
     "name": "Attune Wind 1",
+    "image": "/images/abilities/Attune%20Wind%201.png",
     "class": "Elementalist",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -49,6 +53,7 @@
   },
   {
     "name": "Elemental Recharge",
+    "image": "/images/abilities/Elemental%20Recharge.png",
     "class": "Elementalist",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -61,6 +66,7 @@
   },
   {
     "name": "Elemental Strike 1",
+    "image": "/images/abilities/Elemental%20Strike%201.png",
     "class": "Elementalist",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -73,6 +79,7 @@
   },
   {
     "name": "Elemental Strike 2",
+    "image": "/images/abilities/Elemental%20Strike%201.png",
     "class": "Elementalist",
     "element": "",
     "levelRequirement": "Ab 20",

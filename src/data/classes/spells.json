@@ -1,6 +1,241 @@
 [
   {
+    "name": "Adaption 1",
+    "class": "Adept",
+    "element": "",
+    "levelRequirement": "Ab 1",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Becoming Adept",
+    "description": "For 30s lowers your AC by 1 and raises MR by 1 for every 2 enemies within 2 tiles, up to 13.  If your necklace element matches your stance element, deal 30% more damage.",
+    "image": "/images/abilities/Adaption 1.png"
+  },
+  {
+    "name": "Centered Form 1",
+    "class": "Adept",
+    "element": "",
+    "levelRequirement": "Ab 12",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "1,000,000",
+    "itemRequirements": "Fox Ribs (3), Red Blob Core (1)",
+    "prerequisites": "-",
+    "learningLocation": "Tarlok (Noam)",
+    "description": "For 8s gain composure that shifts depending on your stance; Fire: Deal more damage based on your missing health; Earth: Gain 100% Reflect for the full 8s; Water: Remove 1 negative effect and 500 mana + 10% of maximum mana return; Lightning: Charges away for 4/5/6 blocks depending on stacks.  Cannot be used without a stance.",
+    "image": "/images/abilities/Centered Form 1.png"
+  },
+  {
+    "name": "Flame Stance 1",
+    "class": "Adept",
+    "element": "",
+    "levelRequirement": "Ab 1",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Becoming Adept",
+    "description": "Builds stacks every 30s, up to 3 stacks.  Depending on your stacks, Reserve 10%/15%/20% of your maximum health and gain 20%/30%/40% more skill/spell damage, 50/100/150 flat damage, and 10%/15%/20% attack speed.  There is a 2 minute commitment before you can shift to another stance.",
+    "image": "/images/abilities/Flame Stance 1.png"
+  },
+  {
+    "name": "Lightning Stance 1",
+    "class": "Adept",
+    "element": "",
+    "levelRequirement": "Ab 1",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Becoming Adept",
+    "description": "Builds stacks every 30s, up to 3 stacks.  Depending on your stacks, Every hit your skills/spells land, hit a second time for 10%/12.5%/16.5% of the original damage.  Gain a 15%/25%/35% chance to expose the target making them take an extra 30% more damage from the next skill or spell.  There is a 2 minute commitment before you can shift to another stance.",
+    "image": "/images/abilities/Lightning Stance 1.png"
+  },
+  {
+    "name": "Perfect Balance 1",
+    "class": "Adept",
+    "element": "",
+    "levelRequirement": "Ab 1",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Becoming Adept",
+    "description": "For 30s gain max stacks for whichever stance you're currently in.  Cannot be used without a stance.  Pure Only.",
+    "image": "/images/abilities/Perfect Balance 1.png"
+  },
+  {
+    "name": "Rock Stance 1",
+    "class": "Adept",
+    "element": "",
+    "levelRequirement": "Ab 1",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Becoming Adept",
+    "description": "Builds stacks every 30s, up to 3 stacks.  Depending on your stacks, lowers your AC by 5/10/15, and MR raised by 5/10/15.  For every basic attack landed on you there is a 10%/15%/20% to Beag Suain it for 4s.  There is a 2 minute commitment before you can shift to another stance.",
+    "image": "/images/abilities/Rock Stance 1.png"
+  },
+  {
+    "name": "Searing Focus 1",
+    "class": "Adept",
+    "element": "",
+    "levelRequirement": "Ab 1",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Becoming Adept",
+    "description": "A meditation that lasts for 8 minutes.  Increases natural health regeneration by 5% of your maximum health, and raises your assail and skill damage by 1.5% for every 20 CON.  Casting again will refresh the cooldown, and it will stack with Hot Chocolate and Ice Cold.",
+    "image": "/images/abilities/Searing Focus 1.png"
+  },
+  {
+    "name": "Shifting Form 1",
+    "class": "Adept",
+    "element": "",
+    "levelRequirement": "Ab 1",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Becoming Adept",
+    "description": "Breaks your current stance, allowing you to shift to another stance early.  Cannot be used while not in a stance.  Pure Only",
+    "image": "/images/abilities/Shifting Form 1.png"
+  },
+  {
+    "name": "Tide Stance 1",
+    "class": "Adept",
+    "element": "",
+    "levelRequirement": "Ab 1",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Becoming Adept",
+    "description": "Builds stacks every 30s, up to 3 stacks.  Depending on your stacks, Lowers the cooldown of your skills/spells by 5%/10%/15%, and raises your MR by 10/20/30.  When you are hit, strike back to enemies adjacent to you for 750 + 8 x CON + 0.5% of your maximum health as water damage.  There is a 2 minute commitment before you can shift to another stance.",
+    "image": "/images/abilities/Tide Stance 1.png"
+  },
+  {
+    "name": "Arcane Circle",
+    "class": "Arcanist",
+    "element": "",
+    "levelRequirement": "Ab 1",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Becoming Arcanist",
+    "description": "Creates a circle of power where you stand for 20s, 7 tiles across at it's widest.  You and friendlies standing within 3 tiles of it gain 5% final spell damage each second, up to 25%.  The circle stays even if you die or leave.",
+    "image": "/images/abilities/Arcane Circle.png"
+  },
+  {
+    "name": "Arcane Destruction 1",
+    "class": "Arcanist",
+    "element": "",
+    "levelRequirement": "Ab 1",
+    "statRequirements": "-",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Becoming Arcanist",
+    "description": "Rapid detonation at chosen location, striking everything within 2 tiles of it.  The damage is non-elemental.  It can be resisted.  Each cast burns 4% of your maximum mana and part of the damage comes from the mana burnt.",
+    "image": "/images/abilities/Arcane Destruction 1.png"
+  },
+  {
+    "name": "Blink",
+    "class": "Arcanist",
+    "element": "",
+    "levelRequirement": "Ab 12",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "1,500,000",
+    "itemRequirements": "Scravelmaw Head (1), Vulture Feather (5)",
+    "prerequisites": "-",
+    "learningLocation": "Peytri (Noam)",
+    "description": "Teleports you anywhere within your sight up to 7 tiles away, so long as no walls block the path.",
+    "image": "/images/abilities/Blink.png"
+  },
+  {
+    "name": "Focal Ruin 1",
+    "class": "Arcanist",
+    "element": "",
+    "levelRequirement": "Ab 1",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Becoming Arcanist",
+    "description": "Place a point of ruin, causing a wave to go out 3 tiles from that location instantly, then repeats every 1.5s.  Each wave drains 15% of your maximum mana.  Moving, attacking or casting anything else will break the spell.  Will also end if you can't afford the next wave.",
+    "image": "/images/abilities/Focal Ruin 1.png"
+  },
+  {
+    "name": "Grand Arcane Circle",
+    "class": "Arcanist",
+    "element": "",
+    "levelRequirement": "Ab 1",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Becoming Arcanist",
+    "description": "Creates a circle of power where you stand for 20s, 9 tiles across at it's widest.  You and friendlies standing within 3 tiles of it gain 5% final spell damage each second, up to 35%.  The circle stays even if you die or leave.  Pure Only.",
+    "image": "/images/abilities/Grand Arcane Circle.png"
+  },
+  {
+    "name": "Mana Ward 1",
+    "class": "Arcanist",
+    "element": "",
+    "levelRequirement": "Ab 12",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "1,500,000",
+    "itemRequirements": "Blue Blob Core (5)",
+    "prerequisites": "-",
+    "learningLocation": "Peytri (Noam)",
+    "description": "Plant a ward on the ground that feeds mana to you and your group for 20% of your maximum mana.  For 12s it gives everyone friendly within 3 tiles, 6% of their own maximum mana each second (Even through walls).  Stops if you die or leave the map.",
+    "image": "/images/abilities/Mana Ward 1.png"
+  },
+  {
+    "name": "Overcharge",
+    "class": "Arcanist",
+    "element": "",
+    "levelRequirement": "Ab 1",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Becoming Arcanist",
+    "description": "For 20s your maximum mana raises by 25%, and everything that draws on it strikes for more.  When it ends, any mana above your normal maximum is lost.  Pure Only.",
+    "image": "/images/abilities/Overcharge.png"
+  },
+  {
+    "name": "Sciath Anama",
+    "class": "Arcanist",
+    "element": "",
+    "levelRequirement": "Ab 1",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Becoming Arcanist",
+    "description": "A permanent ward that when your health reaches 15%, every point of damage will begin to take away from your mana instead.  When your mana can no longer keep up, you'll start to take damage to your health again.  Damage over time is not covered.  Costs 5% of your maximum mana to cast, and casting again will drop the ward.",
+    "image": "/images/abilities/Sciath Anama.png"
+  },
+  {
+    "name": "Wild Destruction 1",
+    "class": "Arcanist",
+    "element": "",
+    "levelRequirement": "Ab 1",
+    "statRequirements": "3/3/3/3/3",
+    "goldRequired": "-",
+    "itemRequirements": "-",
+    "prerequisites": "-",
+    "learningLocation": "Becoming Arcanist",
+    "description": "Select a tile and a storm will spawn in a 4x4 block for 8s, striking one random tile in that black about 3 times a second.  The strikes cannot be resisted.  The damage is non-elemental, and scales with your mana.  Ends if you die or leave the map.",
+    "image": "/images/abilities/Wild Destruction 1.png"
+  },
+  {
     "name": "Caltrops 1",
+    "image": "/images/abilities/Caltrops%201.png",
     "class": "Archer",
     "element": "",
     "levelRequirement": "Ab 3",
@@ -25,6 +260,7 @@
   },
   {
     "name": "Marksman's Focus 1",
+    "image": "/images/abilities/Marksman's%20Focus%201.png",
     "class": "Archer",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -37,6 +273,7 @@
   },
   {
     "name": "Point Blank 1",
+    "image": "/images/abilities/Point%20Blank%201.png",
     "class": "Archer",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -49,6 +286,7 @@
   },
   {
     "name": "Shadowmeld 1",
+    "image": "/images/abilities/Shadowmeld%201.png",
     "class": "Archer",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -61,6 +299,7 @@
   },
   {
     "name": "Smoke Arrow 1",
+    "image": "/images/abilities/Smoke%20Arrow%201.png",
     "class": "Archer",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -73,6 +312,7 @@
   },
   {
     "name": "Snare Ring 1",
+    "image": "/images/abilities/Snare%20Ring%201.png",
     "class": "Archer",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -85,6 +325,7 @@
   },
   {
     "name": "Venom Arrow 1",
+    "image": "/images/abilities/Venom%20Arrow%201.png",
     "class": "Archer",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -97,6 +338,7 @@
   },
   {
     "name": "Volley 1",
+    "image": "/images/abilities/Volley%201.png",
     "class": "Archer",
     "element": "",
     "levelRequirement": "Ab 12",
@@ -118,7 +360,7 @@
     "prerequisites": "-",
     "learningLocation": "Becoming Assassin",
     "description": "Lays 5 pitfall traps (1 on you, and 1 in each direction beside you).  Each deals massive pure damage to the first target to step on it.   Damage scales with the enemy's health up to a limit.",
-    "image": "/images/abilities/Deadfall Array 1.png"
+    "image": "/images/abilities/Deadfall%20Array%201.png"
   },
   {
     "name": "Death Mark 1",
@@ -131,7 +373,7 @@
     "prerequisites": "-",
     "learningLocation": "Tarlok (Noam)",
     "description": "Names an enemy for death for 10s.  All damage against target increases by 10%.  Costs 20 malice and returns 15 if the target dies while marked.",
-    "image": "/images/abilities/Death Mark 1.png"
+    "image": "/images/abilities/Death%20Mark%201.png"
   },
   {
     "name": "Shadow Step 1",
@@ -144,7 +386,7 @@
     "prerequisites": "-",
     "learningLocation": "Tarlok (Noam)",
     "description": "Step through the dark to any creative within 5 tiles, landing at their back.  If there's no free location, it will not cast.  Costs 20 malice and works on both enemies and allies.",
-    "image": "/images/abilities/Shadow Step 1.png"
+    "image": "/images/abilities/Shadow%20Step%201.png"
   },
   {
     "name": "Shadowlurk 1",
@@ -157,10 +399,11 @@
     "prerequisites": "-",
     "learningLocation": "Becoming Assassin",
     "description": "Shrouds you in darkness for 5s.  Clears all threat and negative effects.",
-    "image": "/images/abilities/Shadowlurk 1.png"
+    "image": "/images/abilities/Shadowlurk%201.png"
   },
   {
     "name": "Ard Ioc Comlha",
+    "image": "/images/abilities/Ard%20Ioc%20Comlha.png",
     "class": "Bard",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -181,10 +424,12 @@
     "itemRequirements": "-",
     "prerequisites": "-",
     "learningLocation": "Becoming Bard",
-    "description": "Blesses you and your group within 12 tiles for 15s.  Next 5 hits each member takes will heal them.  Scales with WIS and max mana.  Damage over time does not count as a hit."
+    "description": "Blesses you and your group within 12 tiles for 15s.  Next 10 hits each member takes will heal them.  Scales with WIS and max mana.  Damage over time does not count as a hit.",
+    "image": "/images/abilities/Blessed%20Intervention%201.png"
   },
   {
     "name": "Dirge of Sorrow 1",
+    "image": "/images/abilities/Dirge%20of%20Sorrow%201.png",
     "class": "Bard",
     "element": "",
     "levelRequirement": "Ab 5",
@@ -197,6 +442,7 @@
   },
   {
     "name": "Fortissimo 1",
+    "image": "/images/abilities/Fortissimo%201.png",
     "class": "Bard",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -209,6 +455,7 @@
   },
   {
     "name": "Hymn of Judgment 1",
+    "image": "/images/abilities/Hymn%20of%20Judgment%201.png",
     "class": "Bard",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -221,6 +468,7 @@
   },
   {
     "name": "Mesmerize 1",
+    "image": "/images/abilities/Mesmerize%201.png",
     "class": "Bard",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -233,6 +481,7 @@
   },
   {
     "name": "Song of Mending 1",
+    "image": "/images/abilities/Song%20of%20Mending%201.png",
     "class": "Bard",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -253,10 +502,12 @@
     "itemRequirements": "Comodo Tongue (2), Brown Fox Fur (1)",
     "prerequisites": "-",
     "learningLocation": "Peytri (Noam)",
-    "description": "Restores 1% of the group's max mana each second, within 6 tiles.  Every 3s, removes one affliction from each member (suain, dall, cradh, miasma, poison, burn, amnesia or slow).  Drains 250 mana each second.  Only one song may play at a time (cast it again to stop).  Answer its call to build harmony which strengthens it by up to half (Harmony fades if you stop answering)."
+    "description": "Restores 1% of the group's max mana each second, within 6 tiles.  Every 3s, removes one affliction from one member (suain, dall, cradh, miasma, poison, burn, amnesia or slow).  Drains 250 mana each second.  Only one song may play at a time (cast it again to stop).  Answer its call to build harmony which strengthens it by up to half (Harmony fades if you stop answering).",
+    "image": "/images/abilities/Song%20of%20the%20Bulwark%201.png"
   },
   {
     "name": "Song of the March 1",
+    "image": "/images/abilities/Song%20of%20the%20March%201.png",
     "class": "Bard",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -278,7 +529,7 @@
     "prerequisites": "-",
     "learningLocation": "Becoming Berserker",
     "description": "Surge of adrenaline that lasts 20s.  A fatal hit will leave you at 1 health, followed by a 25% heal of your maximum health and enter adrenal flow.  2 minute cooldown.",
-    "image": "/images/abilities/Adrenal ine 1.png"
+    "image": "/images/abilities/Adrenal%20ine%201.png"
   },
   {
     "name": "Reckless 1",
@@ -291,10 +542,11 @@
     "prerequisites": "-",
     "learningLocation": "Becoming Berserker",
     "description": "For 45s you deal 5% more damage, plus another 2% for every rank of Rage.  Your AC increases by 8, plus another 2 per Rage rank and all healing is decreased by 35%.\n\nHealing past your full health becomes Bloodlust. Half of the overflow turns into 100 bonus skill damage per second, up to 1000.  It lasts 15s, then builds again from nothing.  Life steal does not apply.",
-    "image": "/images/abilities/Reckless 1.png"
+    "image": "/images/abilities/Reckless%201.png"
   },
   {
     "name": "Ancient Grove 1",
+    "image": "/images/abilities/Ancient%20Grove%201.png",
     "class": "Druid",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -307,6 +559,7 @@
   },
   {
     "name": "Ashen Pull 1",
+    "image": "/images/abilities/Ashen%20Pull%201.png",
     "class": "Druid",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -319,6 +572,7 @@
   },
   {
     "name": "Barkskin",
+    "image": "/images/abilities/Barkskin%201.png",
     "class": "Druid",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -331,6 +585,7 @@
   },
   {
     "name": "Briarcoat 1",
+    "image": "/images/abilities/Briarcoat%201.png",
     "class": "Druid",
     "element": "",
     "levelRequirement": "Ab 3",
@@ -343,6 +598,7 @@
   },
   {
     "name": "Cleansing Rain 1",
+    "image": "/images/abilities/Cleansing%20Rain%201.png",
     "class": "Druid",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -355,6 +611,7 @@
   },
   {
     "name": "Defiance of Heaven",
+    "image": "/images/abilities/Defiance%20of%20Heaven%201.png",
     "class": "Druid",
     "element": "",
     "levelRequirement": "Ab 12",
@@ -367,6 +624,7 @@
   },
   {
     "name": "Heart of the Grove 1",
+    "image": "/images/abilities/Heart%20of%20the%20Grove%201.png",
     "class": "Druid",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -379,6 +637,7 @@
   },
   {
     "name": "Seething Hatred 1",
+    "image": "/images/abilities/Seething%20Hatred%201.png",
     "class": "Druid",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -391,6 +650,7 @@
   },
   {
     "name": "Serene Touch 1",
+    "image": "/images/abilities/Serene%20Touch%201.png",
     "class": "Druid",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -403,6 +663,7 @@
   },
   {
     "name": "Thornbound 1",
+    "image": "/images/abilities/Thornbound%201.png",
     "class": "Druid",
     "element": "",
     "levelRequirement": "Ab 10",
@@ -415,6 +676,7 @@
   },
   {
     "name": "Verdant Grove 1",
+    "image": "/images/abilities/Verdant%20Grove%201.png",
     "class": "Druid",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -427,6 +689,7 @@
   },
   {
     "name": "Blink",
+    "image": "/images/abilities/Blink.png",
     "class": "Elementalist",
     "element": "",
     "levelRequirement": "Ab 12",
@@ -439,6 +702,7 @@
   },
   {
     "name": "Bubble Shield 1",
+    "image": "/images/abilities/Bubble%20Shield%201.png",
     "class": "Elementalist",
     "element": "Water",
     "levelRequirement": "Ab 1",
@@ -451,6 +715,7 @@
   },
   {
     "name": "Call Lightning 1",
+    "image": "/images/abilities/Call%20Lightning%201.png",
     "class": "Elementalist",
     "element": "Wind",
     "levelRequirement": "Ab 1",
@@ -463,6 +728,7 @@
   },
   {
     "name": "Cloudburst 1",
+    "image": "/images/abilities/Cloudburst%201.png",
     "class": "Elementalist",
     "element": "Water",
     "levelRequirement": "Ab 1",
@@ -475,6 +741,7 @@
   },
   {
     "name": "Cyclone 1",
+    "image": "/images/abilities/Cyclone%201.png",
     "class": "Elementalist",
     "element": "Wind",
     "levelRequirement": "Ab 1",
@@ -487,6 +754,7 @@
   },
   {
     "name": "Earth Barrier 1",
+    "image": "/images/abilities/Earth%20Barrier%201.png",
     "class": "Elementalist",
     "element": "Earth",
     "levelRequirement": "Ab 1",
@@ -499,6 +767,7 @@
   },
   {
     "name": "Ember Ward 1",
+    "image": "/images/abilities/Ember%20Ward%201.png",
     "class": "Elementalist",
     "element": "Fire",
     "levelRequirement": "Ab 1",
@@ -511,6 +780,7 @@
   },
   {
     "name": "Fire Wall 1",
+    "image": "/images/abilities/Fire%20Wall%201.png",
     "class": "Elementalist",
     "element": "Fire",
     "levelRequirement": "Ab 1",
@@ -523,6 +793,7 @@
   },
   {
     "name": "Galeform 1",
+    "image": "/images/abilities/Galeform%201.png",
     "class": "Elementalist",
     "element": "Wind",
     "levelRequirement": "Ab 1",
@@ -535,6 +806,7 @@
   },
   {
     "name": "Groo 1",
+    "image": "/images/abilities/Groo%201.png",
     "class": "Elementalist",
     "element": "Earth",
     "levelRequirement": "Ab 1",
@@ -547,6 +819,7 @@
   },
   {
     "name": "Ignis 1",
+    "image": "/images/abilities/Ignis%201.png",
     "class": "Elementalist",
     "element": "Fire",
     "levelRequirement": "Ab 1",
@@ -559,6 +832,7 @@
   },
   {
     "name": "Keeter 1",
+    "image": "/images/abilities/Keeter%201.png",
     "class": "Elementalist",
     "element": "Wind",
     "levelRequirement": "Ab 1",
@@ -571,6 +845,7 @@
   },
   {
     "name": "Meteor 1",
+    "image": "/images/abilities/Meteor%201.png",
     "class": "Elementalist",
     "element": "Fire",
     "levelRequirement": "Ab 1",
@@ -583,6 +858,7 @@
   },
   {
     "name": "Mud Wall 1",
+    "image": "/images/abilities/Mud%20Wall%201.png",
     "class": "Elementalist",
     "element": "Earth",
     "levelRequirement": "Ab 1",
@@ -595,6 +871,7 @@
   },
   {
     "name": "Nera 1",
+    "image": "/images/abilities/Nera%201.png",
     "class": "Elementalist",
     "element": "Water",
     "levelRequirement": "Ab 1",
@@ -607,6 +884,7 @@
   },
   {
     "name": "Proliferation 1",
+    "image": "/images/abilities/Proliferation%201.png",
     "class": "Elementalist",
     "element": "Fire",
     "levelRequirement": "Ab 1",
@@ -619,6 +897,7 @@
   },
   {
     "name": "Seismic Shift 1",
+    "image": "/images/abilities/Seismic%20Shift%201.png",
     "class": "Elementalist",
     "element": "Earth",
     "levelRequirement": "Ab 1",
@@ -631,6 +910,7 @@
   },
   {
     "name": "Static Field 1",
+    "image": "/images/abilities/Static%20Field%201.png",
     "class": "Elementalist",
     "element": "Wind",
     "levelRequirement": "Ab 1",
@@ -643,6 +923,7 @@
   },
   {
     "name": "Subsuming Sands 1",
+    "image": "/images/abilities/Subsuming%20Sands%201.png",
     "class": "Elementalist",
     "element": "Earth",
     "levelRequirement": "Ab 1",
@@ -655,6 +936,7 @@
   },
   {
     "name": "Tidal Wave 1",
+    "image": "/images/abilities/Tidal%20Wave%201.png",
     "class": "Elementalist",
     "element": "Water",
     "levelRequirement": "Ab 1",
@@ -667,6 +949,7 @@
   },
   {
     "name": "Tidewell 1",
+    "image": "/images/abilities/Tidewell%201.png",
     "class": "Elementalist",
     "element": "Water",
     "levelRequirement": "Ab 1",
@@ -679,6 +962,7 @@
   },
   {
     "name": "Adaptive Skin",
+    "image": "/images/abilities/Adaptive%20Skin.png",
     "class": "monk",
     "levelRequirement": "Master",
     "statRequirements": "3/3/3/3/3",
@@ -690,6 +974,7 @@
   },
   {
     "name": "ao dall",
+    "image": "/images/abilities/ao%20dall.png",
     "class": "monk",
     "levelRequirement": "41",
     "statRequirements": "3/10/12/25/5",
@@ -701,6 +986,7 @@
   },
   {
     "name": "ao poison",
+    "image": "/images/abilities/ao%20poison.png",
     "class": "monk",
     "levelRequirement": "21",
     "statRequirements": "3/8/9/15/3",
@@ -712,6 +998,7 @@
   },
   {
     "name": "Cat's Hearing",
+    "image": "/images/abilities/Cat's%20Hearing.png",
     "class": "monk",
     "levelRequirement": "80",
     "statRequirements": "35/15/12/60/35",
@@ -723,6 +1010,7 @@
   },
   {
     "name": "Cure Ailments",
+    "image": "/images/abilities/Cure%20Ailments.png",
     "class": "monk",
     "levelRequirement": "Master",
     "statRequirements": "3/3/3/3/3",
@@ -734,6 +1022,7 @@
   },
   {
     "name": "Dodge",
+    "image": "/images/abilities/Dodge.png",
     "class": "monk",
     "levelRequirement": "5",
     "statRequirements": "5/3/3/8/3",
@@ -745,6 +1034,7 @@
   },
   {
     "name": "Earthen Stance",
+    "image": "/images/abilities/Earthen%20Stance.png",
     "class": "monk",
     "levelRequirement": "60",
     "statRequirements": "25/5/5/44/16",
@@ -756,6 +1046,7 @@
   },
   {
     "name": "Evasion",
+    "image": "/images/abilities/Evasion.png",
     "class": "monk",
     "levelRequirement": "Master (Pure)",
     "statRequirements": "3/3/3/3/3",
@@ -767,6 +1058,7 @@
   },
   {
     "name": "Flame Stance",
+    "image": "/images/abilities/Flame%20Stance.png",
     "class": "monk",
     "levelRequirement": "Master",
     "statRequirements": "180/25/30/110/50",
@@ -778,6 +1070,7 @@
   },
   {
     "name": "Gentle Touch",
+    "image": "/images/abilities/Gentle%20Touch.png",
     "class": "monk",
     "levelRequirement": "22",
     "statRequirements": "3/3/13/19/4",
@@ -789,6 +1082,7 @@
   },
   {
     "name": "Goad",
+    "image": "/images/abilities/Goad.png",
     "class": "monk",
     "levelRequirement": "15",
     "statRequirements": "7/3/8/15/8",
@@ -800,6 +1094,7 @@
   },
   {
     "name": "Howl",
+    "image": "/images/abilities/Howl.png",
     "class": "monk",
     "levelRequirement": "41",
     "statRequirements": "23/3/12/38/10",
@@ -811,6 +1106,7 @@
   },
   {
     "name": "Inner Fire",
+    "image": "/images/abilities/Inner%20Fire.png",
     "class": "monk",
     "levelRequirement": "11",
     "statRequirements": "3/3/8/9/3",
@@ -822,6 +1118,7 @@
   },
   {
     "name": "Last Stand",
+    "image": "/images/abilities/Last%20Stand.png",
     "class": "monk",
     "levelRequirement": "40",
     "statRequirements": "23/5/8/36/17",
@@ -833,6 +1130,7 @@
   },
   {
     "name": "Lightning Stance",
+    "image": "/images/abilities/Lightning%20Stance.png",
     "class": "monk",
     "levelRequirement": "Master",
     "statRequirements": "95/40/31/160/55",
@@ -844,6 +1142,7 @@
   },
   {
     "name": "Mist Stance",
+    "image": "/images/abilities/Mist%20Stance.png",
     "class": "monk",
     "levelRequirement": "60",
     "statRequirements": "19/8/15/40/15",
@@ -855,6 +1154,7 @@
   },
   {
     "name": "Phoenix Grasp",
+    "image": "/images/abilities/Phoenix%20Grasp.png",
     "class": "monk",
     "levelRequirement": "Master",
     "statRequirements": "3/3/3/3/3",
@@ -866,6 +1166,7 @@
   },
   {
     "name": "Roar",
+    "image": "/images/abilities/Roar.png",
     "class": "monk",
     "levelRequirement": "Master",
     "statRequirements": "3/3/3/3/3",
@@ -877,6 +1178,7 @@
   },
   {
     "name": "Rock Stance",
+    "image": "/images/abilities/Rock%20Stance.png",
     "class": "monk",
     "levelRequirement": "Master",
     "statRequirements": "115/25/30/180/65",
@@ -888,6 +1190,7 @@
   },
   {
     "name": "Smoke Stance",
+    "image": "/images/abilities/Smoke%20Stance.png",
     "class": "monk",
     "levelRequirement": "60",
     "statRequirements": "24/6/6/38/24",
@@ -899,6 +1202,7 @@
   },
   {
     "name": "Taunt",
+    "image": "/images/abilities/Taunt.png",
     "class": "monk",
     "levelRequirement": "3",
     "statRequirements": "3/3/3/3/3",
@@ -910,6 +1214,7 @@
   },
   {
     "name": "Thunder Stance",
+    "image": "/images/abilities/Thunder%20Stance.png",
     "class": "monk",
     "levelRequirement": "60",
     "statRequirements": "24/5/5/51/15",
@@ -921,6 +1226,7 @@
   },
   {
     "name": "Tide Stance",
+    "image": "/images/abilities/Tide%20Stance.png",
     "class": "monk",
     "levelRequirement": "Master",
     "statRequirements": "100/50/50/175/75",
@@ -932,6 +1238,7 @@
   },
   {
     "name": "Delirium 1",
+    "image": "/images/abilities/Delirium%201.png",
     "class": "Plague Doctor",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -944,6 +1251,7 @@
   },
   {
     "name": "Gangrene 1",
+    "image": "/images/abilities/Gangrene%201.png",
     "class": "Plague Doctor",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -956,6 +1264,7 @@
   },
   {
     "name": "Inoculation 1",
+    "image": "/images/abilities/Inoculation%201.png",
     "class": "Plague Doctor",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -968,6 +1277,7 @@
   },
   {
     "name": "Lance the Bubo 1",
+    "image": "/images/abilities/Lance%20the%20Bubo%201.png",
     "class": "Plague Doctor",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -980,6 +1290,7 @@
   },
   {
     "name": "Leech Jar 1",
+    "image": "/images/abilities/Leech%20Jar%201.png",
     "class": "Plague Doctor",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -992,6 +1303,7 @@
   },
   {
     "name": "Pestilence 1",
+    "image": "/images/abilities/Pestilence%201.png",
     "class": "Plague Doctor",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -1004,6 +1316,7 @@
   },
   {
     "name": "Plague Cloud 1",
+    "image": "/images/abilities/Plague%20Cloud%201.png",
     "class": "Plague Doctor",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -1016,6 +1329,7 @@
   },
   {
     "name": "Quarantine 1",
+    "image": "/images/abilities/Quarantine%201.png",
     "class": "Plague Doctor",
     "element": "",
     "levelRequirement": "Ab 12",
@@ -1028,6 +1342,7 @@
   },
   {
     "name": "Transfusion 1",
+    "image": "/images/abilities/Transfusion%201.png",
     "class": "Plague Doctor",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -1040,6 +1355,7 @@
   },
   {
     "name": "Triage 1",
+    "image": "/images/abilities/Triage%201.png",
     "class": "Plague Doctor",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -1052,6 +1368,7 @@
   },
   {
     "name": "Virulent Plague Cloud",
+    "image": "/images/abilities/Virulent%20Plague%20Cloud%201.png",
     "class": "Plague Doctor",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -1064,6 +1381,7 @@
   },
   {
     "name": "ao ard cradh",
+    "image": "/images/abilities/ao%20ard%20cradh.png",
     "class": "priest",
     "levelRequirement": "81",
     "statRequirements": "3/48/78/6/3",
@@ -1075,6 +1393,7 @@
   },
   {
     "name": "ao beag cradh",
+    "image": "/images/abilities/ao%20beag%20cradh.png",
     "class": "priest",
     "levelRequirement": "11",
     "statRequirements": "3/4/11/3/3",
@@ -1086,6 +1405,7 @@
   },
   {
     "name": "ao cradh",
+    "image": "/images/abilities/ao%20cradh.png",
     "class": "priest",
     "levelRequirement": "20",
     "statRequirements": "3/10/30/3/3",
@@ -1097,6 +1417,7 @@
   },
   {
     "name": "ao dall",
+    "image": "/images/abilities/ao%20dall.png",
     "class": "priest",
     "levelRequirement": "11",
     "statRequirements": "3/15/20/7/5",
@@ -1108,6 +1429,7 @@
   },
   {
     "name": "ao dia cradh",
+    "image": "/images/abilities/ao%20dia%20cradh.png",
     "class": "priest",
     "levelRequirement": "Master (Light)",
     "statRequirements": "3/3/3/3/3",
@@ -1119,6 +1441,7 @@
   },
   {
     "name": "ao mor cradh",
+    "image": "/images/abilities/ao%20mor%20cradh.png",
     "class": "priest",
     "levelRequirement": "60",
     "statRequirements": "3/20/60/3/3",
@@ -1130,6 +1453,7 @@
   },
   {
     "name": "ao poison",
+    "image": "/images/abilities/ao%20poison.png",
     "class": "priest",
     "levelRequirement": "11",
     "statRequirements": "3/5/11/3/3",
@@ -1141,6 +1465,7 @@
   },
   {
     "name": "ao suain",
+    "image": "/images/abilities/ao%20suain.png",
     "class": "priest",
     "levelRequirement": "71",
     "statRequirements": "5/38/70/13/5",
@@ -1152,6 +1477,7 @@
   },
   {
     "name": "ard ioc",
+    "image": "/images/abilities/ard%20ioc.png",
     "class": "priest",
     "levelRequirement": "80",
     "statRequirements": "3/36/74/3/3",
@@ -1163,6 +1489,7 @@
   },
   {
     "name": "ard naomh aite",
+    "image": "/images/abilities/ard%20naomh%20aite.png",
     "class": "priest",
     "levelRequirement": "60",
     "statRequirements": "5/40/55/20/6",
@@ -1174,6 +1501,7 @@
   },
   {
     "name": "armachd",
+    "image": "/images/abilities/armachd.png",
     "class": "priest",
     "levelRequirement": "5",
     "statRequirements": "3/5/7/4/3",
@@ -1185,6 +1513,7 @@
   },
   {
     "name": "Aura of Blessing",
+    "image": "/images/abilities/Aura%20of%20Blessing.png",
     "class": "priest",
     "levelRequirement": "Master (Light)",
     "statRequirements": "3/3/3/3/3",
@@ -1196,6 +1525,7 @@
   },
   {
     "name": "Aura of Torment",
+    "image": "/images/abilities/Aura%20of%20Torment.png",
     "class": "priest",
     "levelRequirement": "Master (Dark)",
     "statRequirements": "3/3/3/3/3",
@@ -1207,6 +1537,7 @@
   },
   {
     "name": "beag ioc comlha",
+    "image": "/images/abilities/beag%20ioc%20comlha.png",
     "class": "priest",
     "levelRequirement": "11",
     "statRequirements": "3/3/10/3/3",
@@ -1218,6 +1549,7 @@
   },
   {
     "name": "beag ioc",
+    "image": "/images/abilities/beag%20ioc.png",
     "class": "priest",
     "levelRequirement": "3",
     "statRequirements": "3/3/5/3/3",
@@ -1229,6 +1561,7 @@
   },
   {
     "name": "beag naomh aite",
+    "image": "/images/abilities/beag%20naomh%20aite.png",
     "class": "priest",
     "levelRequirement": "5",
     "statRequirements": "3/3/5/3/3",
@@ -1240,6 +1573,7 @@
   },
   {
     "name": "beag pramh",
+    "image": "/images/abilities/beag%20pramh.png",
     "class": "priest",
     "levelRequirement": "90",
     "statRequirements": "3/64/58/10/15",
@@ -1251,6 +1585,7 @@
   },
   {
     "name": "beannaich",
+    "image": "/images/abilities/beannaich.png",
     "class": "priest",
     "levelRequirement": "5",
     "statRequirements": "3/4/5/3/3",
@@ -1262,6 +1597,7 @@
   },
   {
     "name": "beothaich",
+    "image": "/images/abilities/beothaich.png",
     "class": "priest",
     "levelRequirement": "3",
     "statRequirements": "3/3/5/3/3",
@@ -1273,6 +1609,7 @@
   },
   {
     "name": "Bind",
+    "image": "/images/abilities/Bind.png",
     "class": "priest",
     "levelRequirement": "Master (Dark)",
     "statRequirements": "3/3/3/3/3",
@@ -1284,6 +1621,7 @@
   },
   {
     "name": "Dachaidh",
+    "image": "/images/abilities/Dachaidh.png",
     "class": "priest",
     "levelRequirement": "41",
     "statRequirements": "3/30/48/5/3",
@@ -1295,6 +1633,7 @@
   },
   {
     "name": "Dark Storm",
+    "image": "/images/abilities/Dark%20Storm.png",
     "class": "priest",
     "levelRequirement": "Master (Pure Dark)",
     "statRequirements": "5/90/132/10/15",
@@ -1306,6 +1645,7 @@
   },
   {
     "name": "Deo Lamh",
+    "image": "/images/abilities/Deo%20Lamh.png",
     "class": "priest",
     "levelRequirement": "Master (Light)",
     "statRequirements": "3/3/3/3/3",
@@ -1317,6 +1657,7 @@
   },
   {
     "name": "Deo Searg Meall",
+    "image": "/images/abilities/Deo%20Searg%20Meall.png",
     "class": "priest",
     "levelRequirement": "Master (Light)",
     "statRequirements": "25/150/180/30/20",
@@ -1328,6 +1669,7 @@
   },
   {
     "name": "Deo Searg",
+    "image": "/images/abilities/Deo%20Searg.png",
     "class": "priest",
     "levelRequirement": "Master (Light)",
     "statRequirements": "20/120/135/5/5",
@@ -1339,6 +1681,7 @@
   },
   {
     "name": "dinarcoli",
+    "image": "/images/abilities/dinarcoli.png",
     "class": "priest",
     "levelRequirement": "71",
     "statRequirements": "5/35/60/15/5",
@@ -1350,6 +1693,7 @@
   },
   {
     "name": "fas deireas",
+    "image": "/images/abilities/fas%20deireas.png",
     "class": "priest",
     "levelRequirement": "8",
     "statRequirements": "3/6/10/3/3",
@@ -1361,6 +1705,7 @@
   },
   {
     "name": "Heal Aura",
+    "image": "/images/abilities/Heal%20Aura.png",
     "class": "priest",
     "levelRequirement": "Master (Pure Light)",
     "statRequirements": "7/85/135/30/18",
@@ -1372,6 +1717,7 @@
   },
   {
     "name": "ioc comlha",
+    "image": "/images/abilities/ioc%20comlha.png",
     "class": "priest",
     "levelRequirement": "30",
     "statRequirements": "3/5/25/3/3",
@@ -1383,6 +1729,7 @@
   },
   {
     "name": "ioc",
+    "image": "/images/abilities/ioc.png",
     "class": "priest",
     "levelRequirement": "16",
     "statRequirements": "3/4/15/3/3",
@@ -1394,6 +1741,7 @@
   },
   {
     "name": "Miasma",
+    "image": "/images/abilities/Miasma.png",
     "class": "priest",
     "levelRequirement": "Master (Dark)",
     "statRequirements": "3/3/3/3/3",
@@ -1405,6 +1753,7 @@
   },
   {
     "name": "mor beannaich",
+    "image": "/images/abilities/mor%20beannaich.png",
     "class": "priest",
     "levelRequirement": "41",
     "statRequirements": "5/20/35/5/9",
@@ -1416,6 +1765,7 @@
   },
   {
     "name": "mor fas deireas",
+    "image": "/images/abilities/mor%20fas%20deireas.png",
     "class": "priest",
     "levelRequirement": "50",
     "statRequirements": "10/26/40/8/8",
@@ -1427,6 +1777,7 @@
   },
   {
     "name": "mor ioc comlha",
+    "image": "/images/abilities/mor%20ioc%20comlha.png",
     "class": "priest",
     "levelRequirement": "56",
     "statRequirements": "3/30/58/8/3",
@@ -1438,6 +1789,7 @@
   },
   {
     "name": "mor ioc",
+    "image": "/images/abilities/mor%20ioc.png",
     "class": "priest",
     "levelRequirement": "41",
     "statRequirements": "3/16/38/3/3",
@@ -1449,6 +1801,7 @@
   },
   {
     "name": "mor naomh aite",
+    "image": "/images/abilities/mor%20naomh%20aite.png",
     "class": "priest",
     "levelRequirement": "41",
     "statRequirements": "3/25/42/10/5",
@@ -1460,6 +1813,7 @@
   },
   {
     "name": "Motivate",
+    "image": "/images/abilities/Motivate.png",
     "class": "priest",
     "levelRequirement": "30",
     "statRequirements": "5/20/30/8/6",
@@ -1471,6 +1825,7 @@
   },
   {
     "name": "naomh aite",
+    "image": "/images/abilities/naomh%20aite.png",
     "class": "priest",
     "levelRequirement": "21",
     "statRequirements": "3/12/18/6/3",
@@ -1482,6 +1837,7 @@
   },
   {
     "name": "nuadhaich",
+    "image": "/images/abilities/nuadhaich.png",
     "class": "priest",
     "levelRequirement": "Master",
     "statRequirements": "6/75/110/21/5",
@@ -1493,6 +1849,7 @@
   },
   {
     "name": "poison",
+    "image": "/images/abilities/poison.png",
     "class": "priest",
     "levelRequirement": "20",
     "statRequirements": "3/16/15/3/5",
@@ -1504,6 +1861,7 @@
   },
   {
     "name": "pramh",
+    "image": "/images/abilities/pramh.png",
     "class": "priest",
     "levelRequirement": "Master",
     "statRequirements": "3/3/3/3/3",
@@ -1515,6 +1873,7 @@
   },
   {
     "name": "Prevent Affliction",
+    "image": "/images/abilities/Prevent%20Affliction.png",
     "class": "priest",
     "levelRequirement": "80",
     "statRequirements": "7/56/68/7/7",
@@ -1526,6 +1885,7 @@
   },
   {
     "name": "Quake",
+    "image": "/images/abilities/Quake.png",
     "class": "priest",
     "levelRequirement": "30",
     "statRequirements": "3/25/25/8/6",
@@ -1537,6 +1897,7 @@
   },
   {
     "name": "Regeneration",
+    "image": "/images/abilities/Regeneration.png",
     "class": "priest",
     "levelRequirement": "Master (Light)",
     "statRequirements": "3/3/3/3/3",
@@ -1548,6 +1909,7 @@
   },
   {
     "name": "Resurrect",
+    "image": "/images/abilities/Resurrect.png",
     "class": "priest",
     "levelRequirement": "Master (Pure)",
     "statRequirements": "3/3/3/3/3",
@@ -1559,6 +1921,7 @@
   },
   {
     "name": "Revive",
+    "image": "/images/abilities/Revive.png",
     "class": "priest",
     "levelRequirement": "41",
     "statRequirements": "3/22/40/5/5",
@@ -1570,6 +1933,7 @@
   },
   {
     "name": "Self Revive",
+    "image": "/images/abilities/Self%20Revive.png",
     "class": "priest",
     "levelRequirement": "41",
     "statRequirements": "3/22/40/18/3",
@@ -1581,6 +1945,7 @@
   },
   {
     "name": "Shadow Pact",
+    "image": "/images/abilities/Shadow%20Pact.png",
     "class": "priest",
     "levelRequirement": "Master (Dark)",
     "statRequirements": "3/3/3/3/3",
@@ -1592,6 +1957,7 @@
   },
   {
     "name": "Spark",
+    "image": "/images/abilities/Spark.png",
     "class": "priest",
     "levelRequirement": "3",
     "statRequirements": "3/3/3/3/3",
@@ -1603,6 +1969,7 @@
   },
   {
     "name": "Strioch Bais Meall",
+    "image": "/images/abilities/Strioch%20Bais%20Meall.png",
     "class": "priest",
     "levelRequirement": "Master (Dark)",
     "statRequirements": "30/120/180/25/15",
@@ -1614,6 +1981,7 @@
   },
   {
     "name": "Strioch Bais",
+    "image": "/images/abilities/Strioch%20Bais.png",
     "class": "priest",
     "levelRequirement": "Master (Dark)",
     "statRequirements": "15/90/120/12/8",
@@ -1625,6 +1993,7 @@
   },
   {
     "name": "suain",
+    "image": "/images/abilities/suain.png",
     "class": "priest",
     "levelRequirement": "71",
     "statRequirements": "12/46/60/5/9",
@@ -1636,6 +2005,7 @@
   },
   {
     "name": "Void Jolt",
+    "image": "/images/abilities/Void%20Jolt.png",
     "class": "priest",
     "levelRequirement": "Master (Dark)",
     "statRequirements": "3/3/3/3/3",
@@ -1647,6 +2017,7 @@
   },
   {
     "name": "Vortex",
+    "image": "/images/abilities/Vortex.png",
     "class": "priest",
     "levelRequirement": "Master",
     "statRequirements": "3/3/3/3/3",
@@ -1658,6 +2029,7 @@
   },
   {
     "name": "Zap",
+    "image": "/images/abilities/Zap.png",
     "class": "priest",
     "levelRequirement": "11",
     "statRequirements": "3/12/8/4/3",
@@ -1670,49 +2042,58 @@
   {
     "name": "Bolt Trap",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "21",
     "statRequirements": "15/6/3/9/22",
     "goldRequired": "5,000",
     "itemRequirements": "Blossom Secret (1), Scorpion's Sting (2)",
     "prerequisites": "Stiletto Trap (100)",
     "learningLocation": "Mileth Special Skills Master",
-    "description": "Lays a trap that deals a fair amount of pure damage."
+    "description": "Lay a trap under yourself, dealing damage that scales with the enemy's health to the first target to hit it.",
+    "image": "/images/abilities/Bolt%20Trap.png"
   },
   {
     "name": "Coiled Bolt Trap",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "41",
     "statRequirements": "20/6/3/18/35",
     "goldRequired": "25,000",
     "itemRequirements": "Moon Dagger (1), Hobgoblin's Skull (2)",
     "prerequisites": "Bolt Trap (100)",
     "learningLocation": "Mileth Special Skills Master",
-    "description": "Lays a trap that deals a large amount of pure damage."
+    "description": "Lay a trap under yourself, dealing damage that scales with the enemy's health to the first target to hit it.",
+    "image": "/images/abilities/Coiled%20Bolt%20Trap.png"
   },
   {
     "name": "Concentration",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "Master (Pure)",
     "statRequirements": "80/50/50/50/180",
     "goldRequired": "500,000",
     "itemRequirements": "Ruidhtear Toe (3)",
     "prerequisites": "Focus (100)",
     "learningLocation": "Rucesion Special Skills Master",
-    "description": "Increases damage and cdr based on your dexterity. Upgrades Focus. Pure Only."
+    "description": "Increases your skill damage and reduces skill cooldowns for 10s.  Scales with your DEX.  Pure Only.",
+    "image": "/images/abilities/Concentration.png"
   },
   {
     "name": "Cunning",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "Master",
     "statRequirements": "3/3/3/3/3",
     "goldRequired": "-",
     "itemRequirements": "-",
     "prerequisites": "-",
     "learningLocation": "Tauren",
-    "description": "Rogue channels their inner cunning, increasing attack damage while sacrificing mana."
+    "description": "Raises your damage for each cast.  Each cast costs more mana, and lasts a shorter time.",
+    "image": "/images/abilities/Cunning.png"
   },
   {
     "name": "Detect Traps",
+    "image": "/images/abilities/Detect%20Traps.png",
     "class": "rogue",
     "levelRequirement": "12",
     "statRequirements": "3/10/10/7/12",
@@ -1725,115 +2106,136 @@
   {
     "name": "Eisd Creutair",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "30",
     "statRequirements": "10/11/8/10/21",
     "goldRequired": "10,000",
     "itemRequirements": "White Bat's Wing (2)",
     "prerequisites": "-",
     "learningLocation": "Suomi Special Skills Master",
-    "description": "Allows you to see hidden creatures."
+    "description": "Allows you to see hidden creatures for 60s.",
+    "image": "/images/abilities/Eisd%20Creutair.png"
   },
   {
     "name": "Focus",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "41",
     "statRequirements": "25/13/10/8/33",
     "goldRequired": "25,000",
     "itemRequirements": "Goblin's Skull (3)",
     "prerequisites": "-",
     "learningLocation": "Suomi Special Skills Master",
-    "description": "Increases attack speed based on your dexterity."
+    "description": "Increases your skill damage for 10 seconds, scaling with your DEX.",
+    "image": "/images/abilities/Focus.png"
   },
   {
     "name": "Hide Group",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "Master (Pure)",
     "statRequirements": "50/45/20/35/110",
     "goldRequired": "750,000",
     "itemRequirements": "Ice Skeleton Skull (5)",
     "prerequisites": "-",
     "learningLocation": "Rucesion Skills Master",
-    "description": "Hides nearby group members. Pure Only."
+    "description": "Hides you and your group within 13 tiles for 2 minutes.  Pure Only.",
+    "image": "/images/abilities/Hide%20Group.png"
   },
   {
     "name": "Hide",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "15",
     "statRequirements": "6/7/5/5/15",
     "goldRequired": "10,000",
     "itemRequirements": "Bat's Wing (1)",
     "prerequisites": "-",
     "learningLocation": "Suomi Special Skills Master",
-    "description": "Shrouds you in darkness, hiding you from sight."
+    "description": "Shroud yourself, hiding you from sight for 2 minutes.",
+    "image": "/images/abilities/Hide.png"
   },
   {
     "name": "Maiden Trap",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "90",
     "statRequirements": "38/12/5/22/55",
     "goldRequired": "75,000",
     "itemRequirements": "Lotus Dagger (2), Gruesomefly's Wing (2)",
     "prerequisites": "Spring Trap (100)",
     "learningLocation": "Suomi Special Skills Master",
-    "description": "Lays a trap that deals a massive amount of pure damage."
+    "description": "Lay a trap under yourself, dealing damage that scales with the enemy's health to the first target to hit it.",
+    "image": "/images/abilities/Maiden%20Trap.png"
   },
   {
     "name": "Needle Trap",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "5",
     "statRequirements": "3/3/3/3/5",
     "goldRequired": "500",
     "itemRequirements": "Snow Dagger (1)",
     "prerequisites": "-",
     "learningLocation": "Mileth Special Skills Master",
-    "description": "Lays a trap that deals a very small amount of pure damage."
+    "description": "Lay a trap under yourself, dealing damage that scales with the enemy's health to the first target to hit it.",
+    "image": "/images/abilities/Needle%20Trap.png"
   },
   {
     "name": "Pitfall Trap",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "Master",
     "statRequirements": "80/25/9/32/120",
     "goldRequired": "500,000",
     "itemRequirements": "Black Shocker Piece (3)",
     "prerequisites": "Maiden Trap (100)",
     "learningLocation": "Suomi Special Skills Master",
-    "description": "Lays a trap that deals an enormous amount of pure damage."
+    "description": "Lay a trap under yourself, dealing damage that scales with the enemy's health to the first target to hit it.",
+    "image": "/images/abilities/Pitfall%20Trap.png"
   },
   {
     "name": "Spring Trap",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "60",
     "statRequirements": "30/10/5/22/42",
     "goldRequired": "10,000",
     "itemRequirements": "Light Secret (1), Wisp's Core (2)",
     "prerequisites": "Coiled Bolt Trap (100)",
     "learningLocation": "Suomi Special Skills Master",
-    "description": "Lays a trap that deals a huge amount of pure damage."
+    "description": "Lay a trap under yourself, dealing damage that scales with the enemy's health to the first target to hit it.",
+    "image": "/images/abilities/Spring%20Trap.png"
   },
   {
     "name": "Stiletto Trap",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "11",
     "statRequirements": "5/5/3/3/11",
     "goldRequired": "5,000",
     "itemRequirements": "Center Dagger (1), Bat's Wing (1)",
     "prerequisites": "Needle Trap (100)",
     "learningLocation": "Mileth Special Skills Master",
-    "description": "Lays a trap that deals a small amount of pure damage."
+    "description": "Lay a trap under yourself, dealing damage that scales with the enemy's health to the first target to hit it.",
+    "image": "/images/abilities/Stiletto%20Trap.png"
   },
   {
     "name": "Vanish",
     "class": "rogue",
+    "element": "",
     "levelRequirement": "Master",
     "statRequirements": "3/3/3/3/3",
     "goldRequired": "-",
     "itemRequirements": "-",
     "prerequisites": "-",
     "learningLocation": "Master Dungeon",
-    "description": "Shrouds you in darkness, hiding you from everything."
+    "description": "Shroud yourself, hiding you from everything for 5s and wiping aggro from all nearby monsters.",
+    "image": "/images/abilities/Vanish.png"
   },
   {
     "name": "Banner of Heroism 1",
+    "image": "/images/abilities/Banner%20of%20Heroism%201.png",
     "class": "Warlord",
     "levelRequirement": "Ab 1",
     "statRequirements": "3/3/3/3/3",
@@ -1854,21 +2256,24 @@
     "prerequisites": "-",
     "learningLocation": "Becoming Warlord",
     "description": "A commanding shout that greaatly increases the damage and healing of your group within 15 tiles for 2 minutes, scaling with each memeber's strength.",
-    "image": ""
+    "image": "/images/abilities/Commanding%20Shout%201.png"
   },
   {
-    "name": "Forward Comman 1",
+    "name": "Forward Command 1",
     "class": "Warlord",
+    "element": "",
     "levelRequirement": "Ab 1",
     "statRequirements": "3/3/3/3/3",
     "goldRequired": "-",
     "itemRequirements": "-",
     "prerequisites": "-",
     "learningLocation": "Becoming Warlord",
-    "description": "For 15s your authority carries your next order.  The next shout you cast, will cost 0 Valor."
+    "description": "For 15s your authority carries your next order.  The next shout you cast, will cost 0 Valor.",
+    "image": "/images/abilities/Forward Command 1.png"
   },
   {
     "name": "Guard 1",
+    "image": "/images/abilities/Guard%201.png",
     "class": "Warlord",
     "levelRequirement": "Ab 8",
     "statRequirements": "3/3/3/3/3",
@@ -1880,6 +2285,7 @@
   },
   {
     "name": "Hold the Line 1",
+    "image": "/images/abilities/Hold%20the%20Line%201.png",
     "class": "Warlord",
     "levelRequirement": "Ab 1",
     "statRequirements": "3/3/3/3/3",
@@ -1891,6 +2297,7 @@
   },
   {
     "name": "Press the Attack 1",
+    "image": "/images/abilities/Press%20the%20Attack%201.png",
     "class": "Warlord",
     "levelRequirement": "Ab 3",
     "statRequirements": "3/3/3/3/3",
@@ -1902,6 +2309,7 @@
   },
   {
     "name": "Rally 1",
+    "image": "/images/abilities/Rally%201.png",
     "class": "Warlord",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -1914,6 +2322,7 @@
   },
   {
     "name": "Rallying Frenzy 1",
+    "image": "/images/abilities/Rallying%20Frenzy%201.png",
     "class": "Warlord",
     "levelRequirement": "Ab 1",
     "statRequirements": "3/3/3/3/3",
@@ -1925,6 +2334,7 @@
   },
   {
     "name": "Second Wind 1",
+    "image": "/images/abilities/Second%20Wind%201.png",
     "class": "Warlord",
     "levelRequirement": "Ab 12",
     "statRequirements": "3/3/3/3/3",
@@ -1936,6 +2346,7 @@
   },
   {
     "name": "Battle Cry",
+    "image": "/images/abilities/Battle%20Cry.png",
     "class": "warrior",
     "levelRequirement": "11",
     "statRequirements": "5/3/3/9/4",
@@ -1947,6 +2358,7 @@
   },
   {
     "name": "Battle Frenzy",
+    "image": "/images/abilities/Battle%20Frenzy.png",
     "class": "warrior",
     "levelRequirement": "Master (Pure)",
     "statRequirements": "3/3/3/3/3",
@@ -1958,6 +2370,7 @@
   },
   {
     "name": "Fury",
+    "image": "/images/abilities/Fury.png",
     "class": "warrior",
     "levelRequirement": "Master",
     "statRequirements": "3/3/3/3/3",
@@ -1969,6 +2382,7 @@
   },
   {
     "name": "Inferno",
+    "image": "/images/abilities/Inferno.png",
     "class": "warrior",
     "levelRequirement": "Master (Pure)",
     "statRequirements": "3/3/3/3/3",
@@ -1980,6 +2394,7 @@
   },
   {
     "name": "War Cry",
+    "image": "/images/abilities/War%20Cry.png",
     "class": "warrior",
     "levelRequirement": "50",
     "statRequirements": "35/3/6/15/25",
@@ -1991,6 +2406,7 @@
   },
   {
     "name": "Whirlwind",
+    "image": "/images/abilities/Whirlwind.png",
     "class": "warrior",
     "levelRequirement": "60",
     "statRequirements": "52/15/7/33/27",
@@ -2002,6 +2418,7 @@
   },
   {
     "name": "Wrath",
+    "image": "/images/abilities/Wrath.png",
     "class": "warrior",
     "levelRequirement": "11",
     "statRequirements": "5/3/5/5/5",
@@ -2013,6 +2430,7 @@
   },
   {
     "name": "Arcane Blast",
+    "image": "/images/abilities/Arcane%20Blast.png",
     "class": "wizard",
     "levelRequirement": "71",
     "statRequirements": "5/72/38/5/5",
@@ -2024,6 +2442,7 @@
   },
   {
     "name": "Arcane Bolt",
+    "image": "/images/abilities/Arcane%20Bolt.png",
     "class": "wizard",
     "levelRequirement": "3",
     "statRequirements": "3/3/3/3/3",
@@ -2035,6 +2454,7 @@
   },
   {
     "name": "Arcane Explosion",
+    "image": "/images/abilities/Arcane%20Explosion.png",
     "class": "wizard",
     "levelRequirement": "Master",
     "statRequirements": "3/3/3/3/3",
@@ -2046,6 +2466,7 @@
   },
   {
     "name": "Arcane Missile",
+    "image": "/images/abilities/Arcane%20Missile.png",
     "class": "wizard",
     "levelRequirement": "21",
     "statRequirements": "3/25/17/5/5",
@@ -2057,6 +2478,7 @@
   },
   {
     "name": "Ard Athar Lamh",
+    "image": "/images/abilities/Ard%20Athar%20Lamh.png",
     "class": "wizard",
     "levelRequirement": "90",
     "statRequirements": "3/82/45/3/14",
@@ -2068,6 +2490,7 @@
   },
   {
     "name": "Ard Athar Meall",
+    "image": "/images/abilities/Ard%20Athar%20Meall.png",
     "class": "wizard",
     "levelRequirement": "Master",
     "statRequirements": "7/155/98/5/9",
@@ -2079,6 +2502,7 @@
   },
   {
     "name": "Ard Athar",
+    "image": "/images/abilities/Ard%20Athar.png",
     "class": "wizard",
     "levelRequirement": "80",
     "statRequirements": "5/76/44/5/20",
@@ -2090,6 +2514,7 @@
   },
   {
     "name": "Ard Cradh",
+    "image": "/images/abilities/Ard%20Cradh.png",
     "class": "wizard",
     "levelRequirement": "90",
     "statRequirements": "10/105/55/10/15",
@@ -2101,6 +2526,7 @@
   },
   {
     "name": "Ard Creag Lamh",
+    "image": "/images/abilities/Ard%20Creag%20Lamh.png",
     "class": "wizard",
     "levelRequirement": "90",
     "statRequirements": "3/88/40/19/3",
@@ -2112,6 +2538,7 @@
   },
   {
     "name": "Ard Creag Meall",
+    "image": "/images/abilities/Ard%20Creag%20Meall.png",
     "class": "wizard",
     "levelRequirement": "Master",
     "statRequirements": "9/130/95/15/18",
@@ -2123,6 +2550,7 @@
   },
   {
     "name": "Ard Creag",
+    "image": "/images/abilities/Ard%20Creag.png",
     "class": "wizard",
     "levelRequirement": "80",
     "statRequirements": "5/76/44/20/5",
@@ -2134,6 +2562,7 @@
   },
   {
     "name": "Ard Sal Lamh",
+    "image": "/images/abilities/Ard%20Sal%20Lamh.png",
     "class": "wizard",
     "levelRequirement": "90",
     "statRequirements": "9/94/41/9/9",
@@ -2145,6 +2574,7 @@
   },
   {
     "name": "Ard Sal Meall",
+    "image": "/images/abilities/Ard%20Sal%20Meall.png",
     "class": "wizard",
     "levelRequirement": "Master",
     "statRequirements": "15/145/95/10/20",
@@ -2156,6 +2586,7 @@
   },
   {
     "name": "Ard Sal",
+    "image": "/images/abilities/Ard%20Sal.png",
     "class": "wizard",
     "levelRequirement": "80",
     "statRequirements": "12/76/44/12/12",
@@ -2167,6 +2598,7 @@
   },
   {
     "name": "Ard Srad Lamh",
+    "image": "/images/abilities/Ard%20Srad%20Lamh.png",
     "class": "wizard",
     "levelRequirement": "90",
     "statRequirements": "21/72/40/3/3",
@@ -2178,6 +2610,7 @@
   },
   {
     "name": "Ard Srad Meall",
+    "image": "/images/abilities/Ard%20Srad%20Meall.png",
     "class": "wizard",
     "levelRequirement": "Master",
     "statRequirements": "22/125/80/15/15",
@@ -2189,6 +2622,7 @@
   },
   {
     "name": "Ard Srad",
+    "image": "/images/abilities/Ard%20Srad.png",
     "class": "wizard",
     "levelRequirement": "80",
     "statRequirements": "20/76/44/5/5",
@@ -2200,6 +2634,7 @@
   },
   {
     "name": "Athar Lamh",
+    "image": "/images/abilities/Athar%20Lamh.png",
     "class": "wizard",
     "levelRequirement": "27",
     "statRequirements": "3/23/12/3/9",
@@ -2211,6 +2646,7 @@
   },
   {
     "name": "Athar Meall",
+    "image": "/images/abilities/Athar%20Meall.png",
     "class": "wizard",
     "levelRequirement": "41",
     "statRequirements": "3/36/23/3/11",
@@ -2222,6 +2658,7 @@
   },
   {
     "name": "Athar",
+    "image": "/images/abilities/Athar.png",
     "class": "wizard",
     "levelRequirement": "11",
     "statRequirements": "3/14/7/3/5",
@@ -2233,6 +2670,7 @@
   },
   {
     "name": "Beag Athar Lamh",
+    "image": "/images/abilities/Beag%20Athar%20Lamh.png",
     "class": "wizard",
     "levelRequirement": "10",
     "statRequirements": "3/10/7/3/3",
@@ -2244,6 +2682,7 @@
   },
   {
     "name": "Beag Athar",
+    "image": "/images/abilities/Beag%20Athar.png",
     "class": "wizard",
     "levelRequirement": "3",
     "statRequirements": "3/5/3/3/3",
@@ -2255,6 +2694,7 @@
   },
   {
     "name": "Beag Cradh",
+    "image": "/images/abilities/Beag%20Cradh.png",
     "class": "wizard",
     "levelRequirement": "11",
     "statRequirements": "3/11/5/3/3",
@@ -2266,6 +2706,7 @@
   },
   {
     "name": "Beag Creag Lamh",
+    "image": "/images/abilities/Beag%20Creag%20Lamh.png",
     "class": "wizard",
     "levelRequirement": "10",
     "statRequirements": "3/10/7/3/3",
@@ -2277,6 +2718,7 @@
   },
   {
     "name": "Beag Creag",
+    "image": "/images/abilities/Beag%20Creag.png",
     "class": "wizard",
     "levelRequirement": "3",
     "statRequirements": "3/5/3/3/3",
@@ -2288,6 +2730,7 @@
   },
   {
     "name": "Beag Sal Lamh",
+    "image": "/images/abilities/Beag%20Sal%20Lamh.png",
     "class": "wizard",
     "levelRequirement": "10",
     "statRequirements": "3/18/11/3/3",
@@ -2299,6 +2742,7 @@
   },
   {
     "name": "Beag Sal",
+    "image": "/images/abilities/Beag%20Sal.png",
     "class": "wizard",
     "levelRequirement": "3",
     "statRequirements": "3/5/3/3/3",
@@ -2310,6 +2754,7 @@
   },
   {
     "name": "Beag Srad Lamh",
+    "image": "/images/abilities/Beag%20Srad%20Lamh.png",
     "class": "wizard",
     "levelRequirement": "10",
     "statRequirements": "3/18/11/3/3",
@@ -2321,6 +2766,7 @@
   },
   {
     "name": "Beag Srad",
+    "image": "/images/abilities/Beag%20Srad.png",
     "class": "wizard",
     "levelRequirement": "3",
     "statRequirements": "3/5/3/3/3",
@@ -2332,6 +2778,7 @@
   },
   {
     "name": "Call Lightning",
+    "image": "/images/abilities/Call%20Lightning%201.png",
     "class": "wizard",
     "levelRequirement": "Master",
     "statRequirements": "3/3/3/3/3",
@@ -2343,6 +2790,7 @@
   },
   {
     "name": "Cradh",
+    "image": "/images/abilities/Cradh.png",
     "class": "wizard",
     "levelRequirement": "30",
     "statRequirements": "3/32/15/5/6",
@@ -2354,6 +2802,7 @@
   },
   {
     "name": "Creag Lamh",
+    "image": "/images/abilities/Creag%20Lamh.png",
     "class": "wizard",
     "levelRequirement": "27",
     "statRequirements": "3/23/12/9/3",
@@ -2365,6 +2814,7 @@
   },
   {
     "name": "Creag Meall",
+    "image": "/images/abilities/Creag%20Meall.png",
     "class": "wizard",
     "levelRequirement": "41",
     "statRequirements": "3/36/23/11/3",
@@ -2376,6 +2826,7 @@
   },
   {
     "name": "Creag",
+    "image": "/images/abilities/Creag.png",
     "class": "wizard",
     "levelRequirement": "11",
     "statRequirements": "3/14/7/5/3",
@@ -2387,6 +2838,7 @@
   },
   {
     "name": "Dall",
+    "image": "/images/abilities/Dall.png",
     "class": "wizard",
     "levelRequirement": "48",
     "statRequirements": "3/42/38/10/3",
@@ -2398,6 +2850,7 @@
   },
   {
     "name": "Dia Cradh",
+    "image": "/images/abilities/Dia%20Cradh.png",
     "class": "wizard",
     "levelRequirement": "Master (Pure)",
     "statRequirements": "3/3/3/3/3",
@@ -2409,6 +2862,7 @@
   },
   {
     "name": "Expose Weakness",
+    "image": "/images/abilities/Expose%20Weakness.png",
     "class": "wizard",
     "levelRequirement": "58",
     "statRequirements": "3/52/30/12/7",
@@ -2420,6 +2874,7 @@
   },
   {
     "name": "Fas Spiorad",
+    "image": "/images/abilities/Fas%20Spiorad.png",
     "class": "wizard",
     "levelRequirement": "Master",
     "statRequirements": "3/3/3/3/3",
@@ -2431,6 +2886,7 @@
   },
   {
     "name": "Home",
+    "image": "/images/abilities/Home.png",
     "class": "wizard",
     "levelRequirement": "41",
     "statRequirements": "3/42/35/5/5",
@@ -2442,6 +2898,7 @@
   },
   {
     "name": "Magma Surge",
+    "image": "/images/abilities/Magma%20Surge.png",
     "class": "wizard",
     "levelRequirement": "Master (Pure)",
     "statRequirements": "25/140/90/15/15",
@@ -2453,6 +2910,7 @@
   },
   {
     "name": "Meteor",
+    "image": "/images/abilities/Meteor%201.png",
     "class": "wizard",
     "levelRequirement": "Master",
     "statRequirements": "3/3/3/3/3",
@@ -2464,6 +2922,7 @@
   },
   {
     "name": "Mor Athar Lamh",
+    "image": "/images/abilities/Mor%20Athar%20Lamh.png",
     "class": "wizard",
     "levelRequirement": "60",
     "statRequirements": "3/52/30/3/14",
@@ -2475,6 +2934,7 @@
   },
   {
     "name": "Mor Athar Meall",
+    "image": "/images/abilities/Mor%20Athar%20Meall.png",
     "class": "wizard",
     "levelRequirement": "71",
     "statRequirements": "3/70/41/3/16",
@@ -2486,6 +2946,7 @@
   },
   {
     "name": "Mor Athar",
+    "image": "/images/abilities/Mor%20Athar.png",
     "class": "wizard",
     "levelRequirement": "41",
     "statRequirements": "3/40/27/3/12",
@@ -2497,6 +2958,7 @@
   },
   {
     "name": "Mor Cradh",
+    "image": "/images/abilities/Mor%20Cradh.png",
     "class": "wizard",
     "levelRequirement": "60",
     "statRequirements": "5/75/38/5/5",
@@ -2508,6 +2970,7 @@
   },
   {
     "name": "Mor Creag Lamh",
+    "image": "/images/abilities/Mor%20Creag%20Lamh.png",
     "class": "wizard",
     "levelRequirement": "60",
     "statRequirements": "3/51/36/14/3",
@@ -2519,6 +2982,7 @@
   },
   {
     "name": "Mor Creag Meall",
+    "image": "/images/abilities/Mor%20Creag%20Meall.png",
     "class": "wizard",
     "levelRequirement": "71",
     "statRequirements": "3/70/41/16/3",
@@ -2530,6 +2994,7 @@
   },
   {
     "name": "Mor Creag",
+    "image": "/images/abilities/Mor%20Creag.png",
     "class": "wizard",
     "levelRequirement": "41",
     "statRequirements": "3/40/27/12/3",
@@ -2541,6 +3006,7 @@
   },
   {
     "name": "Mor Sal Lamh",
+    "image": "/images/abilities/Mor%20Sal%20Lamh.png",
     "class": "wizard",
     "levelRequirement": "60",
     "statRequirements": "9/52/30/9/9",
@@ -2552,6 +3018,7 @@
   },
   {
     "name": "Mor Sal Meall",
+    "image": "/images/abilities/Mor%20Sal%20Meall.png",
     "class": "wizard",
     "levelRequirement": "71",
     "statRequirements": "10/70/41/10/10",
@@ -2563,6 +3030,7 @@
   },
   {
     "name": "Mor Sal",
+    "image": "/images/abilities/Mor%20Sal.png",
     "class": "wizard",
     "levelRequirement": "41",
     "statRequirements": "8/40/27/8/8",
@@ -2574,6 +3042,7 @@
   },
   {
     "name": "Mor Srad Lamh",
+    "image": "/images/abilities/Mor%20Srad%20Lamh.png",
     "class": "wizard",
     "levelRequirement": "60",
     "statRequirements": "14/52/30/3/3",
@@ -2585,6 +3054,7 @@
   },
   {
     "name": "Mor Srad Meall",
+    "image": "/images/abilities/Mor%20Srad%20Meall.png",
     "class": "wizard",
     "levelRequirement": "71",
     "statRequirements": "16/70/41/3/3",
@@ -2596,6 +3066,7 @@
   },
   {
     "name": "Mor Srad",
+    "image": "/images/abilities/Mor%20Srad.png",
     "class": "wizard",
     "levelRequirement": "41",
     "statRequirements": "12/40/27/3/3",
@@ -2607,6 +3078,7 @@
   },
   {
     "name": "Sal Lamh",
+    "image": "/images/abilities/Sal%20Lamh.png",
     "class": "wizard",
     "levelRequirement": "27",
     "statRequirements": "6/23/12/6/6",
@@ -2618,6 +3090,7 @@
   },
   {
     "name": "Sal Meall",
+    "image": "/images/abilities/Sal%20Meall.png",
     "class": "wizard",
     "levelRequirement": "41",
     "statRequirements": "7/36/23/7/7",
@@ -2629,6 +3102,7 @@
   },
   {
     "name": "Sal",
+    "image": "/images/abilities/Sal.png",
     "class": "wizard",
     "levelRequirement": "11",
     "statRequirements": "4/14/7/4/4",
@@ -2640,6 +3114,7 @@
   },
   {
     "name": "Seismic Shift",
+    "image": "/images/abilities/Seismic%20Shift%201.png",
     "class": "wizard",
     "levelRequirement": "Master",
     "statRequirements": "3/3/3/3/3",
@@ -2651,6 +3126,7 @@
   },
   {
     "name": "Sight of Frailty",
+    "image": "/images/abilities/Sight%20of%20Frailty.png",
     "class": "wizard",
     "levelRequirement": "Master (Pure)",
     "statRequirements": "3/3/3/3/3",
@@ -2662,6 +3138,7 @@
   },
   {
     "name": "Srad Lamh",
+    "image": "/images/abilities/Srad%20Lamh.png",
     "class": "wizard",
     "levelRequirement": "27",
     "statRequirements": "9/23/12/3/3",
@@ -2673,6 +3150,7 @@
   },
   {
     "name": "Srad Meall",
+    "image": "/images/abilities/Srad%20Meall.png",
     "class": "wizard",
     "levelRequirement": "41",
     "statRequirements": "11/36/23/3/3",
@@ -2684,6 +3162,7 @@
   },
   {
     "name": "Srad",
+    "image": "/images/abilities/Srad.png",
     "class": "wizard",
     "levelRequirement": "11",
     "statRequirements": "5/14/7/3/3",
@@ -2695,6 +3174,7 @@
   },
   {
     "name": "Tidal Breeze",
+    "image": "/images/abilities/Tidal%20Breeze.png",
     "class": "wizard",
     "levelRequirement": "Master (Pure)",
     "statRequirements": "25/140/90/15/15",
@@ -2706,6 +3186,7 @@
   },
   {
     "name": "Tidal Wave",
+    "image": "/images/abilities/Tidal%20Wave%201.png",
     "class": "wizard",
     "levelRequirement": "Master",
     "statRequirements": "3/3/3/3/3",

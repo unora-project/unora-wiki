@@ -1,6 +1,7 @@
 [
   {
     "name": "Bladestorm 1",
+    "image": "/images/abilities/Bladestorm%201.png",
     "class": "Warlord",
     "levelRequirement": "Ab 1",
     "statRequirements": "3/3/3/3/3",
@@ -12,6 +13,7 @@
   },
   {
     "name": "Bravado",
+    "image": "/images/abilities/Bravado.png",
     "class": "Warlord",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -24,6 +26,7 @@
   },
   {
     "name": "Challenge 1",
+    "image": "/images/abilities/Challenge%201.png",
     "class": "Warlord",
     "element": "",
     "levelRequirement": "Ab 12",
@@ -36,6 +39,7 @@
   },
   {
     "name": "Glory",
+    "image": "/images/abilities/Glory.png",
     "class": "Warlord",
     "element": "",
     "levelRequirement": "Ab 1",
@@ -48,6 +52,7 @@
   },
   {
     "name": "Rout 1",
+    "image": "/images/abilities/Rout%201.png",
     "class": "Warlord",
     "levelRequirement": "Ab 3",
     "statRequirements": "3/3/3/3/3",
@@ -59,6 +64,7 @@
   },
   {
     "name": "Sever 1",
+    "image": "/images/abilities/Sever%201.png",
     "class": "Warlord",
     "levelRequirement": "Ab 1",
     "statRequirements": "3/3/3/3/3",
@@ -70,6 +76,7 @@
   },
   {
     "name": "Shockwave 1",
+    "image": "/images/abilities/Shockwave%201.png",
     "class": "Warlord",
     "levelRequirement": "Ab 1",
     "statRequirements": "3/3/3/3/3",
@@ -81,6 +88,7 @@
   },
   {
     "name": "Vanguard Sweep 1",
+    "image": "/images/abilities/Vanguard%20Sweep%201.png",
     "class": "Warlord",
     "levelRequirement": "Ab 1",
     "statRequirements": "3/3/3/3/3",

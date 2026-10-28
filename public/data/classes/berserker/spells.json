@@ -10,7 +10,7 @@
     "prerequisites": "-",
     "learningLocation": "Becoming Berserker",
     "description": "Surge of adrenaline that lasts 20s.  A fatal hit will leave you at 1 health, followed by a 25% heal of your maximum health and enter adrenal flow.  2 minute cooldown.",
-    "image": "/images/abilities/Adrenal ine 1.png"
+    "image": "/images/abilities/Adrenal%20ine%201.png"
   },
   {
     "name": "Reckless 1",
@@ -23,6 +23,6 @@
     "prerequisites": "-",
     "learningLocation": "Becoming Berserker",
     "description": "For 45s you deal 5% more damage, plus another 2% for every rank of Rage.  Your AC increases by 8, plus another 2 per Rage rank and all healing is decreased by 35%.\n\nHealing past your full health becomes Bloodlust. Half of the overflow turns into 100 bonus skill damage per second, up to 1000.  It lasts 15s, then builds again from nothing.  Life steal does not apply.",
-    "image": "/images/abilities/Reckless 1.png"
+    "image": "/images/abilities/Reckless%201.png"
   }
 ]
