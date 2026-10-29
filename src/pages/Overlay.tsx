@@ -3,6 +3,10 @@ import { Download, TriangleAlert } from 'lucide-react'
 import { PageHeader } from '@/components/ui/PageHeader'
 
 const ZIP_URL = '/ahk/UnoraOverlay.zip'
+const LINUX_URL = '/ahk/UnoraOverlay-Linux.tar.gz'
+
+const BTN =
+  'inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-sm font-semibold transition hover:brightness-110'
 
 function Shot({ src, alt }: { src: string; alt: string }) {
   const [ok, setOk] = useState(true)
@@ -68,25 +72,40 @@ export function Overlay() {
         breadcrumbs={[{ label: 'Home', to: '/' }, { label: 'Overlay' }]}
       />
 
-      <div className="mb-8 flex flex-wrap items-center gap-4 rounded-lg border-l-4 border-gilt bg-gilt/10 p-4 dark:bg-gilt/5">
-        <a
-          href={ZIP_URL}
-          download
-          className="inline-flex items-center gap-2 rounded-lg bg-gilt px-5 py-2.5 text-sm font-semibold text-obsidian transition hover:brightness-110"
-        >
-          <Download className="h-4 w-4" />
-          Download Unora Overlay
-        </a>
-        <p className="min-w-[16rem] flex-1 text-sm text-parchment-700 dark:text-parchment-300">
-          Free, Windows 10/11. Unzip the folder anywhere you can write files (Documents or Desktop), then
-          double-click <strong>UnoraOverlay.exe</strong>. Updates itself from this site.
+      <div className="mb-8 rounded-lg border-l-4 border-gilt bg-gilt/10 p-4 dark:bg-gilt/5">
+        <div className="flex flex-wrap items-center gap-3">
+          <a href={ZIP_URL} download className={`${BTN} bg-gilt text-obsidian`}>
+            <Download className="h-4 w-4" />
+            Download for Windows
+          </a>
+          <a
+            href={LINUX_URL}
+            download
+            className={`${BTN} border border-gilt/60 text-parchment-700 hover:bg-gilt/10 dark:text-ivory`}
+          >
+            <Download className="h-4 w-4" />
+            Download for Linux
+          </a>
+        </div>
+        <p className="mt-3 text-sm text-parchment-700 dark:text-parchment-300">
+          Free. <strong>Windows 10/11:</strong> unzip the folder anywhere you can write files (Documents or Desktop), then
+          double-click <strong>UnoraOverlay.exe</strong>. <strong>Linux (Ubuntu 22.04+ and Debian 12+):</strong> unpack the
+          folder and run <strong>./install.sh</strong>. Both update themselves from this site. See{' '}
+          <button
+            type="button"
+            onClick={() => document.getElementById('install')?.scrollIntoView({ behavior: 'smooth' })}
+            className="text-gilt underline hover:brightness-110"
+          >
+            Install
+          </button>{' '}
+          below.
         </p>
       </div>
 
       <div className="mb-8 rounded-lg border-l-4 border-amber-500 bg-amber-500/10 p-4 text-sm text-parchment-700 dark:text-parchment-300">
         <p className="mb-1 flex items-center gap-2 font-semibold text-amber-700 dark:text-amber-400">
           <TriangleAlert className="h-4 w-4" />
-          Antivirus or Windows may warn about the download
+          Windows: antivirus or SmartScreen may warn about the download
         </p>
         <p>
           <strong>UnoraOverlay.exe</strong> is the official, unmodified AutoHotkey v2 program, only renamed so it runs
@@ -232,6 +251,7 @@ export function Overlay() {
       </Section>
 
       <Section id="install" title="Install">
+        <h3 className="font-heading text-lg font-semibold text-parchment-900 dark:text-ivory">Windows</h3>
         <ol className="list-decimal space-y-1 pl-6 text-sm">
           <li>Unzip the whole UnoraOverlay folder somewhere you can write files (not Program Files).</li>
           <li>Double-click UnoraOverlay.exe. The menu opens the first time.</li>
@@ -241,13 +261,38 @@ export function Overlay() {
           Needs the Microsoft Edge WebView2 Runtime, which is already on Windows 11 and up-to-date Windows 10. The README in
           the zip has troubleshooting.
         </p>
+        <a href={ZIP_URL} download className={`${BTN} bg-gilt text-obsidian`}>
+          <Download className="h-4 w-4" />
+          Download for Windows
+        </a>
+
+        <h3 className="pt-4 font-heading text-lg font-semibold text-parchment-900 dark:text-ivory">Linux</h3>
+        <p className="text-sm">
+          Works on Ubuntu 22.04 and newer and Debian 12 and newer (and Linux Mint and other distributions based on them).
+          It is a native Linux version of the overlay with the same menu, tools and keybinds, and it includes its own README
+          with full instructions.
+        </p>
+        <ol className="list-decimal space-y-1 pl-6 text-sm">
+          <li>Unpack the UnoraOverlay folder somewhere in your home folder, such as ~/Games or ~/Documents.</li>
+          <li>
+            Open a terminal in that folder and run <Key>./install.sh</Key>. It installs the packages it needs (it asks for
+            your password) and adds Unora Overlay to your applications menu.
+          </li>
+          <li>Start Unora Overlay from the applications menu, or run <Key>./UnoraOverlay.sh</Key>. The menu opens the first time.</li>
+          <li>Run the game (Wine, Lutris, Steam/Proton...) in Windowed or Borderless mode.</li>
+        </ol>
+        <p className="text-sm">
+          Use an <strong>X11 session</strong> (on Ubuntu choose "Ubuntu on Xorg" at the login screen). On Wayland the windows
+          and tray icon work, but the keybinds and "add skill from game" only work while the game window has focus, and some
+          desktops block them completely.
+        </p>
         <a
-          href={ZIP_URL}
+          href={LINUX_URL}
           download
-          className="inline-flex items-center gap-2 rounded-lg bg-gilt px-5 py-2.5 text-sm font-semibold text-obsidian transition hover:brightness-110"
+          className={`${BTN} border border-gilt/60 text-parchment-700 hover:bg-gilt/10 dark:text-ivory`}
         >
           <Download className="h-4 w-4" />
-          Download Unora Overlay
+          Download for Linux
         </a>
       </Section>
     </div>
