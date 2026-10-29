@@ -39,7 +39,7 @@ export function TCGIndex() {
         description="Rules, strategies, and cards of the Unora Trading Card Game."
         accent="astral"
       />
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <Link
           to="/tcg/how_to_play"
           className="group rounded-xl border border-parchment-300 bg-parchment-100 p-6 shadow-sm transition-all hover:-translate-y-0.5 hover:border-astral hover:shadow-md dark:border-ash/10 dark:bg-ink dark:hover:border-astral"
@@ -60,6 +60,17 @@ export function TCGIndex() {
           </h2>
           <p className="mt-2 text-sm text-parchment-600 dark:text-parchment-500">
             Browse the complete collection of Unora Card Battle TCG cards.
+          </p>
+        </Link>
+        <Link
+          to="/tcg/deck_builder"
+          className="group rounded-xl border border-parchment-300 bg-parchment-100 p-6 shadow-sm transition-all hover:-translate-y-0.5 hover:border-astral hover:shadow-md dark:border-ash/10 dark:bg-ink dark:hover:border-astral"
+        >
+          <h2 className="font-heading text-xl font-semibold text-astral group-hover:text-astral dark:text-astral">
+            Deck Builder
+          </h2>
+          <p className="mt-2 text-sm text-parchment-600 dark:text-parchment-500">
+            Build, test, and share 40-card decks, with legality checks, a mana curve, and opening-hand draws.
           </p>
         </Link>
       </div>

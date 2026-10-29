@@ -129,6 +129,7 @@ const sections: NavSection[] = [
       { to: '/tcg', label: 'TCG', icon: Sparkles, children: [
         { to: '/tcg/how_to_play', label: 'How to Play' },
         { to: '/tcg/card_gallery', label: 'Card Gallery' },
+        { to: '/tcg/deck_builder', label: 'Deck Builder' },
       ]},
     ],
    },
