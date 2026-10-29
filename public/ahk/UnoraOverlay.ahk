@@ -10,7 +10,7 @@ Persistent()
 
 ; ───────────────────────── Constants ─────────────────────────
 
-VERSION := "1.8.0"
+VERSION := "1.8.1"
 APP_NAME := "Unora Overlay"
 UPDATE_BASE := "https://www.unora.wiki/ahk/"   ; version.txt + UnoraOverlay.ahk are hosted here
 SITE_BASE := "https://www.unora.wiki/#"        ; the site uses #/ routes
@@ -126,6 +126,7 @@ OptMouseList := MOUSE_CHOICES
 MiniReady := false     ; true once the Build Planner page has loaded
 FadeBusy := false
 FadeLevels := Map()    ; last transparency applied per window, to avoid needless calls
+ToastGui := 0          ; the little message near the top of the screen
 MiniGui := 0           ; the small Build Planner window
 MiniC := 0
 MiniWv := 0
@@ -279,6 +280,8 @@ RegisterHotkeys() {
         try {
             Hotkey(key, RunAction.Bind(a.id), "On")
             Registered[key] := a.id
+            if (a.id = "AddSkill")
+                AddLog("add-skill key registered: " key)
         } catch as e {
             MsgBox("The key '" PrettyKey(key) "' for '" a.label "' could not be used.`nChoose another one in Options.`n`n" e.Message, APP_NAME, "Icon!")
         }
@@ -660,16 +663,57 @@ OnMiniMessage(sender, args) {
 
 ; Shows a short message away from the mouse (so it never covers the text being read).
 ShowToast(text, ms := 2500) {
+    global ToastGui
+    AddLog("toast: " text)
     CoordMode("Mouse", "Screen")
-    CoordMode("ToolTip", "Screen")
-    MouseGetPos(, &my)
-    ty := (my < 200) ? A_ScreenHeight - 120 : 24
-    ToolTip(text, A_ScreenWidth // 2 - 150, ty)
+    MouseGetPos(&mx, &my)
+    ; Use the monitor the mouse is on (the game may not be on the main one).
+    ml := 0, mt := 0, mr := A_ScreenWidth, mb := A_ScreenHeight
+    try {
+        Loop MonitorGetCount() {
+            MonitorGet(A_Index, &l, &t, &r, &b)
+            if (mx >= l && mx < r && my >= t && my < b) {
+                ml := l, mt := t, mr := r, mb := b
+                break
+            }
+        }
+    }
+    try {
+        HideToast()
+        th := Theme()
+        ToastGui := Gui("+AlwaysOnTop -Caption +ToolWindow +E0x08000000 +Border")
+        ToastGui.BackColor := th.panel
+        ToastGui.MarginX := 14
+        ToastGui.MarginY := 10
+        ToastGui.SetFont("s10", "Segoe UI")
+        ToastGui.AddText("w420 Center c" th.text, text)
+        ToastGui.Show("NA Hide")
+        ToastGui.GetPos(, , &w, &h)
+        ty := (my < mt + 200) ? mb - h - 100 : mt + 24
+        ToastGui.Show("NA x" (ml + (mr - ml - w) // 2) " y" ty)
+    } catch {
+        CoordMode("ToolTip", "Screen")
+        ToolTip(text, ml + (mr - ml) // 2 - 150, (my < mt + 200) ? mb - 120 : mt + 24)
+    }
     SetTimer(HideToast, -ms)
 }
 
 HideToast() {
+    global ToastGui
+    try ToastGui.Destroy()
+    ToastGui := 0
     ToolTip()
+}
+
+; Writes a short line to data\addskill.log. It helps find out why "add skill from game" is not working.
+AddLog(text) {
+    try {
+        DirCreate(A_ScriptDir "\data")
+        f := A_ScriptDir "\data\addskill.log"
+        if (FileExist(f) && FileGetSize(f) > 60000)
+            FileDelete(f)
+        FileAppend(FormatTime(, "yyyy-MM-dd HH:mm:ss") "  " text "`n", f, "UTF-8")
+    }
 }
 
 JsonEsc(t) {
@@ -679,13 +723,16 @@ JsonEsc(t) {
 }
 
 AddSkillAtCursor(*) {
-    static busy := false
-    if busy
+    static busy := false, started := 0
+    AddLog("key pressed (busy=" busy ")")
+    if (busy && A_TickCount - started < 25000)
         return
     busy := true
+    started := A_TickCount
     try {
         DoAddSkill()
     } catch as e {
+        AddLog("error: " e.Message " (line " e.Line ")")
         ShowToast("Could not add the skill: " e.Message, 4000)
     }
     busy := false
@@ -724,15 +771,18 @@ DoAddSkill() {
     txt := dataDir "\ocr-last.txt"
     try FileDelete(txt)
     WriteCaptureScript(ps1)
+    AddLog("mouse " mx "," my " window scale " Round(gs, 3) " capture " rw "x" rh)
     ShowToast("Reading the skill name...", 10000)
     cmd := 'powershell.exe -NoProfile -ExecutionPolicy Bypass -File "' ps1 '" -x ' rx ' -y ' ry ' -w ' rw ' -h ' rh ' -png "' png '" -txt "' txt '"'
     RunWait(cmd, dataDir, "Hide")
+    AddLog("capture done, text file " (FileExist(txt) ? "exists" : "missing"))
     if !FileExist(txt) {
         ShowToast("Could not take a picture of the screen.", 4000)
         return
     }
     b64 := Trim(FileRead(txt, "UTF-8"), "`r`n ")
     if (SubStr(b64, 1, 6) = "ERROR|") {
+        AddLog("capture error: " SubStr(b64, 7))
         ShowToast(SubStr(b64, 7), 5000)
         return
     }
@@ -754,7 +804,10 @@ DoAddSkill() {
     }
     hint := (gs > 0) ? Round(gs, 4) ',' Round(gx - rx, 2) ',' Round(gy - ry, 2) : "0,0,0"
     js := 'window.unoraAddFromImage("data:image/png;base64,' b64 '",' (mx - rx) ',' (my - ry) ',' hint ')'
+    AddLog("sending picture to the Build Planner (" StrLen(b64) " characters)")
     try MiniWv.ExecuteScriptAsync(js).await2()
+    catch as e
+        AddLog("could not send to the Build Planner: " e.Message)
 }
 
 ; Writes the small PowerShell script that takes a picture of a piece of the screen (as a PNG

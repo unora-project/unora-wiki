@@ -1,4 +1,4 @@
-version=1.8.0
-- Add skill/spell from the game now works at any game window size (640x480 or bigger), not just exact multiples.
+version=1.8.1
+- Add skill/spell from game: messages now show on the monitor your mouse is on, and the key writes a log (data\addskill.log) to help find problems.
+- Add skill/spell from game works at any game window size (640x480 or bigger).
 - It reads only the skill name text, never the picture, and says "not sure" instead of guessing between similar names.
-- New Stat Calculator window (Ctrl+Alt+S).
