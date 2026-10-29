@@ -13,6 +13,8 @@ interface EquipmentItem {
   gender: string | null
   stats: Record<string, number | null>
   percentages: Record<string, number | null>
+  // Set the item belongs to (CMS "Set Bonus" / CSV "Set" column). Left out when the item has none.
+  set?: string
 }
 
 interface Source {
@@ -36,6 +38,11 @@ function numeric(value: string | undefined): number | null {
   if (!value?.trim() || value === '-') return null
   const number = Number(value)
   return Number.isFinite(number) ? number : null
+}
+
+function setName(value: string | undefined): string | undefined {
+  const v = value?.trim()
+  return v && v !== '-' ? v : undefined
 }
 
 function levelValue(value: string | undefined): number | string | null {
@@ -97,6 +104,7 @@ export function buildEquipment(csvRoot: string, previous: EquipmentItem[]): Equi
   category: source.category, class: source.class, gender: source.gender,
   stats: Object.fromEntries(Object.entries(stats).map(([key, header]) => [key, numeric(row[header])])),
   percentages: Object.fromEntries(Object.entries(percentages).map(([key, header]) => [key, numeric(row[header])])),
+  ...(setName(row.Set) ? { set: setName(row.Set) } : {}),
 })
     }
   }
