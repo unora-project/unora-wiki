@@ -313,8 +313,8 @@ function PlannerView({ mini }: { mini: boolean }) {
           const g = c.getContext('2d', { willReadFrequently: true })
           if (!g) return tell('Could not read the screenshot.')
           g.drawImage(img, 0, 0)
-          const { scale, runs } = readGameText(g.getImageData(0, 0, c.width, c.height), { scale, ox, oy })
-          if (scale === 0 || runs.length === 0) {
+          const { scale: found, runs } = readGameText(g.getImageData(0, 0, c.width, c.height), { scale, ox, oy })
+          if (found === 0 || runs.length === 0) {
             return tell(
               'Could not read any game text there. Point at the skill name. (The game window should be at least 640x480.)'
             )

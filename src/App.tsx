@@ -33,7 +33,7 @@ const Glossary = lazy(() => import('@/pages/Glossary').then((m) => ({ default: m
 const GettingStarted = lazy(() => import('@/pages/GettingStarted').then((m) => ({ default: m.GettingStarted })))
 const TCGIndex = lazy(() => import('@/pages/TCG').then((m) => ({ default: m.TCGIndex })))
 const TCGDetail = lazy(() => import('@/pages/TCG').then((m) => ({ default: m.TCGDetail })))
-const TCGCardGallery = lazy(() => import('@/pages/TCG_Gallery').then((m) => ({ default: m.TCGCardGallery })))
+const Overlay = lazy(() => import('@/pages/Overlay').then((m) => ({ default: m.Overlay })))
 const Changelog = lazy(() => import('@/pages/Changelog').then((m) => ({ default: m.Changelog })))
 const AdminEditor = lazy(() => import('@/pages/AdminEditor').then((m) => ({ default: m.AdminEditor })))
 const AdminSettings = lazy(() => import('@/pages/AdminSettings').then((m) => ({ default: m.AdminSettings })))
@@ -158,13 +158,13 @@ function LazyRoutes() {
 
       {/* TCG */}
       <Route path="tcg" element={<TCGIndex />} />
-      <Route path="tcg/card_gallery" element={<TCGCardGallery />} />
       <Route path="tcg/:slug" element={<TCGDetail />} />
 
       {/* Reference */}
       <Route path="glossary" element={<Glossary />} />
       <Route path="getting-started" element={<GettingStarted />} />
       <Route path="changelog" element={<Changelog />} />
+      <Route path="overlay" element={<Overlay />} />
 
       {/* Catch-all */}
       <Route path="*" element={<ComingSoon />} />

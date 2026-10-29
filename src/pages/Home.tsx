@@ -2,7 +2,7 @@ import { Link } from 'react-router'
 import {
   Swords, Shield, Scroll, Target, Hammer, Sparkles,
   Building2, Crown, Skull, BookOpen, ClipboardList, Calculator,
-  MessageCircle, Download, ArrowRight,
+  MessageCircle, Download, ArrowRight, Layers,
 } from 'lucide-react'
 import { OptimizedImage } from '@/components/ui/OptimizedImage'
 
@@ -209,6 +209,13 @@ export function Home() {
             <Download className="h-4 w-4" />
             Download
           </a>
+          <Link
+            to="/overlay"
+            className="inline-flex items-center gap-2 rounded-lg border border-gilt/40 bg-transparent px-4 py-2 font-ui text-sm font-medium text-parchment-700 transition-all hover:-translate-y-0.5 hover:border-gilt hover:text-gilt dark:text-ivory dark:hover:bg-gilt/10"
+          >
+            <Layers className="h-4 w-4" />
+            Overlay
+          </Link>
           <Link
             to="/getting-started"
             className="inline-flex items-center gap-2 rounded-lg border border-gilt/40 bg-transparent px-4 py-2 font-ui text-sm font-medium text-parchment-700 transition-all hover:-translate-y-0.5 hover:border-gilt hover:text-gilt dark:text-ivory dark:hover:bg-gilt/10"
