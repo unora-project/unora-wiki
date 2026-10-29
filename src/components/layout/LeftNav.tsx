@@ -3,7 +3,7 @@ import { memo, useRef, useEffect, useCallback, useMemo, useState } from 'react'
 import {
   Swords, Shield, Target, Skull, Scroll, ClipboardList, Crown,
   Hammer, Building2, Sparkles, BookOpen, Calculator, BookA,
-  Hand, Heart, Eye, Wand2, Wheat, ChevronRight,
+  Hand, Heart, Eye, Wand2, Wheat, ChevronRight, Layers,
   FlaskConical, Gem, Anvil, UtensilsCrossed, Fish, Leaf, Wand,
 } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
@@ -139,10 +139,13 @@ const sections: NavSection[] = [
     sublabel: 'Utilities',
     element: 'verdant',
     links: [
-      { to: '/calculators/hpmp', label: 'HP/MP Calculator', icon: Calculator },
-      { to: '/calculators/optimizer', label: 'HP/MP Optimizer', icon: Calculator },
-      { to: '/calculators/stats', label: 'Stat Calculator', icon: Calculator },
+      { to: '/calculators', label: 'Calculators', icon: Calculator, children: [
+        { to: '/calculators/hpmp', label: 'HP/MP Calculator' },
+        { to: '/calculators/optimizer', label: 'HP/MP Optimizer' },
+        { to: '/calculators/stats', label: 'Stat Calculator' },
+      ]},
       { to: '/glossary', label: 'Glossary', icon: BookA },
+      { to: '/overlay', label: 'Overlay', icon: Layers },
     ],
   },
 ]

@@ -49,10 +49,12 @@ const staticPages: SearchItem[] = [
   { title: 'Lore of Unora', category: 'Lore', path: '/lore/overview' },
   { title: 'The Great Divine War', category: 'Lore', path: '/lore/the_great_divine_war' },
   { title: 'Patch Notes', category: 'Patch Notes', path: '/patch-notes' },
+  { title: 'Calculators', category: 'Tools', path: '/calculators' },
   { title: 'HP/MP Calculator', category: 'Tools', path: '/calculators/hpmp' },
   { title: 'HP/MP Optimizer', category: 'Tools', path: '/calculators/optimizer' },
   { title: 'Stat Calculator', category: 'Tools', path: '/calculators/stats' },
   { title: 'Glossary', category: 'Reference', path: '/glossary' },
+  { title: 'Unora Overlay', category: 'Tools', path: '/overlay' },
   // Hunting areas
   { title: 'Mythic', category: 'Hunting', path: '/hunting/mythic' },
   { title: 'Floppy Farms', category: 'Hunting', path: '/hunting/mythic/Floppy_Farms'},

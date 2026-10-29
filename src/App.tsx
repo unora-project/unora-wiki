@@ -24,6 +24,7 @@ const QuestCircle = lazy(() => import('@/pages/QuestCircle').then((m) => ({ defa
 const LoreIndex = lazy(() => import('@/pages/Lore').then((m) => ({ default: m.LoreIndex })))
 const LoreDetail = lazy(() => import('@/pages/Lore').then((m) => ({ default: m.LoreDetail })))
 const PatchNotes = lazy(() => import('@/pages/PatchNotes').then((m) => ({ default: m.PatchNotes })))
+const Calculators = lazy(() => import('@/pages/Calculators').then((m) => ({ default: m.Calculators })))
 const HpMpCalculator = lazy(() => import('@/pages/calculators/HpMpCalculator').then((m) => ({ default: m.HpMpCalculator })))
 const HpMpCalculatorMini = lazy(() => import('@/pages/calculators/HpMpCalculator').then((m) => ({ default: m.HpMpCalculatorMini })))
 const StatCalculatorMini = lazy(() => import('@/pages/calculators/StatCalculator').then((m) => ({ default: m.StatCalculatorMini })))
@@ -154,6 +155,7 @@ function LazyRoutes() {
       <Route path="patch-notes" element={<PatchNotes />} />
 
       {/* Calculators */}
+      <Route path="calculators" element={<Calculators />} />
       <Route path="calculators/hpmp" element={<HpMpCalculator />} />
       <Route path="calculators/optimizer" element={<HpMpOptimizer />} />
       <Route path="calculators/stats" element={<StatCalculator />} />

@@ -154,8 +154,8 @@ const categories: Category[] = [
   {
     title: 'Calculators',
     description: 'HP/MP and stat experience calculators',
-    to: '/calculators/stats',
-    count: 2,
+    to: '/calculators',
+    count: 3,
     element: 'verdant',
     icon: Calculator,
     featured: false,
