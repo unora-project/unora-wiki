@@ -1,0 +1,2396 @@
+{
+ "keywords": [
+  "First Strike",
+  "Flying",
+  "Guard",
+  "Haste",
+  "Lifelink",
+  "Phased",
+  "Reach",
+  "Trample",
+  "Venom",
+  "Ward"
+ ],
+ "cards": [
+  {
+   "art": 1,
+   "name": "Ancient Draco",
+   "element": "fire",
+   "rarity": "Rare",
+   "craft": 400,
+   "cost": {
+    "generic": 5,
+    "fire": 1
+   },
+   "type": "Creature",
+   "text": "Flying.",
+   "power": 5,
+   "toughness": 5,
+   "slug": "ancient-draco",
+   "variants": [
+    "normal",
+    "extended",
+    "full",
+    "full_notext"
+   ]
+  },
+  {
+   "art": 2,
+   "name": "Battle Fury",
+   "element": "fire",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "fire": 1
+   },
+   "type": "Instant",
+   "text": "Give a creature +2/+0 this turn.",
+   "slug": "battle-fury",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 3,
+   "name": "Blaze",
+   "element": "fire",
+   "rarity": "Uncommon",
+   "craft": 100,
+   "cost": {
+    "generic": 2,
+    "fire": 1
+   },
+   "type": "Creature",
+   "text": "Haste, First Strike.",
+   "power": 3,
+   "toughness": 2,
+   "slug": "blaze",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 4,
+   "name": "Crimson Bat",
+   "element": "fire",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "generic": 2,
+    "fire": 1
+   },
+   "type": "Creature",
+   "text": "Haste.",
+   "power": 3,
+   "toughness": 2,
+   "slug": "crimson-bat",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 5,
+   "name": "Cthonic Drake",
+   "element": "fire",
+   "rarity": "Uncommon",
+   "craft": 100,
+   "cost": {
+    "generic": 4,
+    "fire": 1
+   },
+   "type": "Creature",
+   "text": "On enter: deal 2 damage to any target.",
+   "power": 3,
+   "toughness": 3,
+   "slug": "cthonic-drake",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 6,
+   "name": "Ember Imp",
+   "element": "fire",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "generic": 1,
+    "fire": 1
+   },
+   "type": "Creature",
+   "text": "Haste.",
+   "power": 2,
+   "toughness": 1,
+   "slug": "ember-imp",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 7,
+   "name": "Ember Spider",
+   "element": "fire",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "fire": 1
+   },
+   "type": "Creature",
+   "text": "",
+   "power": 2,
+   "toughness": 1,
+   "slug": "ember-spider",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 8,
+   "name": "Fireball",
+   "element": "fire",
+   "rarity": "Uncommon",
+   "craft": 100,
+   "cost": {
+    "generic": 2,
+    "fire": 1
+   },
+   "type": "Spell",
+   "text": "Deal 4 damage to any target.",
+   "slug": "fireball",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 9,
+   "name": "Firebolt",
+   "element": "fire",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "fire": 1
+   },
+   "type": "Instant",
+   "text": "Deal 2 damage to any target.",
+   "slug": "firebolt",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 10,
+   "name": "Fire Breath",
+   "element": "fire",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "generic": 2,
+    "fire": 1
+   },
+   "type": "Spell",
+   "text": "Deal 3 damage to your opponent.",
+   "slug": "fire-breath",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 11,
+   "name": "Fire Draco",
+   "element": "fire",
+   "rarity": "Uncommon",
+   "craft": 100,
+   "cost": {
+    "generic": 3,
+    "fire": 1
+   },
+   "type": "Creature",
+   "text": "Flying.",
+   "power": 4,
+   "toughness": 3,
+   "slug": "fire-draco",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 12,
+   "name": "Flame Wall",
+   "element": "fire",
+   "rarity": "Uncommon",
+   "craft": 100,
+   "cost": {
+    "generic": 1,
+    "fire": 1
+   },
+   "type": "Trap",
+   "text": "On enemy attack: deal 3 damage to that creature.",
+   "slug": "flame-wall",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 13,
+   "name": "Hell Bovine",
+   "element": "fire",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "generic": 2,
+    "fire": 1
+   },
+   "type": "Creature",
+   "text": "",
+   "power": 4,
+   "toughness": 2,
+   "slug": "hell-bovine",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 14,
+   "name": "Infernal Bovine",
+   "element": "fire",
+   "rarity": "Uncommon",
+   "craft": 100,
+   "cost": {
+    "generic": 4,
+    "fire": 1
+   },
+   "type": "Creature",
+   "text": "Trample.",
+   "power": 5,
+   "toughness": 4,
+   "slug": "infernal-bovine",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 15,
+   "name": "Inferno",
+   "element": "fire",
+   "rarity": "Rare",
+   "craft": 400,
+   "cost": {
+    "generic": 3,
+    "fire": 2
+   },
+   "type": "Spell",
+   "text": "Deal 6 damage to any target.",
+   "slug": "inferno",
+   "variants": [
+    "normal",
+    "extended",
+    "full",
+    "full_notext"
+   ]
+  },
+  {
+   "art": 16,
+   "name": "Kindlefiend the Bloodborne",
+   "element": "fire",
+   "rarity": "Rare",
+   "craft": 400,
+   "cost": {
+    "generic": 3,
+    "fire": 1
+   },
+   "type": "Creature",
+   "text": "Haste, Lifelink.",
+   "power": 4,
+   "toughness": 3,
+   "slug": "kindlefiend-the-bloodborne",
+   "variants": [
+    "normal",
+    "extended",
+    "full",
+    "full_notext"
+   ]
+  },
+  {
+   "art": 17,
+   "name": "Lava Golem",
+   "element": "fire",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "generic": 4,
+    "fire": 1
+   },
+   "type": "Creature",
+   "text": "",
+   "power": 5,
+   "toughness": 4,
+   "slug": "lava-golem",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 18,
+   "name": "Molten Cube",
+   "element": "fire",
+   "rarity": "Uncommon",
+   "craft": 100,
+   "cost": {
+    "generic": 2,
+    "fire": 1
+   },
+   "type": "Creature",
+   "text": "First Strike.",
+   "power": 3,
+   "toughness": 3,
+   "slug": "molten-cube",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 19,
+   "name": "Obsidra",
+   "element": "fire",
+   "rarity": "Legendary",
+   "craft": 1600,
+   "cost": {
+    "generic": 5,
+    "fire": 2
+   },
+   "type": "Creature",
+   "text": "Flying. On enter: destroy a creature.",
+   "power": 6,
+   "toughness": 5,
+   "slug": "obsidra",
+   "variants": [
+    "normal",
+    "extended",
+    "full",
+    "full_notext"
+   ]
+  },
+  {
+   "art": 20,
+   "name": "Powder Keg",
+   "element": "fire",
+   "rarity": "Uncommon",
+   "craft": 100,
+   "cost": {
+    "fire": 1
+   },
+   "type": "Trap",
+   "text": "On enemy summon: deal 2 damage to that creature.",
+   "slug": "powder-keg",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 21,
+   "name": "Red Blob",
+   "element": "fire",
+   "rarity": "Rare",
+   "craft": 400,
+   "cost": {
+    "generic": 4,
+    "fire": 1
+   },
+   "type": "Creature",
+   "text": "On enter: deal 2 damage to any target.",
+   "power": 4,
+   "toughness": 4,
+   "slug": "red-blob",
+   "variants": [
+    "normal",
+    "extended",
+    "full",
+    "full_notext"
+   ]
+  },
+  {
+   "art": 22,
+   "name": "Red Kobold",
+   "element": "fire",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "generic": 1,
+    "fire": 1
+   },
+   "type": "Creature",
+   "text": "",
+   "power": 3,
+   "toughness": 1,
+   "slug": "red-kobold",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 23,
+   "name": "Red Scrummel",
+   "element": "fire",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "generic": 1,
+    "fire": 1
+   },
+   "type": "Creature",
+   "text": "On enter: deal 2 damage to your opponent.",
+   "power": 1,
+   "toughness": 1,
+   "slug": "red-scrummel",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 24,
+   "name": "Red Shocker",
+   "element": "fire",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "generic": 2,
+    "fire": 1
+   },
+   "type": "Creature",
+   "text": "First Strike.",
+   "power": 2,
+   "toughness": 3,
+   "slug": "red-shocker",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 25,
+   "name": "Scarlet Beetle",
+   "element": "fire",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "generic": 1,
+    "fire": 1
+   },
+   "type": "Creature",
+   "text": "First Strike.",
+   "power": 2,
+   "toughness": 1,
+   "slug": "scarlet-beetle",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 26,
+   "name": "Scorch",
+   "element": "fire",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "generic": 1,
+    "fire": 1
+   },
+   "type": "Instant",
+   "text": "Deal 3 damage to an enemy creature.",
+   "slug": "scorch",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 27,
+   "name": "Smoldy",
+   "element": "fire",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "generic": 3,
+    "fire": 1
+   },
+   "type": "Creature",
+   "text": "Haste.",
+   "power": 3,
+   "toughness": 3,
+   "slug": "smoldy",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 28,
+   "name": "Abyssal Octopus",
+   "element": "water",
+   "rarity": "Rare",
+   "craft": 400,
+   "cost": {
+    "generic": 4,
+    "water": 1
+   },
+   "type": "Creature",
+   "text": "Guard, Venom.",
+   "power": 4,
+   "toughness": 5,
+   "slug": "abyssal-octopus",
+   "variants": [
+    "normal",
+    "extended",
+    "full",
+    "full_notext"
+   ]
+  },
+  {
+   "art": 29,
+   "name": "Anemone",
+   "element": "water",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "generic": 1,
+    "water": 1
+   },
+   "type": "Creature",
+   "text": "Reach, Guard.",
+   "power": 0,
+   "toughness": 4,
+   "slug": "anemone",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 30,
+   "name": "Blue Blob",
+   "element": "water",
+   "rarity": "Uncommon",
+   "craft": 100,
+   "cost": {
+    "generic": 2,
+    "water": 1
+   },
+   "type": "Creature",
+   "text": "Guard, Lifelink.",
+   "power": 2,
+   "toughness": 4,
+   "slug": "blue-blob",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 31,
+   "name": "Blue Eel",
+   "element": "water",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "generic": 2,
+    "water": 1
+   },
+   "type": "Creature",
+   "text": "Venom.",
+   "power": 2,
+   "toughness": 2,
+   "slug": "blue-eel",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 32,
+   "name": "Brawlfish",
+   "element": "water",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "generic": 1,
+    "water": 1
+   },
+   "type": "Creature",
+   "text": "",
+   "power": 2,
+   "toughness": 2,
+   "slug": "brawlfish",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 33,
+   "name": "Drowning Depths",
+   "element": "water",
+   "rarity": "Uncommon",
+   "craft": 100,
+   "cost": {
+    "generic": 4,
+    "water": 1
+   },
+   "type": "Spell",
+   "text": "Destroy an enemy creature.",
+   "slug": "drowning-depths",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 34,
+   "name": "Frostbite",
+   "element": "water",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "generic": 1,
+    "water": 1
+   },
+   "type": "Instant",
+   "text": "Deal 2 damage to an enemy creature.",
+   "slug": "frostbite",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 35,
+   "name": "Ice Elemental",
+   "element": "water",
+   "rarity": "Uncommon",
+   "craft": 100,
+   "cost": {
+    "generic": 4,
+    "water": 1
+   },
+   "type": "Creature",
+   "text": "Reach, Guard.",
+   "power": 4,
+   "toughness": 6,
+   "slug": "ice-elemental",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 36,
+   "name": "Kelberoth",
+   "element": "water",
+   "rarity": "Rare",
+   "craft": 400,
+   "cost": {
+    "generic": 3,
+    "water": 1
+   },
+   "type": "Creature",
+   "text": "Lifelink, Ward.",
+   "power": 3,
+   "toughness": 4,
+   "slug": "kelberoth",
+   "variants": [
+    "normal",
+    "extended",
+    "full",
+    "full_notext"
+   ]
+  },
+  {
+   "art": 37,
+   "name": "Kraken Hatchling",
+   "element": "water",
+   "rarity": "Uncommon",
+   "craft": 100,
+   "cost": {
+    "generic": 2,
+    "water": 1
+   },
+   "type": "Creature",
+   "text": "Lifelink.",
+   "power": 2,
+   "toughness": 3,
+   "slug": "kraken-hatchling",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 38,
+   "name": "Marsh Viper",
+   "element": "water",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "generic": 1,
+    "water": 1
+   },
+   "type": "Creature",
+   "text": "Venom.",
+   "power": 1,
+   "toughness": 1,
+   "slug": "marsh-viper",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 39,
+   "name": "Mending Tide",
+   "element": "water",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "water": 1
+   },
+   "type": "Instant",
+   "text": "Gain 3 life.",
+   "slug": "mending-tide",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 40,
+   "name": "Mist Ward",
+   "element": "water",
+   "rarity": "Uncommon",
+   "craft": 100,
+   "cost": {
+    "generic": 1,
+    "water": 1
+   },
+   "type": "Instant",
+   "text": "Counter a spell.",
+   "slug": "mist-ward",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 41,
+   "name": "Muirbolg",
+   "element": "water",
+   "rarity": "Rare",
+   "craft": 400,
+   "cost": {
+    "generic": 5,
+    "water": 1
+   },
+   "type": "Creature",
+   "text": "Guard. On enter: gain 3 life.",
+   "power": 5,
+   "toughness": 7,
+   "slug": "muirbolg",
+   "variants": [
+    "normal",
+    "extended",
+    "full",
+    "full_notext"
+   ]
+  },
+  {
+   "art": 42,
+   "name": "Penguin",
+   "element": "water",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "water": 1
+   },
+   "type": "Creature",
+   "text": "On enter: gain 2 life.",
+   "power": 1,
+   "toughness": 1,
+   "slug": "penguin",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 43,
+   "name": "Sewer Crab",
+   "element": "water",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "generic": 1,
+    "water": 1
+   },
+   "type": "Creature",
+   "text": "Guard.",
+   "power": 1,
+   "toughness": 3,
+   "slug": "sewer-crab",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 44,
+   "name": "Siren",
+   "element": "water",
+   "rarity": "Uncommon",
+   "craft": 100,
+   "cost": {
+    "generic": 3,
+    "water": 1
+   },
+   "type": "Creature",
+   "text": "On enter: draw a card.",
+   "power": 2,
+   "toughness": 3,
+   "slug": "siren",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 45,
+   "name": "Skrull",
+   "element": "water",
+   "rarity": "Uncommon",
+   "craft": 100,
+   "cost": {
+    "generic": 3,
+    "water": 1
+   },
+   "type": "Creature",
+   "text": "Venom.",
+   "power": 3,
+   "toughness": 4,
+   "slug": "skrull",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 46,
+   "name": "Squid",
+   "element": "water",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "generic": 3,
+    "water": 1
+   },
+   "type": "Creature",
+   "text": "",
+   "power": 4,
+   "toughness": 4,
+   "slug": "squid",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 47,
+   "name": "Starfish",
+   "element": "water",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "generic": 2,
+    "water": 1
+   },
+   "type": "Creature",
+   "text": "On enter: draw a card.",
+   "power": 1,
+   "toughness": 3,
+   "slug": "starfish",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 48,
+   "name": "Suileach",
+   "element": "water",
+   "rarity": "Legendary",
+   "craft": 1600,
+   "cost": {
+    "generic": 5,
+    "water": 2
+   },
+   "type": "Creature",
+   "text": "Lifelink, Ward. On enter: draw 2 cards.",
+   "power": 6,
+   "toughness": 6,
+   "slug": "suileach",
+   "variants": [
+    "normal",
+    "extended",
+    "full",
+    "full_notext"
+   ]
+  },
+  {
+   "art": 49,
+   "name": "Tidal Insight",
+   "element": "water",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "generic": 1,
+    "water": 1
+   },
+   "type": "Spell",
+   "text": "Draw 2 cards.",
+   "slug": "tidal-insight",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 50,
+   "name": "Tidal Wave",
+   "element": "water",
+   "rarity": "Rare",
+   "craft": 400,
+   "cost": {
+    "generic": 3,
+    "water": 2
+   },
+   "type": "Spell",
+   "text": "Draw 3 cards. Gain 3 life.",
+   "slug": "tidal-wave",
+   "variants": [
+    "normal",
+    "extended",
+    "full",
+    "full_notext"
+   ]
+  },
+  {
+   "art": 51,
+   "name": "Tide Warden",
+   "element": "water",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "generic": 2,
+    "water": 1
+   },
+   "type": "Creature",
+   "text": "Reach, Guard.",
+   "power": 2,
+   "toughness": 4,
+   "slug": "tide-warden",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 52,
+   "name": "Undertow",
+   "element": "water",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "water": 1
+   },
+   "type": "Instant",
+   "text": "Give a creature -2/+0 this turn.",
+   "slug": "undertow",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 53,
+   "name": "Water Ram",
+   "element": "water",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "generic": 3,
+    "water": 1
+   },
+   "type": "Creature",
+   "text": "Guard.",
+   "power": 3,
+   "toughness": 5,
+   "slug": "water-ram",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 54,
+   "name": "Whirlpool",
+   "element": "water",
+   "rarity": "Uncommon",
+   "craft": 100,
+   "cost": {
+    "generic": 1,
+    "water": 1
+   },
+   "type": "Trap",
+   "text": "On enemy spell: counter that spell.",
+   "slug": "whirlpool",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 55,
+   "name": "Anfa",
+   "element": "wind",
+   "rarity": "Rare",
+   "craft": 400,
+   "cost": {
+    "generic": 3,
+    "wind": 1
+   },
+   "type": "Creature",
+   "text": "Flying, First Strike.",
+   "power": 3,
+   "toughness": 3,
+   "slug": "anfa",
+   "variants": [
+    "normal",
+    "extended",
+    "full",
+    "full_notext"
+   ]
+  },
+  {
+   "art": 56,
+   "name": "Carolina",
+   "element": "wind",
+   "rarity": "Rare",
+   "craft": 400,
+   "cost": {
+    "generic": 4,
+    "wind": 1
+   },
+   "type": "Creature",
+   "text": "Flying, Lifelink.",
+   "power": 4,
+   "toughness": 4,
+   "slug": "carolina",
+   "variants": [
+    "normal",
+    "extended",
+    "full",
+    "full_notext"
+   ]
+  },
+  {
+   "art": 57,
+   "name": "Crimson Great Bat",
+   "element": "wind",
+   "rarity": "Uncommon",
+   "craft": 100,
+   "cost": {
+    "generic": 3,
+    "wind": 1
+   },
+   "type": "Creature",
+   "text": "Flying, Haste.",
+   "power": 3,
+   "toughness": 3,
+   "slug": "crimson-great-bat",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 58,
+   "name": "Downdraft",
+   "element": "wind",
+   "rarity": "Uncommon",
+   "craft": 100,
+   "cost": {
+    "generic": 2,
+    "wind": 1
+   },
+   "type": "Instant",
+   "text": "Deal 4 damage to an enemy creature.",
+   "slug": "downdraft",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 59,
+   "name": "Eye of the Storm",
+   "element": "wind",
+   "rarity": "Rare",
+   "craft": 400,
+   "cost": {
+    "generic": 2,
+    "wind": 1
+   },
+   "type": "Spell",
+   "text": "Draw 3 cards.",
+   "slug": "eye-of-the-storm",
+   "variants": [
+    "normal",
+    "extended",
+    "full",
+    "full_notext"
+   ]
+  },
+  {
+   "art": 60,
+   "name": "Faerie",
+   "element": "wind",
+   "rarity": "Uncommon",
+   "craft": 100,
+   "cost": {
+    "generic": 1,
+    "wind": 1
+   },
+   "type": "Creature",
+   "text": "Flying, Ward.",
+   "power": 2,
+   "toughness": 2,
+   "slug": "faerie",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 61,
+   "name": "Gale Sprite",
+   "element": "wind",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "wind": 1
+   },
+   "type": "Creature",
+   "text": "Flying.",
+   "power": 1,
+   "toughness": 2,
+   "slug": "gale-sprite",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 62,
+   "name": "Giant Bat",
+   "element": "wind",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "generic": 2,
+    "wind": 1
+   },
+   "type": "Creature",
+   "text": "Flying.",
+   "power": 2,
+   "toughness": 3,
+   "slug": "giant-bat",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 63,
+   "name": "Gruesomefly",
+   "element": "wind",
+   "rarity": "Uncommon",
+   "craft": 100,
+   "cost": {
+    "generic": 2,
+    "wind": 1
+   },
+   "type": "Creature",
+   "text": "Flying, Venom.",
+   "power": 2,
+   "toughness": 2,
+   "slug": "gruesomefly",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 64,
+   "name": "Gust",
+   "element": "wind",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "wind": 1
+   },
+   "type": "Instant",
+   "text": "Give a creature +1/+1 this turn.",
+   "slug": "gust",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 65,
+   "name": "Mantis",
+   "element": "wind",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "generic": 2,
+    "wind": 1
+   },
+   "type": "Creature",
+   "text": "Haste.",
+   "power": 3,
+   "toughness": 2,
+   "slug": "mantis",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 66,
+   "name": "Moth",
+   "element": "wind",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "generic": 1,
+    "wind": 1
+   },
+   "type": "Creature",
+   "text": "Flying.",
+   "power": 2,
+   "toughness": 1,
+   "slug": "moth",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 67,
+   "name": "Rooster",
+   "element": "wind",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "wind": 1
+   },
+   "type": "Creature",
+   "text": "Haste.",
+   "power": 2,
+   "toughness": 1,
+   "slug": "rooster",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 68,
+   "name": "Shinewood Bee",
+   "element": "wind",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "wind": 1
+   },
+   "type": "Creature",
+   "text": "Flying, Haste.",
+   "power": 1,
+   "toughness": 1,
+   "slug": "shinewood-bee",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 69,
+   "name": "Shrieker",
+   "element": "wind",
+   "rarity": "Rare",
+   "craft": 400,
+   "cost": {
+    "generic": 3,
+    "wind": 1
+   },
+   "type": "Creature",
+   "text": "Flying, Ward.",
+   "power": 3,
+   "toughness": 3,
+   "slug": "shrieker",
+   "variants": [
+    "normal",
+    "extended",
+    "full",
+    "full_notext"
+   ]
+  },
+  {
+   "art": 70,
+   "name": "Sirocco",
+   "element": "wind",
+   "rarity": "Legendary",
+   "craft": 1600,
+   "cost": {
+    "generic": 4,
+    "wind": 2
+   },
+   "type": "Creature",
+   "text": "Flying, Haste, Ward.",
+   "power": 5,
+   "toughness": 5,
+   "slug": "sirocco",
+   "variants": [
+    "normal",
+    "extended",
+    "full",
+    "full_notext"
+   ]
+  },
+  {
+   "art": 71,
+   "name": "Tailwind",
+   "element": "wind",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "generic": 1,
+    "wind": 1
+   },
+   "type": "Instant",
+   "text": "Give a creature +2/+2 this turn.",
+   "slug": "tailwind",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 72,
+   "name": "Twink",
+   "element": "wind",
+   "rarity": "Uncommon",
+   "craft": 100,
+   "cost": {
+    "generic": 2,
+    "wind": 1
+   },
+   "type": "Creature",
+   "text": "Flying. On enter: draw a card.",
+   "power": 2,
+   "toughness": 2,
+   "slug": "twink",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 73,
+   "name": "Unseelie Wisp",
+   "element": "wind",
+   "rarity": "Uncommon",
+   "craft": 100,
+   "cost": {
+    "generic": 2,
+    "wind": 1
+   },
+   "type": "Creature",
+   "text": "Flying, Haste.",
+   "power": 3,
+   "toughness": 1,
+   "slug": "unseelie-wisp",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 74,
+   "name": "Updraft",
+   "element": "wind",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "wind": 1
+   },
+   "type": "Instant",
+   "text": "Draw a card.",
+   "slug": "updraft",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 75,
+   "name": "Verdant Wingtoad",
+   "element": "wind",
+   "rarity": "Uncommon",
+   "craft": 100,
+   "cost": {
+    "generic": 3,
+    "wind": 1
+   },
+   "type": "Creature",
+   "text": "Flying.",
+   "power": 3,
+   "toughness": 4,
+   "slug": "verdant-wingtoad",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 76,
+   "name": "Violent Bee",
+   "element": "wind",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "generic": 2,
+    "wind": 1
+   },
+   "type": "Creature",
+   "text": "Flying, First Strike.",
+   "power": 2,
+   "toughness": 2,
+   "slug": "violent-bee",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 77,
+   "name": "Vulture",
+   "element": "wind",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "generic": 3,
+    "wind": 1
+   },
+   "type": "Creature",
+   "text": "Flying.",
+   "power": 3,
+   "toughness": 3,
+   "slug": "vulture",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 78,
+   "name": "White Bat",
+   "element": "wind",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "generic": 1,
+    "wind": 1
+   },
+   "type": "Creature",
+   "text": "Flying, Lifelink.",
+   "power": 1,
+   "toughness": 2,
+   "slug": "white-bat",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 79,
+   "name": "Wind Shear",
+   "element": "wind",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "generic": 2,
+    "wind": 1
+   },
+   "type": "Instant",
+   "text": "Deal 2 damage to a creature. Draw a card.",
+   "slug": "wind-shear",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 80,
+   "name": "Wind Wall",
+   "element": "wind",
+   "rarity": "Uncommon",
+   "craft": 100,
+   "cost": {
+    "generic": 1,
+    "wind": 1
+   },
+   "type": "Trap",
+   "text": "On enemy attack: draw 2 cards.",
+   "slug": "wind-wall",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 81,
+   "name": "Wisp",
+   "element": "wind",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "generic": 1,
+    "wind": 1
+   },
+   "type": "Creature",
+   "text": "Flying. On enter: draw a card.",
+   "power": 1,
+   "toughness": 1,
+   "slug": "wisp",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 82,
+   "name": "Ant Shaman",
+   "element": "earth",
+   "rarity": "Uncommon",
+   "craft": 100,
+   "cost": {
+    "generic": 2,
+    "earth": 1
+   },
+   "type": "Creature",
+   "text": "First Strike.",
+   "power": 3,
+   "toughness": 3,
+   "slug": "ant-shaman",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 83,
+   "name": "Avalanche",
+   "element": "earth",
+   "rarity": "Uncommon",
+   "craft": 100,
+   "cost": {
+    "generic": 3,
+    "earth": 1
+   },
+   "type": "Spell",
+   "text": "Destroy an enemy creature.",
+   "slug": "avalanche",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 84,
+   "name": "Bramble Snare",
+   "element": "earth",
+   "rarity": "Uncommon",
+   "craft": 100,
+   "cost": {
+    "generic": 1,
+    "earth": 1
+   },
+   "type": "Trap",
+   "text": "On enemy summon: deal 3 damage to that creature.",
+   "slug": "bramble-snare",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 85,
+   "name": "Canyon Beetle",
+   "element": "earth",
+   "rarity": "Uncommon",
+   "craft": 100,
+   "cost": {
+    "generic": 3,
+    "earth": 1
+   },
+   "type": "Creature",
+   "text": "Trample.",
+   "power": 4,
+   "toughness": 3,
+   "slug": "canyon-beetle",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 86,
+   "name": "Canyon Comodo",
+   "element": "earth",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "generic": 3,
+    "earth": 1
+   },
+   "type": "Creature",
+   "text": "Trample.",
+   "power": 3,
+   "toughness": 4,
+   "slug": "canyon-comodo",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 87,
+   "name": "Crag Tyrant",
+   "element": "earth",
+   "rarity": "Rare",
+   "craft": 400,
+   "cost": {
+    "generic": 5,
+    "earth": 1
+   },
+   "type": "Creature",
+   "text": "Reach, Trample.",
+   "power": 6,
+   "toughness": 5,
+   "slug": "crag-tyrant",
+   "variants": [
+    "normal",
+    "extended",
+    "full",
+    "full_notext"
+   ]
+  },
+  {
+   "art": 88,
+   "name": "Den Fox",
+   "element": "earth",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "generic": 1,
+    "earth": 1
+   },
+   "type": "Creature",
+   "text": "",
+   "power": 2,
+   "toughness": 2,
+   "slug": "den-fox",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 89,
+   "name": "Desert Hyena",
+   "element": "earth",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "generic": 1,
+    "earth": 1
+   },
+   "type": "Creature",
+   "text": "",
+   "power": 3,
+   "toughness": 1,
+   "slug": "desert-hyena",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 90,
+   "name": "Dwarf Captain",
+   "element": "earth",
+   "rarity": "Rare",
+   "craft": 400,
+   "cost": {
+    "generic": 4,
+    "earth": 1
+   },
+   "type": "Creature",
+   "text": "First Strike, Trample.",
+   "power": 4,
+   "toughness": 4,
+   "slug": "dwarf-captain",
+   "variants": [
+    "normal",
+    "extended",
+    "full",
+    "full_notext"
+   ]
+  },
+  {
+   "art": 91,
+   "name": "Dwarf Soldier",
+   "element": "earth",
+   "rarity": "Uncommon",
+   "craft": 100,
+   "cost": {
+    "generic": 3,
+    "earth": 1
+   },
+   "type": "Creature",
+   "text": "On enter: gain 3 life.",
+   "power": 3,
+   "toughness": 3,
+   "slug": "dwarf-soldier",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 92,
+   "name": "Giant Ant",
+   "element": "earth",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "generic": 2,
+    "earth": 1
+   },
+   "type": "Creature",
+   "text": "Trample.",
+   "power": 3,
+   "toughness": 3,
+   "slug": "giant-ant",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 93,
+   "name": "Goblin Guard",
+   "element": "earth",
+   "rarity": "Uncommon",
+   "craft": 100,
+   "cost": {
+    "generic": 3,
+    "earth": 1
+   },
+   "type": "Creature",
+   "text": "Reach, Guard.",
+   "power": 3,
+   "toughness": 5,
+   "slug": "goblin-guard",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 94,
+   "name": "Goblin Warrior",
+   "element": "earth",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "generic": 2,
+    "earth": 1
+   },
+   "type": "Creature",
+   "text": "",
+   "power": 3,
+   "toughness": 3,
+   "slug": "goblin-warrior",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 95,
+   "name": "Green Cactoid",
+   "element": "earth",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "generic": 1,
+    "earth": 1
+   },
+   "type": "Creature",
+   "text": "Reach.",
+   "power": 2,
+   "toughness": 3,
+   "slug": "green-cactoid",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 96,
+   "name": "Grey Kobold",
+   "element": "earth",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "generic": 1,
+    "earth": 1
+   },
+   "type": "Creature",
+   "text": "",
+   "power": 2,
+   "toughness": 3,
+   "slug": "grey-kobold",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 97,
+   "name": "Kobold",
+   "element": "earth",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "earth": 1
+   },
+   "type": "Creature",
+   "text": "",
+   "power": 1,
+   "toughness": 2,
+   "slug": "kobold",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 98,
+   "name": "Nursery Master",
+   "element": "earth",
+   "rarity": "Rare",
+   "craft": 400,
+   "cost": {
+    "generic": 4,
+    "earth": 1
+   },
+   "type": "Creature",
+   "text": "Guard. On enter: draw 2 cards.",
+   "power": 3,
+   "toughness": 6,
+   "slug": "nursery-master",
+   "variants": [
+    "normal",
+    "extended",
+    "full",
+    "full_notext"
+   ]
+  },
+  {
+   "art": 99,
+   "name": "Ogre",
+   "element": "earth",
+   "rarity": "Uncommon",
+   "craft": 100,
+   "cost": {
+    "generic": 4,
+    "earth": 1
+   },
+   "type": "Creature",
+   "text": "Trample.",
+   "power": 5,
+   "toughness": 5,
+   "slug": "ogre",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 100,
+   "name": "Orc Warlord",
+   "element": "earth",
+   "rarity": "Rare",
+   "craft": 400,
+   "cost": {
+    "generic": 3,
+    "earth": 1
+   },
+   "type": "Creature",
+   "text": "Guard, Ward.",
+   "power": 3,
+   "toughness": 5,
+   "slug": "orc-warlord",
+   "variants": [
+    "normal",
+    "extended",
+    "full",
+    "full_notext"
+   ]
+  },
+  {
+   "art": 101,
+   "name": "Palewrit",
+   "element": "earth",
+   "rarity": "Legendary",
+   "craft": 1600,
+   "cost": {
+    "generic": 5,
+    "earth": 2
+   },
+   "type": "Creature",
+   "text": "Reach, Trample. On enter: gain 4 life.",
+   "power": 7,
+   "toughness": 7,
+   "slug": "palewrit",
+   "variants": [
+    "normal",
+    "extended",
+    "full",
+    "full_notext"
+   ]
+  },
+  {
+   "art": 102,
+   "name": "Pitfall",
+   "element": "earth",
+   "rarity": "Uncommon",
+   "craft": 100,
+   "cost": {
+    "generic": 1,
+    "earth": 1
+   },
+   "type": "Trap",
+   "text": "On enemy attack: destroy that creature.",
+   "slug": "pitfall",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 103,
+   "name": "Quicksand",
+   "element": "earth",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "earth": 1
+   },
+   "type": "Trap",
+   "text": "On enemy attack: deal 2 damage to that creature.",
+   "slug": "quicksand",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 104,
+   "name": "Rock Cobbler",
+   "element": "earth",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "generic": 2,
+    "earth": 1
+   },
+   "type": "Creature",
+   "text": "Guard.",
+   "power": 2,
+   "toughness": 5,
+   "slug": "rock-cobbler",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 105,
+   "name": "Rockslide",
+   "element": "earth",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "generic": 2,
+    "earth": 1
+   },
+   "type": "Spell",
+   "text": "Deal 4 damage to a creature.",
+   "slug": "rockslide",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 106,
+   "name": "Stone Golem",
+   "element": "earth",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "generic": 4,
+    "earth": 1
+   },
+   "type": "Creature",
+   "text": "Reach.",
+   "power": 4,
+   "toughness": 6,
+   "slug": "stone-golem",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 107,
+   "name": "Stoneskin",
+   "element": "earth",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "earth": 1
+   },
+   "type": "Instant",
+   "text": "Give a creature +1/+3 this turn.",
+   "slug": "stoneskin",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 108,
+   "name": "Tree Demon",
+   "element": "earth",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "generic": 2,
+    "earth": 1
+   },
+   "type": "Creature",
+   "text": "Reach.",
+   "power": 3,
+   "toughness": 4,
+   "slug": "tree-demon",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 109,
+   "name": "The Castellan",
+   "element": "neutral",
+   "rarity": "Rare",
+   "craft": 400,
+   "cost": {
+    "generic": 5
+   },
+   "type": "Creature",
+   "text": "First Strike, Lifelink.",
+   "power": 5,
+   "toughness": 4,
+   "slug": "the-castellan",
+   "variants": [
+    "normal",
+    "extended",
+    "full",
+    "full_notext"
+   ]
+  },
+  {
+   "art": 110,
+   "name": "Court Priestess",
+   "element": "neutral",
+   "rarity": "Uncommon",
+   "craft": 100,
+   "cost": {
+    "generic": 3
+   },
+   "type": "Creature",
+   "text": "Ward.",
+   "power": 3,
+   "toughness": 3,
+   "slug": "court-priestess",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 111,
+   "name": "Cultist",
+   "element": "neutral",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "generic": 1
+   },
+   "type": "Creature",
+   "text": "",
+   "power": 1,
+   "toughness": 1,
+   "slug": "cultist",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 112,
+   "name": "Halberdier",
+   "element": "neutral",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "generic": 3
+   },
+   "type": "Creature",
+   "text": "",
+   "power": 2,
+   "toughness": 3,
+   "slug": "halberdier",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 113,
+   "name": "The Hollow King",
+   "element": "neutral",
+   "rarity": "Legendary",
+   "craft": 1600,
+   "cost": {
+    "generic": 7
+   },
+   "type": "Creature",
+   "text": "Lifelink, Ward. On enter: draw 2 cards.",
+   "power": 6,
+   "toughness": 6,
+   "slug": "the-hollow-king",
+   "variants": [
+    "normal",
+    "extended",
+    "full",
+    "full_notext"
+   ]
+  },
+  {
+   "art": 114,
+   "name": "Mounted Knight",
+   "element": "neutral",
+   "rarity": "Uncommon",
+   "craft": 100,
+   "cost": {
+    "generic": 3
+   },
+   "type": "Creature",
+   "text": "First Strike.",
+   "power": 2,
+   "toughness": 2,
+   "slug": "mounted-knight",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 115,
+   "name": "The Royal Executioner",
+   "element": "neutral",
+   "rarity": "Legendary",
+   "craft": 1600,
+   "cost": {
+    "generic": 6
+   },
+   "type": "Creature",
+   "text": "Haste, Lifelink. On enter: gain 4 life.",
+   "power": 5,
+   "toughness": 5,
+   "slug": "the-royal-executioner",
+   "variants": [
+    "normal",
+    "extended",
+    "full",
+    "full_notext"
+   ]
+  },
+  {
+   "art": 116,
+   "name": "Shield Knight",
+   "element": "neutral",
+   "rarity": "Uncommon",
+   "craft": 100,
+   "cost": {
+    "generic": 4
+   },
+   "type": "Creature",
+   "text": "Guard.",
+   "power": 2,
+   "toughness": 5,
+   "slug": "shield-knight",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 117,
+   "name": "The Siege Master",
+   "element": "neutral",
+   "rarity": "Rare",
+   "craft": 400,
+   "cost": {
+    "generic": 6
+   },
+   "type": "Creature",
+   "text": "On enter: destroy an enemy creature.",
+   "power": 3,
+   "toughness": 3,
+   "slug": "the-siege-master",
+   "variants": [
+    "normal",
+    "extended",
+    "full",
+    "full_notext"
+   ]
+  },
+  {
+   "art": 118,
+   "name": "Trail Map",
+   "element": "neutral",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "generic": 2
+   },
+   "type": "Spell",
+   "text": "Draw a card. Gain 2 life.",
+   "slug": "trail-map",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 119,
+   "name": "Traveler's Rations",
+   "element": "neutral",
+   "rarity": "Common",
+   "craft": 40,
+   "cost": {
+    "generic": 1
+   },
+   "type": "Spell",
+   "text": "Gain 4 life.",
+   "slug": "traveler-s-rations",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 120,
+   "name": "Zealot",
+   "element": "neutral",
+   "rarity": "Uncommon",
+   "craft": 100,
+   "cost": {
+    "generic": 3
+   },
+   "type": "Creature",
+   "text": "Haste, Venom.",
+   "power": 2,
+   "toughness": 1,
+   "slug": "zealot",
+   "variants": [
+    "normal",
+    "extended"
+   ]
+  },
+  {
+   "art": 121,
+   "name": "Morwenna, Wilderness Witch",
+   "element": "neutral",
+   "rarity": "Mythic",
+   "craft": null,
+   "cost": {
+    "generic": 8
+   },
+   "type": "Creature",
+   "text": "Reach, Lifelink, Ward. On enter: you become Phased.",
+   "power": 7,
+   "toughness": 7,
+   "slug": "morwenna-wilderness-witch",
+   "variants": [
+    "normal",
+    "extended",
+    "full",
+    "full_notext"
+   ]
+  }
+ ]
+}
