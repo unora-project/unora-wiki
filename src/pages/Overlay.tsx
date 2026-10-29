@@ -1,5 +1,5 @@
 import { useState, type ReactNode } from 'react'
-import { Download } from 'lucide-react'
+import { Download, TriangleAlert } from 'lucide-react'
 import { PageHeader } from '@/components/ui/PageHeader'
 
 const ZIP_URL = '/ahk/UnoraOverlay.zip'
@@ -80,6 +80,29 @@ export function Overlay() {
         <p className="min-w-[16rem] flex-1 text-sm text-parchment-700 dark:text-parchment-300">
           Free, Windows 10/11. Unzip the folder anywhere you can write files (Documents or Desktop), then
           double-click <strong>UnoraOverlay.exe</strong>. Updates itself from this site.
+        </p>
+      </div>
+
+      <div className="mb-8 rounded-lg border-l-4 border-amber-500 bg-amber-500/10 p-4 text-sm text-parchment-700 dark:text-parchment-300">
+        <p className="mb-1 flex items-center gap-2 font-semibold text-amber-700 dark:text-amber-400">
+          <TriangleAlert className="h-4 w-4" />
+          Antivirus or Windows may warn about the download
+        </p>
+        <p>
+          <strong>UnoraOverlay.exe</strong> is the official, unmodified AutoHotkey v2 program, only renamed so it runs
+          the overlay script automatically. Some antivirus tools and Windows SmartScreen are cautious about AutoHotkey
+          programs and may flag or block it. This is a false alarm. If that happens, allow the folder in your antivirus,
+          or choose "More info" then "Run anyway" in SmartScreen. You can also install AutoHotkey v2 from{' '}
+          <a
+            href="https://www.autohotkey.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gilt underline hover:brightness-110"
+          >
+            autohotkey.com
+          </a>{' '}
+          and double-click <strong>UnoraOverlay.ahk</strong> instead. The overlay is a plain, readable script, so you can
+          open it in Notepad and see everything it does.
         </p>
       </div>
 
