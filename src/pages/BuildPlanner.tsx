@@ -74,7 +74,15 @@ function nameScore(line: string, name: string): number {
 }
 
 type ScreenLine = { text: string; dist: number }
-type Found = { slug: string; kind: 'skills' | 'spells'; item: SkillSpell; score: number; dist: number }
+type Found = {
+  slug: string
+  kind: 'skills' | 'spells'
+  item: SkillSpell
+  score: number
+  dist: number
+  // Another skill/spell whose name fits the text almost as well: the read is not certain.
+  runnerUp?: string
+}
 
 function bestInShard(
   slug: string,
@@ -83,14 +91,28 @@ function bestInShard(
 ): Found | null {
   let best: Found | null = null
   for (const line of lines) {
+    // Only the NAME text is used (never the icon): score every skill/spell name against this line.
+    const scored: { kind: 'skills' | 'spells'; item: SkillSpell; score: number }[] = []
     for (const kind of ['skills', 'spells'] as const) {
       for (const item of shard[kind]) {
         const score = nameScore(line.text, item.name)
-        if (score < 0.6) continue
-        if (!best || score > best.score + 0.02 || (Math.abs(score - best.score) <= 0.02 && line.dist < best.dist)) {
-          best = { slug, kind, item, score, dist: line.dist }
-        }
+        if (score >= 0.6) scored.push({ kind, item, score })
       }
+    }
+    scored.sort((p, q) => q.score - p.score)
+    const top = scored[0]
+    if (!top) continue
+    const second = scored.find((c) => c.item.name !== top.item.name)
+    const f: Found = {
+      slug,
+      kind: top.kind,
+      item: top.item,
+      score: top.score,
+      dist: line.dist,
+      runnerUp: second && top.score < 0.96 && second.score >= top.score - 0.04 ? second.item.name : undefined,
+    }
+    if (!best || f.score > best.score + 0.02 || (Math.abs(f.score - best.score) <= 0.02 && f.dist < best.dist)) {
+      best = f
     }
   }
   return best
@@ -239,6 +261,9 @@ function PlannerView({ mini }: { mini: boolean }) {
       const seen = ordered.map((l) => l.text.trim()).slice(0, 3).join(' / ')
       return `No skill or spell matched "${seen}". Point at the skill's name.`
     }
+    if (found.runnerUp) {
+      return `Not sure: "${found.item.name}" or "${found.runnerUp}". Point at the name again, or type it.`
+    }
     const { slug, kind, item } = found
     const key = `${kind}|${item.name}`
     if ((planMap[slug] ?? []).includes(key)) return `${item.name} is already in your ${classLabel(slug)} plan.`
@@ -264,7 +289,7 @@ function PlannerView({ mini }: { mini: boolean }) {
     if (!mini) return
     const w = window as unknown as {
       unoraAddFromText?: (lines: ScreenLine[]) => void
-      unoraAddFromImage?: (dataUrl: string, cx: number, cy: number) => void
+      unoraAddFromImage?: (dataUrl: string, cx: number, cy: number, scale?: number, ox?: number, oy?: number) => void
       chrome?: { webview?: { postMessage: (m: string) => void } }
     }
     const tell = (m: string) => {
@@ -276,7 +301,9 @@ function PlannerView({ mini }: { mini: boolean }) {
       }
     }
     // Preferred: the overlay sends a small screenshot piece and where the mouse was inside it.
-    w.unoraAddFromImage = (dataUrl, cx, cy) => {
+    // scale = screen pixels per game pixel (window width / 640); ox, oy = where the game picture's
+    // top-left corner is inside this piece. Both are optional hints: the reader works without them.
+    w.unoraAddFromImage = (dataUrl, cx, cy, scale, ox, oy) => {
       const img = new Image()
       img.onload = () => {
         try {
@@ -286,10 +313,10 @@ function PlannerView({ mini }: { mini: boolean }) {
           const g = c.getContext('2d', { willReadFrequently: true })
           if (!g) return tell('Could not read the screenshot.')
           g.drawImage(img, 0, 0)
-          const { scale, runs } = readGameText(g.getImageData(0, 0, c.width, c.height))
+          const { scale, runs } = readGameText(g.getImageData(0, 0, c.width, c.height), { scale, ox, oy })
           if (scale === 0 || runs.length === 0) {
             return tell(
-              'Could not read any game text there. Point at the skill name, and set the game window to a whole-number size (like 1280x960).'
+              'Could not read any game text there. Point at the skill name. (The game window should be at least 640x480.)'
             )
           }
           const lines = runs.map((r) => ({

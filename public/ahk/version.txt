@@ -1,5 +1,4 @@
-version=1.7.0
-- New Stat Calculator in the menu, in its own small window (Ctrl+Alt+S, changeable in Options).
-- Menu Tools: Build Planner, HP/MP Calculator, Stat Calculator.
-- Build Planner, HP/MP Calculator and Stat Calculator windows have a ? help button.
-- 
+version=1.8.0
+- Add skill/spell from the game now works at any game window size (640x480 or bigger), not just exact multiples.
+- It reads only the skill name text, never the picture, and says "not sure" instead of guessing between similar names.
+- New Stat Calculator window (Ctrl+Alt+S).

@@ -10,7 +10,7 @@ Persistent()
 
 ; ───────────────────────── Constants ─────────────────────────
 
-VERSION := "1.7.0"
+VERSION := "1.8.0"
 APP_NAME := "Unora Overlay"
 UPDATE_BASE := "https://www.unora.wiki/ahk/"   ; version.txt + UnoraOverlay.ahk are hosted here
 SITE_BASE := "https://www.unora.wiki/#"        ; the site uses #/ routes
@@ -695,24 +695,28 @@ DoAddSkill() {
     global MiniReady, MiniWv
     CoordMode("Mouse", "Screen")
     MouseGetPos(&mx, &my, &under)
-    ; The game text can only be read when the game window is an exact multiple of its 640x480
-    ; picture (1280x960, ...). If the window under the mouse looks like the game but isn't, say so.
+    ; Work out how big the game picture is on screen, for any window size. The game draws 640x480
+    ; and stretches it to the window, so one game pixel = (window width / 640) screen pixels. A window
+    ; that is not 4:3 has bars around the picture, which are centred. These are only hints for the
+    ; Build Planner page; if they are off it still tries other sizes.
+    gs := 0
+    gx := 0
+    gy := 0
     try {
-        WinGetClientPos(, , &cw, &ch, "ahk_id " under)
-        if (Abs(cw / ch - 640 / 480) < 0.03 && cw >= 500) {
-            k := Max(1, Round(cw / 640))
-            wantW := 640 * k
-            wantH := 480 * k
-            if (cw != wantW || ch != wantH) {
-                ShowToast("The game window is " cw "x" ch ". To read skill names it must be exactly " wantW "x" wantH ".", 5000)
-                return
-            }
+        WinGetClientPos(&clx, &cly, &cw, &ch, "ahk_id " under)
+        if (cw >= 320 && ch >= 240) {
+            gs := Min(cw / 640, ch / 480)
+            gx := clx + (cw - 640 * gs) / 2
+            gy := cly + (ch - 480 * gs) / 2
+            if (gs < 0.9 || gs > 6)
+                gs := 0
         }
     }
-    rw := 720
-    rh := 100
-    rx := mx - 300
-    ry := my - 50
+    sc := (gs > 0) ? gs : 2
+    rw := Round(360 * sc)
+    rh := Round(50 * sc)
+    rx := mx - Round(150 * sc)
+    ry := my - Round(25 * sc)
     dataDir := A_ScriptDir "\data"
     DirCreate(dataDir)
     ps1 := dataDir "\capture.ps1"
@@ -748,7 +752,8 @@ DoAddSkill() {
         ShowToast("The Build Planner window did not start.", 3500)
         return
     }
-    js := 'window.unoraAddFromImage("data:image/png;base64,' b64 '",' (mx - rx) ',' (my - ry) ')'
+    hint := (gs > 0) ? Round(gs, 4) ',' Round(gx - rx, 2) ',' Round(gy - ry, 2) : "0,0,0"
+    js := 'window.unoraAddFromImage("data:image/png;base64,' b64 '",' (mx - rx) ',' (my - ry) ',' hint ')'
     try MiniWv.ExecuteScriptAsync(js).await2()
 }
 
@@ -1253,7 +1258,7 @@ Class drop-down - switch class. The Your plans group lists the classes that alre
 Add by typing - click the box, type part of a skill or spell name and press Enter (or click a result).
 
 Add from the game - point the mouse at a skill or spell in the game (its name or icon on the Skill/Spell page, or its detail pop-up) and press {ADD}. The overlay reads the name from the screen and adds it. It looks in your current class first, then the other classes. A short message tells you what was added. You can change this key in Options > Keybinds.
-For this to work the game window must be an exact multiple of the game picture: 1280x960 is ideal (640x480 and 1920x1440 also work).
+It only reads the name text, never the icon, and works at any game window size (640x480 or bigger). If a name is unclear it asks you to point again rather than guessing.
 
 Selected (left) - your skills and spells, grouped by where you learn them. X removes one. Clear empties the plan for this class.
 
