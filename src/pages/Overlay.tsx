@@ -200,6 +200,7 @@ export function Overlay() {
           the plan shows where to learn it, the stats needed and the materials you can tick off. Picks are shared with the
           wiki window.
         </p>
+        <Shot src="/overlay/planner.png" alt="The overlay Build Planner" />
         <p>
           Point your mouse at a skill or spell name in the game and press <Key>Ctrl+Alt+Middle click</Key>. The overlay
           reads the name text, finds the skill and adds it to your plan. It reads only the name, never the icon, and works
