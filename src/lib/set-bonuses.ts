@@ -1,8 +1,10 @@
-import setBonusData from '@/data/metadata/set-bonuses.json'
-
 // ── Set bonuses ──
-// Data lives in src/data/metadata/set-bonuses.json. For every set it lists what the game's tooltip
-// shows at each piece count (2/4, 3/4, ...) - the running TOTAL. Having only 1 piece gives nothing.
+// For every set this lists what the game's tooltip shows at each piece count (2/4, 3/4, ...) - the
+// running TOTAL, exactly as the game prints it. Having only 1 piece gives nothing.
+// To add a set or a tier, edit SET_BONUS_DATA below. Tiers must be listed in order (2, 3, 4, ...);
+// a tier is skipped until the one before it is filled in. Stat names: stats = hp, mp, ac, mr, dmg, hit,
+// str, int, wis, con, dex. percentages = attackSpeed, cooldownReduction, skillDamage (flat),
+// skillDamagePercent, spellDamage (flat), spellDamagePercent, flatHealBonus, healBonusPercent.
 
 interface SetTier {
   stats?: Record<string, number>
@@ -13,10 +15,154 @@ interface SetDef {
   tiers: Record<string, SetTier>
 }
 
+const SET_BONUS_DATA: Record<string, SetDef> = {
+  "Stormcrest": {
+    "pieces": 6,
+    "tiers": {
+      "2": {
+        "stats": {
+          "hp": 500,
+          "mp": 500,
+          "dmg": 2,
+          "hit": 1
+        },
+        "percentages": {
+          "attackSpeed": 2
+        }
+      },
+      "3": {
+        "stats": {
+          "hp": 500,
+          "mp": 500,
+          "dmg": 2,
+          "hit": 1
+        },
+        "percentages": {
+          "attackSpeed": 2
+        }
+      },
+      "4": {
+        "stats": {
+          "hp": 500,
+          "mp": 500,
+          "dmg": 2,
+          "hit": 1
+        },
+        "percentages": {
+          "attackSpeed": 2,
+          "skillDamage": 20,
+          "spellDamage": 20,
+          "skillDamagePercent": 1,
+          "spellDamagePercent": 1
+        }
+      }
+    }
+  },
+  "Nyx": {
+    "pieces": 4,
+    "tiers": {
+      "2": {
+        "stats": {
+          "hp": 500,
+          "mp": 500,
+          "dmg": 2,
+          "hit": 1
+        },
+        "percentages": {
+          "attackSpeed": 2
+        }
+      },
+      "3": {
+        "stats": {
+          "hp": 500,
+          "mp": 500,
+          "dmg": 2,
+          "hit": 1
+        },
+        "percentages": {
+          "attackSpeed": 2,
+          "skillDamage": 20,
+          "spellDamage": 20,
+          "skillDamagePercent": 1,
+          "spellDamagePercent": 1
+        }
+      },
+      "4": {
+        "stats": {
+          "hp": 500,
+          "mp": 500,
+          "dmg": 2,
+          "hit": 1,
+          "ac": -1,
+          "mr": 4
+        },
+        "percentages": {
+          "attackSpeed": 2,
+          "cooldownReduction": 2,
+          "skillDamage": 20,
+          "spellDamage": 20,
+          "skillDamagePercent": 1,
+          "spellDamagePercent": 1
+        }
+      }
+    }
+  },
+  "Forsaken": {
+    "pieces": 4,
+    "tiers": {
+      "2": {
+        "stats": {
+          "hp": 1000,
+          "dmg": 4
+        },
+        "percentages": {
+          "attackSpeed": 4
+        }
+      }
+    }
+  },
+  "Sacred": {
+    "pieces": 4,
+    "tiers": {
+      "2": {
+        "stats": {
+          "hit": 2,
+          "mp": 750
+        },
+        "percentages": {}
+      },
+      "3": {
+        "stats": {
+          "hit": 2,
+          "mp": 750
+        },
+        "percentages": {
+          "spellDamage": 40,
+          "flatHealBonus": 40,
+          "healBonusPercent": 2,
+          "spellDamagePercent": 1
+        }
+      },
+      "4": {
+        "stats": {
+          "hit": 2,
+          "mp": 750,
+          "mr": 6
+        },
+        "percentages": {
+          "spellDamage": 40,
+          "flatHealBonus": 40,
+          "healBonusPercent": 2,
+          "spellDamagePercent": 2,
+          "cooldownReduction": 2
+        }
+      }
+    }
+  }
+}
+
 const SET_DEFS = new Map<string, { name: string; def: SetDef }>(
-  Object.entries(setBonusData as Record<string, unknown>)
-    .filter(([k, v]) => !k.startsWith('_') && typeof v === 'object' && v !== null)
-    .map(([name, def]) => [setLookupKey(name), { name, def: def as SetDef }])
+  Object.entries(SET_BONUS_DATA).map(([name, def]) => [setLookupKey(name), { name, def }])
 )
 
 export function setLookupKey(name: string): string {
