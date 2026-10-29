@@ -17,10 +17,12 @@ import { Link } from 'react-router'
       eager: true,
     })
 
+    // `./path` images resolve to src/pages/tcg/ when bundled there, otherwise to public/images/tcg/
+    // (where the card renders live, e.g. ./Neutral/Cultist.png).
     function resolveTCGImages(markdown: string): string {
-      return markdown.replace(/!\[([^\]]*)\]\(\.\/([^)]+)\)/g, (match, alt, relPath) => {
+      return markdown.replace(/!\[([^\]]*)\]\(\.\/([^)]+)\)/g, (_match, alt, relPath) => {
         const key = Object.keys(tcgImages).find((k) => k.endsWith(`/tcg/${relPath}`))
-        return key ? `![${alt}](${tcgImages[key]})` : match
+        return `![${alt}](${key ? tcgImages[key] : `${import.meta.env.BASE_URL}images/tcg/${relPath}`})`
       })
     }
 
@@ -74,12 +76,6 @@ export function TCGDetail() {
     return (
       <div className="py-20 text-center">
         <h1 className="font-heading text-2xl text-gilt">TCG entry not found</h1>
-
-        
-    
-          <MarkdownPage
-            content={resolveTCGImages(content.replace(/^#\s+.+$/m, '').trimStart())}
-          />
       </div>
     )
   }
@@ -98,7 +94,7 @@ export function TCGDetail() {
           { label: title },
         ]}
       />
-      <MarkdownPage content={content.replace(/^#\s+.+$/m, '').trimStart()} />
+      <MarkdownPage content={resolveTCGImages(content.replace(/^#\s+.+$/m, '').trimStart())} />
     </div>
   )
 }

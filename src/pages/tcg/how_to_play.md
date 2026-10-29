@@ -13,13 +13,15 @@ If you wish to craft your own in the future, the requirements of any deck is tha
 ## Card Types and How to read cards
 Cards are broken into 4 different types: Creature, Spell, Instant, and Trap. I will go over the differences in a moment, but first we need to know how to read a card.
 
-![Cultist](./Neutral/Cultist.png)
+![](./Neutral/Cultist.png)
 
 Each card has a name in the top left, a mana cost in the top right, a card type in the middle underneath the art, and a text box.
 
 Creature cards also have a power value in the bottom left and a toughness value in the bottom right.
 
-![How to read a card](./how2read.png)
+![](./how2read.png)
+
+<div class="-mt-6 mb-4 text-center font-subtitle text-[1.75rem] leading-snug text-ash">How to read a card</div>
 
 A colored square indicates a mana of a chosen element. Red being Fire, blue being Water, green being Wind, and brown being Earth.
 
@@ -29,11 +31,11 @@ The cultist above has a mana cost of 1 mana of any color.
 
 The card below, Blue Blob, has a mana cost of 1 Water (blue) mana and 2 additional mana of any element/color.
 
-![Blue Blob](./Water/Blue_Blob.png)
+![](./Water/Blue_Blob.png)
 
 Creatures, spells, and traps can be played only on your turn during the first or second Main Phases. This is also commonly known as "Sorcery Speed." Traps, like the name implies however, are set and activate whenever their activation requirement is met. Creatures also cannot attack the turn they are cast, unless they have Haste in their effect text. Instants can be played at any time, during either player's turn, in response to most things. Below are example images of a spell, instant, and trap card.
 
-![Fireball](./Fire/Fireball.png) ![Mist Ward](./Water/Mist_Ward.png) ![Pitfall](./Earth/Pitfall.png)
+![](./Fire/Fireball.png) ![](./Water/Mist_Ward.png) ![](./Earth/Pitfall.png)
 
 ## Basic rules during play
 During each turn, you are allowed to add 1 mana crystal to your mana pool. To do so, select a card in your hand to convert into a mana crystal. Note that the card will no longer be accessible for the remainder of the battle. It will be a mana crystal for the rest of the game. However, you are able to spend as much mana as you like, so long as you have the appropriate mana crystals to pay for your spells.
