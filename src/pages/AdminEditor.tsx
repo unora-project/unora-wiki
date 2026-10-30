@@ -17,7 +17,8 @@ import { ToastView, type Toast } from '@/components/editor/ToastView'
 import type { EditorDb, EditorItem, EditorRecipe, EditorTab, GenericRow, GenericTab, TrashEntry } from '@/types/editor'
 import { GENERIC_TAB_SCHEMAS } from '@/types/editor'
 import { seedFromPublished, seedItemsFromPublished, seedNonItemsFromPublished, shouldSeedTab, loadFromLocal, saveToLocal, clearLocal, loadTrash, saveTrash, type NonItemsTab } from '@/lib/editor-seed'
-import { computeDiffs, commitDiffs, countUnresolvedItems, type FileDiff } from '@/lib/editor-commit'
+import { computeDiffs, commitDiffs, countUnresolvedItems, getCommitWarnings, type FileDiff } from '@/lib/editor-commit'
+import { resolveItemPath, resolveRecipePath } from '@/lib/csv-paths'
 import { getToken, signOut } from '@/lib/github-auth'
 
 const TAB_ICON: Record<EditorTab, LucideIcon> = {
@@ -72,6 +73,18 @@ function emptyGenericRow(tab: GenericTab): GenericRow {
   const row: GenericRow = {}
   for (const h of GENERIC_TAB_SCHEMAS[tab].headers) row[h] = ''
   return row
+}
+
+// Which CSV file and which name a row is stored under. If either changes when an
+// entry is edited, the row at the OLD file/name has to be removed from GitHub, because
+// saving only ever merges rows by name and would otherwise leave the old one behind.
+function identityOf(tab: EditorTab, row: any): { path: string; name: string } {
+  if (isGenericTab(tab)) {
+    const schema = GENERIC_TAB_SCHEMAS[tab]
+    return { path: schema.csvPath, name: String(row?.[schema.nameKey] ?? '').trim().toLowerCase() }
+  }
+  const path = tab === 'items' ? resolveItemPath(row) : resolveRecipePath(tab, row)
+  return { path: path || '', name: String(row?.item_name ?? '').trim().toLowerCase() }
 }
 
 export function AdminEditor() {
@@ -203,6 +216,23 @@ function EditorShell({ login, dryRun }: { login: string; dryRun: boolean }) {
     setDraft(initialDraft(tab))
   }, [tab])
 
+  // When an existing entry is saved under a different name (or a different CSV file),
+  // queue its old version for removal so the old row does not stay behind on GitHub.
+  const removalForEdit = (oldRow: any, newRow: any): TrashEntry[] => {
+    if (editIdx === -1 || !oldRow) return []
+    const a = identityOf(tab, oldRow)
+    const b = identityOf(tab, newRow)
+    if (!a.name || (a.name === b.name && a.path === b.path)) return []
+    return [{
+      id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+      tab,
+      index: editIdx,
+      name: entryName(tab, oldRow),
+      deletedAt: Date.now(),
+      payload: oldRow,
+    }]
+  }
+
   const submit = () => {
     if (generic) {
       const schema = GENERIC_TAB_SCHEMAS[tab as GenericTab]
@@ -210,12 +240,19 @@ function EditorShell({ login, dryRun }: { login: string; dryRun: boolean }) {
       if (!(d[schema.nameKey] ?? '').trim()) { setToast({ kind: 'error', msg: `${schema.nameKey} required` }); return }
       const arr = [...(currentRows as GenericRow[])]
       const next: GenericRow = { ...d }
+      const removed = removalForEdit(arr[editIdx], next)
       if (editIdx === -1) arr.push(next)
       else arr[editIdx] = next
-      setDb({ ...db, [tab]: arr })
+      setDb({
+        ...db, [tab]: arr,
+        ...(removed.length ? {
+          pendingDeletions: [...(db.pendingDeletions ?? []), ...removed],
+          initializedTabs: [...new Set([...(db.initializedTabs ?? []), tab])],
+        } : {}),
+      })
       setEditIdx(-1)
       setDraft(initialDraft(tab))
-      setToast({ kind: 'success', msg: 'Saved to draft' })
+      setToast({ kind: 'success', msg: removed.length ? `Saved to draft (old “${removed[0].name}” will be removed)` : 'Saved to draft' })
       return
     }
     const d = draft as EditorItem | EditorRecipe
@@ -225,13 +262,20 @@ function EditorShell({ login, dryRun }: { login: string; dryRun: boolean }) {
       setToast({ kind: 'error', msg: 'Recipe needs at least one ingredient' }); return
     }
     const arr = [...currentRows] as any[]
+    const removed = removalForEdit(arr[editIdx], d)
     if (editIdx === -1) arr.push({ ...d })
     else arr[editIdx] = { ...d }
     arr.sort((a, b) => (Number(a.level) || 0) - (Number(b.level) || 0))
-    setDb({ ...db, [tab]: arr })
+    setDb({
+      ...db, [tab]: arr,
+      ...(removed.length ? {
+        pendingDeletions: [...(db.pendingDeletions ?? []), ...removed],
+        initializedTabs: [...new Set([...(db.initializedTabs ?? []), tab])],
+      } : {}),
+    })
     setEditIdx(-1)
     setDraft(initialDraft(tab))
-    setToast({ kind: 'success', msg: 'Saved to draft' })
+    setToast({ kind: 'success', msg: removed.length ? `Saved to draft (old “${removed[0].name}” will be removed)` : 'Saved to draft' })
   }
 
   const edit = (i: number) => { setEditIdx(i); setDraft({ ...(currentRows[i] as any) }) }
@@ -284,7 +328,11 @@ function EditorShell({ login, dryRun }: { login: string; dryRun: boolean }) {
   const cancel = () => { setEditIdx(-1); setDraft(initialDraft(tab)) }
 
   const loadPublished = async () => {
-    if (!confirm('Reset draft from published data? This overwrites your current working copy.')) return
+    const queued = db.pendingDeletions?.length ?? 0
+    const warn = queued > 0
+      ? `Reset draft from published data? This overwrites your current working copy and forgets ${queued} removal(s) you have not committed yet.`
+      : 'Reset draft from published data? This overwrites your current working copy.'
+    if (!confirm(warn)) return
     setBusy('seeding')
     try {
       const seed: EditorDb = {
@@ -310,7 +358,17 @@ function EditorShell({ login, dryRun }: { login: string; dryRun: boolean }) {
       previewDeletions.current = db.pendingDeletions ?? []
       setDiffs(d)
       setDialogOpen(true)
-      if (d.length === 0) setToast({ kind: 'info', msg: 'No changes vs. GitHub' })
+      const warnings = getCommitWarnings()
+      if (warnings.length > 0) {
+        // Show what could not be removed so it never fails silently.
+        console.warn('[editor] removal warnings:\n' + warnings.join('\n'))
+        setToast({
+          kind: 'error',
+          msg: `${warnings.length} removal(s) did not match a row: ${warnings.slice(0, 3).join(' ')}${warnings.length > 3 ? ' …(see browser console)' : ''}`,
+        })
+      } else if (d.length === 0) {
+        setToast({ kind: 'info', msg: 'No changes vs. GitHub' })
+      }
     } catch (e: any) {
       setToast({ kind: 'error', msg: `Diff failed: ${e.message || e}` })
     } finally {
@@ -352,6 +410,7 @@ function EditorShell({ login, dryRun }: { login: string; dryRun: boolean }) {
   }
 
   const unresolved = useMemo(() => countUnresolvedItems(db), [db])
+  const queuedRemovals = db.pendingDeletions?.length ?? 0
   const defaultMsg = `chore(data): update ${tab} via editor`
 
   return (
@@ -487,6 +546,14 @@ function EditorShell({ login, dryRun }: { login: string; dryRun: boolean }) {
               {unresolved > 0 && (
                 <span className="ml-2 rounded bg-ignis/20 px-2 py-0.5 text-[10px] text-ignis">
                   {unresolved} unresolved path
+                </span>
+              )}
+              {queuedRemovals > 0 && (
+                <span
+                  className="ml-2 rounded bg-ignis/20 px-2 py-0.5 text-[10px] text-ignis"
+                  title="Deleted or renamed entries whose old row will be removed from GitHub when you commit"
+                >
+                  {queuedRemovals} removal{queuedRemovals === 1 ? '' : 's'} queued
                 </span>
               )}
             </span>

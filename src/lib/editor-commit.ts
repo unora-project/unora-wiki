@@ -34,6 +34,15 @@ export interface FileDiff {
   changed: boolean
 }
 
+type DiffResult = FileDiff & { sha: string | null; removed: string[] }
+
+// Things the last Preview noticed that the editor should tell the user about
+// (e.g. a deletion that matched no row). Read with getCommitWarnings() after computeDiffs.
+let commitWarnings: string[] = []
+export function getCommitWarnings(): string[] {
+  return commitWarnings
+}
+
 function stringifyValue(v: unknown): string {
   if (v === null || v === undefined || v === '') return '-'
   if (typeof v === 'number' && !Number.isFinite(v)) return '-'
@@ -77,7 +86,7 @@ async function buildFileDiff(
   rows: (EditorItem | EditorRecipe)[],
   tab: ItemTab,
   deletedNames: ReadonlySet<string> = new Set(),
-): Promise<FileDiff & { sha: string | null }> {
+): Promise<DiffResult> {
   const existing = await getFile(token, EDITOR_REPO.owner, EDITOR_REPO.repo, path, EDITOR_REPO.branch)
   const before = existing?.content ?? ''
   const parsed = parseCSV(before)
@@ -118,8 +127,14 @@ async function buildFileDiff(
   const nameHeader = headers.includes('Name') ? 'Name' : headers[0]
   // ...rest of the function unchanged
   const byName = new Map<string, number>()
+  const removed: string[] = []
   const outRows = parsed.rows
-    .filter((r) => !deletedNames.has((r[nameHeader] ?? '').trim().toLowerCase()))
+    .filter((r) => {
+      const n = (r[nameHeader] ?? '').trim().toLowerCase()
+      if (!deletedNames.has(n)) return true
+      removed.push(n)
+      return false
+    })
     .map((r) => ({ ...r }))
   outRows.forEach((r, idx) => {
     const n = (r[nameHeader] ?? '').trim()
@@ -154,6 +169,7 @@ async function buildFileDiff(
     after,
     changed: before !== after,
     sha: existing?.sha ?? null,
+    removed,
   }
 }
 
@@ -162,7 +178,7 @@ async function buildGenericDiff(
   tab: GenericTab,
   rows: GenericRow[],
   deletedNames: ReadonlySet<string> = new Set(),
-): Promise<FileDiff & { sha: string | null }> {
+): Promise<DiffResult> {
   const schema = GENERIC_TAB_SCHEMAS[tab]
   const path = schema.csvPath
   const existing = await getFile(token, EDITOR_REPO.owner, EDITOR_REPO.repo, path, EDITOR_REPO.branch)
@@ -182,8 +198,14 @@ async function buildGenericDiff(
   // GitHub but not in the seed.
   const nameKey = headers.includes(schema.nameKey) ? schema.nameKey : headers[0]
   const byName = new Map<string, number>()
+  const removed: string[] = []
   const outRows: Record<string, string>[] = parsed.rows
-    .filter((r) => !deletedNames.has((r[nameKey] ?? '').trim().toLowerCase()))
+    .filter((r) => {
+      const n = (r[nameKey] ?? '').trim().toLowerCase()
+      if (!deletedNames.has(n)) return true
+      removed.push(n)
+      return false
+    })
     .map((r, idx) => {
       const n = (r[nameKey] ?? '').trim()
       if (n) byName.set(n.toLowerCase(), idx)
@@ -217,10 +239,12 @@ async function buildGenericDiff(
     after,
     changed: before !== after,
     sha: existing?.sha ?? null,
+    removed,
   }
 }
 
 export async function computeDiffs(token: string, db: EditorDb): Promise<FileDiff[]> {
+  const warnings: string[] = []
   // Items tab is lazy-seeded. If Preview is clicked before items was ever visited,
   // load the seed now so we don't propose wiping all equipment CSVs.
   const items = shouldSeedTab(db, 'items') ? await seedItemsFromPublished() : db.items
@@ -238,14 +262,18 @@ export async function computeDiffs(token: string, db: EditorDb): Promise<FileDif
     const nameOf = (row: EditorItem & GenericRow) => String(row[schema?.nameKey ?? 'item_name'] ?? '').trim().toLowerCase()
     const path = pathOf(payload)
     const name = nameOf(payload)
-    if (!path || !name) continue
+    if (!name) continue
+    if (!path) {
+      warnings.push(`"${entry.name}" was removed in the editor, but the editor could not tell which CSV file it is in, so it was NOT removed from GitHub.`)
+      continue
+    }
     if ((db[entry.tab] as (EditorItem & GenericRow)[]).some((row) => pathOf(row) === path && nameOf(row) === name)) continue
     const names = deletions.get(path) ?? new Set<string>()
     names.add(name)
     deletions.set(path, names)
   }
 
-  const tasks: Promise<FileDiff & { sha: string | null }>[] = []
+  const tasks: Promise<DiffResult>[] = []
 
   const itemGroups = groupItemsByPath(items)
   for (const path of deletions.keys()) {
@@ -274,8 +302,22 @@ export async function computeDiffs(token: string, db: EditorDb): Promise<FileDif
     tasks.push(buildGenericDiff(token, tab, db[tab], deletedNames))
   }
 
-  const diffs = await Promise.all(tasks)
-  return diffs.filter((d) => d.changed)
+  const results = await Promise.all(tasks)
+
+  // Every queued removal should have taken a row out of its file. If one did not, say so
+  // (it may already be gone from GitHub, or it was filed under a different name or file).
+  const removedAt = new Map<string, Set<string>>()
+  for (const r of results) removedAt.set(r.path, new Set(r.removed))
+  for (const [path, names] of deletions) {
+    for (const name of names) {
+      if (!removedAt.get(path)?.has(name)) {
+        warnings.push(`Removing "${name}" matched nothing in ${path.split('/').slice(-3).join('/')} (it may already be gone from GitHub).`)
+      }
+    }
+  }
+  commitWarnings = warnings
+
+  return results.filter((d) => d.changed)
 }
 
 export async function commitDiffs(
