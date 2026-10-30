@@ -39,6 +39,7 @@ const TCGDeckBuilder = lazy(() => import('@/pages/TCG_DeckBuilder').then((m) => 
 const Overlay = lazy(() => import('@/pages/Overlay').then((m) => ({ default: m.Overlay })))
 const Changelog = lazy(() => import('@/pages/Changelog').then((m) => ({ default: m.Changelog })))
 const AdminEditor = lazy(() => import('@/pages/AdminEditor').then((m) => ({ default: m.AdminEditor })))
+const AdminItems = lazy(() => import('@/pages/AdminItems').then((m) => ({ default: m.AdminItems })))
 const AdminSettings = lazy(() => import('@/pages/AdminSettings').then((m) => ({ default: m.AdminSettings })))
 
 function RouteFallback() {
@@ -58,6 +59,15 @@ export default function App() {
         element={
           <Suspense fallback={<RouteFallback />}>
             <AdminEditor />
+          </Suspense>
+        }
+      />
+      {/* Bare item & equipment editor — no Layout chrome */}
+      <Route
+        path="admin-items"
+        element={
+          <Suspense fallback={<RouteFallback />}>
+            <AdminItems />
           </Suspense>
         }
       />

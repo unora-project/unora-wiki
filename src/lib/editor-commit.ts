@@ -2,9 +2,8 @@ import type { EditorDb, EditorItem, EditorRecipe, EditorTab, GenericRow, Generic
 import { FIELD_TO_CSV_HEADER, GENERIC_TAB_SCHEMAS } from '@/types/editor'
 import { parseCSV } from '@/lib/csv-parse'
 import { serializeCSV } from '@/lib/csv-serialize'
-import { groupItemsByPath, groupRecipesByPath, resolveItemPath, resolveItemPaths, resolveRecipePath } from '@/lib/csv-paths'
+import { groupRecipesByPath, resolveRecipePath } from '@/lib/csv-paths'
 import { getFile, commitMultiFile, clearFileCache, EDITOR_REPO } from '@/lib/github-client'
-import { seedItemsFromPublished, shouldSeedTab } from '@/lib/editor-seed'
 
 const GENERIC_TABS: GenericTab[] = [
   'alchemy-recipes', 'alchemy-extracts', 'cooking-recipes', 'cooking-ingredients', 'enchanting', 'fishing',
@@ -245,14 +244,14 @@ async function buildGenericDiff(
 
 export async function computeDiffs(token: string, db: EditorDb): Promise<FileDiff[]> {
   const warnings: string[] = []
-  // Items tab is lazy-seeded. If Preview is clicked before items was ever visited,
-  // load the seed now so we don't propose wiping all equipment CSVs.
-  const items = shouldSeedTab(db, 'items') ? await seedItemsFromPublished() : db.items
+  // Items and equipment now live in the Item Editor (/admin-items), which writes the new
+  // data-source/items/*.csv files by ID. This editor only handles recipes and professions.
 
   // Remove only explicit deletions, never rows merely missing from a stale seed.
   // Restored/re-added rows take precedence over an older deletion of the same identity.
   const deletions = new Map<string, Set<string>>()
   for (const entry of db.pendingDeletions ?? []) {
+    if (entry.tab === 'items') continue
     const generic = GENERIC_TABS.includes(entry.tab as GenericTab)
     const schema = generic ? GENERIC_TAB_SCHEMAS[entry.tab as GenericTab] : null
     const payload = entry.payload as EditorItem & GenericRow
@@ -260,9 +259,7 @@ export async function computeDiffs(token: string, db: EditorDb): Promise<FileDif
     // An item for several classes is written to one CSV per class, so its removal must hit every one of them.
     const pathsOf = (row: EditorItem & GenericRow): string[] => schema
       ? [schema.csvPath]
-      : entry.tab === 'items'
-        ? resolveItemPaths(row)
-        : [resolveRecipePath(entry.tab, row as EditorRecipe)].filter((p): p is string => !!p)
+      : [resolveRecipePath(entry.tab, row as EditorRecipe)].filter((p): p is string => !!p)
     const nameOf = (row: EditorItem & GenericRow) => String(row[schema?.nameKey ?? 'item_name'] ?? '').trim().toLowerCase()
     const paths = pathsOf(payload)
     const name = nameOf(payload)
@@ -280,14 +277,6 @@ export async function computeDiffs(token: string, db: EditorDb): Promise<FileDif
   }
 
   const tasks: Promise<DiffResult>[] = []
-
-  const itemGroups = groupItemsByPath(items)
-  for (const path of deletions.keys()) {
-    if (path.startsWith('data-source/equipment/') && !itemGroups.has(path)) itemGroups.set(path, [])
-  }
-  for (const [path, itemsAtPath] of itemGroups) {
-    tasks.push(buildFileDiff(token, path, itemsAtPath, 'items', deletions.get(path)))
-  }
 
   for (const tab of ['jewelcrafting', 'armorsmithing', 'weaponsmithing'] as RecipeTab[]) {
     const arr = db[tab] as EditorRecipe[]
@@ -352,7 +341,6 @@ export async function commitDiffs(
 
 export function countUnresolvedItems(db: EditorDb): number {
   let n = 0
-  for (const it of db.items) if (!resolveItemPath(it)) n++
   for (const tab of ['jewelcrafting', 'armorsmithing', 'weaponsmithing'] as EditorTab[]) {
     for (const r of db[tab] as EditorRecipe[]) if (!resolveRecipePath(tab, r)) n++
   }

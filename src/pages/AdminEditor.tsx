@@ -18,7 +18,7 @@ import type { EditorDb, EditorItem, EditorRecipe, EditorTab, GenericRow, Generic
 import { GENERIC_TAB_SCHEMAS } from '@/types/editor'
 import { seedFromPublished, seedItemsFromPublished, seedNonItemsFromPublished, shouldSeedTab, loadFromLocal, saveToLocal, clearLocal, loadTrash, saveTrash, type NonItemsTab } from '@/lib/editor-seed'
 import { computeDiffs, commitDiffs, countUnresolvedItems, getCommitWarnings, type FileDiff } from '@/lib/editor-commit'
-import { resolveItemPath, resolveRecipePath } from '@/lib/csv-paths'
+import { resolveItemPaths, resolveRecipePath } from '@/lib/csv-paths'
 import { getToken, signOut } from '@/lib/github-auth'
 
 const TAB_ICON: Record<EditorTab, LucideIcon> = {
@@ -49,7 +49,6 @@ const EMPTY_RECIPE = (): EditorRecipe => ({
 })
 
 const TABS: { id: EditorTab; label: string }[] = [
-  { id: 'items', label: 'Item Database' },
   { id: 'jewelcrafting', label: 'Jewelcrafting' },
   { id: 'armorsmithing', label: 'Armorsmithing' },
   { id: 'weaponsmithing', label: 'Weaponsmithing' },
@@ -83,7 +82,8 @@ function identityOf(tab: EditorTab, row: any): { path: string; name: string } {
     const schema = GENERIC_TAB_SCHEMAS[tab]
     return { path: schema.csvPath, name: String(row?.[schema.nameKey] ?? '').trim().toLowerCase() }
   }
-  const path = tab === 'items' ? resolveItemPath(row) : resolveRecipePath(tab, row)
+  // An item for several classes lives in one CSV per class, so its "file" is the whole set.
+  const path = tab === 'items' ? resolveItemPaths(row).join('|') : resolveRecipePath(tab, row)
   return { path: path || '', name: String(row?.item_name ?? '').trim().toLowerCase() }
 }
 
@@ -103,8 +103,9 @@ function initialDraft(tab: EditorTab): EditorItem | EditorRecipe | GenericRow {
 
 function EditorShell({ login, dryRun }: { login: string; dryRun: boolean }) {
   const [db, setDb] = useState<EditorDb>(() => loadFromLocal() ?? emptyDb())
-  const [tab, setTab] = useState<EditorTab>('items')
-  const [draft, setDraft] = useState<EditorItem | EditorRecipe | GenericRow>(() => EMPTY_ITEM())
+  // Items and equipment moved to their own page (/admin-items); this editor is for recipes and professions.
+  const [tab, setTab] = useState<EditorTab>('jewelcrafting')
+  const [draft, setDraft] = useState<EditorItem | EditorRecipe | GenericRow>(() => initialDraft('jewelcrafting'))
   const [editIdx, setEditIdx] = useState<number>(-1)
   const [toast, setToast] = useState<Toast>(null)
   const [dialogOpen, setDialogOpen] = useState(false)
@@ -328,7 +329,7 @@ function EditorShell({ login, dryRun }: { login: string; dryRun: boolean }) {
   const cancel = () => { setEditIdx(-1); setDraft(initialDraft(tab)) }
 
   const loadPublished = async () => {
-    const queued = db.pendingDeletions?.length ?? 0
+    const queued = (db.pendingDeletions ?? []).filter((entry) => entry.tab !== 'items').length
     const warn = queued > 0
       ? `Reset draft from published data? This overwrites your current working copy and forgets ${queued} removal(s) you have not committed yet.`
       : 'Reset draft from published data? This overwrites your current working copy.'
@@ -336,12 +337,12 @@ function EditorShell({ login, dryRun }: { login: string; dryRun: boolean }) {
     setBusy('seeding')
     try {
       const seed: EditorDb = {
-        ...await seedFromPublished(), pendingDeletions: [], initializedTabs: TABS.map((t) => t.id),
+        ...await seedFromPublished(), items: [], pendingDeletions: [], initializedTabs: [...TABS.map((t) => t.id), 'items'],
       }
       setDb(seed)
       clearLocal()
       saveToLocal(seed)
-      setToast({ kind: 'success', msg: `Loaded ${seed.items.length} items + recipes` })
+      setToast({ kind: 'success', msg: 'Loaded recipes and professions from the published data' })
     } catch (e: any) {
       setToast({ kind: 'error', msg: `Seed failed: ${e.message || e}` })
     } finally {
@@ -410,7 +411,7 @@ function EditorShell({ login, dryRun }: { login: string; dryRun: boolean }) {
   }
 
   const unresolved = useMemo(() => countUnresolvedItems(db), [db])
-  const queuedRemovals = db.pendingDeletions?.length ?? 0
+  const queuedRemovals = (db.pendingDeletions ?? []).filter((entry) => entry.tab !== 'items').length
   const defaultMsg = `chore(data): update ${tab} via editor`
 
   return (
@@ -472,6 +473,13 @@ function EditorShell({ login, dryRun }: { login: string; dryRun: boolean }) {
 
       {/* Tabs */}
       <nav className="flex overflow-x-auto border-b border-ash/20 bg-crypt-300 px-1 sm:px-2">
+        <Link
+          to="/admin-items"
+          className="flex shrink-0 items-center gap-1.5 whitespace-nowrap border-b-2 border-transparent px-4 py-2.5 font-ui text-sm font-semibold text-gilt hover:text-ivory"
+        >
+          <Package className="h-4 w-4" aria-hidden="true" />
+          Items &amp; Equipment →
+        </Link>
         {TABS.map((t) => {
           const Icon = TAB_ICON[t.id]
           return (

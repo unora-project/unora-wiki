@@ -65,6 +65,8 @@ export const ITEM_TYPES: ItemTypeInfo[] = [
   it('Quest Items', 'Misc'),
   it('Monster Drops', 'Misc'),
   it('Plants/Flowers', 'Misc'),
+  it('Ores', 'Misc'),
+  it('Gems', 'Misc'),
 ]
 
 export const TYPE_BY_LABEL = new Map(ITEM_TYPES.map((t) => [t.label.toLowerCase(), t]))
@@ -121,9 +123,9 @@ export function tokenToClass(token: string): string {
 export function slugify(name: string): string {
   return name
     .normalize('NFKD')
-    .replace(/[̀-ͯ]/g, '')
+    .replace(/[\u0300-\u036f]/g, '')
     .toLowerCase()
-    .replace(/['’`]/g, '')
+    .replace(/['\u2019`]/g, '')
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '') || 'item'
 }
@@ -142,7 +144,7 @@ export function newItemId(name: string, taken: ReadonlySet<string>): string {
 
 export const STAT_HEADERS = [
   'HP', 'MP', 'AC', 'MR', 'STR', 'INT', 'WIS', 'CON', 'DEX', 'DMG', 'HIT',
-  'AS%', 'SKD', 'SKD%', 'SPD', 'SPD%', 'FHB', 'HB%', 'CDR%',
+  'AS%', 'SKD', 'SKD%', 'SPD', 'SPD%', 'FHB', 'HB%', 'LS%', 'CDR%',
 ] as const
 
 export const EQUIPMENT_HEADERS = [
@@ -159,3 +161,33 @@ export const LIST_SEP = '|'
 
 export const EQUIPMENT_CSV = 'data-source/items/equipment.csv'
 export const ITEMS_CSV = 'data-source/items/items.csv'
+
+// ── Editor labels and rules ──
+
+/** Names shown in the editor for the stat columns. */
+export const STAT_LABELS: Record<string, string> = {
+  HP: 'HP', MP: 'MP', AC: 'AC', MR: 'MR', STR: 'STR', INT: 'INT', WIS: 'WIS', CON: 'CON', DEX: 'DEX',
+  DMG: 'Damage', HIT: 'Hit', 'AS%': 'Attack Speed (%)', SKD: 'Skill Dmg (F)', 'SKD%': 'Skill Dmg (%)',
+  SPD: 'Spell Dmg (F)', 'SPD%': 'Spell Dmg (%)', FHB: 'Heal (F)', 'HB%': 'Heal (%)',
+  'LS%': 'Life Steal (%)', 'CDR%': 'Cooldown Reduction (%)',
+}
+
+/** Names shown in the editor for every other column. */
+export const FIELD_LABELS: Record<string, string> = {
+  ID: 'ID', Name: 'Name', Type: 'Type', Class: 'Class', Gender: 'Gender',
+  LOC: 'Location / source', LOC_LINK: 'Quest / location link', LVL: 'Level', WGT: 'Weight',
+  Value: 'Value', Set: 'Set bonus', Description: 'Description', Uses: 'Uses',
+  Buy: 'Purchase for', Sell: 'Sells for',
+}
+
+export function labelFor(header: string): string {
+  return STAT_LABELS[header] ?? FIELD_LABELS[header] ?? header
+}
+
+/** Types that should always name a class (blank would mean "nobody"). */
+export const NEEDS_CLASS = new Set([
+  'Weapon', '1H Weapon', '2H Weapon', 'Bows', 'Dagger', 'Claw', 'Grimoire', 'Harp', 'Staff', 'Secret', 'Sphere',
+  'Armor', 'Helm',
+])
+/** Types that come in male / female / unisex versions. */
+export const NEEDS_GENDER = new Set(['Armor', 'Helm', 'Overarmor', 'Overhelmet'])

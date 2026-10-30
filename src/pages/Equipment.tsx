@@ -118,6 +118,7 @@ const percentLabels: Record<string, string> = {
   spellDamagePercent: 'SPD%',
   flatHealBonus: 'HEAL',
   healBonusPercent: 'HEAL%',
+  lifeSteal: 'LS%',
   cooldownReduction: 'CDR%',
 }
 
@@ -161,6 +162,7 @@ const STAT_COLORS: Record<string, string> = {
   spdp: 'text-fuchsia-600 dark:text-fuchsia-400',
   heal: 'text-green-600 dark:text-green-400',
   healp: 'text-green-600 dark:text-green-400',
+  ls: 'text-red-600 dark:text-red-400',
 }
 
 // Every stat on a card can be clicked to sort by it. Items missing that stat go last.
@@ -184,6 +186,7 @@ const SORT_GETTERS: Record<string, (r: EquipmentItem) => number | null | undefin
   spdp: (r) => r.percentages.spellDamagePercent,
   heal: (r) => r.percentages.flatHealBonus,
   healp: (r) => r.percentages.healBonusPercent,
+  ls: (r) => r.percentages.lifeSteal,
 }
 
 const SORT_LABELS: Record<string, string> = {
@@ -192,7 +195,7 @@ const SORT_LABELS: Record<string, string> = {
   str: 'STR', int: 'INT', wis: 'WIS', con: 'CON', dex: 'DEX',
   dmg: 'DMG', hit: 'HIT', as: 'AS%', cdr: 'CDR%',
   skd: 'SKD', skdp: 'SKD%', spd: 'SPD', spdp: 'SPD%',
-  heal: 'HEAL', healp: 'HEAL%',
+  heal: 'HEAL', healp: 'HEAL%', ls: 'LS%',
 }
 
 // Stats where the lowest number is best, so the first click sorts lowest first.
@@ -728,7 +731,7 @@ function EquipmentCard({
     {
       id: 'healing',
       perRow: 4,
-      entries: [stat('heal', 'HEAL', p.flatHealBonus), stat('healp', 'HEAL%', p.healBonusPercent)],
+      entries: [stat('heal', 'HEAL', p.flatHealBonus), stat('healp', 'HEAL%', p.healBonusPercent), stat('ls', 'LS%', p.lifeSteal)],
     },
   ]
 
@@ -926,6 +929,7 @@ function enchantTarget(rawLabel: string): StatTarget | null {
   if (m) return { kind: 'pct', key: m[1] ? 'spellDamage' : 'spellDamagePercent' }
   m = l.match(/^(flat )?(heal|heal bonus|healing)$/)
   if (m) return { kind: 'pct', key: m[1] ? 'flatHealBonus' : 'healBonusPercent' }
+  if (/^(ls|life steal|lifesteal|life leech)$/.test(l)) return { kind: 'pct', key: 'lifeSteal' }
   if (/^(cdr|cooldown reduction|cooldown)$/.test(l)) return { kind: 'pct', key: 'cooldownReduction' }
   return null
 }
@@ -1768,6 +1772,7 @@ export function Equipment() {
       columnHelper.accessor((row) => row.percentages.spellDamagePercent, { id: 'spdp', header: 'SPD%', sortingFn: g((r) => r.percentages.spellDamagePercent, 'num'), cell: (info) => info.getValue() ?? '-' }),
       columnHelper.accessor((row) => row.percentages.flatHealBonus, { id: 'heal', header: 'HEAL', sortingFn: g((r) => r.percentages.flatHealBonus, 'num'), cell: (info) => info.getValue() ?? '-' }),
       columnHelper.accessor((row) => row.percentages.healBonusPercent, { id: 'healp', header: 'HEAL%', sortingFn: g((r) => r.percentages.healBonusPercent, 'num'), cell: (info) => info.getValue() ?? '-' }),
+      columnHelper.accessor((row) => row.percentages.lifeSteal, { id: 'ls', header: 'LS%', sortingFn: g((r) => r.percentages.lifeSteal, 'num'), cell: (info) => info.getValue() ?? '-' }),
       columnHelper.accessor((row) => row.percentages.cooldownReduction, { id: 'cdr', header: 'CDR%', sortingFn: g((r) => r.percentages.cooldownReduction, 'num'), cell: (info) => info.getValue() ?? '-' }),
     ]
   }, [columnHelper, textSize, shopIndex, weaponRecipes, jewelRecipes, selectedCategory, compareMode, compareItems, expandedGroups, baseRowByGroup])

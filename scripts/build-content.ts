@@ -14,6 +14,7 @@ import { fileURLToPath } from 'url'
 import yaml from 'js-yaml'
 import { parse as parseCsvSync } from 'csv-parse/sync'
 import { buildEquipment } from './build-equipment.ts'
+import { buildEquipmentV2 } from './build-equipment-v2.ts'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
@@ -184,10 +185,16 @@ console.log(`    wrote ${shardClasses.size} class shard pair(s) to public/data/c
 // Equipment edits must reach both the public page/search data and editor seed.
 console.log('  Equipment CSV → JSON...')
 const equipmentSeed = join(DATA_OUT_ROOT, 'equipment', 'all.json')
-const equipment = buildEquipment(
-  join(__dirname, '..', 'data-source', 'equipment', 'csv'),
-  existsSync(equipmentSeed) ? JSON.parse(readFileSync(equipmentSeed, 'utf8')) : [],
-)
+// Once the Item Editor has created data-source/items/equipment.csv, that file is the source of truth.
+// Until then (or if it is ever missing) the old per-class CSV folders are used, so the site never loses its equipment.
+const itemDatabase = join(__dirname, '..', 'data-source', 'items', 'equipment.csv')
+const equipment = existsSync(itemDatabase)
+  ? buildEquipmentV2(itemDatabase)
+  : buildEquipment(
+    join(__dirname, '..', 'data-source', 'equipment', 'csv'),
+    existsSync(equipmentSeed) ? JSON.parse(readFileSync(equipmentSeed, 'utf8')) : [],
+  )
+console.log(`    source: ${existsSync(itemDatabase) ? 'data-source/items/equipment.csv' : 'old per-class CSVs (data-source/equipment/csv)'}`)
 writeJson(equipmentSeed, equipment)
 writeJson(join(PUBLIC_DATA_ROOT, 'equipment.json'), equipment)
 console.log(`    wrote ${equipment.length} equipment items to site data and editor seed`)
