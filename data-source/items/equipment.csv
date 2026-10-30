@@ -1,21 +1,21 @@
 ID,Name,Type,Class,Gender,LOC,LOC_LINK,LVL,WGT,HP,MP,AC,MR,STR,INT,WIS,CON,DEX,DMG,HIT,AS%,SKD,SKD%,SPD,SPD%,FHB,HB%,LS%,CDR%,Value,Set
-empowered-kalkuri,Empowered Kalkuri,Weapon,monk,,-,,-,11,1000,500,-1,-,-,-,-,-,-,6,-,-,275,42,-,-,137,21,,2,-,-
-enchanted-kalkuri,Enchanted Kalkuri,Weapon,monk,,-,,-,11,500,1000,-,-,-,-,-,-,-,-,6,-,250,38,200,28,200,28,,2,-,-
-kalkuri,Kalkuri,Weapon,monk,,-,,-,11,500,500,-,-,-,-,-,-,-,-,-,-,225,36,-,-,-,-,,-,-,-
+empowered-kalkuri,Empowered Kalkuri,Claw,monk,unisex,-,,M,11,1000,500,-1,-,-,-,-,-,-,6,-,-,275,42,-,-,137,21,,2,-,-
+enchanted-kalkuri,Enchanted Kalkuri,Claw,monk,,-,,M,11,500,1000,-,-,-,-,-,-,-,-,6,-,250,38,200,28,200,28,,2,-,-
+kalkuri,Kalkuri,Claw,monk,,-,,M,11,500,500,-,-,-,-,-,-,-,-,-,-,225,36,-,-,-,-,,-,-,-
 obsidian,Obsidian,Weapon,monk,,-,,-,11,4000,1000,-2,-,-,-,-,-,-,10,-,-,400,55,-,-,200,27,,4,-,-
-tilian-claw,Tilian Claw,Weapon,monk,,-,,-,11,3000,1000,-1,-,-,-,-,-,-,10,-,-,375,50,-,-,187,25,,4,-,-
-emerald-tonfa,Emerald Tonfa,Weapon,monk,,-,,-,6,500,250,1,-,1,-,-,2,-,4,-,-,275,38,-,-,-,-,,-,-,-
-good-emerald-tonfa,Good Emerald Tonfa,Weapon,monk,,-,,-,6,500,250,-,-,2,-,-,2,-,5,-,-,300,41,-,-,-,-,,-,-,-
-good-ruby-tonfa,Good Ruby Tonfa,Weapon,monk,,-,,-,6,800,500,-,-,-,-,-,2,-,3,-,-,275,39,-,-,137,19,,-,-,-
-good-sapphire-tonfa,Good Sapphire Tonfa,Weapon,monk,,-,,-,6,500,750,-,10,-,2,-,2,-,3,7,-,250,38,200,30,200,30,,-,-,-
-grand-emerald-tonfa,Grand Emerald Tonfa,Weapon,monk,,-,,-,5,1000,750,-,-,3,-,-,3,-,7,-,-,350,48,-,-,-,-,,2,-,-
-grand-ruby-tonfa,Grand Ruby Tonfa,Weapon,monk,,-,,-,5,1800,1000,-1,-,-,-,-,4,-,6,-,-,325,44,-,-,162,22,,2,-,-
-grand-sapphire-tonfa,Grand Sapphire Tonfa,Weapon,monk,,-,,-,5,1000,1500,-,-,-,4,-,3,-,5,9,-,300,42,250,34,250,34,,2,-,-
-great-emerald-tonfa,Great Emerald Tonfa,Weapon,monk,,-,,-,6,750,500,-,-,2,-,-,3,-,6,-,-,325,44,-,-,-,-,,-,-,-
-great-ruby-tonfa,Great Ruby Tonfa,Weapon,monk,,-,,-,6,1200,750,-,-,-,-,-,3,-,5,-,-,300,41,-,-,150,20,,-,-,-
-great-sapphire-tonfa,Great Sapphire Tonfa,Weapon,monk,,-,,-,6,750,1000,-,-,-,3,-,3,-,4,8,-,275,40,225,32,225,32,,-,-,-
-ruby-tonfa,Ruby Tonfa,Weapon,monk,,-,,-,6,500,250,-,-,-,-,-,1,-,2,-,-,250,37,-,-,125,18,,-,-,-
-sapphire-tonfa,Sapphire Tonfa,Weapon,monk,,-,,-,6,250,500,1,-,-,1,-,1,-,2,6,-,225,36,175,26,175,26,,-,-,-
+tilian-claw,Tilian Claw,Claw,monk,,-,,Grand Master,11,3000,1000,-1,-,-,-,-,-,-,10,-,-,375,50,-,-,187,25,,4,-,-
+emerald-tonfa,Emerald Tonfa,2H Weapon,monk,,-,,M,6,500,250,1,-,1,-,-,2,-,4,-,-,275,38,-,-,-,-,,-,-,-
+good-emerald-tonfa,Good Emerald Tonfa,2H Weapon,monk,,-,,M,6,500,250,-,-,2,-,-,2,-,5,-,-,300,41,-,-,-,-,,-,-,-
+good-ruby-tonfa,Good Ruby Tonfa,2H Weapon,monk,,-,,M,6,800,500,-,-,-,-,-,2,-,3,-,-,275,39,-,-,137,19,,-,-,-
+good-sapphire-tonfa,Good Sapphire Tonfa,2H Weapon,monk,,-,,M,6,500,750,-,10,-,2,-,2,-,3,7,-,250,38,200,30,200,30,,-,-,-
+grand-emerald-tonfa,Grand Emerald Tonfa,2H Weapon,monk,,-,,M,5,1000,750,-,-,3,-,-,3,-,7,-,-,350,48,-,-,-,-,,2,-,-
+grand-ruby-tonfa,Grand Ruby Tonfa,2H Weapon,monk,,-,,M,5,1800,1000,-1,-,-,-,-,4,-,6,-,-,325,44,-,-,162,22,,2,-,-
+grand-sapphire-tonfa,Grand Sapphire Tonfa,2H Weapon,monk,,-,,M,5,1000,1500,-,-,-,4,-,3,-,5,9,-,300,42,250,34,250,34,,2,-,-
+great-emerald-tonfa,Great Emerald Tonfa,2H Weapon,monk,,-,,M,6,750,500,-,-,2,-,-,3,-,6,-,-,325,44,-,-,-,-,,-,-,-
+great-ruby-tonfa,Great Ruby Tonfa,2H Weapon,monk,,-,,M,6,1200,750,-,-,-,-,-,3,-,5,-,-,300,41,-,-,150,20,,-,-,-
+great-sapphire-tonfa,Great Sapphire Tonfa,2H Weapon,monk,,-,,M,6,750,1000,-,-,-,3,-,3,-,4,8,-,275,40,225,32,225,32,,-,-,-
+ruby-tonfa,Ruby Tonfa,2H Weapon,monk,,-,,M,6,500,250,-,-,-,-,-,1,-,2,-,-,250,37,-,-,125,18,,-,-,-
+sapphire-tonfa,Sapphire Tonfa,2H Weapon,monk,,-,,M,6,250,500,1,-,-,1,-,1,-,2,6,-,225,36,175,26,175,26,,-,-,-
 good-dull-claws,Good Dull Claws,Weapon,monk,,Weaponsmithing,,3,3,-,-,-,-,-,-,-,-,-,-,-,-,10,4,-,-,-,-,,-,-,-
 grand-dull-claws,Grand Dull Claws,Weapon,monk,,Weaponsmithing,,3,2,-,-,-,-,-,-,-,-,-,-,-,-,14,6,-,-,-,-,,-,-,-
 great-dull-claws,Great Dull Claws,Weapon,monk,,Weaponsmithing,,3,2,-,-,-,-,-,-,-,-,-,-,-,-,12,5,-,-,-,-,,-,-,-
@@ -42,13 +42,13 @@ great-nunchaku,Great Nunchaku,Weapon,monk,,-,,97,6,-,-,-1,-,-,-,-,-,-,-,-,-,180,
 nunchaku,Nunchaku,Weapon,monk,,-,,97,6,-,-,-1,-,-,-,-,-,-,-,-,-,140,28,-,-,-,-,,-,-,-
 dull-claws,Dull Claws,Weapon,monk,,Mileth Weapon Shop,,3,3,-,-,-,-,-,-,-,-,-,-,-,-,8,3,-,-,-,-,,-,-,-
 wolf-claws,Wolf Claws,Weapon,monk,,Mileth Weapon Shop,,11,5,-,-,-,-,-,-,-,-,-,-,-,-,18,6,-,-,-,-,,-,-,-
-monk-master-mantle,Monk Master Mantle,Armor,monk,male,-,,-,13,1000,-600,-49,30,-1,-,-,-,-1,3,-,-,-,3,-,-,-,-,,-,-,-
+monk-master-mantle,Monk Master Mantle,Armor,monk,male,-,,M,13,1000,-600,-49,30,-1,-,-,-,-1,3,-,-,-,3,-,-,-,-,,-,-,-
 sun-bae-nim-band,Sun Bae Nim Band,Helm,monk,male|female,-,,-,1,1500,250,-3,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
 grand-master-dugon,Grand Master Dugon,Helm,monk,male|female,-,,-,1,1000,500,-4,20,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
 kage,Kage,Helm,monk,male,-,,8,1,50,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
-monk-master-dress,Monk Master Dress,Armor,monk,female,-,,-,13,1000,-600,-49,30,-1,-,-,-,-1,3,-,-,-,3,-,-,-,-,,-,-,-
-grand-master-virtue-armor,Grand Master Virtue Armor,Armor,monk,male|female,-,,-,12,2000,1000,-53,40,1,1,1,1,1,5,5,-,-,5,-,5,-,5,,-,-,-
-refined-monk-master-mantle,Refined Monk Master Mantle,Armor,monk,male,-,,-,13,2000,-,-50,30,1,-,-,-,1,5,-,-,-,5,-,-,-,-,,-,-,-
+monk-master-dress,Monk Master Dress,Armor,monk,female,-,,M,13,1000,-600,-49,30,-1,-,-,-,-1,3,-,-,-,3,-,-,-,-,,-,-,-
+grand-master-virtue-armor,Grand Master Virtue Armor,Armor,monk,male|female,-,,GM,12,2000,1000,-53,40,1,1,1,1,1,5,5,-,-,5,-,5,-,5,,-,-,-
+refined-monk-master-mantle,Refined Monk Master Mantle,Armor,monk,male,-,,M,13,2000,-,-50,30,1,-,-,-,1,5,-,-,-,5,-,-,-,-,,-,-,-
 dobok,Dobok,Armor,monk,male,-,,3,4,-,-,-8,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
 loures-dobok,Loures Dobok,Armor,monk,male,-,,3,4,-,-,-8,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
 mileth-dobok,Mileth Dobok,Armor,monk,male,-,,3,4,-,-,-8,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
@@ -81,7 +81,7 @@ mountain-garb,Mountain Garb,Armor,monk,male,-,,97,14,650,125,-43,10,-,-,-,-,-,-,
 rucesion-mountain-garb,Rucesion Mountain Garb,Armor,monk,male,-,,97,14,650,125,-43,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
 suomi-mountain-garb,Suomi Mountain Garb,Armor,monk,male,-,,97,14,650,125,-43,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
 refined-mountain-garb,Refined Mountain Garb,Armor,monk,male,-,,99,14,800,200,-45,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
-refined-monk-master-dress,Refined Monk Master Dress,Armor,monk,female,-,,-,13,2000,-,-50,30,1,-,-,-,1,5,-,-,-,5,-,-,-,-,,-,-,-
+refined-monk-master-dress,Refined Monk Master Dress,Armor,monk,female,-,,M,13,2000,-,-50,30,1,-,-,-,1,5,-,-,-,5,-,-,-,-,,-,-,-
 earth-bodice,Earth Bodice,Armor,monk,female,-,,3,4,-,-,-8,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
 loures-earth-bodice,Loures Earth Bodice,Armor,monk,female,-,,3,4,-,-,-8,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
 mileth-earth-bodice,Mileth Earth Bodice,Armor,monk,female,-,,3,4,-,-,-8,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
@@ -138,11 +138,11 @@ dragon-slayer,Dragon Slayer,Weapon,any,,-,,99,18,200,-,-,10,-,-,-,-,-,3,-,-,180,
 good-dragon-slayer,Good Dragon Slayer,Weapon,any,,-,,99,18,150,-,-,10,-,-,-,-,-,-,2,-,185,16,-,-,-,-,,-,-,-
 grand-dragon-slayer,Grand Dragon Slayer,Weapon,any,,-,,99,16,400,-,-,10,-,-,-,-,-,5,-,-,215,18,-,-,-,-,,-,-,-
 great-dragon-slayer,Great Dragon Slayer,Weapon,any,,-,,99,17,300,-,-,10,-,-,-,-,-,4,-,-,200,17,-,-,-,-,,-,-,-
-shirt,Shirt,Armor,any,male,-,,-,1,-,-,-2,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+shirt,Shirt,Armor,any,male,-,,1,1,-,-,-2,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
 cap-of-danaan,Cap Of Danaan,Helm,any,male,-,,3,1,150,100,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
 hat,Hat,Helm,any,male,-,,3,1,40,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
 red-pirate-bandana,Red Pirate Bandana,Helm,any,male,-,,20,1,100,-,-1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
-blouse,Blouse,Armor,any,female,-,,-,1,-,-,-2,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+blouse,Blouse,Armor,any,female,-,,1,1,-,-,-2,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
 band-of-danaan,Band Of Danaan,Helm,any,female,-,,3,1,150,100,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
 bonnet,Bonnet,Helm,any,female,-,,3,1,40,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
 red-pirate-scarf,Red Pirate Scarf,Helm,any,female,-,,20,1,100,-,-1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
