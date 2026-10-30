@@ -1,0 +1,1659 @@
+ID,Name,Type,Class,Gender,LOC,LOC_LINK,LVL,WGT,HP,MP,AC,MR,STR,INT,WIS,CON,DEX,DMG,HIT,AS%,SKD,SKD%,SPD,SPD%,FHB,HB%,LS%,CDR%,Value,Set
+empowered-kalkuri,Empowered Kalkuri,Weapon,monk,,-,,-,11,1000,500,-1,-,-,-,-,-,-,6,-,-,275,42,-,-,137,21,,2,-,-
+enchanted-kalkuri,Enchanted Kalkuri,Weapon,monk,,-,,-,11,500,1000,-,-,-,-,-,-,-,-,6,-,250,38,200,28,200,28,,2,-,-
+kalkuri,Kalkuri,Weapon,monk,,-,,-,11,500,500,-,-,-,-,-,-,-,-,-,-,225,36,-,-,-,-,,-,-,-
+obsidian,Obsidian,Weapon,monk,,-,,-,11,4000,1000,-2,-,-,-,-,-,-,10,-,-,400,55,-,-,200,27,,4,-,-
+tilian-claw,Tilian Claw,Weapon,monk,,-,,-,11,3000,1000,-1,-,-,-,-,-,-,10,-,-,375,50,-,-,187,25,,4,-,-
+emerald-tonfa,Emerald Tonfa,Weapon,monk,,-,,-,6,500,250,1,-,1,-,-,2,-,4,-,-,275,38,-,-,-,-,,-,-,-
+good-emerald-tonfa,Good Emerald Tonfa,Weapon,monk,,-,,-,6,500,250,-,-,2,-,-,2,-,5,-,-,300,41,-,-,-,-,,-,-,-
+good-ruby-tonfa,Good Ruby Tonfa,Weapon,monk,,-,,-,6,800,500,-,-,-,-,-,2,-,3,-,-,275,39,-,-,137,19,,-,-,-
+good-sapphire-tonfa,Good Sapphire Tonfa,Weapon,monk,,-,,-,6,500,750,-,10,-,2,-,2,-,3,7,-,250,38,200,30,200,30,,-,-,-
+grand-emerald-tonfa,Grand Emerald Tonfa,Weapon,monk,,-,,-,5,1000,750,-,-,3,-,-,3,-,7,-,-,350,48,-,-,-,-,,2,-,-
+grand-ruby-tonfa,Grand Ruby Tonfa,Weapon,monk,,-,,-,5,1800,1000,-1,-,-,-,-,4,-,6,-,-,325,44,-,-,162,22,,2,-,-
+grand-sapphire-tonfa,Grand Sapphire Tonfa,Weapon,monk,,-,,-,5,1000,1500,-,-,-,4,-,3,-,5,9,-,300,42,250,34,250,34,,2,-,-
+great-emerald-tonfa,Great Emerald Tonfa,Weapon,monk,,-,,-,6,750,500,-,-,2,-,-,3,-,6,-,-,325,44,-,-,-,-,,-,-,-
+great-ruby-tonfa,Great Ruby Tonfa,Weapon,monk,,-,,-,6,1200,750,-,-,-,-,-,3,-,5,-,-,300,41,-,-,150,20,,-,-,-
+great-sapphire-tonfa,Great Sapphire Tonfa,Weapon,monk,,-,,-,6,750,1000,-,-,-,3,-,3,-,4,8,-,275,40,225,32,225,32,,-,-,-
+ruby-tonfa,Ruby Tonfa,Weapon,monk,,-,,-,6,500,250,-,-,-,-,-,1,-,2,-,-,250,37,-,-,125,18,,-,-,-
+sapphire-tonfa,Sapphire Tonfa,Weapon,monk,,-,,-,6,250,500,1,-,-,1,-,1,-,2,6,-,225,36,175,26,175,26,,-,-,-
+good-dull-claws,Good Dull Claws,Weapon,monk,,Weaponsmithing,,3,3,-,-,-,-,-,-,-,-,-,-,-,-,10,4,-,-,-,-,,-,-,-
+grand-dull-claws,Grand Dull Claws,Weapon,monk,,Weaponsmithing,,3,2,-,-,-,-,-,-,-,-,-,-,-,-,14,6,-,-,-,-,,-,-,-
+great-dull-claws,Great Dull Claws,Weapon,monk,,Weaponsmithing,,3,2,-,-,-,-,-,-,-,-,-,-,-,-,12,5,-,-,-,-,,-,-,-
+mystic-fist,Mystic Fist,Weapon,monk,,-,,11,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+good-wolf-claws,Good Wolf Claws,Weapon,monk,,Weaponsmithing,,11,5,-,-,-,-,-,-,-,-,-,-,-,-,20,7,-,-,-,-,,-,-,-
+grand-wolf-claws,Grand Wolf Claws,Weapon,monk,,Weaponsmithing,,11,4,-,-,-,-,-,-,-,-,-,-,-,-,25,9,-,-,-,-,,-,-,-
+great-wolf-claws,Great Wolf Claws,Weapon,monk,,Weaponsmithing,,11,4,-,-,-,-,-,-,-,-,-,-,-,-,23,8,-,-,-,-,,-,-,-
+dragon-scale-claws,Dragon Scale Claws,Weapon,monk,,Dragon Scale Quest,,41,7,-,-,-,-,-,-,-,-,-,-,-,-,60,20,-,-,-,-,,-,-,Dragon Scale
+eagle-talon,Eagle Talon,Weapon,monk,,-,,41,7,-,-,-,-,-,-,-,-,-,-,-,-,33,15,-,-,-,-,,-,-,-
+good-eagle-talon,Good Eagle Talon,Weapon,monk,,-,,41,7,-,-,-,-,-,-,-,-,-,-,-,-,37,17,-,-,-,-,,-,-,-
+grand-eagle-talon,Grand Eagle Talon,Weapon,monk,,-,,41,6,-,-,-,-,-,-,-,-,-,-,-,-,44,24,-,-,-,-,,-,-,-
+great-eagle-talon,Great Eagle Talon,Weapon,monk,,-,,41,6,-,-,-,-,-,-,-,-,-,-,-,-,40,20,-,-,-,-,,-,-,-
+good-stone-fist,Good Stone Fist,Weapon,monk,,-,,50,8,-,-,-1,6,-,-,-,-,-,-,-,-,104,-,-,-,-,-,,-,-,-
+grand-stone-fist,Grand Stone Fist,Weapon,monk,,-,,50,8,-,-,-2,8,-,-,-,-,-,-,-,-,120,-,-,-,-,-,,-,-,-
+great-stone-fist,Great Stone Fist,Weapon,monk,,-,,50,8,-,-,-1,7,-,-,-,-,-,-,-,-,112,-,-,-,-,-,,-,-,-
+stone-fist,Stone Fist,Weapon,monk,,-,,50,8,-,-,-1,5,-,-,-,-,-,-,-,-,96,-,-,-,-,-,,-,-,-
+good-phoenix-claw,Good Phoenix Claw,Weapon,monk,,-,,71,7,-,-,-,-,-,-,-,-,-,-,-,-,90,25,-,-,-,-,,-,-,-
+grand-phoenix-claw,Grand Phoenix Claw,Weapon,monk,,-,,71,6,-,-,-,-,-,-,-,-,-,-,-,-,110,30,-,-,-,-,,-,-,-
+great-phoenix-claw,Great Phoenix Claw,Weapon,monk,,-,,71,6,-,-,-,-,-,-,-,-,-,-,-,-,100,27,-,-,-,-,,-,-,-
+phoenix-claw,Phoenix Claw,Weapon,monk,,-,,71,7,-,-,-,-,-,-,-,-,-,-,-,-,80,22,-,-,-,-,,-,-,-
+good-nunchaku,Good Nunchaku,Weapon,monk,,-,,97,6,-,-,-1,-,-,-,-,-,-,-,-,-,160,30,-,-,-,-,,-,-,-
+grand-nunchaku,Grand Nunchaku,Weapon,monk,,-,,97,6,-,-,-2,-,-,-,-,-,-,-,-,-,200,35,-,-,-,-,,-,-,-
+great-nunchaku,Great Nunchaku,Weapon,monk,,-,,97,6,-,-,-1,-,-,-,-,-,-,-,-,-,180,32,-,-,-,-,,-,-,-
+nunchaku,Nunchaku,Weapon,monk,,-,,97,6,-,-,-1,-,-,-,-,-,-,-,-,-,140,28,-,-,-,-,,-,-,-
+dull-claws,Dull Claws,Weapon,monk,,Mileth Weapon Shop,,3,3,-,-,-,-,-,-,-,-,-,-,-,-,8,3,-,-,-,-,,-,-,-
+wolf-claws,Wolf Claws,Weapon,monk,,Mileth Weapon Shop,,11,5,-,-,-,-,-,-,-,-,-,-,-,-,18,6,-,-,-,-,,-,-,-
+monk-master-mantle,Monk Master Mantle,Armor,monk,male,-,,-,13,1000,-600,-49,30,-1,-,-,-,-1,3,-,-,-,3,-,-,-,-,,-,-,-
+sun-bae-nim-band,Sun Bae Nim Band,Helm,monk,male|female,-,,-,1,1500,250,-3,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+grand-master-dugon,Grand Master Dugon,Helm,monk,male|female,-,,-,1,1000,500,-4,20,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+kage,Kage,Helm,monk,male,-,,8,1,50,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+monk-master-dress,Monk Master Dress,Armor,monk,female,-,,-,13,1000,-600,-49,30,-1,-,-,-,-1,3,-,-,-,3,-,-,-,-,,-,-,-
+grand-master-virtue-armor,Grand Master Virtue Armor,Armor,monk,male|female,-,,-,12,2000,1000,-53,40,1,1,1,1,1,5,5,-,-,5,-,5,-,5,,-,-,-
+refined-monk-master-mantle,Refined Monk Master Mantle,Armor,monk,male,-,,-,13,2000,-,-50,30,1,-,-,-,1,5,-,-,-,5,-,-,-,-,,-,-,-
+dobok,Dobok,Armor,monk,male,-,,3,4,-,-,-8,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+loures-dobok,Loures Dobok,Armor,monk,male,-,,3,4,-,-,-8,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mileth-dobok,Mileth Dobok,Armor,monk,male,-,,3,4,-,-,-8,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rucesion-dobok,Rucesion Dobok,Armor,monk,male,-,,3,4,-,-,-8,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+suomi-dobok,Suomi Dobok,Armor,monk,male,-,,3,4,-,-,-8,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+refined-dobok,Refined Dobok,Armor,monk,male,-,,8,4,25,25,-11,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+culotte,Culotte,Armor,monk,male,-,,11,6,25,25,-12,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+loures-culotte,Loures Culotte,Armor,monk,male,-,,11,6,25,25,-12,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mileth-culotte,Mileth Culotte,Armor,monk,male,-,,11,6,25,25,-12,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rucesion-culotte,Rucesion Culotte,Armor,monk,male,-,,11,6,25,25,-12,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+suomi-culotte,Suomi Culotte,Armor,monk,male,-,,11,6,25,25,-12,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+refined-culotte,Refined Culotte,Armor,monk,male,-,,26,6,100,25,-18,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+earth-garb,Earth Garb,Armor,monk,male,-,,41,8,150,50,-23,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+loures-earth-garb,Loures Earth Garb,Armor,monk,male,-,,41,8,150,50,-23,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mileth-earth-garb,Mileth Earth Garb,Armor,monk,male,-,,41,8,150,50,-23,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rucesion-earth-garb,Rucesion Earth Garb,Armor,monk,male,-,,41,8,150,50,-23,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+suomi-earth-garb,Suomi Earth Garb,Armor,monk,male,-,,41,8,150,50,-23,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+refined-earth-garb,Refined Earth Garb,Armor,monk,male,-,,56,8,200,100,-29,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+male-nagatier-cloak,Male Nagatier Cloak,Armor,monk,male,-,,60,5,300,75,-30,10,-,-,-,1,-,-,-,-,-,-,-,-,-,-,,-,-,-
+loures-wind-garb,Loures Wind Garb,Armor,monk,male,-,,71,11,400,200,-34,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mileth-wind-garb,Mileth Wind Garb,Armor,monk,male,-,,71,11,400,200,-34,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rucesion-wind-garb,Rucesion Wind Garb,Armor,monk,male,-,,71,11,400,200,-34,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+suomi-wind-garb,Suomi Wind Garb,Armor,monk,male,-,,71,11,400,200,-34,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+wind-garb,Wind Garb,Armor,monk,male,-,,71,11,400,200,-34,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+male-aosdic-pattern-walker,Male Aosdic Pattern Walker,Armor,monk,male,-,,80,25,-400,-200,-34,20,-,-,-,2,-,5,-,-,-,-,-,-,-,-,,-,-,-
+refined-wind-garb,Refined Wind Garb,Armor,monk,male,-,,86,11,550,100,-40,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+loures-mountain-garb,Loures Mountain Garb,Armor,monk,male,-,,97,14,650,125,-43,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mileth-mountain-garb,Mileth Mountain Garb,Armor,monk,male,-,,97,14,650,125,-43,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mountain-garb,Mountain Garb,Armor,monk,male,-,,97,14,650,125,-43,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rucesion-mountain-garb,Rucesion Mountain Garb,Armor,monk,male,-,,97,14,650,125,-43,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+suomi-mountain-garb,Suomi Mountain Garb,Armor,monk,male,-,,97,14,650,125,-43,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+refined-mountain-garb,Refined Mountain Garb,Armor,monk,male,-,,99,14,800,200,-45,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+refined-monk-master-dress,Refined Monk Master Dress,Armor,monk,female,-,,-,13,2000,-,-50,30,1,-,-,-,1,5,-,-,-,5,-,-,-,-,,-,-,-
+earth-bodice,Earth Bodice,Armor,monk,female,-,,3,4,-,-,-8,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+loures-earth-bodice,Loures Earth Bodice,Armor,monk,female,-,,3,4,-,-,-8,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mileth-earth-bodice,Mileth Earth Bodice,Armor,monk,female,-,,3,4,-,-,-8,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rucesion-earth-bodice,Rucesion Earth Bodice,Armor,monk,female,-,,3,4,-,-,-8,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+suomi-earth-bodice,Suomi Earth Bodice,Armor,monk,female,-,,3,4,-,-,-8,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+refined-earth-bodice,Refined Earth Bodice,Armor,monk,female,-,,8,4,25,25,-11,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+lotus-bodice,Lotus Bodice,Armor,monk,female,-,,11,6,25,25,-12,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+loures-lotus-bodice,Loures Lotus Bodice,Armor,monk,female,-,,11,6,25,25,-12,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mileth-lotus-bodice,Mileth Lotus Bodice,Armor,monk,female,-,,11,6,25,25,-12,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rucesion-lotus-bodice,Rucesion Lotus Bodice,Armor,monk,female,-,,11,6,25,25,-12,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+suomi-lotus-bodice,Suomi Lotus Bodice,Armor,monk,female,-,,11,6,25,25,-12,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+refined-lotus-bodice,Refined Lotus Bodice,Armor,monk,female,-,,26,6,100,25,-18,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+loures-moon-bodice,Loures Moon Bodice,Armor,monk,female,-,,41,8,150,50,-23,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mileth-moon-bodice,Mileth Moon Bodice,Armor,monk,female,-,,41,8,150,50,-23,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+moon-bodice,Moon Bodice,Armor,monk,female,-,,41,8,150,50,-23,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rucesion-moon-bodice,Rucesion Moon Bodice,Armor,monk,female,-,,41,8,150,50,-23,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+suomi-moon-bodice,Suomi Moon Bodice,Armor,monk,female,-,,41,8,150,50,-23,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+refined-moon-bodice,Refined Moon Bodice,Armor,monk,female,-,,56,8,200,100,-29,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+female-nagatier-cloak,Female Nagatier Cloak,Armor,monk,female,-,,60,5,300,75,-30,10,-,-,-,1,-,-,-,-,-,-,-,-,-,-,,-,-,-
+lightning-garb,Lightning Garb,Armor,monk,female,-,,71,11,400,200,-34,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+loures-lightning-garb,Loures Lightning Garb,Armor,monk,female,-,,71,11,400,200,-34,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mileth-lightning-garb,Mileth Lightning Garb,Armor,monk,female,-,,71,11,400,200,-34,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rucesion-lightning-garb,Rucesion Lightning Garb,Armor,monk,female,-,,71,11,400,200,-34,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+suomi-lightning-garb,Suomi Lightning Garb,Armor,monk,female,-,,71,11,250,-,-34,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+female-aosdic-pattern-walker,Female Aosdic Pattern Walker,Armor,monk,female,-,,80,25,-400,-200,-34,20,-,-,-,2,-,5,-,-,-,-,-,-,-,-,,-,-,-
+refined-lightning-garb,Refined Lightning Garb,Armor,monk,female,-,,86,11,550,100,-40,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+loures-sea-garb,Loures Sea Garb,Armor,monk,female,-,,97,14,650,125,-43,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mileth-sea-garb,Mileth Sea Garb,Armor,monk,female,-,,97,14,650,125,-43,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rucesion-sea-garb,Rucesion Sea Garb,Armor,monk,female,-,,97,14,650,125,-43,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+sea-garb,Sea Garb,Armor,monk,female,-,,97,14,650,125,-43,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+suomi-sea-garb,Suomi Sea Garb,Armor,monk,female,-,,97,14,650,125,-43,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+refined-sea-garb,Refined Sea Garb,Armor,monk,female,-,,99,14,800,200,-45,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+blue-polyp,Blue Polyp,Weapon,any,,-,,1,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+kobold-whacker,Kobold Whacker,Weapon,any,,-,,1,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+lime-polyp,Lime Polyp,Weapon,any,,-,,1,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+orange-polyp,Orange Polyp,Weapon,any,,-,,1,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+red-polyp,Red Polyp,Weapon,any,,-,,1,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+toy-doll,Toy Doll,Weapon,any,,-,,1,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+yule-tree,Yule Tree,Weapon,any,,-,,1,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+black-paintball-gun,Black Paintball Gun,Weapon,any,,-,,1,7,-,-,-,-,-,-,-,-,-,-,-,-,20,-,-,-,-,-,,-,-,-
+dirk,Dirk,Weapon,any,,-,,1,1,-,-,-,-,-,-,-,-,-,-,-,-,6,-,-,-,-,-,,-,-,-
+grey-paintball-gun,Grey Paintball Gun,Weapon,any,,-,,1,7,-,-,-,-,-,-,-,-,-,-,-,-,20,-,-,-,-,-,,-,-,-
+pick-axe,Pick axe,Weapon,any,,-,,1,1,-,-,-,-,-,-,-,-,-,-,-,-,6,-,-,-,-,-,,-,-,-
+stick,Stick,Weapon,any,,-,,1,1,-,-,-,-,-,-,-,-,-,4,-,-,4,-,-,-,-,-,,-,-,-
+eppe,Eppe,Weapon,any,,-,,2,1,-,-,-,-,-,-,-,-,-,-,-,-,12,-,-,-,-,-,,-,-,-
+good-eppe,Good Eppe,Weapon,any,,-,,2,1,-,-,-,-,-,-,-,-,-,-,-,-,14,-,-,-,-,-,,-,-,-
+grand-eppe,Grand Eppe,Weapon,any,,-,,2,1,-,-,-,-,-,-,-,-,-,-,-,-,18,-,-,-,-,-,,-,-,-
+great-eppe,Great Eppe,Weapon,any,,-,,2,1,-,-,-,-,-,-,-,-,-,-,-,-,16,-,-,-,-,-,,-,-,-
+good-saber,Good Saber,Weapon,any,,-,,7,7,-,-,-,-,-,-,-,-,-,-,-,-,22,-,-,-,-,-,,-,-,-
+grand-saber,Grand Saber,Weapon,any,,-,,7,6,-,-,-,-,-,-,-,-,-,-,-,-,26,-,-,-,-,-,,-,-,-
+great-saber,Great Saber,Weapon,any,,-,,7,6,-,-,-,-,-,-,-,-,-,-,-,-,24,-,-,-,-,-,,-,-,-
+saber,Saber,Weapon,any,,-,,7,7,-,-,-,-,-,-,-,-,-,-,-,-,20,-,-,-,-,-,,-,-,-
+dragon-slayer,Dragon Slayer,Weapon,any,,-,,99,18,200,-,-,10,-,-,-,-,-,3,-,-,180,15,-,-,-,-,,-,-,-
+good-dragon-slayer,Good Dragon Slayer,Weapon,any,,-,,99,18,150,-,-,10,-,-,-,-,-,-,2,-,185,16,-,-,-,-,,-,-,-
+grand-dragon-slayer,Grand Dragon Slayer,Weapon,any,,-,,99,16,400,-,-,10,-,-,-,-,-,5,-,-,215,18,-,-,-,-,,-,-,-
+great-dragon-slayer,Great Dragon Slayer,Weapon,any,,-,,99,17,300,-,-,10,-,-,-,-,-,4,-,-,200,17,-,-,-,-,,-,-,-
+shirt,Shirt,Armor,any,male,-,,-,1,-,-,-2,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+cap-of-danaan,Cap Of Danaan,Helm,any,male,-,,3,1,150,100,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+hat,Hat,Helm,any,male,-,,3,1,40,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+red-pirate-bandana,Red Pirate Bandana,Helm,any,male,-,,20,1,100,-,-1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+blouse,Blouse,Armor,any,female,-,,-,1,-,-,-2,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+band-of-danaan,Band Of Danaan,Helm,any,female,-,,3,1,150,100,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+bonnet,Bonnet,Helm,any,female,-,,3,1,40,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+red-pirate-scarf,Red Pirate Scarf,Helm,any,female,-,,20,1,100,-,-1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+dark-emberite-belt,Dark Emberite Belt,Armor,any,unisex,Armorsmithing,-,Ab 1,-,600,600,-3,10,2,2,1,1,1,8,-,-,-,2,-,-,-,-,,-,-,-
+earth-emberite-belt,Earth Emberite Belt,Armor,any,unisex,Armorsmithing,-,Ab 1,-,600,600,-3,10,2,2,1,1,1,8,-,-,-,2,-,-,-,-,,-,-,-
+fire-emberite-belt,Fire Emberite Belt,Armor,any,unisex,Armorsmithing,-,Ab 1,-,600,600,-3,10,2,2,1,1,1,8,-,-,-,2,-,-,-,-,,-,-,-
+light-emberite-belt,Light Emberite Belt,Armor,any,unisex,Armorsmithing,-,Ab 1,-,600,600,-3,10,2,2,1,1,1,8,-,-,-,2,-,-,-,-,,-,-,-
+sea-emberite-belt,Sea Emberite Belt,Armor,any,unisex,Armorsmithing,-,Ab 1,-,600,600,-3,10,2,2,1,1,1,8,-,-,-,2,-,-,-,-,,-,-,-
+wind-emberite-belt,Wind Emberite Belt,Armor,any,unisex,Armorsmithing,-,Ab 1,-,600,600,-3,10,2,2,1,1,1,8,-,-,-,2,-,-,-,-,,-,-,-
+champion-band,Champion Band,Helm,any,unisex,-,-,Ab 1,1,1000,1000,-6,10,-,-,-,-,-,-,5,-,-,-,-,-,-,-,,-,-,-
+celestial-staff,Celestial Staff,Weapon,priest,,-,,-,5,200,2000,-,-,-,2,1,-,-,-,8,-,49,-,187,25,375,50,,4,-,-
+divine-staff,Divine Staff,Weapon,priest,,-,,-,5,200,3000,-,-,-,1,2,-,-,-,8,-,49,-,200,27,400,55,,4,-,-
+holy-hy-brasyl-gnarl,Holy Hy-Brasyl Gnarl,Weapon,priest,,-,,-,5,-200,1000,-,-,-,-2,-1,-,-,-,3,-,49,-,112,18,225,36,,-,-,-
+good-staff-of-aquaedon,Good Staff of Aquaedon,Weapon,priest,,-,,-,6,500,750,1,-,-,1,-,-,-,-,4,-,49,-,300,41,150,20,,-,-,-
+good-staff-of-miraelis,Good Staff of Miraelis,Weapon,priest,,-,,-,6,500,750,1,-,-,-,1,-,-,-,3,-,49,-,150,20,300,41,,-,-,-
+good-staff-of-zephyra,Good Staff of Zephyra,Weapon,priest,,-,,-,6,1000,750,1,-,1,-,-,-,1,4,3,-,200,28,200,28,250,36,,-,-,-
+grand-staff-of-aquaedon,Grand Staff of Aquaedon,Weapon,priest,,-,,-,5,1000,1500,-,-,-,3,1,-,-,-,6,-,49,-,350,48,125,24,,2,-,-
+grand-staff-of-miraelis,Grand Staff of Miraelis,Weapon,priest,,-,,-,5,1000,1500,-,-,-,1,3,-,-,-,5,-,49,-,125,24,350,48,,2,-,-
+grand-staff-of-zephyra,Grand Staff of Zephyra,Weapon,priest,,-,,-,5,1600,1250,-1,-,3,-,-,-,2,5,5,-,250,32,250,32,300,41,,2,-,-
+great-staff-of-aquaedon,Great Staff of Aquaedon,Weapon,priest,,-,,-,6,750,1000,1,-,-,2,-,-,-,-,5,-,49,-,325,44,162,22,,-,-,-
+great-staff-of-miraelis,Great Staff of Miraelis,Weapon,priest,,-,,-,6,750,1000,1,-,-,-,2,-,-,-,4,-,49,-,162,22,325,44,,-,-,-
+great-staff-of-zephyra,Great Staff of Zephyra,Weapon,priest,,-,,-,6,1200,1000,-,-,2,-,-,-,2,4,4,-,225,30,225,30,275,38,,-,-,-
+staff-of-aquaedon,Staff of Aquaedon,Weapon,priest,,-,,-,6,300,500,2,-,-,-,-,-,-,-,3,-,49,-,275,38,137,19,,-,-,-
+staff-of-miraelis,Staff of Miraelis,Weapon,priest,,-,,-,6,300,500,2,-,-,-,-,-,-,-,3,-,49,-,137,19,275,38,,-,-,-
+staff-of-zephyra,Staff of Zephyra,Weapon,priest,,-,,-,6,500,500,1,-,-,-,-,-,-,3,3,-,175,26,175,26,225,34,,-,-,-
+good-holy-hermes,Good Holy Hermes,Weapon,priest,,-,,11,2,-,150,-,-,-,-,-,-,-,-,1,-,6,-,14,6,55,5,,-,-,-
+grand-holy-hermes,Grand Holy Hermes,Weapon,priest,,-,,11,2,-,300,-,-,-,-,-,-,-,-,2,-,8,-,22,8,50,10,,-,-,-
+great-holy-hermes,Great Holy Hermes,Weapon,priest,,-,,11,2,-,200,-,-,-,-,-,-,-,-,2,-,7,-,18,7,60,6,,-,-,-
+holy-hermes,Holy Hermes,Weapon,priest,,-,,11,2,-,100,-,-,-,-,-,-,-,-,1,-,5,-,10,5,50,3,,-,-,-
+good-holy-kronos,Good Holy Kronos,Weapon,priest,,-,,41,4,-,250,-,-,-,-,-,-,-,-,2,-,12,-,24,16,80,9,,-,-,-
+grand-holy-kronos,Grand Holy Kronos,Weapon,priest,,-,,41,4,-,400,-,-,-,-,-,-,-,-,3,-,16,-,32,20,100,15,,-,-,-
+great-holy-kronos,Great Holy Kronos,Weapon,priest,,-,,41,4,-,300,-,-,-,-,-,-,-,-,3,-,14,-,28,18,90,10,,-,-,-
+holy-kronos,Holy Kronos,Weapon,priest,,-,,41,4,-,200,-,-,-,-,-,-,-,-,2,-,10,-,20,15,75,7,,-,-,-
+good-holy-diana,Good Holy Diana,Weapon,priest,,-,,71,2,-,450,-,-,-,-,-,-,-,-,1,-,16,-,35,26,-,-,,-,-,-
+grand-holy-diana,Grand Holy Diana,Weapon,priest,,-,,71,2,-,550,-,-,-,-,-,-,-,-,3,-,20,-,45,30,-,-,,-,-,-
+great-holy-diana,Great Holy Diana,Weapon,priest,,-,,71,2,-,500,-,-,-,-,-,-,-,-,2,-,17,-,40,27,-,-,,-,-,-
+holy-diana,Holy Diana,Weapon,priest,,-,,71,2,-,400,-,-,-,-,-,-,-,-,1,-,15,-,30,25,-,-,,-,-,-
+good-stone-cross,Good Stone Cross,Weapon,priest,,-,,90,12,1100,-200,-,-,-,-,-,-,-,5,5,-,120,-,120,-,120,-,,-,-,-
+grand-stone-cross,Grand Stone Cross,Weapon,priest,,-,,90,10,1300,-100,-,-,-,-,-,-,-,6,6,-,180,-,180,-,180,-,,-,-,-
+great-stone-cross,Great Stone Cross,Weapon,priest,,-,,90,11,1200,-150,-,-,-,-,-,-,-,5,5,-,150,-,150,-,150,-,,-,-,-
+stone-cross,Stone Cross,Weapon,priest,,-,,90,12,1000,-250,-,-,-,-,-,-,-,5,5,-,100,-,100,-,100,-,,-,-,-
+good-staff-of-wisdom,Good Staff of Wisdom,Weapon,priest,,-,,97,2,325,700,-,-,-,-,-,-,-,-,5,-,26,-,55,40,-,-,,-,-,-
+grand-staff-of-wisdom,Grand Staff of Wisdom,Weapon,priest,,-,,97,2,400,900,-,-,-,-,-,-,-,-,6,-,30,-,66,44,-,-,,-,-,-
+great-staff-of-wisdom,Great Staff of Wisdom,Weapon,priest,,-,,97,2,350,800,-,-,-,-,-,-,-,-,6,-,28,-,60,42,-,-,,-,-,-
+staff-of-wisdom,Staff of Wisdom,Weapon,priest,,-,,97,2,300,600,-,-,-,-,-,-,-,-,5,-,24,-,50,38,-,-,,-,-,-
+empowered-holy-hy-brasyl-gnarl,Empowered Holy Hy-Brasyl Gnarl,Weapon,priest,,-,,-,5,200,1500,-,-,-,-,-,-,-,-,4,-,49,-,137,21,275,42,,2,-,-
+enchanted-holy-hy-brasyl-gnarl,Enchanted Holy Hy-Brasyl Gnarl,Weapon,priest,,-,,-,5,200,1500,-,-,-,-,-,-,-,-,3,-,125,28,125,28,250,38,,2,-,-
+grand-master-divine-robe,Grand Master Divine Robe,Armor,priest,male,-,,-,10,2000,1000,-42,40,1,1,1,1,1,5,-,-,-,5,-,5,-,5,,-,-,-
+refined-sacred-mantle,Refined Sacred Mantle,Armor,priest,male,-,,-,10,1000,500,-39,20,-,1,2,1,-,-,-,-,-,-,-,-,-,5,,-,-,-
+sacred-mantle,Sacred Mantle,Armor,priest,male,-,,-,10,1000,-500,-38,20,1,-2,-,1,-1,-,-,-,-,-,-,-,-,3,,-,-,-
+cowl,Cowl,Armor,priest,male,-,,3,4,-,-,-3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+loures-cowl,Loures Cowl,Armor,priest,male,-,,3,4,-,-,-3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mileth-cowl,Mileth Cowl,Armor,priest,male,-,,3,4,-,-,-3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rucesion-cowl,Rucesion Cowl,Armor,priest,male,-,,3,4,-,-,-3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+suomi-cowl,Suomi Cowl,Armor,priest,male,-,,3,4,-,-,-3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+refined-cowl,Refined Cowl,Armor,priest,male,-,,8,4,25,25,-5,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+galuchat-coat,Galuchat Coat,Armor,priest,male,-,,11,5,25,25,-6,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+loures-galuchat-coat,Loures Galuchat Coat,Armor,priest,male,-,,11,5,25,25,-11,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mileth-galuchat-coat,Mileth Galuchat Coat,Armor,priest,male,-,,11,5,25,25,-11,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rucesion-galuchat-coat,Rucesion Galuchat Coat,Armor,priest,male,-,,11,5,25,25,-11,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+suomi-galuchat-coat,Suomi Galuchat Coat,Armor,priest,male,-,,11,5,25,25,-11,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+refined-galuchat-coat,Refined Galuchat Coat,Armor,priest,male,-,,26,5,50,50,-11,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+loures-mantle,Loures Mantle,Armor,priest,male,-,,41,7,75,75,-16,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mantle,Mantle,Armor,priest,male,-,,41,7,75,75,-16,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mileth-mantle,Mileth Mantle,Armor,priest,male,-,,41,7,75,75,-16,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rucesion-mantle,Rucesion Mantle,Armor,priest,male,-,,41,7,75,75,-16,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+suomi-mantle,Suomi Mantle,Armor,priest,male,-,,41,7,75,75,-16,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+refined-mantle,Refined Mantle,Armor,priest,male,-,,56,7,100,100,-21,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+male-dark-cleric-robes,Male Dark Cleric Robes,Armor,priest,male,-,,60,5,150,150,-22,10,-,-,1,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+hierophant,Hierophant,Armor,priest,male,-,,71,10,200,200,-25,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+loures-hierophant,Loures Hierophant,Armor,priest,male,-,,71,10,150,150,-25,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mileth-hierophant,Mileth Hierophant,Armor,priest,male,-,,71,10,150,150,-25,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rucesion-hierophant,Rucesion Hierophant,Armor,priest,male,-,,71,10,150,150,-25,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+suomi-hierophant,Suomi Hierophant,Armor,priest,male,-,,71,10,150,150,-25,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+male-cthonic-disciple-robes,Male Cthonic Disciple Robes,Armor,priest,male,-,,80,10,-400,400,-25,20,-,-,2,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+refined-hierophant,Refined Hierophant,Armor,priest,male,-,,86,10,250,250,-30,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+dalmatica,Dalmatica,Armor,priest,male,-,,97,14,300,300,-32,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+loures-dalmatica,Loures Dalmatica,Armor,priest,male,-,,97,14,300,300,-32,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mileth-dalmatica,Mileth Dalmatica,Armor,priest,male,-,,97,14,300,300,-32,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rucesion-dalmatica,Rucesion Dalmatica,Armor,priest,male,-,,97,14,300,300,-32,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+suomi-dalmatica,Suomi Dalmatica,Armor,priest,male,-,,97,14,300,300,-32,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+refined-dalmatica,Refined Dalmatica,Armor,priest,male,-,,99,14,400,400,-34,10,-,-,2,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+divine-mitre,Divine Mitre,Helm,priest,male,-,,-,1,1000,1000,-3,20,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+sacred-chief,Sacred Chief,Helm,priest,male,-,,-,1,500,750,-1,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+celestial-mitre,Celestial Mitre,Helm,priest,male,-,,-,1,1000,1000,-3,20,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+holy-cap,Holy Cap,Helm,priest,male,-,,11,1,25,25,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+holy-chief,Holy Chief,Helm,priest,male,-,,11,1,25,25,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+holy-conical,Holy Conical,Helm,priest,male,-,,41,1,50,50,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+cthonic-disciple-caputium,Cthonic Disciple Caputium,Helm,priest,male,-,,80,1,200,200,-1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+grand-master-celestial-gown,Grand Master Celestial Gown,Armor,priest,female,-,,-,10,2000,1000,-42,40,1,1,1,1,1,5,-,-,-,5,-,5,-,5,,-,-,-
+refined-sacred-dress,Refined Sacred Dress,Armor,priest,female,-,,-,10,1000,500,-39,20,-,1,2,1,-,-,-,-,-,-,-,-,-,5,,-,-,-
+sacred-dress,Sacred Dress,Armor,priest,female,-,,-,10,1000,-500,-38,20,1,-2,-,1,-1,-,-,-,-,-,-,-,-,3,,-,-,-
+gorget-gown,Gorget Gown,Armor,priest,female,-,,3,4,-,-,-3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+loures-gorget-gown,Loures Gorget Gown,Armor,priest,female,-,,3,4,-,-,-3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mileth-gorget-gown,Mileth Gorget Gown,Armor,priest,female,-,,3,4,-,-,-3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rucesion-gorget-gown,Rucesion Gorget Gown,Armor,priest,female,-,,3,4,-,-,-3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+suomi-gorget-gown,Suomi Gorget Gown,Armor,priest,female,-,,3,4,-,-,-3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+refined-gorget-gown,Refined Gorget Gown,Armor,priest,female,-,,8,4,25,25,-5,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+loures-mystic-gown,Loures Mystic Gown,Armor,priest,female,-,,11,5,25,25,-6,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mileth-mystic-gown,Mileth Mystic Gown,Armor,priest,female,-,,11,5,25,25,-6,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mystic-gown,Mystic Gown,Armor,priest,female,-,,11,5,25,25,-6,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rucesion-mystic-gown,Rucesion Mystic Gown,Armor,priest,female,-,,11,5,25,25,-6,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+suomi-mystic-gown,Suomi Mystic Gown,Armor,priest,female,-,,11,5,25,25,-6,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+refined-mystic-gown,Refined Mystic Gown,Armor,priest,female,-,,26,5,50,50,-11,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+elle,Elle,Armor,priest,female,-,,41,7,75,75,-16,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+loures-elle,Loures Elle,Armor,priest,female,-,,41,7,75,75,-16,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mileth-elle,Mileth Elle,Armor,priest,female,-,,41,7,75,75,-16,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rucesion-elle,Rucesion Elle,Armor,priest,female,-,,41,7,75,75,-16,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+suomi-elle,Suomi Elle,Armor,priest,female,-,,41,7,75,75,-16,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+refined-elle,Refined Elle,Armor,priest,female,-,,56,7,100,100,-21,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+female-dark-cleric-robes,Female Dark Cleric Robes,Armor,priest,female,-,,60,5,150,150,-22,10,-,-,1,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+dolman,Dolman,Armor,priest,female,-,,71,10,200,200,-25,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+loures-dolman,Loures Dolman,Armor,priest,female,-,,71,10,200,200,-25,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mileth-dolman,Mileth Dolman,Armor,priest,female,-,,71,10,200,200,-25,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rucesion-dolman,Rucesion Dolman,Armor,priest,female,-,,71,10,200,200,-25,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+suomi-dolman,Suomi Dolman,Armor,priest,female,-,,71,10,200,200,-25,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+morrigu-disciple-pellison,Morrigu Disciple Pellison,Armor,priest,female,-,,80,10,-400,400,-25,20,-,-,2,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+refined-dolman,Refined Dolman,Armor,priest,female,-,,86,10,250,250,-30,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+bansagart,Bansagart,Armor,priest,female,-,,97,14,300,300,-32,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+loures-bansagart,Loures Bansagart,Armor,priest,female,-,,97,14,300,300,-32,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mileth-bansagart,Mileth Bansagart,Armor,priest,female,-,,97,14,300,300,-32,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rucesion-bansagart,Rucesion Bansagart,Armor,priest,female,-,,97,14,300,300,-32,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+suomi-bansagart,Suomi Bansagart,Armor,priest,female,-,,97,14,300,300,-32,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+refined-bansagart,Refined Bansagart,Armor,priest,female,-,,99,14,400,400,-34,10,-,-,2,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+divine-band,Divine Band,Helm,priest,female,-,,-,1,1000,1000,-3,20,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+sacred-wimple,Sacred Wimple,Helm,priest,female,-,,-,1,500,750,-1,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+celestial-band,Celestial Band,Helm,priest,female,-,,-,1,1000,1000,-2,20,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+holy-toque,Holy Toque,Helm,priest,female,-,,11,1,25,25,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+holy-wimple,Holy Wimple,Helm,priest,female,-,,11,1,25,25,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+holy-vermilion,Holy Vermilion,Helm,priest,female,-,,41,1,50,50,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+holy-hair-band,Holy Hair Band,Helm,priest,female,-,,80,1,200,200,-1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+dragon-fang,Dragon Fang,Weapon,rogue,,-,,-,14,3000,1500,-,-,3,-,-,-,4,-,-,-,400,60,-,-,-,-,,4,-,-
+empowered-hy-brasyl-azoth,Empowered Hy-Brasyl Azoth,Weapon,rogue,,-,,-,10,1000,500,-,-,1,-,-,-,1,-,-,-,275,45,-,-,-,-,,2,-,-
+enchanted-hy-brasyl-azoth,Enchanted Hy-Brasyl Azoth,Weapon,rogue,,-,,-,10,500,1000,-,-,2,-,-,-,2,-,4,-,250,38,200,28,200,28,,2,-,-
+hy-brasyl-azoth,Hy-Brasyl Azoth,Weapon,rogue,,-,,-,10,500,500,1,-,1,-1,-1,-,1,-,-,-,225,38,-,-,-,-,,-,-,-
+skean,Skean,Weapon,rogue,,-,,-,10,2000,1200,-,-,3,-,-,-,4,-,-,-,375,55,-,-,-,-,,4,-,-
+chain-whip,Chain Whip,Weapon,rogue,,-,,-,11,400,600,2,-,-,1,-,-,1,4,4,-,225,36,175,28,175,28,,-,-,-
+good-chain-whip,Good Chain Whip,Weapon,rogue,,-,,-,11,600,800,1,-,-,1,-,-,1,5,5,-,250,38,200,30,200,30,,-,-,-
+good-kris,Good Kris,Weapon,rogue,,-,,-,11,1000,600,-,-,1,-,1,-,2,-,-,-,275,41,-,-,187,20,,-,-,-
+good-scurvy-dagger,Good Scurvy Dagger,Weapon,rogue,,-,,-,11,750,500,1,-,1,-,-,-,2,-,-,-,300,44,-,-,-,-,,-,-,-
+grand-chain-whip,Grand Chain Whip,Weapon,rogue,,-,,-,10,1000,1500,-,5,-,3,-,-,3,8,7,-,300,45,250,34,250,34,,2,-,-
+grand-kris,Grand Kris,Weapon,rogue,,-,,-,10,1600,1000,-1,-,2,-,2,-,3,-,-,-,325,47,-,-,167,23,,2,-,-
+grand-scurvy-dagger,Grand Scurvy Dagger,Weapon,rogue,,-,,-,10,1500,1000,-,-,3,-,-,-,4,-,-,-,350,50,-,-,-,-,,2,-,-
+great-chain-whip,Great Chain Whip,Weapon,rogue,,-,,-,11,800,1000,1,-,-,2,-,-,3,6,6,-,275,40,225,32,225,32,,-,-,-
+great-kris,Great Kris,Weapon,rogue,,-,,-,11,1300,750,-1,-,2,-,1,-,2,-,-,-,300,43,-,-,150,21,,-,-,-
+great-scurvy-dagger,Great Scurvy Dagger,Weapon,rogue,,-,,-,11,1000,700,-,-,2,-,-,-,3,-,-,-,325,47,-,-,-,-,,-,-,-
+kris,Kris,Weapon,rogue,,-,,-,11,750,500,-,-,1,-,-,-,2,-,-,-,250,39,-,-,125,19,,-,-,-
+scurvy-dagger,Scurvy Dagger,Weapon,rogue,,-,,-,11,400,400,1,-,-,-,-,-,1,-,-,-,275,41,-,-,-,-,,-,-,-
+good-snow-dagger,Good Snow Dagger,Weapon,rogue,,-,,2,3,-,-,-,-,-,-,-,-,-,-,-,-,8,-,-,-,-,-,,-,-,-
+grand-snow-dagger,Grand Snow Dagger,Weapon,rogue,,-,,2,3,-,-,-,-,-,-,-,-,-,-,-,-,11,-,-,-,-,-,,-,-,-
+great-snow-dagger,Great Snow Dagger,Weapon,rogue,,-,,2,3,-,-,-,-,-,-,-,-,-,-,-,-,9,-,-,-,-,-,,-,-,-
+snow-dagger,Snow Dagger,Weapon,rogue,,-,,2,3,-,-,-,-,-,-,-,-,-,-,-,-,7,-,-,-,-,-,,-,-,-
+good-snow-secret,Good Snow Secret,Weapon,rogue,,-,,2,3,-,-,-,-,-,-,-,-,-,-,-,-,7,-,-,-,-,-,,-,-,-
+grand-snow-secret,Grand Snow Secret,Weapon,rogue,,-,,2,3,-,-,-,-,-,-,-,-,-,-,-,-,10,-,-,-,-,-,,-,-,-
+great-snow-secret,Great Snow Secret,Weapon,rogue,,-,,2,3,-,-,-,-,-,-,-,-,-,-,-,-,8,-,-,-,-,-,,-,-,-
+snow-secret,Snow Secret,Weapon,rogue,,-,,2,3,-,-,-,-,-,-,-,-,-,-,-,-,6,-,-,-,-,-,,-,-,-
+center-dagger,Center Dagger,Weapon,rogue,,-,,5,4,-,-,-,-,-,-,-,-,-,-,-,-,9,1,-,-,-,-,,-,-,-
+good-center-dagger,Good Center Dagger,Weapon,rogue,,-,,5,4,-,-,-,-,-,-,-,-,-,-,-,-,10,1,-,-,-,-,,-,-,-
+grand-center-dagger,Grand Center Dagger,Weapon,rogue,,-,,5,4,-,-,-,-,-,-,-,-,-,-,-,-,14,3,-,-,-,-,,-,-,-
+great-center-dagger,Great Center Dagger,Weapon,rogue,,-,,5,3,-,-,-,-,-,-,-,-,-,-,-,-,12,2,-,-,-,-,,-,-,-
+center-secret,Center Secret,Weapon,rogue,,-,,10,3,-,-,-,-,-,-,-,-,-,-,-,-,12,1,-,-,-,-,,-,-,-
+good-center-secret,Good Center Secret,Weapon,rogue,,-,,10,3,-,-,-,-,-,-,-,-,-,-,-,-,14,1,-,-,-,-,,-,-,-
+grand-center-secret,Grand Center Secret,Weapon,rogue,,-,,10,3,-,-,-,-,-,-,-,-,-,-,-,-,18,3,-,-,-,-,,-,-,-
+great-center-secret,Great Center Secret,Weapon,rogue,,-,,10,3,-,-,-,-,-,-,-,-,-,-,-,-,16,2,-,-,-,-,,-,-,-
+mystic-knife,Mystic Knife,Weapon,rogue,,-,,11,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+blossom-dagger,Blossom Dagger,Weapon,rogue,,-,,11,6,-,-,-,-,-,-,-,-,-,1,-,-,12,3,-,-,-,-,,-,-,-
+good-blossom-dagger,Good Blossom Dagger,Weapon,rogue,,-,,11,6,-,-,-,-,-,-,-,-,-,1,-,-,14,4,-,-,-,-,,-,-,-
+grand-blossom-dagger,Grand Blossom Dagger,Weapon,rogue,,-,,11,5,-,-,-,-,-,-,-,-,-,1,-,-,18,6,-,-,-,-,,-,-,-
+great-blossom-dagger,Great Blossom Dagger,Weapon,rogue,,-,,11,6,-,-,-,-,-,-,-,-,-,1,-,-,16,5,-,-,-,-,,-,-,-
+blossom-secret,Blossom Secret,Weapon,rogue,,-,,18,4,-,-,-,-,-,-,-,-,-,-,1,-,24,3,-,-,-,-,,-,-,-
+good-blossom-secret,Good Blossom Secret,Weapon,rogue,,-,,18,4,-,-,-,-,-,-,-,-,-,-,1,-,26,4,-,-,-,-,,-,-,-
+grand-blossom-secret,Grand Blossom Secret,Weapon,rogue,,-,,18,3,-,-,-,-,-,-,-,-,-,-,1,-,30,6,-,-,-,-,,-,-,-
+great-blossom-secret,Great Blossom Secret,Weapon,rogue,,-,,18,4,-,-,-,-,-,-,-,-,-,-,1,-,28,5,-,-,-,-,,-,-,-
+curved-dagger,Curved Dagger,Weapon,rogue,,-,,30,7,-,-,-,-,-,-,-,-,-,2,-,-,22,7,-,-,-,-,,-,-,-
+good-curved-dagger,Good Curved Dagger,Weapon,rogue,,-,,30,7,-,-,-,-,-,-,-,-,-,2,-,-,24,8,-,-,-,-,,-,-,-
+grand-curved-dagger,Grand Curved Dagger,Weapon,rogue,,-,,30,6,-,-,-,-,-,-,-,-,-,2,-,-,30,10,-,-,-,-,,-,-,-
+great-curved-dagger,Great Curved Dagger,Weapon,rogue,,-,,30,7,-,-,-,-,-,-,-,-,-,2,-,-,27,9,-,-,-,-,,-,-,-
+good-moon-dagger,Good Moon Dagger,Weapon,rogue,,-,,31,9,-,-,-,-,-,-,-,-,-,2,-,-,30,5,-,-,-,-,,-,-,-
+grand-moon-dagger,Grand Moon Dagger,Weapon,rogue,,-,,31,8,-,-,-,-,-,-,-,-,-,2,-,-,36,7,-,-,-,-,,-,-,-
+great-moon-dagger,Great Moon Dagger,Weapon,rogue,,-,,31,9,-,-,-,-,-,-,-,-,-,2,-,-,33,6,-,-,-,-,,-,-,-
+moon-dagger,Moon Dagger,Weapon,rogue,,-,,31,9,-,-,-,-,-,-,-,-,-,2,-,-,28,4,-,-,-,-,,-,-,-
+grand-moon-secret,Grand Moon Secret,Weapon,rogue,,-,,37,7,-,-,-,-,-,-,-,-,-,-,2,-,41,8,-,-,-,-,,-,-,-
+great-moon-secret,Great Moon Secret,Weapon,rogue,,-,,37,6,-,-,-,-,-,-,-,-,-,-,2,-,38,7,-,-,-,-,,-,-,-
+moon-secret,Moon Secret,Weapon,rogue,,-,,37,7,-,-,-,-,-,-,-,-,-,-,2,-,32,5,-,-,-,-,,-,-,-
+dragon-scale-dagger,Dragon Scale Dagger,Weapon,rogue,,Dragon Scale Quest,,41,7,-,-,-,8,-,-,-,-,-,3,-,-,52,12,-,-,-,-,,-,-,Dragon Scale
+good-light-dagger,Good Light Dagger,Weapon,rogue,,-,,42,10,-,-,-,-,-,-,-,-,-,3,-,-,44,9,-,-,-,-,,-,-,-
+grand-light-dagger,Grand Light Dagger,Weapon,rogue,,-,,42,9,-,-,-,-,-,-,-,-,-,3,-,-,52,11,-,-,-,-,,-,-,-
+great-light-dagger,Great Light Dagger,Weapon,rogue,,-,,42,9,-,-,-,-,-,-,-,-,-,3,-,-,48,10,-,-,-,-,,-,-,-
+light-dagger,Light Dagger,Weapon,rogue,,-,,42,10,-,-,-,-,-,-,-,-,-,3,-,-,40,8,-,-,-,-,,-,-,-
+good-light-secret,Good Light Secret,Weapon,rogue,,-,,52,11,-,-,-,-,-,-,-,-,-,-,4,-,60,9,-,-,-,-,,-,-,-
+grand-light-secret,Grand Light Secret,Weapon,rogue,,-,,52,11,-,-,-,-,-,-,-,-,-,-,4,-,70,11,-,-,-,-,,-,-,-
+great-light-secret,Great Light Secret,Weapon,rogue,,-,,52,11,-,-,-,-,-,-,-,-,-,-,4,-,65,10,-,-,-,-,,-,-,-
+light-secret,Light Secret,Weapon,rogue,,-,,52,11,-,-,-,-,-,-,-,-,-,-,4,-,55,8,-,-,-,-,,-,-,-
+good-sun-dagger,Good Sun Dagger,Weapon,rogue,,-,,62,13,-,-,-,-,-,-,-,-,-,3,-,-,72,10,-,-,-,-,,-,-,-
+grand-sun-dagger,Grand Sun Dagger,Weapon,rogue,,-,,62,11,-,-,-,-,-,-,-,-,-,3,-,-,84,12,-,-,-,-,,-,-,-
+great-sun-dagger,Great Sun Dagger,Weapon,rogue,,-,,62,12,-,-,-,-,-,-,-,-,-,3,-,-,78,11,-,-,-,-,,-,-,-
+sun-dagger,Sun Dagger,Weapon,rogue,,-,,62,13,-,-,-,-,-,-,-,-,-,3,-,-,66,9,-,-,-,-,,-,-,-
+good-lotus-dagger,Good Lotus Dagger,Weapon,rogue,,-,,75,15,-,-,-,-,-,-,-,-,-,4,-,-,88,12,-,-,-,-,,-,-,-
+grand-lotus-dagger,Grand Lotus Dagger,Weapon,rogue,,-,,75,13,-,-,-,-,-,-,-,-,-,4,-,-,104,14,-,-,-,-,,-,-,-
+great-lotus-dagger,Great Lotus Dagger,Weapon,rogue,,-,,75,14,-,-,-,-,-,-,-,-,-,4,-,-,96,13,-,-,-,-,,-,-,-
+lotus-dagger,Lotus Dagger,Weapon,rogue,,-,,75,15,-,-,-,-,-,-,-,-,-,4,-,-,80,11,-,-,-,-,,-,-,-
+blood-dagger,Blood Dagger,Weapon,rogue,,-,,89,17,-,-,-,-,-,-,-,-,-,4,-,-,95,13,-,-,-,-,,-,-,-
+good-blood-dagger,Good Blood Dagger,Weapon,rogue,,-,,89,17,-,-,-,-,-,-,-,-,-,4,-,-,104,14,-,-,-,-,,-,-,-
+grand-blood-dagger,Grand Blood Dagger,Weapon,rogue,,-,,89,15,-,-,-,-,-,-,-,-,-,4,-,-,122,16,-,-,-,-,,-,-,-
+great-blood-dagger,Great Blood Dagger,Weapon,rogue,,-,,89,16,-,-,-,-,-,-,-,-,-,4,-,-,113,15,-,-,-,-,,-,-,-
+good-lotus-secret,Good Lotus Secret,Weapon,rogue,,-,,97,18,-,-,-,-,-,-,-,-,-,-,5,-,118,16,-,-,-,-,,-,-,-
+grand-lotus-secret,Grand Lotus Secret,Weapon,rogue,,-,,97,16,-,-,-,-,-,-,-,-,-,-,5,-,140,18,-,-,-,-,,-,-,-
+great-lotus-secret,Great Lotus Secret,Weapon,rogue,,-,,97,17,-,-,-,-,-,-,-,-,-,-,5,-,128,17,-,-,-,-,,-,-,-
+lotus-secret,Lotus Secret,Weapon,rogue,,-,,97,18,-,-,-,-,-,-,-,-,-,-,5,-,108,15,-,-,-,-,,-,-,-
+good-nagetier-dagger,Good Nagetier Dagger,Weapon,rogue,,-,,99,18,-,-,-,-,-,-,-,-,-,5,-,-,140,26,-,-,-,-,,-,-,-
+grand-nagetier-dagger,Grand Nagetier Dagger,Weapon,rogue,,-,,99,16,-,-,-,-,-,-,-,-,-,5,-,-,162,30,-,-,-,-,,-,-,-
+great-nagetier-dagger,Great Nagetier Dagger,Weapon,rogue,,-,,99,17,-,-,-,-,-,-,-,-,-,5,-,-,150,28,-,-,-,-,,-,-,-
+nagetier-dagger,Nagetier Dagger,Weapon,rogue,,-,,99,18,-,-,-,-,-,-,-,-,-,5,-,-,132,25,-,-,-,-,,-,-,-
+good-moon-secret,Good Moon Secret,Weapon,rogue,,-,,37,7,-,-,-,-,-,-,-,-,-,-,2,-,35,6,-,-,-,-,,-,-,-
+grand-master-shadow-plate,Grand Master Shadow Plate,Armor,rogue,male,-,,-,12,2000,1000,-48,40,3,-,-,-,3,10,-,-,-,10,-,-,-,-,,-,-,-
+refined-rogue-master-mantle,Refined Rogue Master Mantle,Armor,rogue,male,-,,-,12,1000,500,-43,30,1,-,-,-,1,5,-,-,-,5,-,-,-,-,,-,-,-
+rogue-master-mantle,Rogue Master Mantle,Armor,rogue,male,-,,-,12,1000,-500,-42,30,-1,-,-,-,-1,3,-,-,-,3,-,-,-,-,,-,-,-
+grand-master-shadow-mail,Grand Master Shadow Mail,Armor,rogue,male,-,,-,12,2000,1000,-46,40,1,1,1,1,1,5,5,-,-,5,-,5,-,5,,-,-,-
+loures-scout-leather,Loures Scout Leather,Armor,rogue,male,-,,3,4,-,-,-5,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mileth-scout-leather,Mileth Scout Leather,Armor,rogue,male,-,,3,4,-,-,-5,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rucesion-scout-leather,Rucesion Scout Leather,Armor,rogue,male,-,,3,4,-,-,-5,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+scout-leather,Scout Leather,Armor,rogue,male,-,,3,4,-,-,-5,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+suomi-scout-leather,Suomi Scout Leather,Armor,rogue,male,-,,3,4,-,-,-5,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+refined-scout-leather,Refined Scout Leather,Armor,rogue,male,-,,8,4,25,25,-7,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+dwarvish-leather,Dwarvish Leather,Armor,rogue,male,-,,11,6,25,25,-9,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+loures-dwarvish-leather,Loures Dwarvish Leather,Armor,rogue,male,-,,11,6,25,25,-9,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mileth-dwarvish-leather,Mileth Dwarvish Leather,Armor,rogue,male,-,,11,6,25,25,-9,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rucesion-dwarvish-leather,Rucesion Dwarvish Leather,Armor,rogue,male,-,,11,6,25,25,-9,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+suomi-dwarvish-leather,Suomi Dwarvish Leather,Armor,rogue,male,-,,11,6,25,25,-9,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+refined-dwarvish-leather,Refined Dwarvish Leather,Armor,rogue,male,-,,26,6,50,50,-14,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+loures-paluten,Loures Paluten,Armor,rogue,male,-,,41,9,125,50,-19,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mileth-paluten,Mileth Paluten,Armor,rogue,male,-,,41,9,125,50,-19,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+paluten,Paluten,Armor,rogue,male,-,,41,9,125,50,-19,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rucesion-paluten,Rucesion Paluten,Armor,rogue,male,-,,41,9,125,50,-19,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+suomi-paluten,Suomi Paluten,Armor,rogue,male,-,,41,9,125,50,-19,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+refined-paluten,Refined Paluten,Armor,rogue,male,-,,56,9,150,75,-24,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+male-reiter-mail,Male Reiter Mail,Armor,rogue,male,-,,60,5,250,100,-25,10,-,-,-,-,1,-,-,-,-,-,-,-,-,-,,-,-,-
+keaton,Keaton,Armor,rogue,male,-,,71,13,300,150,-29,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+loures-keaton,Loures Keaton,Armor,rogue,male,-,,71,13,300,150,-29,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mileth-keaton,Mileth Keaton,Armor,rogue,male,-,,71,13,300,150,-29,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rucesion-keaton,Rucesion Keaton,Armor,rogue,male,-,,71,13,300,150,-29,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+suomi-keaton,Suomi Keaton,Armor,rogue,male,-,,71,13,300,150,-29,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+male-marauder-hide,Male Marauder Hide,Armor,rogue,male,-,,80,20,-300,-300,-29,-,-,-,-,-,2,5,-,-,-,-,-,-,-,-,,-,-,-
+refined-keaton,Refined Keaton,Armor,rogue,male,-,,86,13,400,175,-34,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+bardocle,Bardocle,Armor,rogue,male,-,,97,18,450,225,-36,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+loures-bardocle,Loures Bardocle,Armor,rogue,male,-,,97,18,450,225,-36,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mileth-bardocle,Mileth Bardocle,Armor,rogue,male,-,,97,18,450,225,-36,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rucesion-bardocle,Rucesion Bardocle,Armor,rogue,male,-,,97,18,450,225,-36,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+suomi-bardocle,Suomi Bardocle,Armor,rogue,male,-,,97,18,450,225,-36,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+refined-bardocle,Refined Bardocle,Armor,rogue,male,-,,99,18,600,300,-38,10,-,-,-,-,2,-,-,-,-,-,-,-,-,-,,-,-,-
+grand-master-shadow-mask,Grand Master Shadow Mask,Helm,rogue,male,-,,-,1,1000,1000,-3,20,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+grand-master-shadow-plate-2,Grand Master Shadow Plate,Armor,rogue,female,-,,-,12,2000,1000,-46,40,1,1,1,1,1,5,5,-,-,5,-,5,-,5,,-,-,-
+refined-rogue-master-dress,Refined Rogue Master Dress,Armor,rogue,female,-,,-,12,1000,500,-43,30,1,-,-,-,1,5,-,-,-,5,-,-,-,-,,-,-,-
+rogue-master-dress,Rogue Master Dress,Armor,rogue,female,-,,-,12,1000,-500,-42,30,-1,-,-,-,-1,3,-,-,-,3,-,-,-,-,,-,-,-
+cotte,Cotte,Armor,rogue,female,-,,3,4,-,-,-5,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+loures-cotte,Loures Cotte,Armor,rogue,female,-,,3,4,-,-,-5,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mileth-cotte,Mileth Cotte,Armor,rogue,female,-,,3,4,-,-,-5,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rucesion-cotte,Rucesion Cotte,Armor,rogue,female,-,,3,4,-,-,-5,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+suomi-cotte,Suomi Cotte,Armor,rogue,female,-,,3,4,-,-,-5,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+refined-cotte,Refined Cotte,Armor,rogue,female,-,,8,4,25,25,-7,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+brigandine,Brigandine,Armor,rogue,female,-,,11,6,25,25,-9,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+loures-brigandine,Loures Brigandine,Armor,rogue,female,-,,11,6,25,25,-9,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mileth-brigandine,Mileth Brigandine,Armor,rogue,female,-,,11,6,25,25,-9,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rucesion-brigandine,Rucesion Brigandine,Armor,rogue,female,-,,11,6,25,25,-9,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+suomi-brigandine,Suomi Brigandine,Armor,rogue,female,-,,11,6,25,25,-9,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+refined-brigandine,Refined Brigandine,Armor,rogue,female,-,,26,6,50,50,-14,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+corsette,Corsette,Armor,rogue,female,-,,41,9,125,50,-19,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+loures-corsette,Loures Corsette,Armor,rogue,female,-,,41,9,125,50,-19,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mileth-corsette,Mileth Corsette,Armor,rogue,female,-,,41,9,125,50,-19,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rucesion-corsette,Rucesion Corsette,Armor,rogue,female,-,,41,9,125,50,-19,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+suomi-corsette,Suomi Corsette,Armor,rogue,female,-,,41,9,125,50,-19,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+refined-corsette,Refined Corsette,Armor,rogue,female,-,,56,9,150,75,-24,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+female-reiter-mail,Female Reiter Mail,Armor,rogue,female,-,,60,5,250,100,-25,10,-,-,-,-,1,-,-,-,-,-,-,-,-,-,,-,-,-
+loures-pebble-rose,Loures Pebble Rose,Armor,rogue,female,-,,71,13,300,150,-29,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mileth-pebble-rose,Mileth Pebble Rose,Armor,rogue,female,-,,71,13,300,150,-29,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+pebble-rose,Pebble Rose,Armor,rogue,female,-,,71,13,300,150,-29,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rucesion-pebble-rose,Rucesion Pebble Rose,Armor,rogue,female,-,,71,13,300,150,-29,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+suomi-pebble-rose,Suomi Pebble Rose,Armor,rogue,female,-,,71,13,300,150,-29,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+female-marauder-hide,Female Marauder Hide,Armor,rogue,female,-,,80,20,-300,-300,-29,-,-,-,-,-,2,5,-,-,-,-,-,-,-,-,,-,-,-
+refined-pebble-rose,Refined Pebble Rose,Armor,rogue,female,-,,86,13,400,175,-34,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+kagum,Kagum,Armor,rogue,female,-,,97,18,450,225,-36,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+loures-kagum,Loures Kagum,Armor,rogue,female,-,,97,18,450,225,-36,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mileth-kagum,Mileth Kagum,Armor,rogue,female,-,,97,18,450,225,-36,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rucesion-kagum,Rucesion Kagum,Armor,rogue,female,-,,97,18,450,225,-36,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+suomi-kagum,Suomi Kagum,Armor,rogue,female,-,,97,18,450,225,-36,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+refined-kagum,Refined Kagum,Armor,rogue,female,-,,99,18,600,300,-38,10,-,-,-,-,2,-,-,-,-,-,-,-,-,-,,-,-,-
+grand-master-shadow-hood,Grand Master Shadow Hood,Helm,rogue,female,-,,-,1,1000,1000,-3,20,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+master-saber,Master Saber,Weapon,warrior,,Mastering,-,-,7,2000,-,-,-,-,-,-,-,-,-,-,-,250,36,-,-,-,-,,-,-,-
+beryl-saber,Beryl Saber,Weapon,warrior,,Weaponsmithing,-,-,9,750,-,1,-,-,-,-,-,-,-,-,-,275,38,-,-,137,18,,-,-,-
+good-beryl-saber,Good Beryl Saber,Weapon,warrior,,Weaponsmithing,-,-,9,1000,-,-,-,-,-,-,-,-,-,-,-,300,40,-,-,150,20,,-,-,-
+good-ruby-saber,Good Ruby Saber,Weapon,warrior,,Weaponsmithing,-,-,9,-,-,2,-,-,-,-,-,-,-,-,-,325,42,-,-,-,-,,-,-,-
+good-sapphire-saber,Good Sapphire Saber,Weapon,warrior,,Weaponsmithing,-,-,9,-,1000,3,-,-,-,-,-,-,-,5,-,275,36,225,29,225,29,,-,-,-
+grand-beryl-saber,Grand Beryl Saber,Weapon,warrior,,Weaponsmithing,-,-,8,1500,-,-1,-,-,-,-,-,-,-,-,-,350,45,-,-,175,22,,2,-,-
+grand-ruby-saber,Grand Ruby Saber,Weapon,warrior,,Weaponsmithing,-,-,7,-,-,1,-,-,-,-,-,-,-,-,-,375,50,-,-,-,-,,2,-,-
+grand-sapphire-saber,Grand Sapphire Saber,Weapon,warrior,,Weaponsmithing,-,-,8,-,600,2,-,-,-,-,-,-,-,7,-,325,41,275,32,275,32,,2,-,-
+great-beryl-saber,Great Beryl Saber,Weapon,warrior,,Weaponsmithing,-,-,9,1250,-,-,-,-,-,-,-,-,-,-,-,325,42,-,-,162,21,,-,-,-
+great-ruby-saber,Great Ruby Saber,Weapon,warrior,,Weaponsmithing,-,-,9,-,-,2,-,-,-,-,-,-,-,-,-,350,45,-,-,-,-,,-,-,-
+great-sapphire-saber,Great Sapphire Saber,Weapon,warrior,,Weaponsmithing,-,-,9,-,1400,3,-,-,-,-,-,-,-,6,-,300,39,250,29,250,29,,-,-,-
+ruby-saber,Ruby Saber,Weapon,warrior,,Weaponsmithing,-,-,9,-,-,3,-,-,-,-,-,-,-,-,-,300,39,-,-,-,-,,-,-,-
+sapphire-saber,Sapphire Saber,Weapon,warrior,,Weaponsmithing,-,-,9,-,600,3,-,-,-,-,-,-,-,4,-,250,34,200,27,200,27,,-,-,-
+dawnreaver-battle-axe,Dawnreaver Battle Axe,Weapon,warrior,,Tauren,/quests/circle_1/find_the_mysterious_artifact#part-7-the-creants,GM,10,2500,-,7,-,3,-,-,-,-,16,-,-,700,53,-,-,-,-,,4,-,-
+duskrender-battle-axe,Duskrender Battle Axe,Weapon,warrior,,Tauren,/quests/circle_1/find_the_mysterious_artifact#part-7-the-creants,GM,10,4000,-,6,-,5,-,-,-,-,16,-,-,750,57,-,-,-,-,,4,-,-
+empowered-hy-brasyl-escalon,Empowered Hy-Brasyl Escalon,Weapon,warrior,,Empowering Stone,-,-,10,1200,-,7,-,-,-,-,-,-,14,-,-20,500,43,-,-,-,-,,2,-,-
+enchanted-hy-brasyl-escalon,Enchanted Hy-Brasyl Escalon,Weapon,warrior,,Empowering Stone,-,-,10,500,500,8,-,-,-,-,-,-,14,4,-,500,37,200,18,200,18,,2,-,-
+hy-brasyl-escalon,Hy-Brasyl Escalon,Weapon,warrior,,Weaponsmithing,-,-,10,1000,-,8,-,-,-,-,-,-,12,-,-,400,36,-,-,-,-,,-,-,-
+forest-escalon,Forest Escalon,Weapon,warrior,,Weaponsmithing,-,-,12,400,800,8,-,-,-,-,-,-,12,6,-,425,35,225,26,225,26,,-,-,-
+good-forest-escalon,Good Forest Escalon,Weapon,warrior,,Weaponsmithing,-,-,12,600,1000,8,-,-,-,-,-,-,13,7,-,475,37,250,28,250,28,,-,-,-
+good-moon-escalon,Good Moon Escalon,Weapon,warrior,,Weaponsmithing,-,-,12,1500,500,6,-,-,-,-,-,-,13,-,-,500,40,-,-,225,20,,-,-,-
+good-shadow-escalon,Good Shadow Escalon,Weapon,warrior,,Weaponsmithing,-,-,12,1400,-,8,-,-,-,-,-,-,13,-,-18,550,42,-,-,-,-,,-,-,-
+grand-forest-escalon,Grand Forest Escalon,Weapon,warrior,,Weaponsmithing,-,-,12,1000,2000,8,-,-,-,-,-,-,15,9,-,575,42,300,33,300,33,,2,-,-
+grand-moon-escalon,Grand Moon Escalon,Weapon,warrior,,Weaponsmithing,-,-,12,1500,500,5,-,-,-,-,-,-,15,-,-,600,44,-,-,275,22,,2,-,-
+grand-shadow-escalon,Grand Shadow Escalon,Weapon,warrior,,Weaponsmithing,-,-,11,2000,-,8,-,-,-,-,-,-,15,-,-18,650,49,-,-,-,-,,2,-,-
+great-forest-escalon,Great Forest Escalon,Weapon,warrior,,Weaponsmithing,-,-,12,800,1500,8,-,-,-,-,-,-,14,8,-,525,39,275,30,275,30,,-,-,-
+great-moon-escalon,Great Moon Escalon,Weapon,warrior,,Weaponsmithing,-,-,12,1500,500,6,-,-,-,-,-,-,14,-,-,550,42,-,-,250,21,,-,-,-
+great-shadow-escalon,Great Shadow Escalon,Weapon,warrior,,Weaponsmithing,-,-,12,1750,-,8,-,-,-,-,-,-,14,-,-18,600,45,-,-,-,-,,-,-,-
+moon-escalon,Moon Escalon,Weapon,warrior,,Weaponsmithing,-,-,12,1100,400,7,-,-,-,-,-,-,12,-,-,450,38,-,-,200,19,,-,-,-
+shadow-escalon,Shadow Escalon,Weapon,warrior,,Weaponsmithing,-,-,12,1000,-,8,-,-,-,-,-,-,12,-,-18,500,39,-,-,-,-,,-,-,-
+mystic-sword,Mystic Sword,Weapon,warrior,,The Exchange,-,11,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+claidheamh,Claidheamh,Weapon,warrior,,Mileth Weapon Shop,-,11,8,-,-500,-,-,-,-,-,-,-,-,-,-,29,-,-,-,-,-,,-,-,-
+good-claidheamh,Good Claidheamh,Weapon,warrior,,Weaponsmithing,-,11,8,-,-400,-,-,-,-,-,-,-,-,-,-,32,-,-,-,-,-,,-,-,-
+grand-claidheamh,Grand Claidheamh,Weapon,warrior,,Weaponsmithing,-,11,7,-,-300,-,-,-,-,-,-,-,-,-,-,38,-,-,-,-,-,,-,-,-
+great-claidheamh,Great Claidheamh,Weapon,warrior,,Weaponsmithing,-,11,8,-,-300,-,-,-,-,-,-,-,-,-,-,35,-,-,-,-,-,,-,-,-
+good-hatchet,Good Hatchet,Weapon,warrior,,Weaponsmithing,-,11,7,-,-,-,-,-,-,-,-,-,-,-,-,33,3,-,-,-,-,,-,-,-
+grand-hatchet,Grand Hatchet,Weapon,warrior,,Weaponsmithing,-,11,7,-,-,-,-,-,-,-,-,-,-,-,-,39,5,-,-,-,-,,-,-,-
+great-hatchet,Great Hatchet,Weapon,warrior,,Weaponsmithing,-,11,7,-,-,-,-,-,-,-,-,-,-,-,-,36,4,-,-,-,-,,-,-,-
+hatchet,Hatchet,Weapon,warrior,,Weaponsmithing,-,11,7,-,-,-,-,-,-,-,-,-,-,-,-,30,2,-,-,-,-,,-,-,-
+broad-sword,Broad Sword,Weapon,warrior,,Piet Weaponsmith,-,17,9,-,-500,-,-,-,-,-,-,-,-,-,-,37,-,-,-,-,-,,-,-,-
+good-broad-sword,Good Broad Sword,Weapon,warrior,,Weaponsmithing,-,17,9,-,-400,-,-,-,-,-,-,-,-,-,-,40,-,-,-,-,-,,-,-,-
+grand-broad-sword,Grand Broad Sword,Weapon,warrior,,Weaponsmithing,-,17,8,-,-200,-,-,-,-,-,-,-,-,-,-,48,-,-,-,-,-,,-,-,-
+great-broad-sword,Great Broad Sword,Weapon,warrior,,Weaponsmithing,-,17,8,-,-300,-,-,-,-,-,-,-,-,-,-,44,-,-,-,-,-,,-,-,-
+good-harpoon,Good Harpoon,Weapon,warrior,,Weaponsmithing,-,21,9,-,-,-,-,-,-,-,-,-,-,-,-,40,4,-,-,-,-,,-,-,-
+grand-harpoon,Grand Harpoon,Weapon,warrior,,Weaponsmithing,-,21,8,-,-,-,-,-,-,-,-,-,-,-,-,48,6,-,-,-,-,,-,-,-
+great-harpoon,Great Harpoon,Weapon,warrior,,Weaponsmithing,-,21,8,-,-,-,-,-,-,-,-,-,-,-,-,44,5,-,-,-,-,,-,-,-
+harpoon,Harpoon,Weapon,warrior,,Mythic Vendor,-,21,9,-,-,-,-,-,-,-,-,-,-,-,-,36,3,-,-,-,-,,-,-,-
+battle-sword,Battle Sword,Weapon,warrior,,Loures 2F Weapons,-,26,10,-,-750,-,-,-,-,-,-,-,-,-,-,47,-,-,-,-,-,,-,-,-
+good-battle-sword,Good Battle Sword,Weapon,warrior,,Weaponsmithing,-,26,10,-,-650,-,-,-,-,-,-,-,-,-,-,51,-,-,-,-,-,,-,-,-
+grand-battle-sword,Grand Battle Sword,Weapon,warrior,,Weaponsmithing,-,26,9,-,-500,-,-,-,-,-,-,-,-,-,-,60,-,-,-,-,-,,-,-,-
+great-battle-sword,Great Battle Sword,Weapon,warrior,,Weaponsmithing,-,26,9,-,-550,-,-,-,-,-,-,-,-,-,-,55,-,-,-,-,-,,-,-,-
+good-masquerade,Good Masquerade,Weapon,warrior,,Weaponsmithing,-,31,14,-,-1100,-,-,-,-,-1,-,-,-,-,-,59,-,-,-,-,-,,-,-,-
+grand-masquerade,Grand Masquerade,Weapon,warrior,,Weaponsmithing,-,31,14,-,-500,-,-,-,-,-1,-,-,-,-,-,70,-,-,-,-,-,,-,-,-
+great-masquerade,Great Masquerade,Weapon,warrior,,Weaponsmithing,-,31,14,-,-900,-,-,-,-,-1,-,-,-,-,-,64,-,-,-,-,-,,-,-,-
+masquerade,Masquerade,Weapon,warrior,,Loures 2F Weapons,-,31,14,-,-1250,-,-,-,-,-1,-,-,-,-,-,54,-,-,-,-,-,,-,-,-
+good-scimitar,Good Scimitar,Weapon,warrior,,Weaponsmithing,-,36,12,-,-,-,-,-,-,-,-,-,-,-,-,46,6,-,-,-,-,,-,-,-
+grand-scimitar,Grand Scimitar,Weapon,warrior,,Weaponsmithing,-,36,10,-,-,-,-,-,-,-,-,-,-,-,-,55,8,-,-,-,-,,-,-,-
+great-scimitar,Great Scimitar,Weapon,warrior,,Weaponsmithing,-,36,11,-,-,-,-,-,-,-,-,-,-,-,-,50,7,-,-,-,-,,-,-,-
+scimitar,Scimitar,Weapon,warrior,,Mythic Vendor,-,36,13,-,-,-,-,-,-,-,-,-,-,-,-,42,5,-,-,-,-,,-,-,-
+dragon-scale-sword,Dragon Scale Sword,Weapon,warrior,,Dragon Scale Quest,-,41,8,-,-,-1,10,-,-,-,-,-,-,-2,-,78,10,-,-,-,-,,-,-,Dragon Scale
+bramble,Bramble,Weapon,warrior,,Weaponsmithing,-,41,10,-,-1500,-,-,-,-,-,-,-,-,-,-,55,-,-,-,-,-,,-,-,-
+good-bramble,Good Bramble,Weapon,warrior,,Weaponsmithing,-,41,10,-,-1300,-,-,-,-,-,-,-,-,-,-,60,-,-,-,-,-,,-,-,-
+grand-bramble,Grand Bramble,Weapon,warrior,,Weaponsmithing,-,41,10,-,-900,-,-,-,-,-,-,-,-,-,-,70,-,-,-,-,-,,-,-,-
+great-bramble,Great Bramble,Weapon,warrior,,Weaponsmithing,-,41,9,-,-1100,-,-,-,-,-,-,-,-,-,-,65,-,-,-,-,-,,-,-,-
+club,Club,Weapon,warrior,,Mythic Vendor,-,41,10,-,-,-,-,-,-,-,-,-,-,-,-,80,-,-,-,-,-,,-,-,-
+good-club,Good Club,Weapon,warrior,,Weaponsmithing,-,41,10,-,-,-,-,-,-,-,-,-,-,-,-,88,-,-,-,-,-,,-,-,-
+grand-club,Grand Club,Weapon,warrior,,Weaponsmithing,-,41,9,-,-,-,-,-,-,-,-,-,-,-,-,104,-,-,-,-,-,,-,-,-
+great-club,Great Club,Weapon,warrior,,Weaponsmithing,-,41,9,-,-,-,-,-,-,-,-,-,-,-,-,96,-,-,-,-,-,,-,-,-
+good-longsword,Good Longsword,Weapon,warrior,,Weaponsmithing,-,50,18,-,-2300,-,-,-,-,-,-,-,5,-,-,90,-,-,-,-,-,,-,-,-
+grand-longsword,Grand Longsword,Weapon,warrior,,Weaponsmithing,-,50,18,-,-1500,-,-,-,-,-,-,-,7,-,-,108,-,-,-,-,-,,-,-,-
+great-longsword,Great Longsword,Weapon,warrior,,Weaponsmithing,-,50,17,-,-2000,-,-,-,-,-,-,-,6,-,-,99,-,-,-,-,-,,-,-,-
+longsword,Longsword,Weapon,warrior,,Loures 2F Weapons,-,50,18,-,-2500,-,-,-,-,-,-,-,5,-,-,82,-,-,-,-,-,,-,-,-
+good-spiked-club,Good Spiked Club,Weapon,warrior,,Weaponsmithing,-,50,11,-,-,-,-,-,-,-,-,-,-,-,-,81,6,-,-,-,-,,-,-,-
+grand-spiked-club,Grand Spiked Club,Weapon,warrior,,Weaponsmithing,-,50,10,-,-,-,-,-,-,-,-,-,-,-,-,95,8,-,-,-,-,,-,-,-
+great-spiked-club,Great Spiked Club,Weapon,warrior,,Weaponsmithing,-,50,10,-,-,-,-,-,-,-,-,-,-,-,-,88,7,-,-,-,-,,-,-,-
+spiked-club,Spiked Club,Weapon,warrior,,Weaponsmithing,-,50,11,-,-,-,-,-,-,-,-,-,-,-,-,74,5,-,-,-,-,,-,-,-
+spiked-flail,Spiked Flail,Weapon,warrior,,Weaponsmithing,-,60,13,-,-,-,-,-,-,-,-,-,-,-,-,98,7,-,-,-,-,,-,-,-
+good-spiked-flail,Good Spiked Flail,Weapon,warrior,,Weaponsmithing,-,60,13,-,-,-,-,-,-,-,-,-,-,-,-,108,8,-,-,-,-,,-,-,-
+grand-spiked-flail,Grand Spiked Flail,Weapon,warrior,,Weaponsmithing,-,60,12,-,-,-,-,-,-,-,-,-,-,-,-,130,10,-,-,-,-,,-,-,-
+great-spiked-flail,Great Spiked Flail,Weapon,warrior,,Weaponsmithing,-,60,12,-,-,-,-,-,-,-,-,-,-,-,-,118,9,-,-,-,-,,-,-,-
+claidhmore,Claidhmore,Weapon,warrior,,Loures 1F Weapons,-,71,40,-,-2000,5,-,-,-,-,-,-,5,-,-,144,-,-,-,-,-,,-,-,-
+good-claidhmore,Good Claidhmore,Weapon,warrior,,Weaponsmithing,-,71,39,-,-1600,5,-,-,-,-,-,-,6,-,-,156,-,-,-,-,-,,-,-,-
+grand-claidhmore,Grand Claidhmore,Weapon,warrior,,Weaponsmithing,-,71,35,-,-800,5,-,-,-,-,-,-,8,-,-,180,-,-,-,-,-,,-,-,-
+great-claidhmore,Great Claidhmore,Weapon,warrior,,Weaponsmithing,-,71,37,-,-1200,5,-,-,-,-,-,-,7,-,-,168,-,-,-,-,-,,-,-,-
+good-handaxe,Good Handaxe,Weapon,warrior,,Weaponsmithing,-,71,18,-,-,-,-,-,-,-,-,-,-,-,-,110,10,-,-,-,-,,-,-,-
+grand-handaxe,Grand Handaxe,Weapon,warrior,,Weaponsmithing,-,71,16,-,-,-,-,-,-,-,-,-,-,-,-,130,12,-,-,-,-,,-,-,-
+great-handaxe,Great Handaxe,Weapon,warrior,,Weaponsmithing,-,71,17,-,-,-,-,-,-,-,-,-,-,-,-,120,11,-,-,-,-,,-,-,-
+handaxe,Handaxe,Weapon,warrior,,Bosses and Weaponsmithing,-,71,18,-,-,-,-,-,-,-,-,-,-,-,-,100,9,-,-,-,-,,-,-,-
+emerald-sword,Emerald Sword,Weapon,warrior,,Loures 1F Weapons,-,78,45,-,-2000,5,-,-,-,-,-,-,6,-,-,166,-,-,-,-,-,,-,-,-
+good-emerald-sword,Good Emerald Sword,Weapon,warrior,,Weaponsmithing,-,78,43,-,-1600,5,-,-,-,-,-,-,7,-,-,180,-,-,-,-,-,,-,-,-
+grand-emerald-sword,Grand Emerald Sword,Weapon,warrior,,Weaponsmithing,-,78,40,-,-800,5,-,-,-,-,-,-,9,-,-,208,-,-,-,-,-,,-,-,-
+great-emerald-sword,Great Emerald Sword,Weapon,warrior,,Weaponsmithing,-,78,42,-,-1200,5,-,-,-,-,-,-,8,-,-,194,-,-,-,-,-,,-,-,-
+cutlass,Cutlass,Weapon,warrior,,Mythic Vendor,-,80,18,-,-,-,-,-,-,-,-,-,-,-,-,110,10,-,-,-,-,,-,-,-
+good-cutlass,Good Cutlass,Weapon,warrior,,Weaponsmithing,-,80,18,-,-,-,-,-,-,-,-,-,-,-,-,122,11,-,-,-,-,,-,-,-
+grand-cutlass,Grand Cutlass,Weapon,warrior,,Weaponsmithing,-,80,17,-,-,-,-,-,-,-,-,-,-,-,-,148,13,-,-,-,-,,-,-,-
+great-cutlass,Great Cutlass,Weapon,warrior,,Weaponsmithing,-,80,17,-,-,-,-,-,-,-,-,-,-,-,-,134,12,-,-,-,-,,-,-,-
+gladius,Gladius,Weapon,warrior,,Weaponsmithing,-,86,55,-,-2000,5,-,-,-,-,-,-,6,-,-,188,7,-,-,-,-,,-,-,-
+good-gladius,Good Gladius,Weapon,warrior,,Weaponsmithing,-,86,53,-,-1600,5,-,-,-,-,-,-,7,-,-,204,9,-,-,-,-,,-,-,-
+grand-gladius,Grand Gladius,Weapon,warrior,,Weaponsmithing,-,86,48,-,-800,5,-,-,-,-,-,-,9,-,-,236,14,-,-,-,-,,-,-,-
+great-gladius,Great Gladius,Weapon,warrior,,Weaponsmithing,-,86,50,-,-1200,5,-,-,-,-,-,-,8,-,-,220,11,-,-,-,-,,-,-,-
+good-talgonite-axe,Good Talgonite Axe,Weapon,warrior,,Weaponsmithing,-,95,22,-,-,-,-,-,-,-,-,-,-,-,-,154,13,-,-,-,-,,-,-,-
+grand-talgonite-axe,Grand Talgonite Axe,Weapon,warrior,,Weaponsmithing,-,95,20,-,-,-,-,-,-,-,-,-,-,-,-,182,15,-,-,-,-,,-,-,-
+great-talgonite-axe,Great Talgonite Axe,Weapon,warrior,,Weaponsmithing,-,95,20,-,-,-,-,-,-,-,-,-,-,-,-,168,14,-,-,-,-,,-,-,-
+talgonite-axe,Talgonite Axe,Weapon,warrior,,Weaponsmithing,-,95,22,-,-,-,-,-,-,-,-,-,-,-,-,140,12,-,-,-,-,,-,-,-
+good-kindjal,Good Kindjal,Weapon,warrior,,Weaponsmithing,-,97,63,-,-700,5,-,-,-,-,-,-,8,-,-,275,12,-,-,-,-,,-,-,-
+grand-kindjal,Grand Kindjal,Weapon,warrior,,Weaponsmithing,-,97,56,-,-100,5,-,-,-,-,-,-,10,-,-,325,18,-,-,-,-,,-,-,-
+great-kindjal,Great Kindjal,Weapon,warrior,,Weaponsmithing,-,97,60,-,-400,5,-,-,-,-,-,-,9,-,-,300,15,-,-,-,-,,-,-,-
+kindjal,Kindjal,Weapon,warrior,,Weaponsmithing,-,97,65,-,-1000,5,-,-,-,-,-,-,8,-,-,250,10,-,-,-,-,,-,-,-
+good-hy-brasyl-battle-axe,Good Hy-Brasyl Battle Axe,Weapon,warrior,,Weaponsmithing,-,99,49,-,-,5,-,-,-,-,-,-,12,-,-,305,22,-,-,-,-,,-,-,-
+grand-hy-brasyl-battle-axe,Grand Hy-Brasyl Battle Axe,Weapon,warrior,,Weaponsmithing,-,99,45,-,-,5,-,-,-,-,-,-,12,-,-,360,28,-,-,-,-,,-,-,-
+great-hy-brasyl-battle-axe,Great Hy-Brasyl Battle Axe,Weapon,warrior,,Weaponsmithing,-,99,48,-,-,5,-,-,-,-,-,-,12,-,-,330,24,-,-,-,-,,-,-,-
+hy-brasyl-battle-axe,Hy-Brasyl Battle Axe,Weapon,warrior,,Grand Mastering,-,99,50,-,-,5,-,-,-,-,-,-,12,-,-,280,20,-,-,-,-,,-,-,-
+grand-master-war-armor,Grand Master War Armor,Weapon,warrior,,Medusa,/quests/circle_1/find_the_mysterious_artifact#part-7-the-creants,GM,40,3000,500,-51,30,2,-,-,2,2,10,-,-,-,10,-,-,-,-,,-,-,-
+grand-master-warrior-armor,Grand Master Warrior Armor,Armor,warrior,male|female,-,,-,40,2000,1000,-49,40,1,1,1,1,1,5,5,-,-,5,-,5,-,5,,-,-,-
+refined-warrior-master-mantle,Refined Warrior Master Mantle,Armor,warrior,male,-,,-,40,1500,250,-46,30,1,-,-,-,1,5,-,-,-,5,-,-,-,-,,-,-,-
+warrior-master-mantle,Warrior Master Mantle,Armor,warrior,male,-,,-,40,1000,-300,-45,30,-2,-,-,-,-1,3,-,-,-,3,-,-,-,-,,-,-,-
+leather-tunic,Leather Tunic,Armor,warrior,male,-,,3,4,-,-,-6,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+loures-leather-tunic,Loures Leather Tunic,Armor,warrior,male,-,,3,4,-,-,-6,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mileth-leather-tunic,Mileth Leather Tunic,Armor,warrior,male,-,,3,4,-,-,-6,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rucesion-leather-tunic,Rucesion Leather Tunic,Armor,warrior,male,-,,3,4,-,-,-6,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+suomi-leather-tunic,Suomi Leather Tunic,Armor,warrior,male,-,,3,4,-,-,-6,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+refined-leather-tunic,Refined Leather Tunic,Armor,warrior,male,-,,8,4,25,25,-9,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+jupe,Jupe,Armor,warrior,male,-,,11,9,25,25,-10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+loures-jupe,Loures Jupe,Armor,warrior,male,-,,11,9,25,25,-10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mileth-jupe,Mileth Jupe,Armor,warrior,male,-,,11,9,25,25,-10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rucesion-jupe,Rucesion Jupe,Armor,warrior,male,-,,11,9,25,25,-10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+suomi-jupe,Suomi Jupe,Armor,warrior,male,-,,11,9,25,25,-10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+lorica,Lorica,Armor,warrior,male,-,,26,9,50,50,-15,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+loures-lorica,Loures Lorica,Armor,warrior,male,-,,26,9,50,50,-15,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mileth-lorica,Mileth Lorica,Armor,warrior,male,-,,26,9,50,50,-15,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+refined-lorica,Refined Lorica,Armor,warrior,male,-,,26,9,50,50,-16,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rucesion-lorica,Rucesion Lorica,Armor,warrior,male,-,,26,9,50,50,-15,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+suomi-lorica,Suomi Lorica,Armor,warrior,male,-,,26,9,50,50,-15,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+kasmanium-armor,Kasmanium Armor,Armor,warrior,male,-,,41,23,125,50,-20,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+chainmail,Chainmail,Armor,warrior,male,-,,56,24,150,75,-25,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+loures-chainmail,Loures Chainmail,Armor,warrior,male,-,,56,24,150,75,-25,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mileth-chainmail,Mileth Chainmail,Armor,warrior,male,-,,56,24,150,75,-25,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+refined-kasmanium-armor,Refined Kasmanium Armor,Armor,warrior,male,-,,56,23,150,75,-26,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rucesion-chainmail,Rucesion Chainmail,Armor,warrior,male,-,,56,24,150,75,-25,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+suomi-chainmail,Suomi Chainmail,Armor,warrior,male,-,,56,24,150,75,-25,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+male-scarlet-carapace,Male Scarlet Carapace,Armor,warrior,male,-,,60,20,250,100,-27,10,1,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+iplet-mail,Iplet Mail,Armor,warrior,male,-,,71,35,300,150,-30,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+male-carnun-plate,Male Carnun Plate,Armor,warrior,male,-,,80,35,-800,-,-30,20,2,-,-,-,-,5,-,-,-,-,-,-,-,-,,-,-,-
+loures-platemail,Loures Platemail,Armor,warrior,male,-,,86,40,400,175,-36,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mileth-platemail,Mileth Platemail,Armor,warrior,male,-,,86,40,400,175,-36,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+platemail,Platemail,Armor,warrior,male,-,,86,40,400,175,-36,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+refined-iplet-mail,Refined Iplet Mail,Armor,warrior,male,-,,86,35,400,175,-37,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rucesion-platemail,Rucesion Platemail,Armor,warrior,male,-,,86,40,400,175,-36,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+suomi-platemail,Suomi Platemail,Armor,warrior,male,-,,86,40,400,175,-36,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+hy-brasyl-plate,Hy-Brasyl Plate,Armor,warrior,male,-,,97,40,450,225,-38,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+refined-hy-brasyl-plate,Refined Hy-Brasyl Plate,Armor,warrior,male,-,,99,40,600,300,-40,10,2,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+warrior-master-helmet,Warrior Master Helmet,Helm,warrior,male,Mastering,-,-,5,1500,250,-2,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+grand-master-warrior-helmet,Grand Master Warrior Helmet,Helm,warrior,male,-,-,-,3,2000,1000,-3,20,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+iplet-helmet,Iplet Helmet,Helm,warrior,male,Lost Woodlands,-,71,2,250,-,-1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+loures-platemail-helmet,Loures Platemail Helmet,Helm,warrior,male,Dye,-,86,4,300,-,-2,5,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mileth-platemail-helmet,Mileth Platemail Helmet,Helm,warrior,male,Dye,-,86,4,300,-,-2,5,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+platemail-helmet,Platemail Helmet,Helm,warrior,male,Eingren Manor Blacksmith,-,86,4,300,-,-2,5,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rucesion-platemail-helmet,Rucesion Platemail Helmet,Helm,warrior,male,Dye,-,86,4,300,-,-2,5,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+suomi-platemail-helmet,Suomi Platemail Helmet,Helm,warrior,male,Dye,-,86,4,300,-,-2,5,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+grand-master-war-kabuto,Grand Master War Kabuto,Helm,warrior,male,Lady Phoenix,/quests/circle_1/find_the_mysterious_artifact#part-7-the-creants,GM,3,2500,250,-4,20,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+refined-warrior-master-dress,Refined Warrior Master Dress,Armor,warrior,female,-,,-,40,1500,250,-46,30,1,-,-,-,1,5,-,-,-,5,-,-,-,-,,-,-,-
+warrior-master-dress,Warrior Master Dress,Armor,warrior,female,-,,-,40,1000,-300,-45,30,-2,-,-,-,-1,3,-,-,-,3,-,-,-,-,,-,-,-
+leather-bliaut,Leather Bliaut,Armor,warrior,female,-,,3,4,-,-,-6,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+loures-leather-bliaut,Loures Leather Bliaut,Armor,warrior,female,-,,3,4,-,-,-6,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mileth-leather-bliaut,Mileth Leather Bliaut,Armor,warrior,female,-,,3,4,-,-,-6,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rucesion-leather-bliaut,Rucesion Leather Bliaut,Armor,warrior,female,-,,3,4,-,-,-6,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+suomi-leather-bliaut,Suomi Leather Bliaut,Armor,warrior,female,-,,3,4,-,-,-6,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+refined-leather-bliaut,Refined Leather Bliaut,Armor,warrior,female,-,,8,4,25,25,-9,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+cuirass,Cuirass,Armor,warrior,female,-,,11,14,25,25,-10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+loures-cuirass,Loures Cuirass,Armor,warrior,female,-,,11,14,25,25,-10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mileth-cuirass,Mileth Cuirass,Armor,warrior,female,-,,11,14,25,25,-10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rucesion-cuirass,Rucesion Cuirass,Armor,warrior,female,-,,11,14,25,25,-10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+suomi-cuirass,Suomi Cuirass,Armor,warrior,female,-,,11,14,25,25,-10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+cotehardie,Cotehardie,Armor,warrior,female,-,,26,9,50,50,-15,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+loures-cotehardie,Loures Cotehardie,Armor,warrior,female,-,,26,9,50,50,-15,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mileth-cotehardie,Mileth Cotehardie,Armor,warrior,female,-,,26,9,50,50,-15,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+refined-cuirass,Refined Cuirass,Armor,warrior,female,-,,26,9,50,50,-16,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rucesion-cotehardie,Rucesion Cotehardie,Armor,warrior,female,-,,26,9,50,50,-15,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+suomi-cotehardie,Suomi Cotehardie,Armor,warrior,female,-,,26,9,50,50,-15,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+kasmanium-hauberk,Kasmanium Hauberk,Armor,warrior,female,-,,41,23,125,50,-20,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+loures-kasmanium-hauberk,Loures Kasmanium Hauberk,Armor,warrior,female,-,,41,23,125,50,-20,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mileth-kasmanium-hauberk,Mileth Kasmanium Hauberk,Armor,warrior,female,-,,41,23,125,50,-20,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rucesion-kasmanium-hauberk,Rucesion Kasmanium Hauberk,Armor,warrior,female,-,,41,23,125,50,-20,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+suomi-kasmanium-hauberk,Suomi Kasmanium Hauberk,Armor,warrior,female,-,,41,23,125,50,-20,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+refined-kasmanium-hauberk,Refined Kasmanium Hauberk,Armor,warrior,female,-,,56,23,150,75,-26,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+surplice-blouse,Surplice Blouse,Armor,warrior,female,-,,56,24,150,75,-25,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+female-scarlet-carapace,Female Scarlet Carapace,Armor,warrior,female,-,,60,20,250,100,-27,10,1,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+labyrinth-mail,Labyrinth Mail,Armor,warrior,female,-,,71,35,300,150,-30,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+loures-labyrinth-mail,Loures Labyrinth Mail,Armor,warrior,female,-,,71,35,300,150,-30,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mileth-labyrinth-mail,Mileth Labyrinth Mail,Armor,warrior,female,-,,71,35,300,150,-30,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rucesion-labyrinth-mail,Rucesion Labyrinth Mail,Armor,warrior,female,-,,71,35,300,150,-30,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+suomi-labyrinth-mail,Suomi Labyrinth Mail,Armor,warrior,female,-,,71,35,300,150,-30,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+female-carnun-plate,Female Carnun Plate,Armor,warrior,female,-,,80,35,-800,-,-30,20,2,-,-,-,-,5,-,-,-,-,-,-,-,-,,-,-,-
+phoenix-mail,Phoenix Mail,Armor,warrior,female,-,,86,40,400,175,-36,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+refined-phoenix-mail,Refined Phoenix Mail,Armor,warrior,female,-,,86,38,400,175,-37,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+hy-brasyl-armor,Hy-Brasyl Armor,Armor,warrior,female,-,,97,40,450,225,-38,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+refined-hy-brasyl-armor,Refined Hy-Brasyl Armor,Armor,warrior,female,-,,99,40,600,300,-40,10,2,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+warrior-master-helmet-2,Warrior Master Helmet,Helm,warrior,female,Mastering,,-,5,1500,250,-2,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+grand-master-warrior-helmet-2,Grand Master Warrior Helmet,Helm,warrior,female,-,,-,3,2000,1000,-3,20,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+labyrinth-helmet,Labyrinth Helmet,Helm,warrior,female,Lost Woodlands,,71,2,250,-,-1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+loures-labyrinth-helmet,Loures Labyrinth Helmet,Helm,warrior,female,Dye,,71,2,250,-,-1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mileth-labyrinth-helmet,Mileth Labyrinth Helmet,Helm,warrior,female,Dye,,71,2,250,-,-1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rucesion-labyrinth-helmet,Rucesion Labyrinth Helmet,Helm,warrior,female,Dye,,71,2,250,-,-1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+suomi-labyrinth-helmet,Suomi Labyrinth Helmet,Helm,warrior,female,Dye,,71,2,250,-,-1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+phoenix-helmet,Phoenix Helmet,Helm,warrior,female,Eingren Manor Blacksmith,,86,4,250,-,-1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+empowered-magus-orb,Empowered Magus Orb,Weapon,wizard,,-,,-,2,2000,1000,2,-,-,3,1,-,-,-,5,-,49,-,300,43,150,21,,2,-,-
+enchanted-magus-orb,Enchanted Magus Orb,Weapon,wizard,,-,,-,2,500,2000,-,-,-,1,3,-,-,-,4,-,137,29,275,39,137,29,,2,-,-
+magus-orb,Magus Orb,Weapon,wizard,,-,,-,2,-500,1200,3,-,2,-2,-1,-,-,-,4,-,49,-,250,37,125,23,,-,-,-
+good-staff-of-geolith,Good Staff of Geolith,Weapon,wizard,,-,,-,3,2000,500,-,-,-,-,2,-,-,-,4,-,137,19,275,39,137,19,,-,-,-
+good-staff-of-ignatar,Good Staff of Ignatar,Weapon,wizard,,-,,-,3,450,1000,1,-,-,1,1,-,-,-,5,-,49,-,325,42,162,21,,-,-,-
+good-staff-of-theselene,Good Staff of Theselene,Weapon,wizard,,-,,-,3,750,600,1,-,-,-,-,-,-,5,4,-,200,28,250,38,200,28,,-,-,-
+grand-staff-of-geolith,Grand Staff of Geolith,Weapon,wizard,,-,,-,2,4000,500,-1,-,-,1,4,-,-,-,6,-,162,22,325,45,162,22,,2,-,-
+grand-staff-of-ignatar,Grand Staff of Ignatar,Weapon,wizard,,-,,-,2,1000,2000,-,-,-,2,2,-,-,-,7,-,49,-,375,50,182,25,,2,-,-
+grand-staff-of-theselene,Grand Staff of Theselene,Weapon,wizard,,-,,-,2,1500,1000,-,-,-,-,-,-,-,7,6,-,250,34,300,42,250,34,,2,-,-
+great-staff-of-geolith,Great Staff of Geolith,Weapon,wizard,,-,,-,3,3000,500,-,-,-,-,3,-,-,-,5,-,150,21,300,42,150,21,,-,-,-
+great-staff-of-ignatar,Great Staff of Ignatar,Weapon,wizard,,-,,-,3,700,1400,1,-,-,2,1,-,-,-,6,-,49,-,350,45,175,22,,-,-,-
+great-staff-of-theselene,Great Staff of Theselene,Weapon,wizard,,-,,-,3,1000,800,1,-,-,-,-,-,-,6,5,-,225,30,275,40,225,30,,-,-,-
+staff-of-geolith,Staff of Geolith,Weapon,wizard,,-,,-,3,1000,500,1,-,-,-,1,-,-,-,4,-,125,18,250,37,125,18,,-,-,-
+staff-of-ignatar,Staff of Ignatar,Weapon,wizard,,-,,-,3,250,750,2,-,-,1,-,-,-,-,4,-,49,-,300,39,150,19,,-,-,-
+staff-of-theselene,Staff of Theselene,Weapon,wizard,,-,,-,3,500,400,2,-,-,-,-,-,-,4,4,-,175,26,225,36,175,26,,-,-,-
+good-magus-ares,Good Magus Ares,Weapon,wizard,,-,,11,2,-,175,-,-,-,-,-,-,-,-,1,-,6,-,20,9,-,-,,-,-,-
+grand-magus-ares,Grand Magus Ares,Weapon,wizard,,-,,11,2,-,225,-,-,-,-,-,-,-,-,3,-,8,-,30,11,-,-,,-,-,-
+great-magus-ares,Great Magus Ares,Weapon,wizard,,-,,11,2,-,200,-,-,-,-,-,-,-,-,2,-,7,-,25,10,-,-,,-,-,-
+magus-ares,Magus Ares,Weapon,wizard,,-,,11,2,-,150,-,-,-,-,-,-,-,-,1,-,5,-,15,8,-,-,,-,-,-
+good-magus-zeus,Good Magus Zeus,Weapon,wizard,,-,,41,2,-,250,-,-,-,-,-,-,-,-,2,-,6,-,42,14,-,-,,-,-,-
+grand-magus-zeus,Grand Magus Zeus,Weapon,wizard,,-,,41,2,-,350,-,-,-,-,-,-,-,-,4,-,10,-,58,18,-,-,,-,-,-
+great-magus-zeus,Great Magus Zeus,Weapon,wizard,,-,,41,2,-,300,-,-,-,-,-,-,-,-,3,-,8,-,50,16,-,-,,-,-,-
+magus-zeus,Magus Zeus,Weapon,wizard,,-,,41,2,-,200,-,-,-,-,-,-,-,-,1,-,5,-,35,12,-,-,,-,-,-
+good-magus-diana,Good Magus Diana,Weapon,wizard,,-,,71,2,-,325,-,-,-,-,-,-,-,-,4,-,16,-,60,32,-,-,,-,-,-
+grand-magus-diana,Grand Magus Diana,Weapon,wizard,,-,,71,2,-,400,-,-,-,-,-,-,-,-,6,-,20,-,85,38,-,-,,-,-,-
+great-magus-diana,Great Magus Diana,Weapon,wizard,,-,,71,2,-,350,-,-,-,-,-,-,-,-,5,-,18,-,70,35,-,-,,-,-,-
+magus-diana,Magus Diana,Weapon,wizard,,-,,71,2,-,300,-,-,-,-,-,-,-,-,3,-,15,-,50,30,-,-,,-,-,-
+good-oak-staff,Good Oak Staff,Weapon,wizard,,-,,97,2,100,800,-,-,-,-,-,-,-,-,6,-,22,-,95,43,-,-,,-,-,-
+grand-oak-staff,Grand Oak Staff,Weapon,wizard,,-,,97,2,200,900,-,-,-,-,-,-,-,-,7,-,28,-,125,50,-,-,,-,-,-
+great-oak-staff,Great Oak Staff,Weapon,wizard,,-,,97,2,150,850,-,-,-,-,-,-,-,-,7,-,25,-,110,46,-,-,,-,-,-
+oak-staff,Oak Staff,Weapon,wizard,,-,,97,2,100,800,-,-,-,-,-,-,-,-,5,-,20,-,80,40,-,-,,-,-,-
+grand-master-mystic-robe,Grand Master Mystic Robe,Armor,wizard,male,-,,-,10,2000,1000,-42,40,1,1,1,1,1,5,-,-,-,5,-,5,-,5,,-,-,-
+refined-wizard-master-mantle,Refined Wizard Master Mantle,Armor,wizard,male,-,,-,10,1000,500,-39,20,-,2,1,1,-,-,-,-,-,-,-,5,-,-,,-,-,-
+wizard-master-mantle,Wizard Master Mantle,Armor,wizard,male,-,,-,10,1000,-500,-38,20,2,-1,-2,1,-1,-,-,-,-,-,-,3,-,-,,-,-,-
+gardcorp,Gardcorp,Armor,wizard,male,-,,3,4,-,-,-3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+loures-gardcorp,Loures Gardcorp,Armor,wizard,male,-,,3,4,-,-,-3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mileth-gardcorp,Mileth Gardcorp,Armor,wizard,male,-,,3,4,-,-,-3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rucesion-gardcorp,Rucesion Gardcorp,Armor,wizard,male,-,,3,4,-,-,-3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+suomi-gardcorp,Suomi Gardcorp,Armor,wizard,male,-,,3,4,-,-,-3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+refined-gardcorp,Refined Gardcorp,Armor,wizard,male,-,,8,4,25,25,-5,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+journeyman,Journeyman,Armor,wizard,male,-,,11,6,25,25,-6,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+loures-journeyman,Loures Journeyman,Armor,wizard,male,-,,11,6,25,25,-6,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mileth-journeyman,Mileth Journeyman,Armor,wizard,male,-,,11,6,25,25,-6,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rucesion-journeyman,Rucesion Journeyman,Armor,wizard,male,-,,11,6,25,25,-6,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+suomi-journeyman,Suomi Journeyman,Armor,wizard,male,-,,11,6,25,25,-6,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+refined-journeyman,Refined Journeyman,Armor,wizard,male,-,,26,6,50,50,-11,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+lorum,Lorum,Armor,wizard,male,-,,41,10,75,75,-16,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+loures-lorum,Loures Lorum,Armor,wizard,male,-,,41,10,75,75,-16,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mileth-lorum,Mileth Lorum,Armor,wizard,male,-,,41,10,75,75,-16,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rucesion-lorum,Rucesion Lorum,Armor,wizard,male,-,,41,10,75,75,-16,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+suomi-lorum,Suomi Lorum,Armor,wizard,male,-,,41,10,75,75,-16,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+refined-lorum,Refined Lorum,Armor,wizard,male,-,,56,10,100,100,-21,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+male-lich-robe,Male Lich Robe,Armor,wizard,male,-,,60,7,150,150,-22,10,-,-,1,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+loures-mane,Loures Mane,Armor,wizard,male,-,,71,18,200,200,-25,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mane,Mane,Armor,wizard,male,-,,71,18,200,200,-25,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mileth-mane,Mileth Mane,Armor,wizard,male,-,,71,18,200,200,-25,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rucesion-mane,Rucesion Mane,Armor,wizard,male,-,,71,18,200,200,-25,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+suomi-mane,Suomi Mane,Armor,wizard,male,-,,71,18,200,200,-25,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+cthonic-magus-robes,Cthonic Magus Robes,Armor,wizard,male,-,,80,21,-400,300,-25,20,-,2,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+refined-mane,Refined Mane,Armor,wizard,male,-,,86,18,250,250,-30,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+duin-uasal,Duin-Uasal,Armor,wizard,male,-,,97,28,300,300,-32,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+loures-duin-uasal,Loures Duin-Uasal,Armor,wizard,male,-,,97,28,300,300,-32,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mileth-duin-uasal,Mileth Duin-Uasal,Armor,wizard,male,-,,97,28,300,300,-32,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rucesion-duin-uasal,Rucesion Duin-Uasal,Armor,wizard,male,-,,97,28,300,300,-32,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+suomi-duin-uasal,Suomi Duin-Uasal,Armor,wizard,male,-,,97,28,300,300,-32,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+refined-duin-uasal,Refined Duin-Uasal,Armor,wizard,male,-,,99,28,400,400,-34,10,-,-,2,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+gnostic-hat,Gnostic Hat,Helm,wizard,male,-,,-,1,500,750,-1,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+grand-master-mystic-cloak,Grand Master Mystic Cloak,Armor,wizard,female,-,,-,10,2000,1000,-42,40,1,1,1,1,1,5,-,-,-,5,-,5,-,5,,-,-,-
+refined-wizard-master-dress,Refined Wizard Master Dress,Armor,wizard,female,-,,-,10,1000,500,-39,20,-,2,1,1,-,-,-,-,-,-,-,5,-,-,,-,-,-
+wizard-master-dress,Wizard Master Dress,Armor,wizard,female,-,,-,10,1000,-500,-38,20,2,-1,-2,1,-1,-,-,-,-,-,-,3,-,-,,-,-,-
+loures-magi-skirt,Loures Magi Skirt,Armor,wizard,female,-,,3,4,-,-,-3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+magi-skirt,Magi Skirt,Armor,wizard,female,-,,3,4,-,-,-3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mileth-magi-skirt,Mileth Magi Skirt,Armor,wizard,female,-,,3,4,-,-,-3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rucesion-magi-skirt,Rucesion Magi Skirt,Armor,wizard,female,-,,3,4,-,-,-3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+suomi-magi-skirt,Suomi Magi Skirt,Armor,wizard,female,-,,3,4,-,-,-3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+refined-magi-skirt,Refined Magi Skirt,Armor,wizard,female,-,,8,4,25,25,-5,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+benusta,Benusta,Armor,wizard,female,-,,11,6,25,25,-6,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+loures-benusta,Loures Benusta,Armor,wizard,female,-,,11,6,25,25,-6,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mileth-benusta,Mileth Benusta,Armor,wizard,female,-,,11,6,25,25,-6,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rucesion-benusta,Rucesion Benusta,Armor,wizard,female,-,,11,6,25,25,-6,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+suomi-benusta,Suomi Benusta,Armor,wizard,female,-,,11,6,25,25,-6,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+refined-benusta,Refined Benusta,Armor,wizard,female,-,,26,6,50,50,-11,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+loures-stoller,Loures Stoller,Armor,wizard,female,-,,41,10,75,75,-16,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mileth-stoller,Mileth Stoller,Armor,wizard,female,-,,41,10,75,75,-16,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rucesion-stoller,Rucesion Stoller,Armor,wizard,female,-,,41,10,75,75,-16,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+stoller,Stoller,Armor,wizard,female,-,,41,10,75,75,-16,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+suomi-stoller,Suomi Stoller,Armor,wizard,female,-,,41,10,75,75,-16,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+refined-stoller,Refined Stoller,Armor,wizard,female,-,,56,10,100,100,-21,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+female-lich-robe,Female Lich Robe,Armor,wizard,female,-,,60,7,150,150,-22,10,-,-,1,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+clymouth,Clymouth,Armor,wizard,female,-,,71,10,200,200,-25,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+loures-clymouth,Loures Clymouth,Armor,wizard,female,-,,71,10,200,200,-25,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mileth-clymouth,Mileth Clymouth,Armor,wizard,female,-,,71,10,200,200,-25,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rucesion-clymouth,Rucesion Clymouth,Armor,wizard,female,-,,71,10,200,200,-25,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+suomi-clymouth,Suomi Clymouth,Armor,wizard,female,-,,71,10,200,200,-25,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+morrigu-magus-pellison,Morrigu Magus Pellison,Armor,wizard,female,-,,80,10,-400,300,-25,20,-,2,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+refined-clymouth,Refined Clymouth,Armor,wizard,female,-,,86,10,250,250,-30,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+clamyth,Clamyth,Armor,wizard,female,-,,97,10,300,300,-32,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+loures-clamyth,Loures Clamyth,Armor,wizard,female,-,,97,10,300,300,-32,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mileth-clamyth,Mileth Clamyth,Armor,wizard,female,-,,97,10,300,300,-32,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rucesion-clamyth,Rucesion Clamyth,Armor,wizard,female,-,,97,10,300,300,-32,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+suomi-clamyth,Suomi Clamyth,Armor,wizard,female,-,,97,10,300,300,-32,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+refined-clamyth,Refined Clamyth,Armor,wizard,female,-,,99,10,400,400,-34,10,-,-,2,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+gnostic-umber,Gnostic Umber,Helm,wizard,female,-,,-,1,500,750,-1,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+grand-master-mystic-cap,Grand Master Mystic Cap,Helm,wizard,male|female,-,,-,1,1000,1000,-2,20,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+magus-cap,Magus Cap,Helm,wizard,male,-,,11,1,25,25,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+magus-chief,Magus Chief,Helm,wizard,male,-,,11,1,25,25,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+magus-hat,Magus Hat,Helm,wizard,male,-,,41,1,-,200,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+cthonic-magus-caputium,Cthonic Magus Caputium,Helm,wizard,male,-,,80,1,250,250,-1,-,-,1,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+magus-torque,Magus Torque,Helm,wizard,female,-,,11,1,25,25,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+magus-wimple,Magus Wimple,Helm,wizard,female,-,,11,1,25,25,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+magus-vermilion,Magus Vermilion,Helm,wizard,female,-,,41,1,-,200,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+magus-hair-band,Magus Hair Band,Helm,wizard,female,-,,80,1,250,250,-1,-,-,1,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+aerium-ascetic-yowien-claw,Aerium Ascetic Yowien Claw,Weapon,adept,,Weaponsmithing,,Ab 1,-,750,750,-,-,1,1,-,-,-,-,-,28,308,49,231,37,-,-,,-,-,-
+emberite-ascetic-yowien-claw,Emberite Ascetic Yowien Claw,Weapon,adept,,Weaponsmithing,,Ab 1,-,750,750,-,-,-,-,-,-,-,-,2,20,400,57,-,-,-,-,,-,-,-
+hydrillium-ascetic-yowien-claw,Hydrillium Ascetic Yowien Claw,Weapon,adept,,Weaponsmithing,,Ab 1,-,750,1125,-,-,1,1,-,-,-,-,-,20,231,37,308,49,-,-,,-,-,-
+petramite-ascetic-yowien-claw,Petramite Ascetic Yowien Claw,Weapon,adept,,Weaponsmithing,,Ab 1,-,1125,750,-8,15,-,-,-,2,-,-,-,20,262,49,-,-,-,-,,-,-,-
+refined-ascetic-soron,Refined Ascetic Soron,Armor,adept,male,Armorsmithing,,Ab 10,-,2730,455,-51,36,2,-,-,2,2,9,-,9,-,9,-,-,-,-,,-,-,-
+refined-ascetic-soroni,Refined Ascetic Soroni,Armor,adept,female,Armorsmithing,,Ab 10,-,2730,455,-51,36,2,-,-,2,2,9,-,9,-,9,-,-,-,-,,-,-,-
+refined-verdant-soron,Refined Verdant Soron,Armor,druid,male,Armorsmithing,,Ab 10,-,2730,455,-51,36,2,-,-,2,2,9,-,9,-,9,-,-,-,-,,-,-,-
+refined-verdant-soroni,Refined Verdant Soroni,Armor,druid,female,Armorsmithing,,Ab 10,-,2730,455,-51,36,2,-,-,2,2,9,-,9,-,9,-,-,-,-,,-,-,-
+refined-festering-rotward-garb,Refined Festering Rotward Garb,Armor,plague-doctor,male,Armorsmithing,-,Ab 10,-,910,1365,-38,36,1,3,3,1,-1,-,-,-,-,-,-,-,-,4,,-,-,-
+refined-festering-rotward-gown,Refined Festering Rotward Gown,Armor,plague-doctor,female,Armorsmithing,-,Ab 10,-,910,1365,-38,36,1,3,3,1,-1,-,-,-,-,-,-,-,-,4,,-,-,-
+emberite-resonant-wooden-harp,Emberite Resonant Wooden Harp,Weapon,bard,,Weaponsmithing,,Ab 1,5,-200,1000,-,-,-,-,-,-,-,-,5,-,-,-,204,26,315,45,,-,-,-
+good-emberite-resonant-wooden-harp,Good Emberite Resonant Wooden Harp,Weapon,bard,,Weaponsmithing,,Ab 1,5,50,1150,-,1,-,-,-,-,-,-,5,-,54,-,225,28,350,48,,-,-,-
+great-emberite-resonant-wooden-harp,Great Emberite Resonant Wooden Harp,Weapon,bard,,Weaponsmithing,,Ab 1,5,250,1350,-,2,-,-,-,-,-,-,6,-,59,-,245,30,385,49,,-,-,-
+grand-emberite-resonant-wooden-harp,Grand Emberite Resonant Wooden Harp,Weapon,bard,,Weaponsmithing,,Ab 1,5,550,1600,-,3,-,-,-,-,-,-,7,-,-,-,266,32,420,53,,2,-,-
+refined-resonant-vaina,Refined Resonant Vaina,Armor,bard,male,Armorsmithing,,Ab 10,-,910,1365,-38,36,1,3,3,1,-1,-,-,-,-,-,-,-,-,4,,-,-,-
+refined-resonant-yain,Refined Resonant Yain,Armor,bard,male,Armorsmithing,,Ab 10,-,910,1365,-38,36,1,3,3,1,-1,-,-,-,-,-,-,-,-,4,,-,-,-
+refined-resonant-vainar,Refined Resonant Vainar,Armor,bard,female,Armorsmithing,,Ab 10,-,910,1365,-38,36,1,3,3,1,-1,-,-,-,-,-,-,-,-,4,,-,-,-
+great-aerium-merciless-tanken-dagger,Great Aerium Merciless Tanken Dagger,Weapon,assassin,,Weaponsmithing,,Ab 1,-,1200,1100,-,2,3,-1,-2,-,2,7,5,20,368,54,276,43,225,32,,-,-,-
+grand-emberite-merciless-tanken-dagger,Grand Emberite Merciless Tanken Dagger,Weapon,assassin,,Weaponsmithing,,Ab 1,10,1500,1350,1,2,2,-2,-2,-,2,-,4,12,519,63,-,-,-,-,,2,-,-
+grand-aerium-merciless-tanken-dagger,Grand Aerium Merciless Tanken Dagger,Weapon,assassin,,Weaponsmithing,,Ab 1,10,1500,1350,1,2,3,-1,-2,-,2,8,6,20,399,55,299,45,250,34,,2,-,-
+refined-merciless-kano,Refined Merciless Kano,Armor,assassin,male,Armorsmithing,,Ab 10,-,1820,810,-44,36,3,-,-,-,3,-,-,9,-,9,-,-,-,-,,-,-,-
+deadeye-wooden-bow,Deadeye Wooden Bow,Weapon,archer,,-,,Ab 1,10,500,500,1,-,1,-1,-1,1,1,-,-,12,225,38,-,-,-,-,,-,-,-
+great-aerium-deadeye-wooden-bow,Great Aerium Deadeye Wooden Bow,Weapon,archer,,Weaponsmithing,,-,10,950,850,-,-,2,-,-1,-,1,7,5,20,270,40,203,32,225,32,,-,-,-
+aerium-deadeye-wooden-bow,Aerium Deadeye Wooden Bow,Weapon,archer,,Weaponsmithing,,Ab 1,10,500,500,1,-,2,-,-1,-,1,-,-,20,225,38,169,28,-,20,,-,-,-
+emberite-deadeye-wooden-bow,Emberite Deadeye Wooden Bow,Weapon,archer,,Weaponsmithing,,Ab 1,10,500,500,1,-,1,-1,-1,-,1,-,2,12,292,46,-,-,-,-,,-,-,-
+hydrillium-deadeye-wooden-bow,Hydrillium Deadeye Wooden Bow,Weapon,archer,,Weaponsmithing,,Ab 1,10,500,750,1,-,2,-,-1,-,1,-,-,12,169,28,225,38,-,20,,-,-,-
+petramite-deadeye-wooden-bow,Petramite Deadeye Wooden Bow,Weapon,archer,,Weaponsmithing,,Ab 1,10,750,500,-7,15,1,-1,-1,2,1,-,-,12,191,38,-,-,-,-,,-,-,-
+refined-deadeye-kano,Refined Deadeye Kano,Armor,archer,male,Armorsmithing,,Ab 10,-,1820,910,-44,36,3,-,-,-,3,9,-,9,-,9,-,-,-,-,,-,-,-
+deadeye-kanon,Deadeye Kanon,Armor,archer,female,-,,Ab 1,12,1400,700,-42,28,2,-,-,-,2,7,-,7,-,7,-,-,-,-,,-,-,-
+refined-deadeye-kanon,Refined Deadeye Kanon,Armor,archer,female,Armorsmithing,,Ab 10,-,1820,910,-44,36,3,-,-,-,3,9,-,9,-,9,-,-,-,-,,-,-,-
+good-emberite-wreckless-dane-blade,Good Emberite Wreckless Dane Blade,Weapon,berserker,,Weaponsmithing,,Ab 1,10,1250,150,8,1,-,-,-,-,-,15,2,-24,572,45,-,-,-,-,,-,-,-
+great-emberite-wreckless-dane-blade,Great Emberite Wreckless Dane Blade,Weapon,berserker,,Weaponsmithing,,Ab 1,10,1450,350,7,2,-,-,-,-,-,16,3,-24,624,46,-,-,-,-,,-,-,-
+grand-emberite-wreckless-dane-blade,Grand Emberite Wreckless Dane Blade,Weapon,berserker,,Weaponsmithing,,Ab 1,10,1750,600,7,3,-,-,-,-,-,17,4,-24,676,47,-,-,-,-,,2,-,-
+aerium-wreckless-dane-blade,Aerium Wreckless Dane Blade,Weapon,berserker,,Weaponsmithin,,Ab 1,10,1000,-,8,-,1,1,-,-,-,13,4,-16,400,36,300,27,225,26,,-,-,-
+hydrillium-wreckless-dane-blade,Hydrillium Wreckless Dane Blade,Weapon,berserker,,Weaponsmithing,,Ab 1,10,1000,1000,8,-,1,1,-,-,-,12,7,-24,300,27,400,36,225,26,,-,-,-
+good-aerium-wreckless-dane-blade,Good Aerium Wreckless Dane Blade,Weapon,berserker,,Weaponsmithing,,Ab 1,10,1250,150,8,1,1,1,-,-,-,14,5,-16,440,37,330,29,250,28,,-,-,-
+good-hydrillium-wreckless-dane-blade,Good Hydrillium Wreckless Dane Blade,Weapon,berserker,,Weaponsmithing,,Ab 1,10,1250,1150,8,1,1,1,-,-,-,12,8,-24,330,28,440,38,250,28,,-,-,-
+great-aerium-wreckless-dane-blade,Great Aerium Wreckless Dane Blade,Weapon,berserker,,Weaponsmithing,,Ab 1,10,1450,350,7,2,1,1,-,-,-,15,6,-,480,38,360,31,275,30,,-,-,-
+great-hydrillium-wreckless-dane-blade,Great Hydrillium Wreckless Dane Blade,Weapon,berserker,,Weaponsmithing,,Ab 1,-,1450,1350,7,2,1,1,-,-,-,13,9,-24,360,29,480,40,275,30,,-,-,-
+grand-aerium-wreckless-dane-blade,Grand Aerium Wreckless Dane Blade,Weapon,berserker,,Weaponsmithing,,Ab 1,10,1750,600,7,3,1,1,-,-,-,16,7,-16,520,39,390,33,300,33,,2,-,-
+grand-hydrillium-wreckless-dane-blade,Grand Hydrillium Wreckless Dane Blade,Weapon,berserker,,Weaponsmithing,,Ab 1,10,1750,1600,7,3,1,1,-,-,-,14,10,-24,390,30,520,42,300,33,,2,-,-
+wreckless-grum-blade,Wreckless Grum Blade,Weapon,berserker,,Akum in Asilon,,Ab 10,10,1500,-,12,-,-,-,-,-,-,18,-,-24,548,49,-,-,-,-,,-,-,-
+refined-wreckless-tarsil,Refined Wreckless Tarsil,Armor,berserker,male,Armorsmithing,,Ab 10,-,2730,455,-47,27,2,-,-,2,2,9,-,-,-,9,-,-,-,-,,-,-,-
+refined-wreckless-tarsilan,Refined Wreckless Tarsilan,Armor,berserker,female,Armorsmithing,,Ab 10,-,2730,455,-47,27,2,-,-,2,2,9,-,-,-,9,-,-,-,-,,-,-,-
+defiant-dane-blade,Defiant Dane Blade,Weapon,warlord,,Akum in Asilon,,Ab 1,10,1000,-,8,-,-,-,-,-,-,12,-,-24,400,36,-,-,-,-,,-,-,-
+defiant-tarsil,Defiant Tarsil,Weapon,warlord,,Asilon,,Ab 1,40,2100,350,-45,21,1,-,-,1,1,7,-,-,-,7,-,-,-,-,,-,-,-
+great-aerium-defiant-dane-blade,Great Aerium Defiant Dane Blade,Weapon,warlord,,Weaponsmithing,,Ab 1,10,1450,350,7,2,1,1,-,-,-,15,6,-16,480,38,360,31,275,30,,-,-,-
+grand-aerium-defiant-dane-blade,Grand Aerium Defiant Dane Blade,Weapon,warlord,,Weaponsmithing,,Ab 1,10,1750,600,7,3,1,1,-,-,-,16,7,-16,520,39,390,33,300,33,,2,-,-
+good-aerium-defiant-dane-blade,Good Aerium Defiant Dane Blade,Weapon,warlord,,Weaponsmithing,,Ab 1,10,1250,150,8,1,1,1,-,-,-,14,5,-16,440,37,330,29,250,28,,-,-,-
+refined-defiant-tarsil,Refined Defiant Tarsil,Armor,warlord,male,Armorsmithing,,Ab 10,-,2730,455,-47,27,2,-,-,2,2,9,-,9,-,9,-,-,-,-,,-,-,-
+defiant-tarsil-2,Defiant Tarsil,Armor,warlord,male,Asilon,,Ab 1,40,2100,350,-45,21,1,-,-,1,1,7,-,-,-,7,-,-,-,-,,-,-,-
+refined-defiant-tarsilan,Refined Defiant Tarsilan,Armor,warlord,female,Armorsmithing,,Ab 10,-,2730,455,-47,27,2,-,-,2,2,9,-,-,-,9,-,-,-,-,,-,-,-
+refined-incarnate-aiquil,Refined Incarnate Aiquil,Armor,arcanist,male,Armorsmithing,,Ab 10,-,910,1365,-38,36,3,3,3,1,-1,-,-,-,-,-,-,9,-,-,,-,-,-
+refined-incarnate-aiquilon,Refined Incarnate Aiquilon,Armor,arcanist,female,Armorsmithing,,Ab 10,-,910,1365,-38,36,3,3,3,1,-1,-,-,-,-,-,-,9,-,-,,-,-,-
+hydrillium-primordial-sphere,Hydrillium Primordial Sphere,Weapon,elementalist,,Weaponsmithing,,Ab 1,-,-500,1800,3,-,3,-,-1,-,-,-,4,-,188,28,250,37,125,23,,-,-,-
+petramite-primordial-sphere,Petramite Primordial Sphere,Weapon,elementalist,,Weaponsmithing,,Ab 1,-,1000,1200,-5,15,2,-1,-1,2,-,-,4,-,42,-,212,37,125,23,,-,-,-
+emberite-primordial-sphere,Emberite Primordial Sphere,Weapon,elementalist,,Weaponsmithing,,Ab 1,-,-500,1200,3,-,2,-2,-1,-,-,-,6,-,49,-,325,45,125,23,,-,-,-
+aerium-primordial-sphere,Aerium Primordial Sphere,Weapon,elementalist,,Weaponsmithing,,Ab 1,-,-500,1200,3,-,3,-1,-1,-,-,-,4,8,250,37,188,28,125,23,,-,-,-
+grand-emberite-primordial-sphere,Grand Emberite Primordial Sphere,Weapon,elementalist,,Weaponsmithing,,Ab 1,2,250,1800,-,3,2,-2,-1,-,-,-,8,-,64,-,422,51,200,29,,2,-,-
+refined-primordial-aiquil,Refined Primordial Aiquil,Armor,elementalist,male,Armorsmithing,,Ab 10,-,910,1365,-38,36,3,3,3,1,-1,-,-,-,-,-,-,9,-,-,,-,-,-
+refined-primordial-aiquilon,Refined Primordial Aiquilon,Armor,elementalist,female,Armorsmithing,,Ab 10,-,910,1365,-38,36,3,3,3,1,-1,-,-,-,-,-,-,9,-,-,,-,-,-
+dwarvish-leather-2,Dwarvish Leather,Overarmor,,male,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+paintball-uniform,Paintball Uniform,Overarmor,,male,-,,-,1,10,-,-3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-dyeable-paintball-uniform,F Dyeable Paintball Uniform,Overarmor,,female,-,,-,1,10,-,-3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+monk-knight-of-everlight,Monk Knight of Everlight,Overarmor,,male|female,-,,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+priest-knight-of-everlight,Priest Knight of Everlight,Overarmor,,male|female,-,,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rogue-knight-of-everlight,Rogue Knight of Everlight,Overarmor,,male|female,-,,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+warrior-knight-of-everlight,Warrior Knight of Everlight,Overarmor,,male|female,-,,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+wizard-knight-of-everlight,Wizard Knight of Everlight,Overarmor,,male|female,-,,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-bathing-garment,M Bathing Garment,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-blue-shorts,M Blue Shorts,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+doods-shredded-cape,Dood's Shredded Cape,Overarmor,,male,-,,3,-,300,300,-2,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-fit-bathing-trousers,M Fit Bathing Trousers,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-floral-shorts,M Floral Shorts,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-green-shorts,M Green Shorts,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-corsair-outfit,M Corsair Outfit,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-dervish-plate,M Dervish Plate,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-grunge-outfit,M Grunge Outfit,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-prep-uniform,M Prep Uniform,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-punk-outfit,M Punk Outfit,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-shadow-outfit,M Shadow Outfit,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-arcane-armor,M Arcane Armor,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-arena-mantle,M Arena Mantle,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-asilon-battle-armor,M Asilon Battle Armor,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-ball-and-chain,M Ball And Chain,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-batman-costume,M Batman Costume,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-battle-garb,M Battle Garb,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-bison-battleplate,M Bison Battleplate,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-blue-outfit,M Blue Outfit,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-blue-power-ranger,M Blue Power Ranger,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-blue-spotted-sweater,M Blue Spotted Sweater,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-blue-training-suit,M Blue Training Suit,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-borg-suit,M Borg Suit,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-buccaneer-coat,M Buccaneer Coat,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-casual-suit,M Casual Suit,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-cat-outfit,M Cat Outfit,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-caveman-outfit,M Caveman Outfit,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-chain-outfit,M Chain Outfit,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-clown-outfit,M Clown Outfit,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-cobalt-kimono-robe,M Cobalt Kimono Robe,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-coldstream-suit,M Coldstream Suit,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-combat-outfit,M Combat Outfit,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-convict,M Convict,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-crimson-kimono-robe,M Crimson Kimono Robe,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-desert-garb,M Desert Garb,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-dinosaur-outfit,M Dinosaur Outfit,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-divine-cloak,M Divine Cloak,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-dragon-scale-armor,M Dragon Scale Armor,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-dyeable-formal-suit,M Dyeable Formal Suit,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-dyeable-hwarone-shirt,M Dyeable Hwarone Shirt,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-embroidered-greatcloak,M Embroidered Greatcloak,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-enchanted-robe,M Enchanted Robe,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-fairy-coat,M Fairy Coat,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-festive-vest,M Festive Vest,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-formal-suitor-shirt,M Formal Suitor Shirt,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-forsaken-tunic,M Forsaken Tunic,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-frog-outfit,M Frog Outfit,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-fur-jacket,M Fur Jacket,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-gargoyle-outfit,M Gargoyle Outfit,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-ghost-sheet,M Ghost Sheet,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-golden-armor,M Golden Armor,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-gold-trench-coat,M Gold Trench Coat,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-grass-kilt,M Grass Kilt,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-green-formal-uniform,M Green Formal Uniform,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-green-power-ranger,M Green Power Ranger,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-green-vest-coat,M Green Vest Coat,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-grey-floatie,M Grey Floatie,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-holiday-robe,M Holiday Robe,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-hostile-disguise,M Hostile Disguise,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-hwarone-battle-armor,M Hwarone Battle Armor,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-hwarone-black-shirt,M Hwarone Black Shirt,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-hwarone-blue-shirt,M Hwarone Blue Shirt,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-hwarone-green-shirt,M Hwarone Green Shirt,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-hwarone-grey-shirt,M Hwarone Grey Shirt,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-hwarone-leisure-garb,M Hwarone Leisure Garb,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-hwarone-pink-shirt,M Hwarone Pink Shirt,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-hwarone-teal-shirt,M Hwarone Teal Shirt,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-hwarone-yellow-shirt,M Hwarone Yellow Shirt,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-klaas-suit,M Klaas Suit,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-macabre-battle-outfit,M Macabre Battle Outfit,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-magician-robe,M Magician Robe,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-mantis-costume,M Mantis Costume,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-maroon-shorts,M Maroon Shorts,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-medenian-formal-suit,M Medenian Formal Suit,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-nautical-suit,M Nautical Suit,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-orange-formal-uniform,M Orange Formal Uniform,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-orange-power-ranger,M Orange Power Ranger,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-orient-garb,M Orient Garb,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-panda-outfit,M Panda Outfit,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-peacekeeper-armor,M Peacekeeper Armor,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-pensioner-coat,M Pensioner Coat,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-philosopher,M Philosopher,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-pig-costume,M Pig Costume,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-pig-outfit,M Pig Outfit,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-pink-demagogue,M Pink Demagogue,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-pink-floatie,M Pink Floatie,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-pink-power-ranger,M Pink Power Ranger,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-pink-prom-suit,M Pink Prom Suit,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-pink-sweater,M Pink Sweater,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-pink-vest-coat,M Pink Vest Coat,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-pirate-garb,M Pirate Garb,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-pirate-shirt,M Pirate Shirt,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-pompous-suit,M Pompous Suit,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-preppy-dress,M Preppy Dress,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-puffer-jacket,M Puffer Jacket,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-purple-formal-uniform,M Purple Formal Uniform,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-red-cape-coat,M Red Cape Coat,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-red-formal-frock,M Red Formal Frock,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-red-formal-uniform,M Red Formal Uniform,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-red-power-ranger,M Red Power Ranger,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-red-soccer-outfit,M Red Soccer Outfit,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-red-surcoat,M Red Surcoat,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-red-training-suit,M Red Training Suit,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-red-vest-coat,M Red Vest Coat,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-sailor-outfit,M Sailor Outfit,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-scholar-outfit,M Scholar Outfit,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-sealskin-trousers,M Sealskin Trousers,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-shark-costume,M Shark Costume,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-shark-floatie,M Shark Floatie,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-shredded-cloak,M Shredded Cloak,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-silk-tunic,M Silk Tunic,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-silver-forged-armor,M Silver-Forged Armor,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-sinter-coat,M Sinter Coat,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-skeleton-costume,M Skeleton Costume,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-ski-outfit,M Ski Outfit,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-slate-kimono-robe,M Slate Kimono Robe,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-slumber-dress,M Slumber Dress,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-snowman-body,M Snowman Body,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-teal-formal-uniform,M Teal Formal Uniform,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-teal-robe,M Teal Robe,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-titanium-breastplate,M Titanium Breastplate,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-totoro,M Totoro,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-training-garb,M Training Garb,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-training-uniform,M Training Uniform,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-tudor-robe,M Tudor Robe,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-violet-formal-frock,M Violet Formal Frock,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-virtue-armor,M Virtue Armor,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-neck-shirt,M Neck Shirt,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-white-prom-suit,M White Prom Suit,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-white-tuxedo,M White Tuxedo,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-white-vest-coat,M White Vest Coat,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-wind-armor,M Wind Armor,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-yellow-floatie,M Yellow Floatie,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-yellow-power-ranger,M Yellow Power Ranger,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-yellow-prom-suit,M Yellow Prom Suit,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-yellow-sweater,M Yellow Sweater,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-yeti-costume,M Yeti Costume,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-yowien-disguise,M Yowien Disguise,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-black-trench-coat,M Black Trench Coat,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-black-formal-uniform,M Black Formal Uniform,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-black-suit,M Black Suit,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-black-vest-coat,M Black Vest Coat,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-blue-formal-uniform,M Blue Formal Uniform,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-blue-vest-coat,M Blue Vest Coat,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-brown-formal-coat,M Brown Formal Coat,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-brown-vest-coat,M Brown Vest Coat,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-cerulean-formal-uniform,M Cerulean Formal Uniform,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-double-button-overcoat,M Double Button Overcoat,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-formal-coat,M Formal Coat,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-overalls,M Overalls,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+m-tuxedo-vest,M Tuxedo Vest,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+black-tuxedo,Black Tuxedo,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+brown-bathing-suit,Brown Bathing Suit,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-corsair-outfit,F Corsair Outfit,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-dervish-plate,F Dervish Plate,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-grunge-outfit,F Grunge Outfit,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-prep-uniform,F Prep Uniform,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-punk-outfit,F Punk Outfit,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+fit-bathing-garment,Fit Bathing Garment,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+floral-sarong,Floral Sarong,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+green-bathing-suit,Green Bathing Suit,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+purple-bathing-suit,Purple Bathing Suit,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+red-bathing-garment,Red Bathing Garment,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+sarong,Sarong,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+suomi-demagogue,Suomi Demagogue,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+teal-bathing-suit,Teal Bathing Suit,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-tudor-gown,F Tudor Gown,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+white-bathing-suit,White Bathing Suit,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+yellow-bathing-suit,Yellow Bathing Suit,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-arcane-armor,F Arcane Armor,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-arena-mantle,F Arena Mantle,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-asilon-battle-armor,F Asilon Battle Armor,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-ball-and-chain,F Ball And Chain,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-ballerina-dress,F Ballerina Dress,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-battle-garb,F Battle Garb,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-bison-battleplate,F Bison Battleplate,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-black-polonaise,F Black Polonaise,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-blue-floatie,F Blue Floatie,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-blue-pinafore,F Blue Pinafore,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-blue-polonaise,F Blue Polonaise,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-blue-power-ranger,F Blue Power Ranger,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-blue-training-outfit,F Blue Training Outfit,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-borg-suit,F Borg Suit,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-buccaneer-coat,F Buccaneer Coat,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-cat-outfit,F Cat Outfit,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-cat-woman,F Cat Woman,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-caveman-outfit,F Caveman Outfit,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-chain-outfit,F Chain Outfit,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-coldstream-dress,F Coldstream Dress,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-combat-outfit,F Combat Outfit,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-convict,F Convict,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-desert-garb,F Desert Garb,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-dinosaur-outfit,F Dinosaur Outfit,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-divine-cloak,F Divine Cloak,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-double-button-overcoat,F Double Button Overcoat,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-dragon-scale-armor,F Dragon Scale Armor,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-duck-floatie,F Duck Floatie,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-dyeable-formal-gown,F Dyeable Formal Gown,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-dyeable-hwarone-dress,F Dyeable Hwarone Dress,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-embroidered-greatcloak,F Embroidered Greatcloak,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-enchanted-jekin,F Enchanted Jekin,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-fairy-dress,F Fairy Dress,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-festive-dress,F Festive Dress,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-forsaken-tunic,F Forsaken Tunic,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-frog-outfit,F Frog Outfit,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-fur-jacket,F Fur Jacket,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-gargoyle-outfit,F Gargoyle Outfit,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-ghost-sheet,F Ghost Sheet,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-golden-armor,F Golden Armor,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-gold-polonaise,F Gold Polonaise,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-gold-trench-coat,F Gold Trench Coat,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-grass-skirt,F Grass Skirt,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-green-pinafore,F Green Pinafore,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-green-polonaise,F Green Polonaise,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-green-power-ranger,F Green Power Ranger,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-grey-floatie,F Grey Floatie,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-hexed-macabre-dress,F Hexed Macabre Dress,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-hostile-disguise,F Hostile Disguise,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-hwarone-blue-dress,F Hwarone Blue Dress,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-jester-outfit,F Jester Outfit,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-klaas-dress,F Klaas Dress,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-layered-skirt,F Layered Skirt,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-lorekeeper,F Lorekeeper,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-macabre-battle-outfit,F Macabre Battle Outfit,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-magician-robe,F Magician Robe,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-mantis-costume,F Mantis Costume,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-marron-polonaise,F Marron Polonaise,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-medenian-formal-gown,F Medenian Formal Gown,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-monkey-outfit,F Monkey Outfit,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-nautical-dress,F Nautical Dress,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-orange-polonaise,F Orange Polonaise,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-orange-power-ranger,F Orange Power Ranger,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-orient-garb,F Orient Garb,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-panda-outfit,F Panda Outfit,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-peacekeeper-armor,F Peacekeeper Armor,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-pig-costume,F Pig Costume,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-pig-outfit,F Pig Outfit,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-pink-bow-gown,F Pink Bow Gown,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-pink-floatie,F Pink Floatie,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-pink-kimono-dress,F Pink Kimono Dress,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-pink-pinafore,F Pink Pinafore,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-pink-power-ranger,F Pink Power Ranger,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-pink-spotted-sweater,F Pink Spotted Sweater,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-pink-sweater,F Pink Sweater,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-pink-tibault,F Pink Tibault,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-pirate-blouse,F Pirate Blouse,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-pirate-dress,F Pirate Dress,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-preppy-dress,F Preppy Dress,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-princess-dress,F Princess Dress,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-puffer-jacket,F Puffer Jacket,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-purple-pinafore,F Purple Pinafore,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-purple-polonaise,F Purple Polonaise,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-red-bow-dress,F Red Bow Dress,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-red-pinafore,F Red Pinafore,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-red-polonaise,F Red Polonaise,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-red-power-ranger,F Red Power Ranger,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-red-soccer-outfit,F Red Soccer Outfit,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-red-training-outfit,F Red Training Outfit,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-sailor-dress,F Sailor Dress,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-sailor-outfit,F Sailor Outfit,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-scarlet-kimono-dress,F Scarlet Kimono Dress,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-shredded-cloak,F Shredded Cloak,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-silk-blouse,F Silk Blouse,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-silver-forged-armor,F Silver-Forged Armor,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-sinter-skirt,F Sinter Skirt,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-skeleton-costume,F Skeleton Costume,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-ski-outfit,F Ski Outfit,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-slumber-dress,F Slumber Dress,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-snowman-body,F Snowman Body,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-strapless-top,F Strapless Top,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-teal-pinafore,F Teal Pinafore,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-teal-polonaise,F Teal Polonaise,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-titanium-breastplate,F Titanium Breastplate,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-totoro,F Totoro,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-training-garb,F Training Garb,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-training-uniform,F Training Uniform,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-violet-formal-frock,F Violet Formal Frock,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-virtue-armor,F Virtue Armor,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-wedding-gown,F Wedding Gown,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-white-pinafore,F White Pinafore,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-white-prom-dress,F White Prom Dress,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-wind-armor,F Wind Armor,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-wizard-blue,F Wizard Blue,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-yellow-pinafore,F Yellow Pinafore,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-yellow-power-ranger,F Yellow Power Ranger,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-yellow-prom-dress,F Yellow Prom Dress,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-yellow-sweater,F Yellow Sweater,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-yeti-costume,F Yeti Costume,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-yowien-disguise,F Yowien Disguise,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-antoinette-dress,F Antoinette Dress,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-black-pinafore,F Black Pinafore,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-demure-skirt,F Demure Skirt,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-enchanted-gown,F Enchanted Gown,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-formal-bodice-dress,F Formal Bodice Dress,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-holiday-dress,F Holiday Dress,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-hwarone-leisure-dress,F Hwarone Leisure Dress,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-indigo-kimono-dress,F Indigo Kimono Dress,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-maiden-dress,F Maiden Dress,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-mileth-college-skirt,F Mileth College Skirt,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-scholar-dress,F Scholar Dress,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+f-tablier,F Tablier,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+arena-host,Arena Host,Overarmor,,male|female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+artist,Artist,Overarmor,,male|female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+blue-arena-host,Blue Arena Host,Overarmor,,male|female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+historian,Historian,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+lorekeeper,Lorekeeper,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+large-cake-dress,Large Cake Dress,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+orange-judge,Orange Judge,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+red-arena-host,Red Arena Host,Overarmor,,male|female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+white-judge,White Judge,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+silk-wedding-dress,Silk Wedding Dress,Overarmor,,female,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+black-penguin-costume,Black Penguin Costume,Overarmor,,unisex,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+blue-penguin-costume,Blue Penguin Costume,Overarmor,,unisex,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+chicken-costume,Chicken Costume,Overarmor,,unisex,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+cow-costume,Cow Costume,Overarmor,,unisex,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+dog-outfit,Dog Outfit,Overarmor,,unisex,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+dyeable-training-outfit,Dyeable Training Outfit,Overarmor,,unisex,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+jester-suit,Jester Suit,Overarmor,,unisex,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+reindeer-costume,Reindeer Costume,Overarmor,,unisex,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+shark-costume,Shark Costume,Overarmor,,unisex,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+sheep-costume,Sheep Costume,Overarmor,,unisex,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+shredded-cloak,Shredded Cloak,Overarmor,,unisex,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+yellow-host-uniform,Yellow Host Uniform,Overarmor,,male|female|unisex,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+white-tuxedo,White Tuxedo,Overarmor,,male,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+sea-cap,Sea Cap,Overhelmet,,male,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+sea-band,Sea Band,Overhelmet,,female,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+faun-horns,Faun Horns,Overhelmet,,unisex,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+invisible-helmet,Invisible Helmet,Overhelmet,,unisex,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+knight-chainmail-hood,Knight Chainmail Hood,Overhelmet,,unisex,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+reverse-faun-horns,Reverse Faun Horns,Overhelmet,,unisex,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+blue-popsicle,Blue Popsicle,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+chocolate-popsicle,Chocolate Popsicle,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+dyeable-spectacles,Dyeable Spectacles,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+face-mask,Face Mask,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+green-popsicle,Green Popsicle,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+invisible-shield,Invisible Shield,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+orange-popsicle,Orange Popsicle,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+shiny-specs,Shiny Specs,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+shiny-specs-dyeable,Shiny Specs (Dyeable),Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+surgeon-mask,Surgeon Mask,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+upgraded-backpack,Upgraded Backpack,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+vanilla-popsicle,Vanilla Popsicle,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+watermelon-popsicle,Watermelon Popsicle,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+white-puppy,White Puppy,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+cadburry-backpack,Cadburry (Backpack),Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+chick-backpack,Chick Backpack,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+bat-effect,Bat Effect,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+bubble-effect,Bubble Effect,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+cloud-effect,Cloud Effect,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+darkness-effect,Darkness Effect,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+fire-effect,Fire Effect,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+golden-petal-effect,Golden Petal Effect,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+ice-effect,Ice Effect,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+leaf-effect,Leaf Effect,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+lily-effect,Lily Effect,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+love-effect,Love Effect,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+music-effect,Music Effect,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+pansy-effect,Pansy Effect,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+pentagram-effect,Pentagram Effect,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+petals-effect,Petals Effect,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rainbow-effect,Rainbow Effect,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rain-effect,Rain Effect,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+rock-effect,Rock Effect,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+shadow-effect,Shadow Effect,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+shock-effect,Shock Effect,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+snowflake-effect,Snowflake Effect,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+splash-effect,Splash Effect,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+sunflower-effect,Sunflower Effect,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+tulip-effect,Tulip Effect,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+twinkle-effect,Twinkle Effect,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+whirlwind-effect,Whirlwind Effect,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+antennae,Antennae,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+antlers,Antlers,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+cat-ears,Cat Ears,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+dyeable-stargazer,Dyeable Stargazer,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+evil-horns,Evil Horns,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+halo,Halo,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+pinwheel,Pinwheel,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+sparkles,Sparkles,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+stargazer,Stargazer,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+paths-dyeable-spectacles,Path's Dyeable Spectacles,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+stars-face-shield,Star's Face Shield,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+black-cape-of-romance,Black Cape of Romance,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,3,3,-,-,2,-,2,-,-,,-,-,-
+fanny-pouch,Fanny Pouch,Accessories,,,-,,-,-,-,-,-,-,-,-,1,1,-,-,-,-,100,-,100,-,-,-,,-,-,-
+royal-cloak-of-honor,Royal Cloak of Honor,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,3,3,-,-,2,-,2,-,-,,-,-,-
+bat-wings,Bat Wings,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+butterfly-wings,Butterfly Wings,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+cherub-wings,Cherub Wings,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+dragon-wings,Dragon Wings,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+eagle-wings,Eagle Wings,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+fae-wings,Fae Wings,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+fairy-wings,Fairy Wings,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+gothic-wings,Gothic Wings,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+phoenix-wings,Phoenix Wings,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+pink-vector-wings,Pink Vector Wings,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+skeletal-wings,Skeletal Wings,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+valkyrie-wings,Valkyrie Wings,Accessories,,,-,,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+lantern,Lantern,Accessories,,,-,,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+zuleras-heirloom,Zulera's Heirloom,Accessories,,,-,,11,-,200,200,-,-,-,-,-,-,-,6,6,-,-,-,-,-,-,-,,-,-,-
+gods-star,God's Star,Accessories,,,-,,99,-,-,-,-1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,2,-,-
+nyxs-pendant,Nyx's Pendant,Accessories,,,-,,99,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,Nyx
+medal-of-arcane,Medal of Arcane,Accessories,,,-,,99,-,-,1500,-,-,-,-,-,-,-,-,-,-,-,-,20,10,-,-,,-,-,-
+medal-of-benevolence,Medal of Benevolence,Accessories,,,-,,99,-,-,-,-,-,-,6,-,-,-,-,-,-,-,-,-,8,-,-,,1,-,-
+medal-of-cunning,Medal of Cunning,Accessories,,,-,,99,-,-,-,-,-,-,-,-,-,7,8,-,-,-,12,-,-,-,-,,-,-,-
+medal-of-devotion,Medal of Devotion,Accessories,,,-,,99,-,-,-,-,10,-,5,-,-,-,-,-,-,-,-,-,-,-,10,,-,-,-
+medal-of-enlightenment,Medal of Enlightenment,Accessories,,,-,,99,-,-,1000,-,-,-,10,-,-,-,-,-,-,-,10,-,-,-,-,,-,-,-
+medal-of-evasion,Medal of Evasion,Accessories,,,-,,99,-,800,-,-1,20,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+medal-of-faith,Medal of Faith,Accessories,,,-,,99,-,-,1000,-,-,-,8,-,-,-,-,-,-,-,-,-,10,-,-,,-,-,-
+medal-of-focus,Medal of Focus,Accessories,,,-,,99,-,-,-,-,-,-,-,8,-,8,-,-,-,-,16,-,-,-,-,,-,-,-
+medal-of-fortitude,Medal of Fortitude,Accessories,,,-,,99,-,2000,-,-1,15,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+medal-of-harmony,Medal of Harmony,Accessories,,,-,,99,-,1200,-,-,-,-,-,-,8,-,-,-,-,-,12,-,-,-,-,,-,-,-
+medal-of-knowledge,Medal of Knowledge,Accessories,,,-,,99,-,-,800,-,-,-,8,-,-,-,-,-,-,-,-,-,-,-,-,,2,-,-
+medal-of-might,Medal of Might,Accessories,,,-,,99,-,1000,-,-,-,7,-,-,-,-,-,-,-,20,-,-,-,-,-,,-,-,-
+medal-of-mysticism,Medal of Mysticism,Accessories,,,-,,99,-,-,-,-,20,-,-,5,-,-,-,20,-,-,-,-,-,-,-,,-,-,-
+medal-of-precision,Medal of Precision,Accessories,,,-,,99,-,-,-,-,-,-,-,-,-,5,-,12,-,-,10,-,-,-,-,,-,-,-
+medal-of-purity,Medal of Purity,Accessories,,,-,,99,-,-,-,-,-,-,-,5,-,-,-,-,-,-,-,-,-,150,10,,-,-,-
+medal-of-serenity,Medal of Serenity,Accessories,,,-,,99,-,1800,-,-,-,-,-,8,-,-,12,-,-,-,-,-,-,-,-,,-,-,-
+medal-of-shadows,Medal of Shadows,Accessories,,,-,,99,-,-,-,-,10,-,-,-,-,-,-,8,-,-,16,-,-,-,-,,-,-,-
+medal-of-sorcery,Medal of Sorcery,Accessories,,,-,,99,-,-,-,-,12,-,5,-,-,-,-,-,-,-,-,-,12,-,-,,-,-,-
+medal-of-strength,Medal of Strength,Accessories,,,-,,99,-,-,-,-,-,5,-,-,-,-,8,-,-,-,8,-,-,-,-,,-,-,-
+medal-of-valor,Medal of Valor,Accessories,,,-,,99,-,-,-,-,-,5,-,-,5,-,15,-,-,-,-,-,-,-,-,,-,-,-
+refined-wreckless-tarsil-2,Refined Wreckless Tarsil,Accessories,,,Armorsmithing,,Ab 10,-,2730,455,-47,27,2,-,-,2,2,9,-,-,-,9,-,-,-,-,,-,-,-
+refined-resonant-vaina-2,Refined Resonant Vaina,Accessories,,,Armorsmithing,,Ab 10,-,910,1365,-38,36,1,3,3,1,-1,-,-,-,-,-,-,-,-,4,,-,-,-
+forsaken-belt,Forsaken Belt,Belt,,,-,,99,1,800,400,-3,15,-3,-,-,-3,-3,8,-,-,-,-,-,-,-,-,,2,-,Forsaken
+dark-azurium-belt,Dark Azurium Belt,Belt,,,Armorsmithing,,Master,1,-,600,-1,10,-,1,1,1,-,-,-,-,-,-,-,-,-,-,,-,-,-
+earth-azurium-belt,Earth Azurium Belt,Belt,,,Armorsmithing,,Master,1,-,600,-1,10,-,1,1,1,-,-,-,-,-,-,-,-,-,-,,-,-,-
+fire-azurium-belt,Fire Azurium Belt,Belt,,,Armorsmithing,,Master,1,-,600,-1,10,-,1,1,1,-,-,-,-,-,-,-,-,-,-,,-,-,-
+light-azurium-belt,Light Azurium Belt,Belt,,,Armorsmithing,,Master,1,-,600,-1,10,-,1,1,1,-,-,-,-,-,-,-,-,-,-,,-,-,-
+sea-azurium-belt,Sea Azurium Belt,Belt,,,Armorsmithing,,Master,1,-,600,-1,10,-,1,1,1,-,-,-,-,-,-,-,-,-,-,,-,-,-
+wind-azurium-belt,Wind Azurium Belt,Belt,,,Armorsmiting,,Master,1,-,600,-1,10,-,1,1,1,-,-,-,-,-,-,-,-,-,-,,-,-,-
+dark-crimsonite-belt,Dark Crimsonite Belt,Belt,,,Armorsmithing,,Master,1,600,-,-2,10,1,-,-,1,1,5,-,-,-,-,-,-,-,-,,-,-,-
+earth-crimsonite-belt,Earth Crimsonite Belt,Belt,,,Armorsmithing,,Master,1,600,-,-2,10,1,-,-,1,1,5,-,-,-,-,-,-,-,-,,-,-,-
+fire-crimsonite-belt,Fire Crimsonite Belt,Belt,,,Armorsmithing,,Master,1,600,-,-2,10,1,-,-,1,1,5,-,-,-,-,-,-,-,-,,-,-,-
+light-crimsonite-belt,Light Crimsonite Belt,Belt,,,Armorsmithing,,Master,1,600,-,-2,10,1,-,-,1,1,5,-,-,-,-,-,-,-,-,,-,-,-
+sea-crimsonite-belt,Sea Crimsonite Belt,Belt,,,Armorsmithing,,Master,1,600,-,-2,10,1,-,-,1,1,5,-,-,-,-,-,-,-,-,,-,-,-
+wind-crimsonite-belt,Wind Crimsonite Belt,Belt,,,Armorsmithing,,Master,1,600,-,-2,10,1,-,-,1,1,5,-,-,-,-,-,-,-,-,,-,-,-
+earth-belt,Earth Belt,Belt,,,-,,4,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+fire-belt,Fire Belt,Belt,,,-,,4,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+leather-belt,Leather Belt,Belt,,,-,,4,1,50,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+sea-belt,Sea Belt,Belt,,,-,,4,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+wind-belt,Wind Belt,Belt,,,-,,4,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+jeweled-fire-belt,Jeweled Fire Belt,Belt,,,-,,11,1,-,-,-1,-,1,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+jeweled-sea-belt,Jeweled Sea Belt,Belt,,,-,,11,1,-,-,-1,-,-,-,1,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+jeweled-wind-belt,Jeweled Wind Belt,Belt,,,-,,11,1,-,-,-1,-,-,1,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mythril-belt,Mythril Belt,Belt,,,-,,20,1,-,-,-,-,-,1,1,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+earth-bronze-belt,Earth Bronze Belt,Belt,,,-,,20,1,100,-,-,-,-,-,-,1,-,-,-,-,-,-,-,-,-,-,,-,-,-
+fire-bronze-belt,Fire Bronze Belt,Belt,,,-,,20,1,100,-,-,-,-,-,-,1,-,-,-,-,-,-,-,-,-,-,,-,-,-
+sea-bronze-belt,Sea Bronze Belt,Belt,,,-,,20,1,100,-,-,-,-,-,-,1,-,-,-,-,-,-,-,-,-,-,,-,-,-
+wind-bronze-belt,Wind Bronze Belt,Belt,,,-,,20,1,100,-,-,-,-,-,-,1,-,-,-,-,-,-,-,-,-,-,,-,-,-
+dark-belt,Dark Belt,Belt,,,-,,30,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+hy-brasyl-belt,Hy-Brasyl Belt,Belt,,,-,,30,1,-,-,-,-,1,-,-,1,-,-,-,-,-,-,-,-,-,-,,-,-,-
+light-belt,Light Belt,Belt,,,-,,30,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+dark-bronze-belt,Dark Bronze Belt,Belt,,,-,,30,1,100,-,-,-,-,-,-,1,-,-,-,-,-,-,-,-,-,-,,-,-,-
+light-bronze-belt,Light Bronze Belt,Belt,,,-,,30,1,100,-,-,-,-,-,-,1,-,-,-,-,-,-,-,-,-,-,,-,-,-
+dark-iron-belt,Dark Iron Belt,Belt,,,-,,41,1,100,-,-,-,1,-,-,1,-,-,-,-,-,-,-,-,-,-,,-,-,-
+earth-iron-belt,Earth Iron Belt,Belt,,,-,,41,1,100,-,-,-,1,-,-,1,-,-,-,-,-,-,-,-,-,-,,-,-,-
+fire-iron-belt,Fire Iron Belt,Belt,,,-,,41,1,100,-,-,-,1,-,-,1,-,-,-,-,-,-,-,-,-,-,,-,-,-
+light-iron-belt,Light Iron Belt,Belt,,,-,,41,1,100,-,-,-,1,-,-,1,-,-,-,-,-,-,-,-,-,-,,-,-,-
+sea-iron-belt,Sea Iron Belt,Belt,,,-,,41,1,100,-,-,-,1,-,-,1,-,-,-,-,-,-,-,-,-,-,,-,-,-
+wind-iron-belt,Wind Iron Belt,Belt,,,-,,41,1,100,-,-,-,1,-,-,1,-,-,-,-,-,-,-,-,-,-,,-,-,-
+jeweled-metal-belt,Jeweled Metal Belt,Belt,,,-,,41,1,100,-,-1,-,1,-,-,1,-,-,-,-,-,-,-,-,-,-,,-,-,-
+jeweled-nature-belt,Jeweled Nature Belt,Belt,,,-,,41,1,100,-,-1,-,-,1,1,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mythril-braid-belt,Mythril Braid Belt,Belt,,,-,,71,1,-,75,-,10,-,2,2,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+jeweled-dark-belt,Jeweled Dark Belt,Belt,,,-,,71,1,100,-,-1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+jeweled-light-belt,Jeweled Light Belt,Belt,,,-,,71,1,100,-,-1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+dark-mythril-braid-belt,Dark Mythril Braid Belt,Belt,,,-,,71,1,-,100,-,-,-,2,1,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+earth-mythril-braid-belt,Earth Mythril Braid Belt,Belt,,,-,,71,1,-,100,-,-,-,2,1,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+fire-mythril-braid-belt,Fire Mythril Braid Belt,Belt,,,-,,71,1,-,100,-,-,-,2,1,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+light-mythril-braid-belt,Light Mythril Braid Belt,Belt,,,-,,71,1,-,100,-,-,-,2,1,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+metal-mythril-braid-belt,Metal Mythril Braid Belt,Belt,,,-,,71,1,-,100,-,-,-,2,1,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+nature-mythril-braid-belt,Nature Mythril Braid Belt,Belt,,,-,,71,1,-,100,-,-,-,2,1,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+sea-mythril-braid-belt,Sea Mythril Braid Belt,Belt,,,-,,71,1,-,100,-,-,-,2,1,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+wind-mythril-braid-belt,Wind Mythril Braid Belt,Belt,,,-,,71,1,-,100,-,-,-,2,1,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+hy-brasyl-braid-belt,Hy-Brasyl Braid Belt,Belt,,,-,,97,1,150,-,-,10,2,-,-,2,-,-,-,-,-,-,-,-,-,-,,-,-,-
+dark-hy-brasyl-braid-belt,Dark Hy-Brasyl Braid Belt,Belt,,,-,,97,1,200,-,-,-,2,-,-,1,-,-,-,-,-,-,-,-,-,-,,-,-,-
+earth-hy-brasyl-braid-belt,Earth Hy-Brasyl Braid Belt,Belt,,,-,,97,1,200,-,-,-,2,-,-,1,-,-,-,-,-,-,-,-,-,-,,-,-,-
+fire-hy-brasyl-braid-belt,Fire Hy-Brasyl Braid Belt,Belt,,,-,,97,1,200,-,-,-,2,-,-,1,-,-,-,-,-,-,-,-,-,-,,-,-,-
+light-hy-brasyl-braid-belt,Light Hy-Brasyl Braid Belt,Belt,,,-,,97,1,200,-,-,-,2,-,-,1,-,-,-,-,-,-,-,-,-,-,,-,-,-
+metal-hy-brasyl-braid-belt,Metal Hy-Brasyl Braid Belt,Belt,,,-,,97,1,200,-,-,-,2,-,-,1,-,-,-,-,-,-,-,-,-,-,,-,-,-
+nature-hy-brasyl-braid-belt,Nature Hy-Brasyl Braid Belt,Belt,,,-,,97,1,200,-,-,-,2,-,-,1,-,-,-,-,-,-,-,-,-,-,,-,-,-
+sea-hy-brasyl-braid-belt,Sea Hy-Brasyl Braid Belt,Belt,,,-,,97,1,200,-,-,-,2,-,-,1,-,-,-,-,-,-,-,-,-,-,,-,-,-
+wind-hy-brasyl-braid-belt,Wind Hy-Brasyl Braid Belt,Belt,,,-,,97,1,200,-,-,-,2,-,-,1,-,-,-,-,-,-,-,-,-,-,,-,-,-
+dark-aerium-belt,Dark Aerium Belt,Belt,,,Armorsmithing,,Ab 1,-,600,600,-3,15,2,2,1,1,1,5,-,-,-,-,-,-,-,-,,1,-,-
+earth-aerium-belt,Earth Aerium Belt,Belt,,,Armorsmithing,,Ab 1,-,600,600,-3,15,2,2,1,1,1,8,-,-,-,-,-,-,-,-,,1,-,-
+fire-aerium-belt,Fire Aerium Belt,Belt,,,Armorsmithing,,Ab 1,-,600,600,-3,15,2,2,1,1,1,8,-,-,-,-,-,-,-,-,,1,-,-
+light-aerium-belt,Light Aerium Belt,Belt,,,Armorsmithing,,Ab 1,-,600,600,-3,15,2,2,1,1,1,5,-,-,-,-,-,-,-,-,,1,-,-
+sea-aerium-belt,Sea Aerium Belt,Belt,,,Armorsmithing,,Ab 1,-,600,600,-3,15,2,2,1,1,1,5,-,-,-,-,-,-,-,-,,-,-,-
+wind-aerium-belt,Wind Aerium Belt,Belt,,,Armorsmithing,,Ab 1,-,600,600,-3,15,2,2,1,1,1,5,-,-,-,-,-,-,-,-,,1,-,-
+dark-emberite-belt-2,Dark Emberite Belt,Belt,,,Armorsmithing,,Ab 1,-,600,600,-3,10,2,2,1,1,1,8,-,-,-,2,-,-,-,-,,-,-,-
+earth-emberite-belt-2,Earth Emberite Belt,Belt,,,Armorsmithing,,Ab 1,-,600,600,-3,10,2,2,1,1,1,8,-,-,-,2,-,-,-,-,,-,-,-
+fire-emberite-belt-2,Fire Emberite Belt,Belt,,,Armorsmithing,,Ab 1,-,600,600,-3,10,2,2,1,1,1,8,-,-,-,2,-,-,-,-,,-,-,-
+light-emberite-belt-2,Light Emberite Belt,Belt,,,Armorsmithing,,Ab 1,-,600,600,-3,10,2,2,1,1,1,8,-,-,-,2,-,-,-,-,,-,-,-
+sea-emberite-belt-2,Sea Emberite Belt,Belt,,,Armorsmithing,,Ab 1,-,600,600,-3,10,2,2,1,1,1,8,-,-,-,2,-,-,-,-,,-,-,-
+wind-emberite-belt-2,Wind Emberite Belt,Belt,,,Armorsmithing,,Ab 1,-,600,600,-3,10,2,2,1,1,1,8,-,-,-,2,-,-,-,-,,-,-,-
+dark-hydrillium-belt,Dark Hydrillium Belt,Belt,,,Armorsmithing,,Ab 1,-,600,1000,-3,10,2,2,1,1,1,5,-,-,-,-,-,2,-,-,,-,-,-
+earth-hydrillium-belt,Earth Hydrillium Belt,Belt,,,Armorsmithing,,Ab 1,-,600,1000,-3,10,2,2,1,1,1,5,-,-,-,-,-,2,-,-,,-,-,-
+fire-hydrillium-belt,Fire Hydrillium Belt,Belt,,,Armorsmithing,,Ab 1,-,600,1000,-3,10,2,2,1,1,1,5,-,-,-,-,-,2,-,-,,-,-,-
+sea-hydrillium-belt,Sea Hydrillium Belt,Belt,,,Armorsmithing,,Ab 1,-,600,1000,-3,10,2,2,1,1,1,5,-,-,-,-,-,2,-,-,,-,-,-
+light-hydrillium-belt,Light Hydrillium Belt,Belt,,,Armorsmithing,,Ab 1,-,600,1000,-3,10,2,2,1,1,1,5,-,-,-,-,-,2,-,-,,-,-,-
+wind-hydrillium-belt,Wind Hydrillium Belt,Belt,,,Armorsmithing,,Ab 1,-,600,1000,-3,10,2,2,1,1,1,5,-,-,-,-,-,2,-,-,,-,-,-
+wind-petramite-belt,Wind Petramite Belt,Belt,,,Armorsmithing,,Ab 1,-,900,600,-4,10,2,2,1,1,1,5,-,-,-,-,-,-,-,-,,-,-,-
+earth-petramite-belt,Earth Petramite Belt,Belt,,,Armorsmithing,,Ab 1,-,900,600,-4,10,2,2,1,1,1,5,-,-,-,-,-,-,-,-,,-,-,-
+sea-petramite-belt,Sea Petramite Belt,Belt,,,Armorsmithing,,Ab 1,-,900,600,-4,10,2,2,1,1,1,5,-,-,-,-,-,-,-,-,,-,-,-
+fire-petramite-belt,Fire Petramite Belt,Belt,,,Armorsmithing,,Ab 1,-,900,600,-4,10,2,2,1,1,1,5,-,-,-,-,-,-,-,-,,-,-,-
+light-petramite-belt,Light Petramite Belt,Belt,,,Armorsmithing,,Ab 1,-,900,600,-4,10,2,2,1,1,1,5,-,-,-,-,-,-,-,-,,-,-,-
+dark-petramite-belt,Dark Petramite Belt,Belt,,,Armorsmithing,,Ab 1,-,900,600,-4,10,2,2,1,1,1,5,-,-,-,-,-,-,-,-,,-,-,-
+ephemeral-treads,Ephemeral Treads,Boots,,,-,,-,2,1500,750,-3,15,3,3,3,3,3,-,-,-,-,-,-,-,-,-,,-,-,-
+hy-brasyl-boots,Hy-Brasyl Boots,Boots,,,-,,-,2,1000,-,-1,10,2,-,-,2,2,-,-,-,-,-,-,-,-,-,,-,-,-
+mythril-boots,Mythril Boots,Boots,,,-,,-,2,-,1000,-,10,-,2,2,-,2,-,-,-,-,-,-,-,-,-,,-,-,-
+shinguards,Shinguards,Boots,,,-,,-,2,800,400,-2,10,2,2,2,2,2,-,-,-,-,-,-,-,-,-,,-,-,-
+voidwalkers,Voidwalkers,Boots,,,-,,-,2,1000,500,-3,10,2,2,2,2,2,-,-,-,-,-,-,-,-,-,,-,-,-
+boots,Boots,Boots,,,-,,1,2,-,-,-,-,-,-,-,-,1,-,-,-,-,-,-,-,-,-,,-,-,-
+chi-anklet,Chi Anklet,Boots,,,-,,9,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+anklet,Anklet,Boots,,,-,,11,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+grey-boots,Grey Boots,Boots,,,-,,11,2,-,-,-,5,-,-,-,-,1,-,-,-,-,-,-,-,-,-,,-,-,-
+cured-boots,Cured Boots,Boots,,,-,,24,2,-,-,-,5,-,-,-,-,2,-,-,-,-,-,-,-,-,-,,-,-,-
+green-boots,Green Boots,Boots,,,-,,30,2,-,-,-,5,-,-,-,-,2,-,-,-,-,-,-,-,-,-,,-,-,-
+dust-boots,Dust Boots,Boots,,,-,,41,2,-,-,-,5,-,1,1,-,3,-,-,-,-,-,-,-,-,-,,-,-,-
+fabulous-boots,Fabulous Boots,Boots,,,-,,41,2,-,-,-,5,3,-,1,-,3,-,-,-,-,-,-,-,-,-,,-,-,-
+grace-boots,Grace Boots,Boots,,,-,,41,2,-,-,-,5,-,1,-,1,3,-,-,-,-,-,-,-,-,-,,-,-,-
+grim-boots,Grim Boots,Boots,,,-,,41,2,-,-,-,5,3,-,-,1,1,-,-,-,-,-,-,-,-,-,,-,-,-
+peace-boots,Peace Boots,Boots,,,-,,41,2,-,-,-,5,-,2,1,-,3,-,-,-,-,-,-,-,-,-,,-,-,-
+pure-boots,Pure Boots,Boots,,,-,,41,2,-,-,-,5,3,1,-,-,3,-,-,-,-,-,-,-,-,-,,-,-,-
+shion-boots,Shion Boots,Boots,,,-,,41,2,-,-,-,5,-,1,1,1,3,-,-,-,-,-,-,-,-,-,,-,-,-
+silk-boots,Silk Boots,Boots,,,-,,41,2,-,-,-,-,-,-,-,-,6,-,-,-,-,-,-,-,-,-,,-,-,-
+star-boots,Star Boots,Boots,,,-,,41,2,-,-,-,5,-,-,1,1,3,-,-,-,-,-,-,-,-,-,,-,-,-
+tract-boots,Tract Boots,Boots,,,-,,41,2,-,-,-,5,1,-,-,1,3,-,-,-,-,-,-,-,-,-,,-,-,-
+cordovan-boots,Cordovan Boots,Boots,,,-,,50,2,-,-,-,5,-,-,-,-,3,-,-,-,-,-,-,-,-,-,,-,-,-
+lapis-boots,Lapis Boots,Boots,,,-,,56,2,-,200,-,5,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+saffian-boots,Saffian Boots,Boots,,,-,,66,2,-,-,-,10,-,-,-,-,4,-,-,-,-,-,-,-,-,-,,-,-,-
+magma-boots,Magma Boots,Boots,,,-,,82,2,-,-,-,10,-,-,-,-,4,-,-,-,-,-,-,-,-,-,,-,-,-
+enchanted-boots,Enchanted Boots,Boots,,,-,,91,2,-,-,-,10,-,-,-,-,5,-,-,-,-,-,-,-,-,-,,-,-,-
+hellwalkers,Hellwalkers,Boots,,,Infernal Bovine,,Ab 20,2,1500,750,-4,10,3,3,3,3,3,-,-,-,-,-,-,-,-,-,,-,-,-
+azurium-beryl-earrings,Azurium Beryl Earrings,Earrings,,,-,,-,1,400,600,-,10,-,1,1,3,-,2,4,-,-,-,-,-,-,-,,-,-,-
+azurium-emerald-earrings,Azurium Emerald Earrings,Earrings,,,-,,-,1,-,600,-,10,-,1,1,1,2,-,3,4,-,-,-,-,-,-,,-,-,-
+azurium-heartstone-earrings,Azurium Heartstone Earrings,Earrings,,,-,,-,1,-,800,-,14,-,1,3,1,-,-,3,-,-,-,-,-,-,-,,-,-,-
+azurium-ruby-earrings,Azurium Ruby Earrings,Earrings,,,-,,-,1,-,600,-,10,2,1,1,1,-,4,3,-,-,-,-,-,-,-,,-,-,-
+azurium-sapphire-earrings,Azurium Sapphire Earrings,Earrings,,,-,,-,1,-,800,-,10,-,3,1,1,-,-,5,-,-,-,-,-,-,-,,-,-,-
+crimsonite-beryl-earrings,Crimsonite Beryl Earrings,Earrings,,,-,,-,1,1600,-,-,10,1,-,-,3,1,8,1,-,-,-,-,-,-,-,,-,-,-
+crimsonite-emerald-earrings,Crimsonite Emerald Earrings,Earrings,,,-,,-,1,1200,-,-,10,1,-,-,1,3,6,-,4,-,-,-,-,-,-,,-,-,-
+crimsonite-heartstone-earrings,Crimsonite Heartstone Earrings,Earrings,,,-,,-,1,1200,200,-,14,1,-,2,1,1,6,-,-,-,-,-,-,-,-,,-,-,-
+crimsonite-ruby-earrings,Crimsonite Ruby Earrings,Earrings,,,-,,-,1,1200,-,-,10,3,-,-,1,1,10,-,-,-,-,-,-,-,-,,-,-,-
+crimsonite-sapphire-earrings,Crimsonite Sapphire Earrings,Earrings,,,-,,-,1,1200,200,-,10,1,2,-,1,1,6,2,-,-,-,-,-,-,-,,-,-,-
+nyxs-whisper,Nyx's Whisper,Earrings,,,-,,-,3,800,400,-,15,-3,-3,-3,-3,-3,8,4,-,-,-,-,-,-,-,,2,-,Nyx
+sacred-earrings,Sacred Earrings,Earrings,,,-,,-,3,750,750,-,15,-,-3,-3,-3,-,-,6,-,-,-,-,-,-,-,,2,-,Sacred
+gold-earrings,Gold Earrings,Earrings,,,-,,8,1,-,-,-,-,1,-,-,1,-,-,-,-,-,-,-,-,-,-,,-,-,-
+silver-earrings,Silver Earrings,Earrings,,,-,,8,1,-,-,-,-,1,-,-,-,1,-,-,-,-,-,-,-,-,-,,-,-,-
+basic-beryl-earrings,Basic Beryl Earrings,Earrings,,,-,,11,1,150,-,-,-,-,-,-,1,-,-,-,-,-,-,-,-,-,-,,-,-,-
+basic-emerald-earrings,Basic Emerald Earrings,Earrings,,,-,,11,1,100,-,-,-,-,-,-,-,1,-,-,2,-,-,-,-,-,-,,-,-,-
+basic-heartstone-earrings,Basic Heartstone Earrings,Earrings,,,-,,11,1,100,-,-,2,-,-,1,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+basic-ruby-earrings,Basic Ruby Earrings,Earrings,,,-,,11,1,100,-,-,-,1,-,-,-,-,2,-,-,-,-,-,-,-,-,,-,-,-
+basic-sapphire-earrings,Basic Sapphire Earrings,Earrings,,,-,,11,1,100,-,-,-,-,1,-,-,-,-,1,-,-,-,-,-,-,-,,-,-,-
+hy-brasyl-earrings,Hy-Brasyl Earrings,Earrings,,,-,,30,1,200,-,-,-,2,-,-,-,-,4,-,-,-,-,-,-,-,-,,-,-,-
+mythril-earrings,Mythril Earrings,Earrings,,,-,,30,1,-,100,-,-,-,2,-,-,-,-,1,-,-,-,-,-,-,-,,-,-,-
+iron-beryl-earrings,Iron Beryl Earrings,Earrings,,,-,,41,1,150,100,-,-,-,-,-,1,-,-,-,-,-,-,-,-,-,-,,-,-,-
+iron-emerald-earrings,Iron Emerald Earrings,Earrings,,,-,,41,1,100,100,-,-,-,-,-,-,1,-,-,2,-,-,-,-,-,-,,-,-,-
+iron-heartstone-earrings,Iron Heartstone Earrings,Earrings,,,-,,41,1,100,100,-,2,-,-,1,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+iron-ruby-earrings,Iron Ruby Earrings,Earrings,,,-,,41,1,100,100,-,-,1,-,-,-,-,2,-,-,-,-,-,-,-,-,,-,-,-
+iron-sapphire-earrings,Iron Sapphire Earrings,Earrings,,,-,,41,1,100,100,-,-,-,1,-,-,-,-,1,-,-,-,-,-,-,-,,-,-,-
+dark-aisling-earrings,Dark Aisling Earrings,Earrings,,,-,,70,1,300,150,-,6,2,2,-,-,-,4,2,-,-,-,-,-,-,-,,-,-,Dark Aisling
+enchanted-earrings,Enchanted Earrings,Earrings,,,-,,71,1,-,500,-1,-,-,1,1,1,-,-,-,-,-,-,-,-,-,-,,-,-,-
+might-earrings,Might Earrings,Earrings,,,-,,71,1,150,150,-,-,-,2,-,-,-,-,2,-,-,-,-,-,-,-,,-,-,-
+mythril-beryl-earrings,Mythril Beryl Earrings,Earrings,,,-,,71,1,100,200,-,5,-,-,-,1,-,-,2,-,-,-,-,-,-,-,,-,-,-
+mythril-emerald-earrings,Mythril Emerald Earrings,Earrings,,,-,,71,1,-,200,-,5,-,-,-,-,1,-,2,2,-,-,-,-,-,-,,-,-,-
+mythril-heartstone-earrings,Mythril Heartstone Earrings,Earrings,,,-,,71,1,-,200,-,7,-,-,1,-,-,-,2,-,-,-,-,-,-,-,,-,-,-
+mythril-ruby-earrings,Mythril Ruby Earrings,Earrings,,,-,,71,1,-,200,-,5,1,-,-,-,-,2,2,-,-,-,-,-,-,-,,-,-,-
+mythril-sapphire-earrings,Mythril Sapphire Earrings,Earrings,,,-,,71,1,-,200,-,5,-,1,-,-,-,-,3,-,-,-,-,-,-,-,,-,-,-
+power-earrings,Power Earrings,Earrings,,,-,,80,1,600,-,-,-,3,-,-,-,-,4,-,-,-,-,-,-,-,-,,-,-,-
+salve-earrings,Salve Earrings,Earrings,,,-,,80,1,-,600,-1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+hy-brasyl-beryl-earrings,Hy-Brasyl Beryl Earrings,Earrings,,,-,,97,1,250,200,-,5,-,-,-,2,-,5,4,-,-,-,-,-,-,-,,-,-,-
+hy-brasyl-emerald-earrings,Hy-Brasyl Emerald Earrings,Earrings,,,-,,97,1,200,200,-,5,-,-,-,-,2,3,3,4,-,-,-,-,-,-,,-,-,-
+hy-brasyl-heartstone-earrings,Hy-Brasyl Heartstone Earrings,Earrings,,,-,,97,1,200,200,-,9,-,-,2,-,-,3,3,-,-,-,-,-,-,-,,-,-,-
+hy-brasyl-ruby-earrings,Hy-Brasyl Ruby Earrings,Earrings,,,-,,97,1,200,200,-,5,2,-,-,-,-,7,3,-,-,-,-,-,-,-,,-,-,-
+hy-brasyl-sapphire-earrings,Hy-Brasyl Sapphire Earrings,Earrings,,,-,,97,1,200,200,-,5,-,2,-,-,-,3,5,-,-,-,-,-,-,-,,-,-,-
+vibrant-viper-earrings,Vibrant Viper Earrings,Earrings,,,-,,99,3,400,550,-,10,-,4,-,-,-,-,3,-,-,-,-,-,-,-,,-,-,-
+deepstone-earrings,Deepstone Earrings,Earrings,,,Tawnyclaw / Palewrit,,Ab 1,1,2500,800,-2,14,3,3,3,5,3,10,6,4,-,-,-,-,-,-,,-,-,-
+emberheart-earrings,Emberheart Earrings,Earrings,,,Obsidra,,Ab 1,1,1600,800,-2,14,5,3,3,3,3,17,6,4,-,2,-,-,-,-,,-,-,-
+galeborn-earrings,Galeborn Earrings,Earrings,,,Anfa / Sirocco,,Ab 1,1,1600,1200,-2,16,4,4,3,3,3,13,6,4,-,1,-,1,-,-,,1,-,-
+aerium-sapphire-earrings,Aerium Sapphire Earrings,Earrings,,,Jewelcrafting,,Ab 1,1,1600,1200,-1,19,3,5,3,3,3,10,5,4,-,-,-,-,-,-,,1,-,-
+tidecall-earrings,Tidecall Earrings,Earrings,,,Suileach,,Ab 1,1,1600,1800,-,14,3,5,3,3,3,10,6,4,-,-,-,2,-,-,,-,-,-
+stormcrest-earrings,Stormcrest Earrings,Earrings,,,Asilon Chests,,Ab 10,1,1600,1200,-2,16,4,4,3,3,4,13,6,4,-,1,-,1,-,-,,1,-,Stormcrest
+amorphous-gauntlet,Amorphous Gauntlet,Gauntlet,,,-,,-,4,200,600,-2,-,-,-,-,-,-,-,4,-,-,-,50,-,-,-,,-,-,-
+forsaken-gauntlet,Forsaken Gauntlet,Gauntlet,,,-,,-,4,1500,-,-4,-5,1,-2,-2,1,1,6,-,-,75,2,-,-,-,-,,-,-,Forsaken
+nyxs-embrace,Nyx's Embrace,Gauntlet,,,-,,-,4,700,350,-3,-6,1,1,1,-,-,4,4,-,-,1,-,1,-,1,,-,-,Nyx
+scale-bracer,Scale Bracer,Gauntlet,,,-,,-,5,1000,500,-4,-,3,-,-,3,-,6,-,-,75,2,-,-,37,1,,-,-,-
+scurvy-gauntlet,Scurvy Gauntlet,Gauntlet,,,-,,-,4,800,-,-3,-,-,-,-,-,-,5,-,-,50,-,-,-,-,-,,-,-,-
+spiked-bracer,Spiked Bracer,Gauntlet,,,-,,-,5,1500,750,-5,-,3,-,-,3,3,7,-,-,100,3,-,-,100,1,,-,-,-
+azurium-beryl-gauntlet,Azurium Beryl Gauntlet,Gauntlet,,,-,,-,4,400,800,-3,-,-,1,1,3,-,2,1,-,-,-,-,-,-,-,,-,-,-
+azurium-emerald-gauntlet,Azurium Emerald Gauntlet,Gauntlet,,,-,,-,4,-,800,-3,-,-,1,1,1,2,-,3,-,-,-,-,-,-,-,,-,-,-
+azurium-heartstone-gauntlet,Azurium Heartstone Gauntlet,Gauntlet,,,-,,-,4,-,1000,-3,4,-,1,3,1,-,-,3,-,-,-,-,-,-,-,,-,-,-
+azurium-ruby-gauntlet,Azurium Ruby Gauntlet,Gauntlet,,,-,,-,4,-,800,-3,-,2,1,1,1,-,4,3,-,-,-,-,-,-,-,,-,-,-
+azurium-sapphire-gauntlet,Azurium Sapphire Gauntlet,Gauntlet,,,-,,-,4,-,1000,-3,-,-,3,1,1,-,-,5,-,-,-,-,-,-,-,,-,-,-
+crimsonite-beryl-gauntlet,Crimsonite Beryl Gauntlet,Gauntlet,,,-,,-,4,1200,-,-4,-,1,-,-,3,1,7,1,-,-,-,-,-,-,-,,-,-,-
+crimsonite-emerald-gauntlet,Crimsonite Emerald Gauntlet,Gauntlet,,,-,,-,4,800,-,-4,-,1,-,-,1,3,5,-,-,-,-,-,-,-,-,,-,-,-
+crimsonite-heartstone-gauntlet,Crimsonite Heartstone Gauntlet,Gauntlet,,,-,,-,4,800,200,-4,4,1,-,2,1,1,5,-,-,-,-,-,-,-,-,,-,-,-
+crimsonite-ruby-gauntlet,Crimsonite Ruby Gauntlet,Gauntlet,,,-,,-,4,800,-,-4,-,3,-,-,1,1,9,-,-,-,-,-,-,-,-,,-,-,-
+crimsonite-sapphire-gauntlet,Crimsonite Sapphire Gauntlet,Gauntlet,,,-,,-,4,800,200,-4,-,1,2,-,1,1,5,2,-,-,-,-,-,-,-,,-,-,-
+leather-gauntlet,Leather Gauntlet,Gauntlet,,,-,,9,1,75,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+leather-bracer,Leather Bracer,Gauntlet,,,-,,11,1,100,50,-1,-,-,-,-,1,-,-,-,-,-,-,-,-,-,-,,-,-,-
+leather-beryl-gauntlet,Leather Beryl Gauntlet,Gauntlet,,,-,,11,1,100,-,-,-,-,-,-,1,-,-,-,-,-,-,-,-,-,-,,-,-,-
+leather-emerald-gauntlet,Leather Emerald Gauntlet,Gauntlet,,,-,,11,1,75,-,-,-,-,-,-,-,1,-,-,-,-,-,-,-,-,-,,-,-,-
+leather-heartstone-gauntlet,Leather Heartstone Gauntlet,Gauntlet,,,-,,11,1,75,-,-,2,-,-,1,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+leather-ruby-gauntlet,Leather Ruby Gauntlet,Gauntlet,,,-,,11,1,75,-,-,-,1,-,-,-,-,2,-,-,-,-,-,-,-,-,,-,-,-
+leather-sapphire-gauntlet,Leather Sapphire Gauntlet,Gauntlet,,,-,,11,1,75,-,-,-,-,1,-,-,-,-,1,-,-,-,-,-,-,-,,-,-,-
+padded-gauntlet,Padded Gauntlet,Gauntlet,,,-,,17,1,100,50,-1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+bronze-beryl-gauntlet,Bronze Beryl Gauntlet,Gauntlet,,,-,,26,3,-,-300,-1,-,-,-,-,1,-,-,-,-,-,-,-,-,-,-,,-,-,-
+bronze-emerald-gauntlet,Bronze Emerald Gauntlet,Gauntlet,,,-,,26,3,-,-300,-1,-,-,-,-,-,1,-,-,-,-,-,-,-,-,-,,-,-,-
+bronze-gauntlet,Bronze Gauntlet,Gauntlet,,,-,,26,3,-,-300,-1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+bronze-heartstone-gauntlet,Bronze Heartstone Gauntlet,Gauntlet,,,-,,26,3,-,-300,-1,2,-,-,1,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+bronze-ruby-gauntlet,Bronze Ruby Gauntlet,Gauntlet,,,-,,26,3,-,-300,-1,-,1,-,-,-,-,2,-,-,-,-,-,-,-,-,,-,-,-
+bronze-sapphire-gauntlet,Bronze Sapphire Gauntlet,Gauntlet,,,-,,26,3,-,-200,-1,-,-,1,-,-,-,-,1,-,-,-,-,-,-,-,,-,-,-
+iron-gauntlet,Iron Gauntlet,Gauntlet,,,-,,33,3,150,-500,-2,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+chainmail-gauntlet,Chainmail Gauntlet,Gauntlet,,,-,,41,1,250,-100,-2,-,-,-,-,-,-,3,-,-,-,-,-,-,-,-,,-,-,-
+dragon-scale-gauntlet,Dragon Scale Gauntlet,Gauntlet,,,Dragon Scale Quest,,41,1,250,200,-2,-,-,-,-,-,-,4,2,-,-,-,-,-,-,-,,-,-,Dragon Scale
+iron-bracer,Iron Bracer,Gauntlet,,,-,,41,3,300,100,-2,-,1,-,-,1,-,3,-,-,-,-,-,-,-,-,,-,-,-
+iron-beryl-gauntlet,Iron Beryl Gauntlet,Gauntlet,,,-,,41,3,250,-500,-2,-,-,-,-,1,-,-,-,-,-,-,-,-,-,-,,-,-,-
+iron-emerald-gauntlet,Iron Emerald Gauntlet,Gauntlet,,,-,,41,3,150,-500,-2,-,-,-,-,-,1,-,-,-,-,-,-,-,-,-,,-,-,-
+iron-heartstone-gauntlet,Iron Heartstone Gauntlet,Gauntlet,,,-,,41,3,150,-500,-2,2,-,-,1,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+iron-ruby-gauntlet,Iron Ruby Gauntlet,Gauntlet,,,-,,41,3,150,-500,-2,-,1,-,-,-,-,2,-,-,-,-,-,-,-,-,,-,-,-
+iron-sapphire-gauntlet,Iron Sapphire Gauntlet,Gauntlet,,,-,,41,3,150,-350,-2,-,-,1,-,-,-,-,1,-,-,-,-,-,-,-,,-,-,-
+mythril-gauntlet,Mythril Gauntlet,Gauntlet,,,-,,63,1,-,-250,-2,-,-,-,-,-,-,-,1,-,-,-,-,-,-,-,,-,-,-
+mythril-bracer,Mythril Bracer,Gauntlet,,,-,,71,1,300,150,-2,-,1,-,-,2,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mythril-beryl-gauntlet,Mythril Beryl Gauntlet,Gauntlet,,,-,,71,1,100,-250,-2,-,-,-,-,2,-,2,2,-,-,-,-,-,-,-,,-,-,-
+mythril-emerald-gauntlet,Mythril Emerald Gauntlet,Gauntlet,,,-,,71,1,-,-250,-2,-,-,-,-,-,2,-,1,-,-,-,-,-,-,-,,-,-,-
+mythril-heartstone-gauntlet,Mythril Heartstone Gauntlet,Gauntlet,,,-,,71,1,-,-250,-2,4,-,-,2,-,-,-,1,-,-,-,-,-,-,-,,-,-,-
+mythril-ruby-gauntlet,Mythril Ruby Gauntlet,Gauntlet,,,-,,71,1,-,-250,-2,-,2,-,-,-,-,4,1,-,-,-,-,-,-,-,,-,-,-
+mythril-sapphire-gauntlet,Mythril Sapphire Gauntlet,Gauntlet,,,-,,71,1,-,-,-2,-,-,2,-,-,-,-,3,-,-,-,-,-,-,-,,-,-,-
+strap-gauntlet,Strap Gauntlet,Gauntlet,,,-,,81,4,300,100,-3,6,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+hy-brasyl-bracer,Hy-Brasyl Bracer,Gauntlet,,,-,,95,4,600,300,-4,-,2,-,-,2,-,5,-,-,-,-,-,-,-,-,,-,-,-
+hy-brasyl-gauntlet,Hy-Brasyl Gauntlet,Gauntlet,,,-,,95,4,500,-500,-3,-,-,-,-,-,-,4,2,-,-,-,-,-,-,-,,-,-,-
+dark-aisling-gauntlet,Dark Aisling Gauntlet,Gauntlet,,,-,,96,4,400,200,-2,-,-,-,-,-,-,4,3,-,-,-,-,-,-,-,,-,-,Dark Aisling
+hy-brasyl-beryl-gauntlet,Hy-Brasyl Beryl Gauntlet,Gauntlet,,,-,,97,4,650,-500,-3,-,-,-,-,2,-,6,3,-,-,-,-,-,-,-,,-,-,-
+hy-brasyl-emerald-gauntlet,Hy-Brasyl Emerald Gauntlet,Gauntlet,,,-,,97,4,500,-500,-3,-,-,-,-,-,2,4,2,-,-,-,-,-,-,-,,-,-,-
+hy-brasyl-heartstone-gauntlet,Hy-Brasyl Heartstone Gauntlet,Gauntlet,,,-,,97,4,500,-500,-3,4,-,-,2,-,-,2,2,-,-,-,-,-,-,-,,-,-,-
+hy-brasyl-ruby-gauntlet,Hy-Brasyl Ruby Gauntlet,Gauntlet,,,-,,97,4,500,-500,-3,-,2,-,-,-,-,8,2,-,-,-,-,-,-,-,,-,-,-
+hy-brasyl-sapphire-gauntlet,Hy-Brasyl Sapphire Gauntlet,Gauntlet,,,-,,97,4,500,-500,-3,-,-,2,-,-,-,2,4,-,-,-,-,-,-,-,,-,-,-
+deepstone-gauntlet,Deepstone Gauntlet,Gauntlet,,,Tawnyclaw / Palewrit,,Ab 1,4,2400,1000,-6,4,3,3,3,5,3,9,6,9,-,-,-,-,-,-,,-,-,-
+deepstone-bracer,Deepstone Bracer,Gauntlet,,,Tawnyclaw / Palewrit,,Ab 1,4,2400,100,-6,4,3,3,3,5,3,9,6,9,-,-,-,-,50,-,,-,-,-
+galeborn-gauntlet,Galeborn Gauntlet,Gauntlet,,,Anfa / Sirocco,,Ab 1,4,1500,1400,-6,6,4,4,3,3,3,12,6,9,-,1,-,1,-,-,,1,-,-
+emberheart-bracer,Emberheart Bracer,Gauntlet,,,Obsidra,,Ab 1,4,1500,1000,-6,4,5,3,3,3,3,16,6,9,-,2,-,-,50,-,,-,-,-
+galeborn-bracer,Galeborn Bracer,Gauntlet,,,Anfa / Sirocco,,Ab 1,4,1500,1400,-6,6,4,4,3,3,3,12,6,9,-,1,-,1,50,-,,1,-,-
+aerium-sapphire-gauntlet,Aerium Sapphire Gauntlet,Gauntlet,,,Armorsmithing,,Ab 1,-,1200,1400,-5,9,3,5,3,3,3,9,5,9,-,-,-,-,-,-,,1,-,-
+emberheart-gauntlet,Emberheart Gauntlet,Gauntlet,,,Obsidra,,Ab 1,4,1500,1000,-6,4,5,3,3,3,3,16,6,9,-,2,-,-,-,-,,-,-,-
+tidecall-bracer,Tidecall Bracer,Gauntlet,,,Suileach,,Ab 1,4,1500,1600,-6,4,4,3,5,3,3,9,6,9,-,-,-,1,50,2,,-,-,-
+tidecall-gauntlet,Tidecall Gauntlet,Gauntlet,,,Suileach,,Ab 1,4,1500,2000,-6,4,3,5,3,3,3,9,6,9,-,-,-,2,-,-,,-,-,-
+aerium-ruby-gauntlet,Aerium Ruby Gauntlet,Gauntlet,,,Armorsmithing,,Ab 1,4,1200,100,-5,9,5,3,3,3,3,12,5,-,-,-,-,-,-,-,,1,-,-
+mystic-greaves,Mystic Greaves,Greaves,,,-,,-,8,-,4000,-6,20,-,-,-,-,-,-,8,-,-,-,-,10,-,-,,10,-,-
+reinforced-spiked-greaves,Reinforced Spiked Greaves,Greaves,,,-,,-,8,1200,-,-5,10,-,-,-,-,-,5,-,-,-,-,-,-,-,-,,-,-,-
+sacred-greaves,Sacred Greaves,Greaves,,,-,,-,8,500,1000,-4,10,-2,2,2,-,-,-,6,-,-,-,-,-,-,-,,-,-,Sacred
+scurvy-greaves,Scurvy Greaves,Greaves,,,-,,-,8,500,500,-3,10,-,-,-,-,-,8,4,-,-,-,-,-,-,-,,-,-,-
+slatespire-legplates,Slatespire Legplates,Greaves,,,-,,-,8,1800,-,-6,10,-,-,-,-,-,6,-,-,-,-,-,-,-,-,,-,-,-
+leather-greaves,Leather Greaves,Greaves,,,-,,6,3,-,-100,-1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+bronze-greaves,Bronze Greaves,Greaves,,,-,,14,3,-,-300,-2,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+reinforced-leather-greaves,Reinforced Leather Greaves,Greaves,,,-,,21,3,150,-150,-2,5,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+iron-greaves,Iron Greaves,Greaves,,,-,,26,5,-,-500,-3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+spiked-greaves,Spiked Greaves,Greaves,,,-,,56,7,500,-500,-4,5,-,-,-,-,-,3,-,-,-,-,-,-,-,-,,-,-,-
+mythril-greaves,Mythril Greaves,Greaves,,,-,,59,7,250,-250,-3,5,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+fiery-greaves,Fiery Greaves,Greaves,,,-,,90,7,600,-200,-4,5,-,-,-,-,-,4,-,-,-,-,-,-,-,-,,-,-,-
+glace-greaves,Glace Greaves,Greaves,,,-,,90,7,-,250,-3,5,-,-,-,-,-,-,2,-,-,-,-,-,-,-,,-,-,-
+hy-brasyl-greaves,Hy-Brasyl Greaves,Greaves,,,-,,93,9,500,-500,-4,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+dark-aisling-greaves,Dark Aisling Greaves,Greaves,,,-,,96,7,500,500,-3,5,-,-,-,-,-,4,2,-,-,-,-,-,-,-,,-,-,Dark Aisling
+nyxs-poleyns,Nyx's Poleyns,Greaves,,,Nyx,,99,8,850,850,-4,10,2,2,-,-,-,5,5,5,-,-,-,-,-,-,,-,-,Nyx
+deepstone-greaves,Deepstone Greaves,Greaves,,,Tawnyclaw / Palewrit,,Ab 1,8,2000,-,-,10,-,-,-,-,-,6,-,-,-,-,-,-,-,-,,-,-,-
+galeborn-greaves,Galeborn Greaves,Greaves,,,Anfa / Sirocco,,Ab 1,8,1150,500,-5,12,-,1,-,-,-,3,3,7,-,-,-,-,-,2,,-,-,-
+emberheart-greaves,Emberheart Greaves,Greaves,,,Obsidra,,Ab 1,8,1800,-,-6,10,1,-,-,-,-,7,-,-,-,-,-,-,-,-,,-,-,-
+tidecall-greaves,Tidecall Greaves,Greaves,,,Suileach,,Ab 1,8,500,1200,-4,10,-2,3,2,-,-,-,6,-,-,-,-,-,-,-,,-,-,-
+forsaken-dark-necklace,Forsaken Dark Necklace,Necklace,,,-,,-,1,1500,-,-,-,-1,-,-,-1,-1,-,-,-,-,3,-,-,-,-,,2,-,Forsaken
+sacred-light-necklace,Sacred Light Necklace,Necklace,,,-,,-,1,500,500,-,-,-,-1,-1,-1,-,-,12,-,-,-,-,3,-,3,,2,-,Sacred
+azurium-dark-necklace,Azurium Dark Necklace,Necklace,,,-,,-,1,-,500,-,-,-,1,1,1,-,-,8,-,-,-,-,2,-,2,,-,-,-
+azurium-earth-necklace,Azurium Earth Necklace,Necklace,,,-,,-,1,-,500,-,-,-,1,1,1,-,-,8,-,-,-,-,2,-,2,,-,-,-
+azurium-fire-necklace,Azurium Fire Necklace,Necklace,,,-,,-,1,-,500,-,-,-,1,1,1,-,-,8,-,-,-,-,2,-,2,,-,-,-
+azurium-light-necklace,Azurium Light Necklace,Necklace,,,-,,-,1,-,500,-,-,-,1,1,1,-,-,8,-,-,-,-,2,-,2,,-,-,-
+azurium-sea-necklace,Azurium Sea Necklace,Necklace,,,-,,-,1,-,500,-,-,-,1,1,1,-,-,8,-,-,-,-,2,-,2,,-,-,-
+azurium-wind-necklace,Azurium Wind Necklace,Necklace,,,-,,-,1,-,500,-,-,-,1,1,1,-,-,8,-,-,-,-,2,-,2,,-,-,-
+crimsonite-dark-necklace,Crimsonite Dark Necklace,Necklace,,,-,,-,1,1000,-,-,-,1,-,-,1,1,-,-,16,-,2,-,-,-,-,,-,-,-
+crimsonite-earth-necklace,Crimsonite Earth Necklace,Necklace,,,-,,-,1,1000,-,-,-,1,-,-,1,1,-,-,16,-,2,-,-,-,-,,-,-,-
+crimsonite-fire-necklace,Crimsonite Fire Necklace,Necklace,,,-,,-,1,1000,-,-,-,1,-,-,1,1,-,-,16,-,2,-,-,-,-,,-,-,-
+crimsonite-light-necklace,Crimsonite Light Necklace,Necklace,,,-,,-,1,1000,-,-,-,1,-,-,1,1,-,-,16,-,2,-,-,-,-,,-,-,-
+crimsonite-sea-necklace,Crimsonite Sea Necklace,Necklace,,,-,,-,1,1000,-,-,-,1,-,-,1,1,-,-,16,-,2,-,-,-,-,,-,-,-
+crimsonite-wind-necklace,Crimsonite Wind Necklace,Necklace,,,-,,-,1,1000,-,-,-,1,-,-,1,1,-,-,16,-,2,-,-,-,-,,-,-,-
+earth-necklace,Earth Necklace,Necklace,,,-,,6,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+fire-necklace,Fire Necklace,Necklace,,,-,,6,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+sea-necklace,Sea Necklace,Necklace,,,-,,6,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+wind-necklace,Wind Necklace,Necklace,,,-,,6,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+jade-necklace,Jade Necklace,Necklace,,,-,,9,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+pearl-necklace,Pearl Necklace,Necklace,,,-,,9,1,-,200,-,-,-,-,1,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+bone-earth-necklace,Bone Earth Necklace,Necklace,,,-,,11,1,-,-,-,-,-,-,-,-,-,-,-,8,-,-,-,-,-,-,,-,-,-
+bone-fire-necklace,Bone Fire Necklace,Necklace,,,-,,11,1,-,-,-,-,-,-,-,-,-,-,-,8,-,-,-,-,-,-,,-,-,-
+bone-sea-necklace,Bone Sea Necklace,Necklace,,,-,,11,1,-,-,-,-,-,-,-,-,-,-,-,8,-,-,-,-,-,-,,-,-,-
+bone-wind-necklace,Bone Wind Necklace,Necklace,,,-,,11,1,-,-,-,-,-,-,-,-,-,-,-,8,-,-,-,-,-,-,,-,-,-
+amber-necklace,Amber Necklace,Necklace,,,-,,14,1,-,-,-,-,-,-,-,-,-,-,2,-,-,-,-,-,-,-,,-,-,-
+bone-necklace,Bone Necklace,Necklace,,,-,,15,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+dark-bone-necklace,Dark Bone Necklace,Necklace,,,-,,15,1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+light-diamond-necklace,Light Diamond Necklace,Necklace,,,-,,15,1,-,-,-1,-,-,-,-,-,-,-,1,-,-,-,-,-,-,-,,-,-,-
+pearl-chain-necklace,Pearl Chain Necklace,Necklace,,,-,,41,1,-,250,-,6,-,-,1,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+phoenix-necklace,Phoenix Necklace,Necklace,,,-,,41,1,-,100,-,-,-,1,-,-,-,-,4,-,-,-,-,-,-,-,,-,-,-
+kanna-earth-necklace,Kanna Earth Necklace,Necklace,,,-,,41,1,-,-,-,-,-,-,-,-,-,-,2,-,-,-,-,-,-,-,,-,-,-
+kanna-fire-necklace,Kanna Fire Necklace,Necklace,,,-,,41,1,-,-,-,-,-,-,-,-,-,-,2,-,-,-,-,-,-,-,,-,-,-
+kanna-sea-necklace,Kanna Sea Necklace,Necklace,,,-,,41,1,-,-,-,-,-,-,-,-,-,-,2,-,-,-,-,-,-,-,,-,-,-
+kanna-wind-necklace,Kanna Wind Necklace,Necklace,,,-,,41,1,-,-,-,-,-,-,-,-,-,-,2,-,-,-,-,-,-,-,,-,-,-
+sea-coral-necklace,Sea Coral Necklace,Necklace,,,-,,60,1,-,300,-,-,-,-,-,-,-,-,4,-,-,-,25,-,-,-,,-,-,-
+fire-molten-necklace,Fire Molten Necklace,Necklace,,,-,,70,1,500,-,-,-,-,-,-,-,-,-,-,-,25,-,-,-,-,-,,-,-,-
+sand-necklace,Sand Necklace,Necklace,,,-,,70,1,400,200,-1,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+polished-earth-necklace,Polished Earth Necklace,Necklace,,,-,,71,1,-,-,-,-,-,-,-,-,-,-,4,8,-,-,-,-,-,-,,-,-,-
+polished-fire-necklace,Polished Fire Necklace,Necklace,,,-,,71,1,-,-,-,-,-,-,-,-,-,-,4,8,-,-,-,-,-,-,,-,-,-
+polished-sea-necklace,Polished Sea Necklace,Necklace,,,-,,71,1,-,-,-,-,-,-,-,-,-,-,4,8,-,-,-,-,-,-,,-,-,-
+polished-wind-necklace,Polished Wind Necklace,Necklace,,,-,,71,1,-,-,-,-,-,-,-,-,-,-,4,8,-,-,-,-,-,-,,-,-,-
+dark-skull-necklace,Dark Skull Necklace,Necklace,,,-,,80,1,-500,250,-,-,-,-,-,-,-,-,8,-,-,-,-,-,-,-,,-,-,-
+leaf-necklace,Leaf Necklace,Necklace,,,-,,80,1,200,400,-,-,-,-,-,-,-,-,5,-,-,-,-,-,25,-,,-,-,-
+star-earth-necklace,Star Earth Necklace,Necklace,,,-,,97,1,-,-,-,-,-,-,-,-,-,-,6,12,-,-,-,-,-,-,,-,-,-
+star-fire-necklace,Star Fire Necklace,Necklace,,,-,,97,1,-,-,-,-,-,-,-,-,-,-,6,12,-,-,-,-,-,-,,-,-,-
+star-sea-necklace,Star Sea Necklace,Necklace,,,-,,97,1,-,-,-,-,-,-,-,-,-,-,6,12,-,-,-,-,-,-,,-,-,-
+star-wind-necklace,Star Wind Necklace,Necklace,,,-,,97,1,-,-,-,-,-,-,-,-,-,-,6,12,-,-,-,-,-,-,,-,-,-
+aerium-light-necklace,Aerium Light Necklace,Necklace,,,Jewelcrafting,,Ab 1,1,1000,500,-,5,1,1,1,1,1,-,8,16,-,2,-,2,-,2,,1,-,-
+stormcrest-necklace,Stormcrest Necklace,Necklace,,,Asilon Chests,,Ab 10,1,1300,700,-2,2,2,2,1,1,2,2,9,16,-,3,-,3,-,2,,1,-,Stormcrest
+azurium-beryl-ring,Azurium Beryl Ring,Ring,,,-,,-,1,500,500,-,5,-,1,1,3,-,2,4,-,-,-,-,1,-,-,,-,-,-
+azurium-emerald-ring,Azurium Emerald Ring,Ring,,,-,,-,1,-,500,-,5,-,1,1,1,2,-,3,-,-,-,-,1,-,-,,-,-,-
+azurium-heartstone-ring,Azurium Heartstone Ring,Ring,,,-,,-,1,-,750,-,9,-,1,3,1,-,-,3,-,-,-,-,1,-,-,,-,-,-
+azurium-ruby-ring,Azurium Ruby Ring,Ring,,,-,,-,1,-,500,-,5,2,1,1,1,-,4,3,-,-,-,-,1,-,-,,-,-,-
+azurium-sapphire-ring,Azurium Sapphire Ring,Ring,,,-,,-,1,-,750,-,5,-,3,1,1,-,-,5,-,-,-,-,1,-,-,,-,-,-
+crimsonite-beryl-ring,Crimsonite Beryl Ring,Ring,,,-,,-,1,1500,-,-,5,1,-,-,3,1,2,1,6,-,1,-,-,-,-,,-,-,-
+crimsonite-emerald-ring,Crimsonite Emerald Ring,Ring,,,-,,-,1,1000,-,-,5,1,-,-,1,3,-,-,10,-,1,-,-,-,-,,-,-,-
+crimsonite-heartstone-ring,Crimsonite Heartstone Ring,Ring,,,-,,-,1,1000,250,-,9,1,-,2,1,1,-,-,6,-,1,-,-,-,-,,-,-,-
+crimsonite-ruby-ring,Crimsonite Ruby Ring,Ring,,,-,,-,1,1000,-,-,5,3,-,-,1,1,4,-,6,-,1,-,-,-,-,,-,-,-
+crimsonite-sapphire-ring,Crimsonite Sapphire Ring,Ring,,,-,,-,1,1000,250,-,5,1,2,-,1,1,-,2,6,-,1,-,-,-,-,,-,-,-
+black-stone-ring,Black Stone Ring,Ring,,,-,,-,1,500,-500,1,-,2,-,-,-,2,-,-,-,-,2,-,-,-,-,,-,-,-
+bonecharm-seal,Bonecharm Seal,Ring,,,-,,-,1,750,750,1,5,-,2,2,-5,-,-,6,-,-,-,-,4,-,4,,-,-,-
+forsaken-ring,Forsaken Ring,Ring,,,-,,-,1,1000,-,-,-3,1,-,-,1,1,-,-,-,-,3,-,-,-,-,,-,-,Forsaken
+large-emerald-ring,Large Emerald Ring,Ring,,,-,,-,1,1000,-,-1,10,-,-,2,2,-,-,-,-,-,-,-,-,2,-,,-,-,-
+nyxs-twilight-band,Nyx's Twilight Band,Ring,,,-,,-,1,750,375,1,-3,1,1,1,1,1,-,4,-,-,2,-,2,-,2,,-,-,Nyx
+ring-of-flames,Ring Of Flames,Ring,,,-,,-,1,-500,500,2,-,-,2,-,-,-,-,4,-,-,-,-,2,-,-,,-,-,-
+sacred-ring,Sacred Ring,Ring,,,-,,-,1,500,500,1,-3,-,1,1,-1,-,-,5,-,-,-,-,3,-,3,,-,-,Sacred
+beryl-ring,Beryl Ring,Ring,,,-,,1,1,40,25,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+love-ring,Love Ring,Ring,,,-,,1,1,-,-,-,20,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+small-ruby-ring,Small Ruby Ring,Ring,,,-,,1,1,80,-,-,-,-,-,-,-,-,3,-,-,-,-,-,-,-,-,,-,-,-
+ruby-ring,Ruby Ring,Ring,,,-,,3,1,150,-,-,-,-,-,-,-,-,5,-,-,-,-,-,-,-,-,,-,-,-
+coral-ring,Coral Ring,Ring,,,-,,9,1,50,100,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+red-jade-ring,Red Jade Ring,Ring,,,-,,10,1,50,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+emerald-ring,Emerald Ring,Ring,,,-,,11,1,300,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+tristar-ring,Tristar Ring,Ring,,,-,,11,1,350,250,-,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+bronze-beryl-ring,Bronze Beryl Ring,Ring,,,-,,11,1,150,-,-,-,-,-,-,1,-,-,-,-,-,-,-,-,-,-,,-,-,-
+bronze-emerald-ring,Bronze Emerald Ring,Ring,,,-,,11,1,100,-,-,-,-,-,-,-,1,-,-,2,-,-,-,-,-,-,,-,-,-
+bronze-heartstone-ring,Bronze Heartstone Ring,Ring,,,-,,11,1,100,-,-,2,-,-,1,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+bronze-ruby-ring,Bronze Ruby Ring,Ring,,,-,,11,1,100,-,-,-,1,-,-,-,-,2,-,-,-,-,-,-,-,-,,-,-,-
+bronze-sapphire-ring,Bronze Sapphire Ring,Ring,,,-,,11,1,100,-,-,-,-,1,-,-,-,-,1,-,-,-,-,-,-,-,,-,-,-
+amethyst-ring,Amethyst Ring,Ring,,,-,,16,1,200,100,-,-,-,-,-,-,-,-,1,-,-,-,-,-,-,-,,-,-,-
+grave-ring,Grave Ring,Ring,,,-,,16,1,-250,-250,2,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+jade-ring,Jade Ring,Ring,,,-,,16,1,350,150,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+royal-gold-ring,Royal Gold Ring,Ring,,,-,,20,1,400,-,-,-,-,-,-,-,-,2,-,-,-,-,-,-,-,-,,-,-,-
+royal-silver-ring,Royal Silver Ring,Ring,,,-,,20,1,100,300,-,-,-,-,-,-,-,-,2,-,-,-,-,-,-,-,,-,-,-
+sparkle-ring,Sparkle Ring,Ring,,,-,,20,1,200,200,-,10,1,1,1,1,1,4,2,-,-,-,-,-,-,-,,-,-,-
+talos-ring,Talos Ring,Ring,,,-,,30,1,100,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+dragon-scale-ring,Dragon Scale Ring,Ring,,,Dragon Scale Quest,,41,1,500,200,-,-,1,-,-,1,-,4,2,-,-,-,-,-,-,-,,-,-,Dragon Scale
+iron-beryl-ring,Iron Beryl Ring,Ring,,,-,,41,1,350,-,-,-,-,-,-,1,-,-,-,5,-,-,-,-,-,-,,-,-,-
+iron-emerald-ring,Iron Emerald Ring,Ring,,,-,,41,1,250,-,-,-,-,-,-,-,1,-,-,7,-,-,-,-,-,-,,-,-,-
+iron-heartstone-ring,Iron Heartstone Ring,Ring,,,-,,41,1,250,-,-,2,-,-,1,-,-,-,-,5,-,-,-,-,-,-,,-,-,-
+iron-ruby-ring,Iron Ruby Ring,Ring,,,-,,41,1,250,-,-,-,1,-,-,-,-,2,-,5,-,-,-,-,-,-,,-,-,-
+iron-sapphire-ring,Iron Sapphire Ring,Ring,,,-,,41,1,250,-,-,-,-,1,-,-,-,-,1,5,-,-,-,-,-,-,,-,-,-
+ialtags-eye,Ialtag's Eye,Ring,,,-,,50,1,250,400,-,-,-,1,-,-,-,-,2,-,-,-,-,-,-,-,,-,-,-
+myanmar-ring,Myanmar Ring,Ring,,,-,,50,1,250,-,-,-,-,-,-,-,1,-,-,-,-,-,-,-,-,-,,-,-,-
+sonor-ring,Sonor Ring,Ring,,,-,,50,1,500,-,-,-,1,-,-,-,-,3,-,-,-,-,-,-,-,-,,-,-,-
+dark-aisling-ring,Dark Aisling Ring,Ring,,,-,,70,1,400,250,-,5,-1,1,1,-1,-1,3,3,-,-,-,-,-,-,-,,-,-,Dark Aisling
+mythril-beryl-ring,Mythril Beryl Ring,Ring,,,-,,71,1,500,100,-,5,-,-,-,2,-,2,1,-,-,-,-,-,-,-,,-,-,-
+mythril-emerald-ring,Mythril Emerald Ring,Ring,,,-,,71,1,250,100,-,5,-,-,-,-,2,-,-,4,-,-,-,-,-,-,,-,-,-
+mythril-heartstone-ring,Mythril Heartstone Ring,Ring,,,-,,71,1,250,100,-,9,-,-,2,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+mythril-ruby-ring,Mythril Ruby Ring,Ring,,,-,,71,1,250,100,-,5,2,-,-,-,-,4,-,-,-,-,-,-,-,-,,-,-,-
+mythril-sapphire-ring,Mythril Sapphire Ring,Ring,,,-,,71,1,250,100,-,5,-,2,-,-,-,-,2,-,-,-,-,-,-,-,,-,-,-
+grand-emerald-ring,Grand Emerald Ring,Ring,,,-,,77,1,200,400,-,-,-,1,-,-,-,-,3,-,-,-,-,-,-,-,,-,-,-
+grand-ruby-ring,Grand Ruby Ring,Ring,,,-,,77,1,600,-,-,-,1,-,-,-,-,6,-,-,-,-,-,-,-,-,,-,-,-
+star-ring,Star Ring,Ring,,,-,,86,1,500,300,-,-,1,1,-,-,-,6,3,6,-,-,-,-,-,-,,-,-,-
+hy-brasyl-beryl-ring,Hy-Brasyl Beryl Ring,Ring,,,-,,97,1,750,250,-,5,-,-,-,2,-,2,1,5,-,-,-,-,-,-,,-,-,-
+hy-brasyl-emerald-ring,Hy-Brasyl Emerald Ring,Ring,,,-,,97,1,500,250,-,5,-,-,-,-,2,-,-,9,-,-,-,-,-,-,,-,-,-
+hy-brasyl-heartstone-ring,Hy-Brasyl Heartstone Ring,Ring,,,-,,97,1,500,250,-,9,-,-,2,-,-,-,-,5,-,-,-,-,-,-,,-,-,-
+hy-brasyl-ruby-ring,Hy-Brasyl Ruby Ring,Ring,,,-,,97,1,500,250,-,5,2,-,-,-,-,4,-,5,-,-,-,-,-,-,,-,-,-
+hy-brasyl-sapphire-ring,Hy-Brasyl Sapphire Ring,Ring,,,-,,97,1,500,250,-,5,-,2,-,-,-,-,2,5,-,-,-,-,-,-,,-,-,-
+deepstone-twinband,Deepstone Twinband,Ring,,,Tawnyclaw / Palewrit,,Ab 1,1,1700,1150,-2,9,4,4,3,3,3,7,6,10,-,2,-,2,-,-,,1,-,-
+deepstone-warsignet,Deepstone Warsignet,Ring,,,Tawnyclaw / Palewrit,,Ab 1,1,1700,750,-2,9,5,3,3,3,3,10,6,10,-,3,-,1,-,-,,-,-,-
+galeborn-spellcoil,Galeborn Spellcoil,Ring,,,Anfa / Sirocco,,Ab 1,1,1500,1550,-2,11,3,5,3,3,3,4,6,10,-,1,-,3,-,-,,-,-,-
+galeborn-twinband,Galeborn Twinband,Ring,,,Anfa / Sirocco,,Ab 1,1,1500,1150,-2,11,4,4,3,3,3,7,6,10,-,2,-,2,-,-,,1,-,-
+emberheart-warsignet,Emberheart Warsignet,Ring,,,Obsidra,,Ab 1,1,1500,750,-2,9,5,3,3,3,3,11,6,10,-,3,-,1,-,-,,-,-,-
+emberheart-spellcoil,Emberheart Spellcoil,Ring,,,Obsidra,,Ab 1,1,1500,1550,-2,9,3,5,3,3,3,5,6,10,-,1,-,3,-,-,,-,-,-
+tidecall-spellcoil,Tidecall Spellcoil,Ring,,,Suileach,,Ab 1,1,1500,1750,-2,9,3,5,3,3,3,4,6,-,-,1,-,3,-,-,,-,-,-
+emberheart-twinband,Emberheart Twinband,Ring,,,Obsidra,,Ab 1,-,1500,1150,-2,9,4,4,3,3,3,8,6,10,-,2,-,2,-,-,,1,-,-
+tidecall-warsignet,Tidecall Warsignet,Ring,,,Suileach,,Ab 1,1,1500,950,-2,9,5,3,3,3,3,10,6,10,-,3,-,1,-,-,,-,-,-
+galeborn-warsignet,Galeborn Warsignet,Ring,,,Anfa / Sirocco,,Ab 1,1,1500,750,-2,11,5,3,3,3,3,10,6,10,-,3,-,1,-,-,,-,-,-
+deepstone-spellcoil,Deepstone Spellcoil,Ring,,,Tawnyclaw / Palewrit,,Ab 1,1,1700,1550,-2,9,3,5,3,3,3,4,6,10,-,1,-,3,-,-,,-,-,-
+tidecall-twinband,Tidecall Twinband,Ring,,,Suileach,,Ab 1,1,1500,1350,-2,9,4,4,3,3,3,7,6,10,-,2,-,2,-,-,,1,-,-
+stormcrest-ring,Stormcrest Ring,Ring,,,Asilon Chests,,Ab 10,1,1500,1150,-2,11,4,4,3,3,4,7,6,10,-,2,-,2,-,-,,1,-,Stormcrest
+captains-shield,Captain's Shield,Shield,,,-,,-,18,1000,1000,-10,20,-,-,-,-,-,-12,-,-,-,3,-,-,-,-,,-,-,-
+cathonic-shield,Cathonic Shield,Shield,,,-,,-,20,3000,1000,-17,25,1,1,1,1,1,-12,-,-,-,-,-,-,-,-,,-,-,-
+cursed-shield,Cursed Shield,Shield,,,-,,-,18,-4000,-2000,-8,-20,-2,-2,-2,-2,-2,20,-10,-,-,5,-,-,-,-,,-,-,-
+nyxs-umbral-shield,Nyx's Umbral Shield,Shield,,,-,,-,18,1000,1000,-9,15,2,2,2,2,2,-5,-,-,-,-,-,-,-,-,,-,-,Nyx
+good-captains-shield,Good Captain's Shield,Shield,,,-,,-,16,1500,1500,-11,23,-,-,-,-,-,-11,-,-,-,4,-,-,-,-,,-,-,-
+good-cathonic-shield,Good Cathonic Shield,Shield,,,-,,-,12,3500,1250,-18,28,1,1,1,1,1,-10,-,-,-,-,-,-,-,-,,-,-,-
+good-cursed-shield,Good Cursed Shield,Shield,,,-,,-,11,-3000,-1500,-9,-15,-2,-2,-2,-2,-2,21,-9,-,-,6,-,-,-,-,,-,-,-
+good-nyxs-umbral-shield,Good Nyx's Umbral Shield,Shield,,,-,,-,18,1350,1350,-10,18,3,3,3,3,3,-2,-,-,-,-,-,-,-,-,,-,-,Nyx
+grand-captains-shield,Grand Captain's Shield,Shield,,,-,,-,12,2500,2500,-12,30,-,-,-,-,-,-9,-,-,-,6,-,-,-,-,,-,-,-
+grand-cathonic-shield,Grand Cathonic Shield,Shield,,,-,,-,10,5000,2000,-19,35,2,2,2,2,2,-6,-,-,-,-,-,-,-,-,,-,-,-
+grand-cursed-shield,Grand Cursed Shield,Shield,,,-,,-,9,-1000,-500,-10,-5,-1,-1,-1,-1,-1,24,-,-,-,8,-,-,-,-,,-,-,-
+grand-nyxs-umbral-shield,Grand Nyx's Umbral Shield,Shield,,,-,,-,18,2500,2500,-12,25,5,5,5,5,5,4,-,-,-,2,-,2,-,-,,-,-,Nyx
+great-captains-shield,Great Captain's Shield,Shield,,,-,,-,14,2000,2000,-11,26,-,-,-,-,-,-10,-,-,-,5,-,-,-,-,,-,-,-
+great-cathonic-shield,Great Cathonic Shield,Shield,,,-,,-,12,4000,1500,-18,32,1,1,1,1,1,-8,-,-,-,-,-,-,-,-,,-,-,-
+great-cursed-shield,Great Cursed Shield,Shield,,,-,,-,10,-2000,-1000,-9,-10,-2,-2,-2,-2,-2,23,-8,-,-,7,-,-,-,-,,-,-,-
+great-nyxs-umbral-shield,Great Nyx's Umbral Shield,Shield,,,-,,-,18,1750,1750,-11,22,4,4,4,4,4,1,-,-,-,1,-,1,-,-,,-,-,Nyx
+good-wooden-shield,Good Wooden Shield,Shield,,,-,,3,4,25,-200,-2,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+grand-wooden-shield,Grand Wooden Shield,Shield,,,-,,3,4,100,-50,-2,2,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+great-wooden-shield,Great Wooden Shield,Shield,,,-,,3,4,50,-150,-2,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+wooden-shield,Wooden Shield,Shield,,,-,,3,4,-,-250,-2,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+good-leather-shield,Good Leather Shield,Shield,,,-,,15,5,125,-400,-4,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+grand-leather-shield,Grand Leather Shield,Shield,,,-,,15,4,200,-200,-4,3,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+great-leather-shield,Great Leather Shield,Shield,,,-,,15,4,150,-300,-4,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+leather-shield,Leather Shield,Shield,,,-,,15,5,100,-500,-4,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+bronze-shield,Bronze Shield,Shield,,,-,,31,7,150,-1000,-6,-,-,-,-,-,-,-1,-,-,-,-,-,-,-,-,,-,-,-
+good-bronze-shield,Good Bronze Shield,Shield,,,-,,31,7,200,-800,-6,-,-,-,-,-,-,-1,-,-,-,-,-,-,-,-,,-,-,-
+grand-bronze-shield,Grand Bronze Shield,Shield,,,-,,31,6,350,-400,-6,3,-,-,-,-,-,-1,-,-,-,-,-,-,-,-,,-,-,-
+great-bronze-shield,Great Bronze Shield,Shield,,,-,,31,6,250,-600,-6,-,-,-,-,-,-,-1,-,-,-,-,-,-,-,-,,-,-,-
+good-gravel-shield,Good Gravel Shield,Shield,,,-,,41,12,350,-,-9,10,-,-,-,-,-,-2,-,-,-,-,-,-,-,-,,-,-,-
+grand-gravel-shield,Grand Gravel Shield,Shield,,,-,,41,11,500,-,-9,10,-,-,-,-,-,-2,-,-,-,-,-,-,-,-,,-,-,-
+gravel-shield,Gravel Shield,Shield,,,-,,41,12,300,-,-9,10,-,-,-,-,-,-2,-,-,-,-,-,-,-,-,,-,-,-
+great-gravel-shield,Great Gravel Shield,Shield,,,-,,41,11,400,-,-9,10,-,-,-,-,-,-2,-,-,-,-,-,-,-,-,,-,-,-
+good-iron-shield,Good Iron Shield,Shield,,,-,,45,18,300,-1600,-8,5,-,-,-,-,-,-2,-,-,-,-,-,-,-,-,,-,-,-
+grand-iron-shield,Grand Iron Shield,Shield,,,-,,45,16,500,-1000,-8,7,-,-,-,-,-,-2,-,-,-,-,-,-,-,-,,-,-,-
+great-iron-shield,Great Iron Shield,Shield,,,-,,45,17,400,-1200,-8,6,-,-,-,-,-,-2,-,-,-,-,-,-,-,-,,-,-,-
+iron-shield,Iron Shield,Shield,,,-,,45,18,250,-2000,-8,5,-,-,-,-,-,-2,-,-,-,-,-,-,-,-,,-,-,-
+good-light-shield,Good Light Shield,Shield,,,-,,50,4,-,-,-5,10,-,-,-,-,-,-,1,-,-,-,-,-,-,-,,-,-,-
+grand-light-shield,Grand Light Shield,Shield,,,-,,50,4,150,-,-6,12,-,-,-,-,-,-,3,-,-,-,-,-,-,-,,-,-,-
+great-light-shield,Great Light Shield,Shield,,,-,,50,4,75,-,-6,11,-,-,-,-,-,-,2,-,-,-,-,-,-,-,,-,-,-
+light-shield,Light Shield,Shield,,,-,,50,4,-,-,-5,10,-,-,-,-,-,-,-,-,-,-,-,-,-,-,,-,-,-
+good-mythril-shield,Good Mythril Shield,Shield,,,-,,61,12,350,-1600,-10,11,-,-,-,-,-,-3,-,-,-,-,-,-,-,-,,-,-,-
+grand-mythril-shield,Grand Mythril Shield,Shield,,,-,,61,12,600,-1000,-11,13,-,-,-,-,-,-3,-,-,-,-,-,-,-,-,,-,-,-
+great-mythril-shield,Great Mythril Shield,Shield,,,-,,61,12,450,-1200,-10,12,-,-,-,-,-,-3,-,-,-,-,-,-,-,-,,-,-,-
+mythril-shield,Mythril Shield,Shield,,,-,,61,12,300,-2000,-10,10,-,-,-,-,-,-3,-,-,-,-,-,-,-,-,,-,-,-
+good-hy-brasyl-shield,Good Hy-Brasyl Shield,Shield,,,-,,77,17,500,-750,-12,13,-,-,-,-,-,-4,-,-,-,-,-,-,-,-,,-,-,-
+grand-hy-brasyl-shield,Grand Hy-Brasyl Shield,Shield,,,-,,77,15,750,-250,-13,20,-,-,-,-,-,-4,-,-,-,-,-,-,-,-,,-,-,-
+great-hy-brasyl-shield,Great Hy-Brasyl Shield,Shield,,,-,,77,16,600,-500,-12,16,-,-,-,-,-,-4,-,-,-,-,-,-,-,-,,-,-,-
+hy-brasyl-shield,Hy-Brasyl Shield,Shield,,,-,,77,18,400,-1000,-12,10,-,-,-,-,-,-4,-,-,-,-,-,-,-,-,,-,-,-
+good-talgonite-shield,Good Talgonite Shield,Shield,,,-,,99,23,2000,-,-15,15,-,-,-,-,-,-8,-1,-,-,-,-,-,-,-,,-,-,-
+grand-talgonite-shield,Grand Talgonite Shield,Shield,,,-,,99,19,3000,-,-17,20,-,-,-,-,-,-4,-,-,-,-,-,-,-,-,,-,-,-
+great-talgonite-shield,Great Talgonite Shield,Shield,,,-,,99,21,2500,-,-16,15,-,-,-,-,-,-6,-,-,-,-,-,-,-,-,,-,-,-
+talgonite-shield,Talgonite Shield,Shield,,,-,,99,25,1500,-,-15,10,-,-,-,-,-,-12,-3,-,-,-,-,-,-,-,,-,-,-
