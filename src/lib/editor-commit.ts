@@ -2,7 +2,7 @@ import type { EditorDb, EditorItem, EditorRecipe, EditorTab, GenericRow, Generic
 import { FIELD_TO_CSV_HEADER, GENERIC_TAB_SCHEMAS } from '@/types/editor'
 import { parseCSV } from '@/lib/csv-parse'
 import { serializeCSV } from '@/lib/csv-serialize'
-import { groupItemsByPath, groupRecipesByPath, resolveItemPath, resolveRecipePath } from '@/lib/csv-paths'
+import { groupItemsByPath, groupRecipesByPath, resolveItemPath, resolveItemPaths, resolveRecipePath } from '@/lib/csv-paths'
 import { getFile, commitMultiFile, clearFileCache, EDITOR_REPO } from '@/lib/github-client'
 import { seedItemsFromPublished, shouldSeedTab } from '@/lib/editor-seed'
 
@@ -257,20 +257,26 @@ export async function computeDiffs(token: string, db: EditorDb): Promise<FileDif
     const schema = generic ? GENERIC_TAB_SCHEMAS[entry.tab as GenericTab] : null
     const payload = entry.payload as EditorItem & GenericRow
     if (!payload || typeof payload !== 'object') continue
-    const pathOf = (row: EditorItem & GenericRow) => schema?.csvPath
-      ?? (entry.tab === 'items' ? resolveItemPath(row) : resolveRecipePath(entry.tab, row as EditorRecipe))
+    // An item for several classes is written to one CSV per class, so its removal must hit every one of them.
+    const pathsOf = (row: EditorItem & GenericRow): string[] => schema
+      ? [schema.csvPath]
+      : entry.tab === 'items'
+        ? resolveItemPaths(row)
+        : [resolveRecipePath(entry.tab, row as EditorRecipe)].filter((p): p is string => !!p)
     const nameOf = (row: EditorItem & GenericRow) => String(row[schema?.nameKey ?? 'item_name'] ?? '').trim().toLowerCase()
-    const path = pathOf(payload)
+    const paths = pathsOf(payload)
     const name = nameOf(payload)
     if (!name) continue
-    if (!path) {
+    if (paths.length === 0) {
       warnings.push(`"${entry.name}" was removed in the editor, but the editor could not tell which CSV file it is in, so it was NOT removed from GitHub.`)
       continue
     }
-    if ((db[entry.tab] as (EditorItem & GenericRow)[]).some((row) => pathOf(row) === path && nameOf(row) === name)) continue
-    const names = deletions.get(path) ?? new Set<string>()
-    names.add(name)
-    deletions.set(path, names)
+    for (const path of paths) {
+      if ((db[entry.tab] as (EditorItem & GenericRow)[]).some((row) => pathsOf(row).includes(path) && nameOf(row) === name)) continue
+      const names = deletions.get(path) ?? new Set<string>()
+      names.add(name)
+      deletions.set(path, names)
+    }
   }
 
   const tasks: Promise<DiffResult>[] = []
