@@ -164,9 +164,9 @@ function decodeMask(
       }
     }
   }
-  const runs: ReadRun[] = []
-  for (const [r0, r1] of bands) {
-    if (r1 - r0 < 3 || r1 - r0 > 16) continue
+  // Reads the lines of text inside one horizontal band of rows (at most 16 rows tall).
+  const decodeBand = (r0: number, r1: number): ReadRun[] => {
+    const runs: ReadRun[] = []
     // Column segments: groups of columns that have text pixels.
     const segs: [number, number][] = []
     let s = -1
@@ -246,6 +246,33 @@ function decodeMask(
         total: grp.length,
       })
     }
+    return runs
+  }
+
+  const runs: ReadRun[] = []
+  for (const [r0, r1] of bands) {
+    const height = r1 - r0
+    if (height < 3) continue
+    if (height <= 16) {
+      runs.push(...decodeBand(r0, r1))
+      continue
+    }
+    // A band taller than any line of text: something bright sits next to or above/below the text and
+    // joined the rows together (typically the white highlights of a skill's icon beside its name).
+    // Slide a 16-row window down the band; icons and text are far enough apart sideways that they
+    // fall into different groups, so the text is still read cleanly. Where windows read the same
+    // text, the best read wins.
+    if (height > 120) continue
+    const found: ReadRun[] = []
+    for (let w0 = r0; w0 <= r1 - 9; w0++) found.push(...decodeBand(w0, Math.min(r1, w0 + 15)))
+    found.sort((p, q) => q.hits - p.hits || (q.hits / q.total) - (p.hits / p.total))
+    const kept: ReadRun[] = []
+    for (const r of found) {
+      if (r.hits < 2) continue
+      const same = kept.some((k) => r.x0 < k.x1 && k.x0 < r.x1 && r.y0 < k.y1 && k.y0 < r.y1)
+      if (!same) kept.push(r)
+    }
+    runs.push(...kept)
   }
   return runs
 }
@@ -306,5 +333,8 @@ export function readGameText(img: PixelImage, hint: ReadHint = {}): { scale: num
       if (confident(best.runs)) break
     }
   }
-  return { scale: best.scale, runs: best.runs }
+  // Marks that no letter was recognised in (icon edges, box borders, cut-off text) are not worth
+  // offering as a possible skill name, unless that is all there is.
+  const readable = best.runs.filter((r) => r.hits > 0)
+  return { scale: best.scale, runs: readable.length ? readable : best.runs }
 }
