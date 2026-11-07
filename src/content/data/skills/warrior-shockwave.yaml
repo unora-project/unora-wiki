@@ -1,10 +1,11 @@
-name: "Shockwave"
+name: Shockwave
+class: warrior
+element: ''
+levelRequirement: Master
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: '-'
+learningLocation: Master Dungeon
+description: Cascades outward in a cown, dealing massive damage to all enemies hit up to 3 tiles in front of you.
 image: /images/abilities/Shockwave%201.png
-class: "warrior"
-levelRequirement: "Master"
-statRequirements: "3/3/3/3/3"
-goldRequired: "-"
-itemRequirements: "-"
-prerequisites: "-"
-learningLocation: "Master Dungeon"
-description: "Deals major damage to enemies in front of you."
