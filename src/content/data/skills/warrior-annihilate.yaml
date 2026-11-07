@@ -7,5 +7,5 @@ goldRequired: '-'
 itemRequirements: Black Shocker Piece (5)
 prerequisites: Execute (100)
 learningLocation: Nobis House (28,27)
-description: Can kill weak enemies. Restores health and reduces cooldown on success. Pure only.
+description: A finsher that instantly kills a normal enemy below 20% health.  Restores your own health, and halves it's cooldown on successful kill.  Otherwise deals damage based on your STR + 4% of max HP.
 image: /images/abilities/annihilate.png
