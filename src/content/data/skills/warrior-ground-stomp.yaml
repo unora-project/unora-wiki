@@ -1,10 +1,11 @@
-name: "Ground Stomp"
+name: Ground Stomp
+class: warrior
+element: ''
+levelRequirement: '80'
+statRequirements: 77/8/8/27/39
+goldRequired: '150,000'
+itemRequirements: Hobgoblin's Skull (3), Chainmaul Gauntlet (1)
+prerequisites: '-'
+learningLocation: Suomi Special Skills Master
+description: Applies Beag Suain to the targets in front of you and to your sides.
 image: /images/abilities/Ground%20Stomp.png
-class: "warrior"
-levelRequirement: "80"
-statRequirements: "77/8/8/27/39"
-goldRequired: "150,000"
-itemRequirements: "Hobgoblin's Skull (3), Chainmaul Gauntlet (1)"
-prerequisites: "-"
-learningLocation: "Suomi Special Skills Master"
-description: "Paralyze enemies in your front and sides for a short time."
