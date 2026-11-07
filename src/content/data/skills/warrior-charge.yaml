@@ -1,11 +1,11 @@
-name: "Charge"
+name: Charge
+class: warrior
+element: ''
+levelRequirement: Master
+statRequirements: 3/3/3/3/3
+goldRequired: '250,000'
+itemRequirements: Ruidhtear Toe (1)
+prerequisites: Bull Rush (100)
+learningLocation: Master
+description: Charges 4 tiles and deals damage to first target hit.  Applies Armor Break.
 image: /images/abilities/Charge.png
-class: "warrior"
-levelRequirement: "Master"
-statRequirements: "3/3/3/3/3"
-goldRequired: "250,000"
-itemRequirements: "Ruidhtear Toe (1)"
-prerequisites: "Bull Rush (100)"
-learningLocation: "Master"
-description: >-
-  Charges you forward 4 tiles and breaks the armor of the target. Replaces Bull Rush.
