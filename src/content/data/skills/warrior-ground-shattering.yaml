@@ -1,10 +1,11 @@
-name: "Ground Shattering"
+name: Ground Shattering
+class: warrior
+element: ''
+levelRequirement: Master
+statRequirements: 180/15/15/80/80
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: Ground Stomp (100)
+learningLocation: Shamensyth
+description: Applies Beag Suain to all targets within 3 tiles.
 image: /images/abilities/Ground%20Shattering.png
-class: "warrior"
-levelRequirement: "Master"
-statRequirements: "180/15/15/80/80"
-goldRequired: "-"
-itemRequirements: "-"
-prerequisites: "Ground Stomp (100)"
-learningLocation: "Shamensyth"
-description: "Paralyze all enemies within 3 spaces."
