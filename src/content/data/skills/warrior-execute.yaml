@@ -1,10 +1,11 @@
-name: "Execute"
+name: Execute
+class: warrior
+element: ''
+levelRequirement: '60'
+statRequirements: 44/8/6/25/30
+goldRequired: '150,000'
+itemRequirements: Chainmail Gauntlet (1), Sonor Ring (2)
+prerequisites: '-'
+learningLocation: Suomi Combat Skills Master
+description: A finisher that instantly kills normal enemies below 15% health.  Restores your own health, and halves it's cooldown on successful execute.  Otherwise deals damage based on your STR + 3% of your max HP.
 image: /images/abilities/Execute.png
-class: "warrior"
-levelRequirement: "60"
-statRequirements: "44/8/6/25/30"
-goldRequired: "150,000"
-itemRequirements: "Chainmail Gauntlet (1), Sonor Ring (2)"
-prerequisites: "-"
-learningLocation: "Suomi Combat Skills Master"
-description: "Can kill weak enemies. Restores health and reduces cooldown on success."
