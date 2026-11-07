@@ -757,10 +757,10 @@ refined-verdant-soron,Refined Verdant Soron,Armor,druid,male,Armorsmithing,,Ab 1
 refined-verdant-soroni,Refined Verdant Soroni,Armor,druid,female,Armorsmithing,,Ab 10,-,2730,455,-51,36,2,-,-,2,2,9,-,9,-,9,-,-,-,-,,-,-,-
 refined-festering-rotward-garb,Refined Festering Rotward Garb,Armor,plague-doctor,male,Armorsmithing,-,Ab 10,-,910,1365,-38,36,1,3,3,1,-1,-,-,-,-,-,-,-,-,4,,-,-,-
 refined-festering-rotward-gown,Refined Festering Rotward Gown,Armor,plague-doctor,female,Armorsmithing,-,Ab 10,-,910,1365,-38,36,1,3,3,1,-1,-,-,-,-,-,-,-,-,4,,-,-,-
-emberite-resonant-wooden-harp,Emberite Resonant Wooden Harp,Weapon,bard,,Weaponsmithing,,Ab 1,5,-200,1000,-,-,-,-,-,-,-,-,5,-,-,-,204,26,315,45,,-,-,-
-good-emberite-resonant-wooden-harp,Good Emberite Resonant Wooden Harp,Weapon,bard,,Weaponsmithing,,Ab 1,5,50,1150,-,1,-,-,-,-,-,-,5,-,54,-,225,28,350,48,,-,-,-
-great-emberite-resonant-wooden-harp,Great Emberite Resonant Wooden Harp,Weapon,bard,,Weaponsmithing,,Ab 1,5,250,1350,-,2,-,-,-,-,-,-,6,-,59,-,245,30,385,49,,-,-,-
-grand-emberite-resonant-wooden-harp,Grand Emberite Resonant Wooden Harp,Weapon,bard,,Weaponsmithing,,Ab 1,5,550,1600,-,3,-,-,-,-,-,-,7,-,-,-,266,32,420,53,,2,-,-
+emberite-resonant-wooden-harp,Emberite Resonant Wooden Harp,Harp,bard,,Weaponsmithing,,Ab 1,5,-200,1000,-,-,-,-,-,-,-,-,5,-,-,-,204,26,315,45,,-,-,-
+good-emberite-resonant-wooden-harp,Good Emberite Resonant Wooden Harp,Harp,bard,,Weaponsmithing,,Ab 1,5,50,1150,-,1,-,-,-,-,-,-,5,-,54,-,225,28,350,48,,-,-,-
+great-emberite-resonant-wooden-harp,Great Emberite Resonant Wooden Harp,Harp,bard,,Weaponsmithing,,Ab 1,5,250,1350,-,2,-,-,-,-,-,-,6,-,59,-,245,30,385,49,,-,-,-
+grand-emberite-resonant-wooden-harp,Grand Emberite Resonant Wooden Harp,Harp,bard,,Weaponsmithing,,Ab 1,5,550,1600,-,3,-,-,-,-,-,-,7,-,-,-,266,32,420,53,,2,-,-
 refined-resonant-vaina,Refined Resonant Vaina,Armor,bard,male,Armorsmithing,,Ab 10,-,910,1365,-38,36,1,3,3,1,-1,-,-,-,-,-,-,-,-,4,,-,-,-
 refined-resonant-yain,Refined Resonant Yain,Armor,bard,male,Armorsmithing,,Ab 10,-,910,1365,-38,36,1,3,3,1,-1,-,-,-,-,-,-,-,-,4,,-,-,-
 refined-resonant-vainar,Refined Resonant Vainar,Armor,bard,female,Armorsmithing,,Ab 10,-,910,1365,-38,36,1,3,3,1,-1,-,-,-,-,-,-,-,-,4,,-,-,-
@@ -1658,3 +1658,13 @@ grand-talgonite-shield,Grand Talgonite Shield,Shield,,,-,,99,19,3000,-,-17,20,-,
 great-talgonite-shield,Great Talgonite Shield,Shield,,,-,,99,21,2500,-,-16,15,-,-,-,-,-,-6,-,-,-,-,-,-,-,-,,-,-,-
 talgonite-shield,Talgonite Shield,Shield,,,-,,99,25,1500,-,-15,10,-,-,-,-,-,-12,-3,-,-,-,-,-,-,-,,-,-,-
 grand-emberite-festering-crow-staff,Grand Emberite Festering Crow Staff,Staff,plague-doctor,,Weaponsmithing,,Ab 1,5,450,2100,,3,,,,,,,8,,90,,372,39,413,60,,2,,
+emberite-festering-crow-staff,Emberite Festering Crow Staff,Staff,plague-doctor,,Weaponsmithing,,Ab 1,5,-300,1500,,,,,,,,,6,,69,,287,33,338,54,,,,
+good-emberite-festering-crow-staff,Good Emberite Festering Crow Staff,Staff,plague-doctor,,Weaponsmithing,,Ab 1,5,-50,1650,,1,,,,,,,6,,76,,316,35,363,56,,,,
+great-emberite-festering-crow-staff,Great Emberite Festering Crow Staff,Staff,plague-doctor,,Weaponsmithing,,Ab 1,5,150,1850,,5,,,,,,,7,,83,,344,37,388,57,,,,
+great-hydrillium-festering-crow-staff,Great Hydrillium Festering Crow Staff,Staff,plague-doctor,,Weaponsmithing,,Ab 1,5,150,2600,,2,1,,,,,4,6,,142,21,266,29,388,57,,,,
+great-hydrillium-resonant-wooden-harp,Great Hydrillium Resonant Wooden Harp,Harp,bard,,Weaponsmithing,,Ab 1,5,250,1850,,2,1,,,,,4,6,,101,16,188,22,385,49,,,,
+grand-hydrillium-resonant-wooden-harp,Grand Hydrillium Resonant Wooden Harp,Harp,bard,,Weaponsmithing,,Ab 1,5,550,2100,,3,1,,,,,5,7,,109,17,204,53,420,53,,2,,
+aerium-resonant-wooden-harp,Aerium Resonant Wooden Harp,Harp,bard,,Weaponsmithing,,Ab 1,5,-200,1000,,,1,,,,,4,3,8,112,18,118,14,315,45,,,,
+good-aerium-resonant-wooden-harp,Good Aerium Resonant Wooden Harp,Harp,bard,,Weaponsmithing,,Ab 1,5,50,1150,,1,1,,,,,5,3,8,123,19,129,16,350,48,,,,
+great-aerium-resonant-wooden-harp,Great Aerium Resonant Wooden Harp,Harp,bard,,Weaponsmithing,,Ab 1,5,250,1350,,2,1,,,,,6,4,8,134,20,141,18,385,49,,,,
+grand-aerium-resonant-wooden-harp,Grand Aerium Resonant Wooden Harp,Harp,bard,,Weaponsmithing,,Ab 1,5,550,1600,,3,1,,,,,7,5,8,146,21,153,20,420,53,,2,,
