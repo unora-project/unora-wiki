@@ -1,11 +1,11 @@
-name: "Wrath"
+name: Wrath
+class: warrior
+element: ''
+levelRequirement: '11'
+statRequirements: 5/3/5/5/5
+goldRequired: '5,000'
+itemRequirements: Spider Silk (3)
+prerequisites: '-'
+learningLocation: Mileth Special Skills Master
+description: Applies constant damage to all sides.  Damage scales with assail stats.  Drains 3% of your max HP each second while active, tapping your mana instead once you fall below 40%.
 image: /images/abilities/Wrath.png
-class: "warrior"
-levelRequirement: "11"
-statRequirements: "5/3/5/5/5"
-goldRequired: "5,000"
-itemRequirements: "Spider Silk (3)"
-prerequisites: "-"
-learningLocation: "Mileth Special Skills Master"
-description: >-
-  You enter a violent frenzy, flailing in all directions to repeatedly strike nearby foes.
