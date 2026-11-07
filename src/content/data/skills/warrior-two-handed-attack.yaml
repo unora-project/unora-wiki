@@ -1,10 +1,11 @@
-name: "Two Handed Attack"
+name: Two Handed Attack
+class: warrior
+element: ''
+levelRequirement: '50'
+statRequirements: 40/3/3/34/18
+goldRequired: '25,000'
+itemRequirements: Gremlin's Ear (1)
+prerequisites: '-'
+learningLocation: Suomi Combat Skills Master
+description: Allows the use of 2H weapons.  While wielding one, raises the damage of your skills by 25%.
 image: /images/abilities/Two%20Handed%20Attack.png
-class: "warrior"
-levelRequirement: "50"
-statRequirements: "40/3/3/34/18"
-goldRequired: "25,000"
-itemRequirements: "Gremlin's Ear (1)"
-prerequisites: "-"
-learningLocation: "Suomi Combat Skills Master"
-description: "Warrior's Two Handed Attack."
