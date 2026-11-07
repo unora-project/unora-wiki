@@ -1,10 +1,11 @@
-name: "Beag Suain"
+name: Beag Suain
+class: warrior
+element: ''
+levelRequirement: '33'
+statRequirements: 30/7/7/13/24
+goldRequired: '15,000'
+itemRequirements: Hobgoblin's Skull (3), Reinforced Leather Greaves (1)
+prerequisites: '-'
+learningLocation: Suomi Special Skills Master
+description: Applies Beag Suain to the target directly in front of you for 4 seconds.
 image: /images/abilities/Beag%20Suain.png
-class: "warrior"
-levelRequirement: "33"
-statRequirements: "30/7/7/13/24"
-goldRequired: "15,000"
-itemRequirements: "Hobgoblin's Skull (3), Reinforced Leather Greaves (1)"
-prerequisites: "-"
-learningLocation: "Suomi Special Skills Master"
-description: "Paralyze an enemy in front of you for a short time."
