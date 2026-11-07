@@ -1,11 +1,11 @@
-name: "Inferno"
+name: Inferno
+class: warrior
+element: ''
+levelRequirement: Master (Pure)
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: Whirlwind (100)
+learningLocation: Shamensyth
+description: Applies constant damage to all sides.  Damage scales with assail stats.  Drains 5% of your max HP each second while active, tapping your mana instead once you fall below 40%.  Pure Only.
 image: /images/abilities/Inferno.png
-class: "warrior"
-levelRequirement: "Master (Pure)"
-statRequirements: "3/3/3/3/3"
-goldRequired: "-"
-itemRequirements: "-"
-prerequisites: "Whirlwind (100)"
-learningLocation: "Shamensyth"
-description: >-
-  Your temperature rises and burns enemies around you. Replaces Whirlwind. Pure Only.
