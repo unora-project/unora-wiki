@@ -7,5 +7,5 @@ goldRequired: '-'
 itemRequirements: '-'
 prerequisites: Ground Stomp (100)
 learningLocation: Shamensyth
-description: Paralyzes all enemies within four spaces. Pure Only.
+description: Applies Beag Suain to all enemies within 4 tiles.  Pure Only.
 image: /images/abilities/Paralyze%20Force.png
