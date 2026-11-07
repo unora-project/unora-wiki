@@ -1,10 +1,11 @@
-name: "Battle Cry"
+name: Battle Cry
+class: warrior
+element: ''
+levelRequirement: '11'
+statRequirements: 5/3/3/9/4
+goldRequired: '2,000'
+itemRequirements: Spider Silk (3)
+prerequisites: '-'
+learningLocation: Mileth Special Skills Master
+description: Increase damage and healing for 2 minutes.  Scales with STR.
 image: /images/abilities/Battle%20Cry.png
-class: "warrior"
-levelRequirement: "11"
-statRequirements: "5/3/3/9/4"
-goldRequired: "2,000"
-itemRequirements: "Spider Silk (3)"
-prerequisites: "-"
-learningLocation: "Mileth Special Skills Master"
-description: "Increase damage and healing for 2 minutes."
