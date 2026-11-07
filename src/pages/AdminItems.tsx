@@ -960,11 +960,21 @@ function Drawer({ editing, setEditing, recs, baseHas, useSuggestions, issues, ca
 }
 
 function Text({ label, value, onChange, placeholder }: { label: string; value: string | undefined; onChange: (v: string) => void; placeholder?: string }) {
-  const shown = value === '-' ? '' : value ?? ''
+  // A stored "-" means "nothing here", so it is hidden when the box is not being edited.
+  // While typing, show exactly what was typed, otherwise the minus sign of a negative number vanishes.
+  const [typing, setTyping] = useState<string | null>(null)
+  const shown = typing ?? (value === '-' ? '' : value ?? '')
   return (
     <div>
       <label className={labelCls}>{label}</label>
-      <input className={inputCls} value={shown} placeholder={placeholder} onChange={(e) => onChange(e.target.value)} />
+      <input
+        className={inputCls}
+        value={shown}
+        placeholder={placeholder}
+        onFocus={() => setTyping(value === '-' ? '' : value ?? '')}
+        onBlur={() => setTyping(null)}
+        onChange={(e) => { setTyping(e.target.value); onChange(e.target.value) }}
+      />
     </div>
   )
 }
