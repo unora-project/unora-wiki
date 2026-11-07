@@ -1,10 +1,11 @@
-name: "Wind Blade"
+name: Wind Blade
+class: warrior
+element: ''
+levelRequirement: '11'
+statRequirements: 10/3/3/5/10
+goldRequired: '3,000'
+itemRequirements: Bat's Wing (1)
+prerequisites: '-'
+learningLocation: Mileth Special Skills Master
+description: Deals minor damage to all targets directly in front of you, up to 3 tiles.
 image: /images/abilities/Wind%20Blade.png
-class: "warrior"
-levelRequirement: "11"
-statRequirements: "10/3/3/5/10"
-goldRequired: "3,000"
-itemRequirements: "Bat's Wing (1)"
-prerequisites: "-"
-learningLocation: "Mileth Special Skills Master"
-description: "Deals minor damage to 3 tiles in front of you."
