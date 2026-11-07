@@ -1,10 +1,11 @@
-name: "War Cry"
+name: War Cry
+class: warrior
+element: ''
+levelRequirement: '50'
+statRequirements: 35/3/6/15/25
+goldRequired: '25,000'
+itemRequirements: Chainmail Gauntlet (1)
+prerequisites: Battle Cry (100)
+learningLocation: Mileth Special Skills Master
+description: Increase the group's damage and healing within 12 tiles for 2 minutes. Scales with each member's STR.
 image: /images/abilities/War%20Cry.png
-class: "warrior"
-levelRequirement: "50"
-statRequirements: "35/3/6/15/25"
-goldRequired: "25,000"
-itemRequirements: "Chainmail Gauntlet (1)"
-prerequisites: "Battle Cry (100)"
-learningLocation: "Mileth Special Skills Master"
-description: "Increase the group's damage and healing for 2 minutes. Replaces Battle Cry."
