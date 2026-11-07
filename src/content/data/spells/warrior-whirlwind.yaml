@@ -1,10 +1,11 @@
-name: "Whirlwind"
+name: Whirlwind
+class: warrior
+element: ''
+levelRequirement: '60'
+statRequirements: 52/15/7/33/27
+goldRequired: '50,000'
+itemRequirements: Wisp's Core (2), Spiked Flail (1)
+prerequisites: Wrath (100)
+learningLocation: Mileth Special Skills Master
+description: Applies constant damage to all sides.  Damage scales with assail stats.  Drains 4% of your max HP each second while active, tapping your mana instead once you fall below 40%.
 image: /images/abilities/Whirlwind.png
-class: "warrior"
-levelRequirement: "60"
-statRequirements: "52/15/7/33/27"
-goldRequired: "50,000"
-itemRequirements: "Wisp's Core (2), Spiked Flail (1)"
-prerequisites: "Wrath (100)"
-learningLocation: "Mileth Special Skills Master"
-description: "Damage enemies around user. Replaces Wrath."
