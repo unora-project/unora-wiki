@@ -1,11 +1,11 @@
-name: "Devour"
+name: Devour
+class: warrior
+element: ''
+levelRequirement: Master
+statRequirements: 3/3/3/3/3
+goldRequired: '-'
+itemRequirements: '-'
+prerequisites: Cleave (100)
+learningLocation: Shamensyth
+description: Strike the enemies directly in front of you and to your sides, restoring 15% of your missing health for each enemy struck.
 image: /images/abilities/Devour.png
-class: "warrior"
-levelRequirement: "Master"
-statRequirements: "3/3/3/3/3"
-goldRequired: "-"
-itemRequirements: "-"
-prerequisites: "Cleave (100)"
-learningLocation: "Shamensyth"
-description: >-
-  Cleave shape attack dealing damage and heals you based on your missing health. Replaces Cleave.
